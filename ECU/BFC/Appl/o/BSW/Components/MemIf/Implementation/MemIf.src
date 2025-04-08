@@ -1,0 +1,2008 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v6.2r1 Build 17012451 SN 07925145"
+	.compiler_invocation	"ctc -f cc21920a -c99 --integer-enumeration -D__CPU__=userdef162 -D__CPU_USERDEF162__ --core=tc1.6.2 --fp-model=+float -DBRS_PLATFORM_AURIX -DBRS_COMP_TASKING -I../../../../BSW/Components/BswM/Implementation -I../../../../BSW/Components/CanIf/Implementation -I../../../../BSW/Components/CanSM/Implementation -I../../../../BSW/Components/CanTp/Implementation -I../../../../BSW/Components/Can_30_Core/Implementation -I../../../../BSW/Components/Com/Implementation -I../../../../BSW/Components/ComM/Implementation -I../../../../BSW/Components/Crc -I../../../../BSW/Components/Crc/Implementation -I../../../../BSW/Components/Dcm/Implementation -I../../../../BSW/Components/Dem/Implementation -I../../../../BSW/Components/Det/Implementation -I../../../../BSW/Components/EcuM/Implementation -I../../../../BSW/Components/GenData -I../../../../BSW/Components/Mcal_Tc3xx -I../../../../BSW/Components/Mcal_Tc3xx/Implementation -I../../../../BSW/Components/MemIf -I../../../../BSW/Components/MemIf/Implementation -I../../../../BSW/Components/NvM -I../../../../BSW/Components/NvM/Implementation -I../../../../BSW/Components/Os/Implementation -I../../../../BSW/Components/PduR/Implementation -I../../../../BSW/Components/VStdLib/Implementation -I../../../../BSW/Components/vCan_30_Mcan/Implementation -I../../../../BSW/DemoComponents/vLinkGen/Implementation -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Autosar_Srv -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Integration -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Irq/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Infra_Prod/Sfr/TC39xB/_Reg -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Adc/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Dio/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Fee/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Fls_17_Dmu/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/McalLib/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/McalLib/ssc/inc/AS440 -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Mcu/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Port/ssc/inc -I../../../../BSW/Components/_Common/Implementation -IGenData -IInclude -ID:/TASKING/TriCorev6.2r1/ctc/include -IGenData/Components -IGenData/inc --debug-info=default --align=4 --default-a0-size=0 --default-a1-size=0 --default-near-size=0 --optimize=acefgIklMnopRsUvwy,+predict --tradeoff=2 --language=-gcc,+volatile,-strings,-comments -o o\\BSW\\Components\\MemIf\\Implementation\\MemIf.src ../../../../BSW/Components/MemIf/Implementation/MemIf.c"
+	.compiler_name		"ctc"
+	;source	'../../../../BSW/Components/MemIf/Implementation/MemIf.c'
+
+	
+$TC162
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('MemIf_IsBitSet')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function MemIf_IsBitSet
+.L117:
+	.align	4
+MemIf_IsBitSet:	.type	func
+.L44:
+	mov	d15,#1
+.L330:
+	sh	d15,d15,d5
+.L331:
+	and	d4,d15
+.L168:
+	eq	d2,d4,#0
+	ret
+.L165:
+	
+__MemIf_IsBitSet_function_end:
+	.size	MemIf_IsBitSet,__MemIf_IsBitSet_function_end-MemIf_IsBitSet
+.L118:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('MemIf_Read')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	MemIf_Read
+; Function MemIf_Read
+.L69:
+	.align	4
+MemIf_Read:	.type	func
+.L46:
+	movh.a	a15,#@his(MemIf_NumberOfDevices)
+	ld.bu	d15,[a15]@los(MemIf_NumberOfDevices)
+.L214:
+	jlt.u	d4,d15,.L3
+.L215:
+	mov	d15,#1
+.L172:
+	mov	d8,d15
+	j	.L4
+.L3:
+	sha	d4,#5
+	movh.a	a15,#@his(MemIf_MemHwaApis)
+.L171:
+	lea	a15,[a15]@los(MemIf_MemHwaApis)
+.L216:
+	addsc.a	a15,a15,d4,#0
+.L217:
+	mov	d4,d5
+.L173:
+	ld.a	a15,[a15]
+.L218:
+	mov	d15,#0
+.L174:
+	mov	d5,d6
+.L169:
+	mov	d6,d7
+	calli	a15
+.L170:
+	mov	d8,d2
+.L4:
+	jeq	d15,#0,.L5
+.L219:
+	mov	d4,#22
+.L220:
+	mov	d5,#0
+.L221:
+	mov	d6,#2
+.L222:
+	mov	d7,#1
+	call	Det_ReportError
+.L5:
+	mov	d2,d8
+	ret
+.L120:
+	
+__MemIf_Read_function_end:
+	.size	MemIf_Read,__MemIf_Read_function_end-MemIf_Read
+.L70:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('MemIf_Write')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	MemIf_Write
+; Function MemIf_Write
+.L75:
+	.align	4
+MemIf_Write:	.type	func
+.L48:
+	movh.a	a15,#@his(MemIf_NumberOfDevices)
+	ld.bu	d15,[a15]@los(MemIf_NumberOfDevices)
+.L227:
+	jlt.u	d4,d15,.L7
+.L228:
+	mov	d8,#1
+.L177:
+	mov	d15,d8
+	j	.L8
+.L7:
+	sha	d4,#5
+	movh.a	a15,#@his(MemIf_MemHwaApis)
+.L176:
+	lea	a15,[a15]@los(MemIf_MemHwaApis)
+.L229:
+	addsc.a	a15,a15,d4,#0
+.L230:
+	mov	d4,d5
+.L178:
+	ld.a	a15,[a15]4
+.L231:
+	mov	d15,#0
+.L179:
+	calli	a15
+.L175:
+	mov	d8,d2
+.L8:
+	jeq	d15,#0,.L9
+.L232:
+	mov	d4,#22
+.L233:
+	mov	d5,#0
+.L234:
+	mov	d6,#3
+.L235:
+	mov	d7,#1
+	call	Det_ReportError
+.L9:
+	mov	d2,d8
+	ret
+.L130:
+	
+__MemIf_Write_function_end:
+	.size	MemIf_Write,__MemIf_Write_function_end-MemIf_Write
+.L76:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('MemIf_InvalidateBlock')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	MemIf_InvalidateBlock
+; Function MemIf_InvalidateBlock
+.L81:
+	.align	4
+MemIf_InvalidateBlock:	.type	func
+.L50:
+	movh.a	a15,#@his(MemIf_NumberOfDevices)
+	ld.bu	d15,[a15]@los(MemIf_NumberOfDevices)
+.L240:
+	jlt.u	d4,d15,.L11
+.L241:
+	mov	d8,#1
+.L182:
+	mov	d15,d8
+	j	.L12
+.L11:
+	sha	d4,#5
+	movh.a	a15,#@his(MemIf_MemHwaApis)
+.L181:
+	lea	a15,[a15]@los(MemIf_MemHwaApis)
+.L242:
+	addsc.a	a15,a15,d4,#0
+.L243:
+	mov	d4,d5
+.L183:
+	ld.a	a15,[a15]12
+.L244:
+	mov	d15,#0
+.L184:
+	calli	a15
+.L180:
+	mov	d8,d2
+.L12:
+	jeq	d15,#0,.L13
+.L245:
+	mov	d4,#22
+.L246:
+	mov	d5,#0
+.L247:
+	mov	d6,#7
+.L248:
+	mov	d7,#1
+	call	Det_ReportError
+.L13:
+	mov	d2,d8
+	ret
+.L136:
+	
+__MemIf_InvalidateBlock_function_end:
+	.size	MemIf_InvalidateBlock,__MemIf_InvalidateBlock_function_end-MemIf_InvalidateBlock
+.L82:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('MemIf_EraseImmediateBlock')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	MemIf_EraseImmediateBlock
+; Function MemIf_EraseImmediateBlock
+.L87:
+	.align	4
+MemIf_EraseImmediateBlock:	.type	func
+.L52:
+	movh.a	a15,#@his(MemIf_NumberOfDevices)
+	ld.bu	d15,[a15]@los(MemIf_NumberOfDevices)
+.L253:
+	jlt.u	d4,d15,.L15
+.L254:
+	mov	d8,#1
+.L187:
+	mov	d15,d8
+	j	.L16
+.L15:
+	sha	d4,#5
+	movh.a	a15,#@his(MemIf_MemHwaApis)
+.L186:
+	lea	a15,[a15]@los(MemIf_MemHwaApis)
+.L255:
+	addsc.a	a15,a15,d4,#0
+.L256:
+	mov	d4,d5
+.L188:
+	ld.a	a15,[a15]8
+.L257:
+	mov	d15,#0
+.L189:
+	calli	a15
+.L185:
+	mov	d8,d2
+.L16:
+	jeq	d15,#0,.L17
+.L258:
+	mov	d4,#22
+.L259:
+	mov	d5,#0
+.L260:
+	mov	d6,#9
+.L261:
+	mov	d7,#1
+	call	Det_ReportError
+.L17:
+	mov	d2,d8
+	ret
+.L141:
+	
+__MemIf_EraseImmediateBlock_function_end:
+	.size	MemIf_EraseImmediateBlock,__MemIf_EraseImmediateBlock_function_end-MemIf_EraseImmediateBlock
+.L88:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('MemIf_Cancel')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	MemIf_Cancel
+; Function MemIf_Cancel
+.L93:
+	.align	4
+MemIf_Cancel:	.type	func
+.L54:
+	movh.a	a15,#@his(MemIf_NumberOfDevices)
+	ld.bu	d15,[a15]@los(MemIf_NumberOfDevices)
+.L266:
+	jlt.u	d4,d15,.L19
+.L267:
+	mov	d15,#1
+	j	.L20
+.L19:
+	sha	d4,#5
+	movh.a	a15,#@his(MemIf_MemHwaApis)
+.L190:
+	lea	a15,[a15]@los(MemIf_MemHwaApis)
+.L268:
+	addsc.a	a15,a15,d4,#0
+.L269:
+	mov	d15,#0
+.L191:
+	ld.a	a15,[a15]16
+.L270:
+	calli	a15
+.L20:
+	jeq	d15,#0,.L21
+.L271:
+	mov	d4,#22
+.L272:
+	mov	d5,#0
+.L273:
+	mov	d6,#4
+.L274:
+	mov	d7,#1
+	j	Det_ReportError
+.L21:
+	ret
+.L146:
+	
+__MemIf_Cancel_function_end:
+	.size	MemIf_Cancel,__MemIf_Cancel_function_end-MemIf_Cancel
+.L94:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('MemIf_GetStatus')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	MemIf_GetStatus
+; Function MemIf_GetStatus
+.L99:
+	.align	4
+MemIf_GetStatus:	.type	func
+.L56:
+	mov	d9,#0
+.L192:
+	mov	d15,#255
+.L279:
+	jeq	d15,d4,.L22
+.L280:
+	movh.a	a15,#@his(MemIf_NumberOfDevices)
+	ld.bu	d15,[a15]@los(MemIf_NumberOfDevices)
+.L281:
+	jlt.u	d4,d15,.L23
+.L282:
+	mov	d10,#1
+	j	.L24
+.L23:
+.L22:
+	mov	d15,#255
+	movh.a	a15,#@his(MemIf_MemHwaApis)
+.L283:
+	mov	d10,d9
+	lea	a15,[a15]@los(MemIf_MemHwaApis)
+.L193:
+	jne	d15,d4,.L25
+.L284:
+	mov	d8,d10
+	movh.a	a12,#@his(MemIf_NumberOfDevices)
+.L194:
+	lea	a12,[a12]@los(MemIf_NumberOfDevices)
+.L285:
+	mov	d15,#1
+	j	.L26
+.L27:
+	ld.a	a2,[a15]20
+.L286:
+	calli	a2
+.L287:
+	extr.u	d0,d2,#0,#8
+	lea	a15,[a15]32
+	add	d8,#1
+.L195:
+	extr.u	d8,d8,#0,#8
+.L196:
+	sha	d0,d15,d0
+.L288:
+	extr.u	d0,d0,#0,#8
+.L289:
+	or	d9,d0
+.L26:
+	ld.bu	d0,[a12]
+.L290:
+	jlt.u	d8,d0,.L27
+.L291:
+	mov	d5,#0
+	mov	d4,d9
+	call	MemIf_IsBitSet
+.L292:
+	jne	d2,#0,.L28
+.L24:
+	mov	d15,#0
+	j	.L29
+.L28:
+	mov	d5,#2
+	mov	d4,d9
+	call	MemIf_IsBitSet
+.L293:
+	jne	d2,#0,.L30
+.L294:
+	mov	d15,#2
+	j	.L31
+.L30:
+	mov	d5,#3
+	mov	d4,d9
+	call	MemIf_IsBitSet
+.L295:
+	jne	d2,#0,.L32
+.L296:
+	mov	d15,#3
+	j	.L33
+.L32:
+	mov	d15,#1
+	j	.L34
+.L25:
+	sha	d4,#5
+.L197:
+	addsc.a	a15,a15,d4,#0
+.L297:
+	ld.a	a15,[a15]20
+.L298:
+	calli	a15
+.L198:
+	mov	d15,d2
+.L34:
+.L33:
+.L31:
+.L29:
+	jeq	d10,#0,.L35
+.L299:
+	mov	d4,#22
+.L300:
+	mov	d5,#0
+.L301:
+	mov	d6,#5
+.L302:
+	mov	d7,#1
+	call	Det_ReportError
+.L35:
+	mov	d2,d15
+	ret
+.L150:
+	
+__MemIf_GetStatus_function_end:
+	.size	MemIf_GetStatus,__MemIf_GetStatus_function_end-MemIf_GetStatus
+.L100:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('MemIf_GetJobResult')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	MemIf_GetJobResult
+; Function MemIf_GetJobResult
+.L105:
+	.align	4
+MemIf_GetJobResult:	.type	func
+.L58:
+	movh.a	a15,#@his(MemIf_NumberOfDevices)
+	ld.bu	d15,[a15]@los(MemIf_NumberOfDevices)
+.L307:
+	jlt.u	d4,d15,.L37
+.L308:
+	mov	d15,#1
+.L200:
+	mov	d8,d15
+	j	.L38
+.L37:
+	sha	d4,#5
+	movh.a	a15,#@his(MemIf_MemHwaApis)
+.L199:
+	lea	a15,[a15]@los(MemIf_MemHwaApis)
+.L309:
+	addsc.a	a15,a15,d4,#0
+.L310:
+	mov	d15,#0
+.L201:
+	ld.a	a15,[a15]24
+.L311:
+	calli	a15
+.L202:
+	mov	d8,d2
+.L38:
+	jeq	d15,#0,.L39
+.L312:
+	mov	d4,#22
+.L313:
+	mov	d5,#0
+.L314:
+	mov	d6,#6
+.L315:
+	mov	d7,#1
+	call	Det_ReportError
+.L39:
+	mov	d2,d8
+	ret
+.L157:
+	
+__MemIf_GetJobResult_function_end:
+	.size	MemIf_GetJobResult,__MemIf_GetJobResult_function_end-MemIf_GetJobResult
+.L106:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('MemIf_SetMode')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	MemIf_SetMode
+; Function MemIf_SetMode
+.L111:
+	.align	4
+MemIf_SetMode:	.type	func
+.L60:
+	mov	d8,d4
+	movh.a	a15,#@his(MemIf_MemHwaApis)
+.L203:
+	mov	d15,#0
+	movh.a	a12,#@his(MemIf_NumberOfDevices)
+.L204:
+	lea	a15,[a15]@los(MemIf_MemHwaApis)
+.L320:
+	lea	a12,[a12]@los(MemIf_NumberOfDevices)
+.L321:
+	j	.L41
+.L42:
+	ld.a	a2,[a15]28
+.L322:
+	mov	d4,d8
+	calli	a2
+.L323:
+	add	d15,#1
+	lea	a15,[a15]32
+.L205:
+	extr.u	d15,d15,#0,#8
+.L41:
+	ld.bu	d0,[a12]
+.L324:
+	jlt.u	d15,d0,.L42
+.L325:
+	ret
+.L161:
+	
+__MemIf_SetMode_function_end:
+	.size	MemIf_SetMode,__MemIf_SetMode_function_end-MemIf_SetMode
+.L112:
+	; End of function
+	
+	.calls	'MemIf_Read','__INDIRECT__'
+	.calls	'MemIf_Read','Det_ReportError'
+	.calls	'MemIf_Write','__INDIRECT__'
+	.calls	'MemIf_Write','Det_ReportError'
+	.calls	'MemIf_InvalidateBlock','__INDIRECT__'
+	.calls	'MemIf_InvalidateBlock','Det_ReportError'
+	.calls	'MemIf_EraseImmediateBlock','__INDIRECT__'
+	.calls	'MemIf_EraseImmediateBlock','Det_ReportError'
+	.calls	'MemIf_Cancel','__INDIRECT__'
+	.calls	'MemIf_Cancel','Det_ReportError'
+	.calls	'MemIf_GetStatus','__INDIRECT__'
+	.calls	'MemIf_GetStatus','MemIf_IsBitSet'
+	.calls	'MemIf_GetStatus','Det_ReportError'
+	.calls	'MemIf_GetJobResult','__INDIRECT__'
+	.calls	'MemIf_GetJobResult','Det_ReportError'
+	.calls	'MemIf_SetMode','__INDIRECT__'
+	.calls	'MemIf_IsBitSet','',0
+	.calls	'MemIf_Read','',0
+	.calls	'MemIf_Write','',0
+	.calls	'MemIf_InvalidateBlock','',0
+	.calls	'MemIf_EraseImmediateBlock','',0
+	.calls	'MemIf_Cancel','',0
+	.calls	'MemIf_GetStatus','',0
+	.calls	'MemIf_GetJobResult','',0
+	.extern	Det_ReportError
+	.extern	MemIf_NumberOfDevices
+	.extern	MemIf_MemHwaApis
+	.extern	__INDIRECT__
+	.calls	'MemIf_SetMode','',0
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L62:
+	.word	1763
+	.half	3
+	.word	.L63
+	.byte	4
+.L61:
+	.byte	1
+	.byte	'../../../../BSW/Components/MemIf/Implementation/MemIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L64
+.L119:
+	.byte	2
+	.byte	'unsigned char',0,1,8,3
+	.byte	'MemIf_DetChkDeviceIndex',0,3,1,111,61
+	.word	206
+	.byte	1,1,4
+	.byte	'DeviceIndex',0,1,111,91
+	.word	206
+	.byte	5,0
+.L122:
+	.byte	2
+	.byte	'unsigned short int',0,2,7,6
+	.byte	'Det_ReportError',0,2,150,2,32
+	.word	206
+	.byte	1,1,1,1,4
+	.byte	'ModuleId',0,2,150,2,56
+	.word	280
+	.byte	4
+	.byte	'InstanceId',0,2,150,2,72
+	.word	206
+	.byte	4
+	.byte	'ApiId',0,2,150,2,90
+	.word	206
+	.byte	4
+	.byte	'ErrorId',0,2,150,2,103
+	.word	206
+	.byte	0,7
+	.word	206
+	.byte	7
+	.word	206
+.L125:
+	.byte	8
+	.byte	'MemIf_DataPtr_pu8',0,3,96,50
+	.word	407
+.L149:
+	.byte	9,3,59,9,4,10
+	.byte	'MEMIF_UNINIT',0,0,10
+	.byte	'MEMIF_IDLE',0,1,10
+	.byte	'MEMIF_BUSY',0,2,10
+	.byte	'MEMIF_BUSY_INTERNAL',0,3,0
+.L156:
+	.byte	9,3,72,9,4,10
+	.byte	'MEMIF_JOB_OK',0,0,10
+	.byte	'MEMIF_JOB_FAILED',0,1,10
+	.byte	'MEMIF_JOB_PENDING',0,2,10
+	.byte	'MEMIF_JOB_CANCELED',0,3,10
+	.byte	'MEMIF_BLOCK_INCONSISTENT',0,4,10
+	.byte	'MEMIF_BLOCK_INVALID',0,5,0
+.L162:
+	.byte	9,3,88,9,4,10
+	.byte	'MEMIF_MODE_SLOW',0,0,10
+	.byte	'MEMIF_MODE_FAST',0,1,0,11
+	.word	223
+	.byte	12
+	.word	258
+	.byte	5,0,13
+	.byte	'__INDIRECT__',0,1,1,1,1,1,1,14,1,7
+	.word	711
+	.byte	8
+	.byte	'__codeptr',0,1,1,1
+	.word	713
+	.byte	8
+	.byte	'boolean',0,4,140,1,29
+	.word	206
+	.byte	8
+	.byte	'uint8',0,4,143,1,31
+	.word	206
+	.byte	8
+	.byte	'uint16',0,4,145,1,31
+	.word	280
+	.byte	2
+	.byte	'unsigned long int',0,4,7,8
+	.byte	'uint32',0,4,147,1,31
+	.word	784
+	.byte	8
+	.byte	'Std_ReturnType',0,5,120,15
+	.word	206
+	.byte	8
+	.byte	'Std_TransformerErrorCode',0,5,131,1,15
+	.word	206
+	.byte	8
+	.byte	'Std_TransformerClass',0,5,133,1,15
+	.word	206
+	.byte	8
+	.byte	'MemIf_StatusType',0,3,65,3
+	.word	438
+	.byte	8
+	.byte	'MemIf_JobResultType',0,3,80,3
+	.word	507
+	.byte	8
+	.byte	'MemIf_ModeType',0,3,92,3
+	.word	637
+	.byte	15
+	.byte	'sDet_PCConfigType',0,6,243,1,16,1,16
+	.byte	'Det_PCConfigNeverUsed',0
+	.word	206
+	.byte	1,2,35,0,0,8
+	.byte	'Det_PCConfigType',0,6,246,1,3
+	.word	984
+	.byte	7
+	.word	206
+	.byte	17
+	.word	206
+	.byte	1,1,18
+	.word	280
+	.byte	18
+	.word	280
+	.byte	18
+	.word	1066
+	.byte	18
+	.word	280
+	.byte	0,7
+	.word	1071
+	.byte	8
+	.byte	'MemIf_ApiReadType',0,7,137,1,9
+	.word	1099
+	.byte	17
+	.word	206
+	.byte	1,1,18
+	.word	280
+	.byte	18
+	.word	1066
+	.byte	0,7
+	.word	1131
+	.byte	8
+	.byte	'MemIf_ApiWriteType',0,7,138,1,9
+	.word	1149
+	.byte	17
+	.word	206
+	.byte	1,1,18
+	.word	280
+	.byte	0,7
+	.word	1182
+	.byte	8
+	.byte	'MemIf_ApiEraseImmediateBlockType',0,7,139,1,9
+	.word	1195
+	.byte	8
+	.byte	'MemIf_ApiInvalidateBlockType',0,7,140,1,9
+	.word	1195
+	.byte	19,1,1,7
+	.word	1280
+	.byte	8
+	.byte	'MemIf_ApiCancelType',0,7,141,1,9
+	.word	1283
+	.byte	20
+	.word	438
+	.byte	1,1,7
+	.word	1317
+	.byte	8
+	.byte	'MemIf_ApiGetStatusType',0,7,142,1,9
+	.word	1324
+	.byte	20
+	.word	507
+	.byte	1,1,7
+	.word	1361
+	.byte	8
+	.byte	'MemIf_ApiGetJobResultType',0,7,143,1,9
+	.word	1368
+	.byte	21,1,1,18
+	.word	637
+	.byte	0,7
+	.word	1408
+	.byte	8
+	.byte	'MemIf_ApiSetModeType',0,7,144,1,9
+	.word	1417
+	.byte	22,7,147,1,9,32,16
+	.byte	'Read',0
+	.word	1104
+	.byte	4,2,35,0,16
+	.byte	'Write',0
+	.word	1154
+	.byte	4,2,35,4,16
+	.byte	'EraseImmediateBlock',0
+	.word	1200
+	.byte	4,2,35,8,16
+	.byte	'InvalidateBlock',0
+	.word	1242
+	.byte	4,2,35,12,16
+	.byte	'Cancel',0
+	.word	1288
+	.byte	4,2,35,16,16
+	.byte	'GetStatus',0
+	.word	1329
+	.byte	4,2,35,20,16
+	.byte	'GetJobResult',0
+	.word	1373
+	.byte	4,2,35,24,16
+	.byte	'SetMode',0
+	.word	1422
+	.byte	4,2,35,28,0,8
+	.byte	'MemIf_MemHwAApi_Type',0,7,157,1,3
+	.word	1452
+	.byte	7
+	.word	1071
+	.byte	7
+	.word	1131
+	.byte	7
+	.word	1182
+	.byte	7
+	.word	1182
+	.byte	7
+	.word	1280
+	.byte	7
+	.word	1317
+	.byte	7
+	.word	1361
+	.byte	7
+	.word	1408
+	.byte	23
+	.word	206
+	.byte	24
+	.byte	'MemIf_NumberOfDevices',0,7,167,1,34
+	.word	1686
+	.byte	1,1,25,32
+	.word	1452
+	.byte	26,0,0,23
+	.word	1724
+	.byte	24
+	.byte	'MemIf_MemHwaApis',0,7,177,1,49
+	.word	1733
+	.byte	1,1,0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L63:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,36,0,3,8,11,15,62,15,0,0,3,46,1,3,8,32,13,58,15,59,15
+	.byte	57,15,73,19,54,15,39,12,0,0,4,5,0,3,8,58,15,59,15,57,15,73,19,0,0,5,11,0,0,0,6,46,1,3,8,58,15,59,15,57
+	.byte	15,73,19,54,15,39,12,63,12,60,12,0,0,7,15,0,73,19,0,0,8,22,0,3,8,58,15,59,15,57,15,73,19,0,0,9,4,1,58
+	.byte	15,59,15,57,15,11,15,0,0,10,40,0,3,8,28,13,0,0,11,46,1,49,19,0,0,12,5,0,49,19,0,0,13,46,0,3,8,58,15,59
+	.byte	15,57,15,54,15,63,12,60,12,0,0,14,21,0,54,15,0,0,15,19,1,3,8,58,15,59,15,57,15,11,15,0,0,16,13,0,3,8,73
+	.byte	19,11,15,56,9,0,0,17,21,1,73,19,54,15,39,12,0,0,18,5,0,73,19,0,0,19,21,0,54,15,39,12,0,0,20,21,0,73,19
+	.byte	54,15,39,12,0,0,21,21,1,54,15,39,12,0,0,22,19,1,58,15,59,15,57,15,11,15,0,0,23,38,0,73,19,0,0,24,52,0
+	.byte	3,8,58,15,59,15,57,15,73,19,63,12,60,12,0,0,25,1,1,11,15,73,19,0,0,26,33,0,47,15,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L64:
+	.word	.L207-.L206
+.L206:
+	.half	3
+	.word	.L209-.L208
+.L208:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/MemIf/Implementation',0
+	.byte	'GenData',0,0
+	.byte	'MemIf.c',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Det\\Implementation\\Det.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\MemIf\\Implementation\\MemIf_Types.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\Platform_Types.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\Std_Types.h',0,0,0,0
+	.byte	'Det_Cfg.h',0,2,0,0
+	.byte	'MemIf_Cfg.h',0,2,0,0,0
+.L209:
+.L207:
+	.sdecl	'.debug_info',debug,cluster('MemIf_Read')
+	.sect	'.debug_info'
+.L65:
+	.word	422
+	.half	3
+	.word	.L66
+	.byte	4,1
+	.byte	'../../../../BSW/Components/MemIf/Implementation/MemIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L68,.L67
+	.byte	2
+	.word	.L61
+	.byte	3
+	.byte	'MemIf_Read',0,1,144,1,34
+	.word	.L119
+	.byte	1,1,1
+	.word	.L46,.L120,.L45
+	.byte	4
+	.byte	'DeviceIndex',0,1,144,1,51
+	.word	.L119,.L121
+	.byte	4
+	.byte	'BlockNumber',0,1,144,1,71
+	.word	.L122,.L123
+	.byte	4
+	.byte	'BlockOffset',0,1,144,1,91
+	.word	.L122,.L124
+	.byte	4
+	.byte	'DataBufferPtr',0,1,144,1,122
+	.word	.L125,.L126
+	.byte	4
+	.byte	'Length',0,1,144,1,144,1
+	.word	.L122,.L127
+	.byte	5
+	.word	.L46,.L120
+	.byte	6
+	.byte	'retVal',0,1,147,1,18
+	.word	.L119,.L128
+	.byte	6
+	.byte	'errorId',0,1,148,1,9
+	.word	.L119,.L129
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('MemIf_Read')
+	.sect	'.debug_abbrev'
+.L66:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('MemIf_Read')
+	.sect	'.debug_line'
+.L67:
+	.word	.L211-.L210
+.L210:
+	.half	3
+	.word	.L213-.L212
+.L212:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/MemIf/Implementation',0,0
+	.byte	'MemIf.c',0,1,0,0,0
+.L213:
+	.byte	5,44,7,0,5,2
+	.word	.L46
+	.byte	3,240,0,1,5,3,9
+	.half	.L214-.L46
+	.byte	3,39,1,5,13,7,9
+	.half	.L215-.L214
+	.byte	3,2,1,5,12,9
+	.half	.L172-.L215
+	.byte	3,1,1,5,35,3,127,1,5,31,9
+	.half	.L3-.L172
+	.byte	3,8,1,5,14,1,5,30,9
+	.half	.L216-.L3
+	.byte	1,5,90,9
+	.half	.L217-.L216
+	.byte	1,5,43,9
+	.half	.L173-.L217
+	.byte	1,5,13,9
+	.half	.L218-.L173
+	.byte	3,127,1,5,90,9
+	.half	.L174-.L218
+	.byte	3,1,1,5,12,9
+	.half	.L170-.L174
+	.byte	1,5,3,9
+	.half	.L4-.L170
+	.byte	3,5,1,5,27,7,9
+	.half	.L219-.L4
+	.byte	3,2,1,5,44,9
+	.half	.L220-.L219
+	.byte	1,5,63,9
+	.half	.L221-.L220
+	.byte	1,5,79,9
+	.half	.L222-.L221
+	.byte	1,5,3,9
+	.half	.L5-.L222
+	.byte	3,6,1,5,1,3,1,1,7,9
+	.half	.L70-.L5
+	.byte	0,1,1
+.L211:
+	.sdecl	'.debug_ranges',debug,cluster('MemIf_Read')
+	.sect	'.debug_ranges'
+.L68:
+	.word	-1,.L69,0,.L70-.L69,0,0
+	.sdecl	'.debug_info',debug,cluster('MemIf_Write')
+	.sect	'.debug_info'
+.L71:
+	.word	377
+	.half	3
+	.word	.L72
+	.byte	4,1
+	.byte	'../../../../BSW/Components/MemIf/Implementation/MemIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L74,.L73
+	.byte	2
+	.word	.L61
+	.byte	3
+	.byte	'MemIf_Write',0,1,189,1,34
+	.word	.L119
+	.byte	1,1,1
+	.word	.L48,.L130,.L47
+	.byte	4
+	.byte	'DeviceIndex',0,1,189,1,52
+	.word	.L119,.L131
+	.byte	4
+	.byte	'BlockNumber',0,1,189,1,72
+	.word	.L122,.L132
+	.byte	4
+	.byte	'DataBufferPtr',0,1,189,1,103
+	.word	.L125,.L133
+	.byte	5
+	.word	.L48,.L130
+	.byte	6
+	.byte	'retVal',0,1,192,1,18
+	.word	.L119,.L134
+	.byte	6
+	.byte	'errorId',0,1,193,1,9
+	.word	.L119,.L135
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('MemIf_Write')
+	.sect	'.debug_abbrev'
+.L72:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('MemIf_Write')
+	.sect	'.debug_line'
+.L73:
+	.word	.L224-.L223
+.L223:
+	.half	3
+	.word	.L226-.L225
+.L225:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/MemIf/Implementation',0,0
+	.byte	'MemIf.c',0,1,0,0,0
+.L226:
+	.byte	5,44,7,0,5,2
+	.word	.L48
+	.byte	3,240,0,1,5,3,9
+	.half	.L227-.L48
+	.byte	3,212,0,1,5,12,7,9
+	.half	.L228-.L227
+	.byte	3,2,1,5,13,9
+	.half	.L177-.L228
+	.byte	3,1,1,5,22,3,127,1,5,31,9
+	.half	.L7-.L177
+	.byte	3,8,1,5,14,1,5,30,9
+	.half	.L229-.L7
+	.byte	1,5,63,9
+	.half	.L230-.L229
+	.byte	1,5,43,9
+	.half	.L178-.L230
+	.byte	1,5,13,9
+	.half	.L231-.L178
+	.byte	3,127,1,5,63,9
+	.half	.L179-.L231
+	.byte	3,1,1,5,12,9
+	.half	.L175-.L179
+	.byte	1,5,3,9
+	.half	.L8-.L175
+	.byte	3,5,1,5,27,7,9
+	.half	.L232-.L8
+	.byte	3,2,1,5,44,9
+	.half	.L233-.L232
+	.byte	1,5,63,9
+	.half	.L234-.L233
+	.byte	1,5,80,9
+	.half	.L235-.L234
+	.byte	1,5,3,9
+	.half	.L9-.L235
+	.byte	3,6,1,5,1,3,1,1,7,9
+	.half	.L76-.L9
+	.byte	0,1,1
+.L224:
+	.sdecl	'.debug_ranges',debug,cluster('MemIf_Write')
+	.sect	'.debug_ranges'
+.L74:
+	.word	-1,.L75,0,.L76-.L75,0,0
+	.sdecl	'.debug_info',debug,cluster('MemIf_InvalidateBlock')
+	.sect	'.debug_info'
+.L77:
+	.word	360
+	.half	3
+	.word	.L78
+	.byte	4,1
+	.byte	'../../../../BSW/Components/MemIf/Implementation/MemIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L80,.L79
+	.byte	2
+	.word	.L61
+	.byte	3
+	.byte	'MemIf_InvalidateBlock',0,1,234,1,34
+	.word	.L119
+	.byte	1,1,1
+	.word	.L50,.L136,.L49
+	.byte	4
+	.byte	'DeviceIndex',0,1,234,1,63
+	.word	.L119,.L137
+	.byte	4
+	.byte	'BlockNumber',0,1,234,1,83
+	.word	.L122,.L138
+	.byte	5
+	.word	.L50,.L136
+	.byte	6
+	.byte	'retVal',0,1,237,1,18
+	.word	.L119,.L139
+	.byte	6
+	.byte	'errorId',0,1,238,1,9
+	.word	.L119,.L140
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('MemIf_InvalidateBlock')
+	.sect	'.debug_abbrev'
+.L78:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('MemIf_InvalidateBlock')
+	.sect	'.debug_line'
+.L79:
+	.word	.L237-.L236
+.L236:
+	.half	3
+	.word	.L239-.L238
+.L238:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/MemIf/Implementation',0,0
+	.byte	'MemIf.c',0,1,0,0,0
+.L239:
+	.byte	5,44,7,0,5,2
+	.word	.L50
+	.byte	3,240,0,1,5,3,9
+	.half	.L240-.L50
+	.byte	3,129,1,1,5,12,7,9
+	.half	.L241-.L240
+	.byte	3,2,1,5,13,9
+	.half	.L182-.L241
+	.byte	3,1,1,5,22,3,127,1,5,31,9
+	.half	.L11-.L182
+	.byte	3,8,1,5,14,1,5,30,9
+	.half	.L242-.L11
+	.byte	1,5,60,9
+	.half	.L243-.L242
+	.byte	1,5,43,9
+	.half	.L183-.L243
+	.byte	1,5,13,9
+	.half	.L244-.L183
+	.byte	3,127,1,5,60,9
+	.half	.L184-.L244
+	.byte	3,1,1,5,12,9
+	.half	.L180-.L184
+	.byte	1,5,3,9
+	.half	.L12-.L180
+	.byte	3,5,1,5,27,7,9
+	.half	.L245-.L12
+	.byte	3,2,1,5,44,9
+	.half	.L246-.L245
+	.byte	1,5,63,9
+	.half	.L247-.L246
+	.byte	1,5,85,9
+	.half	.L248-.L247
+	.byte	1,5,3,9
+	.half	.L13-.L248
+	.byte	3,6,1,5,1,3,1,1,7,9
+	.half	.L82-.L13
+	.byte	0,1,1
+.L237:
+	.sdecl	'.debug_ranges',debug,cluster('MemIf_InvalidateBlock')
+	.sect	'.debug_ranges'
+.L80:
+	.word	-1,.L81,0,.L82-.L81,0,0
+	.sdecl	'.debug_info',debug,cluster('MemIf_EraseImmediateBlock')
+	.sect	'.debug_info'
+.L83:
+	.word	364
+	.half	3
+	.word	.L84
+	.byte	4,1
+	.byte	'../../../../BSW/Components/MemIf/Implementation/MemIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L86,.L85
+	.byte	2
+	.word	.L61
+	.byte	3
+	.byte	'MemIf_EraseImmediateBlock',0,1,151,2,34
+	.word	.L119
+	.byte	1,1,1
+	.word	.L52,.L141,.L51
+	.byte	4
+	.byte	'DeviceIndex',0,1,151,2,67
+	.word	.L119,.L142
+	.byte	4
+	.byte	'BlockNumber',0,1,151,2,87
+	.word	.L122,.L143
+	.byte	5
+	.word	.L52,.L141
+	.byte	6
+	.byte	'retVal',0,1,154,2,18
+	.word	.L119,.L144
+	.byte	6
+	.byte	'errorId',0,1,155,2,9
+	.word	.L119,.L145
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('MemIf_EraseImmediateBlock')
+	.sect	'.debug_abbrev'
+.L84:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('MemIf_EraseImmediateBlock')
+	.sect	'.debug_line'
+.L85:
+	.word	.L250-.L249
+.L249:
+	.half	3
+	.word	.L252-.L251
+.L251:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/MemIf/Implementation',0,0
+	.byte	'MemIf.c',0,1,0,0,0
+.L252:
+	.byte	5,44,7,0,5,2
+	.word	.L52
+	.byte	3,240,0,1,5,3,9
+	.half	.L253-.L52
+	.byte	3,174,1,1,5,12,7,9
+	.half	.L254-.L253
+	.byte	3,2,1,5,13,9
+	.half	.L187-.L254
+	.byte	3,1,1,5,22,3,127,1,5,31,9
+	.half	.L15-.L187
+	.byte	3,8,1,5,14,1,5,30,9
+	.half	.L255-.L15
+	.byte	1,5,64,9
+	.half	.L256-.L255
+	.byte	1,5,43,9
+	.half	.L188-.L256
+	.byte	1,5,13,9
+	.half	.L257-.L188
+	.byte	3,127,1,5,64,9
+	.half	.L189-.L257
+	.byte	3,1,1,5,12,9
+	.half	.L185-.L189
+	.byte	1,5,3,9
+	.half	.L16-.L185
+	.byte	3,5,1,5,27,7,9
+	.half	.L258-.L16
+	.byte	3,2,1,5,44,9
+	.half	.L259-.L258
+	.byte	1,5,63,9
+	.half	.L260-.L259
+	.byte	1,5,80,9
+	.half	.L261-.L260
+	.byte	1,5,3,9
+	.half	.L17-.L261
+	.byte	3,6,1,5,1,3,1,1,7,9
+	.half	.L88-.L17
+	.byte	0,1,1
+.L250:
+	.sdecl	'.debug_ranges',debug,cluster('MemIf_EraseImmediateBlock')
+	.sect	'.debug_ranges'
+.L86:
+	.word	-1,.L87,0,.L88-.L87,0,0
+	.sdecl	'.debug_info',debug,cluster('MemIf_Cancel')
+	.sect	'.debug_info'
+.L89:
+	.word	302
+	.half	3
+	.word	.L90
+	.byte	4,1
+	.byte	'../../../../BSW/Components/MemIf/Implementation/MemIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L92,.L91
+	.byte	2
+	.word	.L61
+	.byte	3
+	.byte	'MemIf_Cancel',0,1,196,2,24,1,1,1
+	.word	.L54,.L146,.L53
+	.byte	4
+	.byte	'DeviceIndex',0,1,196,2,43
+	.word	.L119,.L147
+	.byte	5
+	.word	.L54,.L146
+	.byte	6
+	.byte	'errorId',0,1,199,2,9
+	.word	.L119,.L148
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('MemIf_Cancel')
+	.sect	'.debug_abbrev'
+.L90:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('MemIf_Cancel')
+	.sect	'.debug_line'
+.L91:
+	.word	.L263-.L262
+.L262:
+	.half	3
+	.word	.L265-.L264
+.L264:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/MemIf/Implementation',0,0
+	.byte	'MemIf.c',0,1,0,0,0
+.L265:
+	.byte	5,44,7,0,5,2
+	.word	.L54
+	.byte	3,240,0,1,5,3,9
+	.half	.L266-.L54
+	.byte	3,218,1,1,5,13,7,9
+	.half	.L267-.L266
+	.byte	3,2,1,5,35,1,5,22,9
+	.half	.L19-.L267
+	.byte	3,7,1,5,5,1,5,21,9
+	.half	.L268-.L19
+	.byte	1,5,13,9
+	.half	.L269-.L268
+	.byte	3,127,1,5,34,9
+	.half	.L191-.L269
+	.byte	3,1,1,5,41,9
+	.half	.L270-.L191
+	.byte	1,5,3,9
+	.half	.L20-.L270
+	.byte	3,5,1,5,27,7,9
+	.half	.L271-.L20
+	.byte	3,2,1,5,44,9
+	.half	.L272-.L271
+	.byte	1,5,63,9
+	.half	.L273-.L272
+	.byte	1,5,81,9
+	.half	.L274-.L273
+	.byte	1,5,1,9
+	.half	.L21-.L274
+	.byte	3,6,1,7,9
+	.half	.L94-.L21
+	.byte	0,1,1
+.L263:
+	.sdecl	'.debug_ranges',debug,cluster('MemIf_Cancel')
+	.sect	'.debug_ranges'
+.L92:
+	.word	-1,.L93,0,.L94-.L93,0,0
+	.sdecl	'.debug_info',debug,cluster('MemIf_GetStatus')
+	.sect	'.debug_info'
+.L95:
+	.word	390
+	.half	3
+	.word	.L96
+	.byte	4,1
+	.byte	'../../../../BSW/Components/MemIf/Implementation/MemIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L98,.L97
+	.byte	2
+	.word	.L61
+	.byte	3
+	.byte	'MemIf_GetStatus',0,1,244,2,36
+	.word	.L149
+	.byte	1,1,1
+	.word	.L56,.L150,.L55
+	.byte	4
+	.byte	'DeviceIndex',0,1,244,2,58
+	.word	.L119,.L151
+	.byte	5
+	.word	.L56,.L150
+	.byte	6
+	.byte	'errorId',0,1,247,2,9
+	.word	.L119,.L152
+	.byte	6
+	.byte	'retVal',0,1,248,2,20
+	.word	.L149,.L153
+	.byte	6
+	.byte	'MemIf_LoopCounter',0,1,250,2,9
+	.word	.L119,.L154
+	.byte	6
+	.byte	'MemIf_StatusMask',0,1,251,2,9
+	.word	.L119,.L155
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('MemIf_GetStatus')
+	.sect	'.debug_abbrev'
+.L96:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('MemIf_GetStatus')
+	.sect	'.debug_line'
+.L97:
+	.word	.L276-.L275
+.L275:
+	.half	3
+	.word	.L278-.L277
+.L277:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/MemIf/Implementation',0,0
+	.byte	'MemIf.c',0,1,0,0,0
+.L278:
+	.byte	5,26,7,0,5,2
+	.word	.L56
+	.byte	3,250,2,1,5,24,9
+	.half	.L192-.L56
+	.byte	3,5,1,5,8,9
+	.half	.L279-.L192
+	.byte	1,5,63,7,9
+	.half	.L280-.L279
+	.byte	1,5,60,9
+	.half	.L281-.L280
+	.byte	1,5,13,7,9
+	.half	.L282-.L281
+	.byte	3,2,1,5,35,1,5,9,9
+	.half	.L22-.L282
+	.byte	3,10,1,5,60,3,7,1,5,13,9
+	.half	.L283-.L22
+	.byte	3,119,1,5,60,3,9,1,5,5,9
+	.half	.L193-.L283
+	.byte	3,121,1,5,30,7,9
+	.half	.L284-.L193
+	.byte	3,4,1,5,55,1,5,38,9
+	.half	.L285-.L284
+	.byte	3,3,1,5,76,3,125,1,5,95,9
+	.half	.L27-.L285
+	.byte	3,3,1,5,105,9
+	.half	.L286-.L27
+	.byte	1,5,52,9
+	.half	.L287-.L286
+	.byte	1,5,95,3,125,1,5,49,9
+	.half	.L196-.L287
+	.byte	3,3,1,5,29,9
+	.half	.L288-.L196
+	.byte	1,5,26,9
+	.half	.L289-.L288
+	.byte	1,5,55,9
+	.half	.L26-.L289
+	.byte	3,125,1,5,76,9
+	.half	.L290-.L26
+	.byte	1,5,44,7,9
+	.half	.L291-.L290
+	.byte	3,7,1,5,7,9
+	.half	.L292-.L291
+	.byte	1,5,16,7,9
+	.half	.L24-.L292
+	.byte	3,2,1,5,30,1,5,49,9
+	.half	.L28-.L24
+	.byte	3,3,1,5,12,9
+	.half	.L293-.L28
+	.byte	1,5,16,7,9
+	.half	.L294-.L293
+	.byte	3,2,1,5,28,1,5,49,9
+	.half	.L30-.L294
+	.byte	3,3,1,5,12,9
+	.half	.L295-.L30
+	.byte	1,5,16,7,9
+	.half	.L296-.L295
+	.byte	3,2,1,5,37,1,5,16,9
+	.half	.L32-.L296
+	.byte	3,5,1,5,7,3,116,1,5,33,9
+	.half	.L25-.L32
+	.byte	3,19,1,5,32,9
+	.half	.L197-.L25
+	.byte	1,5,45,9
+	.half	.L297-.L197
+	.byte	1,5,55,9
+	.half	.L298-.L297
+	.byte	1,5,14,9
+	.half	.L198-.L298
+	.byte	1,5,3,9
+	.half	.L29-.L198
+	.byte	3,7,1,5,27,7,9
+	.half	.L299-.L29
+	.byte	3,2,1,5,44,9
+	.half	.L300-.L299
+	.byte	1,5,63,9
+	.half	.L301-.L300
+	.byte	1,5,85,9
+	.half	.L302-.L301
+	.byte	1,5,3,9
+	.half	.L35-.L302
+	.byte	3,6,1,5,1,3,1,1,7,9
+	.half	.L100-.L35
+	.byte	0,1,1
+.L276:
+	.sdecl	'.debug_ranges',debug,cluster('MemIf_GetStatus')
+	.sect	'.debug_ranges'
+.L98:
+	.word	-1,.L99,0,.L100-.L99,0,0
+	.sdecl	'.debug_info',debug,cluster('MemIf_GetJobResult')
+	.sect	'.debug_info'
+.L101:
+	.word	332
+	.half	3
+	.word	.L102
+	.byte	4,1
+	.byte	'../../../../BSW/Components/MemIf/Implementation/MemIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L104,.L103
+	.byte	2
+	.word	.L61
+	.byte	3
+	.byte	'MemIf_GetJobResult',0,1,204,3,39
+	.word	.L156
+	.byte	1,1,1
+	.word	.L58,.L157,.L57
+	.byte	4
+	.byte	'DeviceIndex',0,1,204,3,64
+	.word	.L119,.L158
+	.byte	5
+	.word	.L58,.L157
+	.byte	6
+	.byte	'errorId',0,1,207,3,9
+	.word	.L119,.L159
+	.byte	6
+	.byte	'retVal',0,1,208,3,23
+	.word	.L156,.L160
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('MemIf_GetJobResult')
+	.sect	'.debug_abbrev'
+.L102:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('MemIf_GetJobResult')
+	.sect	'.debug_line'
+.L103:
+	.word	.L304-.L303
+.L303:
+	.half	3
+	.word	.L306-.L305
+.L305:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/MemIf/Implementation',0,0
+	.byte	'MemIf.c',0,1,0,0,0
+.L306:
+	.byte	5,44,7,0,5,2
+	.word	.L58
+	.byte	3,240,0,1,5,3,9
+	.half	.L307-.L58
+	.byte	3,227,2,1,5,13,7,9
+	.half	.L308-.L307
+	.byte	3,2,1,5,12,9
+	.half	.L200-.L308
+	.byte	3,1,1,5,35,3,127,1,5,31,9
+	.half	.L37-.L200
+	.byte	3,8,1,5,14,1,5,30,9
+	.half	.L309-.L37
+	.byte	1,5,13,9
+	.half	.L310-.L309
+	.byte	3,127,1,5,43,9
+	.half	.L201-.L310
+	.byte	3,1,1,5,56,9
+	.half	.L311-.L201
+	.byte	1,5,12,9
+	.half	.L202-.L311
+	.byte	1,5,3,9
+	.half	.L38-.L202
+	.byte	3,5,1,5,27,7,9
+	.half	.L312-.L38
+	.byte	3,2,1,5,44,9
+	.half	.L313-.L312
+	.byte	1,5,63,9
+	.half	.L314-.L313
+	.byte	1,5,89,9
+	.half	.L315-.L314
+	.byte	1,5,3,9
+	.half	.L39-.L315
+	.byte	3,6,1,5,1,3,1,1,7,9
+	.half	.L106-.L39
+	.byte	0,1,1
+.L304:
+	.sdecl	'.debug_ranges',debug,cluster('MemIf_GetJobResult')
+	.sect	'.debug_ranges'
+.L104:
+	.word	-1,.L105,0,.L106-.L105,0,0
+	.sdecl	'.debug_info',debug,cluster('MemIf_SetMode')
+	.sect	'.debug_info'
+.L107:
+	.word	306
+	.half	3
+	.word	.L108
+	.byte	4,1
+	.byte	'../../../../BSW/Components/MemIf/Implementation/MemIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L110,.L109
+	.byte	2
+	.word	.L61
+	.byte	3
+	.byte	'MemIf_SetMode',0,1,169,4,24,1,1,1
+	.word	.L60,.L161,.L59
+	.byte	4
+	.byte	'Mode',0,1,169,4,53
+	.word	.L162,.L163
+	.byte	5
+	.word	.L60,.L161
+	.byte	6
+	.byte	'MemIf_LoopCounter',0,1,171,4,9
+	.word	.L119,.L164
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('MemIf_SetMode')
+	.sect	'.debug_abbrev'
+.L108:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('MemIf_SetMode')
+	.sect	'.debug_line'
+.L109:
+	.word	.L317-.L316
+.L316:
+	.half	3
+	.word	.L319-.L318
+.L318:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/MemIf/Implementation',0,0
+	.byte	'MemIf.c',0,1,0,0,0
+.L319:
+	.byte	5,24,7,0,5,2
+	.word	.L60
+	.byte	3,168,4,1,5,5,3,6,1,5,25,9
+	.half	.L203-.L60
+	.byte	3,126,1,5,50,1,5,5,9
+	.half	.L204-.L203
+	.byte	3,2,1,5,50,9
+	.half	.L320-.L204
+	.byte	3,126,1,5,71,9
+	.half	.L321-.L320
+	.byte	1,5,40,9
+	.half	.L42-.L321
+	.byte	3,2,1,5,49,9
+	.half	.L322-.L42
+	.byte	1,5,90,9
+	.half	.L323-.L322
+	.byte	3,126,1,5,50,9
+	.half	.L41-.L323
+	.byte	1,5,71,9
+	.half	.L324-.L41
+	.byte	1,5,1,7,9
+	.half	.L325-.L324
+	.byte	3,4,1,7,9
+	.half	.L112-.L325
+	.byte	0,1,1
+.L317:
+	.sdecl	'.debug_ranges',debug,cluster('MemIf_SetMode')
+	.sect	'.debug_ranges'
+.L110:
+	.word	-1,.L111,0,.L112-.L111,0,0
+	.sdecl	'.debug_info',debug,cluster('MemIf_IsBitSet')
+	.sect	'.debug_info'
+.L113:
+	.word	295
+	.half	3
+	.word	.L114
+	.byte	4,1
+	.byte	'../../../../BSW/Components/MemIf/Implementation/MemIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L116,.L115
+	.byte	2
+	.word	.L61
+	.byte	3
+	.byte	'MemIf_IsBitSet',0,1,125,54
+	.word	.L119
+	.byte	1,1
+	.word	.L44,.L165,.L43
+	.byte	4
+	.byte	'Mask',0,1,125,75
+	.word	.L119,.L166
+	.byte	4
+	.byte	'Status',0,1,125,98
+	.word	.L149,.L167
+	.byte	5
+	.word	.L44,.L165
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('MemIf_IsBitSet')
+	.sect	'.debug_abbrev'
+.L114:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('MemIf_IsBitSet')
+	.sect	'.debug_line'
+.L115:
+	.word	.L327-.L326
+.L326:
+	.half	3
+	.word	.L329-.L328
+.L328:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/MemIf/Implementation',0,0
+	.byte	'MemIf.c',0,1,0,0,0
+.L329:
+	.byte	5,27,7,0,5,2
+	.word	.L44
+	.byte	3,254,0,1,5,30,9
+	.half	.L330-.L44
+	.byte	1,5,17,9
+	.half	.L331-.L330
+	.byte	1,5,1,9
+	.half	.L168-.L331
+	.byte	3,1,1,7,9
+	.half	.L118-.L168
+	.byte	0,1,1
+.L327:
+	.sdecl	'.debug_ranges',debug,cluster('MemIf_IsBitSet')
+	.sect	'.debug_ranges'
+.L116:
+	.word	-1,.L117,0,.L118-.L117,0,0
+	.sdecl	'.debug_loc',debug,cluster('MemIf_Cancel')
+	.sect	'.debug_loc'
+.L147:
+	.word	-1,.L54,0,.L190-.L54
+	.half	1
+	.byte	84
+	.word	0,0
+.L53:
+	.word	-1,.L54,0,.L146-.L54
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L148:
+	.word	-1,.L54,.L191-.L54,.L146-.L54
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('MemIf_EraseImmediateBlock')
+	.sect	'.debug_loc'
+.L143:
+	.word	-1,.L52,0,.L185-.L52
+	.half	1
+	.byte	85
+	.word	.L188-.L52,.L185-.L52
+	.half	1
+	.byte	84
+	.word	0,0
+.L142:
+	.word	-1,.L52,0,.L186-.L52
+	.half	1
+	.byte	84
+	.word	0,0
+.L51:
+	.word	-1,.L52,0,.L141-.L52
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L145:
+	.word	-1,.L52,.L189-.L52,.L141-.L52
+	.half	1
+	.byte	95
+	.word	0,0
+.L144:
+	.word	-1,.L52,.L187-.L52,.L15-.L52
+	.half	1
+	.byte	88
+	.word	.L185-.L52,.L16-.L52
+	.half	1
+	.byte	82
+	.word	.L16-.L52,.L141-.L52
+	.half	1
+	.byte	88
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('MemIf_GetJobResult')
+	.sect	'.debug_loc'
+.L158:
+	.word	-1,.L58,0,.L199-.L58
+	.half	1
+	.byte	84
+	.word	0,0
+.L57:
+	.word	-1,.L58,0,.L157-.L58
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L159:
+	.word	-1,.L58,.L200-.L58,.L37-.L58
+	.half	1
+	.byte	95
+	.word	.L201-.L58,.L157-.L58
+	.half	1
+	.byte	95
+	.word	0,0
+.L160:
+	.word	-1,.L58,.L202-.L58,.L38-.L58
+	.half	1
+	.byte	82
+	.word	.L38-.L58,.L157-.L58
+	.half	1
+	.byte	88
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('MemIf_GetStatus')
+	.sect	'.debug_loc'
+.L151:
+	.word	-1,.L56,0,.L27-.L56
+	.half	1
+	.byte	84
+	.word	.L25-.L56,.L197-.L56
+	.half	1
+	.byte	84
+	.word	0,0
+.L55:
+	.word	-1,.L56,0,.L150-.L56
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L154:
+	.word	-1,.L56,.L194-.L56,.L195-.L56
+	.half	1
+	.byte	88
+	.word	.L196-.L56,.L24-.L56
+	.half	1
+	.byte	88
+	.word	.L28-.L56,.L25-.L56
+	.half	1
+	.byte	88
+	.word	0,0
+.L155:
+	.word	-1,.L56,.L192-.L56,.L150-.L56
+	.half	1
+	.byte	89
+	.word	0,0
+.L152:
+	.word	-1,.L56,.L193-.L56,.L150-.L56
+	.half	1
+	.byte	90
+	.word	0,0
+.L153:
+	.word	-1,.L56,.L198-.L56,.L29-.L56
+	.half	1
+	.byte	82
+	.word	.L29-.L56,.L150-.L56
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('MemIf_InvalidateBlock')
+	.sect	'.debug_loc'
+.L138:
+	.word	-1,.L50,0,.L180-.L50
+	.half	1
+	.byte	85
+	.word	.L183-.L50,.L180-.L50
+	.half	1
+	.byte	84
+	.word	0,0
+.L137:
+	.word	-1,.L50,0,.L181-.L50
+	.half	1
+	.byte	84
+	.word	0,0
+.L49:
+	.word	-1,.L50,0,.L136-.L50
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L140:
+	.word	-1,.L50,.L184-.L50,.L136-.L50
+	.half	1
+	.byte	95
+	.word	0,0
+.L139:
+	.word	-1,.L50,.L182-.L50,.L11-.L50
+	.half	1
+	.byte	88
+	.word	.L180-.L50,.L12-.L50
+	.half	1
+	.byte	82
+	.word	.L12-.L50,.L136-.L50
+	.half	1
+	.byte	88
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('MemIf_IsBitSet')
+	.sect	'.debug_loc'
+.L166:
+	.word	-1,.L44,0,.L168-.L44
+	.half	1
+	.byte	84
+	.word	0,0
+.L43:
+	.word	-1,.L44,0,.L165-.L44
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L167:
+	.word	-1,.L44,0,.L165-.L44
+	.half	1
+	.byte	85
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('MemIf_Read')
+	.sect	'.debug_loc'
+.L123:
+	.word	-1,.L46,0,.L169-.L46
+	.half	1
+	.byte	85
+	.word	.L173-.L46,.L170-.L46
+	.half	1
+	.byte	84
+	.word	0,0
+.L124:
+	.word	-1,.L46,0,.L170-.L46
+	.half	1
+	.byte	86
+	.word	.L169-.L46,.L170-.L46
+	.half	1
+	.byte	85
+	.word	0,0
+.L126:
+	.word	-1,.L46,0,.L170-.L46
+	.half	1
+	.byte	100
+	.word	0,0
+.L121:
+	.word	-1,.L46,0,.L171-.L46
+	.half	1
+	.byte	84
+	.word	0,0
+.L127:
+	.word	-1,.L46,0,.L170-.L46
+	.half	1
+	.byte	87
+	.word	0,0
+.L45:
+	.word	-1,.L46,0,.L120-.L46
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L129:
+	.word	-1,.L46,.L172-.L46,.L3-.L46
+	.half	1
+	.byte	95
+	.word	.L174-.L46,.L120-.L46
+	.half	1
+	.byte	95
+	.word	0,0
+.L128:
+	.word	-1,.L46,.L170-.L46,.L4-.L46
+	.half	1
+	.byte	82
+	.word	.L4-.L46,.L120-.L46
+	.half	1
+	.byte	88
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('MemIf_SetMode')
+	.sect	'.debug_loc'
+.L164:
+	.word	-1,.L60,.L204-.L60,.L205-.L60
+	.half	1
+	.byte	95
+	.word	.L41-.L60,.L161-.L60
+	.half	1
+	.byte	95
+	.word	0,0
+.L59:
+	.word	-1,.L60,0,.L161-.L60
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L163:
+	.word	-1,.L60,0,.L42-.L60
+	.half	1
+	.byte	84
+	.word	.L203-.L60,.L161-.L60
+	.half	1
+	.byte	88
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('MemIf_Write')
+	.sect	'.debug_loc'
+.L132:
+	.word	-1,.L48,0,.L175-.L48
+	.half	1
+	.byte	85
+	.word	.L178-.L48,.L175-.L48
+	.half	1
+	.byte	84
+	.word	0,0
+.L133:
+	.word	-1,.L48,0,.L175-.L48
+	.half	1
+	.byte	100
+	.word	0,0
+.L131:
+	.word	-1,.L48,0,.L176-.L48
+	.half	1
+	.byte	84
+	.word	0,0
+.L47:
+	.word	-1,.L48,0,.L130-.L48
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L135:
+	.word	-1,.L48,.L179-.L48,.L130-.L48
+	.half	1
+	.byte	95
+	.word	0,0
+.L134:
+	.word	-1,.L48,.L177-.L48,.L7-.L48
+	.half	1
+	.byte	88
+	.word	.L175-.L48,.L8-.L48
+	.half	1
+	.byte	82
+	.word	.L8-.L48,.L130-.L48
+	.half	1
+	.byte	88
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L332:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('MemIf_IsBitSet')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L332,.L44,.L165-.L44
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('MemIf_Read')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L332,.L46,.L120-.L46
+	.sdecl	'.debug_frame',debug,cluster('MemIf_Write')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L332,.L48,.L130-.L48
+	.sdecl	'.debug_frame',debug,cluster('MemIf_InvalidateBlock')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L332,.L50,.L136-.L50
+	.sdecl	'.debug_frame',debug,cluster('MemIf_EraseImmediateBlock')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L332,.L52,.L141-.L52
+	.sdecl	'.debug_frame',debug,cluster('MemIf_Cancel')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L332,.L54,.L146-.L54
+	.sdecl	'.debug_frame',debug,cluster('MemIf_GetStatus')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L332,.L56,.L150-.L56
+	.sdecl	'.debug_frame',debug,cluster('MemIf_GetJobResult')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L332,.L58,.L157-.L58
+	.sdecl	'.debug_frame',debug,cluster('MemIf_SetMode')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L332,.L60,.L161-.L60
+	; Module end

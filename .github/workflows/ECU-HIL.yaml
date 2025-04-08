@@ -1,0 +1,180 @@
+name: HIL Workflow
+
+on:
+    push:
+      branches:
+        - main
+    pull_request:
+    workflow_dispatch:
+
+jobs:
+    build-sut:
+      name: Build SUT and flash software
+      runs-on: HIL
+      steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+    
+      - name: Cache BSW
+        id: cache-bsw
+        uses: actions/cache@v4
+        env:
+          NODE_EXTRA_CA_CERTS: .\certs\Vector_Root_2.0.crt 
+        with:
+          path: |
+            .\ECU\BFC\Appl\GenData
+          key: ${{ hashFiles('.\ECU\BFC\LightControl.dpa','.\ECU\BFC\Config\**') }}       
+    
+      - name: Check if ZIP file exists
+        id: check_zip
+        run: |
+            if (Test-Path -Path ".\..\BSW.zip") {
+             echo "::set-output name=zip-exists::true"
+            } else {
+             echo "::set-output name=zip-exists::false"
+            }
+            
+      - name: Check if SIP file exists
+        id: check_SIP
+        run: |
+            if (Test-Path -Path ".\..\BSW") {
+             echo "::set-output name=SIP-exists::true"
+              } else {
+                echo "::set-output name=SIP-exists::false"
+              }
+      
+      - name: Download SIP 
+        if: steps.check_zip.outputs.zip-exists == 'false'
+        run: curl -L -o .\..\BSW.zip https:\\portal.vector.com\shared\36d0729e-2c75-401b-b9bf-107f6459b57f\BSW.zip
+            
+      - name: Unzip the file
+        if: steps.check_SIP.outputs.SIP-exists == 'false'
+        run: |
+          powershell -Command "Expand-Archive -Path .\..\BSW.zip" -DestinationPath .\..
+
+      - name: Cache SUT
+        id: cache-sut
+        uses: actions/cache@v4
+        env:
+          NODE_EXTRA_CA_CERTS: .\certs\Vector_Root_2.0.crt 
+        with:
+          path: |
+            .\ECU\BFC\Appl\HIL_ECU
+          key: ${{ hashFiles('.\ECU\BFC\LightControl.dpa','.\ECU\BFC\Config\**','.\ECU\BFC\Appl\Source\**','.\ECU\BFC\Appl\Include\**','.\ECU\BFC\Appl\Makefile','.\ECU\*.bat','.\ECU\**\*.bat', '.\ECU\vFlash\**') }}
+
+      - name: Run DaVinci Configurator CLI
+        env:
+          NODE_EXTRA_CA_CERTS: .\certs\Vector_Root_2.0.crt 
+        if: steps.cache-bsw.outputs.cache-hit != 'true'
+        run: |
+          & "$env:DVCFG\DVCfgCmd.exe" --project .\ECU\BFC\LightControl.dpa --generate --genType REAL --saveProject --syncSystemDescription
+
+      - name: Compile SUT
+        if: steps.cache-sut.outputs.cache-hit != 'true'
+        run: |
+            .\m.bat -j10
+        working-directory: .\ECU\BFC\Appl   
+
+      - name: Generate checksum
+        run: |
+          .\generate_checksums_separate_files.bat .\BFC\Appl\HIL_ECU\BFC.hex
+        working-directory: .\ECU
+    
+      - name: Flash new Software with vFlash
+        run: |
+          .\ExecuteFlashing.bat
+        working-directory: .\ECU
+  
+    # Job to build the Simulation      
+    job-BuildSimulation:
+      name: Build Simulation
+      needs: [build-sut]
+      runs-on: HIL
+      steps:                    
+      - name: Run EnvironmentMake
+        run: |
+          &"$env:CANoeSE_InstallDir64\environment-make.exe" -o .\compiled-environment-and-tests -s HIL .\environment-make\venvironment.yaml; 
+          
+      - name: Run TestUnitMake
+        run: |
+          & "$env:CANoeSE_InstallDir64\test-unit-make.exe" -e .\compiled-environment-and-tests\HIL.venvironment -o .\compiled-environment-and-tests .\tests\auto\auto.vtestunit.yaml .\tests\basic\basic.vtestunit.yaml .\tests\testmsg\cycletime.vtestunit.yaml 
+
+    # Job to start the Simulation  
+    job-RunSimulation:
+      name: Run Simulation
+      needs: [job-BuildSimulation]
+      runs-on: HIL
+      strategy:
+        matrix:
+          TESTNAME: [auto, basic, cycletime]
+        fail-fast: false
+      steps:
+      - name: Start Measurement & tests
+        run: |
+          & "$env:CANoeSE_InstallDir64\canoe-se.exe" .\compiled-environment-and-tests\HIL.venvironment --test-unit .\compiled-environment-and-tests\${{ matrix.TESTNAME }}.vtestunit -d .\simulation
+
+      - name: Export CANoe test reports
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v3
+        env:
+          NODE_EXTRA_CA_CERTS: .\certs\Vector_Root_2.0.crt 
+        with:
+          name: Test Reports CANoe-HIL
+          path: |
+            .\simulation\TestReports\
+          retention-days: 7
+
+    # Job to display the test reports
+    job-DisplayTestReports:
+      name: Display Test Report
+      if: ${{ !cancelled() }}
+      needs: job-RunSimulation
+      runs-on: HIL
+      steps:
+      # convert all test reports to XUnit format
+      - name: Convert all test reports to XUnit format
+        run: |
+          get-childitem . -Filter *.vtestreport | foreach {
+            &"$env:TestReportViewer_InstallDir\ReportViewerCli.exe" -r $_ -xu
+          }
+        working-directory: .\simulation\TestReports  
+
+      # display the test results using the dorny\test-reporter action
+      - name: Display test results
+        uses: dorny/test-reporter@v1.9.1
+        env:
+          NODE_EXTRA_CA_CERTS: .\certs\Vector_Root_2.0.crt        
+        with:
+          name: HIL Test Results                                      # Name of the check run which will be created
+          path: "./simulation/TestReports/*.xml"                   # Path to test results
+          reporter: java-junit                                          # Format of test results
+          fail-on-error: 'false'                                        # Don't mark as failing job if test report contains any failed test          
+
+
+    # Job to display the test reports in squore
+    job-AddToSquore:
+      name: Add Test Report to Squore
+      if: ${{ !cancelled() }}
+      needs: job-RunSimulation
+      runs-on: dev
+      steps:
+        - name: Download test reports
+          uses: actions/download-artifact@v2
+          env:
+            NODE_EXTRA_CA_CERTS: .\..\..\..\certs\Vector_Root_2.0.crt  
+          with:
+            name: Test Reports CANoe-HIL
+            path: ./downloaded-reports-hil/
+
+        # convert all test reports to XML format for Squore
+        - name: Convert all test reports to xml format
+          run: |
+            get-childitem . -Filter *.vtestreport | foreach {
+              &"$env:TestReportViewer_InstallDir\ReportViewerCli.exe" -r $_ -e
+            }
+          working-directory: .\downloaded-reports-hil\  
+        
+        - name: Upload test reports to Squore
+          run: |
+            & .\import.bat "hil" "hil-${{ github.run_id }}-${{ github.run_attempt }}"
+          working-directory: .\..\..\..\SquoreAgent\  

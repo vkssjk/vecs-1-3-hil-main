@@ -1,0 +1,371 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v6.2r1 Build 17012451 SN 07925145"
+	.compiler_invocation	"ctc -f cc11580a -c99 --integer-enumeration -D__CPU__=userdef162 -D__CPU_USERDEF162__ --core=tc1.6.2 --fp-model=+float -DBRS_PLATFORM_AURIX -DBRS_COMP_TASKING -I../../../../BSW/Components/BswM/Implementation -I../../../../BSW/Components/CanIf/Implementation -I../../../../BSW/Components/CanSM/Implementation -I../../../../BSW/Components/CanTp/Implementation -I../../../../BSW/Components/Can_30_Core/Implementation -I../../../../BSW/Components/Com/Implementation -I../../../../BSW/Components/ComM/Implementation -I../../../../BSW/Components/Crc -I../../../../BSW/Components/Crc/Implementation -I../../../../BSW/Components/Dcm/Implementation -I../../../../BSW/Components/Dem/Implementation -I../../../../BSW/Components/Det/Implementation -I../../../../BSW/Components/EcuM/Implementation -I../../../../BSW/Components/GenData -I../../../../BSW/Components/Mcal_Tc3xx -I../../../../BSW/Components/Mcal_Tc3xx/Implementation -I../../../../BSW/Components/MemIf -I../../../../BSW/Components/MemIf/Implementation -I../../../../BSW/Components/NvM -I../../../../BSW/Components/NvM/Implementation -I../../../../BSW/Components/Os/Implementation -I../../../../BSW/Components/PduR/Implementation -I../../../../BSW/Components/VStdLib/Implementation -I../../../../BSW/Components/vCan_30_Mcan/Implementation -I../../../../BSW/DemoComponents/vLinkGen/Implementation -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Autosar_Srv -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Integration -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Irq/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Infra_Prod/Sfr/TC39xB/_Reg -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Adc/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Dio/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Fee/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Fls_17_Dmu/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/McalLib/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/McalLib/ssc/inc/AS440 -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Mcu/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Port/ssc/inc -I../../../../BSW/Components/_Common/Implementation -IGenData -IInclude -ID:/TASKING/TriCorev6.2r1/ctc/include -IGenData/Components -IGenData/inc --debug-info=default --align=4 --default-a0-size=0 --default-a1-size=0 --default-near-size=0 --optimize=acefgIklMnopRsUvwy,+predict --tradeoff=2 --language=-gcc,+volatile,-strings,-comments -o o\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\Source\\BSW_Handler.src ../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BSW_Handler.c"
+	.compiler_name		"ctc"
+	;source	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BSW_Handler.c'
+
+	
+$TC162
+	
+	.sdecl	'.text.BSW_Handler.BSW_Handler_10ms',code,cluster('BSW_Handler_10ms')
+	.sect	'.text.BSW_Handler.BSW_Handler_10ms'
+	.align	2
+	
+	.global	BSW_Handler_10ms
+; Function BSW_Handler_10ms
+.L14:
+	.align	4
+BSW_Handler_10ms:	.type	func
+.L3:
+	ret
+.L22:
+	
+__BSW_Handler_10ms_function_end:
+	.size	BSW_Handler_10ms,__BSW_Handler_10ms_function_end-BSW_Handler_10ms
+.L15:
+	; End of function
+	
+	.sdecl	'.text.BSW_Handler.BSW_Handler_Init',code,cluster('BSW_Handler_Init')
+	.sect	'.text.BSW_Handler.BSW_Handler_Init'
+	.align	2
+	
+	.global	BSW_Handler_Init
+; Function BSW_Handler_Init
+.L20:
+	.align	4
+BSW_Handler_Init:	.type	func
+.L5:
+	mov	d4,#0
+	mov	d5,#2
+	j	ComM_RequestComMode
+.L23:
+	
+__BSW_Handler_Init_function_end:
+	.size	BSW_Handler_Init,__BSW_Handler_Init_function_end-BSW_Handler_Init
+.L21:
+	; End of function
+	
+	.calls	'BSW_Handler_Init','ComM_RequestComMode'
+	.calls	'BSW_Handler_10ms','',0
+	.extern	ComM_RequestComMode
+	.calls	'BSW_Handler_Init','',0
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L7:
+	.word	2681
+	.half	3
+	.word	.L8
+	.byte	4
+.L6:
+	.byte	1
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BSW_Handler.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L9
+	.byte	2
+	.byte	'unsigned char',0,1,8,2
+	.byte	'unsigned short int',0,2,7,3
+	.byte	'ComM_RequestComMode',0,1,58,42
+	.word	227
+	.byte	1,1,1,1,4
+	.byte	'parg0',0,1,58,82
+	.word	244
+	.byte	4
+	.byte	'ComMode',0,1,58,103
+	.word	227
+	.byte	0,5,1,6
+	.word	329
+	.byte	7
+	.byte	'__codeptr',0,2,1,1
+	.word	331
+	.byte	7
+	.byte	'boolean',0,3,140,1,29
+	.word	227
+	.byte	2
+	.byte	'char',0,1,6,7
+	.byte	'sint8',0,3,142,1,31
+	.word	371
+	.byte	7
+	.byte	'uint8',0,3,143,1,31
+	.word	227
+	.byte	2
+	.byte	'short int',0,2,5,7
+	.byte	'sint16',0,3,144,1,31
+	.word	409
+	.byte	7
+	.byte	'uint16',0,3,145,1,31
+	.word	244
+	.byte	2
+	.byte	'long int',0,4,5,7
+	.byte	'sint32',0,3,146,1,31
+	.word	454
+	.byte	2
+	.byte	'unsigned long int',0,4,7,7
+	.byte	'uint32',0,3,147,1,31
+	.word	482
+	.byte	7
+	.byte	'Std_ReturnType',0,4,120,15
+	.word	227
+	.byte	7
+	.byte	'Std_TransformerErrorCode',0,4,131,1,15
+	.word	227
+	.byte	7
+	.byte	'Std_TransformerClass',0,4,133,1,15
+	.word	227
+	.byte	7
+	.byte	'PduLengthType',0,5,70,16
+	.word	244
+	.byte	6
+	.word	227
+	.byte	7
+	.byte	'SduDataPtrType',0,6,178,1,54
+	.word	628
+	.byte	8,6,201,1,9,4,9
+	.byte	'TP_DATACONF',0,0,9
+	.byte	'TP_DATARETRY',0,1,9
+	.byte	'TP_CONFPENDING',0,2,0,7
+	.byte	'TpDataStateType',0,6,208,1,3
+	.word	657
+	.byte	10
+	.byte	'sDet_PCConfigType',0,7,243,1,16,1,11
+	.byte	'Det_PCConfigNeverUsed',0
+	.word	227
+	.byte	1,2,35,0,0,7
+	.byte	'Det_PCConfigType',0,7,246,1,3
+	.word	735
+	.byte	7
+	.byte	'ComM_UserHandleType',0,8,78,16
+	.word	244
+	.byte	7
+	.byte	'Dcm_DataElement_Boot_Software_Boot_Software_Identification_PrimitiveType',0,8,84,16
+	.word	482
+	.byte	7
+	.byte	'Dcm_DataElement_Boot_Software_NumberOfModules_PrimitiveType',0,8,87,15
+	.word	227
+	.byte	7
+	.byte	'Dcm_DataElement_DID_0x0017_DID_Sint32_Array_ArrayType',0,8,90,16
+	.word	454
+	.byte	7
+	.byte	'Dcm_DataElement_DID_0x0018_DID_Uint32_Array_ArrayType',0,8,93,16
+	.word	482
+	.byte	7
+	.byte	'Dcm_DataElement_DID_0x0019_DID_Sint16_Array_ArrayType',0,8,96,16
+	.word	409
+	.byte	7
+	.byte	'Dcm_DataElement_DID_0x001A_DID_Uint16_Array_ArrayType',0,8,99,16
+	.word	244
+	.byte	7
+	.byte	'Dcm_DataElement_DID_0x001B_DID_Sint8_Array_ArrayType',0,8,102,15
+	.word	371
+	.byte	7
+	.byte	'Dcm_DataElement_DID_0xF410_DID_Data_PrimitiveType',0,8,105,16
+	.word	244
+	.byte	7
+	.byte	'Dcm_DataElement_DID_0xF412_DID_Data_PrimitiveType',0,8,108,16
+	.word	244
+	.byte	7
+	.byte	'Dcm_DataElement_DID_0xF413_DID_Data_PrimitiveType',0,8,111,16
+	.word	244
+	.byte	7
+	.byte	'Dcm_DataElement_DataDiagnosticIdentifier_DID_DataDiagnosticIdentifier_PrimitiveType',0,8,114,16
+	.word	244
+	.byte	7
+	.byte	'Dcm_DataElement_DevelopmentData_CanDriverVersion_PrimitiveType',0,8,117,16
+	.word	244
+	.byte	7
+	.byte	'Dcm_DataElement_DevelopmentData_DiagnosticModuleVersion_PrimitiveType',0,8,120,16
+	.word	244
+	.byte	7
+	.byte	'Dcm_DataElement_DevelopmentData_NmVersion_PrimitiveType',0,8,123,16
+	.word	244
+	.byte	7
+	.byte	'Dcm_DataElement_DevelopmentData_OperatingSystemVersion_PrimitiveType',0,8,126,16
+	.word	244
+	.byte	7
+	.byte	'Dcm_DataElement_DevelopmentData_TransportLayerVersion_PrimitiveType',0,8,129,1,16
+	.word	244
+	.byte	7
+	.byte	'Dcm_DataElement_Example_ReadWriteData_GlobalTime_PrimitiveType',0,8,132,1,16
+	.word	482
+	.byte	7
+	.byte	'Dcm_DataElement_Example_WriteOnlyDID_DID_DataObject_PrimitiveType',0,8,135,1,15
+	.word	227
+	.byte	7
+	.byte	'Dcm_DataElement_SampleIoControl_DID_Data_PrimitiveType',0,8,138,1,16
+	.word	482
+	.byte	7
+	.byte	'Dcm_DataElement_SerialNumber_SerialNumber_PrimitiveType',0,8,141,1,16
+	.word	482
+	.byte	7
+	.byte	'Dcm_RequestDataOut_SampleRoutineControl_Out_ResultPrimitiveType',0,8,147,1,16
+	.word	244
+	.byte	7
+	.byte	'Dcm_RequestDataOut_SampleRoutineControl_StartOnly_Out_ResultPrimitiveType',0,8,153,1,16
+	.word	482
+	.byte	7
+	.byte	'Dcm_StartDataIn_SampleRoutineControl_In_Option0PrimitiveType',0,8,159,1,15
+	.word	227
+	.byte	7
+	.byte	'Dcm_StartDataIn_SampleRoutineControl_StartOnly_In_Option1ArrayType',0,8,165,1,15
+	.word	227
+	.byte	7
+	.byte	'Dcm_StartDataOut_SampleRoutineControl_Out_InitStatePrimitiveType',0,8,168,1,16
+	.word	482
+	.byte	7
+	.byte	'Dcm_StopDataOut_SampleRoutineControl_Out_StopStatePrimitiveType',0,8,174,1,16
+	.word	482
+	.byte	7
+	.byte	'ComM_ModeType',0,8,204,1,15
+	.word	227
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L8:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,36,0,3,8,11,15,62,15,0,0,3,46,1,3,8,58,15,59,15,57,15
+	.byte	73,19,54,15,39,12,63,12,60,12,0,0,4,5,0,3,8,58,15,59,15,57,15,73,19,0,0,5,21,0,54,15,0,0,6,15,0,73,19
+	.byte	0,0,7,22,0,3,8,58,15,59,15,57,15,73,19,0,0,8,4,1,58,15,59,15,57,15,11,15,0,0,9,40,0,3,8,28,13,0,0,10,19
+	.byte	1,3,8,58,15,59,15,57,15,11,15,0,0,11,13,0,3,8,73,19,11,15,56,9,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L9:
+	.word	.L25-.L24
+.L24:
+	.half	3
+	.word	.L27-.L26
+.L26:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'GenData',0,0
+	.byte	'GenData\\Components\\Rte_BSW_Handler.h',0,0,0,0
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BSW_Handler.c',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\Platform_Types.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\Std_Types.h',0,0,0,0
+	.byte	'ComStack_Cfg.h',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\ComStack_Types.h',0,0,0,0
+	.byte	'Det_Cfg.h',0,1,0,0
+	.byte	'Rte_Type.h',0,1,0,0,0
+.L27:
+.L25:
+	.sdecl	'.debug_info',debug,cluster('BSW_Handler_10ms')
+	.sect	'.debug_info'
+.L10:
+	.word	279
+	.half	3
+	.word	.L11
+	.byte	4,1
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BSW_Handler.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L13,.L12
+	.byte	2
+	.word	.L6
+	.byte	3
+	.byte	'BSW_Handler_10ms',0,1,125,30,1,1,1
+	.word	.L3,.L22,.L2
+	.byte	4
+	.word	.L3,.L22
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('BSW_Handler_10ms')
+	.sect	'.debug_abbrev'
+.L11:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('BSW_Handler_10ms')
+	.sect	'.debug_line'
+.L12:
+	.word	.L29-.L28
+.L28:
+	.half	3
+	.word	.L31-.L30
+.L30:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BSW_Handler.c',0,0,0,0,0
+.L31:
+	.byte	5,1,7,0,5,2
+	.word	.L3
+	.byte	3,135,1,1,7,9
+	.half	.L15-.L3
+	.byte	0,1,1
+.L29:
+	.sdecl	'.debug_ranges',debug,cluster('BSW_Handler_10ms')
+	.sect	'.debug_ranges'
+.L13:
+	.word	-1,.L14,0,.L15-.L14,0,0
+	.sdecl	'.debug_info',debug,cluster('BSW_Handler_Init')
+	.sect	'.debug_info'
+.L16:
+	.word	280
+	.half	3
+	.word	.L17
+	.byte	4,1
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BSW_Handler.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L19,.L18
+	.byte	2
+	.word	.L6
+	.byte	3
+	.byte	'BSW_Handler_Init',0,1,167,1,30,1,1,1
+	.word	.L5,.L23,.L4
+	.byte	4
+	.word	.L5,.L23
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('BSW_Handler_Init')
+	.sect	'.debug_abbrev'
+.L17:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('BSW_Handler_Init')
+	.sect	'.debug_line'
+.L18:
+	.word	.L33-.L32
+.L32:
+	.half	3
+	.word	.L35-.L34
+.L34:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BSW_Handler.c',0,0,0,0,0
+.L35:
+	.byte	5,8,7,0,5,2
+	.word	.L5
+	.byte	3,173,1,1,5,1,9
+	.half	.L21-.L5
+	.byte	3,5,0,1,1
+.L33:
+	.sdecl	'.debug_ranges',debug,cluster('BSW_Handler_Init')
+	.sect	'.debug_ranges'
+.L19:
+	.word	-1,.L20,0,.L21-.L20,0,0
+	.sdecl	'.debug_loc',debug,cluster('BSW_Handler_10ms')
+	.sect	'.debug_loc'
+.L2:
+	.word	-1,.L3,0,.L22-.L3
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('BSW_Handler_Init')
+	.sect	'.debug_loc'
+.L4:
+	.word	-1,.L5,0,.L23-.L5
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L36:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('BSW_Handler_10ms')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L36,.L3,.L22-.L3
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('BSW_Handler_Init')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L36,.L5,.L23-.L5
+	; Module end

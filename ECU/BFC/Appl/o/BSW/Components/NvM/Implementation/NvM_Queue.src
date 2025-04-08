@@ -1,0 +1,2705 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v6.2r1 Build 17012451 SN 07925145"
+	.compiler_invocation	"ctc -f cc25048a -c99 --integer-enumeration -D__CPU__=userdef162 -D__CPU_USERDEF162__ --core=tc1.6.2 --fp-model=+float -DBRS_PLATFORM_AURIX -DBRS_COMP_TASKING -I../../../../BSW/Components/BswM/Implementation -I../../../../BSW/Components/CanIf/Implementation -I../../../../BSW/Components/CanSM/Implementation -I../../../../BSW/Components/CanTp/Implementation -I../../../../BSW/Components/Can_30_Core/Implementation -I../../../../BSW/Components/Com/Implementation -I../../../../BSW/Components/ComM/Implementation -I../../../../BSW/Components/Crc -I../../../../BSW/Components/Crc/Implementation -I../../../../BSW/Components/Dcm/Implementation -I../../../../BSW/Components/Dem/Implementation -I../../../../BSW/Components/Det/Implementation -I../../../../BSW/Components/EcuM/Implementation -I../../../../BSW/Components/GenData -I../../../../BSW/Components/Mcal_Tc3xx -I../../../../BSW/Components/Mcal_Tc3xx/Implementation -I../../../../BSW/Components/MemIf -I../../../../BSW/Components/MemIf/Implementation -I../../../../BSW/Components/NvM -I../../../../BSW/Components/NvM/Implementation -I../../../../BSW/Components/Os/Implementation -I../../../../BSW/Components/PduR/Implementation -I../../../../BSW/Components/VStdLib/Implementation -I../../../../BSW/Components/vCan_30_Mcan/Implementation -I../../../../BSW/DemoComponents/vLinkGen/Implementation -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Autosar_Srv -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Integration -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Irq/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Infra_Prod/Sfr/TC39xB/_Reg -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Adc/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Dio/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Fee/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Fls_17_Dmu/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/McalLib/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/McalLib/ssc/inc/AS440 -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Mcu/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Port/ssc/inc -I../../../../BSW/Components/_Common/Implementation -IGenData -IInclude -ID:/TASKING/TriCorev6.2r1/ctc/include -IGenData/Components -IGenData/inc --debug-info=default --align=4 --default-a0-size=0 --default-a1-size=0 --default-near-size=0 --optimize=acefgIklMnopRsUvwy,+predict --tradeoff=2 --language=-gcc,+volatile,-strings,-comments -o o\\BSW\\Components\\NvM\\Implementation\\NvM_Queue.src ../../../../BSW/Components/NvM/Implementation/NvM_Queue.c"
+	.compiler_name		"ctc"
+	;source	'../../../../BSW/Components/NvM/Implementation/NvM_Queue.c'
+
+	
+$TC162
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QueueInit')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_QueueInit
+; Function NvM_QueueInit
+.L49:
+	.align	4
+NvM_QueueInit:	.type	func
+.L26:
+	movh.a	a15,#@his(NvM_JobQueue_at)
+	lea	a15,[a15]@los(NvM_JobQueue_at)
+.L188:
+	mov	d15,#1
+	st.b	[a15]10,d15
+	mov	d0,#0
+	st.b	[a15]23,d0
+.L189:
+	st.b	[a15]22,d0
+.L190:
+	st.b	[a15]11,d15
+.L191:
+	movh.a	a15,#@his(NvM_NormalPrioQueue)
+	lea	a15,[a15]@los(NvM_NormalPrioQueue)
+.L192:
+	st.b	[a15]1,d0
+.L193:
+	mov	d15,#255
+	st.b	[a15],d15
+.L194:
+	ret
+.L97:
+	
+__NvM_QueueInit_function_end:
+	.size	NvM_QueueInit,__NvM_QueueInit_function_end-NvM_QueueInit
+.L50:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QueueJob')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_QueueJob
+; Function NvM_QueueJob
+.L55:
+	.align	4
+NvM_QueueJob:	.type	func
+.L28:
+	mov	d11,d4
+.L151:
+	mov	d12,d5
+	mov.aa	a12,a4
+.L152:
+	mov	d8,#0
+.L153:
+	jz.t	d11:15,.L2
+.L199:
+	movh.a	a15,#@his(NvM_DcmBlockMngmt_t)
+	lea	a15,[a15]@los(NvM_DcmBlockMngmt_t)
+.L200:
+	j	.L3
+.L2:
+	movh.a	a15,#@his(NvM_BlockMngmtArea_at)
+	lea	a15,[a15]@los(NvM_BlockMngmtArea_at)
+.L201:
+	addsc.a	a15,a15,d11,#2
+.L3:
+	call	NvM_EnterCriticalSection
+.L150:
+	movh.a	a13,#@his(NvM_NormalPrioQueue)
+	lea	a13,[a13]@los(NvM_NormalPrioQueue)
+.L202:
+	mov.aa	a4,a13
+	ld.bu	d0,[+a4]1
+.L203:
+	ld.bu	d15,[a15]1
+.L204:
+	eq	d9,d0,#255
+.L154:
+	eq	d10,d15,#2
+.L155:
+	jne	d9,#0,.L4
+.L205:
+	jne	d10,#0,.L5
+.L109:
+	call	NvM_QueuePop
+.L156:
+	mul	d15,d2,#12
+	movh.a	a2,#@his(NvM_JobQueue_at)
+	lea	a2,[a2]@los(NvM_JobQueue_at)
+.L206:
+	addsc.a	a2,a2,d15,#0
+.L158:
+	mov	d4,d2
+	mov.aa	a4,a13
+.L159:
+	st.h	[a2]4,d11
+.L207:
+	st.a	[a2],a12
+.L208:
+	st.w	[a2]6,d12
+.L209:
+	call	NvM_QueuePush
+.L157:
+	mov	d15,#2
+	st.b	[a15]1,d15
+.L210:
+	mov	d8,#1
+.L5:
+.L4:
+	call	NvM_ExitCriticalSection
+.L211:
+	jne	d9,#0,.L6
+.L212:
+	jne	d10,#0,.L7
+.L213:
+	mul	d15,d12,#12
+	movh.a	a15,#@his(NvM_IntServiceDescrTable_at)
+	lea	a15,[a15]@los(NvM_IntServiceDescrTable_at)
+.L214:
+	addsc.a	a15,a15,d15,#0
+.L215:
+	mov	d4,d11
+.L160:
+	ld.bu	d5,[a15]8
+.L216:
+	mov	d6,#2
+	call	NvM_BlockNotification
+.L7:
+.L6:
+	mov	d2,d8
+	ret
+.L99:
+	
+__NvM_QueueJob_function_end:
+	.size	NvM_QueueJob,__NvM_QueueJob_function_end-NvM_QueueJob
+.L56:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_UnQueueJob')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_UnQueueJob
+; Function NvM_UnQueueJob
+.L61:
+	.align	4
+NvM_UnQueueJob:	.type	func
+.L30:
+	mov	d10,d4
+	sub.a	a10,#8
+.L161:
+	jz.t	d10:15,.L9
+.L221:
+	movh.a	a12,#@his(NvM_DcmBlockMngmt_t)
+	lea	a12,[a12]@los(NvM_DcmBlockMngmt_t)
+.L222:
+	j	.L10
+.L9:
+	movh.a	a15,#@his(NvM_BlockMngmtArea_at)
+	lea	a15,[a15]@los(NvM_BlockMngmtArea_at)
+.L223:
+	addsc.a	a12,a15,d10,#2
+.L10:
+	mov	d8,#0
+	call	NvM_EnterCriticalSection
+.L162:
+	movh.a	a13,#@his(NvM_NormalPrioQueue)
+	lea	a13,[a13]@los(NvM_NormalPrioQueue)
+.L224:
+	ld.bu	d4,[a13]
+.L225:
+	mov	d5,d10
+	call	NvM_QueueFindBlock
+.L163:
+	mov	d15,#255
+.L226:
+	jeq	d15,d2,.L11
+.L118:
+	mul	d15,d2,#12
+	movh.a	a2,#@his(NvM_JobQueue_at)
+	lea	a2,[a2]@los(NvM_JobQueue_at)
+.L227:
+	addsc.a	a2,a2,d15,#0
+.L228:
+	movh.a	a15,#@his(NvM_IntServiceDescrTable_at)
+.L229:
+	ld.w	d0,[a2]6
+.L230:
+	lea	a15,[a15]@los(NvM_IntServiceDescrTable_at)
+.L231:
+	mul	d15,d0,#12
+	mov.aa	a4,a10
+.L232:
+	mov	d8,#1
+.L233:
+	addsc.a	a15,a15,d15,#0
+.L234:
+	ld.bu	d9,[a15]8
+.L165:
+	st.b	[a10],d2
+	call	NvM_QueuePop
+.L164:
+	ld.bu	d15,[a13]
+.L235:
+	ld.bu	d0,[a10]
+.L167:
+	jne	d15,d2,.L12
+.L236:
+	st.b	[a13],d0
+.L12:
+	add.a	a13,#1
+.L237:
+	mov.aa	a4,a13
+	mov	d4,d2
+	call	NvM_QueuePush
+.L166:
+	mov	d6,#6
+	st.b	[a12]1,d6
+.L238:
+	mov	e4,d9,d10
+	call	NvM_BlockNotification
+.L11:
+	call	NvM_ExitCriticalSection
+.L239:
+	mov	d2,d8
+	ret
+.L114:
+	
+__NvM_UnQueueJob_function_end:
+	.size	NvM_UnQueueJob,__NvM_UnQueueJob_function_end-NvM_UnQueueJob
+.L62:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryNormalPrioJob')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_QryNormalPrioJob
+; Function NvM_QryNormalPrioJob
+.L67:
+	.align	4
+NvM_QryNormalPrioJob:	.type	func
+.L32:
+	movh.a	a15,#@his(NvM_NormalPrioQueue)
+.L244:
+	ld.bu	d15,[a15]@los(NvM_NormalPrioQueue)
+.L245:
+	ne	d2,d15,#255
+	ret
+.L122:
+	
+__NvM_QryNormalPrioJob_function_end:
+	.size	NvM_QryNormalPrioJob,__NvM_QryNormalPrioJob_function_end-NvM_QryNormalPrioJob
+.L68:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_ActGetNormalPrioJob')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_ActGetNormalPrioJob
+; Function NvM_ActGetNormalPrioJob
+.L73:
+	.align	4
+NvM_ActGetNormalPrioJob:	.type	func
+.L34:
+	call	NvM_EnterCriticalSection
+.L250:
+	movh.a	a12,#@his(NvM_NormalPrioQueue)
+	lea	a12,[a12]@los(NvM_NormalPrioQueue)
+.L251:
+	ld.bu	d15,[a12]
+.L252:
+	movh.a	a13,#@his(NvM_JobQueue_at)
+.L253:
+	mul	d15,d15,#12
+	lea	a13,[a13]@los(NvM_JobQueue_at)
+.L254:
+	mov.aa	a4,a12
+.L255:
+	addsc.a	a15,a13,d15,#0
+.L256:
+	ld.bu	d15,[a15]11
+.L257:
+	st.b	[a12],d15
+.L258:
+	call	NvM_QueuePop
+.L168:
+	mov	d15,d2
+	add.a	a12,#1
+.L170:
+	mov.aa	a4,a12
+	mov	d4,d15
+	call	NvM_QueuePush
+.L169:
+	mul	d15,d15,#12
+	movh.a	a4,#@his(NvM_CurrentJob_t)
+.L171:
+	lea	a4,[a4]@los(NvM_CurrentJob_t)
+.L259:
+	addsc.a	a2,a13,d15,#0
+.L260:
+	ld.hu	d15,[a2]4
+.L261:
+	st.h	[a4],d15
+.L262:
+	ld.w	d15,[a2]6
+.L263:
+	st.w	[a4]2,d15
+.L264:
+	ld.a	a15,[a2]
+.L265:
+	st.a	[a4]8,a15
+.L266:
+	j	NvM_ExitCriticalSection
+.L123:
+	
+__NvM_ActGetNormalPrioJob_function_end:
+	.size	NvM_ActGetNormalPrioJob,__NvM_ActGetNormalPrioJob_function_end-NvM_ActGetNormalPrioJob
+.L74:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QueuePush')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QueuePush
+.L79:
+	.align	4
+NvM_QueuePush:	.type	func
+.L36:
+	mul	d15,d4,#12
+	movh.a	a2,#@his(NvM_JobQueue_at)
+	lea	a2,[a2]@los(NvM_JobQueue_at)
+.L271:
+	addsc.a	a15,a2,d15,#0
+.L172:
+	mov	d15,#255
+	ld.bu	d0,[a4]
+.L272:
+	jne	d15,d0,.L15
+.L273:
+	st.b	[a4],d4
+.L274:
+	st.b	[a15]10,d4
+.L275:
+	st.b	[a15]11,d4
+.L276:
+	ret
+.L15:
+	mul	d15,d0,#12
+	st.b	[a15]10,d0
+.L277:
+	addsc.a	a5,a2,d15,#0
+.L174:
+	ld.bu	d15,[a5]11
+.L278:
+	st.b	[a15]11,d15
+.L279:
+	ld.bu	d15,[a5]11
+.L280:
+	mul	d15,d15,#12
+	addsc.a	a15,a2,d15,#0
+.L173:
+	st.b	[a15]10,d4
+.L281:
+	st.b	[a5]11,d4
+.L282:
+	st.b	[a4],d4
+.L131:
+	ret
+.L125:
+	
+__NvM_QueuePush_function_end:
+	.size	NvM_QueuePush,__NvM_QueuePush_function_end-NvM_QueuePush
+.L80:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QueuePop')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QueuePop
+.L85:
+	.align	4
+NvM_QueuePop:	.type	func
+.L38:
+	ld.bu	d2,[a4]
+.L176:
+	movh.a	a2,#@his(NvM_JobQueue_at)
+.L287:
+	mul	d15,d2,#12
+	lea	a2,[a2]@los(NvM_JobQueue_at)
+.L288:
+	addsc.a	a15,a2,d15,#0
+.L177:
+	ld.bu	d15,[a15]10
+.L289:
+	jne	d15,d2,.L17
+.L290:
+	mov	d15,#255
+	st.b	[a4],d15
+.L291:
+	ret
+.L17:
+	st.b	[a4],d15
+.L292:
+	ld.bu	d15,[a15]10
+.L293:
+	mul	d15,d15,#12
+	addsc.a	a4,a2,d15,#0
+.L175:
+	ld.bu	d15,[a15]11
+.L294:
+	st.b	[a4]11,d15
+.L295:
+	ld.bu	d15,[a15]11
+.L296:
+	mul	d15,d15,#12
+	addsc.a	a2,a2,d15,#0
+.L297:
+	ld.bu	d15,[a15]10
+.L298:
+	st.b	[a2]10,d15
+.L299:
+	ret
+.L134:
+	
+__NvM_QueuePop_function_end:
+	.size	NvM_QueuePop,__NvM_QueuePop_function_end-NvM_QueuePop
+.L86:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QueueFindBlock')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QueueFindBlock
+.L91:
+	.align	4
+NvM_QueueFindBlock:	.type	func
+.L40:
+	mov	d2,#255
+.L178:
+	jeq	d4,d2,.L20
+.L145:
+	mov	d0,d4
+	movh.a	a2,#@his(NvM_JobQueue_at)
+.L179:
+	lea	a2,[a2]@los(NvM_JobQueue_at)
+.L21:
+	mul	d15,d0,#12
+	addsc.a	a15,a2,d15,#0
+.L304:
+	ld.bu	d0,[a15]10
+.L305:
+	mul	d15,d0,#12
+	addsc.a	a15,a2,d15,#0
+.L306:
+	ld.hu	d15,[a15]4
+.L307:
+	jne	d15,d5,.L22
+.L308:
+	mov	d2,d0
+.L20:
+	ret
+.L22:
+	jne	d0,d4,.L21
+.L146:
+	ret
+.L140:
+	
+__NvM_QueueFindBlock_function_end:
+	.size	NvM_QueueFindBlock,__NvM_QueueFindBlock_function_end-NvM_QueueFindBlock
+.L92:
+	; End of function
+	
+	.sdecl	'.bss.MSR_VAR_NO_INIT',data,cluster('NvM_CurrentJob_t')
+	.sect	'.bss.MSR_VAR_NO_INIT'
+	.global	NvM_CurrentJob_t
+	.align	4
+NvM_CurrentJob_t:	.type	object
+	.size	NvM_CurrentJob_t,12
+	.space	12
+	.sdecl	'.bss.MSR_VAR_NO_INIT',data,cluster('NvM_NormalPrioQueue')
+	.sect	'.bss.MSR_VAR_NO_INIT'
+	.align	4
+NvM_NormalPrioQueue:	.type	object
+	.size	NvM_NormalPrioQueue,2
+	.space	2
+	.calls	'NvM_QueueJob','NvM_EnterCriticalSection'
+	.calls	'NvM_QueueJob','NvM_QueuePop'
+	.calls	'NvM_QueueJob','NvM_QueuePush'
+	.calls	'NvM_QueueJob','NvM_ExitCriticalSection'
+	.calls	'NvM_QueueJob','NvM_BlockNotification'
+	.calls	'NvM_UnQueueJob','NvM_EnterCriticalSection'
+	.calls	'NvM_UnQueueJob','NvM_QueueFindBlock'
+	.calls	'NvM_UnQueueJob','NvM_QueuePop'
+	.calls	'NvM_UnQueueJob','NvM_QueuePush'
+	.calls	'NvM_UnQueueJob','NvM_BlockNotification'
+	.calls	'NvM_UnQueueJob','NvM_ExitCriticalSection'
+	.calls	'NvM_ActGetNormalPrioJob','NvM_EnterCriticalSection'
+	.calls	'NvM_ActGetNormalPrioJob','NvM_QueuePop'
+	.calls	'NvM_ActGetNormalPrioJob','NvM_QueuePush'
+	.calls	'NvM_ActGetNormalPrioJob','NvM_ExitCriticalSection'
+	.calls	'NvM_QueueInit','',0
+	.calls	'NvM_QueueJob','',0
+	.calls	'NvM_UnQueueJob','',8
+	.calls	'NvM_QryNormalPrioJob','',0
+	.calls	'NvM_ActGetNormalPrioJob','',0
+	.calls	'NvM_QueuePush','',0
+	.calls	'NvM_QueuePop','',0
+	.extern	NvM_EnterCriticalSection
+	.extern	NvM_ExitCriticalSection
+	.extern	NvM_JobQueue_at
+	.extern	NvM_BlockNotification
+	.extern	NvM_BlockMngmtArea_at
+	.extern	NvM_DcmBlockMngmt_t
+	.extern	NvM_IntServiceDescrTable_at
+	.calls	'NvM_QueueFindBlock','',0
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L42:
+	.word	13061
+	.half	3
+	.word	.L43
+	.byte	4
+.L41:
+	.byte	1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Queue.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L44
+	.byte	2
+	.byte	'NvM_EnterCriticalSection',0,1,149,2,37,1,1,1,1,2
+	.byte	'NvM_ExitCriticalSection',0,1,161,2,37,1,1,1,1
+.L100:
+	.byte	3
+	.byte	'unsigned short int',0,2,7
+.L98:
+	.byte	3
+	.byte	'unsigned char',0,1,8,4
+	.byte	'NvM_BlockNotification',0,2,209,1,37,1,1,1,1,5
+	.byte	'BlockId',0,2,209,1,75
+	.word	275
+	.byte	5
+	.byte	'ServiceId',0,2,209,1,102
+	.word	297
+	.byte	5
+	.byte	'JobResult',0,2,209,1,135,1
+	.word	297
+	.byte	0
+.L102:
+	.byte	6,1,227,1,9,4,7
+	.byte	'NVM_INT_FID_WRITE_BLOCK',0,0,7
+	.byte	'NVM_INT_FID_READ_BLOCK',0,1,7
+	.byte	'NVM_INT_FID_RESTORE_DEFAULTS',0,2,7
+	.byte	'NVM_INT_FID_INVALIDATE_NV_BLOCK',0,3,7
+	.byte	'NVM_INT_FID_ERASE_BLOCK',0,4,7
+	.byte	'NVM_INT_FID_WRITE_ALL',0,5,7
+	.byte	'NVM_INT_FID_READ_ALL',0,6,7
+	.byte	'NVM_INT_FID_PRE_READ_ALL',0,7,7
+	.byte	'NVM_INT_FID_REPAIR_REDUNDANT_BLOCKS',0,8,7
+	.byte	'NVM_INT_FID_NO_JOB_PENDING',0,9,0,8
+	.word	297
+	.byte	8
+	.word	297
+.L104:
+	.byte	9
+	.byte	'NvM_RamAddressType',0,1,129,1,48
+	.word	697
+.L110:
+	.byte	10
+	.word	297
+	.byte	11,1,245,1,9,12,12
+	.byte	'RamAddr_t',0
+	.word	702
+	.byte	4,2,35,0,12
+	.byte	'BlockId',0
+	.word	275
+	.byte	2,2,35,4,12
+	.byte	'ServiceId',0
+	.word	402
+	.byte	4,2,35,6,12
+	.byte	'NextEntry',0
+	.word	297
+	.byte	1,2,35,10,12
+	.byte	'PrevEntry',0
+	.word	297
+	.byte	1,2,35,11,0,8
+	.word	735
+.L112:
+	.byte	10
+	.word	835
+.L119:
+	.byte	10
+	.word	297
+	.byte	8
+	.word	297
+	.byte	8
+	.word	297
+.L126:
+	.byte	9
+	.byte	'NvM_QueueListHeadRefType',0,3,67,67
+	.word	855
+.L129:
+	.byte	10
+	.word	835
+.L132:
+	.byte	10
+	.word	835
+.L136:
+	.byte	10
+	.word	297
+	.byte	10
+	.word	735
+	.byte	8
+	.word	908
+	.byte	10
+	.word	913
+	.byte	9
+	.byte	'NvM_QueueEntryConstPtrToConstType',0,3,68,71
+	.word	918
+.L138:
+	.byte	10
+	.word	923
+	.byte	10
+	.word	735
+	.byte	8
+	.word	970
+	.byte	13,1,8
+	.word	980
+	.byte	9
+	.byte	'__codeptr',0,3,1,1
+	.word	982
+	.byte	9
+	.byte	'boolean',0,4,140,1,29
+	.word	297
+	.byte	3
+	.byte	'char',0,1,6,9
+	.byte	'sint8',0,4,142,1,31
+	.word	1022
+	.byte	9
+	.byte	'uint8',0,4,143,1,31
+	.word	297
+	.byte	3
+	.byte	'short int',0,2,5,9
+	.byte	'sint16',0,4,144,1,31
+	.word	1060
+	.byte	9
+	.byte	'uint16',0,4,145,1,31
+	.word	275
+	.byte	3
+	.byte	'long int',0,4,5,9
+	.byte	'sint32',0,4,146,1,31
+	.word	1105
+	.byte	3
+	.byte	'unsigned long int',0,4,7,9
+	.byte	'uint32',0,4,147,1,31
+	.word	1133
+	.byte	9
+	.byte	'Std_ReturnType',0,5,120,15
+	.word	297
+	.byte	9
+	.byte	'Std_TransformerErrorCode',0,5,131,1,15
+	.word	297
+	.byte	9
+	.byte	'Std_TransformerClass',0,5,133,1,15
+	.word	297
+	.byte	14
+	.byte	'sDet_PCConfigType',0,6,243,1,16,1,12
+	.byte	'Det_PCConfigNeverUsed',0
+	.word	297
+	.byte	1,2,35,0,0,9
+	.byte	'Det_PCConfigType',0,6,246,1,3
+	.word	1257
+	.byte	9
+	.byte	'PduLengthType',0,7,70,16
+	.word	275
+	.byte	9
+	.byte	'SduDataPtrType',0,8,178,1,54
+	.word	697
+	.byte	6,8,201,1,9,4,7
+	.byte	'TP_DATACONF',0,0,7
+	.byte	'TP_DATARETRY',0,1,7
+	.byte	'TP_CONFPENDING',0,2,0,9
+	.byte	'TpDataStateType',0,8,208,1,3
+	.word	1385
+	.byte	9
+	.byte	'Dcm_DataElement_Boot_Software_Boot_Software_Identification_PrimitiveType',0,9,84,16
+	.word	1133
+	.byte	9
+	.byte	'Dcm_DataElement_Boot_Software_NumberOfModules_PrimitiveType',0,9,87,15
+	.word	297
+	.byte	9
+	.byte	'Dcm_DataElement_DID_0x0017_DID_Sint32_Array_ArrayType',0,9,90,16
+	.word	1105
+	.byte	9
+	.byte	'Dcm_DataElement_DID_0x0018_DID_Uint32_Array_ArrayType',0,9,93,16
+	.word	1133
+	.byte	9
+	.byte	'Dcm_DataElement_DID_0x0019_DID_Sint16_Array_ArrayType',0,9,96,16
+	.word	1060
+	.byte	9
+	.byte	'Dcm_DataElement_DID_0x001A_DID_Uint16_Array_ArrayType',0,9,99,16
+	.word	275
+	.byte	9
+	.byte	'Dcm_DataElement_DID_0x001B_DID_Sint8_Array_ArrayType',0,9,102,15
+	.word	1022
+	.byte	9
+	.byte	'Dcm_DataElement_DID_0xF410_DID_Data_PrimitiveType',0,9,105,16
+	.word	275
+	.byte	9
+	.byte	'Dcm_DataElement_DID_0xF412_DID_Data_PrimitiveType',0,9,108,16
+	.word	275
+	.byte	9
+	.byte	'Dcm_DataElement_DID_0xF413_DID_Data_PrimitiveType',0,9,111,16
+	.word	275
+	.byte	9
+	.byte	'Dcm_DataElement_DataDiagnosticIdentifier_DID_DataDiagnosticIdentifier_PrimitiveType',0,9,114,16
+	.word	275
+	.byte	9
+	.byte	'Dcm_DataElement_DevelopmentData_CanDriverVersion_PrimitiveType',0,9,117,16
+	.word	275
+	.byte	9
+	.byte	'Dcm_DataElement_DevelopmentData_DiagnosticModuleVersion_PrimitiveType',0,9,120,16
+	.word	275
+	.byte	9
+	.byte	'Dcm_DataElement_DevelopmentData_NmVersion_PrimitiveType',0,9,123,16
+	.word	275
+	.byte	9
+	.byte	'Dcm_DataElement_DevelopmentData_OperatingSystemVersion_PrimitiveType',0,9,126,16
+	.word	275
+	.byte	9
+	.byte	'Dcm_DataElement_DevelopmentData_TransportLayerVersion_PrimitiveType',0,9,129,1,16
+	.word	275
+	.byte	9
+	.byte	'Dcm_DataElement_Example_ReadWriteData_GlobalTime_PrimitiveType',0,9,132,1,16
+	.word	1133
+	.byte	9
+	.byte	'Dcm_DataElement_Example_WriteOnlyDID_DID_DataObject_PrimitiveType',0,9,135,1,15
+	.word	297
+	.byte	9
+	.byte	'Dcm_DataElement_SampleIoControl_DID_Data_PrimitiveType',0,9,138,1,16
+	.word	1133
+	.byte	9
+	.byte	'Dcm_DataElement_SerialNumber_SerialNumber_PrimitiveType',0,9,141,1,16
+	.word	1133
+	.byte	9
+	.byte	'Dcm_RequestDataOut_SampleRoutineControl_Out_ResultPrimitiveType',0,9,147,1,16
+	.word	275
+	.byte	9
+	.byte	'Dcm_RequestDataOut_SampleRoutineControl_StartOnly_Out_ResultPrimitiveType',0,9,153,1,16
+	.word	1133
+	.byte	9
+	.byte	'Dcm_StartDataIn_SampleRoutineControl_In_Option0PrimitiveType',0,9,159,1,15
+	.word	297
+	.byte	9
+	.byte	'Dcm_StartDataIn_SampleRoutineControl_StartOnly_In_Option1ArrayType',0,9,165,1,15
+	.word	297
+	.byte	9
+	.byte	'Dcm_StartDataOut_SampleRoutineControl_Out_InitStatePrimitiveType',0,9,168,1,16
+	.word	1133
+	.byte	9
+	.byte	'Dcm_StopDataOut_SampleRoutineControl_Out_StopStatePrimitiveType',0,9,174,1,16
+	.word	1133
+	.byte	9
+	.byte	'NvM_RequestResultType',0,9,238,2,15
+	.word	297
+	.byte	9
+	.byte	'NvM_ServiceIdType',0,9,241,2,15
+	.word	297
+	.byte	9
+	.byte	'NvM_BlockIdType',0,9,134,3,16
+	.word	275
+	.byte	6,10,59,9,4,7
+	.byte	'MEMIF_UNINIT',0,0,7
+	.byte	'MEMIF_IDLE',0,1,7
+	.byte	'MEMIF_BUSY',0,2,7
+	.byte	'MEMIF_BUSY_INTERNAL',0,3,0,9
+	.byte	'MemIf_StatusType',0,10,65,3
+	.word	3362
+	.byte	6,10,72,9,4,7
+	.byte	'MEMIF_JOB_OK',0,0,7
+	.byte	'MEMIF_JOB_FAILED',0,1,7
+	.byte	'MEMIF_JOB_PENDING',0,2,7
+	.byte	'MEMIF_JOB_CANCELED',0,3,7
+	.byte	'MEMIF_BLOCK_INCONSISTENT',0,4,7
+	.byte	'MEMIF_BLOCK_INVALID',0,5,0,9
+	.byte	'MemIf_JobResultType',0,10,80,3
+	.word	3456
+	.byte	8
+	.word	297
+	.byte	15
+	.word	297
+	.byte	1,1,16
+	.word	275
+	.byte	16
+	.word	275
+	.byte	16
+	.word	3614
+	.byte	16
+	.word	275
+	.byte	0,8
+	.word	3619
+	.byte	9
+	.byte	'MemIf_ApiReadType',0,11,137,1,9
+	.word	3647
+	.byte	15
+	.word	297
+	.byte	1,1,16
+	.word	275
+	.byte	16
+	.word	3614
+	.byte	0,8
+	.word	3679
+	.byte	9
+	.byte	'MemIf_ApiWriteType',0,11,138,1,9
+	.word	3697
+	.byte	15
+	.word	297
+	.byte	1,1,16
+	.word	275
+	.byte	0,8
+	.word	3730
+	.byte	9
+	.byte	'MemIf_ApiEraseImmediateBlockType',0,11,139,1,9
+	.word	3743
+	.byte	9
+	.byte	'MemIf_ApiInvalidateBlockType',0,11,140,1,9
+	.word	3743
+	.byte	17,1,1,8
+	.word	3828
+	.byte	9
+	.byte	'MemIf_ApiCancelType',0,11,141,1,9
+	.word	3831
+	.byte	18
+	.word	3362
+	.byte	1,1,8
+	.word	3865
+	.byte	9
+	.byte	'MemIf_ApiGetStatusType',0,11,142,1,9
+	.word	3872
+	.byte	18
+	.word	3456
+	.byte	1,1,8
+	.word	3909
+	.byte	9
+	.byte	'MemIf_ApiGetJobResultType',0,11,143,1,9
+	.word	3916
+	.byte	6,10,88,9,4,7
+	.byte	'MEMIF_MODE_SLOW',0,0,7
+	.byte	'MEMIF_MODE_FAST',0,1,0,19,1,1,16
+	.word	3956
+	.byte	0,8
+	.word	3998
+	.byte	9
+	.byte	'MemIf_ApiSetModeType',0,11,144,1,9
+	.word	4007
+	.byte	3
+	.byte	'unsigned int',0,4,7,9
+	.byte	'NvM_BitFieldType',0,1,78,22
+	.word	4042
+	.byte	11,1,80,9,2,20
+	.byte	'CalcRamBlockCrcEnabled',0,1
+	.word	297
+	.byte	1,7,2,35,0,20
+	.byte	'BlockWriteProtEnabled',0,1
+	.word	297
+	.byte	1,6,2,35,0,20
+	.byte	'BlockWriteBlockOnceEnabled',0,1
+	.word	297
+	.byte	1,5,2,35,0,20
+	.byte	'ResistantToChangedSwEnabled',0,1
+	.word	297
+	.byte	1,4,2,35,0,20
+	.byte	'SelectBlockForReadAllEnabled',0,1
+	.word	297
+	.byte	1,3,2,35,0,20
+	.byte	'SelectBlockForPreReadAllEnabled',0,1
+	.word	297
+	.byte	1,2,2,35,0,20
+	.byte	'SelectBlockForWriteAllEnabled',0,1
+	.word	297
+	.byte	1,1,2,35,0,20
+	.byte	'InvokeCallbacksForReadAllEnabled',0,1
+	.word	297
+	.byte	1,0,2,35,0,20
+	.byte	'InvokeCallbacksForWriteAllEnabled',0,1
+	.word	297
+	.byte	1,7,2,35,1,20
+	.byte	'BlockUseSetRamBlockStatusEnabled',0,1
+	.word	297
+	.byte	1,6,2,35,1,20
+	.byte	'BlockCheckLossOfRedundancyEnabled',0,1
+	.word	297
+	.byte	1,5,2,35,1,20
+	.byte	'NotifyBswM',0,1
+	.word	297
+	.byte	1,4,2,35,1,0,9
+	.byte	'NvM_BlockDescriptorFlagsType',0,1,94,3
+	.word	4083
+	.byte	9
+	.byte	'NvM_DataIntegrityType',0,1,97,26
+	.word	4042
+	.byte	15
+	.word	297
+	.byte	1,1,16
+	.word	297
+	.byte	16
+	.word	297
+	.byte	0,8
+	.word	4624
+	.byte	9
+	.byte	'NvM_JobEndCbkPtrType',0,1,105,9
+	.word	4642
+	.byte	15
+	.word	297
+	.byte	1,1,16
+	.word	275
+	.byte	16
+	.word	297
+	.byte	16
+	.word	297
+	.byte	0,8
+	.word	4676
+	.byte	9
+	.byte	'NvM_JobEndCbkExtPtrType',0,1,108,9
+	.word	4699
+	.byte	18
+	.word	297
+	.byte	1,1,8
+	.word	4736
+	.byte	9
+	.byte	'NvM_InitCbkPtrType',0,1,113,9
+	.word	4743
+	.byte	21
+	.byte	'void',0,8
+	.word	4775
+	.byte	15
+	.word	297
+	.byte	1,1,16
+	.word	275
+	.byte	16
+	.word	4781
+	.byte	16
+	.word	275
+	.byte	0,8
+	.word	4786
+	.byte	9
+	.byte	'NvM_InitCbkExtPtrType',0,1,116,9
+	.word	4809
+	.byte	15
+	.word	297
+	.byte	1,1,16
+	.word	4781
+	.byte	0,8
+	.word	4844
+	.byte	9
+	.byte	'NvM_WriteRamToNvMCbkPtrType',0,1,119,9
+	.word	4857
+	.byte	10
+	.word	4775
+	.byte	8
+	.word	4898
+	.byte	15
+	.word	297
+	.byte	1,1,16
+	.word	4903
+	.byte	0,8
+	.word	4908
+	.byte	9
+	.byte	'NvM_ReadRamFromNvMCbkPtrType',0,1,120,9
+	.word	4921
+	.byte	19,1,1,16
+	.word	275
+	.byte	16
+	.word	4781
+	.byte	16
+	.word	275
+	.byte	0,8
+	.word	4963
+	.byte	9
+	.byte	'NvM_PreWriteTransformCbkPtrType',0,1,123,9
+	.word	4982
+	.byte	9
+	.byte	'NvM_PostReadTransformCbkPtrType',0,1,124,9
+	.word	4809
+	.byte	10
+	.word	297
+	.byte	8
+	.word	5067
+	.byte	9
+	.byte	'NvM_RomAddressType',0,1,131,1,51
+	.word	5072
+	.byte	9
+	.byte	'NvM_RamDataIntegrityAddressType',0,1,137,1,51
+	.word	697
+	.byte	11,1,173,1,9,68,12
+	.byte	'RamBlockDataAddr_t',0
+	.word	702
+	.byte	4,2,35,0,12
+	.byte	'RomBlockDataAddr_pt',0
+	.word	5077
+	.byte	4,2,35,4,12
+	.byte	'InitCbkFunc_pt',0
+	.word	4748
+	.byte	4,2,35,8,12
+	.byte	'InitCbkExtFunc_pt',0
+	.word	4814
+	.byte	4,2,35,12,12
+	.byte	'JobEndCbkFunc_pt',0
+	.word	4647
+	.byte	4,2,35,16,12
+	.byte	'JobEndCbkExtFunc_pt',0
+	.word	4704
+	.byte	4,2,35,20,12
+	.byte	'CbkGetMirrorFunc_pt',0
+	.word	4926
+	.byte	4,2,35,24,12
+	.byte	'CbkSetMirrorFunc_pt',0
+	.word	4862
+	.byte	4,2,35,28,12
+	.byte	'CbkPreWriteTransform',0
+	.word	4987
+	.byte	4,2,35,32,12
+	.byte	'CbkPostReadTransform',0
+	.word	5027
+	.byte	4,2,35,36,12
+	.byte	'RamBlockDataIntegrityAddr_t',0
+	.word	5105
+	.byte	4,2,35,40,12
+	.byte	'DataIntegrityRecordCompMechanismBuffer',0
+	.word	5105
+	.byte	4,2,35,44,12
+	.byte	'Flags',0
+	.word	4083
+	.byte	2,2,35,48,12
+	.byte	'NvIdentifier_u16',0
+	.word	275
+	.byte	2,2,35,50,12
+	.byte	'NvBlockLength_u16',0
+	.word	275
+	.byte	2,2,35,52,12
+	.byte	'NvBlockNVRAMDataLength',0
+	.word	275
+	.byte	2,2,35,54,12
+	.byte	'NvCryptoReference',0
+	.word	297
+	.byte	1,2,35,56,12
+	.byte	'MacSize',0
+	.word	275
+	.byte	2,2,35,58,12
+	.byte	'MacReference',0
+	.word	297
+	.byte	1,2,35,60,12
+	.byte	'NvBlockCount_u8',0
+	.word	297
+	.byte	1,2,35,61,12
+	.byte	'BlockPrio_u8',0
+	.word	297
+	.byte	1,2,35,62,20
+	.byte	'DeviceId_u8',0,1
+	.word	297
+	.byte	4,4,2,35,63,20
+	.byte	'MngmtType_t',0,1
+	.word	297
+	.byte	2,2,2,35,63,20
+	.byte	'DataIntegritySettings',0,4
+	.word	4042
+	.byte	3,15,2,35,62,0,9
+	.byte	'NvM_BlockDescriptorType',0,1,201,1,3
+	.word	5146
+	.byte	10
+	.word	297
+	.byte	8
+	.word	5844
+	.byte	8
+	.word	4736
+	.byte	8
+	.word	4786
+	.byte	8
+	.word	4624
+	.byte	8
+	.word	4676
+	.byte	8
+	.word	4908
+	.byte	8
+	.word	4844
+	.byte	8
+	.word	4963
+	.byte	8
+	.word	4786
+	.byte	8
+	.word	297
+	.byte	9
+	.byte	'NvM_CsmJobIdType',0,1,209,1,16
+	.word	1133
+	.byte	10
+	.word	5146
+	.byte	8
+	.word	5925
+	.byte	9
+	.byte	'NvM_BlockDescrPtrType',0,1,224,1,71
+	.word	5930
+	.byte	9
+	.byte	'NvM_InternalServiceIdType',0,1,239,1,3
+	.word	402
+	.byte	9
+	.byte	'NvM_QueueEntryRefType',0,1,242,1,15
+	.word	297
+	.byte	9
+	.byte	'NvM_QueueEntryType',0,1,255,1,3
+	.word	735
+	.byte	22
+	.word	735
+	.byte	23,0,24
+	.byte	'NvM_JobQueue_at',0,1,192,2,50
+	.word	6060
+	.byte	1,1,9
+	.byte	'NvM_ConstRamAddressType',0,12,97,50
+	.word	5072
+	.byte	11,12,99,9,4,12
+	.byte	'NvDataIndex_t',0
+	.word	297
+	.byte	1,2,35,0,12
+	.byte	'NvRamErrorStatus_u8',0
+	.word	297
+	.byte	1,2,35,1,12
+	.byte	'NvRamAttributes_u8',0
+	.word	297
+	.byte	1,2,35,2,0,9
+	.byte	'NvM_RamMngmtAreaType',0,12,104,3
+	.word	6126
+	.byte	8
+	.word	6126
+	.byte	9
+	.byte	'NvM_RamMngmtPtrType',0,12,107,66
+	.word	6241
+	.byte	6,2,38,9,4,7
+	.byte	'NVM_ACT_ID_SetInitialAttr',0,0,7
+	.byte	'NVM_ACT_ID_InitMainFsm',0,1,7
+	.byte	'NVM_ACT_ID_InitBlock',0,2,7
+	.byte	'NVM_ACT_ID_InitReadAll',0,3,7
+	.byte	'NVM_ACT_ID_InitReadBlockSubFsm',0,4,7
+	.byte	'NVM_ACT_ID_InitRestoreBlockDefaultsSubFsm',0,5,7
+	.byte	'NVM_ACT_ID_InitWriteAll',0,6,7
+	.byte	'NVM_ACT_ID_InitWriteBlock',0,7,7
+	.byte	'NVM_ACT_ID_InitWriteBlockFsm',0,8,7
+	.byte	'NVM_ACT_ID_InitRestoreBlockDefaults',0,9,7
+	.byte	'NVM_ACT_ID_FinishMainJob',0,10,7
+	.byte	'NVM_ACT_ID_KillWritAll',0,11,7
+	.byte	'NVM_ACT_ID_FinishBlock',0,12,7
+	.byte	'NVM_ACT_ID_InitNextBlockReadAll',0,13,7
+	.byte	'NVM_ACT_ID_InitNextBlockWriteAll',0,14,7
+	.byte	'NVM_ACT_ID_FinishReadBlock',0,15,7
+	.byte	'NVM_ACT_ID_FinishWriteBlock',0,16,7
+	.byte	'NVM_ACT_ID_FinishEraseBlock',0,17,7
+	.byte	'NVM_ACT_ID_EraseNvBlock',0,18,7
+	.byte	'NVM_ACT_ID_InvalidateNvBlock',0,19,7
+	.byte	'NVM_ACT_ID_WriteNvBlock',0,20,7
+	.byte	'NVM_ACT_ID_ReadNvBlock',0,21,7
+	.byte	'NVM_ACT_ID_ReadNvBlockDataIntegrityRecordOnly',0,22,7
+	.byte	'NVM_ACT_ID_ReadCopyData',0,23,7
+	.byte	'NVM_ACT_ID_RestoreRomDefaults',0,24,7
+	.byte	'NVM_ACT_ID_FinishRestoreRomDefaults',0,25,7
+	.byte	'NVM_ACT_ID_TestBlockBlank',0,26,7
+	.byte	'NVM_ACT_ID_ValidateRam',0,27,7
+	.byte	'NVM_ACT_ID_SetupRedundant',0,28,7
+	.byte	'NVM_ACT_ID_SetupOther',0,29,7
+	.byte	'NVM_ACT_ID_UpdateNvState',0,30,7
+	.byte	'NVM_ACT_ID_SetReqIntegrityFailed',0,31,7
+	.byte	'NVM_ACT_ID_SetReqSkipped',0,32,7
+	.byte	'NVM_ACT_ID_SetReqNotOk',0,33,7
+	.byte	'NVM_ACT_ID_SetReqOk',0,34,7
+	.byte	'NVM_ACT_ID_SetBlockPendingWriteAll',0,35,7
+	.byte	'NVM_ACT_ID_CopyNvDataToBuf',0,36,7
+	.byte	'NVM_ACT_ID_GetMultiBlockJob',0,37,7
+	.byte	'NVM_ACT_ID_CancelNV',0,38,7
+	.byte	'NVM_ACT_ID_KillSubFsm',0,39,7
+	.byte	'NVM_ACT_ID_NotifyLossOfRedundancy',0,40,7
+	.byte	'NVM_ACT_ID_FinishReadBlockAndSetSkipped',0,41,7
+	.byte	'NVM_ACT_ID_SetupDataIntegrityGeneration',0,42,7
+	.byte	'NVM_ACT_ID_SetupDataIntegrityVerification_ReadBlock',0,43,7
+	.byte	'NVM_ACT_ID_SetupDataIntegrityVerification_ReadAll',0,44,7
+	.byte	'NVM_ACT_ID_ProcessDataIntegrityJob',0,45,7
+	.byte	'NVM_ACT_ID_ExportDataIntegrityInformation',0,46,7
+	.byte	'NVM_ACT_ID_CopyRamDataToInternalBuffer',0,47,7
+	.byte	'NVM_ACT_ID_GetNormalPrioJob',0,48,7
+	.byte	'NVM_ACT_ID_Wait',0,49,7
+	.byte	'NVM_ACT_ID_Nop',0,50,0,9
+	.byte	'NvM_StateActionIdType',0,2,131,1,3
+	.word	6274
+	.byte	6,13,41,9,4,7
+	.byte	'NVM_DATAINTEGRITYSTATUS_PENDING',0,0,7
+	.byte	'NVM_DATAINTEGRITYSTATUS_FINISHED_SUCCESSFUL',0,1,7
+	.byte	'NVM_DATAINTEGRITYSTATUS_FINISHED_UNSUCCESSFUL',0,2,0,9
+	.byte	'NvM_DataIntegrityStatus',0,13,48,3
+	.word	7895
+	.byte	19,1,1,16
+	.word	4781
+	.byte	0,8
+	.word	8061
+	.byte	9
+	.byte	'NvM_DataIntegrityProcessFPtr',0,13,53,9
+	.word	8070
+	.byte	15
+	.word	7895
+	.byte	1,1,16
+	.word	4903
+	.byte	0,8
+	.word	8112
+	.byte	9
+	.byte	'NvM_DataIntegrityGetStatusFPtr',0,13,54,9
+	.word	8125
+	.byte	10
+	.word	297
+	.byte	8
+	.word	8169
+	.byte	15
+	.word	297
+	.byte	1,1,16
+	.word	4903
+	.byte	16
+	.word	8174
+	.byte	0,8
+	.word	8179
+	.byte	9
+	.byte	'NvM_DataIntegrityCompareFPtr',0,13,55,9
+	.word	8197
+	.byte	19,1,1,16
+	.word	4903
+	.byte	16
+	.word	3614
+	.byte	0,8
+	.word	8239
+	.byte	9
+	.byte	'NvM_DataIntegrityExportFPtr',0,13,56,9
+	.word	8253
+	.byte	14
+	.byte	'NvM_DataIntegrityJobStruct',0,13,58,16,20,12
+	.byte	'Process',0
+	.word	8075
+	.byte	4,2,35,0,12
+	.byte	'GetStatus',0
+	.word	8130
+	.byte	4,2,35,4,12
+	.byte	'Compare',0
+	.word	8202
+	.byte	4,2,35,8,12
+	.byte	'Export',0
+	.word	8258
+	.byte	4,2,35,12,12
+	.byte	'SubJobPtr',0
+	.word	4781
+	.byte	4,2,35,16,0,9
+	.byte	'NvM_DataIntegrityJob',0,13,66,3
+	.word	8294
+	.byte	8
+	.word	8061
+	.byte	8
+	.word	8112
+	.byte	8
+	.word	8179
+	.byte	8
+	.word	8239
+	.byte	9
+	.byte	'NvM_CrcBufferPtrType',0,14,60,59
+	.word	697
+	.byte	8
+	.word	1133
+	.byte	19,1,1,16
+	.word	8174
+	.byte	16
+	.word	275
+	.byte	16
+	.word	8493
+	.byte	16
+	.word	297
+	.byte	0,8
+	.word	8498
+	.byte	9
+	.byte	'NvM_CrcCalculateFPtr',0,14,66,9
+	.word	8522
+	.byte	15
+	.word	297
+	.byte	1,1,16
+	.word	8174
+	.byte	16
+	.word	8174
+	.byte	0,8
+	.word	8556
+	.byte	9
+	.byte	'NvM_CrcCompareFPtr',0,14,67,9
+	.word	8574
+	.byte	19,1,1,16
+	.word	3614
+	.byte	16
+	.word	8174
+	.byte	0,8
+	.word	8606
+	.byte	9
+	.byte	'NvM_CrcCopyToBufferFPtr',0,14,68,9
+	.word	8620
+	.byte	14
+	.byte	'NvM_CrcHandlerClass',0,14,71,8,20,12
+	.byte	'calc',0
+	.word	8527
+	.byte	4,2,35,0,12
+	.byte	'compare',0
+	.word	8579
+	.byte	4,2,35,4,12
+	.byte	'copyToBuffer',0
+	.word	8625
+	.byte	4,2,35,8,12
+	.byte	'initialCrcValue',0
+	.word	1133
+	.byte	4,2,35,12,12
+	.byte	'crcLength',0
+	.word	297
+	.byte	1,2,35,16,0,10
+	.word	8657
+	.byte	8
+	.word	8780
+	.byte	9
+	.byte	'NvM_CrcHandlerClassConstPtr',0,14,80,75
+	.word	8785
+	.byte	8
+	.word	8498
+	.byte	8
+	.word	8556
+	.byte	8
+	.word	8606
+	.byte	6,14,86,9,4,7
+	.byte	'NVM_CRCPROCESSINGSTATUS_COMPATIBILITY',0,0,7
+	.byte	'NVM_CRCPROCESSINGSTATUS_GENERATE_PENDING',0,1,7
+	.byte	'NVM_CRCPROCESSINGSTATUS_GENERATE_FINISHED',0,2,7
+	.byte	'NVM_CRCPROCESSINGSTATUS_VALIDATE_GENERATION_PENDING',0,3,7
+	.byte	'NVM_CRCPROCESSINGSTATUS_VALIDATE_FINISHED_SUCCESSFUL',0,4,7
+	.byte	'NVM_CRCPROCESSINGSTATUS_VALIDATE_FINISHED_UNSUCCESSFUL',0,5,0,9
+	.byte	'NvM_CrcProcessingStatus',0,14,99,3
+	.word	8841
+	.byte	14
+	.byte	'NvM_CrcJobStruct',0,14,101,16,28,12
+	.byte	'CurrentCrcValue',0
+	.word	1133
+	.byte	4,2,35,0,12
+	.byte	'RamData_pt',0
+	.word	6094
+	.byte	4,2,35,4,12
+	.byte	'CrcBuffer',0
+	.word	8464
+	.byte	4,2,35,8,12
+	.byte	'HandlerInstance_pt',0
+	.word	8790
+	.byte	4,2,35,12,12
+	.byte	'ProcessingStatus',0
+	.word	8841
+	.byte	4,2,35,16,12
+	.byte	'RemainingLength_u16',0
+	.word	275
+	.byte	2,2,35,20,12
+	.byte	'BytesPerProcessCycle',0
+	.word	275
+	.byte	2,2,35,22,12
+	.byte	'IsFirstCall',0
+	.word	297
+	.byte	1,2,35,24,0,9
+	.byte	'NvM_CrcJobType',0,14,111,3
+	.word	9172
+	.byte	10
+	.word	297
+	.byte	8
+	.word	9416
+	.byte	8
+	.word	297
+	.byte	10
+	.word	8657
+	.byte	8
+	.word	9431
+	.byte	6,15,33,9,4,7
+	.byte	'NVM_QRY_ID_BLK_RELEVANT_FOR_WRITE_ALL',0,0,7
+	.byte	'NVM_QRY_ID_CANCEL_WRITE_ALL',0,1,7
+	.byte	'NVM_QR_ID_WRITEALL_KILLED',0,2,7
+	.byte	'NVM_QRY_ID_IS_DATA_INTEGRITY_JOB_PENDING',0,3,7
+	.byte	'NVM_QRY_ID_IS_DATA_INTEGRITY_JOB_FINISHED_SUCCESSFUL',0,4,7
+	.byte	'NVM_QRY_ID_IS_DATA_INTEGRITY_ALGORITHM_CONFIGURED',0,5,7
+	.byte	'NVM_QRY_ID_DATA_COPY_BUSY',0,6,7
+	.byte	'NVM_QRY_ID_LAST_BLOCK_DONE_READALL',0,7,7
+	.byte	'NVM_QRY_ID_LAST_BLOCK_DONE_WRITEALL',0,8,7
+	.byte	'NVM_QRY_ID_LAST_RESULT_OK',0,9,7
+	.byte	'NVM_QRY_ID_MAIN_FSM_RUNNING',0,10,7
+	.byte	'NVM_QRY_ID_MULTI_BLK_JOB',0,11,7
+	.byte	'NVM_QRY_ID_NORMAL_PRIO_JOB',0,12,7
+	.byte	'NVM_QRY_ID_NV_BUSY',0,13,7
+	.byte	'NVM_QRY_ID_MEMHWA_BUSY',0,14,7
+	.byte	'NVM_QRY_ID_CALC_RAM_BLOCK_CRC_ENABLED_AND_RAM_VALID',0,15,7
+	.byte	'NVM_QRY_ID_PRIMARY_REDUNDANT_BLOCK',0,16,7
+	.byte	'NVM_QRY_ID_SECONDARY_REDUNDANT_BLOCK',0,17,7
+	.byte	'NVM_QRY_ID_SKIP_BLOCK',0,18,7
+	.byte	'NVM_QRY_ID_SUB_FSM_RUNNING',0,19,7
+	.byte	'NVM_QRY_ID_WRITE_BLOCK_ONCE',0,20,7
+	.byte	'NVM_QRY_ID_WRITE_RETRIES_EXCEEDED',0,21,7
+	.byte	'NVM_QRY_ID_HAS_ROM',0,22,7
+	.byte	'NVM_QRY_ID_EXT_RUNTIME',0,23,7
+	.byte	'NvM_QRY_ID_DATAINTEGRITYRECORD_COMP_MECHANISM_SKIPWRITE',0,24,7
+	.byte	'NVM_QRY_ID_POST_READ_TRANSFORM',0,25,7
+	.byte	'NVM_QRY_ID_READALL_KILLED',0,26,7
+	.byte	'NVM_QRY_ID_SYNCDECRYPT',0,27,7
+	.byte	'NVM_QRY_ID_CSM_RETRIES_NECESSARY',0,28,7
+	.byte	'NVM_QRY_ID_BLOCK_CHECK_LOSS_OF_REDUNDANCY',0,29,7
+	.byte	'NVM_QRY_ID_FIRST_REDUNDANT_BLOCK_FAILED',0,30,7
+	.byte	'NVM_QRY_ID_REDUNDANT_CRC_MATCHES',0,31,7
+	.byte	'NVM_QRY_ID_HAS_EXPLICITSYNCHRONIZATION',0,32,7
+	.byte	'NVM_QRY_ID_EXPLICITSYNC_ATTEMPT_NECESSARY',0,33,7
+	.byte	'NVM_QRY_ID_EXPLICITSYNC_ATTEMPT_FAILED',0,34,7
+	.byte	'NVM_QRY_ID_FALSE',0,35,7
+	.byte	'NVM_QRY_ID_TRUE',0,36,0,9
+	.byte	'NvM_StateQueryIdType',0,15,102,3
+	.word	9441
+.L148:
+	.byte	11,16,111,9,12,12
+	.byte	'JobBlockId_t',0
+	.word	275
+	.byte	2,2,35,0,12
+	.byte	'JobServiceId_t',0
+	.word	402
+	.byte	4,2,35,2,12
+	.byte	'RamAddr_t',0
+	.word	702
+	.byte	4,2,35,8,0,9
+	.byte	'NvM_JobType',0,16,116,3
+	.word	10745
+	.byte	11,16,120,9,76,12
+	.byte	'Descriptor_pt',0
+	.word	5935
+	.byte	4,2,35,0,12
+	.byte	'Mngmt_pt',0
+	.word	6246
+	.byte	4,2,35,4,12
+	.byte	'RamAddr_t',0
+	.word	702
+	.byte	4,2,35,8,12
+	.byte	'NvRamAddr_t',0
+	.word	702
+	.byte	4,2,35,12,12
+	.byte	'DataIntegrityJob',0
+	.word	8294
+	.byte	20,2,35,16,12
+	.byte	'BlockCrcJob_t',0
+	.word	9172
+	.byte	28,2,35,36,12
+	.byte	'NvIdentifier_u16',0
+	.word	275
+	.byte	2,2,35,64,12
+	.byte	'ByteCount_u16',0
+	.word	275
+	.byte	2,2,35,66,12
+	.byte	'LastResult_t',0
+	.word	297
+	.byte	1,2,35,68,12
+	.byte	'WriteRetryCounter_u8',0
+	.word	297
+	.byte	1,2,35,69,12
+	.byte	'InternalFlags_u8',0
+	.word	297
+	.byte	1,2,35,70,12
+	.byte	'NvState_u8',0
+	.word	297
+	.byte	1,2,35,71,12
+	.byte	'ExplSyncAttemptSuccessful',0
+	.word	297
+	.byte	1,2,35,72,12
+	.byte	'ExplSyncAttemptCounter',0
+	.word	297
+	.byte	1,2,35,73,0,9
+	.byte	'NvM_BlockInfoType',0,16,141,1,3
+	.word	10836
+	.byte	10
+	.word	5146
+	.byte	8
+	.word	11213
+	.byte	8
+	.word	6126
+	.byte	6,16,154,1,9,4,7
+	.byte	'NVM_STATE_UNINIT',0,0,7
+	.byte	'NVM_STATE_IDLE',0,1,7
+	.byte	'NVM_STATE_NORMAL_PRIO_JOB',0,2,7
+	.byte	'NVM_STATE_MULTI_BLOCK_JOB',0,3,7
+	.byte	'NVM_STATE_READ_READ_DATA',0,4,7
+	.byte	'NVM_STATE_READ_DATA_VALIDATION',0,5,7
+	.byte	'NVM_STATE_READ_VERIFY_DATA_INTEGRITY',0,6,7
+	.byte	'NVM_STATE_READ_PRE_CHECK_LOSS_OF_REDUNDANCY',0,7,7
+	.byte	'NVM_STATE_READ_CHECK_LOSS_OF_REDUNDANCY',0,8,7
+	.byte	'NVM_STATE_READ_IMPL_RECOV',0,9,7
+	.byte	'NVM_STATE_READ_LOAD_ROM',0,10,7
+	.byte	'NVM_STATE_READ_FINALIZE',0,11,7
+	.byte	'NVM_STATE_WRITE_COPY_BUFFER_DATA',0,12,7
+	.byte	'NVM_STATE_WRITE_GENERATE_DATA_INTEGRITY_INFORMATION',0,13,7
+	.byte	'NVM_STATE_WRITE_CHECK_DATAINTEGRITYRECORD_COMPMECHANISM_SKIP',0,14,7
+	.byte	'NVM_STATE_WRITE_READABILITY_CHECK_PRIMARY_BLOCK',0,15,7
+	.byte	'NVM_STATE_WRITE_READABILITY_CHECK_SECONDARY_BLOCK',0,16,7
+	.byte	'NVM_STATE_WRITE_NV_WRITE_REDUNDANT_DATA',0,17,7
+	.byte	'NVM_STATE_WRITE_NV_WRITE_DATA',0,18,7
+	.byte	'NVM_STATE_RESTORE_LOAD_ROM',0,19,7
+	.byte	'NVM_STATE_INVALIDATING_BLOCK',0,20,7
+	.byte	'NVM_STATE_ERASE_ERASE_BLOCK',0,21,7
+	.byte	'NVM_STATE_READALL_PROC_RAM_BLOCK',0,22,7
+	.byte	'NVM_STATE_READALL_PREPARE_DATAINTEGRITY_VERIFICATION',0,23,7
+	.byte	'NVM_STATE_READALL_CHK_SKIP',0,24,7
+	.byte	'NVM_STATE_READALL_KILLED',0,25,7
+	.byte	'NVM_STATE_READALL_WR_ONCE_PROT',0,26,7
+	.byte	'NVM_STATE_READALL_CHK_RAM_VALIDITY',0,27,7
+	.byte	'NVM_STATE_READALL_READ_NV',0,28,7
+	.byte	'NVM_STATE_READALL_LOAD_DEFAULTS',0,29,7
+	.byte	'NVM_STATE_READALL_READABILITY_CHECK',0,30,7
+	.byte	'NVM_STATE_WRITEALL_PROC_BLOCK',0,31,7
+	.byte	'NVM_STATE_WRITEALL_WRITE_FSM',0,32,7
+	.byte	'NVM_STATE_WRITEALL_WAIT_MEMHWA',0,33,7
+	.byte	'NVM_STATE_FSM_FINISHED',0,34,0,9
+	.byte	'NvM_StateIdType',0,16,241,1,3
+	.word	11228
+	.byte	11,16,243,1,9,12,12
+	.byte	'InitialActionId',0
+	.word	6274
+	.byte	4,2,35,0,12
+	.byte	'InitialState_t',0
+	.word	11228
+	.byte	4,2,35,4,12
+	.byte	'PublicFid_t',0
+	.word	297
+	.byte	1,2,35,8,0,9
+	.byte	'NvM_IntServiceDescrType',0,16,248,1,3
+	.word	12474
+	.byte	11,16,250,1,9,8,12
+	.byte	'ExitHandler_t',0
+	.word	6274
+	.byte	4,2,35,0,12
+	.byte	'EntryHandler_t',0
+	.word	6274
+	.byte	4,2,35,4,0,9
+	.byte	'NvM_StateChangeActionsType',0,16,254,1,3
+	.word	12584
+	.byte	25,8
+	.word	9441
+	.byte	26,1,0,11,16,130,2,9,20,12
+	.byte	'Queries_at',0
+	.word	12674
+	.byte	8,2,35,0,12
+	.byte	'Actions_t',0
+	.word	12584
+	.byte	8,2,35,8,12
+	.byte	'NextState_t',0
+	.word	11228
+	.byte	4,2,35,16,0,9
+	.byte	'NvM_StateChangeIfDescrType',0,16,135,2,3
+	.word	12683
+	.byte	11,16,137,2,9,12,12
+	.byte	'Actions_t',0
+	.word	12584
+	.byte	8,2,35,0,12
+	.byte	'NextState_t',0
+	.word	11228
+	.byte	4,2,35,8,0,9
+	.byte	'NvM_StateChangeElseDescrType',0,16,141,2,3
+	.word	12786
+	.byte	25,12
+	.word	6126
+	.byte	26,2,0,24
+	.byte	'NvM_BlockMngmtArea_at',0,16,196,2,51
+	.word	12871
+	.byte	1,1,24
+	.byte	'NvM_DcmBlockMngmt_t',0,16,199,2,51
+	.word	6126
+	.byte	1,1,25,120
+	.word	12474
+	.byte	26,9,0,10
+	.word	12944
+	.byte	24
+	.byte	'NvM_IntServiceDescrTable_at',0,16,218,2,58
+	.word	12953
+	.byte	1,1
+.L149:
+	.byte	11,3,70,9,2,12
+	.byte	'SrvList',0
+	.word	297
+	.byte	1,2,35,0,12
+	.byte	'EmptyList',0
+	.word	297
+	.byte	1,2,35,1,0,9
+	.byte	'NvM_JobQueueType',0,3,74,3
+	.word	12997
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L43:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,46,0,3,8,58,15,59,15,57,15,54,15,39,12,63,12,60,12,0,0
+	.byte	3,36,0,3,8,11,15,62,15,0,0,4,46,1,3,8,58,15,59,15,57,15,54,15,39,12,63,12,60,12,0,0,5,5,0,3,8,58,15,59
+	.byte	15,57,15,73,19,0,0,6,4,1,58,15,59,15,57,15,11,15,0,0,7,40,0,3,8,28,13,0,0,8,15,0,73,19,0,0,9,22,0,3,8
+	.byte	58,15,59,15,57,15,73,19,0,0,10,38,0,73,19,0,0,11,19,1,58,15,59,15,57,15,11,15,0,0,12,13,0,3,8,73,19,11
+	.byte	15,56,9,0,0,13,21,0,54,15,0,0,14,19,1,3,8,58,15,59,15,57,15,11,15,0,0,15,21,1,73,19,54,15,39,12,0,0,16
+	.byte	5,0,73,19,0,0,17,21,0,54,15,39,12,0,0,18,21,0,73,19,54,15,39,12,0,0,19,21,1,54,15,39,12,0,0,20,13,0,3
+	.byte	8,11,15,73,19,13,15,12,15,56,9,0,0,21,59,0,3,8,0,0,22,1,1,73,19,0,0,23,33,0,0,0,24,52,0,3,8,58,15,59,15
+	.byte	57,15,73,19,63,12,60,12,0,0,25,1,1,11,15,73,19,0,0,26,33,0,47,15,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L44:
+	.word	.L181-.L180
+.L180:
+	.half	3
+	.word	.L183-.L182
+.L182:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'GenData',0
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_PrivateCfg.h',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\NvM\\Implementation\\NvM_Act.h',0,0,0,0
+	.byte	'NvM_Queue.c',0,2,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\Platform_Types.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\Std_Types.h',0,0,0,0
+	.byte	'Det_Cfg.h',0,1,0,0
+	.byte	'ComStack_Cfg.h',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\ComStack_Types.h',0,0,0,0
+	.byte	'Rte_Type.h',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\MemIf\\Implementation\\MemIf_Types.h',0,0,0,0
+	.byte	'MemIf_Cfg.h',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\NvM\\Implementation\\NvM_IntTypes.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\NvM\\Implementation\\NvM_DataIntegrity.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\NvM\\Implementation\\NvM_Crc.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\NvM\\Implementation\\NvM_Qry.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\NvM\\Implementation\\NvM_JobProc.h',0,0,0,0,0
+.L183:
+.L181:
+	.sdecl	'.debug_info',debug,cluster('NvM_QueueInit')
+	.sect	'.debug_info'
+.L45:
+	.word	258
+	.half	3
+	.word	.L46
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Queue.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L48,.L47
+	.byte	2
+	.word	.L41
+	.byte	3
+	.byte	'NvM_QueueInit',0,1,186,1,30,1,1,1
+	.word	.L26,.L97,.L25
+	.byte	4
+	.word	.L26,.L97
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QueueInit')
+	.sect	'.debug_abbrev'
+.L46:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QueueInit')
+	.sect	'.debug_line'
+.L47:
+	.word	.L185-.L184
+.L184:
+	.half	3
+	.word	.L187-.L186
+.L186:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Queue.c',0,1,0,0,0
+.L187:
+	.byte	5,9,7,0,5,2
+	.word	.L26
+	.byte	3,196,1,1,5,42,9
+	.half	.L188-.L26
+	.byte	3,22,1,5,38,9
+	.half	.L189-.L188
+	.byte	1,5,34,9
+	.half	.L190-.L189
+	.byte	3,1,1,5,5,9
+	.half	.L191-.L190
+	.byte	3,2,1,5,35,9
+	.half	.L192-.L191
+	.byte	1,9
+	.half	.L193-.L192
+	.byte	3,1,1,5,33,1,5,1,9
+	.half	.L194-.L193
+	.byte	3,1,1,7,9
+	.half	.L50-.L194
+	.byte	0,1,1
+.L185:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QueueInit')
+	.sect	'.debug_ranges'
+.L48:
+	.word	-1,.L49,0,.L50-.L49,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QueueJob')
+	.sect	'.debug_info'
+.L51:
+	.word	455
+	.half	3
+	.word	.L52
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Queue.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L54,.L53
+	.byte	2
+	.word	.L41
+	.byte	3
+	.byte	'NvM_QueueJob',0,1,243,1,33
+	.word	.L98
+	.byte	1,1,1
+	.word	.L28,.L99,.L27
+	.byte	4
+	.byte	'BlockId',0,1,243,1,62
+	.word	.L100,.L101
+	.byte	4
+	.byte	'ServiceId',0,1,244,1,62
+	.word	.L102,.L103
+	.byte	4
+	.byte	'RamAddress',0,1,245,1,62
+	.word	.L104,.L105
+	.byte	5
+	.word	.L28,.L99
+	.byte	6
+	.byte	'retVal',0,1,248,1,13
+	.word	.L98,.L106
+	.byte	6
+	.byte	'queueFull',0,1,249,1,13
+	.word	.L98,.L107
+	.byte	6
+	.byte	'blockAlreadyPending',0,1,250,1,13
+	.word	.L98,.L108
+	.byte	5
+	.word	.L109,.L4
+	.byte	6
+	.byte	'elem',0,1,146,2,37
+	.word	.L110,.L111
+	.byte	6
+	.byte	'elemPtr',0,1,147,2,69
+	.word	.L112,.L113
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QueueJob')
+	.sect	'.debug_abbrev'
+.L52:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QueueJob')
+	.sect	'.debug_line'
+.L53:
+	.word	.L196-.L195
+.L195:
+	.half	3
+	.word	.L198-.L197
+.L197:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Queue.c',0,1,0,0,0
+.L198:
+	.byte	5,33,7,0,5,2
+	.word	.L28
+	.byte	3,242,1,1,5,20,9
+	.half	.L152-.L28
+	.byte	3,5,1,5,9,9
+	.half	.L153-.L152
+	.byte	3,5,1,5,54,7,9
+	.half	.L199-.L153
+	.byte	1,5,75,9
+	.half	.L200-.L199
+	.byte	1,5,79,9
+	.half	.L2-.L200
+	.byte	1,5,100,9
+	.half	.L201-.L2
+	.byte	1,5,29,9
+	.half	.L3-.L201
+	.byte	3,13,1,5,71,9
+	.half	.L150-.L3
+	.byte	3,125,1,5,27,9
+	.half	.L202-.L150
+	.byte	3,5,1,5,39,9
+	.half	.L203-.L202
+	.byte	3,1,1,9
+	.half	.L204-.L203
+	.byte	3,127,1,5,61,9
+	.half	.L154-.L204
+	.byte	3,1,1,5,8,9
+	.half	.L155-.L154
+	.byte	3,2,1,5,53,7,9
+	.half	.L205-.L155
+	.byte	1,5,67,7,9
+	.half	.L109-.L205
+	.byte	3,3,1,5,95,9
+	.half	.L156-.L109
+	.byte	3,1,1,5,80,1,5,95,9
+	.half	.L206-.L156
+	.byte	1,5,44,9
+	.half	.L158-.L206
+	.byte	3,8,1,5,28,9
+	.half	.L159-.L158
+	.byte	3,122,1,9
+	.half	.L207-.L159
+	.byte	3,1,1,9
+	.half	.L208-.L207
+	.byte	3,1,1,5,44,9
+	.half	.L209-.L208
+	.byte	3,4,1,9
+	.half	.L157-.L209
+	.byte	3,2,1,5,42,1,5,16,9
+	.half	.L210-.L157
+	.byte	3,2,1,5,28,9
+	.half	.L4-.L210
+	.byte	3,3,1,5,5,9
+	.half	.L211-.L4
+	.byte	3,2,1,5,10,7,9
+	.half	.L212-.L211
+	.byte	3,6,1,5,67,7,9
+	.half	.L213-.L212
+	.byte	3,4,1,5,40,1,5,67,9
+	.half	.L214-.L213
+	.byte	1,5,92,9
+	.half	.L215-.L214
+	.byte	1,5,78,9
+	.half	.L160-.L215
+	.byte	1,5,92,9
+	.half	.L216-.L160
+	.byte	1,5,5,9
+	.half	.L6-.L216
+	.byte	3,7,1,5,1,3,1,1,7,9
+	.half	.L56-.L6
+	.byte	0,1,1
+.L196:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QueueJob')
+	.sect	'.debug_ranges'
+.L54:
+	.word	-1,.L55,0,.L56-.L55,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_UnQueueJob')
+	.sect	'.debug_info'
+.L57:
+	.word	383
+	.half	3
+	.word	.L58
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Queue.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L60,.L59
+	.byte	2
+	.word	.L41
+	.byte	3
+	.byte	'NvM_UnQueueJob',0,1,198,2,33
+	.word	.L98
+	.byte	1,1,1
+	.word	.L30,.L114,.L29
+	.byte	4
+	.byte	'BlockId',0,1,198,2,64
+	.word	.L100,.L115
+	.byte	5
+	.word	.L30,.L114
+	.byte	6
+	.byte	'retVal',0,1,202,2,13
+	.word	.L98,.L116
+	.byte	6
+	.byte	'elem',0,1,203,2,27
+	.word	.L98,.L117
+	.byte	5
+	.word	.L118,.L11
+	.byte	6
+	.byte	'PublicServiceId',0,1,236,2,35
+	.word	.L119,.L120
+	.byte	6
+	.byte	'tmpElem',0,1,237,2,31
+	.word	.L98,.L121
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_UnQueueJob')
+	.sect	'.debug_abbrev'
+.L58:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_UnQueueJob')
+	.sect	'.debug_line'
+.L59:
+	.word	.L218-.L217
+.L217:
+	.half	3
+	.word	.L220-.L219
+.L219:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Queue.c',0,1,0,0,0
+.L220:
+	.byte	5,33,7,0,5,2
+	.word	.L30
+	.byte	3,197,2,1,5,5,9
+	.half	.L161-.L30
+	.byte	3,3,1,5,50,7,9
+	.half	.L221-.L161
+	.byte	1,5,71,9
+	.half	.L222-.L221
+	.byte	1,5,75,9
+	.half	.L9-.L222
+	.byte	1,5,96,9
+	.half	.L223-.L9
+	.byte	1,5,20,9
+	.half	.L10-.L223
+	.byte	3,1,1,5,29,3,6,1,5,71,9
+	.half	.L162-.L10
+	.byte	3,124,1,5,40,9
+	.half	.L224-.L162
+	.byte	3,13,1,5,51,9
+	.half	.L225-.L224
+	.byte	1,5,16,9
+	.half	.L163-.L225
+	.byte	3,16,1,5,5,9
+	.half	.L226-.L163
+	.byte	1,5,64,7,9
+	.half	.L118-.L226
+	.byte	3,2,1,5,49,1,5,64,9
+	.half	.L227-.L118
+	.byte	1,5,54,9
+	.half	.L228-.L227
+	.byte	3,1,1,5,70,9
+	.half	.L229-.L228
+	.byte	3,127,1,5,54,9
+	.half	.L230-.L229
+	.byte	3,1,1,5,81,9
+	.half	.L231-.L230
+	.byte	1,5,33,3,8,1,5,16,9
+	.half	.L232-.L231
+	.byte	3,123,1,5,81,9
+	.half	.L233-.L232
+	.byte	3,125,1,5,88,9
+	.half	.L234-.L233
+	.byte	1,5,33,9
+	.half	.L165-.L234
+	.byte	3,8,1,5,21,9
+	.half	.L164-.L165
+	.byte	3,4,1,5,33,9
+	.half	.L235-.L164
+	.byte	3,124,1,5,9,9
+	.half	.L167-.L235
+	.byte	3,4,1,5,32,7,9
+	.half	.L236-.L167
+	.byte	3,2,1,5,33,9
+	.half	.L12-.L236
+	.byte	3,4,1,5,46,9
+	.half	.L237-.L12
+	.byte	1,5,51,9
+	.half	.L166-.L237
+	.byte	3,2,1,5,49,1,5,57,9
+	.half	.L238-.L166
+	.byte	3,1,1,5,28,9
+	.half	.L11-.L238
+	.byte	3,3,1,5,5,9
+	.half	.L239-.L11
+	.byte	3,2,1,5,1,3,1,1,7,9
+	.half	.L62-.L239
+	.byte	0,1,1
+.L218:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_UnQueueJob')
+	.sect	'.debug_ranges'
+.L60:
+	.word	-1,.L61,0,.L62-.L61,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryNormalPrioJob')
+	.sect	'.debug_info'
+.L63:
+	.word	269
+	.half	3
+	.word	.L64
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Queue.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L66,.L65
+	.byte	2
+	.word	.L41
+	.byte	3
+	.byte	'NvM_QryNormalPrioJob',0,1,145,3,33
+	.word	.L98
+	.byte	1,1,1
+	.word	.L32,.L122,.L31
+	.byte	4
+	.word	.L32,.L122
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryNormalPrioJob')
+	.sect	'.debug_abbrev'
+.L64:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryNormalPrioJob')
+	.sect	'.debug_line'
+.L65:
+	.word	.L241-.L240
+.L240:
+	.half	3
+	.word	.L243-.L242
+.L242:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Queue.c',0,1,0,0,0
+.L243:
+	.byte	5,22,7,0,5,2
+	.word	.L32
+	.byte	3,146,3,1,5,41,9
+	.half	.L244-.L32
+	.byte	1,5,50,9
+	.half	.L245-.L244
+	.byte	1,5,1,3,1,1,7,9
+	.half	.L68-.L245
+	.byte	0,1,1
+.L241:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryNormalPrioJob')
+	.sect	'.debug_ranges'
+.L66:
+	.word	-1,.L67,0,.L68-.L67,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_ActGetNormalPrioJob')
+	.sect	'.debug_info'
+.L69:
+	.word	287
+	.half	3
+	.word	.L70
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Queue.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L72,.L71
+	.byte	2
+	.word	.L41
+	.byte	3
+	.byte	'NvM_ActGetNormalPrioJob',0,1,168,3,30,1,1,1
+	.word	.L34,.L123,.L33
+	.byte	4
+	.word	.L34,.L123
+	.byte	5
+	.byte	'elem',0,1,228,3,27
+	.word	.L98,.L124
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_ActGetNormalPrioJob')
+	.sect	'.debug_abbrev'
+.L70:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_ActGetNormalPrioJob')
+	.sect	'.debug_line'
+.L71:
+	.word	.L247-.L246
+.L246:
+	.half	3
+	.word	.L249-.L248
+.L248:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Queue.c',0,1,0,0,0
+.L249:
+	.byte	5,29,7,0,5,2
+	.word	.L34
+	.byte	3,229,3,1,5,51,9
+	.half	.L250-.L34
+	.byte	3,6,1,5,70,9
+	.half	.L251-.L250
+	.byte	1,5,35,9
+	.half	.L252-.L251
+	.byte	1,5,50,9
+	.half	.L253-.L252
+	.byte	1,5,35,1,5,45,9
+	.half	.L254-.L253
+	.byte	3,1,1,5,50,9
+	.half	.L255-.L254
+	.byte	3,127,1,5,79,9
+	.half	.L256-.L255
+	.byte	1,5,33,9
+	.half	.L257-.L256
+	.byte	1,5,45,9
+	.half	.L258-.L257
+	.byte	3,1,1,5,10,9
+	.half	.L168-.L258
+	.byte	1,5,39,3,3,1,5,51,9
+	.half	.L170-.L168
+	.byte	1,5,52,9
+	.half	.L169-.L170
+	.byte	3,2,1,5,5,1,5,52,9
+	.half	.L259-.L169
+	.byte	1,5,58,9
+	.half	.L260-.L259
+	.byte	1,5,35,9
+	.half	.L261-.L260
+	.byte	1,5,60,9
+	.half	.L262-.L261
+	.byte	3,1,1,5,37,9
+	.half	.L263-.L262
+	.byte	1,5,55,9
+	.half	.L264-.L263
+	.byte	3,1,1,5,32,9
+	.half	.L265-.L264
+	.byte	1,5,28,9
+	.half	.L266-.L265
+	.byte	3,3,1,5,1,7,9
+	.half	.L74-.L266
+	.byte	3,2,0,1,1
+.L247:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_ActGetNormalPrioJob')
+	.sect	'.debug_ranges'
+.L72:
+	.word	-1,.L73,0,.L74-.L73,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QueuePush')
+	.sect	'.debug_info'
+.L75:
+	.word	347
+	.half	3
+	.word	.L76
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Queue.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L78,.L77
+	.byte	2
+	.word	.L41
+	.byte	3
+	.byte	'NvM_QueuePush',0,1,227,4,40,1,1
+	.word	.L36,.L125,.L35
+	.byte	4
+	.byte	'Queue',0,1,227,4,79
+	.word	.L126,.L127
+	.byte	4
+	.byte	'Elem',0,1,227,4,108
+	.word	.L98,.L128
+	.byte	5
+	.word	.L36,.L125
+	.byte	6
+	.byte	'elemPtr',0,1,229,4,65
+	.word	.L129,.L130
+	.byte	5
+	.word	.L15,.L131
+	.byte	6
+	.byte	'NextPtr',0,1,240,4,69
+	.word	.L132,.L133
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QueuePush')
+	.sect	'.debug_abbrev'
+.L76:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3,8,58
+	.byte	15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QueuePush')
+	.sect	'.debug_line'
+.L77:
+	.word	.L268-.L267
+.L267:
+	.half	3
+	.word	.L270-.L269
+.L269:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Queue.c',0,1,0,0,0
+.L270:
+	.byte	5,91,7,0,5,2
+	.word	.L36
+	.byte	3,228,4,1,5,76,1,5,91,9
+	.half	.L271-.L36
+	.byte	1,5,18,9
+	.half	.L172-.L271
+	.byte	3,2,1,5,8,1,5,5,9
+	.half	.L272-.L172
+	.byte	1,5,16,7,9
+	.half	.L273-.L272
+	.byte	3,3,1,5,28,9
+	.half	.L274-.L273
+	.byte	3,1,1,9
+	.half	.L275-.L274
+	.byte	3,1,1,5,1,9
+	.half	.L276-.L275
+	.byte	3,13,1,5,95,7,9
+	.half	.L15-.L276
+	.byte	3,119,1,5,28,3,2,1,5,95,9
+	.half	.L277-.L15
+	.byte	3,126,1,5,37,9
+	.half	.L174-.L277
+	.byte	3,3,1,5,28,9
+	.half	.L278-.L174
+	.byte	1,5,32,9
+	.half	.L279-.L278
+	.byte	3,2,1,5,24,9
+	.half	.L280-.L279
+	.byte	1,5,55,9
+	.half	.L173-.L280
+	.byte	1,5,28,9
+	.half	.L281-.L173
+	.byte	3,1,1,5,16,9
+	.half	.L282-.L281
+	.byte	3,1,1,5,1,9
+	.half	.L131-.L282
+	.byte	3,2,1,7,9
+	.half	.L80-.L131
+	.byte	0,1,1
+.L268:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QueuePush')
+	.sect	'.debug_ranges'
+.L78:
+	.word	-1,.L79,0,.L80-.L79,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QueuePop')
+	.sect	'.debug_info'
+.L81:
+	.word	321
+	.half	3
+	.word	.L82
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Queue.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L84,.L83
+	.byte	2
+	.word	.L41
+	.byte	3
+	.byte	'NvM_QueuePop',0,1,136,5,57
+	.word	.L98
+	.byte	1,1
+	.word	.L38,.L134,.L37
+	.byte	4
+	.byte	'Queue',0,1,136,5,95
+	.word	.L126,.L135
+	.byte	5
+	.word	.L38,.L134
+	.byte	6
+	.byte	'retVal',0,1,138,5,17
+	.word	.L136,.L137
+	.byte	6
+	.byte	'elemPtr',0,1,139,5,39
+	.word	.L138,.L139
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QueuePop')
+	.sect	'.debug_abbrev'
+.L82:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QueuePop')
+	.sect	'.debug_line'
+.L83:
+	.word	.L284-.L283
+.L283:
+	.half	3
+	.word	.L286-.L285
+.L285:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Queue.c',0,1,0,0,0
+.L286:
+	.byte	5,26,7,0,5,2
+	.word	.L38
+	.byte	3,137,5,1,5,50,9
+	.half	.L176-.L38
+	.byte	3,1,1,5,65,9
+	.half	.L287-.L176
+	.byte	1,5,50,1,5,65,9
+	.half	.L288-.L287
+	.byte	1,5,15,9
+	.half	.L177-.L288
+	.byte	3,2,1,5,5,9
+	.half	.L289-.L177
+	.byte	1,5,18,7,9
+	.half	.L290-.L289
+	.byte	3,3,1,5,16,1,5,1,9
+	.half	.L291-.L290
+	.byte	3,11,1,5,16,7,9
+	.half	.L17-.L291
+	.byte	3,121,1,5,32,9
+	.half	.L292-.L17
+	.byte	3,2,1,5,24,9
+	.half	.L293-.L292
+	.byte	1,5,64,9
+	.half	.L175-.L293
+	.byte	1,5,55,9
+	.half	.L294-.L175
+	.byte	1,5,32,9
+	.half	.L295-.L294
+	.byte	3,1,1,5,24,9
+	.half	.L296-.L295
+	.byte	1,5,64,9
+	.half	.L297-.L296
+	.byte	1,5,55,9
+	.half	.L298-.L297
+	.byte	1,5,1,9
+	.half	.L299-.L298
+	.byte	3,4,1,7,9
+	.half	.L86-.L299
+	.byte	0,1,1
+.L284:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QueuePop')
+	.sect	'.debug_ranges'
+.L84:
+	.word	-1,.L85,0,.L86-.L85,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QueueFindBlock')
+	.sect	'.debug_info'
+.L87:
+	.word	357
+	.half	3
+	.word	.L88
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Queue.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L90,.L89
+	.byte	2
+	.word	.L41
+	.byte	3
+	.byte	'NvM_QueueFindBlock',0,1,167,5,57
+	.word	.L98
+	.byte	1,1
+	.word	.L40,.L140,.L39
+	.byte	4
+	.byte	'QueueHead',0,1,167,5,98
+	.word	.L98,.L141
+	.byte	4
+	.byte	'BlockId',0,1,167,5,125
+	.word	.L100,.L142
+	.byte	5
+	.word	.L40,.L140
+	.byte	6
+	.byte	'entryRef',0,1,169,5,27
+	.word	.L98,.L143
+	.byte	7
+	.word	.L144
+	.byte	6
+	.byte	'elem',0,1,173,5,31
+	.word	.L98,.L147
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QueueFindBlock')
+	.sect	'.debug_abbrev'
+.L88:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,7,11,1,85,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QueueFindBlock')
+	.sect	'.debug_line'
+.L89:
+	.word	.L301-.L300
+.L300:
+	.half	3
+	.word	.L303-.L302
+.L302:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Queue.c',0,1,0,0,0
+.L303:
+	.byte	5,36,7,0,5,2
+	.word	.L40
+	.byte	3,168,5,1,5,5,9
+	.half	.L178-.L40
+	.byte	3,2,1,5,36,7,9
+	.half	.L145-.L178
+	.byte	3,2,1,5,20,3,4,1,5,35,9
+	.half	.L21-.L145
+	.byte	1,5,41,9
+	.half	.L304-.L21
+	.byte	1,5,31,9
+	.half	.L305-.L304
+	.byte	3,2,1,5,37,9
+	.half	.L306-.L305
+	.byte	1,5,13,9
+	.half	.L307-.L306
+	.byte	1,5,26,7,9
+	.half	.L308-.L307
+	.byte	3,3,1,5,1,9
+	.half	.L20-.L308
+	.byte	3,8,1,5,33,7,9
+	.half	.L22-.L20
+	.byte	3,124,1,5,1,7,9
+	.half	.L146-.L22
+	.byte	3,4,1,7,9
+	.half	.L92-.L146
+	.byte	0,1,1
+.L301:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QueueFindBlock')
+	.sect	'.debug_ranges'
+.L90:
+	.word	-1,.L91,0,.L92-.L91,0,0
+.L144:
+	.word	-1,.L40,.L145-.L40,.L20-.L40,.L22-.L40,.L146-.L40,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_CurrentJob_t')
+	.sect	'.debug_info'
+.L93:
+	.word	238
+	.half	3
+	.word	.L94
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Queue.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1,2
+	.word	.L41
+	.byte	3
+	.byte	'NvM_CurrentJob_t',0,3,48,36
+	.word	.L148
+	.byte	1,5,3
+	.word	NvM_CurrentJob_t
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_CurrentJob_t')
+	.sect	'.debug_abbrev'
+.L94:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_NormalPrioQueue')
+	.sect	'.debug_info'
+.L95:
+	.word	240
+	.half	3
+	.word	.L96
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Queue.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1,2
+	.word	.L41
+	.byte	3
+	.byte	'NvM_NormalPrioQueue',0,3,88,51
+	.word	.L149
+	.byte	5,3
+	.word	NvM_NormalPrioQueue
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_NormalPrioQueue')
+	.sect	'.debug_abbrev'
+.L96:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_ActGetNormalPrioJob')
+	.sect	'.debug_loc'
+.L33:
+	.word	-1,.L34,0,.L123-.L34
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L124:
+	.word	-1,.L34,.L168-.L34,.L169-.L34
+	.half	1
+	.byte	82
+	.word	.L170-.L34,.L171-.L34
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryNormalPrioJob')
+	.sect	'.debug_loc'
+.L31:
+	.word	-1,.L32,0,.L122-.L32
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QueueFindBlock')
+	.sect	'.debug_loc'
+.L142:
+	.word	-1,.L40,0,.L140-.L40
+	.half	1
+	.byte	85
+	.word	0,0
+.L39:
+	.word	-1,.L40,0,.L140-.L40
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L141:
+	.word	-1,.L40,0,.L140-.L40
+	.half	1
+	.byte	84
+	.word	0,0
+.L147:
+	.word	-1,.L40,.L179-.L40,.L20-.L40
+	.half	5
+	.byte	144,32,157,32,0
+	.word	.L22-.L40,.L140-.L40
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L143:
+	.word	-1,.L40,.L178-.L40,.L140-.L40
+	.half	1
+	.byte	82
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QueueInit')
+	.sect	'.debug_loc'
+.L25:
+	.word	-1,.L26,0,.L97-.L26
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QueueJob')
+	.sect	'.debug_loc'
+.L101:
+	.word	-1,.L28,0,.L150-.L28
+	.half	1
+	.byte	84
+	.word	.L151-.L28,.L99-.L28
+	.half	1
+	.byte	91
+	.word	.L160-.L28,.L6-.L28
+	.half	1
+	.byte	84
+	.word	0,0
+.L27:
+	.word	-1,.L28,0,.L99-.L28
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L105:
+	.word	-1,.L28,0,.L150-.L28
+	.half	1
+	.byte	100
+	.word	.L152-.L28,.L99-.L28
+	.half	1
+	.byte	108
+	.word	0,0
+.L103:
+	.word	-1,.L28,0,.L150-.L28
+	.half	1
+	.byte	85
+	.word	.L152-.L28,.L99-.L28
+	.half	1
+	.byte	92
+	.word	0,0
+.L108:
+	.word	-1,.L28,.L155-.L28,.L99-.L28
+	.half	1
+	.byte	90
+	.word	0,0
+.L111:
+	.word	-1,.L28,.L156-.L28,.L157-.L28
+	.half	1
+	.byte	82
+	.word	.L159-.L28,.L157-.L28
+	.half	1
+	.byte	84
+	.word	0,0
+.L113:
+	.word	-1,.L28,.L158-.L28,.L157-.L28
+	.half	1
+	.byte	98
+	.word	0,0
+.L107:
+	.word	-1,.L28,.L154-.L28,.L99-.L28
+	.half	1
+	.byte	89
+	.word	0,0
+.L106:
+	.word	-1,.L28,.L153-.L28,.L99-.L28
+	.half	1
+	.byte	88
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QueuePop')
+	.sect	'.debug_loc'
+.L37:
+	.word	-1,.L38,0,.L134-.L38
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L135:
+	.word	-1,.L38,0,.L175-.L38
+	.half	1
+	.byte	100
+	.word	0,0
+.L139:
+	.word	-1,.L38,.L177-.L38,.L134-.L38
+	.half	1
+	.byte	111
+	.word	0,0
+.L137:
+	.word	-1,.L38,.L176-.L38,.L134-.L38
+	.half	1
+	.byte	82
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QueuePush')
+	.sect	'.debug_loc'
+.L128:
+	.word	-1,.L36,0,.L125-.L36
+	.half	1
+	.byte	84
+	.word	0,0
+.L133:
+	.word	-1,.L36,.L174-.L36,.L125-.L36
+	.half	1
+	.byte	101
+	.word	0,0
+.L35:
+	.word	-1,.L36,0,.L125-.L36
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L127:
+	.word	-1,.L36,0,.L125-.L36
+	.half	1
+	.byte	100
+	.word	0,0
+.L130:
+	.word	-1,.L36,.L172-.L36,.L173-.L36
+	.half	1
+	.byte	111
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_UnQueueJob')
+	.sect	'.debug_loc'
+.L115:
+	.word	-1,.L30,0,.L162-.L30
+	.half	1
+	.byte	84
+	.word	.L161-.L30,.L114-.L30
+	.half	1
+	.byte	90
+	.word	0,0
+.L29:
+	.word	-1,.L30,0,.L161-.L30
+	.half	2
+	.byte	138,0
+	.word	.L161-.L30,.L114-.L30
+	.half	2
+	.byte	138,8
+	.word	.L114-.L30,.L114-.L30
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L120:
+	.word	-1,.L30,.L165-.L30,.L11-.L30
+	.half	1
+	.byte	89
+	.word	0,0
+.L117:
+	.word	-1,.L30,.L163-.L30,.L164-.L30
+	.half	1
+	.byte	82
+	.word	.L167-.L30,.L166-.L30
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L116:
+	.word	-1,.L30,.L162-.L30,.L114-.L30
+	.half	1
+	.byte	88
+	.word	0,0
+.L121:
+	.word	-1,.L30,.L164-.L30,.L166-.L30
+	.half	1
+	.byte	82
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L309:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('NvM_QueueInit')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L309,.L26,.L97-.L26
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('NvM_QueueJob')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L309,.L28,.L99-.L28
+	.sdecl	'.debug_frame',debug,cluster('NvM_UnQueueJob')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L309,.L30,.L114-.L30
+	.byte	4
+	.word	(.L161-.L30)/2
+	.byte	19,8,22,26,3,19,138,8,4
+	.word	(.L114-.L161)/2
+	.byte	19,0,8,26,0,0
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryNormalPrioJob')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L309,.L32,.L122-.L32
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('NvM_ActGetNormalPrioJob')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L309,.L34,.L123-.L34
+	.sdecl	'.debug_frame',debug,cluster('NvM_QueuePush')
+	.sect	'.debug_frame'
+	.word	20
+	.word	.L309,.L36,.L125-.L36
+	.byte	8,19,8,22,8,23,0,0
+	.sdecl	'.debug_frame',debug,cluster('NvM_QueuePop')
+	.sect	'.debug_frame'
+	.word	20
+	.word	.L309,.L38,.L134-.L38
+	.byte	8,19,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('NvM_QueueFindBlock')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L309,.L40,.L140-.L40
+	.byte	8,19,8,20,8,21,8,22,8,23,0,0
+	; Module end

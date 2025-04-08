@@ -1,0 +1,1490 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v6.2r1 Build 17012451 SN 07925145"
+	.compiler_invocation	"ctc -f cc22308a -c99 --integer-enumeration -D__CPU__=userdef162 -D__CPU_USERDEF162__ --core=tc1.6.2 --fp-model=+float -DBRS_PLATFORM_AURIX -DBRS_COMP_TASKING -I../../../../BSW/Components/BswM/Implementation -I../../../../BSW/Components/CanIf/Implementation -I../../../../BSW/Components/CanSM/Implementation -I../../../../BSW/Components/CanTp/Implementation -I../../../../BSW/Components/Can_30_Core/Implementation -I../../../../BSW/Components/Com/Implementation -I../../../../BSW/Components/ComM/Implementation -I../../../../BSW/Components/Crc -I../../../../BSW/Components/Crc/Implementation -I../../../../BSW/Components/Dcm/Implementation -I../../../../BSW/Components/Dem/Implementation -I../../../../BSW/Components/Det/Implementation -I../../../../BSW/Components/EcuM/Implementation -I../../../../BSW/Components/GenData -I../../../../BSW/Components/Mcal_Tc3xx -I../../../../BSW/Components/Mcal_Tc3xx/Implementation -I../../../../BSW/Components/MemIf -I../../../../BSW/Components/MemIf/Implementation -I../../../../BSW/Components/NvM -I../../../../BSW/Components/NvM/Implementation -I../../../../BSW/Components/Os/Implementation -I../../../../BSW/Components/PduR/Implementation -I../../../../BSW/Components/VStdLib/Implementation -I../../../../BSW/Components/vCan_30_Mcan/Implementation -I../../../../BSW/DemoComponents/vLinkGen/Implementation -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Autosar_Srv -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Integration -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Irq/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Infra_Prod/Sfr/TC39xB/_Reg -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Adc/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Dio/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Fee/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Fls_17_Dmu/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/McalLib/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/McalLib/ssc/inc/AS440 -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Mcu/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Port/ssc/inc -I../../../../BSW/Components/_Common/Implementation -IGenData -IInclude -ID:/TASKING/TriCorev6.2r1/ctc/include -IGenData/Components -IGenData/inc --debug-info=default --align=4 --default-a0-size=0 --default-a1-size=0 --default-near-size=0 --optimize=acefgIklMnopRsUvwy,+predict --tradeoff=2 --language=-gcc,+volatile,-strings,-comments -o o\\BSW\\Components\\NvM\\Implementation\\NvM_MemIfAbstraction.src ../../../../BSW/Components/NvM/Implementation/NvM_MemIfAbstraction.c"
+	.compiler_name		"ctc"
+	;source	'../../../../BSW/Components/NvM/Implementation/NvM_MemIfAbstraction.c'
+
+	
+$TC162
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_MemIfAbstraction_Init')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_MemIfAbstraction_Init
+; Function NvM_MemIfAbstraction_Init
+.L34:
+	.align	4
+NvM_MemIfAbstraction_Init:	.type	func
+.L9:
+	ret
+.L84:
+	
+__NvM_MemIfAbstraction_Init_function_end:
+	.size	NvM_MemIfAbstraction_Init,__NvM_MemIfAbstraction_Init_function_end-NvM_MemIfAbstraction_Init
+.L35:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_MemIfAbstraction_Read')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_MemIfAbstraction_Read
+; Function NvM_MemIfAbstraction_Read
+.L40:
+	.align	4
+NvM_MemIfAbstraction_Read:	.type	func
+.L11:
+	j	MemIf_Read
+.L86:
+	
+__NvM_MemIfAbstraction_Read_function_end:
+	.size	NvM_MemIfAbstraction_Read,__NvM_MemIfAbstraction_Read_function_end-NvM_MemIfAbstraction_Read
+.L41:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_MemIfAbstraction_Write')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_MemIfAbstraction_Write
+; Function NvM_MemIfAbstraction_Write
+.L46:
+	.align	4
+NvM_MemIfAbstraction_Write:	.type	func
+.L13:
+	j	MemIf_Write
+.L94:
+	
+__NvM_MemIfAbstraction_Write_function_end:
+	.size	NvM_MemIfAbstraction_Write,__NvM_MemIfAbstraction_Write_function_end-NvM_MemIfAbstraction_Write
+.L47:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_MemIfAbstraction_EraseImmediateBlock')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_MemIfAbstraction_EraseImmediateBlock
+; Function NvM_MemIfAbstraction_EraseImmediateBlock
+.L52:
+	.align	4
+NvM_MemIfAbstraction_EraseImmediateBlock:	.type	func
+.L15:
+	j	MemIf_EraseImmediateBlock
+.L98:
+	
+__NvM_MemIfAbstraction_EraseImmediateBlock_function_end:
+	.size	NvM_MemIfAbstraction_EraseImmediateBlock,__NvM_MemIfAbstraction_EraseImmediateBlock_function_end-NvM_MemIfAbstraction_EraseImmediateBlock
+.L53:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_MemIfAbstraction_InvalidateBlock')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_MemIfAbstraction_InvalidateBlock
+; Function NvM_MemIfAbstraction_InvalidateBlock
+.L58:
+	.align	4
+NvM_MemIfAbstraction_InvalidateBlock:	.type	func
+.L17:
+	j	MemIf_InvalidateBlock
+.L101:
+	
+__NvM_MemIfAbstraction_InvalidateBlock_function_end:
+	.size	NvM_MemIfAbstraction_InvalidateBlock,__NvM_MemIfAbstraction_InvalidateBlock_function_end-NvM_MemIfAbstraction_InvalidateBlock
+.L59:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_MemIfAbstraction_Cancel')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_MemIfAbstraction_Cancel
+; Function NvM_MemIfAbstraction_Cancel
+.L64:
+	.align	4
+NvM_MemIfAbstraction_Cancel:	.type	func
+.L19:
+	j	MemIf_Cancel
+.L104:
+	
+__NvM_MemIfAbstraction_Cancel_function_end:
+	.size	NvM_MemIfAbstraction_Cancel,__NvM_MemIfAbstraction_Cancel_function_end-NvM_MemIfAbstraction_Cancel
+.L65:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_MemIfAbstraction_SetMode')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_MemIfAbstraction_SetMode
+; Function NvM_MemIfAbstraction_SetMode
+.L70:
+	.align	4
+NvM_MemIfAbstraction_SetMode:	.type	func
+.L21:
+	j	MemIf_SetMode
+.L106:
+	
+__NvM_MemIfAbstraction_SetMode_function_end:
+	.size	NvM_MemIfAbstraction_SetMode,__NvM_MemIfAbstraction_SetMode_function_end-NvM_MemIfAbstraction_SetMode
+.L71:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_MemIfAbstraction_GetStatus')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_MemIfAbstraction_GetStatus
+; Function NvM_MemIfAbstraction_GetStatus
+.L76:
+	.align	4
+NvM_MemIfAbstraction_GetStatus:	.type	func
+.L23:
+	j	MemIf_GetStatus
+.L110:
+	
+__NvM_MemIfAbstraction_GetStatus_function_end:
+	.size	NvM_MemIfAbstraction_GetStatus,__NvM_MemIfAbstraction_GetStatus_function_end-NvM_MemIfAbstraction_GetStatus
+.L77:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_MemIfAbstraction_GetJobResult')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_MemIfAbstraction_GetJobResult
+; Function NvM_MemIfAbstraction_GetJobResult
+.L82:
+	.align	4
+NvM_MemIfAbstraction_GetJobResult:	.type	func
+.L25:
+	j	MemIf_GetJobResult
+.L113:
+	
+__NvM_MemIfAbstraction_GetJobResult_function_end:
+	.size	NvM_MemIfAbstraction_GetJobResult,__NvM_MemIfAbstraction_GetJobResult_function_end-NvM_MemIfAbstraction_GetJobResult
+.L83:
+	; End of function
+	
+	.calls	'NvM_MemIfAbstraction_Read','MemIf_Read'
+	.calls	'NvM_MemIfAbstraction_Write','MemIf_Write'
+	.calls	'NvM_MemIfAbstraction_EraseImmediateBlock','MemIf_EraseImmediateBlock'
+	.calls	'NvM_MemIfAbstraction_InvalidateBlock','MemIf_InvalidateBlock'
+	.calls	'NvM_MemIfAbstraction_Cancel','MemIf_Cancel'
+	.calls	'NvM_MemIfAbstraction_SetMode','MemIf_SetMode'
+	.calls	'NvM_MemIfAbstraction_GetStatus','MemIf_GetStatus'
+	.calls	'NvM_MemIfAbstraction_GetJobResult','MemIf_GetJobResult'
+	.calls	'NvM_MemIfAbstraction_Init','',0
+	.calls	'NvM_MemIfAbstraction_Read','',0
+	.calls	'NvM_MemIfAbstraction_Write','',0
+	.calls	'NvM_MemIfAbstraction_EraseImmediateBlock','',0
+	.calls	'NvM_MemIfAbstraction_InvalidateBlock','',0
+	.calls	'NvM_MemIfAbstraction_Cancel','',0
+	.calls	'NvM_MemIfAbstraction_SetMode','',0
+	.calls	'NvM_MemIfAbstraction_GetStatus','',0
+	.extern	MemIf_Read
+	.extern	MemIf_Write
+	.extern	MemIf_InvalidateBlock
+	.extern	MemIf_EraseImmediateBlock
+	.extern	MemIf_Cancel
+	.extern	MemIf_GetStatus
+	.extern	MemIf_GetJobResult
+	.extern	MemIf_SetMode
+	.calls	'NvM_MemIfAbstraction_GetJobResult','',0
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L27:
+	.word	6156
+	.half	3
+	.word	.L28
+	.byte	4
+.L26:
+	.byte	1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_MemIfAbstraction.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L29
+.L85:
+	.byte	2
+	.byte	'unsigned char',0,1,8
+.L88:
+	.byte	2
+	.byte	'unsigned short int',0,2,7
+.L91:
+	.byte	3
+	.word	219
+	.byte	4
+	.byte	'MemIf_DataPtr_pu8',0,2,96,50
+	.word	258
+	.byte	5
+	.byte	'MemIf_Read',0,1,130,1,34
+	.word	219
+	.byte	1,1,1,1,6
+	.byte	'DeviceIndex',0,1,130,1,51
+	.word	219
+	.byte	6
+	.byte	'BlockNumber',0,1,130,1,71
+	.word	236
+	.byte	6
+	.byte	'BlockOffset',0,1,130,1,91
+	.word	236
+	.byte	6
+	.byte	'DataBufferPtr',0,1,130,1,122
+	.word	263
+	.byte	6
+	.byte	'Length',0,1,130,1,144,1
+	.word	236
+	.byte	0,3
+	.word	219
+	.byte	5
+	.byte	'MemIf_Write',0,1,149,1,34
+	.word	219
+	.byte	1,1,1,1,6
+	.byte	'DeviceIndex',0,1,149,1,52
+	.word	219
+	.byte	6
+	.byte	'BlockNumber',0,1,149,1,72
+	.word	236
+	.byte	6
+	.byte	'DataBufferPtr',0,1,149,1,103
+	.word	263
+	.byte	0,5
+	.byte	'MemIf_InvalidateBlock',0,1,167,1,34
+	.word	219
+	.byte	1,1,1,1,6
+	.byte	'DeviceIndex',0,1,167,1,63
+	.word	219
+	.byte	6
+	.byte	'BlockNumber',0,1,167,1,83
+	.word	236
+	.byte	0,5
+	.byte	'MemIf_EraseImmediateBlock',0,1,185,1,34
+	.word	219
+	.byte	1,1,1,1,6
+	.byte	'DeviceIndex',0,1,185,1,66
+	.word	219
+	.byte	6
+	.byte	'BlockNumber',0,1,185,1,86
+	.word	236
+	.byte	0,7
+	.byte	'MemIf_Cancel',0,1,201,1,24,1,1,1,1,6
+	.byte	'DeviceIndex',0,1,201,1,43
+	.word	219
+	.byte	0
+.L109:
+	.byte	8,2,59,9,4,9
+	.byte	'MEMIF_UNINIT',0,0,9
+	.byte	'MEMIF_IDLE',0,1,9
+	.byte	'MEMIF_BUSY',0,2,9
+	.byte	'MEMIF_BUSY_INTERNAL',0,3,0,5
+	.byte	'MemIf_GetStatus',0,1,218,1,36
+	.word	717
+	.byte	1,1,1,1,6
+	.byte	'DeviceIndex',0,1,218,1,58
+	.word	219
+	.byte	0
+.L112:
+	.byte	8,2,72,9,4,9
+	.byte	'MEMIF_JOB_OK',0,0,9
+	.byte	'MEMIF_JOB_FAILED',0,1,9
+	.byte	'MEMIF_JOB_PENDING',0,2,9
+	.byte	'MEMIF_JOB_CANCELED',0,3,9
+	.byte	'MEMIF_BLOCK_INCONSISTENT',0,4,9
+	.byte	'MEMIF_BLOCK_INVALID',0,5,0,5
+	.byte	'MemIf_GetJobResult',0,1,235,1,39
+	.word	837
+	.byte	1,1,1,1,6
+	.byte	'DeviceIndex',0,1,235,1,64
+	.word	219
+	.byte	0
+.L107:
+	.byte	8,2,88,9,4,9
+	.byte	'MEMIF_MODE_SLOW',0,0,9
+	.byte	'MEMIF_MODE_FAST',0,1,0,7
+	.byte	'MemIf_SetMode',0,1,141,2,24,1,1,1,1,6
+	.byte	'Mode',0,1,141,2,53
+	.word	1021
+	.byte	0,10,1,3
+	.word	1101
+	.byte	4
+	.byte	'__codeptr',0,3,1,1
+	.word	1103
+	.byte	4
+	.byte	'boolean',0,4,140,1,29
+	.word	219
+	.byte	2
+	.byte	'char',0,1,6,4
+	.byte	'sint8',0,4,142,1,31
+	.word	1143
+	.byte	4
+	.byte	'uint8',0,4,143,1,31
+	.word	219
+	.byte	2
+	.byte	'short int',0,2,5,4
+	.byte	'sint16',0,4,144,1,31
+	.word	1181
+	.byte	4
+	.byte	'uint16',0,4,145,1,31
+	.word	236
+	.byte	2
+	.byte	'long int',0,4,5,4
+	.byte	'sint32',0,4,146,1,31
+	.word	1226
+	.byte	2
+	.byte	'unsigned long int',0,4,7,4
+	.byte	'uint32',0,4,147,1,31
+	.word	1254
+	.byte	4
+	.byte	'Std_ReturnType',0,5,120,15
+	.word	219
+	.byte	4
+	.byte	'Std_TransformerErrorCode',0,5,131,1,15
+	.word	219
+	.byte	4
+	.byte	'Std_TransformerClass',0,5,133,1,15
+	.word	219
+	.byte	4
+	.byte	'PduLengthType',0,6,70,16
+	.word	236
+	.byte	4
+	.byte	'SduDataPtrType',0,7,178,1,54
+	.word	258
+	.byte	8,7,201,1,9,4,9
+	.byte	'TP_DATACONF',0,0,9
+	.byte	'TP_DATARETRY',0,1,9
+	.byte	'TP_CONFPENDING',0,2,0,4
+	.byte	'TpDataStateType',0,7,208,1,3
+	.word	1424
+	.byte	11
+	.byte	'sDet_PCConfigType',0,8,243,1,16,1,12
+	.byte	'Det_PCConfigNeverUsed',0
+	.word	219
+	.byte	1,2,35,0,0,4
+	.byte	'Det_PCConfigType',0,8,246,1,3
+	.word	1502
+	.byte	4
+	.byte	'Dcm_DataElement_Boot_Software_Boot_Software_Identification_PrimitiveType',0,9,84,16
+	.word	1254
+	.byte	4
+	.byte	'Dcm_DataElement_Boot_Software_NumberOfModules_PrimitiveType',0,9,87,15
+	.word	219
+	.byte	4
+	.byte	'Dcm_DataElement_DID_0x0017_DID_Sint32_Array_ArrayType',0,9,90,16
+	.word	1226
+	.byte	4
+	.byte	'Dcm_DataElement_DID_0x0018_DID_Uint32_Array_ArrayType',0,9,93,16
+	.word	1254
+	.byte	4
+	.byte	'Dcm_DataElement_DID_0x0019_DID_Sint16_Array_ArrayType',0,9,96,16
+	.word	1181
+	.byte	4
+	.byte	'Dcm_DataElement_DID_0x001A_DID_Uint16_Array_ArrayType',0,9,99,16
+	.word	236
+	.byte	4
+	.byte	'Dcm_DataElement_DID_0x001B_DID_Sint8_Array_ArrayType',0,9,102,15
+	.word	1143
+	.byte	4
+	.byte	'Dcm_DataElement_DID_0xF410_DID_Data_PrimitiveType',0,9,105,16
+	.word	236
+	.byte	4
+	.byte	'Dcm_DataElement_DID_0xF412_DID_Data_PrimitiveType',0,9,108,16
+	.word	236
+	.byte	4
+	.byte	'Dcm_DataElement_DID_0xF413_DID_Data_PrimitiveType',0,9,111,16
+	.word	236
+	.byte	4
+	.byte	'Dcm_DataElement_DataDiagnosticIdentifier_DID_DataDiagnosticIdentifier_PrimitiveType',0,9,114,16
+	.word	236
+	.byte	4
+	.byte	'Dcm_DataElement_DevelopmentData_CanDriverVersion_PrimitiveType',0,9,117,16
+	.word	236
+	.byte	4
+	.byte	'Dcm_DataElement_DevelopmentData_DiagnosticModuleVersion_PrimitiveType',0,9,120,16
+	.word	236
+	.byte	4
+	.byte	'Dcm_DataElement_DevelopmentData_NmVersion_PrimitiveType',0,9,123,16
+	.word	236
+	.byte	4
+	.byte	'Dcm_DataElement_DevelopmentData_OperatingSystemVersion_PrimitiveType',0,9,126,16
+	.word	236
+	.byte	4
+	.byte	'Dcm_DataElement_DevelopmentData_TransportLayerVersion_PrimitiveType',0,9,129,1,16
+	.word	236
+	.byte	4
+	.byte	'Dcm_DataElement_Example_ReadWriteData_GlobalTime_PrimitiveType',0,9,132,1,16
+	.word	1254
+	.byte	4
+	.byte	'Dcm_DataElement_Example_WriteOnlyDID_DID_DataObject_PrimitiveType',0,9,135,1,15
+	.word	219
+	.byte	4
+	.byte	'Dcm_DataElement_SampleIoControl_DID_Data_PrimitiveType',0,9,138,1,16
+	.word	1254
+	.byte	4
+	.byte	'Dcm_DataElement_SerialNumber_SerialNumber_PrimitiveType',0,9,141,1,16
+	.word	1254
+	.byte	4
+	.byte	'Dcm_RequestDataOut_SampleRoutineControl_Out_ResultPrimitiveType',0,9,147,1,16
+	.word	236
+	.byte	4
+	.byte	'Dcm_RequestDataOut_SampleRoutineControl_StartOnly_Out_ResultPrimitiveType',0,9,153,1,16
+	.word	1254
+	.byte	4
+	.byte	'Dcm_StartDataIn_SampleRoutineControl_In_Option0PrimitiveType',0,9,159,1,15
+	.word	219
+	.byte	4
+	.byte	'Dcm_StartDataIn_SampleRoutineControl_StartOnly_In_Option1ArrayType',0,9,165,1,15
+	.word	219
+	.byte	4
+	.byte	'Dcm_StartDataOut_SampleRoutineControl_Out_InitStatePrimitiveType',0,9,168,1,16
+	.word	1254
+	.byte	4
+	.byte	'Dcm_StopDataOut_SampleRoutineControl_Out_StopStatePrimitiveType',0,9,174,1,16
+	.word	1254
+	.byte	4
+	.byte	'NvM_BlockIdType',0,9,134,3,16
+	.word	236
+	.byte	4
+	.byte	'MemIf_StatusType',0,2,65,3
+	.word	717
+	.byte	4
+	.byte	'MemIf_JobResultType',0,2,80,3
+	.word	837
+	.byte	4
+	.byte	'MemIf_ModeType',0,2,92,3
+	.word	1021
+	.byte	3
+	.word	219
+	.byte	13
+	.word	219
+	.byte	1,1,14
+	.word	236
+	.byte	14
+	.word	236
+	.byte	14
+	.word	3501
+	.byte	14
+	.word	236
+	.byte	0,3
+	.word	3506
+	.byte	4
+	.byte	'MemIf_ApiReadType',0,10,137,1,9
+	.word	3534
+	.byte	13
+	.word	219
+	.byte	1,1,14
+	.word	236
+	.byte	14
+	.word	3501
+	.byte	0,3
+	.word	3566
+	.byte	4
+	.byte	'MemIf_ApiWriteType',0,10,138,1,9
+	.word	3584
+	.byte	13
+	.word	219
+	.byte	1,1,14
+	.word	236
+	.byte	0,3
+	.word	3617
+	.byte	4
+	.byte	'MemIf_ApiEraseImmediateBlockType',0,10,139,1,9
+	.word	3630
+	.byte	4
+	.byte	'MemIf_ApiInvalidateBlockType',0,10,140,1,9
+	.word	3630
+	.byte	15,1,1,3
+	.word	3715
+	.byte	4
+	.byte	'MemIf_ApiCancelType',0,10,141,1,9
+	.word	3718
+	.byte	16
+	.word	717
+	.byte	1,1,3
+	.word	3752
+	.byte	4
+	.byte	'MemIf_ApiGetStatusType',0,10,142,1,9
+	.word	3759
+	.byte	16
+	.word	837
+	.byte	1,1,3
+	.word	3796
+	.byte	4
+	.byte	'MemIf_ApiGetJobResultType',0,10,143,1,9
+	.word	3803
+	.byte	17,1,1,14
+	.word	1021
+	.byte	0,3
+	.word	3843
+	.byte	4
+	.byte	'MemIf_ApiSetModeType',0,10,144,1,9
+	.word	3852
+	.byte	2
+	.byte	'unsigned int',0,4,7,4
+	.byte	'NvM_BitFieldType',0,11,78,22
+	.word	3887
+	.byte	18,11,80,9,2,19
+	.byte	'CalcRamBlockCrcEnabled',0,1
+	.word	219
+	.byte	1,7,2,35,0,19
+	.byte	'BlockWriteProtEnabled',0,1
+	.word	219
+	.byte	1,6,2,35,0,19
+	.byte	'BlockWriteBlockOnceEnabled',0,1
+	.word	219
+	.byte	1,5,2,35,0,19
+	.byte	'ResistantToChangedSwEnabled',0,1
+	.word	219
+	.byte	1,4,2,35,0,19
+	.byte	'SelectBlockForReadAllEnabled',0,1
+	.word	219
+	.byte	1,3,2,35,0,19
+	.byte	'SelectBlockForPreReadAllEnabled',0,1
+	.word	219
+	.byte	1,2,2,35,0,19
+	.byte	'SelectBlockForWriteAllEnabled',0,1
+	.word	219
+	.byte	1,1,2,35,0,19
+	.byte	'InvokeCallbacksForReadAllEnabled',0,1
+	.word	219
+	.byte	1,0,2,35,0,19
+	.byte	'InvokeCallbacksForWriteAllEnabled',0,1
+	.word	219
+	.byte	1,7,2,35,1,19
+	.byte	'BlockUseSetRamBlockStatusEnabled',0,1
+	.word	219
+	.byte	1,6,2,35,1,19
+	.byte	'BlockCheckLossOfRedundancyEnabled',0,1
+	.word	219
+	.byte	1,5,2,35,1,19
+	.byte	'NotifyBswM',0,1
+	.word	219
+	.byte	1,4,2,35,1,0,4
+	.byte	'NvM_BlockDescriptorFlagsType',0,11,94,3
+	.word	3928
+	.byte	4
+	.byte	'NvM_DataIntegrityType',0,11,97,26
+	.word	3887
+	.byte	13
+	.word	219
+	.byte	1,1,14
+	.word	219
+	.byte	14
+	.word	219
+	.byte	0,3
+	.word	4469
+	.byte	4
+	.byte	'NvM_JobEndCbkPtrType',0,11,105,9
+	.word	4487
+	.byte	13
+	.word	219
+	.byte	1,1,14
+	.word	236
+	.byte	14
+	.word	219
+	.byte	14
+	.word	219
+	.byte	0,3
+	.word	4521
+	.byte	4
+	.byte	'NvM_JobEndCbkExtPtrType',0,11,108,9
+	.word	4544
+	.byte	16
+	.word	219
+	.byte	1,1,3
+	.word	4581
+	.byte	4
+	.byte	'NvM_InitCbkPtrType',0,11,113,9
+	.word	4588
+	.byte	20
+	.byte	'void',0,3
+	.word	4620
+	.byte	13
+	.word	219
+	.byte	1,1,14
+	.word	236
+	.byte	14
+	.word	4626
+	.byte	14
+	.word	236
+	.byte	0,3
+	.word	4631
+	.byte	4
+	.byte	'NvM_InitCbkExtPtrType',0,11,116,9
+	.word	4654
+	.byte	13
+	.word	219
+	.byte	1,1,14
+	.word	4626
+	.byte	0,3
+	.word	4689
+	.byte	4
+	.byte	'NvM_WriteRamToNvMCbkPtrType',0,11,119,9
+	.word	4702
+	.byte	21
+	.word	4620
+	.byte	3
+	.word	4743
+	.byte	13
+	.word	219
+	.byte	1,1,14
+	.word	4748
+	.byte	0,3
+	.word	4753
+	.byte	4
+	.byte	'NvM_ReadRamFromNvMCbkPtrType',0,11,120,9
+	.word	4766
+	.byte	17,1,1,14
+	.word	236
+	.byte	14
+	.word	4626
+	.byte	14
+	.word	236
+	.byte	0,3
+	.word	4808
+	.byte	4
+	.byte	'NvM_PreWriteTransformCbkPtrType',0,11,123,9
+	.word	4827
+	.byte	4
+	.byte	'NvM_PostReadTransformCbkPtrType',0,11,124,9
+	.word	4654
+	.byte	4
+	.byte	'NvM_RamAddressType',0,11,129,1,48
+	.word	258
+	.byte	21
+	.word	219
+	.byte	3
+	.word	4940
+	.byte	4
+	.byte	'NvM_RomAddressType',0,11,131,1,51
+	.word	4945
+	.byte	4
+	.byte	'NvM_RamDataIntegrityAddressType',0,11,137,1,51
+	.word	258
+	.byte	18,11,173,1,9,68,12
+	.byte	'RamBlockDataAddr_t',0
+	.word	4912
+	.byte	4,2,35,0,12
+	.byte	'RomBlockDataAddr_pt',0
+	.word	4950
+	.byte	4,2,35,4,12
+	.byte	'InitCbkFunc_pt',0
+	.word	4593
+	.byte	4,2,35,8,12
+	.byte	'InitCbkExtFunc_pt',0
+	.word	4659
+	.byte	4,2,35,12,12
+	.byte	'JobEndCbkFunc_pt',0
+	.word	4492
+	.byte	4,2,35,16,12
+	.byte	'JobEndCbkExtFunc_pt',0
+	.word	4549
+	.byte	4,2,35,20,12
+	.byte	'CbkGetMirrorFunc_pt',0
+	.word	4771
+	.byte	4,2,35,24,12
+	.byte	'CbkSetMirrorFunc_pt',0
+	.word	4707
+	.byte	4,2,35,28,12
+	.byte	'CbkPreWriteTransform',0
+	.word	4832
+	.byte	4,2,35,32,12
+	.byte	'CbkPostReadTransform',0
+	.word	4872
+	.byte	4,2,35,36,12
+	.byte	'RamBlockDataIntegrityAddr_t',0
+	.word	4978
+	.byte	4,2,35,40,12
+	.byte	'DataIntegrityRecordCompMechanismBuffer',0
+	.word	4978
+	.byte	4,2,35,44,12
+	.byte	'Flags',0
+	.word	3928
+	.byte	2,2,35,48,12
+	.byte	'NvIdentifier_u16',0
+	.word	236
+	.byte	2,2,35,50,12
+	.byte	'NvBlockLength_u16',0
+	.word	236
+	.byte	2,2,35,52,12
+	.byte	'NvBlockNVRAMDataLength',0
+	.word	236
+	.byte	2,2,35,54,12
+	.byte	'NvCryptoReference',0
+	.word	219
+	.byte	1,2,35,56,12
+	.byte	'MacSize',0
+	.word	236
+	.byte	2,2,35,58,12
+	.byte	'MacReference',0
+	.word	219
+	.byte	1,2,35,60,12
+	.byte	'NvBlockCount_u8',0
+	.word	219
+	.byte	1,2,35,61,12
+	.byte	'BlockPrio_u8',0
+	.word	219
+	.byte	1,2,35,62,19
+	.byte	'DeviceId_u8',0,1
+	.word	219
+	.byte	4,4,2,35,63,19
+	.byte	'MngmtType_t',0,1
+	.word	219
+	.byte	2,2,2,35,63,19
+	.byte	'DataIntegritySettings',0,4
+	.word	3887
+	.byte	3,15,2,35,62,0,4
+	.byte	'NvM_BlockDescriptorType',0,11,201,1,3
+	.word	5019
+	.byte	3
+	.word	219
+	.byte	21
+	.word	219
+	.byte	3
+	.word	5722
+	.byte	3
+	.word	4581
+	.byte	3
+	.word	4631
+	.byte	3
+	.word	4469
+	.byte	3
+	.word	4521
+	.byte	3
+	.word	4753
+	.byte	3
+	.word	4689
+	.byte	3
+	.word	4808
+	.byte	3
+	.word	4631
+	.byte	3
+	.word	219
+	.byte	4
+	.byte	'NvM_CsmJobIdType',0,11,209,1,16
+	.word	1254
+	.byte	8,11,227,1,9,4,9
+	.byte	'NVM_INT_FID_WRITE_BLOCK',0,0,9
+	.byte	'NVM_INT_FID_READ_BLOCK',0,1,9
+	.byte	'NVM_INT_FID_RESTORE_DEFAULTS',0,2,9
+	.byte	'NVM_INT_FID_INVALIDATE_NV_BLOCK',0,3,9
+	.byte	'NVM_INT_FID_ERASE_BLOCK',0,4,9
+	.byte	'NVM_INT_FID_WRITE_ALL',0,5,9
+	.byte	'NVM_INT_FID_READ_ALL',0,6,9
+	.byte	'NVM_INT_FID_PRE_READ_ALL',0,7,9
+	.byte	'NVM_INT_FID_REPAIR_REDUNDANT_BLOCKS',0,8,9
+	.byte	'NVM_INT_FID_NO_JOB_PENDING',0,9,0,4
+	.byte	'NvM_InternalServiceIdType',0,11,239,1,3
+	.word	5803
+	.byte	4
+	.byte	'NvM_QueueEntryRefType',0,11,242,1,15
+	.word	219
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L28:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,36,0,3,8,11,15,62,15,0,0,3,15,0,73,19,0,0,4,22,0,3,8,58
+	.byte	15,59,15,57,15,73,19,0,0,5,46,1,3,8,58,15,59,15,57,15,73,19,54,15,39,12,63,12,60,12,0,0,6,5,0,3,8,58,15
+	.byte	59,15,57,15,73,19,0,0,7,46,1,3,8,58,15,59,15,57,15,54,15,39,12,63,12,60,12,0,0,8,4,1,58,15,59,15,57,15
+	.byte	11,15,0,0,9,40,0,3,8,28,13,0,0,10,21,0,54,15,0,0,11,19,1,3,8,58,15,59,15,57,15,11,15,0,0,12,13,0,3,8,73
+	.byte	19,11,15,56,9,0,0,13,21,1,73,19,54,15,39,12,0,0,14,5,0,73,19,0,0,15,21,0,54,15,39,12,0,0,16,21,0,73,19
+	.byte	54,15,39,12,0,0,17,21,1,54,15,39,12,0,0,18,19,1,58,15,59,15,57,15,11,15,0,0,19,13,0,3,8,11,15,73,19,13
+	.byte	15,12,15,56,9,0,0,20,59,0,3,8,0,0,21,38,0,73,19,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L29:
+	.word	.L116-.L115
+.L115:
+	.half	3
+	.word	.L118-.L117
+.L117:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0
+	.byte	'GenData',0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\MemIf\\Implementation\\MemIf.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\MemIf\\Implementation\\MemIf_Types.h',0,0,0,0
+	.byte	'NvM_MemIfAbstraction.c',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\Platform_Types.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\Std_Types.h',0,0,0,0
+	.byte	'ComStack_Cfg.h',0,2,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\ComStack_Types.h',0,0,0,0
+	.byte	'Det_Cfg.h',0,2,0,0
+	.byte	'Rte_Type.h',0,2,0,0
+	.byte	'MemIf_Cfg.h',0,2,0,0
+	.byte	'NvM_PrivateCfg.h',0,2,0,0,0
+.L118:
+.L116:
+	.sdecl	'.debug_info',debug,cluster('NvM_MemIfAbstraction_Init')
+	.sect	'.debug_info'
+.L30:
+	.word	280
+	.half	3
+	.word	.L31
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_MemIfAbstraction.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L33,.L32
+	.byte	2
+	.word	.L26
+	.byte	3
+	.byte	'NvM_MemIfAbstraction_Init',0,1,96,22,1,1,1
+	.word	.L9,.L84,.L8
+	.byte	4
+	.word	.L9,.L84
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_MemIfAbstraction_Init')
+	.sect	'.debug_abbrev'
+.L31:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_MemIfAbstraction_Init')
+	.sect	'.debug_line'
+.L32:
+	.word	.L120-.L119
+.L119:
+	.half	3
+	.word	.L122-.L121
+.L121:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_MemIfAbstraction.c',0,1,0,0,0
+.L122:
+	.byte	5,1,7,0,5,2
+	.word	.L9
+	.byte	3,242,0,1,7,9
+	.half	.L35-.L9
+	.byte	0,1,1
+.L120:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_MemIfAbstraction_Init')
+	.sect	'.debug_ranges'
+.L33:
+	.word	-1,.L34,0,.L35-.L34,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_MemIfAbstraction_Read')
+	.sect	'.debug_info'
+.L36:
+	.word	407
+	.half	3
+	.word	.L37
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_MemIfAbstraction.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L39,.L38
+	.byte	2
+	.word	.L26
+	.byte	3
+	.byte	'NvM_MemIfAbstraction_Read',0,1,129,1,32
+	.word	.L85
+	.byte	1,1,1
+	.word	.L11,.L86,.L10
+	.byte	4
+	.byte	'DeviceIndex',0,1,130,1,11
+	.word	.L85,.L87
+	.byte	4
+	.byte	'BlockNumber',0,1,131,1,12
+	.word	.L88,.L89
+	.byte	4
+	.byte	'BlockOffset',0,1,132,1,12
+	.word	.L88,.L90
+	.byte	4
+	.byte	'DataBufferPtr',0,1,133,1,12
+	.word	.L91,.L92
+	.byte	4
+	.byte	'Length',0,1,134,1,12
+	.word	.L88,.L93
+	.byte	5
+	.word	.L11,.L86
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_MemIfAbstraction_Read')
+	.sect	'.debug_abbrev'
+.L37:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_MemIfAbstraction_Read')
+	.sect	'.debug_line'
+.L38:
+	.word	.L124-.L123
+.L123:
+	.half	3
+	.word	.L126-.L125
+.L125:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_MemIfAbstraction.c',0,1,0,0,0
+.L126:
+	.byte	5,75,7,0,5,2
+	.word	.L11
+	.byte	3,136,1,1,5,1,7,9
+	.half	.L41-.L11
+	.byte	3,15,0,1,1
+.L124:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_MemIfAbstraction_Read')
+	.sect	'.debug_ranges'
+.L39:
+	.word	-1,.L40,0,.L41-.L40,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_MemIfAbstraction_Write')
+	.sect	'.debug_info'
+.L42:
+	.word	363
+	.half	3
+	.word	.L43
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_MemIfAbstraction.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L45,.L44
+	.byte	2
+	.word	.L26
+	.byte	3
+	.byte	'NvM_MemIfAbstraction_Write',0,1,166,1,32
+	.word	.L85
+	.byte	1,1,1
+	.word	.L13,.L94,.L12
+	.byte	4
+	.byte	'DeviceIndex',0,1,167,1,11
+	.word	.L85,.L95
+	.byte	4
+	.byte	'BlockNumber',0,1,168,1,12
+	.word	.L88,.L96
+	.byte	4
+	.byte	'DataBufferPtr',0,1,169,1,13
+	.word	.L91,.L97
+	.byte	5
+	.word	.L13,.L94
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_MemIfAbstraction_Write')
+	.sect	'.debug_abbrev'
+.L43:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_MemIfAbstraction_Write')
+	.sect	'.debug_line'
+.L44:
+	.word	.L128-.L127
+.L127:
+	.half	3
+	.word	.L130-.L129
+.L129:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_MemIfAbstraction.c',0,1,0,0,0
+.L130:
+	.byte	5,48,7,0,5,2
+	.word	.L13
+	.byte	3,171,1,1,5,1,7,9
+	.half	.L47-.L13
+	.byte	3,13,0,1,1
+.L128:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_MemIfAbstraction_Write')
+	.sect	'.debug_ranges'
+.L45:
+	.word	-1,.L46,0,.L47-.L46,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_MemIfAbstraction_EraseImmediateBlock')
+	.sect	'.debug_info'
+.L48:
+	.word	350
+	.half	3
+	.word	.L49
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_MemIfAbstraction.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L51,.L50
+	.byte	2
+	.word	.L26
+	.byte	3
+	.byte	'NvM_MemIfAbstraction_EraseImmediateBlock',0,1,200,1,32
+	.word	.L85
+	.byte	1,1,1
+	.word	.L15,.L98,.L14
+	.byte	4
+	.byte	'DeviceIndex',0,1,201,1,11
+	.word	.L85,.L99
+	.byte	4
+	.byte	'BlockNumber',0,1,202,1,12
+	.word	.L88,.L100
+	.byte	5
+	.word	.L15,.L98
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_MemIfAbstraction_EraseImmediateBlock')
+	.sect	'.debug_abbrev'
+.L49:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_MemIfAbstraction_EraseImmediateBlock')
+	.sect	'.debug_line'
+.L50:
+	.word	.L132-.L131
+.L131:
+	.half	3
+	.word	.L134-.L133
+.L133:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_MemIfAbstraction.c',0,1,0,0,0
+.L134:
+	.byte	5,49,7,0,5,2
+	.word	.L15
+	.byte	3,204,1,1,5,1,7,9
+	.half	.L53-.L15
+	.byte	3,12,0,1,1
+.L132:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_MemIfAbstraction_EraseImmediateBlock')
+	.sect	'.debug_ranges'
+.L51:
+	.word	-1,.L52,0,.L53-.L52,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_MemIfAbstraction_InvalidateBlock')
+	.sect	'.debug_info'
+.L54:
+	.word	346
+	.half	3
+	.word	.L55
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_MemIfAbstraction.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L57,.L56
+	.byte	2
+	.word	.L26
+	.byte	3
+	.byte	'NvM_MemIfAbstraction_InvalidateBlock',0,1,230,1,32
+	.word	.L85
+	.byte	1,1,1
+	.word	.L17,.L101,.L16
+	.byte	4
+	.byte	'DeviceIndex',0,1,231,1,12
+	.word	.L85,.L102
+	.byte	4
+	.byte	'BlockNumber',0,1,232,1,13
+	.word	.L88,.L103
+	.byte	5
+	.word	.L17,.L101
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_MemIfAbstraction_InvalidateBlock')
+	.sect	'.debug_abbrev'
+.L55:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_MemIfAbstraction_InvalidateBlock')
+	.sect	'.debug_line'
+.L56:
+	.word	.L136-.L135
+.L135:
+	.half	3
+	.word	.L138-.L137
+.L137:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_MemIfAbstraction.c',0,1,0,0,0
+.L138:
+	.byte	5,45,7,0,5,2
+	.word	.L17
+	.byte	3,234,1,1,5,1,7,9
+	.half	.L59-.L17
+	.byte	3,12,0,1,1
+.L136:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_MemIfAbstraction_InvalidateBlock')
+	.sect	'.debug_ranges'
+.L57:
+	.word	-1,.L58,0,.L59-.L58,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_MemIfAbstraction_Cancel')
+	.sect	'.debug_info'
+.L60:
+	.word	308
+	.half	3
+	.word	.L61
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_MemIfAbstraction.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L63,.L62
+	.byte	2
+	.word	.L26
+	.byte	3
+	.byte	'NvM_MemIfAbstraction_Cancel',0,1,136,2,22,1,1,1
+	.word	.L19,.L104,.L18
+	.byte	4
+	.byte	'DeviceIndex',0,1,137,2,11
+	.word	.L85,.L105
+	.byte	5
+	.word	.L19,.L104
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_MemIfAbstraction_Cancel')
+	.sect	'.debug_abbrev'
+.L61:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_MemIfAbstraction_Cancel')
+	.sect	'.debug_line'
+.L62:
+	.word	.L140-.L139
+.L139:
+	.half	3
+	.word	.L142-.L141
+.L141:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_MemIfAbstraction.c',0,1,0,0,0
+.L142:
+	.byte	5,16,7,0,5,2
+	.word	.L19
+	.byte	3,139,2,1,5,1,7,9
+	.half	.L65-.L19
+	.byte	3,11,0,1,1
+.L140:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_MemIfAbstraction_Cancel')
+	.sect	'.debug_ranges'
+.L63:
+	.word	-1,.L64,0,.L65-.L64,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_MemIfAbstraction_SetMode')
+	.sect	'.debug_info'
+.L66:
+	.word	302
+	.half	3
+	.word	.L67
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_MemIfAbstraction.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L69,.L68
+	.byte	2
+	.word	.L26
+	.byte	3
+	.byte	'NvM_MemIfAbstraction_SetMode',0,1,166,2,22,1,1,1
+	.word	.L21,.L106,.L20
+	.byte	4
+	.byte	'Mode',0,1,167,2,20
+	.word	.L107,.L108
+	.byte	5
+	.word	.L21,.L106
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_MemIfAbstraction_SetMode')
+	.sect	'.debug_abbrev'
+.L67:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_MemIfAbstraction_SetMode')
+	.sect	'.debug_line'
+.L68:
+	.word	.L144-.L143
+.L143:
+	.half	3
+	.word	.L146-.L145
+.L145:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_MemIfAbstraction.c',0,1,0,0,0
+.L146:
+	.byte	5,17,7,0,5,2
+	.word	.L21
+	.byte	3,169,2,1,5,1,7,9
+	.half	.L71-.L21
+	.byte	3,8,0,1,1
+.L144:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_MemIfAbstraction_SetMode')
+	.sect	'.debug_ranges'
+.L69:
+	.word	-1,.L70,0,.L71-.L70,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_MemIfAbstraction_GetStatus')
+	.sect	'.debug_info'
+.L72:
+	.word	315
+	.half	3
+	.word	.L73
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_MemIfAbstraction.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L75,.L74
+	.byte	2
+	.word	.L26
+	.byte	3
+	.byte	'NvM_MemIfAbstraction_GetStatus',0,1,198,2,34
+	.word	.L109
+	.byte	1,1,1
+	.word	.L23,.L110,.L22
+	.byte	4
+	.byte	'DeviceIndex',0,1,199,2,11
+	.word	.L85,.L111
+	.byte	5
+	.word	.L23,.L110
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_MemIfAbstraction_GetStatus')
+	.sect	'.debug_abbrev'
+.L73:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_MemIfAbstraction_GetStatus')
+	.sect	'.debug_line'
+.L74:
+	.word	.L148-.L147
+.L147:
+	.half	3
+	.word	.L150-.L149
+.L149:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_MemIfAbstraction.c',0,1,0,0,0
+.L150:
+	.byte	5,26,7,0,5,2
+	.word	.L23
+	.byte	3,201,2,1,5,1,7,9
+	.half	.L77-.L23
+	.byte	3,41,0,1,1
+.L148:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_MemIfAbstraction_GetStatus')
+	.sect	'.debug_ranges'
+.L75:
+	.word	-1,.L76,0,.L77-.L76,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_MemIfAbstraction_GetJobResult')
+	.sect	'.debug_info'
+.L78:
+	.word	318
+	.half	3
+	.word	.L79
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_MemIfAbstraction.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L81,.L80
+	.byte	2
+	.word	.L26
+	.byte	3
+	.byte	'NvM_MemIfAbstraction_GetJobResult',0,1,133,3,37
+	.word	.L112
+	.byte	1,1,1
+	.word	.L25,.L113,.L24
+	.byte	4
+	.byte	'DeviceIndex',0,1,134,3,11
+	.word	.L85,.L114
+	.byte	5
+	.word	.L25,.L113
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_MemIfAbstraction_GetJobResult')
+	.sect	'.debug_abbrev'
+.L79:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_MemIfAbstraction_GetJobResult')
+	.sect	'.debug_line'
+.L80:
+	.word	.L152-.L151
+.L151:
+	.half	3
+	.word	.L154-.L153
+.L153:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_MemIfAbstraction.c',0,1,0,0,0
+.L154:
+	.byte	5,29,7,0,5,2
+	.word	.L25
+	.byte	3,136,3,1,5,1,7,9
+	.half	.L83-.L25
+	.byte	3,27,0,1,1
+.L152:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_MemIfAbstraction_GetJobResult')
+	.sect	'.debug_ranges'
+.L81:
+	.word	-1,.L82,0,.L83-.L82,0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_MemIfAbstraction_Cancel')
+	.sect	'.debug_loc'
+.L105:
+	.word	-1,.L19,0,.L104-.L19
+	.half	1
+	.byte	84
+	.word	0,0
+.L18:
+	.word	-1,.L19,0,.L104-.L19
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_MemIfAbstraction_EraseImmediateBlock')
+	.sect	'.debug_loc'
+.L100:
+	.word	-1,.L15,0,.L98-.L15
+	.half	1
+	.byte	85
+	.word	0,0
+.L99:
+	.word	-1,.L15,0,.L98-.L15
+	.half	1
+	.byte	84
+	.word	0,0
+.L14:
+	.word	-1,.L15,0,.L98-.L15
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_MemIfAbstraction_GetJobResult')
+	.sect	'.debug_loc'
+.L114:
+	.word	-1,.L25,0,.L113-.L25
+	.half	1
+	.byte	84
+	.word	0,0
+.L24:
+	.word	-1,.L25,0,.L113-.L25
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_MemIfAbstraction_GetStatus')
+	.sect	'.debug_loc'
+.L111:
+	.word	-1,.L23,0,.L110-.L23
+	.half	1
+	.byte	84
+	.word	0,0
+.L22:
+	.word	-1,.L23,0,.L110-.L23
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_MemIfAbstraction_Init')
+	.sect	'.debug_loc'
+.L8:
+	.word	-1,.L9,0,.L84-.L9
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_MemIfAbstraction_InvalidateBlock')
+	.sect	'.debug_loc'
+.L103:
+	.word	-1,.L17,0,.L101-.L17
+	.half	1
+	.byte	85
+	.word	0,0
+.L102:
+	.word	-1,.L17,0,.L101-.L17
+	.half	1
+	.byte	84
+	.word	0,0
+.L16:
+	.word	-1,.L17,0,.L101-.L17
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_MemIfAbstraction_Read')
+	.sect	'.debug_loc'
+.L89:
+	.word	-1,.L11,0,.L86-.L11
+	.half	1
+	.byte	85
+	.word	0,0
+.L90:
+	.word	-1,.L11,0,.L86-.L11
+	.half	1
+	.byte	86
+	.word	0,0
+.L92:
+	.word	-1,.L11,0,.L86-.L11
+	.half	1
+	.byte	100
+	.word	0,0
+.L87:
+	.word	-1,.L11,0,.L86-.L11
+	.half	1
+	.byte	84
+	.word	0,0
+.L93:
+	.word	-1,.L11,0,.L86-.L11
+	.half	1
+	.byte	87
+	.word	0,0
+.L10:
+	.word	-1,.L11,0,.L86-.L11
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_MemIfAbstraction_SetMode')
+	.sect	'.debug_loc'
+.L108:
+	.word	-1,.L21,0,.L106-.L21
+	.half	1
+	.byte	84
+	.word	0,0
+.L20:
+	.word	-1,.L21,0,.L106-.L21
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_MemIfAbstraction_Write')
+	.sect	'.debug_loc'
+.L96:
+	.word	-1,.L13,0,.L94-.L13
+	.half	1
+	.byte	85
+	.word	0,0
+.L97:
+	.word	-1,.L13,0,.L94-.L13
+	.half	1
+	.byte	100
+	.word	0,0
+.L95:
+	.word	-1,.L13,0,.L94-.L13
+	.half	1
+	.byte	84
+	.word	0,0
+.L12:
+	.word	-1,.L13,0,.L94-.L13
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L155:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('NvM_MemIfAbstraction_Init')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L155,.L9,.L84-.L9
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('NvM_MemIfAbstraction_Read')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L155,.L11,.L86-.L11
+	.sdecl	'.debug_frame',debug,cluster('NvM_MemIfAbstraction_Write')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L155,.L13,.L94-.L13
+	.sdecl	'.debug_frame',debug,cluster('NvM_MemIfAbstraction_EraseImmediateBlock')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L155,.L15,.L98-.L15
+	.sdecl	'.debug_frame',debug,cluster('NvM_MemIfAbstraction_InvalidateBlock')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L155,.L17,.L101-.L17
+	.sdecl	'.debug_frame',debug,cluster('NvM_MemIfAbstraction_Cancel')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L155,.L19,.L104-.L19
+	.sdecl	'.debug_frame',debug,cluster('NvM_MemIfAbstraction_SetMode')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L155,.L21,.L106-.L21
+	.sdecl	'.debug_frame',debug,cluster('NvM_MemIfAbstraction_GetStatus')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L155,.L23,.L110-.L23
+	.sdecl	'.debug_frame',debug,cluster('NvM_MemIfAbstraction_GetJobResult')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L155,.L25,.L113-.L25
+	; Module end

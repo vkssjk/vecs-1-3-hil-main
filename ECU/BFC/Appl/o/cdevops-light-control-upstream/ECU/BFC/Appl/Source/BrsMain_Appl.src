@@ -1,0 +1,2367 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v6.2r1 Build 17012451 SN 07925145"
+	.compiler_invocation	"ctc -f cc5052a -c99 --integer-enumeration -D__CPU__=userdef162 -D__CPU_USERDEF162__ --core=tc1.6.2 --fp-model=+float -DBRS_PLATFORM_AURIX -DBRS_COMP_TASKING -I../../../../BSW/Components/BswM/Implementation -I../../../../BSW/Components/CanIf/Implementation -I../../../../BSW/Components/CanSM/Implementation -I../../../../BSW/Components/CanTp/Implementation -I../../../../BSW/Components/Can_30_Core/Implementation -I../../../../BSW/Components/Com/Implementation -I../../../../BSW/Components/ComM/Implementation -I../../../../BSW/Components/Crc -I../../../../BSW/Components/Crc/Implementation -I../../../../BSW/Components/Dcm/Implementation -I../../../../BSW/Components/Dem/Implementation -I../../../../BSW/Components/Det/Implementation -I../../../../BSW/Components/EcuM/Implementation -I../../../../BSW/Components/GenData -I../../../../BSW/Components/Mcal_Tc3xx -I../../../../BSW/Components/Mcal_Tc3xx/Implementation -I../../../../BSW/Components/MemIf -I../../../../BSW/Components/MemIf/Implementation -I../../../../BSW/Components/NvM -I../../../../BSW/Components/NvM/Implementation -I../../../../BSW/Components/Os/Implementation -I../../../../BSW/Components/PduR/Implementation -I../../../../BSW/Components/VStdLib/Implementation -I../../../../BSW/Components/vCan_30_Mcan/Implementation -I../../../../BSW/DemoComponents/vLinkGen/Implementation -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Autosar_Srv -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Integration -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Irq/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Infra_Prod/Sfr/TC39xB/_Reg -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Adc/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Dio/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Fee/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Fls_17_Dmu/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/McalLib/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/McalLib/ssc/inc/AS440 -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Mcu/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Port/ssc/inc -I../../../../BSW/Components/_Common/Implementation -IGenData -IInclude -ID:/TASKING/TriCorev6.2r1/ctc/include -IGenData/Components -IGenData/inc --debug-info=default --align=4 --default-a0-size=0 --default-a1-size=0 --default-near-size=0 --optimize=acefgIklMnopRsUvwy,+predict --tradeoff=2 --language=-gcc,+volatile,-strings,-comments -o o\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\Source\\BrsMain_Appl.src ../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c"
+	.compiler_name		"ctc"
+	;source	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c'
+
+	
+$TC162
+	
+	.sdecl	'.text.BrsMain_Appl.BrsMain_Appl_Init',code,cluster('BrsMain_Appl_Init')
+	.sect	'.text.BrsMain_Appl.BrsMain_Appl_Init'
+	.align	2
+	
+	.global	BrsMain_Appl_Init
+; Function BrsMain_Appl_Init
+.L40:
+	.align	4
+BrsMain_Appl_Init:	.type	func
+.L3:
+	ret
+.L126:
+	
+__BrsMain_Appl_Init_function_end:
+	.size	BrsMain_Appl_Init,__BrsMain_Appl_Init_function_end-BrsMain_Appl_Init
+.L41:
+	; End of function
+	
+	.sdecl	'.text.BrsMain_Appl.SchM_Enter_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6',code,cluster('SchM_Enter_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6')
+	.sect	'.text.BrsMain_Appl.SchM_Enter_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6'
+	.align	2
+	
+	.global	SchM_Enter_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6
+; Function SchM_Enter_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6
+.L46:
+	.align	4
+SchM_Enter_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6:	.type	func
+.L5:
+	ret
+.L127:
+	
+__SchM_Enter_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6_function_end:
+	.size	SchM_Enter_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6,__SchM_Enter_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6_function_end-SchM_Enter_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6
+.L47:
+	; End of function
+	
+	.sdecl	'.text.BrsMain_Appl.SchM_Exit_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6',code,cluster('SchM_Exit_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6')
+	.sect	'.text.BrsMain_Appl.SchM_Exit_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6'
+	.align	2
+	
+	.global	SchM_Exit_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6
+; Function SchM_Exit_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6
+.L52:
+	.align	4
+SchM_Exit_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6:	.type	func
+.L7:
+	ret
+.L128:
+	
+__SchM_Exit_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6_function_end:
+	.size	SchM_Exit_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6,__SchM_Exit_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6_function_end-SchM_Exit_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6
+.L53:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0
+; Function SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0
+.L58:
+	.align	4
+SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0:	.type	func
+.L9:
+	ret
+.L129:
+	
+__SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0_function_end:
+	.size	SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0,__SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0_function_end-SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0
+.L59:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0
+; Function SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0
+.L64:
+	.align	4
+SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0:	.type	func
+.L11:
+	ret
+.L130:
+	
+__SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0_function_end:
+	.size	SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0,__SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0_function_end-SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0
+.L65:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1
+; Function SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1
+.L70:
+	.align	4
+SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1:	.type	func
+.L13:
+	ret
+.L131:
+	
+__SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1_function_end:
+	.size	SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1,__SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1_function_end-SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1
+.L71:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1
+; Function SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1
+.L76:
+	.align	4
+SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1:	.type	func
+.L15:
+	ret
+.L132:
+	
+__SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1_function_end:
+	.size	SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1,__SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1_function_end-SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1
+.L77:
+	; End of function
+	
+	.sdecl	'.text.BrsMain_Appl.SchM_Enter_CanIf_CANIF_EXCLUSIVE_AREA_0',code,cluster('SchM_Enter_CanIf_CANIF_EXCLUSIVE_AREA_0')
+	.sect	'.text.BrsMain_Appl.SchM_Enter_CanIf_CANIF_EXCLUSIVE_AREA_0'
+	.align	2
+	
+	.global	SchM_Enter_CanIf_CANIF_EXCLUSIVE_AREA_0
+; Function SchM_Enter_CanIf_CANIF_EXCLUSIVE_AREA_0
+.L82:
+	.align	4
+SchM_Enter_CanIf_CANIF_EXCLUSIVE_AREA_0:	.type	func
+.L17:
+	ret
+.L133:
+	
+__SchM_Enter_CanIf_CANIF_EXCLUSIVE_AREA_0_function_end:
+	.size	SchM_Enter_CanIf_CANIF_EXCLUSIVE_AREA_0,__SchM_Enter_CanIf_CANIF_EXCLUSIVE_AREA_0_function_end-SchM_Enter_CanIf_CANIF_EXCLUSIVE_AREA_0
+.L83:
+	; End of function
+	
+	.sdecl	'.text.BrsMain_Appl.SchM_Exit_CanIf_CANIF_EXCLUSIVE_AREA_0',code,cluster('SchM_Exit_CanIf_CANIF_EXCLUSIVE_AREA_0')
+	.sect	'.text.BrsMain_Appl.SchM_Exit_CanIf_CANIF_EXCLUSIVE_AREA_0'
+	.align	2
+	
+	.global	SchM_Exit_CanIf_CANIF_EXCLUSIVE_AREA_0
+; Function SchM_Exit_CanIf_CANIF_EXCLUSIVE_AREA_0
+.L88:
+	.align	4
+SchM_Exit_CanIf_CANIF_EXCLUSIVE_AREA_0:	.type	func
+.L19:
+	ret
+.L134:
+	
+__SchM_Exit_CanIf_CANIF_EXCLUSIVE_AREA_0_function_end:
+	.size	SchM_Exit_CanIf_CANIF_EXCLUSIVE_AREA_0,__SchM_Exit_CanIf_CANIF_EXCLUSIVE_AREA_0_function_end-SchM_Exit_CanIf_CANIF_EXCLUSIVE_AREA_0
+.L89:
+	; End of function
+	
+	.sdecl	'.text.BrsMain_Appl.SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_4',code,cluster('SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_4')
+	.sect	'.text.BrsMain_Appl.SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_4'
+	.align	2
+	
+	.global	SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_4
+; Function SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_4
+.L94:
+	.align	4
+SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_4:	.type	func
+.L21:
+	ret
+.L135:
+	
+__SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_4_function_end:
+	.size	SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_4,__SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_4_function_end-SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_4
+.L95:
+	; End of function
+	
+	.sdecl	'.text.BrsMain_Appl.SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_4',code,cluster('SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_4')
+	.sect	'.text.BrsMain_Appl.SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_4'
+	.align	2
+	
+	.global	SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_4
+; Function SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_4
+.L100:
+	.align	4
+SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_4:	.type	func
+.L23:
+	ret
+.L136:
+	
+__SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_4_function_end:
+	.size	SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_4,__SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_4_function_end-SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_4
+.L101:
+	; End of function
+	
+	.sdecl	'.text.BrsMain_Appl.SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_1',code,cluster('SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_1')
+	.sect	'.text.BrsMain_Appl.SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_1'
+	.align	2
+	
+	.global	SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_1
+; Function SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_1
+.L106:
+	.align	4
+SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_1:	.type	func
+.L25:
+	ret
+.L137:
+	
+__SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_1_function_end:
+	.size	SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_1,__SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_1_function_end-SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_1
+.L107:
+	; End of function
+	
+	.sdecl	'.text.BrsMain_Appl.SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_1',code,cluster('SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_1')
+	.sect	'.text.BrsMain_Appl.SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_1'
+	.align	2
+	
+	.global	SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_1
+; Function SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_1
+.L112:
+	.align	4
+SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_1:	.type	func
+.L27:
+	ret
+.L138:
+	
+__SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_1_function_end:
+	.size	SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_1,__SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_1_function_end-SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_1
+.L113:
+	; End of function
+	
+	.sdecl	'.text.BrsMain_Appl.SchM_Enter_ComM_COMM_EXCLUSIVE_AREA_1',code,cluster('SchM_Enter_ComM_COMM_EXCLUSIVE_AREA_1')
+	.sect	'.text.BrsMain_Appl.SchM_Enter_ComM_COMM_EXCLUSIVE_AREA_1'
+	.align	2
+	
+	.global	SchM_Enter_ComM_COMM_EXCLUSIVE_AREA_1
+; Function SchM_Enter_ComM_COMM_EXCLUSIVE_AREA_1
+.L118:
+	.align	4
+SchM_Enter_ComM_COMM_EXCLUSIVE_AREA_1:	.type	func
+.L29:
+	ret
+.L139:
+	
+__SchM_Enter_ComM_COMM_EXCLUSIVE_AREA_1_function_end:
+	.size	SchM_Enter_ComM_COMM_EXCLUSIVE_AREA_1,__SchM_Enter_ComM_COMM_EXCLUSIVE_AREA_1_function_end-SchM_Enter_ComM_COMM_EXCLUSIVE_AREA_1
+.L119:
+	; End of function
+	
+	.sdecl	'.text.BrsMain_Appl.SchM_Exit_ComM_COMM_EXCLUSIVE_AREA_1',code,cluster('SchM_Exit_ComM_COMM_EXCLUSIVE_AREA_1')
+	.sect	'.text.BrsMain_Appl.SchM_Exit_ComM_COMM_EXCLUSIVE_AREA_1'
+	.align	2
+	
+	.global	SchM_Exit_ComM_COMM_EXCLUSIVE_AREA_1
+; Function SchM_Exit_ComM_COMM_EXCLUSIVE_AREA_1
+.L124:
+	.align	4
+SchM_Exit_ComM_COMM_EXCLUSIVE_AREA_1:	.type	func
+.L31:
+	ret
+.L140:
+	
+__SchM_Exit_ComM_COMM_EXCLUSIVE_AREA_1_function_end:
+	.size	SchM_Exit_ComM_COMM_EXCLUSIVE_AREA_1,__SchM_Exit_ComM_COMM_EXCLUSIVE_AREA_1_function_end-SchM_Exit_ComM_COMM_EXCLUSIVE_AREA_1
+.L125:
+	; End of function
+	
+	.calls	'BrsMain_Appl_Init','',0
+	.calls	'SchM_Enter_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6','',0
+	.calls	'SchM_Exit_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6','',0
+	.calls	'SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0','',0
+	.calls	'SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0','',0
+	.calls	'SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1','',0
+	.calls	'SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1','',0
+	.calls	'SchM_Enter_CanIf_CANIF_EXCLUSIVE_AREA_0','',0
+	.calls	'SchM_Exit_CanIf_CANIF_EXCLUSIVE_AREA_0','',0
+	.calls	'SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_4','',0
+	.calls	'SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_4','',0
+	.calls	'SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_1','',0
+	.calls	'SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_1','',0
+	.calls	'SchM_Enter_ComM_COMM_EXCLUSIVE_AREA_1','',0
+	.calls	'SchM_Exit_ComM_COMM_EXCLUSIVE_AREA_1','',0
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L33:
+	.word	20669
+	.half	3
+	.word	.L34
+	.byte	4
+.L32:
+	.byte	1
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L35
+	.byte	2,1,3
+	.word	228
+	.byte	4
+	.byte	'__codeptr',0,1,1,1
+	.word	230
+	.byte	5
+	.byte	'unsigned char',0,1,8,4
+	.byte	'boolean',0,2,140,1,29
+	.word	253
+	.byte	5
+	.byte	'char',0,1,6,4
+	.byte	'sint8',0,2,142,1,31
+	.word	287
+	.byte	4
+	.byte	'uint8',0,2,143,1,31
+	.word	253
+	.byte	5
+	.byte	'short int',0,2,5,4
+	.byte	'sint16',0,2,144,1,31
+	.word	325
+	.byte	5
+	.byte	'unsigned short int',0,2,7,4
+	.byte	'uint16',0,2,145,1,31
+	.word	354
+	.byte	5
+	.byte	'long int',0,4,5,4
+	.byte	'sint32',0,2,146,1,31
+	.word	392
+	.byte	5
+	.byte	'unsigned long int',0,4,7,4
+	.byte	'uint32',0,2,147,1,31
+	.word	420
+	.byte	4
+	.byte	'uint8_least',0,2,150,1,31
+	.word	253
+	.byte	5
+	.byte	'unsigned long long int',0,8,7,4
+	.byte	'uint64',0,2,160,1,30
+	.word	478
+	.byte	4
+	.byte	'StatusType',0,3,115,23
+	.word	253
+	.byte	4
+	.byte	'Std_ReturnType',0,3,120,15
+	.word	253
+	.byte	6,3,122,9,8,7
+	.byte	'vendorID',0
+	.word	354
+	.byte	2,2,35,0,7
+	.byte	'moduleID',0
+	.word	354
+	.byte	2,2,35,2,7
+	.byte	'sw_major_version',0
+	.word	253
+	.byte	1,2,35,4,7
+	.byte	'sw_minor_version',0
+	.word	253
+	.byte	1,2,35,5,7
+	.byte	'sw_patch_version',0
+	.word	253
+	.byte	1,2,35,6,0,4
+	.byte	'Std_VersionInfoType',0,3,129,1,3
+	.word	562
+	.byte	4
+	.byte	'Std_TransformerErrorCode',0,3,131,1,15
+	.word	253
+	.byte	4
+	.byte	'Std_TransformerClass',0,3,133,1,15
+	.word	253
+	.byte	8,4,45,9,4,9
+	.byte	'NON_ASR',0,0,9
+	.byte	'ASR',0,128,32,0,4
+	.byte	'brsCoreAsrType',0,4,49,2
+	.word	775
+	.byte	10
+	.byte	'void',0,11
+	.word	821
+	.byte	3
+	.word	827
+	.byte	4
+	.byte	'Brs_AddressOfConstType',0,4,52,43
+	.word	832
+	.byte	8,5,156,1,9,4,9
+	.byte	'BswTask',0,0,9
+	.byte	'Default_Init_Task',0,1,9
+	.byte	'Default_Init_Task_Trusted',0,2,9
+	.byte	'IdleTask_OsCore',0,3,9
+	.byte	'IoTask',0,4,9
+	.byte	'SwcTask',0,5,9
+	.byte	'INVALID_TASK',0,6,9
+	.byte	'OS_TASKID_COUNT',0,6,0,4
+	.byte	'TaskType',0,5,166,1,3
+	.word	868
+	.byte	8,5,169,1,9,4,9
+	.byte	'ADC0SR0_ISR',0,0,9
+	.byte	'CounterIsr_SystemTimer',0,1,9
+	.byte	'vCan_30_Mcan_Isr_0',0,2,9
+	.byte	'INVALID_ISR',0,3,9
+	.byte	'OS_ISRID_COUNT',0,3,0,4
+	.byte	'ISRType',0,5,176,1,3
+	.word	1021
+	.byte	12,64
+	.word	420
+	.byte	13,15,0,14
+	.byte	'Os_ExceptionContextType_Tag',0,6,71,8,160,1,7
+	.byte	'AddressRegisters',0
+	.word	1136
+	.byte	64,2,35,0,7
+	.byte	'DataRegisters',0
+	.word	1136
+	.byte	64,2,35,64,7
+	.byte	'Ra',0
+	.word	420
+	.byte	4,3,35,128,1,7
+	.byte	'Psw',0
+	.word	420
+	.byte	4,3,35,132,1,7
+	.byte	'ExceptionSource',0
+	.word	420
+	.byte	4,3,35,136,1,7
+	.byte	'Pcpn',0
+	.word	420
+	.byte	4,3,35,140,1,7
+	.byte	'Pie',0
+	.word	420
+	.byte	4,3,35,144,1,7
+	.byte	'MpuRegionForStackLow',0
+	.word	420
+	.byte	4,3,35,148,1,7
+	.byte	'MpuRegionForStackUpper',0
+	.word	420
+	.byte	4,3,35,152,1,7
+	.byte	'RawPCXI',0
+	.word	420
+	.byte	4,3,35,156,1,0,4
+	.byte	'Os_ExceptionContextType',0,7,59,44
+	.word	1145
+	.byte	4
+	.byte	'Os_InterruptSourceIdType',0,8,238,1,16
+	.word	420
+	.byte	4
+	.byte	'Os_ExceptionSourceIdType',0,8,246,1,16
+	.word	420
+	.byte	8,8,161,2,9,4,9
+	.byte	'RUNNING',0,0,9
+	.byte	'READY',0,1,9
+	.byte	'WAITING',0,2,9
+	.byte	'SUSPENDED',0,3,0,4
+	.byte	'TaskStateType',0,8,175,2,3
+	.word	1493
+	.byte	4
+	.byte	'EventMaskType',0,8,182,2,16
+	.word	478
+	.byte	4
+	.byte	'Os_TickType',0,8,200,2,19
+	.word	420
+	.byte	4
+	.byte	'TickType',0,8,206,2,21
+	.word	420
+	.byte	6,8,220,2,9,12,7
+	.byte	'maxallowedvalue',0
+	.word	420
+	.byte	4,2,35,0,7
+	.byte	'ticksperbase',0
+	.word	420
+	.byte	4,2,35,4,7
+	.byte	'mincycle',0
+	.word	420
+	.byte	4,2,35,8,0,4
+	.byte	'AlarmBaseType',0,8,228,2,2
+	.word	1625
+	.byte	8,8,128,3,9,4,9
+	.byte	'APPLICATION_TERMINATED',0,0,9
+	.byte	'APPLICATION_RESTARTING',0,1,9
+	.byte	'APPLICATION_ACCESSIBLE',0,2,0,4
+	.byte	'ApplicationStateType',0,8,133,3,3
+	.word	1720
+	.byte	8,8,177,3,9,4,9
+	.byte	'OSServiceId_GetApplicationID',0,0,9
+	.byte	'OSServiceId_GetISRID',0,1,9
+	.byte	'OSServiceId_CallTrustedFunction',0,2,9
+	.byte	'OSServiceId_CheckISRMemoryAccess',0,3,9
+	.byte	'OSServiceId_CheckTaskMemoryAccess',0,4,9
+	.byte	'OSServiceId_CheckObjectAccess',0,5,9
+	.byte	'OSServiceId_CheckObjectOwnership',0,6,9
+	.byte	'OSServiceId_StartScheduleTableRel',0,7,9
+	.byte	'OSServiceId_StartScheduleTableAbs',0,8,9
+	.byte	'OSServiceId_StopScheduleTable',0,9,9
+	.byte	'OSServiceId_NextScheduleTable',0,10,9
+	.byte	'OSServiceId_StartScheduleTableSynchron',0,11,9
+	.byte	'OSServiceId_SyncScheduleTable',0,12,9
+	.byte	'OSServiceId_SetScheduleTableAsync',0,13,9
+	.byte	'OSServiceId_GetScheduleTableStatus',0,14,9
+	.byte	'OSServiceId_IncrementCounter',0,15,9
+	.byte	'OSServiceId_GetCounterValue',0,16,9
+	.byte	'OSServiceId_GetElapsedValue',0,17,9
+	.byte	'OSServiceId_TerminateApplication',0,18,9
+	.byte	'OSServiceId_AllowAccess',0,19,9
+	.byte	'OSServiceId_GetApplicationState',0,20,9
+	.byte	'OSServiceId_GetNumberOfActivatedCores',0,21,9
+	.byte	'OSServiceId_GetCoreID',0,22,9
+	.byte	'OSServiceId_StartCore',0,23,9
+	.byte	'OSServiceId_StartNonAutosarCore',0,24,9
+	.byte	'OSServiceId_GetSpinlock',0,25,9
+	.byte	'OSServiceId_ReleaseSpinlock',0,26,9
+	.byte	'OSServiceId_TryToGetSpinlock',0,27,9
+	.byte	'OSServiceId_ShutdownAllCores',0,28,9
+	.byte	'OSServiceId_ControlIdle',0,29,9
+	.byte	'OSServiceId_IocSend',0,30,9
+	.byte	'OSServiceId_IocWrite',0,31,9
+	.byte	'OSServiceId_IocSendGroup',0,32,9
+	.byte	'OSServiceId_IocWriteGroup',0,33,9
+	.byte	'OSServiceId_IocReceive',0,34,9
+	.byte	'OSServiceId_IocRead',0,35,9
+	.byte	'OSServiceId_IocReceiveGroup',0,36,9
+	.byte	'OSServiceId_IocReadGroup',0,37,9
+	.byte	'OSServiceId_IocEmptyQueue',0,38,9
+	.byte	'OSServiceId_GetCurrentApplicationID',0,39,9
+	.byte	'OSServiceId_ActivateTaskAsyn',0,51,9
+	.byte	'OSServiceId_SetEventAsyn',0,52,9
+	.byte	'OSServiceId_GetExceptionContext',0,160,1,9
+	.byte	'OSServiceId_SetExceptionContext',0,161,1,9
+	.byte	'OSServiceId_CallNonTrustedFunction',0,162,1,9
+	.byte	'OSServiceId_AppKill',0,163,1,9
+	.byte	'OSServiceId_AlarmActionSetEvent',0,164,1,9
+	.byte	'OSServiceId_AlarmActionActivateTask',0,165,1,9
+	.byte	'OSServiceId_AlarmActionIncrementCounter',0,166,1,9
+	.byte	'OSServiceId_AlarmActionCallback',0,167,1,9
+	.byte	'OSServiceId_TimerIsr',0,168,1,9
+	.byte	'OSServiceId_IsrWrapper',0,169,1,9
+	.byte	'OSServiceId_GetTaskStackUsage',0,170,1,9
+	.byte	'OSServiceId_GetISRStackUsage',0,171,1,9
+	.byte	'OSServiceId_GetKernelStackUsage',0,172,1,9
+	.byte	'OSServiceId_GetStartupHookStackUsage',0,173,1,9
+	.byte	'OSServiceId_GetErrorHookStackUsage',0,174,1,9
+	.byte	'OSServiceId_GetShutdownHookStackUsage',0,175,1,9
+	.byte	'OSServiceId_GetProtectionHookStackUsage',0,176,1,9
+	.byte	'OSServiceId_GetSemaphore',0,177,1,9
+	.byte	'OSServiceId_ReleaseSemaphore',0,178,1,9
+	.byte	'OSServiceId_ScheduleTableActivateTask',0,179,1,9
+	.byte	'OSServiceId_ScheduleTableSetEvent',0,180,1,9
+	.byte	'OSServiceId_DisableInterruptSource',0,181,1,9
+	.byte	'OSServiceId_EnableInterruptSource',0,182,1,9
+	.byte	'OSServiceId_ClearPendingInterrupt',0,183,1,9
+	.byte	'OSServiceId_GetUnhandledIrq',0,184,1,9
+	.byte	'OSServiceId_GetUnhandledExc',0,185,1,9
+	.byte	'OSServiceId_HookCallCallback',0,186,1,9
+	.byte	'OSServiceId_IsInterruptSourceEnabled',0,187,1,9
+	.byte	'OSServiceId_IsInterruptPending',0,188,1,9
+	.byte	'OSServiceId_CallFastTrustedFunction',0,189,1,9
+	.byte	'OSServiceId_BarrierSynchronize',0,190,1,9
+	.byte	'OSServiceId_InitialEnableInterruptSources',0,191,1,9
+	.byte	'OSServiceId_GetCoreStartState',0,192,1,9
+	.byte	'OSServiceId_GetNonTrustedFunctionStackUsage',0,193,1,9
+	.byte	'OSServiceId_FrtSetFutureCompareValue',0,194,1,9
+	.byte	'OSServiceId_FrtSetCompareValue',0,195,1,9
+	.byte	'OSServiceId_GetInitHookStackUsage',0,196,1,9
+	.byte	'OSServiceId_StartOS',0,208,1,9
+	.byte	'OSServiceId_GetActiveApplicationMode',0,210,1,9
+	.byte	'OSServiceId_DisableAllInterrupts',0,211,1,9
+	.byte	'OSServiceId_EnableAllInterrupts',0,212,1,9
+	.byte	'OSServiceId_SuspendAllInterrupts',0,213,1,9
+	.byte	'OSServiceId_ResumeAllInterrupts',0,214,1,9
+	.byte	'OSServiceId_SuspendOSInterrupts',0,215,1,9
+	.byte	'OSServiceId_ResumeOSInterrupts',0,216,1,9
+	.byte	'OSServiceId_ActivateTask',0,217,1,9
+	.byte	'OSServiceId_TerminateTask',0,218,1,9
+	.byte	'OSServiceId_ChainTask',0,219,1,9
+	.byte	'OSServiceId_GetTaskID',0,220,1,9
+	.byte	'OSServiceId_GetTaskState',0,221,1,9
+	.byte	'OSServiceId_Schedule',0,222,1,9
+	.byte	'OSServiceId_SetEvent',0,223,1,9
+	.byte	'OSServiceId_ClearEvent',0,224,1,9
+	.byte	'OSServiceId_GetEvent',0,225,1,9
+	.byte	'OSServiceId_WaitEvent',0,226,1,9
+	.byte	'OSServiceId_GetAlarmBase',0,227,1,9
+	.byte	'OSServiceId_GetAlarm',0,228,1,9
+	.byte	'OSServiceId_SetRelAlarm',0,229,1,9
+	.byte	'OSServiceId_SetAbsAlarm',0,230,1,9
+	.byte	'OSServiceId_CancelAlarm',0,231,1,9
+	.byte	'OSServiceId_GetResource',0,232,1,9
+	.byte	'OSServiceId_ReleaseResource',0,233,1,9
+	.byte	'OSSERVICEID_COUNT',0,255,1,0,4
+	.byte	'OSServiceIdType',0,8,162,4,3
+	.word	1832
+	.byte	8,8,178,4,9,4,9
+	.byte	'OS_STATUS_OK',0,0,9
+	.byte	'OS_STATUS_CALLEVEL',0,2,9
+	.byte	'OS_STATUS_LIMIT',0,4,9
+	.byte	'OS_STATUS_RESOURCE',0,6,9
+	.byte	'OS_STATUS_SERVICEID',0,9,9
+	.byte	'OS_STATUS_ILLEGAL_ADDRESS',0,10,9
+	.byte	'OS_STATUS_MISSINGEND',0,11,9
+	.byte	'OS_STATUS_DISABLEDINT',0,12,9
+	.byte	'OS_STATUS_STACKFAULT',0,13,9
+	.byte	'OS_STATUS_PROTECTION_MEMORY',0,14,9
+	.byte	'OS_STATUS_PROTECTION_TIME',0,15,9
+	.byte	'OS_STATUS_PROTECTION_ARRIVAL',0,16,9
+	.byte	'OS_STATUS_PROTECTION_LOCKED',0,17,9
+	.byte	'OS_STATUS_PROTECTION_EXCEPTION',0,18,9
+	.byte	'OS_STATUS_INTERFERENCE_DEADLOCK',0,19,9
+	.byte	'OS_STATUS_NESTING_DEADLOCK',0,20,9
+	.byte	'OS_STATUS_SPINLOCK',0,21,9
+	.byte	'OS_STATUS_CORE',0,22,9
+	.byte	'OS_STATUS_OVERFLOW',0,245,1,9
+	.byte	'OS_STATUS_KILL_KERNEL_OBJ',0,246,1,9
+	.byte	'OS_STATUS_NO_RESTARTTASK',0,247,1,9
+	.byte	'OS_STATUS_CALL_NOT_ALLOWED',0,248,1,9
+	.byte	'OS_STATUS_FUNCTION_UNAVAILABLE',0,249,1,9
+	.byte	'OS_STATUS_PROTECTION_SYSCALL',0,250,1,9
+	.byte	'OS_STATUS_PROTECTION_IRQ',0,251,1,9
+	.byte	'OS_STATUS_API_ERROR',0,252,1,9
+	.byte	'OS_STATUS_ASSERTION',0,253,1,9
+	.byte	'OS_STATUS_OVERLOAD',0,254,1,9
+	.byte	'OS_STATUS_FRT_NO_FUTURE_VALUE',0,255,1,9
+	.byte	'OS_STATUS_ACCESSRIGHTS_1',0,129,2,9
+	.byte	'OS_STATUS_CALLEVEL_SHARED_STACK',0,130,2,9
+	.byte	'OS_STATUS_ID_1',0,131,2,9
+	.byte	'OS_STATUS_UNLOCKED',0,133,2,9
+	.byte	'OS_STATUS_STATE_1',0,135,2,9
+	.byte	'OS_STATUS_VALUE_IS_ZERO_1',0,136,2,9
+	.byte	'OS_STATUS_CORE_CROSS_DATA',0,150,2,9
+	.byte	'OS_STATUS_PARAM_POINTER_1',0,151,2,9
+	.byte	'OS_STATUS_STACKUSAGE_DISABLED_BY_CONFIG',0,241,3,9
+	.byte	'OS_STATUS_NO_BARRIER_PARTICIPANT',0,242,3,9
+	.byte	'OS_STATUS_UNIMPLEMENTED_CLEARPENDING',0,243,3,9
+	.byte	'OS_STATUS_NO_NTFSTACK_POOL_EMPTY',0,244,3,9
+	.byte	'OS_STATUS_FRT_SET_COMPARE_VALUE_FAILED',0,255,3,9
+	.byte	'OS_STATUS_ACCESSRIGHTS_2',0,129,4,9
+	.byte	'OS_STATUS_CALLEVEL_CROSS_CORE_SYNC',0,130,4,9
+	.byte	'OS_STATUS_ID_2',0,131,4,9
+	.byte	'OS_STATUS_NOFUNC_1',0,133,4,9
+	.byte	'OS_STATUS_STATE_2',0,135,4,9
+	.byte	'OS_STATUS_VALUE_IS_ZERO_2',0,136,4,9
+	.byte	'OS_STATUS_PARAM_POINTER_2',0,151,4,9
+	.byte	'OS_STATUS_EVENT_DISABLED_BY_CONFIG',0,241,5,9
+	.byte	'OS_STATUS_UNIMPLEMENTED_EXCEPTIONCONTEXT',0,243,5,9
+	.byte	'OS_STATUS_NO_NTFSTACK_APPLIMIT_EXCEEDED',0,244,5,9
+	.byte	'OS_STATUS_NOTACCESSIBLE_1',0,129,6,9
+	.byte	'OS_STATUS_ID_TYPE_1',0,131,6,9
+	.byte	'OS_STATUS_NOFUNC_2',0,133,6,9
+	.byte	'OS_STATUS_STATE_STOPPED',0,135,6,9
+	.byte	'OS_STATUS_VALUE_IS_TOO_HIGH_1',0,136,6,9
+	.byte	'OS_STATUS_PARAM_POINTER_3',0,151,6,9
+	.byte	'OS_STATUS_XSIGNAL_DISABLED_BY_CONFIG',0,241,7,9
+	.byte	'OS_STATUS_NOTACCESSIBLE_2',0,129,8,9
+	.byte	'OS_STATUS_ID_DIFFERENT_COUNTER',0,131,8,9
+	.byte	'OS_STATUS_SPINLOCK_ORDER',0,133,8,9
+	.byte	'OS_STATUS_STATE_RUNNING',0,135,8,9
+	.byte	'OS_STATUS_VALUE_IS_TOO_HIGH_2',0,136,8,9
+	.byte	'OS_STATUS_NOEXTENDEDTASK_1',0,129,10,9
+	.byte	'OS_STATUS_ID_DIFFERENT_SYNC',0,131,10,9
+	.byte	'OS_STATUS_STOPPED_1',0,133,10,9
+	.byte	'OS_STATUS_STATE_NEXTED',0,135,10,9
+	.byte	'OS_STATUS_VALUE_IS_TOO_HIGH_3',0,136,10,9
+	.byte	'OS_STATUS_NOEXTENDEDTASK_2',0,129,12,9
+	.byte	'OS_STATUS_HOOK_NOT_AVAILABLE',0,131,12,9
+	.byte	'OS_STATUS_NOT_STOPPED_2',0,133,12,9
+	.byte	'OS_STATUS_STATE_WAITING',0,135,12,9
+	.byte	'OS_STATUS_VALUE_IS_OUT_OF_BOUNDS_1',0,136,12,9
+	.byte	'OS_STATUS_NOEXTENDEDTASK_CALLER',0,129,14,9
+	.byte	'OS_STATUS_NEXTED_1',0,133,14,9
+	.byte	'OS_STATUS_STATE_NO_RESTART',0,135,14,9
+	.byte	'OS_STATUS_VALUE_IS_OUT_OF_BOUNDS_2',0,136,14,9
+	.byte	'OS_STATUS_LOCKED',0,129,16,9
+	.byte	'OS_STATUS_KILLING_IS_DISABLED',0,133,16,9
+	.byte	'OS_STATUS_STATE_ALREADY_TERMINATED',0,135,16,9
+	.byte	'OS_STATUS_VALUE_IS_TOO_LOW_1',0,136,16,9
+	.byte	'OS_STATUS_PRIORITY',0,129,18,9
+	.byte	'OS_STATUS_ORDER',0,133,18,9
+	.byte	'OS_STATUS_STATE_RESTARTING_NO_MEMBER',0,135,18,9
+	.byte	'OS_STATUS_VALUE_IS_TOO_LOW_2',0,136,18,9
+	.byte	'OS_STATUS_NOT_THE_OWNER_1',0,129,20,9
+	.byte	'OS_STATUS_STATE_ALREADY_RESTARTING',0,135,20,9
+	.byte	'OS_STATUS_VALUE_IS_TOO_LOW_3',0,136,20,9
+	.byte	'OS_STATUS_VALUE_IS_NOT_BOOLEAN',0,136,22,0,4
+	.byte	'Os_StatusType',0,8,246,5,3
+	.word	5218
+	.byte	6,8,219,6,9,12,7
+	.byte	'Service',0
+	.word	1832
+	.byte	4,2,35,0,7
+	.byte	'Error',0
+	.word	253
+	.byte	1,2,35,4,7
+	.byte	'DetailedError',0
+	.word	5218
+	.byte	4,2,35,6,0,4
+	.byte	'Os_ErrorInformationType',0,8,229,6,3
+	.word	7863
+	.byte	8,8,133,7,9,4,9
+	.byte	'SCHEDULETABLE_STOPPED',0,0,9
+	.byte	'SCHEDULETABLE_NEXT',0,1,9
+	.byte	'SCHEDULETABLE_WAITING',0,2,9
+	.byte	'SCHEDULETABLE_RUNNING',0,3,9
+	.byte	'SCHEDULETABLE_RUNNING_AND_SYNCHRONOUS',0,4,0,4
+	.byte	'ScheduleTableStatusType',0,8,150,7,3
+	.word	7958
+	.byte	8,8,162,7,9,4,9
+	.byte	'OS_MEM_ACCESS_TYPE_NON',0,0,9
+	.byte	'OS_MEM_ACCESS_TYPE_R',0,1,9
+	.byte	'OS_MEM_ACCESS_TYPE_READ',0,1,9
+	.byte	'OS_MEM_ACCESS_TYPE_W',0,2,9
+	.byte	'OS_MEM_ACCESS_TYPE_WRITE',0,2,9
+	.byte	'OS_MEM_ACCESS_TYPE_RW',0,3,9
+	.byte	'OS_MEM_ACCESS_TYPE_EXECUTE',0,4,9
+	.byte	'OS_MEM_ACCESS_TYPE_X',0,4,9
+	.byte	'OS_MEM_ACCESS_TYPE_RX',0,5,9
+	.byte	'OS_MEM_ACCESS_TYPE_WX',0,6,9
+	.byte	'OS_MEM_ACCESS_TYPE_RWX',0,7,9
+	.byte	'OS_MEM_ACCESS_TYPE_S',0,8,9
+	.byte	'OS_MEM_ACCESS_TYPE_STACK',0,8,9
+	.byte	'OS_MEM_ACCESS_TYPE_RS',0,9,9
+	.byte	'OS_MEM_ACCESS_TYPE_WS',0,10,9
+	.byte	'OS_MEM_ACCESS_TYPE_RWS',0,11,9
+	.byte	'OS_MEM_ACCESS_TYPE_XS',0,12,9
+	.byte	'OS_MEM_ACCESS_TYPE_RXS',0,13,9
+	.byte	'OS_MEM_ACCESS_TYPE_WXS',0,14,9
+	.byte	'OS_MEM_ACCESS_TYPE_RWXS',0,15,0,4
+	.byte	'Os_MemAccessType',0,8,184,7,3
+	.word	8131
+	.byte	4
+	.byte	'Os_Hal_AddressType',0,9,102,16
+	.word	420
+	.byte	4
+	.byte	'Os_AccessCheckAddress',0,10,150,2,29
+	.word	420
+	.byte	4
+	.byte	'PduIdType',0,11,68,15
+	.word	253
+	.byte	4
+	.byte	'PduLengthType',0,11,70,16
+	.word	354
+	.byte	3
+	.word	253
+	.byte	4
+	.byte	'SduDataPtrType',0,12,178,1,54
+	.word	8758
+	.byte	8,12,201,1,9,4,9
+	.byte	'TP_DATACONF',0,0,9
+	.byte	'TP_DATARETRY',0,1,9
+	.byte	'TP_CONFPENDING',0,2,0,4
+	.byte	'TpDataStateType',0,12,208,1,3
+	.word	8787
+	.byte	14
+	.byte	'sDet_PCConfigType',0,13,243,1,16,1,7
+	.byte	'Det_PCConfigNeverUsed',0
+	.word	253
+	.byte	1,2,35,0,0,4
+	.byte	'Det_PCConfigType',0,13,246,1,3
+	.word	8865
+	.byte	4
+	.byte	'Dcm_DataElement_Boot_Software_Boot_Software_Identification_PrimitiveType',0,14,84,16
+	.word	420
+	.byte	4
+	.byte	'Dcm_DataElement_Boot_Software_NumberOfModules_PrimitiveType',0,14,87,15
+	.word	253
+	.byte	4
+	.byte	'Dcm_DataElement_DID_0x0017_DID_Sint32_Array_ArrayType',0,14,90,16
+	.word	392
+	.byte	4
+	.byte	'Dcm_DataElement_DID_0x0018_DID_Uint32_Array_ArrayType',0,14,93,16
+	.word	420
+	.byte	4
+	.byte	'Dcm_DataElement_DID_0x0019_DID_Sint16_Array_ArrayType',0,14,96,16
+	.word	325
+	.byte	4
+	.byte	'Dcm_DataElement_DID_0x001A_DID_Uint16_Array_ArrayType',0,14,99,16
+	.word	354
+	.byte	4
+	.byte	'Dcm_DataElement_DID_0x001B_DID_Sint8_Array_ArrayType',0,14,102,15
+	.word	287
+	.byte	4
+	.byte	'Dcm_DataElement_DID_0xF410_DID_Data_PrimitiveType',0,14,105,16
+	.word	354
+	.byte	4
+	.byte	'Dcm_DataElement_DID_0xF412_DID_Data_PrimitiveType',0,14,108,16
+	.word	354
+	.byte	4
+	.byte	'Dcm_DataElement_DID_0xF413_DID_Data_PrimitiveType',0,14,111,16
+	.word	354
+	.byte	4
+	.byte	'Dcm_DataElement_DataDiagnosticIdentifier_DID_DataDiagnosticIdentifier_PrimitiveType',0,14,114,16
+	.word	354
+	.byte	4
+	.byte	'Dcm_DataElement_DevelopmentData_CanDriverVersion_PrimitiveType',0,14,117,16
+	.word	354
+	.byte	4
+	.byte	'Dcm_DataElement_DevelopmentData_DiagnosticModuleVersion_PrimitiveType',0,14,120,16
+	.word	354
+	.byte	4
+	.byte	'Dcm_DataElement_DevelopmentData_NmVersion_PrimitiveType',0,14,123,16
+	.word	354
+	.byte	4
+	.byte	'Dcm_DataElement_DevelopmentData_OperatingSystemVersion_PrimitiveType',0,14,126,16
+	.word	354
+	.byte	4
+	.byte	'Dcm_DataElement_DevelopmentData_TransportLayerVersion_PrimitiveType',0,14,129,1,16
+	.word	354
+	.byte	4
+	.byte	'Dcm_DataElement_Example_ReadWriteData_GlobalTime_PrimitiveType',0,14,132,1,16
+	.word	420
+	.byte	4
+	.byte	'Dcm_DataElement_Example_WriteOnlyDID_DID_DataObject_PrimitiveType',0,14,135,1,15
+	.word	253
+	.byte	4
+	.byte	'Dcm_DataElement_SampleIoControl_DID_Data_PrimitiveType',0,14,138,1,16
+	.word	420
+	.byte	4
+	.byte	'Dcm_DataElement_SerialNumber_SerialNumber_PrimitiveType',0,14,141,1,16
+	.word	420
+	.byte	4
+	.byte	'Dcm_RequestDataOut_SampleRoutineControl_Out_ResultPrimitiveType',0,14,147,1,16
+	.word	354
+	.byte	4
+	.byte	'Dcm_RequestDataOut_SampleRoutineControl_StartOnly_Out_ResultPrimitiveType',0,14,153,1,16
+	.word	420
+	.byte	4
+	.byte	'Dcm_StartDataIn_SampleRoutineControl_In_Option0PrimitiveType',0,14,159,1,15
+	.word	253
+	.byte	4
+	.byte	'Dcm_StartDataIn_SampleRoutineControl_StartOnly_In_Option1ArrayType',0,14,165,1,15
+	.word	253
+	.byte	4
+	.byte	'Dcm_StartDataOut_SampleRoutineControl_Out_InitStatePrimitiveType',0,14,168,1,16
+	.word	420
+	.byte	4
+	.byte	'Dcm_StopDataOut_SampleRoutineControl_Out_StopStatePrimitiveType',0,14,174,1,16
+	.word	420
+	.byte	4
+	.byte	'EcuM_ModeType',0,14,160,2,15
+	.word	253
+	.byte	4
+	.byte	'EcuM_StateType',0,14,166,2,15
+	.word	253
+	.byte	15,1,1,3
+	.word	10810
+	.byte	4
+	.byte	'EcuM_DriverFuncType',0,15,245,2,9
+	.word	10813
+	.byte	4
+	.byte	'EcuM_DefaultAppModeType',0,15,197,3,16
+	.word	420
+	.byte	4
+	.byte	'EcuM_NormalMcuModeType',0,15,209,3,16
+	.word	420
+	.byte	4
+	.byte	'EcuM_ComMChannelRefsEndIdxOfWakeupSourceListType',0,15,218,3,15
+	.word	253
+	.byte	4
+	.byte	'EcuM_ComMChannelRefsStartIdxOfWakeupSourceListType',0,15,221,3,15
+	.word	253
+	.byte	14
+	.byte	'sEcuM_ComMChannelRefsType',0,15,240,3,16,1,7
+	.byte	'EcuM_ComMChannelRefsNeverUsed',0
+	.word	253
+	.byte	1,2,35,0,0,4
+	.byte	'EcuM_ComMChannelRefsType',0,15,243,3,3
+	.word	11030
+	.byte	14
+	.byte	'sEcuM_DriverInitOneType',0,15,246,3,16,4,7
+	.byte	'FunctionOfDriverInitOne',0
+	.word	10818
+	.byte	4,2,35,0,0,4
+	.byte	'EcuM_DriverInitOneType',0,15,249,3,3
+	.word	11136
+	.byte	3
+	.word	10810
+	.byte	14
+	.byte	'sEcuM_DriverRestartListType',0,15,252,3,16,4,7
+	.byte	'FunctionOfDriverRestartList',0
+	.word	10818
+	.byte	4,2,35,0,0,4
+	.byte	'EcuM_DriverRestartListType',0,15,255,3,3
+	.word	11237
+	.byte	14
+	.byte	'sEcuM_SleepModeListType',0,15,130,4,16,1,7
+	.byte	'EcuM_SleepModeListNeverUsed',0
+	.word	253
+	.byte	1,2,35,0,0,4
+	.byte	'EcuM_SleepModeListType',0,15,133,4,3
+	.word	11345
+	.byte	14
+	.byte	'sEcuM_WakeupSourceListType',0,15,136,4,16,2,7
+	.byte	'ComMChannelRefsEndIdxOfWakeupSourceList',0
+	.word	253
+	.byte	1,2,35,0,7
+	.byte	'ComMChannelRefsStartIdxOfWakeupSourceList',0
+	.word	253
+	.byte	1,2,35,1,0,4
+	.byte	'EcuM_WakeupSourceListType',0,15,140,4,3
+	.word	11445
+	.byte	14
+	.byte	'sEcuM_PCConfigType',0,15,188,4,16,1,7
+	.byte	'EcuM_PCConfigNeverUsed',0
+	.word	253
+	.byte	1,2,35,0,0,4
+	.byte	'EcuM_PCConfigType',0,15,191,4,3
+	.word	11614
+	.byte	4
+	.byte	'Can_IdType',0,16,60,30
+	.word	354
+	.byte	4
+	.byte	'Can_HwHandleType',0,16,63,29
+	.word	253
+	.byte	4
+	.byte	'Can_SduPtrType',0,16,66,53
+	.word	8758
+	.byte	14
+	.byte	'Can_PduTypeTag',0,16,71,16,12,7
+	.byte	'id',0
+	.word	354
+	.byte	2,2,35,0,7
+	.byte	'length',0
+	.word	253
+	.byte	1,2,35,2,7
+	.byte	'sdu',0
+	.word	11743
+	.byte	4,2,35,4,7
+	.byte	'swPduHandle',0
+	.word	253
+	.byte	1,2,35,8,0,4
+	.byte	'Can_PduType',0,16,77,3
+	.word	11766
+	.byte	3
+	.word	253
+	.byte	8,16,90,9,4,9
+	.byte	'CAN_CS_UNINIT',0,0,9
+	.byte	'CAN_CS_STARTED',0,1,9
+	.byte	'CAN_CS_STOPPED',0,2,9
+	.byte	'CAN_CS_SLEEP',0,3,0,4
+	.byte	'Can_ControllerStateType',0,16,95,3
+	.word	11874
+	.byte	8,16,97,9,4,9
+	.byte	'CAN_ERRORSTATE_ACTIVE',0,0,9
+	.byte	'CAN_ERRORSTATE_PASSIVE',0,1,9
+	.byte	'CAN_ERRORSTATE_BUSOFF',0,2,0,4
+	.byte	'Can_ErrorStateType',0,16,101,3
+	.word	11977
+	.byte	8,16,106,9,4,9
+	.byte	'CAN_NOT_OK',0,0,9
+	.byte	'CAN_OK',0,1,9
+	.byte	'CAN_BUSY',0,2,9
+	.byte	'CAN_NOT_SUPPORTED',0,3,9
+	.byte	'CAN_REQUESTED',0,4,0,4
+	.byte	'Can_ReturnType',0,16,113,3
+	.word	12083
+	.byte	4
+	.byte	'Can_30_Core_ExternalTickType',0,17,184,2,16
+	.word	420
+	.byte	12,1
+	.word	253
+	.byte	13,0,0,14
+	.byte	'Can_30_Core_RxQueueBufTypeTag',0,17,198,2,16,6,7
+	.byte	'data',0
+	.word	12219
+	.byte	1,2,35,0,7
+	.byte	'id',0
+	.word	354
+	.byte	2,2,35,2,7
+	.byte	'Hrh',0
+	.word	253
+	.byte	1,2,35,4,7
+	.byte	'dlc',0
+	.word	253
+	.byte	1,2,35,5,0,4
+	.byte	'Can_30_Core_RxQueueBufType',0,17,204,2,3
+	.word	12228
+	.byte	16
+	.word	354
+	.byte	16
+	.word	354
+	.byte	16
+	.word	354
+	.byte	14
+	.byte	'Can_30_Core_RxQueueTypeTag',0,17,206,2,16,6,7
+	.byte	'WriteIndex',0
+	.word	12353
+	.byte	2,2,35,0,7
+	.byte	'ReadIndex',0
+	.word	12358
+	.byte	2,2,35,2,7
+	.byte	'FillLevel',0
+	.word	12363
+	.byte	2,2,35,4,0,4
+	.byte	'Can_30_Core_RxQueueType',0,17,211,2,3
+	.word	12368
+	.byte	8,17,214,2,9,4,9
+	.byte	'CAN_30_CORE_SILENT_INACTIVE',0,0,9
+	.byte	'CAN_30_CORE_SILENT_ACTIVE',0,1,0,4
+	.byte	'Can_30_Core_SilentModeType',0,17,217,2,3
+	.word	12493
+	.byte	8,17,142,3,9,4,9
+	.byte	'CAN_30_CORE_BUFFER_FREE',0,0,9
+	.byte	'CAN_30_CORE_BUFFER_CANCEL',0,1,9
+	.byte	'CAN_30_CORE_BUFFER_CANCEL_SW',0,2,9
+	.byte	'CAN_30_CORE_BUFFER_SEND',0,3,0,4
+	.byte	'Can_30_Core_TxBufferStatusType',0,17,147,3,3
+	.word	12594
+	.byte	4
+	.byte	'CddMirror_MirrorModeType',0,17,149,3,15
+	.word	253
+	.byte	4
+	.byte	'Can_30_Core_ControllerConfigIterType',0,17,206,14,21
+	.word	253
+	.byte	4
+	.byte	'Can_30_Core_MailboxIterType',0,17,224,14,21
+	.word	253
+	.byte	4
+	.byte	'Can_30_Core_ActiveSendDataType',0,17,129,15,15
+	.word	253
+	.byte	4
+	.byte	'Can_30_Core_PduOfActiveSendObjectType',0,17,132,15,19
+	.word	253
+	.byte	4
+	.byte	'Can_30_Core_CanIfChannelIdType',0,17,135,15,15
+	.word	253
+	.byte	4
+	.byte	'Can_30_Core_BusOffRecoveryCounterOfControllerDataType',0,17,246,15,15
+	.word	253
+	.byte	4
+	.byte	'Can_30_Core_CanInterruptNestingCounterOfControllerDataType',0,17,249,15,15
+	.word	253
+	.byte	4
+	.byte	'Can_30_Core_ContinueBusOffRecoveryOfControllerDataType',0,17,252,15,17
+	.word	253
+	.byte	4
+	.byte	'Can_30_Core_IsBusOffOfControllerDataType',0,17,255,15,17
+	.word	253
+	.byte	4
+	.byte	'Can_30_Core_IsWakeupOfControllerDataType',0,17,130,16,17
+	.word	253
+	.byte	4
+	.byte	'Can_30_Core_LastInitObjectOfControllerDataType',0,17,133,16,15
+	.word	253
+	.byte	4
+	.byte	'Can_30_Core_LogStatusOfControllerDataType',0,17,136,16,15
+	.word	253
+	.byte	4
+	.byte	'Can_30_Core_ModeTransitionRequestOfControllerDataType',0,17,139,16,15
+	.word	253
+	.byte	4
+	.byte	'Can_30_Core_RamCheckTransitionRequestOfControllerDataType',0,17,142,16,17
+	.word	253
+	.byte	4
+	.byte	'Can_30_Core_InitObjectBaudrateType',0,17,235,16,16
+	.word	354
+	.byte	4
+	.byte	'Can_30_Core_InitObjectFdBrsConfigType',0,17,238,16,15
+	.word	253
+	.byte	4
+	.byte	'Can_30_Core_MailboxSizeOfMailboxType',0,17,128,17,15
+	.word	253
+	.byte	4
+	.byte	'Can_30_Core_MailboxTypeOfMailboxType',0,17,131,17,15
+	.word	253
+	.byte	4
+	.byte	'Can_30_Core_FillCountOfTxHwFifoType',0,17,140,17,15
+	.word	253
+	.byte	4
+	.byte	'Can_30_Core_ReadIndexOfTxHwFifoType',0,17,143,17,15
+	.word	253
+	.byte	4
+	.byte	'Can_30_Core_WriteIndexOfTxHwFifoType',0,17,146,17,15
+	.word	253
+	.byte	14
+	.byte	'sCan_30_Core_ActiveSendObjectType',0,17,162,17,16,20,7
+	.byte	'PduOfActiveSendObject',0
+	.word	253
+	.byte	1,2,35,0,7
+	.byte	'PduInfoOfActiveSendObject',0
+	.word	11766
+	.byte	12,2,35,4,7
+	.byte	'StateOfActiveSendObject',0
+	.word	12594
+	.byte	4,2,35,16,0,4
+	.byte	'Can_30_Core_ActiveSendObjectType',0,17,167,17,3
+	.word	13847
+	.byte	14
+	.byte	'sCan_30_Core_ControllerConfigType',0,17,170,17,16,1,7
+	.byte	'Can_30_Core_ControllerConfigNeverUsed',0
+	.word	253
+	.byte	1,2,35,0,0,4
+	.byte	'Can_30_Core_ControllerConfigType',0,17,173,17,3
+	.word	14029
+	.byte	14
+	.byte	'sCan_30_Core_ControllerDataType',0,17,176,17,16,16,7
+	.byte	'BusOffRecoveryCounterOfControllerData',0
+	.word	253
+	.byte	1,2,35,0,7
+	.byte	'CanInterruptNestingCounterOfControllerData',0
+	.word	253
+	.byte	1,2,35,1,7
+	.byte	'ContinueBusOffRecoveryOfControllerData',0
+	.word	253
+	.byte	1,2,35,2,7
+	.byte	'IsBusOffOfControllerData',0
+	.word	253
+	.byte	1,2,35,3,7
+	.byte	'IsWakeupOfControllerData',0
+	.word	253
+	.byte	1,2,35,4,7
+	.byte	'LastInitObjectOfControllerData',0
+	.word	253
+	.byte	1,2,35,5,7
+	.byte	'LogStatusOfControllerData',0
+	.word	253
+	.byte	1,2,35,6,7
+	.byte	'ModeTransitionRequestOfControllerData',0
+	.word	253
+	.byte	1,2,35,7,7
+	.byte	'RamCheckTransitionRequestOfControllerData',0
+	.word	253
+	.byte	1,2,35,8,7
+	.byte	'MirrorModeStateOfControllerData',0
+	.word	253
+	.byte	1,2,35,9,7
+	.byte	'SilentModeStateOfControllerData',0
+	.word	12493
+	.byte	4,2,35,10,0,4
+	.byte	'Can_30_Core_ControllerDataType',0,17,189,17,3
+	.word	14159
+	.byte	14
+	.byte	'sCan_30_Core_ExtensionConfigType',0,17,192,17,16,1,7
+	.byte	'Can_30_Core_ExtensionConfigNeverUsed',0
+	.word	253
+	.byte	1,2,35,0,0,4
+	.byte	'Can_30_Core_ExtensionConfigType',0,17,195,17,3
+	.word	14708
+	.byte	14
+	.byte	'sCan_30_Core_GeneralFeatureType',0,17,198,17,16,1,7
+	.byte	'Can_30_Core_GeneralFeatureNeverUsed',0
+	.word	253
+	.byte	1,2,35,0,0,4
+	.byte	'Can_30_Core_GeneralFeatureType',0,17,201,17,3
+	.word	14835
+	.byte	14
+	.byte	'sCan_30_Core_MailboxType',0,17,204,17,16,2,7
+	.byte	'MailboxSizeOfMailbox',0
+	.word	253
+	.byte	1,2,35,0,7
+	.byte	'MailboxTypeOfMailbox',0
+	.word	253
+	.byte	1,2,35,1,0,4
+	.byte	'Can_30_Core_MailboxType',0,17,208,17,3
+	.word	14959
+	.byte	14
+	.byte	'sCan_30_Core_TxHwFifoType',0,17,211,17,16,4,7
+	.byte	'FillCountOfTxHwFifo',0
+	.word	253
+	.byte	1,2,35,0,7
+	.byte	'ReadIndexOfTxHwFifo',0
+	.word	253
+	.byte	1,2,35,1,7
+	.byte	'WriteIndexOfTxHwFifo',0
+	.word	253
+	.byte	1,2,35,2,0,4
+	.byte	'Can_30_Core_TxHwFifoType',0,17,216,17,3
+	.word	15084
+	.byte	14
+	.byte	'Can_30_Core_ActiveSendDataStructSTag',0,17,228,17,16,1,7
+	.byte	'ActiveSendData_0',0
+	.word	253
+	.byte	1,2,35,0,0,4
+	.byte	'Can_30_Core_ActiveSendDataStructSType',0,17,231,17,3
+	.word	15239
+	.byte	14
+	.byte	'Can_30_Core_ActiveSendObjectStructSTag',0,17,234,17,16,20,7
+	.byte	'ActiveSendObject_0',0
+	.word	13847
+	.byte	20,2,35,0,0,4
+	.byte	'Can_30_Core_ActiveSendObjectStructSType',0,17,237,17,3
+	.word	15356
+	.byte	14
+	.byte	'Can_30_Core_TxHwFifoStructSTag',0,17,240,17,16,4,7
+	.byte	'FIFO_0',0
+	.word	15084
+	.byte	4,2,35,0,0,4
+	.byte	'Can_30_Core_TxHwFifoStructSType',0,17,243,17,3
+	.word	15479
+	.byte	14
+	.byte	'sCan_30_Core_PCConfigType',0,17,214,18,16,1,7
+	.byte	'Can_30_Core_PCConfigNeverUsed',0
+	.word	253
+	.byte	1,2,35,0,0,4
+	.byte	'Can_30_Core_PCConfigType',0,17,217,18,3
+	.word	15574
+	.byte	4
+	.byte	'Can_30_Core_ConfigType',0,17,219,18,34
+	.word	15574
+	.byte	17
+	.byte	'Can_30_Core_ServiceIds_enum',0,18,60,14,4,9
+	.byte	'CAN_30_CORE_SID_INIT',0,0,9
+	.byte	'CAN_30_CORE_SID_MAINFCT_WRITE',0,1,9
+	.byte	'CAN_30_CORE_SID_INITCTR',0,2,9
+	.byte	'CAN_30_CORE_SID_MODE_TRANS',0,3,9
+	.byte	'CAN_30_CORE_SID_SET_CTR_MODE',0,3,9
+	.byte	'CAN_30_CORE_SID_CTR_INT_DISABLE',0,4,9
+	.byte	'CAN_30_CORE_SID_CTR_INT_ENABLE',0,5,9
+	.byte	'CAN_30_CORE_SID_WRITE',0,6,9
+	.byte	'CAN_30_CORE_SID_VERSION',0,7,9
+	.byte	'CAN_30_CORE_SID_MAINFCT_READ',0,8,9
+	.byte	'CAN_30_CORE_SID_MAINFCT_BO',0,9,9
+	.byte	'CAN_30_CORE_SID_MAINFCT_WU',0,10,9
+	.byte	'CAN_30_CORE_SID_CHECK_WU',0,11,9
+	.byte	'CAN_30_CORE_SID_MAINFCT_MODE',0,12,9
+	.byte	'CAN_30_CORE_SID_CHANGE_BR',0,13,9
+	.byte	'CAN_30_CORE_SID_CHECK_BR',0,14,9
+	.byte	'CAN_30_CORE_SID_SET_BR',0,15,9
+	.byte	'CAN_30_CORE_SID_UNUSED',0,16,9
+	.byte	'CAN_30_CORE_SID_GET_CTR_ERR_STATE',0,17,9
+	.byte	'CAN_30_CORE_SID_GET_CTR_MODE',0,18,9
+	.byte	'CAN_30_CORE_SID_GET_STATUS',0,19,9
+	.byte	'CAN_30_CORE_SID_CTR_TX_BRS',0,25,9
+	.byte	'CAN_30_CORE_SID_CTR_BRS',0,26,9
+	.byte	'CAN_30_CORE_SID_IS_CTRL_INIT',0,32,9
+	.byte	'CAN_30_CORE_SID_GET_CTR_RX_ERR_CNT',0,48,9
+	.byte	'CAN_30_CORE_SID_GET_CTR_TX_ERR_CNT',0,49,9
+	.byte	'CAN_30_CORE_SID_CTR_ERR_HANDLING',0,50,9
+	.byte	'CAN_30_CORE_SID_CTR_ERR_NOTIFICATION',0,51,9
+	.byte	'CAN_30_CORE_SID_GET_MODE_SILENT',0,218,0,9
+	.byte	'CAN_30_CORE_SID_SET_MODE_SILENT',0,219,0,9
+	.byte	'CAN_30_CORE_SID_GET_MODE_MIRROR',0,220,0,9
+	.byte	'CAN_30_CORE_SID_SET_MODE_MIRROR',0,221,0,9
+	.byte	'CAN_30_CORE_SID_CTR_WAKEUP_HANDLING',0,224,0,9
+	.byte	'CAN_30_CORE_SID_TX_CONFIRMATION',0,240,0,9
+	.byte	'CAN_30_CORE_SID_CLEAR_TX_BUFFERS',0,242,0,9
+	.byte	'CAN_30_CORE_SID_CANCEL_MSG_TX',0,243,0,9
+	.byte	'CAN_30_CORE_SID_RX_INDICATION',0,128,1,9
+	.byte	'CAN_30_CORE_SID_RX_OVERRUN',0,131,1,9
+	.byte	'CAN_30_CORE_SID_TIMER_UPDATE',0,132,1,9
+	.byte	'CAN_30_CORE_SID_TIMER_LOOP',0,133,1,9
+	.byte	'CAN_30_CORE_SID_ISR',0,144,1,0,4
+	.byte	'Can_30_Core_ServiceId',0,18,152,1,3
+	.word	15712
+	.byte	17
+	.byte	'Can_30_Core_ErrorIds_enum',0,18,155,1,14,4,9
+	.byte	'CAN_30_CORE_E_NO_ERROR',0,0,9
+	.byte	'CAN_30_CORE_E_PARAM_POINTER',0,1,9
+	.byte	'CAN_30_CORE_E_PARAM_HANDLE',0,2,9
+	.byte	'CAN_30_CORE_E_PARAM_DATA_LENGTH',0,3,9
+	.byte	'CAN_30_CORE_E_PARAM_CONTROLLER',0,4,9
+	.byte	'CAN_30_CORE_E_UNINIT',0,5,9
+	.byte	'CAN_30_CORE_E_TRANSITION',0,6,9
+	.byte	'CAN_30_CORE_E_PARAM_BAUDRATE',0,7,9
+	.byte	'CAN_30_CORE_E_DATALOST',0,8,9
+	.byte	'CAN_30_CORE_E_INIT_FAILED',0,9,9
+	.byte	'CAN_30_CORE_E_RXQUEUE',0,10,9
+	.byte	'CAN_30_CORE_E_TIMEOUT_DET',0,11,9
+	.byte	'CAN_30_CORE_E_GENDATA',0,12,9
+	.byte	'CAN_30_CORE_E_HARDWARE',0,13,0,4
+	.byte	'Can_30_Core_ErrorId',0,18,186,1,3
+	.word	17048
+	.byte	4
+	.byte	'vCan_30_Mcan_ControllerConfigIterType',0,19,245,12,21
+	.word	253
+	.byte	4
+	.byte	'vCan_30_Mcan_GeneralConfigIterType',0,19,251,12,21
+	.word	253
+	.byte	4
+	.byte	'vCan_30_Mcan_MailboxIterType',0,19,254,12,21
+	.word	253
+	.byte	4
+	.byte	'vCan_30_Mcan_SubSystemConfigIterType',0,19,135,13,21
+	.word	253
+	.byte	4
+	.byte	'vCan_30_Mcan_InterruptOldStatusOfControllerDataType',0,19,149,15,16
+	.word	420
+	.byte	4
+	.byte	'vCan_30_Mcan_PendingTxBuffersOfControllerDataType',0,19,152,15,16
+	.word	420
+	.byte	4
+	.byte	'vCan_30_Mcan_ProtocolStatusOfControllerDataType',0,19,155,15,16
+	.word	420
+	.byte	4
+	.byte	'vCan_30_Mcan_Element0OfExtendedFilterElementType',0,19,158,15,15
+	.word	253
+	.byte	4
+	.byte	'vCan_30_Mcan_Element1OfExtendedFilterElementType',0,19,161,15,15
+	.word	253
+	.byte	4
+	.byte	'vCan_30_Mcan_AddressOfMailboxType',0,19,230,15,16
+	.word	420
+	.byte	4
+	.byte	'vCan_30_Mcan_HwHandleOfMailboxType',0,19,248,15,15
+	.word	253
+	.byte	4
+	.byte	'vCan_30_Mcan_MailboxSizeOfMailboxType',0,19,251,15,15
+	.word	253
+	.byte	4
+	.byte	'vCan_30_Mcan_MailboxTypeOfMailboxType',0,19,254,15,15
+	.word	253
+	.byte	4
+	.byte	'vCan_30_Mcan_StandardFilterElementEndIdxOfMailboxType',0,19,135,16,15
+	.word	253
+	.byte	4
+	.byte	'vCan_30_Mcan_StandardFilterElementStartIdxOfMailboxType',0,19,138,16,15
+	.word	253
+	.byte	4
+	.byte	'vCan_30_Mcan_ControllerConfigIdxOfPhysToLogChannelType',0,19,150,16,15
+	.word	253
+	.byte	4
+	.byte	'vCan_30_Mcan_Element0OfStandardFilterElementType',0,19,159,16,16
+	.word	420
+	.byte	14
+	.byte	'svCan_30_Mcan_BaudrateConfigType',0,19,190,16,16,1,7
+	.byte	'vCan_30_Mcan_BaudrateConfigNeverUsed',0
+	.word	253
+	.byte	1,2,35,0,0,4
+	.byte	'vCan_30_Mcan_BaudrateConfigType',0,19,193,16,3
+	.word	18395
+	.byte	14
+	.byte	'svCan_30_Mcan_ControllerConfigType',0,19,196,16,16,1,7
+	.byte	'vCan_30_Mcan_ControllerConfigNeverUsed',0
+	.word	253
+	.byte	1,2,35,0,0,4
+	.byte	'vCan_30_Mcan_ControllerConfigType',0,19,199,16,3
+	.word	18522
+	.byte	14
+	.byte	'svCan_30_Mcan_ControllerDataType',0,19,202,16,16,12,7
+	.byte	'InterruptOldStatusOfControllerData',0
+	.word	420
+	.byte	4,2,35,0,7
+	.byte	'PendingTxBuffersOfControllerData',0
+	.word	420
+	.byte	4,2,35,4,7
+	.byte	'ProtocolStatusOfControllerData',0
+	.word	420
+	.byte	4,2,35,8,0,4
+	.byte	'vCan_30_Mcan_ControllerDataType',0,19,207,16,3
+	.word	18655
+	.byte	14
+	.byte	'svCan_30_Mcan_ExtendedFilterElementType',0,19,210,16,16,1,7
+	.byte	'vCan_30_Mcan_ExtendedFilterElementNeverUsed',0
+	.word	253
+	.byte	1,2,35,0,0,4
+	.byte	'vCan_30_Mcan_ExtendedFilterElementType',0,19,213,16,3
+	.word	18862
+	.byte	14
+	.byte	'svCan_30_Mcan_GeneralConfigType',0,19,216,16,16,1,7
+	.byte	'vCan_30_Mcan_GeneralConfigNeverUsed',0
+	.word	253
+	.byte	1,2,35,0,0,4
+	.byte	'vCan_30_Mcan_GeneralConfigType',0,19,219,16,3
+	.word	19010
+	.byte	14
+	.byte	'svCan_30_Mcan_GeneralDataType',0,19,222,16,16,1,7
+	.byte	'vCan_30_Mcan_GeneralDataNeverUsed',0
+	.word	253
+	.byte	1,2,35,0,0,4
+	.byte	'vCan_30_Mcan_GeneralDataType',0,19,225,16,3
+	.word	19134
+	.byte	14
+	.byte	'svCan_30_Mcan_MailboxType',0,19,228,16,16,12,7
+	.byte	'AddressOfMailbox',0
+	.word	420
+	.byte	4,2,35,0,7
+	.byte	'HwHandleOfMailbox',0
+	.word	253
+	.byte	1,2,35,4,7
+	.byte	'MailboxSizeOfMailbox',0
+	.word	253
+	.byte	1,2,35,5,7
+	.byte	'MailboxTypeOfMailbox',0
+	.word	253
+	.byte	1,2,35,6,7
+	.byte	'StandardFilterElementEndIdxOfMailbox',0
+	.word	253
+	.byte	1,2,35,7,7
+	.byte	'StandardFilterElementStartIdxOfMailbox',0
+	.word	253
+	.byte	1,2,35,8,0,4
+	.byte	'vCan_30_Mcan_MailboxType',0,19,236,16,3
+	.word	19252
+	.byte	14
+	.byte	'svCan_30_Mcan_MailboxDataType',0,19,239,16,16,1,7
+	.byte	'vCan_30_Mcan_MailboxDataNeverUsed',0
+	.word	253
+	.byte	1,2,35,0,0,4
+	.byte	'vCan_30_Mcan_MailboxDataType',0,19,242,16,3
+	.word	19526
+	.byte	14
+	.byte	'svCan_30_Mcan_PhysToLogChannelType',0,19,245,16,16,1,7
+	.byte	'ControllerConfigIdxOfPhysToLogChannel',0
+	.word	253
+	.byte	1,2,35,0,0,4
+	.byte	'vCan_30_Mcan_PhysToLogChannelType',0,19,248,16,3
+	.word	19644
+	.byte	14
+	.byte	'svCan_30_Mcan_StandardFilterElementType',0,19,251,16,16,4,7
+	.byte	'Element0OfStandardFilterElement',0
+	.word	420
+	.byte	4,2,35,0,0,4
+	.byte	'vCan_30_Mcan_StandardFilterElementType',0,19,254,16,3
+	.word	19776
+	.byte	14
+	.byte	'svCan_30_Mcan_SubSystemConfigType',0,19,129,17,16,1,7
+	.byte	'vCan_30_Mcan_SubSystemConfigNeverUsed',0
+	.word	253
+	.byte	1,2,35,0,0,4
+	.byte	'vCan_30_Mcan_SubSystemConfigType',0,19,132,17,3
+	.word	19912
+	.byte	14
+	.byte	'svCan_30_Mcan_SubSystemDataType',0,19,135,17,16,1,7
+	.byte	'vCan_30_Mcan_SubSystemDataNeverUsed',0
+	.word	253
+	.byte	1,2,35,0,0,4
+	.byte	'vCan_30_Mcan_SubSystemDataType',0,19,138,17,3
+	.word	20042
+	.byte	14
+	.byte	'svCan_30_Mcan_TxHardwareObjectType',0,19,141,17,16,1,7
+	.byte	'vCan_30_Mcan_TxHardwareObjectNeverUsed',0
+	.word	253
+	.byte	1,2,35,0,0,4
+	.byte	'vCan_30_Mcan_TxHardwareObjectType',0,19,144,17,3
+	.word	20166
+	.byte	14
+	.byte	'vCan_30_Mcan_ControllerDataStructSTag',0,19,156,17,16,12,7
+	.byte	'CT_CAN00_6199f384',0
+	.word	18655
+	.byte	12,2,35,0,0,4
+	.byte	'vCan_30_Mcan_ControllerDataStructSType',0,19,159,17,3
+	.word	20299
+	.byte	14
+	.byte	'vCan_30_Mcan_SubSystemDataStructSTag',0,19,162,17,16,1,7
+	.byte	'SubSystem0',0
+	.word	20042
+	.byte	1,2,35,0,0,4
+	.byte	'vCan_30_Mcan_SubSystemDataStructSType',0,19,165,17,3
+	.word	20419
+	.byte	14
+	.byte	'svCan_30_Mcan_PCConfigType',0,19,129,18,16,1,7
+	.byte	'vCan_30_Mcan_PCConfigNeverUsed',0
+	.word	253
+	.byte	1,2,35,0,0,4
+	.byte	'vCan_30_Mcan_PCConfigType',0,19,132,18,3
+	.word	20530
+	.byte	4
+	.byte	'vCan_30_Mcan_ConfigType',0,19,134,18,35
+	.word	20530
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L34:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,21,0,54,15,0,0,3,15,0,73,19,0,0,4,22,0,3,8,58,15,59,15
+	.byte	57,15,73,19,0,0,5,36,0,3,8,11,15,62,15,0,0,6,19,1,58,15,59,15,57,15,11,15,0,0,7,13,0,3,8,73,19,11,15,56
+	.byte	9,0,0,8,4,1,58,15,59,15,57,15,11,15,0,0,9,40,0,3,8,28,13,0,0,10,59,0,3,8,0,0,11,38,0,73,19,0,0,12,1,1
+	.byte	11,15,73,19,0,0,13,33,0,47,15,0,0,14,19,1,3,8,58,15,59,15,57,15,11,15,0,0,15,21,0,54,15,39,12,0,0,16,53
+	.byte	0,73,19,0,0,17,4,1,3,8,58,15,59,15,57,15,11,15,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L35:
+	.word	.L142-.L141
+.L141:
+	.half	3
+	.word	.L144-.L143
+.L143:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'Include',0
+	.byte	'GenData',0,0
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\Platform_Types.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\Std_Types.h',0,0,0,0
+	.byte	'BrsMain_Types.h',0,1,0,0
+	.byte	'Os_Types_Lcfg.h',0,2,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Os\\Implementation\\Os_Hal_OsInt.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Os\\Implementation\\Os_Hal_Os_Types.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Os\\Implementation\\Os_Types.h',0,0,0,0
+	.byte	'Os_Hal_Lcfg.h',0,2,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Os\\Implementation\\OsInt.h',0,0,0,0
+	.byte	'ComStack_Cfg.h',0,2,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\ComStack_Types.h',0,0,0,0
+	.byte	'Det_Cfg.h',0,2,0,0
+	.byte	'Rte_Type.h',0,2,0,0
+	.byte	'EcuM_Cfg.h',0,2,0,0
+	.byte	'Can_DrvGeneralTypes.h',0,2,0,0
+	.byte	'Can_30_Core_Cfg.h',0,2,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Can_30_Core\\Implementation\\Can_30_Core_Types.h',0,0,0,0
+	.byte	'vCan_30_Mcan_Cfg.h',0,2,0,0,0
+.L144:
+.L142:
+	.sdecl	'.debug_info',debug,cluster('BrsMain_Appl_Init')
+	.sect	'.debug_info'
+.L36:
+	.word	282
+	.half	3
+	.word	.L37
+	.byte	4,1
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L39,.L38
+	.byte	2
+	.word	.L32
+	.byte	3
+	.byte	'BrsMain_Appl_Init',0,1,144,1,6,1,1,1
+	.word	.L3,.L126,.L2
+	.byte	4
+	.word	.L3,.L126
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('BrsMain_Appl_Init')
+	.sect	'.debug_abbrev'
+.L37:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('BrsMain_Appl_Init')
+	.sect	'.debug_line'
+.L38:
+	.word	.L146-.L145
+.L145:
+	.half	3
+	.word	.L148-.L147
+.L147:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0,0,0,0,0
+.L148:
+	.byte	5,1,7,0,5,2
+	.word	.L3
+	.byte	3,153,1,1,7,9
+	.half	.L41-.L3
+	.byte	0,1,1
+.L146:
+	.sdecl	'.debug_ranges',debug,cluster('BrsMain_Appl_Init')
+	.sect	'.debug_ranges'
+.L39:
+	.word	-1,.L40,0,.L41-.L40,0,0
+	.sdecl	'.debug_info',debug,cluster('SchM_Enter_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6')
+	.sect	'.debug_info'
+.L42:
+	.word	316
+	.half	3
+	.word	.L43
+	.byte	4,1
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L45,.L44
+	.byte	2
+	.word	.L32
+	.byte	3
+	.byte	'SchM_Enter_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6',0,1,246,2,6,1,1,1
+	.word	.L5,.L127,.L4
+	.byte	4
+	.word	.L5,.L127
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('SchM_Enter_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6')
+	.sect	'.debug_abbrev'
+.L43:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('SchM_Enter_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6')
+	.sect	'.debug_line'
+.L44:
+	.word	.L150-.L149
+.L149:
+	.half	3
+	.word	.L152-.L151
+.L151:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0,0,0,0,0
+.L152:
+	.byte	5,1,7,0,5,2
+	.word	.L5
+	.byte	3,128,3,1,7,9
+	.half	.L47-.L5
+	.byte	0,1,1
+.L150:
+	.sdecl	'.debug_ranges',debug,cluster('SchM_Enter_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6')
+	.sect	'.debug_ranges'
+.L45:
+	.word	-1,.L46,0,.L47-.L46,0,0
+	.sdecl	'.debug_info',debug,cluster('SchM_Exit_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6')
+	.sect	'.debug_info'
+.L48:
+	.word	315
+	.half	3
+	.word	.L49
+	.byte	4,1
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L51,.L50
+	.byte	2
+	.word	.L32
+	.byte	3
+	.byte	'SchM_Exit_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6',0,1,131,3,6,1,1,1
+	.word	.L7,.L128,.L6
+	.byte	4
+	.word	.L7,.L128
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('SchM_Exit_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6')
+	.sect	'.debug_abbrev'
+.L49:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('SchM_Exit_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6')
+	.sect	'.debug_line'
+.L50:
+	.word	.L154-.L153
+.L153:
+	.half	3
+	.word	.L156-.L155
+.L155:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0,0,0,0,0
+.L156:
+	.byte	5,1,7,0,5,2
+	.word	.L7
+	.byte	3,141,3,1,7,9
+	.half	.L53-.L7
+	.byte	0,1,1
+.L154:
+	.sdecl	'.debug_ranges',debug,cluster('SchM_Exit_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6')
+	.sect	'.debug_ranges'
+.L51:
+	.word	-1,.L52,0,.L53-.L52,0,0
+	.sdecl	'.debug_info',debug,cluster('SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0')
+	.sect	'.debug_info'
+.L54:
+	.word	318
+	.half	3
+	.word	.L55
+	.byte	4,1
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L57,.L56
+	.byte	2
+	.word	.L32
+	.byte	3
+	.byte	'SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0',0,1,164,3,1,1,1,1
+	.word	.L9,.L129,.L8
+	.byte	4
+	.word	.L9,.L129
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0')
+	.sect	'.debug_abbrev'
+.L55:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0')
+	.sect	'.debug_line'
+.L56:
+	.word	.L158-.L157
+.L157:
+	.half	3
+	.word	.L160-.L159
+.L159:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0,0,0,0,0
+.L160:
+	.byte	5,1,7,0,5,2
+	.word	.L9
+	.byte	3,174,3,1,7,9
+	.half	.L59-.L9
+	.byte	0,1,1
+.L158:
+	.sdecl	'.debug_ranges',debug,cluster('SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0')
+	.sect	'.debug_ranges'
+.L57:
+	.word	-1,.L58,0,.L59-.L58,0,0
+	.sdecl	'.debug_info',debug,cluster('SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0')
+	.sect	'.debug_info'
+.L60:
+	.word	317
+	.half	3
+	.word	.L61
+	.byte	4,1
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L63,.L62
+	.byte	2
+	.word	.L32
+	.byte	3
+	.byte	'SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0',0,1,177,3,1,1,1,1
+	.word	.L11,.L130,.L10
+	.byte	4
+	.word	.L11,.L130
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0')
+	.sect	'.debug_abbrev'
+.L61:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0')
+	.sect	'.debug_line'
+.L62:
+	.word	.L162-.L161
+.L161:
+	.half	3
+	.word	.L164-.L163
+.L163:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0,0,0,0,0
+.L164:
+	.byte	5,1,7,0,5,2
+	.word	.L11
+	.byte	3,187,3,1,7,9
+	.half	.L65-.L11
+	.byte	0,1,1
+.L162:
+	.sdecl	'.debug_ranges',debug,cluster('SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0')
+	.sect	'.debug_ranges'
+.L63:
+	.word	-1,.L64,0,.L65-.L64,0,0
+	.sdecl	'.debug_info',debug,cluster('SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1')
+	.sect	'.debug_info'
+.L66:
+	.word	318
+	.half	3
+	.word	.L67
+	.byte	4,1
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L69,.L68
+	.byte	2
+	.word	.L32
+	.byte	3
+	.byte	'SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1',0,1,190,3,1,1,1,1
+	.word	.L13,.L131,.L12
+	.byte	4
+	.word	.L13,.L131
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1')
+	.sect	'.debug_abbrev'
+.L67:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1')
+	.sect	'.debug_line'
+.L68:
+	.word	.L166-.L165
+.L165:
+	.half	3
+	.word	.L168-.L167
+.L167:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0,0,0,0,0
+.L168:
+	.byte	5,1,7,0,5,2
+	.word	.L13
+	.byte	3,200,3,1,7,9
+	.half	.L71-.L13
+	.byte	0,1,1
+.L166:
+	.sdecl	'.debug_ranges',debug,cluster('SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1')
+	.sect	'.debug_ranges'
+.L69:
+	.word	-1,.L70,0,.L71-.L70,0,0
+	.sdecl	'.debug_info',debug,cluster('SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1')
+	.sect	'.debug_info'
+.L72:
+	.word	317
+	.half	3
+	.word	.L73
+	.byte	4,1
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L75,.L74
+	.byte	2
+	.word	.L32
+	.byte	3
+	.byte	'SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1',0,1,203,3,1,1,1,1
+	.word	.L15,.L132,.L14
+	.byte	4
+	.word	.L15,.L132
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1')
+	.sect	'.debug_abbrev'
+.L73:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1')
+	.sect	'.debug_line'
+.L74:
+	.word	.L170-.L169
+.L169:
+	.half	3
+	.word	.L172-.L171
+.L171:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0,0,0,0,0
+.L172:
+	.byte	5,1,7,0,5,2
+	.word	.L15
+	.byte	3,213,3,1,7,9
+	.half	.L77-.L15
+	.byte	0,1,1
+.L170:
+	.sdecl	'.debug_ranges',debug,cluster('SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1')
+	.sect	'.debug_ranges'
+.L75:
+	.word	-1,.L76,0,.L77-.L76,0,0
+	.sdecl	'.debug_info',debug,cluster('SchM_Enter_CanIf_CANIF_EXCLUSIVE_AREA_0')
+	.sect	'.debug_info'
+.L78:
+	.word	304
+	.half	3
+	.word	.L79
+	.byte	4,1
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L81,.L80
+	.byte	2
+	.word	.L32
+	.byte	3
+	.byte	'SchM_Enter_CanIf_CANIF_EXCLUSIVE_AREA_0',0,1,161,4,6,1,1,1
+	.word	.L17,.L133,.L16
+	.byte	4
+	.word	.L17,.L133
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('SchM_Enter_CanIf_CANIF_EXCLUSIVE_AREA_0')
+	.sect	'.debug_abbrev'
+.L79:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('SchM_Enter_CanIf_CANIF_EXCLUSIVE_AREA_0')
+	.sect	'.debug_line'
+.L80:
+	.word	.L174-.L173
+.L173:
+	.half	3
+	.word	.L176-.L175
+.L175:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0,0,0,0,0
+.L176:
+	.byte	5,1,7,0,5,2
+	.word	.L17
+	.byte	3,169,4,1,7,9
+	.half	.L83-.L17
+	.byte	0,1,1
+.L174:
+	.sdecl	'.debug_ranges',debug,cluster('SchM_Enter_CanIf_CANIF_EXCLUSIVE_AREA_0')
+	.sect	'.debug_ranges'
+.L81:
+	.word	-1,.L82,0,.L83-.L82,0,0
+	.sdecl	'.debug_info',debug,cluster('SchM_Exit_CanIf_CANIF_EXCLUSIVE_AREA_0')
+	.sect	'.debug_info'
+.L84:
+	.word	303
+	.half	3
+	.word	.L85
+	.byte	4,1
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L87,.L86
+	.byte	2
+	.word	.L32
+	.byte	3
+	.byte	'SchM_Exit_CanIf_CANIF_EXCLUSIVE_AREA_0',0,1,172,4,6,1,1,1
+	.word	.L19,.L134,.L18
+	.byte	4
+	.word	.L19,.L134
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('SchM_Exit_CanIf_CANIF_EXCLUSIVE_AREA_0')
+	.sect	'.debug_abbrev'
+.L85:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('SchM_Exit_CanIf_CANIF_EXCLUSIVE_AREA_0')
+	.sect	'.debug_line'
+.L86:
+	.word	.L178-.L177
+.L177:
+	.half	3
+	.word	.L180-.L179
+.L179:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0,0,0,0,0
+.L180:
+	.byte	5,1,7,0,5,2
+	.word	.L19
+	.byte	3,180,4,1,7,9
+	.half	.L89-.L19
+	.byte	0,1,1
+.L178:
+	.sdecl	'.debug_ranges',debug,cluster('SchM_Exit_CanIf_CANIF_EXCLUSIVE_AREA_0')
+	.sect	'.debug_ranges'
+.L87:
+	.word	-1,.L88,0,.L89-.L88,0,0
+	.sdecl	'.debug_info',debug,cluster('SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_4')
+	.sect	'.debug_info'
+.L90:
+	.word	304
+	.half	3
+	.word	.L91
+	.byte	4,1
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L93,.L92
+	.byte	2
+	.word	.L32
+	.byte	3
+	.byte	'SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_4',0,1,187,4,6,1,1,1
+	.word	.L21,.L135,.L20
+	.byte	4
+	.word	.L21,.L135
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_4')
+	.sect	'.debug_abbrev'
+.L91:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_4')
+	.sect	'.debug_line'
+.L92:
+	.word	.L182-.L181
+.L181:
+	.half	3
+	.word	.L184-.L183
+.L183:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0,0,0,0,0
+.L184:
+	.byte	5,1,7,0,5,2
+	.word	.L21
+	.byte	3,195,4,1,7,9
+	.half	.L95-.L21
+	.byte	0,1,1
+.L182:
+	.sdecl	'.debug_ranges',debug,cluster('SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_4')
+	.sect	'.debug_ranges'
+.L93:
+	.word	-1,.L94,0,.L95-.L94,0,0
+	.sdecl	'.debug_info',debug,cluster('SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_4')
+	.sect	'.debug_info'
+.L96:
+	.word	303
+	.half	3
+	.word	.L97
+	.byte	4,1
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L99,.L98
+	.byte	2
+	.word	.L32
+	.byte	3
+	.byte	'SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_4',0,1,198,4,6,1,1,1
+	.word	.L23,.L136,.L22
+	.byte	4
+	.word	.L23,.L136
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_4')
+	.sect	'.debug_abbrev'
+.L97:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_4')
+	.sect	'.debug_line'
+.L98:
+	.word	.L186-.L185
+.L185:
+	.half	3
+	.word	.L188-.L187
+.L187:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0,0,0,0,0
+.L188:
+	.byte	5,1,7,0,5,2
+	.word	.L23
+	.byte	3,206,4,1,7,9
+	.half	.L101-.L23
+	.byte	0,1,1
+.L186:
+	.sdecl	'.debug_ranges',debug,cluster('SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_4')
+	.sect	'.debug_ranges'
+.L99:
+	.word	-1,.L100,0,.L101-.L100,0,0
+	.sdecl	'.debug_info',debug,cluster('SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_1')
+	.sect	'.debug_info'
+.L102:
+	.word	304
+	.half	3
+	.word	.L103
+	.byte	4,1
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L105,.L104
+	.byte	2
+	.word	.L32
+	.byte	3
+	.byte	'SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_1',0,1,209,4,6,1,1,1
+	.word	.L25,.L137,.L24
+	.byte	4
+	.word	.L25,.L137
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_1')
+	.sect	'.debug_abbrev'
+.L103:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_1')
+	.sect	'.debug_line'
+.L104:
+	.word	.L190-.L189
+.L189:
+	.half	3
+	.word	.L192-.L191
+.L191:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0,0,0,0,0
+.L192:
+	.byte	5,1,7,0,5,2
+	.word	.L25
+	.byte	3,211,4,1,7,9
+	.half	.L107-.L25
+	.byte	0,1,1
+.L190:
+	.sdecl	'.debug_ranges',debug,cluster('SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_1')
+	.sect	'.debug_ranges'
+.L105:
+	.word	-1,.L106,0,.L107-.L106,0,0
+	.sdecl	'.debug_info',debug,cluster('SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_1')
+	.sect	'.debug_info'
+.L108:
+	.word	303
+	.half	3
+	.word	.L109
+	.byte	4,1
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L111,.L110
+	.byte	2
+	.word	.L32
+	.byte	3
+	.byte	'SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_1',0,1,214,4,6,1,1,1
+	.word	.L27,.L138,.L26
+	.byte	4
+	.word	.L27,.L138
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_1')
+	.sect	'.debug_abbrev'
+.L109:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_1')
+	.sect	'.debug_line'
+.L110:
+	.word	.L194-.L193
+.L193:
+	.half	3
+	.word	.L196-.L195
+.L195:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0,0,0,0,0
+.L196:
+	.byte	5,1,7,0,5,2
+	.word	.L27
+	.byte	3,216,4,1,7,9
+	.half	.L113-.L27
+	.byte	0,1,1
+.L194:
+	.sdecl	'.debug_ranges',debug,cluster('SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_1')
+	.sect	'.debug_ranges'
+.L111:
+	.word	-1,.L112,0,.L113-.L112,0,0
+	.sdecl	'.debug_info',debug,cluster('SchM_Enter_ComM_COMM_EXCLUSIVE_AREA_1')
+	.sect	'.debug_info'
+.L114:
+	.word	302
+	.half	3
+	.word	.L115
+	.byte	4,1
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L117,.L116
+	.byte	2
+	.word	.L32
+	.byte	3
+	.byte	'SchM_Enter_ComM_COMM_EXCLUSIVE_AREA_1',0,1,223,4,6,1,1,1
+	.word	.L29,.L139,.L28
+	.byte	4
+	.word	.L29,.L139
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('SchM_Enter_ComM_COMM_EXCLUSIVE_AREA_1')
+	.sect	'.debug_abbrev'
+.L115:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('SchM_Enter_ComM_COMM_EXCLUSIVE_AREA_1')
+	.sect	'.debug_line'
+.L116:
+	.word	.L198-.L197
+.L197:
+	.half	3
+	.word	.L200-.L199
+.L199:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0,0,0,0,0
+.L200:
+	.byte	5,1,7,0,5,2
+	.word	.L29
+	.byte	3,225,4,1,7,9
+	.half	.L119-.L29
+	.byte	0,1,1
+.L198:
+	.sdecl	'.debug_ranges',debug,cluster('SchM_Enter_ComM_COMM_EXCLUSIVE_AREA_1')
+	.sect	'.debug_ranges'
+.L117:
+	.word	-1,.L118,0,.L119-.L118,0,0
+	.sdecl	'.debug_info',debug,cluster('SchM_Exit_ComM_COMM_EXCLUSIVE_AREA_1')
+	.sect	'.debug_info'
+.L120:
+	.word	301
+	.half	3
+	.word	.L121
+	.byte	4,1
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L123,.L122
+	.byte	2
+	.word	.L32
+	.byte	3
+	.byte	'SchM_Exit_ComM_COMM_EXCLUSIVE_AREA_1',0,1,228,4,6,1,1,1
+	.word	.L31,.L140,.L30
+	.byte	4
+	.word	.L31,.L140
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('SchM_Exit_ComM_COMM_EXCLUSIVE_AREA_1')
+	.sect	'.debug_abbrev'
+.L121:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('SchM_Exit_ComM_COMM_EXCLUSIVE_AREA_1')
+	.sect	'.debug_line'
+.L122:
+	.word	.L202-.L201
+.L201:
+	.half	3
+	.word	.L204-.L203
+.L203:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../../../../cdevops-light-control-upstream/ECU/BFC/Appl/Source/BrsMain_Appl.c',0,0,0,0,0
+.L204:
+	.byte	5,1,7,0,5,2
+	.word	.L31
+	.byte	3,230,4,1,7,9
+	.half	.L125-.L31
+	.byte	0,1,1
+.L202:
+	.sdecl	'.debug_ranges',debug,cluster('SchM_Exit_ComM_COMM_EXCLUSIVE_AREA_1')
+	.sect	'.debug_ranges'
+.L123:
+	.word	-1,.L124,0,.L125-.L124,0,0
+	.sdecl	'.debug_loc',debug,cluster('BrsMain_Appl_Init')
+	.sect	'.debug_loc'
+.L2:
+	.word	-1,.L3,0,.L126-.L3
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('SchM_Enter_CanIf_CANIF_EXCLUSIVE_AREA_0')
+	.sect	'.debug_loc'
+.L16:
+	.word	-1,.L17,0,.L133-.L17
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_1')
+	.sect	'.debug_loc'
+.L24:
+	.word	-1,.L25,0,.L137-.L25
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_4')
+	.sect	'.debug_loc'
+.L20:
+	.word	-1,.L21,0,.L135-.L21
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('SchM_Enter_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6')
+	.sect	'.debug_loc'
+.L4:
+	.word	-1,.L5,0,.L127-.L5
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('SchM_Enter_ComM_COMM_EXCLUSIVE_AREA_1')
+	.sect	'.debug_loc'
+.L28:
+	.word	-1,.L29,0,.L139-.L29
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0')
+	.sect	'.debug_loc'
+.L8:
+	.word	-1,.L9,0,.L129-.L9
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1')
+	.sect	'.debug_loc'
+.L12:
+	.word	-1,.L13,0,.L131-.L13
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('SchM_Exit_CanIf_CANIF_EXCLUSIVE_AREA_0')
+	.sect	'.debug_loc'
+.L18:
+	.word	-1,.L19,0,.L134-.L19
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_1')
+	.sect	'.debug_loc'
+.L26:
+	.word	-1,.L27,0,.L138-.L27
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_4')
+	.sect	'.debug_loc'
+.L22:
+	.word	-1,.L23,0,.L136-.L23
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('SchM_Exit_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6')
+	.sect	'.debug_loc'
+.L6:
+	.word	-1,.L7,0,.L128-.L7
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('SchM_Exit_ComM_COMM_EXCLUSIVE_AREA_1')
+	.sect	'.debug_loc'
+.L30:
+	.word	-1,.L31,0,.L140-.L31
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0')
+	.sect	'.debug_loc'
+.L10:
+	.word	-1,.L11,0,.L130-.L11
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1')
+	.sect	'.debug_loc'
+.L14:
+	.word	-1,.L15,0,.L132-.L15
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L205:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('BrsMain_Appl_Init')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L205,.L3,.L126-.L3
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('SchM_Enter_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L205,.L5,.L127-.L5
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('SchM_Exit_Can_30_Core_CAN_30_CORE_EXCLUSIVE_AREA_6')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L205,.L7,.L128-.L7
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L205,.L9,.L129-.L9
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_0')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L205,.L11,.L130-.L11
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('SchM_Enter_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L205,.L13,.L131-.L13
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('SchM_Exit_vCan_30_Mcan_VCAN_30_MCAN_EXCLUSIVE_AREA_1')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L205,.L15,.L132-.L15
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('SchM_Enter_CanIf_CANIF_EXCLUSIVE_AREA_0')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L205,.L17,.L133-.L17
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('SchM_Exit_CanIf_CANIF_EXCLUSIVE_AREA_0')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L205,.L19,.L134-.L19
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_4')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L205,.L21,.L135-.L21
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_4')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L205,.L23,.L136-.L23
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('SchM_Enter_CanSM_CANSM_EXCLUSIVE_AREA_1')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L205,.L25,.L137-.L25
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('SchM_Exit_CanSM_CANSM_EXCLUSIVE_AREA_1')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L205,.L27,.L138-.L27
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('SchM_Enter_ComM_COMM_EXCLUSIVE_AREA_1')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L205,.L29,.L139-.L29
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('SchM_Exit_ComM_COMM_EXCLUSIVE_AREA_1')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L205,.L31,.L140-.L31
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	; Module end

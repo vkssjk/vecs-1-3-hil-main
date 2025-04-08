@@ -1,0 +1,4956 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v6.2r1 Build 17012451 SN 07925145"
+	.compiler_invocation	"ctc -f cc12440a -c99 --integer-enumeration -D__CPU__=userdef162 -D__CPU_USERDEF162__ --core=tc1.6.2 --fp-model=+float -DBRS_PLATFORM_AURIX -DBRS_COMP_TASKING -I../../../../BSW/Components/BswM/Implementation -I../../../../BSW/Components/CanIf/Implementation -I../../../../BSW/Components/CanSM/Implementation -I../../../../BSW/Components/CanTp/Implementation -I../../../../BSW/Components/Can_30_Core/Implementation -I../../../../BSW/Components/Com/Implementation -I../../../../BSW/Components/ComM/Implementation -I../../../../BSW/Components/Crc -I../../../../BSW/Components/Crc/Implementation -I../../../../BSW/Components/Dcm/Implementation -I../../../../BSW/Components/Dem/Implementation -I../../../../BSW/Components/Det/Implementation -I../../../../BSW/Components/EcuM/Implementation -I../../../../BSW/Components/GenData -I../../../../BSW/Components/Mcal_Tc3xx -I../../../../BSW/Components/Mcal_Tc3xx/Implementation -I../../../../BSW/Components/MemIf -I../../../../BSW/Components/MemIf/Implementation -I../../../../BSW/Components/NvM -I../../../../BSW/Components/NvM/Implementation -I../../../../BSW/Components/Os/Implementation -I../../../../BSW/Components/PduR/Implementation -I../../../../BSW/Components/VStdLib/Implementation -I../../../../BSW/Components/vCan_30_Mcan/Implementation -I../../../../BSW/DemoComponents/vLinkGen/Implementation -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Autosar_Srv -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Integration -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Irq/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Infra_Prod/Sfr/TC39xB/_Reg -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Adc/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Dio/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Fee/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Fls_17_Dmu/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/McalLib/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/McalLib/ssc/inc/AS440 -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Mcu/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Port/ssc/inc -I../../../../BSW/Components/_Common/Implementation -IGenData -IInclude -ID:/TASKING/TriCorev6.2r1/ctc/include -IGenData/Components -IGenData/inc --debug-info=default --align=4 --default-a0-size=0 --default-a1-size=0 --default-near-size=0 --optimize=acefgIklMnopRsUvwy,+predict --tradeoff=2 --language=-gcc,+volatile,-strings,-comments -o o\\BSW\\Components\\vCan_30_Mcan\\Implementation\\vCan_30_Mcan_ErrorHandler.src ../../../../BSW/Components/vCan_30_Mcan/Implementation/vCan_30_Mcan_ErrorHandler.c"
+	.compiler_name		"ctc"
+	;source	'../../../../BSW/Components/vCan_30_Mcan/Implementation/vCan_30_Mcan_ErrorHandler.c'
+
+	
+$TC162
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('vCan_30_Mcan_GetStatusBegin')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	vCan_30_Mcan_GetStatusBegin
+; Function vCan_30_Mcan_GetStatusBegin
+.L124:
+	.align	4
+vCan_30_Mcan_GetStatusBegin:	.type	func
+.L91:
+	ret
+.L198:
+	
+__vCan_30_Mcan_GetStatusBegin_function_end:
+	.size	vCan_30_Mcan_GetStatusBegin,__vCan_30_Mcan_GetStatusBegin_function_end-vCan_30_Mcan_GetStatusBegin
+.L125:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('vCan_30_Mcan_IsHwBusOff')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	vCan_30_Mcan_IsHwBusOff
+; Function vCan_30_Mcan_IsHwBusOff
+.L130:
+	.align	4
+vCan_30_Mcan_IsHwBusOff:	.type	func
+.L93:
+	mov	d15,d4
+.L334:
+	mov	d8,#0
+.L335:
+	mov	d9,d8
+	call	vCan_30_Mcan_IsDriverInitialized
+.L333:
+	jne	d2,#0,.L2
+.L382:
+	mov	d9,#5
+	j	.L3
+.L2:
+	jeq	d15,#0,.L4
+.L383:
+	mov	d9,#4
+	j	.L5
+.L4:
+	movh.a	a15,#61473
+	ld.w	d15,[a15]@los(0xf0208244)
+.L214:
+	and	d15,#128
+	ne	d15,d15,#0
+.L207:
+	cmov	d8,d15,#1
+.L5:
+.L3:
+	jeq	d9,#0,.L7
+.L384:
+	mov	d4,#80
+	mov	d5,#0
+	mov	d6,#19
+	mov	d7,d9
+	call	Det_ReportError
+.L7:
+	mov	d2,d8
+	ret
+.L201:
+	
+__vCan_30_Mcan_IsHwBusOff_function_end:
+	.size	vCan_30_Mcan_IsHwBusOff,__vCan_30_Mcan_IsHwBusOff_function_end-vCan_30_Mcan_IsHwBusOff
+.L131:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('vCan_30_Mcan_IsHwPassive')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	vCan_30_Mcan_IsHwPassive
+; Function vCan_30_Mcan_IsHwPassive
+.L136:
+	.align	4
+vCan_30_Mcan_IsHwPassive:	.type	func
+.L95:
+	mov	d15,d4
+.L337:
+	mov	d8,#0
+.L338:
+	mov	d9,d8
+	call	vCan_30_Mcan_IsDriverInitialized
+.L336:
+	jne	d2,#0,.L9
+.L389:
+	mov	d9,#5
+	j	.L10
+.L9:
+	jeq	d15,#0,.L11
+.L390:
+	mov	d9,#4
+	j	.L12
+.L11:
+	movh.a	a15,#61473
+	ld.w	d15,[a15]@los(0xf0208244)
+.L231:
+	and	d15,#32
+	ne	d15,d15,#0
+.L228:
+	cmov	d8,d15,#1
+.L12:
+.L10:
+	jeq	d9,#0,.L14
+.L391:
+	mov	d4,#80
+	mov	d5,#0
+	mov	d6,#19
+	mov	d7,d9
+	call	Det_ReportError
+.L14:
+	mov	d2,d8
+	ret
+.L224:
+	
+__vCan_30_Mcan_IsHwPassive_function_end:
+	.size	vCan_30_Mcan_IsHwPassive,__vCan_30_Mcan_IsHwPassive_function_end-vCan_30_Mcan_IsHwPassive
+.L137:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('vCan_30_Mcan_IsHwWarning')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	vCan_30_Mcan_IsHwWarning
+; Function vCan_30_Mcan_IsHwWarning
+.L142:
+	.align	4
+vCan_30_Mcan_IsHwWarning:	.type	func
+.L97:
+	mov	d15,d4
+.L340:
+	mov	d8,#0
+.L341:
+	mov	d9,d8
+	call	vCan_30_Mcan_IsDriverInitialized
+.L339:
+	jne	d2,#0,.L16
+.L396:
+	mov	d9,#5
+	j	.L17
+.L16:
+	jeq	d15,#0,.L18
+.L397:
+	mov	d9,#4
+	j	.L19
+.L18:
+	movh.a	a15,#61473
+	ld.w	d15,[a15]@los(0xf0208244)
+.L242:
+	and	d15,#64
+	ne	d15,d15,#0
+.L239:
+	cmov	d8,d15,#1
+.L19:
+.L17:
+	jeq	d9,#0,.L21
+.L398:
+	mov	d4,#80
+	mov	d5,#0
+	mov	d6,#19
+	mov	d7,d9
+	call	Det_ReportError
+.L21:
+	mov	d2,d8
+	ret
+.L235:
+	
+__vCan_30_Mcan_IsHwWarning_function_end:
+	.size	vCan_30_Mcan_IsHwWarning,__vCan_30_Mcan_IsHwWarning_function_end-vCan_30_Mcan_IsHwWarning
+.L143:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('vCan_30_Mcan_ErrorHandlingBegin')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	vCan_30_Mcan_ErrorHandlingBegin
+; Function vCan_30_Mcan_ErrorHandlingBegin
+.L148:
+	.align	4
+vCan_30_Mcan_ErrorHandlingBegin:	.type	func
+.L99:
+	mov	d15,d4
+.L343:
+	mov	d8,#0
+	call	vCan_30_Mcan_IsDriverInitialized
+.L342:
+	jne	d2,#0,.L23
+.L403:
+	mov	d8,#5
+	j	.L24
+.L23:
+	jeq	d15,#0,.L25
+.L404:
+	mov	d8,#4
+	j	.L26
+.L25:
+	movh.a	a15,#61473
+	ld.w	d15,[a15]@los(0xf0208244)
+.L249:
+	movh.a	a15,#@his(vCan_30_Mcan_ControllerData+8)
+	st.w	[a15]@los(vCan_30_Mcan_ControllerData+8),d15
+.L26:
+.L24:
+	jeq	d8,#0,.L27
+.L405:
+	mov	d4,#80
+	mov	d5,#0
+	mov	d6,#50
+	mov	d7,d8
+.L344:
+	j	Det_ReportError
+.L27:
+	ret
+.L246:
+	
+__vCan_30_Mcan_ErrorHandlingBegin_function_end:
+	.size	vCan_30_Mcan_ErrorHandlingBegin,__vCan_30_Mcan_ErrorHandlingBegin_function_end-vCan_30_Mcan_ErrorHandlingBegin
+.L149:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('vCan_30_Mcan_ErrorStatePassiveTransitionOccurred')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	vCan_30_Mcan_ErrorStatePassiveTransitionOccurred
+; Function vCan_30_Mcan_ErrorStatePassiveTransitionOccurred
+.L154:
+	.align	4
+vCan_30_Mcan_ErrorStatePassiveTransitionOccurred:	.type	func
+.L101:
+	mov	d15,d4
+.L346:
+	mov	d8,#0
+.L347:
+	mov	d9,d8
+	call	vCan_30_Mcan_IsDriverInitialized
+.L345:
+	jne	d2,#0,.L28
+.L410:
+	mov	d9,#5
+	j	.L29
+.L28:
+	jeq	d15,#0,.L30
+.L411:
+	mov	d9,#4
+	j	.L31
+.L30:
+	movh.a	a15,#61473
+	ld.w	d15,[a15]@los(0xf0208250)
+.L260:
+	movh	d5,#128
+.L412:
+	and	d15,d5
+.L257:
+	jeq	d15,#0,.L32
+.L413:
+	movh.a	a15,#@his(vCan_30_Mcan_ControllerData+8)
+	ld.w	d15,[a15]@los(vCan_30_Mcan_ControllerData+8)
+.L414:
+	mov	d4,#0
+.L415:
+	and	d15,#32
+.L416:
+	cmov	d8,d15,#1
+	call	vCan_30_Mcan_ClearInterruptFlag
+.L32:
+.L31:
+.L29:
+	jeq	d9,#0,.L34
+.L417:
+	mov	d4,#80
+	mov	d5,#0
+	mov	d6,#50
+	mov	d7,d9
+	call	Det_ReportError
+.L34:
+	mov	d2,d8
+	ret
+.L253:
+	
+__vCan_30_Mcan_ErrorStatePassiveTransitionOccurred_function_end:
+	.size	vCan_30_Mcan_ErrorStatePassiveTransitionOccurred,__vCan_30_Mcan_ErrorStatePassiveTransitionOccurred_function_end-vCan_30_Mcan_ErrorStatePassiveTransitionOccurred
+.L155:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('vCan_30_Mcan_ErrorNotificationHandling')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	vCan_30_Mcan_ErrorNotificationHandling
+; Function vCan_30_Mcan_ErrorNotificationHandling
+.L160:
+	.align	4
+vCan_30_Mcan_ErrorNotificationHandling:	.type	func
+.L103:
+	mov	d15,d4
+.L349:
+	mov	d8,#0
+	call	vCan_30_Mcan_IsDriverInitialized
+.L348:
+	jne	d2,#0,.L36
+.L422:
+	mov	d8,#5
+	j	.L37
+.L36:
+	jeq	d15,#0,.L38
+.L423:
+	mov	d8,#4
+	j	.L39
+.L38:
+	mov	d4,d15
+.L351:
+	movh	d5,#6144
+	call	vCan_30_Mcan_ClearInterruptFlag
+.L352:
+	movh.a	a15,#@his(vCan_30_Mcan_ControllerData+8)
+	ld.w	d0,[a15]@los(vCan_30_Mcan_ControllerData+8)
+.L424:
+	jz.t	d0:12,.L40
+.L425:
+	sh	d15,d0,#-8
+.L350:
+	and	d15,#7
+.L40:
+	jeq	d15,#0,.L41
+.L426:
+	jne	d15,#7,.L42
+.L41:
+	and	d15,d0,#7
+.L42:
+	jeq	d15,#1,.L43
+.L427:
+	jeq	d15,#2,.L44
+.L428:
+	jeq	d15,#3,.L45
+.L429:
+	jeq	d15,#4,.L46
+.L430:
+	jeq	d15,#6,.L47
+.L353:
+	j	.L48
+.L43:
+	mov	d5,#9
+	j	.L49
+.L44:
+	mov	d5,#8
+	j	.L50
+.L45:
+	mov	d5,#4
+	j	.L51
+.L46:
+	mov	d5,#2
+	j	.L52
+.L47:
+	mov	d5,#10
+.L49:
+.L50:
+.L51:
+.L52:
+	mov	d4,#0
+	call	Can_30_Core_ErrorNotification
+.L48:
+.L39:
+.L37:
+	jeq	d8,#0,.L53
+.L431:
+	mov	d4,#80
+	mov	d5,#0
+	mov	d6,#50
+	mov	d7,d8
+.L354:
+	j	Det_ReportError
+.L53:
+	ret
+.L264:
+	
+__vCan_30_Mcan_ErrorNotificationHandling_function_end:
+	.size	vCan_30_Mcan_ErrorNotificationHandling,__vCan_30_Mcan_ErrorNotificationHandling_function_end-vCan_30_Mcan_ErrorNotificationHandling
+.L161:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('vCan_30_Mcan_BusOffOccurred')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	vCan_30_Mcan_BusOffOccurred
+; Function vCan_30_Mcan_BusOffOccurred
+.L166:
+	.align	4
+vCan_30_Mcan_BusOffOccurred:	.type	func
+.L105:
+	mov	d15,d4
+.L356:
+	mov	d8,#0
+.L358:
+	mov	d9,d8
+	call	vCan_30_Mcan_IsDriverInitialized
+.L355:
+	jne	d2,#0,.L54
+.L436:
+	mov	d9,#5
+	j	.L55
+.L54:
+	jeq	d15,#0,.L56
+.L437:
+	mov	d9,#4
+	j	.L57
+.L56:
+	movh.a	a15,#61473
+	lea	a15,[a15]@los(0xf0208250)
+.L438:
+	ld.w	d0,[a15]
+.L277:
+	movh	d5,#512
+.L439:
+	and	d0,d5
+.L274:
+	jeq	d0,#0,.L58
+.L440:
+	movh.a	a2,#@his(vCan_30_Mcan_ControllerData+8)
+	ld.w	d15,[a2]@los(vCan_30_Mcan_ControllerData+8)
+.L357:
+	mov	d4,#0
+.L441:
+	and	d15,#128
+.L442:
+	cmov	d8,d15,#1
+	call	vCan_30_Mcan_ClearInterruptFlag
+.L58:
+	ld.w	d0,[a15]
+.L280:
+	movh	d5,#2
+.L443:
+	and	d0,d5
+.L279:
+	jeq	d0,#0,.L60
+.L281:
+	movh.a	a15,#61473
+	ld.w	d15,[a15]@los(0xf0208218)
+.L283:
+	and	d15,#4
+	ne	d15,d15,#0
+.L282:
+	cmov	d8,d15,#1
+.L444:
+	mov	d4,#0
+	call	vCan_30_Mcan_ClearInterruptFlag
+.L60:
+.L57:
+.L55:
+	jeq	d9,#0,.L62
+.L445:
+	mov	d4,#80
+	mov	d5,#0
+	mov	d6,#50
+	mov	d7,d9
+	call	Det_ReportError
+.L62:
+	mov	d2,d8
+	ret
+.L270:
+	
+__vCan_30_Mcan_BusOffOccurred_function_end:
+	.size	vCan_30_Mcan_BusOffOccurred,__vCan_30_Mcan_BusOffOccurred_function_end-vCan_30_Mcan_BusOffOccurred
+.L167:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('vCan_30_Mcan_OverrunOccurred')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	vCan_30_Mcan_OverrunOccurred
+; Function vCan_30_Mcan_OverrunOccurred
+.L172:
+	.align	4
+vCan_30_Mcan_OverrunOccurred:	.type	func
+.L107:
+	mov	d15,d4
+.L360:
+	mov	d8,#0
+	call	vCan_30_Mcan_IsDriverInitialized
+.L359:
+	jne	d2,#0,.L64
+.L450:
+	mov	d8,#5
+	j	.L65
+.L64:
+	jeq	d15,#0,.L66
+.L451:
+	mov	d8,#4
+	j	.L67
+.L66:
+	mov	d9,#1
+	movh.a	a15,#@his(vCan_30_Mcan_Mailbox+12)
+.L291:
+	mov	d10,#8
+	movh.a	a12,#61473
+.L292:
+	lea	a15,[a15]@los(vCan_30_Mcan_Mailbox+12)
+.L293:
+	lea	a12,[a12]@los(0xf0208250)
+.L294:
+	mov.a	a13,#1
+.L68:
+	ld.bu	d15,[a15]4
+.L361:
+	lea	a15,[a15]12
+.L452:
+	seln	d5,d15,d10,#128
+.L299:
+	ld.w	d15,[a12]
+.L303:
+	and	d15,d5
+.L453:
+	eq	d15,d15,d5
+.L300:
+	jeq	d15,#0,.L71
+.L454:
+	mov	d4,#0
+	call	vCan_30_Mcan_ClearInterruptFlag
+.L455:
+	mov	d4,#0
+.L456:
+	mov	d5,d9
+	call	Can_30_Core_Overrun
+.L71:
+	add	d9,#1
+	loop	a13,.L68
+.L67:
+.L65:
+	jeq	d8,#0,.L74
+.L457:
+	mov	d4,#80
+	mov	d5,#0
+	mov	d6,#50
+	mov	d7,d8
+.L362:
+	j	Det_ReportError
+.L74:
+	ret
+.L286:
+	
+__vCan_30_Mcan_OverrunOccurred_function_end:
+	.size	vCan_30_Mcan_OverrunOccurred,__vCan_30_Mcan_OverrunOccurred_function_end-vCan_30_Mcan_OverrunOccurred
+.L173:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('vCan_30_Mcan_ErrorHandlingEnd')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	vCan_30_Mcan_ErrorHandlingEnd
+; Function vCan_30_Mcan_ErrorHandlingEnd
+.L178:
+	.align	4
+vCan_30_Mcan_ErrorHandlingEnd:	.type	func
+.L109:
+	ret
+.L306:
+	
+__vCan_30_Mcan_ErrorHandlingEnd_function_end:
+	.size	vCan_30_Mcan_ErrorHandlingEnd,__vCan_30_Mcan_ErrorHandlingEnd_function_end-vCan_30_Mcan_ErrorHandlingEnd
+.L179:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('vCan_30_Mcan_GetControllerRxErrorCounter')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	vCan_30_Mcan_GetControllerRxErrorCounter
+; Function vCan_30_Mcan_GetControllerRxErrorCounter
+.L184:
+	.align	4
+vCan_30_Mcan_GetControllerRxErrorCounter:	.type	func
+.L111:
+	mov	d8,d4
+.L364:
+	mov	d15,#0
+.L365:
+	mov	d9,d15
+	call	vCan_30_Mcan_IsDriverInitialized
+.L363:
+	jne	d2,#0,.L75
+.L466:
+	mov	d9,#5
+	j	.L76
+.L75:
+	jeq	d8,#0,.L77
+.L467:
+	mov	d9,#4
+	j	.L78
+.L77:
+	movh.a	a15,#61473
+	lea	a15,[a15]@los(0xf0208240)
+.L468:
+	ld.w	d15,[a15]
+.L316:
+	mov.u	d0,#32768
+.L469:
+	and	d15,d0
+.L313:
+	jeq	d15,#0,.L79
+.L470:
+	mov	d15,#128
+	j	.L80
+.L79:
+	ld.w	d15,[a15]
+.L318:
+	sh	d15,#-8
+.L366:
+	and	d15,#127
+.L80:
+.L78:
+.L76:
+	jeq	d9,#0,.L81
+.L471:
+	mov	d4,#80
+	mov	d5,#0
+	mov	d6,#50
+	mov	d7,d9
+	call	Det_ReportError
+.L81:
+	mov	d2,d15
+	ret
+.L309:
+	
+__vCan_30_Mcan_GetControllerRxErrorCounter_function_end:
+	.size	vCan_30_Mcan_GetControllerRxErrorCounter,__vCan_30_Mcan_GetControllerRxErrorCounter_function_end-vCan_30_Mcan_GetControllerRxErrorCounter
+.L185:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('vCan_30_Mcan_GetControllerTxErrorCounter')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	vCan_30_Mcan_GetControllerTxErrorCounter
+; Function vCan_30_Mcan_GetControllerTxErrorCounter
+.L190:
+	.align	4
+vCan_30_Mcan_GetControllerTxErrorCounter:	.type	func
+.L113:
+	mov	d15,d4
+.L368:
+	mov	d8,#0
+.L369:
+	mov	d9,d8
+	call	vCan_30_Mcan_IsDriverInitialized
+.L367:
+	jne	d2,#0,.L83
+.L476:
+	mov	d9,#5
+	j	.L84
+.L83:
+	jeq	d15,#0,.L85
+.L477:
+	mov	d9,#4
+	j	.L86
+.L85:
+	movh.a	a15,#61473
+	ld.w	d15,[a15]@los(0xf0208240)
+.L325:
+	and	d8,d15,#255
+.L86:
+.L84:
+	jeq	d9,#0,.L87
+.L478:
+	mov	d4,#80
+	mov	d5,#0
+	mov	d6,#50
+	mov	d7,d9
+	call	Det_ReportError
+.L87:
+	mov	d2,d8
+	ret
+.L321:
+	
+__vCan_30_Mcan_GetControllerTxErrorCounter_function_end:
+	.size	vCan_30_Mcan_GetControllerTxErrorCounter,__vCan_30_Mcan_GetControllerTxErrorCounter_function_end-vCan_30_Mcan_GetControllerTxErrorCounter
+.L191:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('vCan_30_Mcan_ErrInterrupt')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	vCan_30_Mcan_ErrInterrupt
+; Function vCan_30_Mcan_ErrInterrupt
+.L196:
+	.align	4
+vCan_30_Mcan_ErrInterrupt:	.type	func
+.L115:
+	movh.a	a15,#61473
+	ld.w	d15,[a15]@los(0xf0208250)
+.L331:
+	mov	d0,#136
+	addih	d0,d0,#6818
+.L483:
+	and	d15,d0
+.L484:
+	jeq	d15,#0,.L89
+.L485:
+	j	Can_30_Core_ErrorHandling
+.L89:
+	ret
+.L329:
+	
+__vCan_30_Mcan_ErrInterrupt_function_end:
+	.size	vCan_30_Mcan_ErrInterrupt,__vCan_30_Mcan_ErrInterrupt_function_end-vCan_30_Mcan_ErrInterrupt
+.L197:
+	; End of function
+	
+	.calls	'vCan_30_Mcan_IsHwBusOff','vCan_30_Mcan_IsDriverInitialized'
+	.calls	'vCan_30_Mcan_IsHwBusOff','Det_ReportError'
+	.calls	'vCan_30_Mcan_IsHwPassive','vCan_30_Mcan_IsDriverInitialized'
+	.calls	'vCan_30_Mcan_IsHwPassive','Det_ReportError'
+	.calls	'vCan_30_Mcan_IsHwWarning','vCan_30_Mcan_IsDriverInitialized'
+	.calls	'vCan_30_Mcan_IsHwWarning','Det_ReportError'
+	.calls	'vCan_30_Mcan_ErrorHandlingBegin','vCan_30_Mcan_IsDriverInitialized'
+	.calls	'vCan_30_Mcan_ErrorHandlingBegin','Det_ReportError'
+	.calls	'vCan_30_Mcan_ErrorStatePassiveTransitionOccurred','vCan_30_Mcan_IsDriverInitialized'
+	.calls	'vCan_30_Mcan_ErrorStatePassiveTransitionOccurred','vCan_30_Mcan_ClearInterruptFlag'
+	.calls	'vCan_30_Mcan_ErrorStatePassiveTransitionOccurred','Det_ReportError'
+	.calls	'vCan_30_Mcan_ErrorNotificationHandling','vCan_30_Mcan_IsDriverInitialized'
+	.calls	'vCan_30_Mcan_ErrorNotificationHandling','vCan_30_Mcan_ClearInterruptFlag'
+	.calls	'vCan_30_Mcan_ErrorNotificationHandling','Can_30_Core_ErrorNotification'
+	.calls	'vCan_30_Mcan_ErrorNotificationHandling','Det_ReportError'
+	.calls	'vCan_30_Mcan_BusOffOccurred','vCan_30_Mcan_IsDriverInitialized'
+	.calls	'vCan_30_Mcan_BusOffOccurred','vCan_30_Mcan_ClearInterruptFlag'
+	.calls	'vCan_30_Mcan_BusOffOccurred','Det_ReportError'
+	.calls	'vCan_30_Mcan_OverrunOccurred','vCan_30_Mcan_IsDriverInitialized'
+	.calls	'vCan_30_Mcan_OverrunOccurred','vCan_30_Mcan_ClearInterruptFlag'
+	.calls	'vCan_30_Mcan_OverrunOccurred','Can_30_Core_Overrun'
+	.calls	'vCan_30_Mcan_OverrunOccurred','Det_ReportError'
+	.calls	'vCan_30_Mcan_GetControllerRxErrorCounter','vCan_30_Mcan_IsDriverInitialized'
+	.calls	'vCan_30_Mcan_GetControllerRxErrorCounter','Det_ReportError'
+	.calls	'vCan_30_Mcan_GetControllerTxErrorCounter','vCan_30_Mcan_IsDriverInitialized'
+	.calls	'vCan_30_Mcan_GetControllerTxErrorCounter','Det_ReportError'
+	.calls	'vCan_30_Mcan_ErrInterrupt','Can_30_Core_ErrorHandling'
+	.calls	'vCan_30_Mcan_GetStatusBegin','',0
+	.calls	'vCan_30_Mcan_IsHwBusOff','',0
+	.calls	'vCan_30_Mcan_IsHwPassive','',0
+	.calls	'vCan_30_Mcan_IsHwWarning','',0
+	.calls	'vCan_30_Mcan_ErrorHandlingBegin','',0
+	.calls	'vCan_30_Mcan_ErrorStatePassiveTransitionOccurred','',0
+	.calls	'vCan_30_Mcan_ErrorNotificationHandling','',0
+	.calls	'vCan_30_Mcan_BusOffOccurred','',0
+	.calls	'vCan_30_Mcan_OverrunOccurred','',0
+	.calls	'vCan_30_Mcan_ErrorHandlingEnd','',0
+	.calls	'vCan_30_Mcan_GetControllerRxErrorCounter','',0
+	.calls	'vCan_30_Mcan_GetControllerTxErrorCounter','',0
+	.extern	Det_ReportError
+	.extern	Can_30_Core_Overrun
+	.extern	Can_30_Core_ErrorHandling
+	.extern	Can_30_Core_ErrorNotification
+	.extern	vCan_30_Mcan_Mailbox
+	.extern	vCan_30_Mcan_ControllerData
+	.extern	vCan_30_Mcan_IsDriverInitialized
+	.extern	vCan_30_Mcan_ClearInterruptFlag
+	.calls	'vCan_30_Mcan_ErrInterrupt','',0
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L117:
+	.word	28723
+	.half	3
+	.word	.L118
+	.byte	4
+.L116:
+	.byte	1
+	.byte	'../../../../BSW/Components/vCan_30_Mcan/Implementation/vCan_30_Mcan_ErrorHandler.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L119
+.L199:
+	.byte	2
+	.byte	'unsigned char',0,1,8,3
+	.byte	'Can_30_Core_DevCheck_IsConditionTrue',0,3,1,236,3,65
+	.word	233
+	.byte	1,1,4
+	.byte	'condition',0,1,237,3,11
+	.word	233
+	.byte	5,0,6
+	.byte	'Can_30_Core_ServiceIds_enum',0,2,60,14,4,7
+	.byte	'CAN_30_CORE_SID_INIT',0,0,7
+	.byte	'CAN_30_CORE_SID_MAINFCT_WRITE',0,1,7
+	.byte	'CAN_30_CORE_SID_INITCTR',0,2,7
+	.byte	'CAN_30_CORE_SID_MODE_TRANS',0,3,7
+	.byte	'CAN_30_CORE_SID_SET_CTR_MODE',0,3,7
+	.byte	'CAN_30_CORE_SID_CTR_INT_DISABLE',0,4,7
+	.byte	'CAN_30_CORE_SID_CTR_INT_ENABLE',0,5,7
+	.byte	'CAN_30_CORE_SID_WRITE',0,6,7
+	.byte	'CAN_30_CORE_SID_VERSION',0,7,7
+	.byte	'CAN_30_CORE_SID_MAINFCT_READ',0,8,7
+	.byte	'CAN_30_CORE_SID_MAINFCT_BO',0,9,7
+	.byte	'CAN_30_CORE_SID_MAINFCT_WU',0,10,7
+	.byte	'CAN_30_CORE_SID_CHECK_WU',0,11,7
+	.byte	'CAN_30_CORE_SID_MAINFCT_MODE',0,12,7
+	.byte	'CAN_30_CORE_SID_CHANGE_BR',0,13,7
+	.byte	'CAN_30_CORE_SID_CHECK_BR',0,14,7
+	.byte	'CAN_30_CORE_SID_SET_BR',0,15,7
+	.byte	'CAN_30_CORE_SID_UNUSED',0,16,7
+	.byte	'CAN_30_CORE_SID_GET_CTR_ERR_STATE',0,17,7
+	.byte	'CAN_30_CORE_SID_GET_CTR_MODE',0,18,7
+	.byte	'CAN_30_CORE_SID_GET_STATUS',0,19,7
+	.byte	'CAN_30_CORE_SID_CTR_TX_BRS',0,25,7
+	.byte	'CAN_30_CORE_SID_CTR_BRS',0,26,7
+	.byte	'CAN_30_CORE_SID_IS_CTRL_INIT',0,32,7
+	.byte	'CAN_30_CORE_SID_GET_CTR_RX_ERR_CNT',0,48,7
+	.byte	'CAN_30_CORE_SID_GET_CTR_TX_ERR_CNT',0,49,7
+	.byte	'CAN_30_CORE_SID_CTR_ERR_HANDLING',0,50,7
+	.byte	'CAN_30_CORE_SID_CTR_ERR_NOTIFICATION',0,51,7
+	.byte	'CAN_30_CORE_SID_GET_MODE_SILENT',0,218,0,7
+	.byte	'CAN_30_CORE_SID_SET_MODE_SILENT',0,219,0,7
+	.byte	'CAN_30_CORE_SID_GET_MODE_MIRROR',0,220,0,7
+	.byte	'CAN_30_CORE_SID_SET_MODE_MIRROR',0,221,0,7
+	.byte	'CAN_30_CORE_SID_CTR_WAKEUP_HANDLING',0,224,0,7
+	.byte	'CAN_30_CORE_SID_TX_CONFIRMATION',0,240,0,7
+	.byte	'CAN_30_CORE_SID_CLEAR_TX_BUFFERS',0,242,0,7
+	.byte	'CAN_30_CORE_SID_CANCEL_MSG_TX',0,243,0,7
+	.byte	'CAN_30_CORE_SID_RX_INDICATION',0,128,1,7
+	.byte	'CAN_30_CORE_SID_RX_OVERRUN',0,131,1,7
+	.byte	'CAN_30_CORE_SID_TIMER_UPDATE',0,132,1,7
+	.byte	'CAN_30_CORE_SID_TIMER_LOOP',0,133,1,7
+	.byte	'CAN_30_CORE_SID_ISR',0,144,1,0
+.L204:
+	.byte	6
+	.byte	'Can_30_Core_ErrorIds_enum',0,2,155,1,14,4,7
+	.byte	'CAN_30_CORE_E_NO_ERROR',0,0,7
+	.byte	'CAN_30_CORE_E_PARAM_POINTER',0,1,7
+	.byte	'CAN_30_CORE_E_PARAM_HANDLE',0,2,7
+	.byte	'CAN_30_CORE_E_PARAM_DATA_LENGTH',0,3,7
+	.byte	'CAN_30_CORE_E_PARAM_CONTROLLER',0,4,7
+	.byte	'CAN_30_CORE_E_UNINIT',0,5,7
+	.byte	'CAN_30_CORE_E_TRANSITION',0,6,7
+	.byte	'CAN_30_CORE_E_PARAM_BAUDRATE',0,7,7
+	.byte	'CAN_30_CORE_E_DATALOST',0,8,7
+	.byte	'CAN_30_CORE_E_INIT_FAILED',0,9,7
+	.byte	'CAN_30_CORE_E_RXQUEUE',0,10,7
+	.byte	'CAN_30_CORE_E_TIMEOUT_DET',0,11,7
+	.byte	'CAN_30_CORE_E_GENDATA',0,12,7
+	.byte	'CAN_30_CORE_E_HARDWARE',0,13,0
+.L218:
+	.byte	8
+	.byte	'Can_30_Core_ReportDevelopmentError',0,3,1,133,4,62,1,1
+.L219:
+	.byte	4
+	.byte	'ApiId',0,1,134,4,25
+	.word	320
+.L221:
+	.byte	4
+	.byte	'ErrorId',0,1,135,4,23
+	.word	1625
+.L223:
+	.byte	5,0,3
+	.byte	'vCan_30_Mcan_IsControllerValid',0,3,3,174,7,60
+	.word	233
+	.byte	1,1,4
+	.byte	'Controller',0,3,174,7,97
+	.word	233
+	.byte	5,0,2
+	.byte	'unsigned long int',0,4,7,9,4,196,2,3,4,10
+	.byte	'MRCFG',0
+	.word	2186
+	.byte	4,2,35,0,10
+	.byte	'Unsed',0
+	.word	2186
+	.byte	4,2,35,0,0,11,16
+	.word	2186
+	.byte	12,3,0,11,32
+	.word	2186
+	.byte	12,7,0,11,8
+	.word	2186
+	.byte	12,1,0,13
+	.byte	'vCan_30_Mcan_CanNodeTag',0,4,192,2,25,140,2,10
+	.byte	'CREL',0
+	.word	2186
+	.byte	4,2,35,0,10
+	.byte	'ENDN',0
+	.word	2186
+	.byte	4,2,35,4,10
+	.byte	'CUST',0
+	.word	2207
+	.byte	4,2,35,8,10
+	.byte	'DBTP',0
+	.word	2186
+	.byte	4,2,35,12,10
+	.byte	'TEST',0
+	.word	2186
+	.byte	4,2,35,16,10
+	.byte	'RWD',0
+	.word	2186
+	.byte	4,2,35,20,10
+	.byte	'CCCR',0
+	.word	2186
+	.byte	4,2,35,24,10
+	.byte	'NBTP',0
+	.word	2186
+	.byte	4,2,35,28,10
+	.byte	'TSCC',0
+	.word	2186
+	.byte	4,2,35,32,10
+	.byte	'TSCV',0
+	.word	2186
+	.byte	4,2,35,36,10
+	.byte	'TOCC',0
+	.word	2186
+	.byte	4,2,35,40,10
+	.byte	'TOCV',0
+	.word	2186
+	.byte	4,2,35,44,10
+	.byte	'res1',0
+	.word	2244
+	.byte	16,2,35,48,10
+	.byte	'ECR',0
+	.word	2186
+	.byte	4,2,35,64,10
+	.byte	'PSR',0
+	.word	2186
+	.byte	4,2,35,68,10
+	.byte	'TDCR',0
+	.word	2186
+	.byte	4,2,35,72,10
+	.byte	'unused',0
+	.word	2186
+	.byte	4,2,35,76,10
+	.byte	'IR',0
+	.word	2186
+	.byte	4,2,35,80,10
+	.byte	'IE',0
+	.word	2186
+	.byte	4,2,35,84,10
+	.byte	'ILS',0
+	.word	2186
+	.byte	4,2,35,88,10
+	.byte	'ILE',0
+	.word	2186
+	.byte	4,2,35,92,10
+	.byte	'res3',0
+	.word	2253
+	.byte	32,2,35,96,10
+	.byte	'GFC',0
+	.word	2186
+	.byte	4,3,35,128,1,10
+	.byte	'SIDFC',0
+	.word	2186
+	.byte	4,3,35,132,1,10
+	.byte	'XIDFC',0
+	.word	2186
+	.byte	4,3,35,136,1,10
+	.byte	'res4',0
+	.word	2186
+	.byte	4,3,35,140,1,10
+	.byte	'XIDAM',0
+	.word	2186
+	.byte	4,3,35,144,1,10
+	.byte	'HPMS',0
+	.word	2186
+	.byte	4,3,35,148,1,10
+	.byte	'NDATA',0
+	.word	2262
+	.byte	8,3,35,152,1,10
+	.byte	'RXF0C',0
+	.word	2186
+	.byte	4,3,35,160,1,10
+	.byte	'RXF0S',0
+	.word	2186
+	.byte	4,3,35,164,1,10
+	.byte	'RXF0A',0
+	.word	2186
+	.byte	4,3,35,168,1,10
+	.byte	'RXBC',0
+	.word	2186
+	.byte	4,3,35,172,1,10
+	.byte	'RXF1C',0
+	.word	2186
+	.byte	4,3,35,176,1,10
+	.byte	'RXF1S',0
+	.word	2186
+	.byte	4,3,35,180,1,10
+	.byte	'RXF1A',0
+	.word	2186
+	.byte	4,3,35,184,1,10
+	.byte	'RXESC',0
+	.word	2186
+	.byte	4,3,35,188,1,10
+	.byte	'TXBC',0
+	.word	2186
+	.byte	4,3,35,192,1,10
+	.byte	'TXFQS',0
+	.word	2186
+	.byte	4,3,35,196,1,10
+	.byte	'TXESC',0
+	.word	2186
+	.byte	4,3,35,200,1,10
+	.byte	'TXBRP',0
+	.word	2186
+	.byte	4,3,35,204,1,10
+	.byte	'TXBAR',0
+	.word	2186
+	.byte	4,3,35,208,1,10
+	.byte	'TXBCR',0
+	.word	2186
+	.byte	4,3,35,212,1,10
+	.byte	'TXBTO',0
+	.word	2186
+	.byte	4,3,35,216,1,10
+	.byte	'TXBCF',0
+	.word	2186
+	.byte	4,3,35,220,1,10
+	.byte	'TXBTIE',0
+	.word	2186
+	.byte	4,3,35,224,1,10
+	.byte	'TXBCIE',0
+	.word	2186
+	.byte	4,3,35,228,1,10
+	.byte	'res9',0
+	.word	2262
+	.byte	8,3,35,232,1,10
+	.byte	'TXEFC',0
+	.word	2186
+	.byte	4,3,35,240,1,10
+	.byte	'TXEFS',0
+	.word	2186
+	.byte	4,3,35,244,1,10
+	.byte	'TXEFA',0
+	.word	2186
+	.byte	4,3,35,248,1,10
+	.byte	'resA',0
+	.word	2186
+	.byte	4,3,35,252,1,10
+	.byte	'TTTMC',0
+	.word	2186
+	.byte	4,3,35,128,2,10
+	.byte	'TTRMC',0
+	.word	2186
+	.byte	4,3,35,132,2,10
+	.byte	'TTOCF',0
+	.word	2186
+	.byte	4,3,35,136,2,0,14
+	.word	2271
+	.byte	15
+	.word	3126
+	.byte	16
+	.byte	'vCan_30_Mcan_CanNodeTypePtr',0,4,176,5,75
+	.word	3131
+	.byte	3
+	.byte	'vCan_30_Mcan_HAL_CanController',0,3,4,227,8,80
+	.word	3136
+	.byte	1,1,4
+	.byte	'Controller',0,4,227,8,117
+	.word	233
+	.byte	5,0,14
+	.word	2271
+	.byte	15
+	.word	3238
+	.byte	14
+	.word	2186
+	.byte	15
+	.word	3248
+	.byte	8
+	.byte	'vCan_30_Mcan_HAL_Write32',0,3,4,144,12,57,1,1,4
+	.byte	'AddressPtr',0,4,145,12,60
+	.word	3253
+	.byte	4
+	.byte	'Value',0,4,146,12,60
+	.word	2186
+	.byte	5,0,14
+	.word	2186
+	.byte	17
+	.word	3328
+	.byte	15
+	.word	3333
+.L213:
+	.byte	3
+	.byte	'vCan_30_Mcan_HAL_Read32',0,3,4,170,12,59
+	.word	2186
+	.byte	1,1
+.L215:
+	.byte	4
+	.byte	'AddressPtr',0,4,171,12,62
+	.word	3338
+.L217:
+	.byte	5,0
+.L206:
+	.byte	3
+	.byte	'vCan_30_Mcan_HAL_IsFlagSet32',0,3,4,197,12,60
+	.word	233
+	.byte	1,1
+.L208:
+	.byte	4
+	.byte	'AddressPtr',0,4,198,12,62
+	.word	3338
+.L210:
+	.byte	4
+	.byte	'Flag',0,4,199,12,62
+	.word	2186
+.L212:
+	.byte	18,5,0,0
+.L308:
+	.byte	2
+	.byte	'unsigned short int',0,2,7,19
+	.byte	'Det_ReportError',0,5,150,2,32
+	.word	233
+	.byte	1,1,1,1,4
+	.byte	'ModuleId',0,5,150,2,56
+	.word	3480
+	.byte	4
+	.byte	'InstanceId',0,5,150,2,72
+	.word	233
+	.byte	4
+	.byte	'ApiId',0,5,150,2,90
+	.word	233
+	.byte	4
+	.byte	'ErrorId',0,5,150,2,103
+	.word	233
+	.byte	0,20
+	.word	250
+	.byte	21
+	.word	299
+	.byte	5,0,20
+	.word	2044
+	.byte	21
+	.word	2087
+	.byte	21
+	.word	2102
+	.byte	5,0,22
+	.byte	'Can_30_Core_Overrun',0,1,171,2,30,1,1,1,1,4
+	.byte	'Controller',0,1,171,2,56
+	.word	233
+	.byte	4
+	.byte	'Hrh',0,1,171,2,85
+	.word	233
+	.byte	0,22
+	.byte	'Can_30_Core_ErrorHandling',0,1,164,3,30,1,1,1,1,4
+	.byte	'Controller',0,1,164,3,62
+	.word	233
+	.byte	0,6
+	.byte	'Can_ErrorTypeTag',0,6,123,14,4,7
+	.byte	'CAN_ERROR_BIT_MONITORING1',0,1,7
+	.byte	'CAN_ERROR_BIT_MONITORING0',0,2,7
+	.byte	'CAN_ERROR_BIT',0,3,7
+	.byte	'CAN_ERROR_CHECK_ACK_FAILED',0,4,7
+	.byte	'CAN_ERROR_ACK_DELIMITER',0,5,7
+	.byte	'CAN_ERROR_ARBITRATION_LOST',0,6,7
+	.byte	'CAN_ERROR_OVERLOAD',0,7,7
+	.byte	'CAN_ERROR_CHECK_FORM_FAILED',0,8,7
+	.byte	'CAN_ERROR_CHECK_STUFFING_FAILED',0,9,7
+	.byte	'CAN_ERROR_CHECK_CRC_FAILED',0,10,7
+	.byte	'CAN_ERROR_BUS_LOCK',0,11,0,22
+	.byte	'Can_30_Core_ErrorNotification',0,1,178,3,30,1,1,1,1,4
+	.byte	'Controller',0,1,178,3,66
+	.word	233
+	.byte	4
+	.byte	'CanError',0,1,178,3,92
+	.word	3750
+	.byte	0,20
+	.word	2121
+	.byte	21
+	.word	2164
+	.byte	5,0,20
+	.word	3173
+	.byte	21
+	.word	3216
+	.byte	5,0,20
+	.word	3258
+	.byte	21
+	.word	3291
+	.byte	21
+	.word	3311
+	.byte	5,0,20
+	.word	3343
+	.byte	21
+	.word	3379
+	.byte	5,0,20
+	.word	3401
+	.byte	21
+	.word	3442
+	.byte	21
+	.word	3462
+	.byte	18,23
+	.word	3343
+	.byte	21
+	.word	3379
+	.byte	24
+	.word	3399
+	.byte	0,5,0,0,25
+	.byte	'vCan_30_Mcan_IsDriverInitialized',0,7,51,34
+	.word	233
+	.byte	1,1,1,1,22
+	.byte	'vCan_30_Mcan_ClearInterruptFlag',0,8,108,31,1,1,1,1,4
+	.byte	'Controller',0,8,108,69
+	.word	233
+	.byte	4
+	.byte	'flag',0,8,108,88
+	.word	2186
+	.byte	0,26,1,15
+	.word	4348
+	.byte	16
+	.byte	'__codeptr',0,9,1,1
+	.word	4350
+	.byte	16
+	.byte	'boolean',0,10,140,1,29
+	.word	233
+	.byte	2
+	.byte	'char',0,1,6,16
+	.byte	'sint8',0,10,142,1,31
+	.word	4390
+	.byte	16
+	.byte	'uint8',0,10,143,1,31
+	.word	233
+	.byte	2
+	.byte	'short int',0,2,5,16
+	.byte	'sint16',0,10,144,1,31
+	.word	4428
+	.byte	16
+	.byte	'uint16',0,10,145,1,31
+	.word	3480
+	.byte	2
+	.byte	'long int',0,4,5,16
+	.byte	'sint32',0,10,146,1,31
+	.word	4473
+	.byte	16
+	.byte	'uint32',0,10,147,1,31
+	.word	2186
+	.byte	16
+	.byte	'uint8_least',0,10,150,1,31
+	.word	233
+	.byte	16
+	.byte	'uint32_least',0,10,154,1,31
+	.word	2186
+	.byte	2
+	.byte	'unsigned long long int',0,8,7,16
+	.byte	'uint64',0,10,160,1,30
+	.word	4560
+	.byte	16
+	.byte	'StatusType',0,11,115,23
+	.word	233
+	.byte	16
+	.byte	'Std_ReturnType',0,11,120,15
+	.word	233
+	.byte	27,11,122,9,8,10
+	.byte	'vendorID',0
+	.word	3480
+	.byte	2,2,35,0,10
+	.byte	'moduleID',0
+	.word	3480
+	.byte	2,2,35,2,10
+	.byte	'sw_major_version',0
+	.word	233
+	.byte	1,2,35,4,10
+	.byte	'sw_minor_version',0
+	.word	233
+	.byte	1,2,35,5,10
+	.byte	'sw_patch_version',0
+	.word	233
+	.byte	1,2,35,6,0,16
+	.byte	'Std_VersionInfoType',0,11,129,1,3
+	.word	4644
+	.byte	16
+	.byte	'Std_TransformerErrorCode',0,11,131,1,15
+	.word	233
+	.byte	16
+	.byte	'Std_TransformerClass',0,11,133,1,15
+	.word	233
+	.byte	16
+	.byte	'PduIdType',0,12,68,15
+	.word	233
+	.byte	16
+	.byte	'PduLengthType',0,12,70,16
+	.word	3480
+	.byte	15
+	.word	233
+	.byte	16
+	.byte	'SduDataPtrType',0,13,178,1,54
+	.word	4897
+	.byte	28,13,201,1,9,4,7
+	.byte	'TP_DATACONF',0,0,7
+	.byte	'TP_DATARETRY',0,1,7
+	.byte	'TP_CONFPENDING',0,2,0,16
+	.byte	'TpDataStateType',0,13,208,1,3
+	.word	4926
+	.byte	16
+	.byte	'Can_IdType',0,6,60,30
+	.word	3480
+	.byte	16
+	.byte	'Can_HwHandleType',0,6,63,29
+	.word	233
+	.byte	16
+	.byte	'Can_SduPtrType',0,6,66,53
+	.word	4897
+	.byte	13
+	.byte	'Can_PduTypeTag',0,6,71,16,12,10
+	.byte	'id',0
+	.word	3480
+	.byte	2,2,35,0,10
+	.byte	'length',0
+	.word	233
+	.byte	1,2,35,2,10
+	.byte	'sdu',0
+	.word	5048
+	.byte	4,2,35,4,10
+	.byte	'swPduHandle',0
+	.word	233
+	.byte	1,2,35,8,0,16
+	.byte	'Can_PduType',0,6,77,3
+	.word	5071
+	.byte	15
+	.word	233
+	.byte	28,6,90,9,4,7
+	.byte	'CAN_CS_UNINIT',0,0,7
+	.byte	'CAN_CS_STARTED',0,1,7
+	.byte	'CAN_CS_STOPPED',0,2,7
+	.byte	'CAN_CS_SLEEP',0,3,0,16
+	.byte	'Can_ControllerStateType',0,6,95,3
+	.word	5179
+	.byte	28,6,97,9,4,7
+	.byte	'CAN_ERRORSTATE_ACTIVE',0,0,7
+	.byte	'CAN_ERRORSTATE_PASSIVE',0,1,7
+	.byte	'CAN_ERRORSTATE_BUSOFF',0,2,0,16
+	.byte	'Can_ErrorStateType',0,6,101,3
+	.word	5282
+	.byte	28,6,106,9,4,7
+	.byte	'CAN_NOT_OK',0,0,7
+	.byte	'CAN_OK',0,1,7
+	.byte	'CAN_BUSY',0,2,7
+	.byte	'CAN_NOT_SUPPORTED',0,3,7
+	.byte	'CAN_REQUESTED',0,4,0,16
+	.byte	'Can_ReturnType',0,6,113,3
+	.word	5388
+	.byte	16
+	.byte	'Can_ErrorType',0,6,138,1,3
+	.word	3750
+	.byte	13
+	.byte	'sDet_PCConfigType',0,14,243,1,16,1,10
+	.byte	'Det_PCConfigNeverUsed',0
+	.word	233
+	.byte	1,2,35,0,0,16
+	.byte	'Det_PCConfigType',0,14,246,1,3
+	.word	5509
+	.byte	16
+	.byte	'Dcm_DataElement_Boot_Software_Boot_Software_Identification_PrimitiveType',0,15,84,16
+	.word	2186
+	.byte	16
+	.byte	'Dcm_DataElement_Boot_Software_NumberOfModules_PrimitiveType',0,15,87,15
+	.word	233
+	.byte	16
+	.byte	'Dcm_DataElement_DID_0x0017_DID_Sint32_Array_ArrayType',0,15,90,16
+	.word	4473
+	.byte	16
+	.byte	'Dcm_DataElement_DID_0x0018_DID_Uint32_Array_ArrayType',0,15,93,16
+	.word	2186
+	.byte	16
+	.byte	'Dcm_DataElement_DID_0x0019_DID_Sint16_Array_ArrayType',0,15,96,16
+	.word	4428
+	.byte	16
+	.byte	'Dcm_DataElement_DID_0x001A_DID_Uint16_Array_ArrayType',0,15,99,16
+	.word	3480
+	.byte	16
+	.byte	'Dcm_DataElement_DID_0x001B_DID_Sint8_Array_ArrayType',0,15,102,15
+	.word	4390
+	.byte	16
+	.byte	'Dcm_DataElement_DID_0xF410_DID_Data_PrimitiveType',0,15,105,16
+	.word	3480
+	.byte	16
+	.byte	'Dcm_DataElement_DID_0xF412_DID_Data_PrimitiveType',0,15,108,16
+	.word	3480
+	.byte	16
+	.byte	'Dcm_DataElement_DID_0xF413_DID_Data_PrimitiveType',0,15,111,16
+	.word	3480
+	.byte	16
+	.byte	'Dcm_DataElement_DataDiagnosticIdentifier_DID_DataDiagnosticIdentifier_PrimitiveType',0,15,114,16
+	.word	3480
+	.byte	16
+	.byte	'Dcm_DataElement_DevelopmentData_CanDriverVersion_PrimitiveType',0,15,117,16
+	.word	3480
+	.byte	16
+	.byte	'Dcm_DataElement_DevelopmentData_DiagnosticModuleVersion_PrimitiveType',0,15,120,16
+	.word	3480
+	.byte	16
+	.byte	'Dcm_DataElement_DevelopmentData_NmVersion_PrimitiveType',0,15,123,16
+	.word	3480
+	.byte	16
+	.byte	'Dcm_DataElement_DevelopmentData_OperatingSystemVersion_PrimitiveType',0,15,126,16
+	.word	3480
+	.byte	16
+	.byte	'Dcm_DataElement_DevelopmentData_TransportLayerVersion_PrimitiveType',0,15,129,1,16
+	.word	3480
+	.byte	16
+	.byte	'Dcm_DataElement_Example_ReadWriteData_GlobalTime_PrimitiveType',0,15,132,1,16
+	.word	2186
+	.byte	16
+	.byte	'Dcm_DataElement_Example_WriteOnlyDID_DID_DataObject_PrimitiveType',0,15,135,1,15
+	.word	233
+	.byte	16
+	.byte	'Dcm_DataElement_SampleIoControl_DID_Data_PrimitiveType',0,15,138,1,16
+	.word	2186
+	.byte	16
+	.byte	'Dcm_DataElement_SerialNumber_SerialNumber_PrimitiveType',0,15,141,1,16
+	.word	2186
+	.byte	16
+	.byte	'Dcm_RequestDataOut_SampleRoutineControl_Out_ResultPrimitiveType',0,15,147,1,16
+	.word	3480
+	.byte	16
+	.byte	'Dcm_RequestDataOut_SampleRoutineControl_StartOnly_Out_ResultPrimitiveType',0,15,153,1,16
+	.word	2186
+	.byte	16
+	.byte	'Dcm_StartDataIn_SampleRoutineControl_In_Option0PrimitiveType',0,15,159,1,15
+	.word	233
+	.byte	16
+	.byte	'Dcm_StartDataIn_SampleRoutineControl_StartOnly_In_Option1ArrayType',0,15,165,1,15
+	.word	233
+	.byte	16
+	.byte	'Dcm_StartDataOut_SampleRoutineControl_Out_InitStatePrimitiveType',0,15,168,1,16
+	.word	2186
+	.byte	16
+	.byte	'Dcm_StopDataOut_SampleRoutineControl_Out_StopStatePrimitiveType',0,15,174,1,16
+	.word	2186
+	.byte	16
+	.byte	'EcuM_ModeType',0,15,160,2,15
+	.word	233
+	.byte	16
+	.byte	'EcuM_StateType',0,15,166,2,15
+	.word	233
+	.byte	29,1,1,15
+	.word	7454
+	.byte	16
+	.byte	'EcuM_DriverFuncType',0,16,245,2,9
+	.word	7457
+	.byte	16
+	.byte	'EcuM_DefaultAppModeType',0,16,197,3,16
+	.word	2186
+	.byte	16
+	.byte	'EcuM_NormalMcuModeType',0,16,209,3,16
+	.word	2186
+	.byte	16
+	.byte	'EcuM_ComMChannelRefsEndIdxOfWakeupSourceListType',0,16,218,3,15
+	.word	233
+	.byte	16
+	.byte	'EcuM_ComMChannelRefsStartIdxOfWakeupSourceListType',0,16,221,3,15
+	.word	233
+	.byte	13
+	.byte	'sEcuM_ComMChannelRefsType',0,16,240,3,16,1,10
+	.byte	'EcuM_ComMChannelRefsNeverUsed',0
+	.word	233
+	.byte	1,2,35,0,0,16
+	.byte	'EcuM_ComMChannelRefsType',0,16,243,3,3
+	.word	7674
+	.byte	13
+	.byte	'sEcuM_DriverInitOneType',0,16,246,3,16,4,10
+	.byte	'FunctionOfDriverInitOne',0
+	.word	7462
+	.byte	4,2,35,0,0,16
+	.byte	'EcuM_DriverInitOneType',0,16,249,3,3
+	.word	7780
+	.byte	15
+	.word	7454
+	.byte	13
+	.byte	'sEcuM_DriverRestartListType',0,16,252,3,16,4,10
+	.byte	'FunctionOfDriverRestartList',0
+	.word	7462
+	.byte	4,2,35,0,0,16
+	.byte	'EcuM_DriverRestartListType',0,16,255,3,3
+	.word	7881
+	.byte	13
+	.byte	'sEcuM_SleepModeListType',0,16,130,4,16,1,10
+	.byte	'EcuM_SleepModeListNeverUsed',0
+	.word	233
+	.byte	1,2,35,0,0,16
+	.byte	'EcuM_SleepModeListType',0,16,133,4,3
+	.word	7989
+	.byte	13
+	.byte	'sEcuM_WakeupSourceListType',0,16,136,4,16,2,10
+	.byte	'ComMChannelRefsEndIdxOfWakeupSourceList',0
+	.word	233
+	.byte	1,2,35,0,10
+	.byte	'ComMChannelRefsStartIdxOfWakeupSourceList',0
+	.word	233
+	.byte	1,2,35,1,0,16
+	.byte	'EcuM_WakeupSourceListType',0,16,140,4,3
+	.word	8089
+	.byte	13
+	.byte	'sEcuM_PCConfigType',0,16,188,4,16,1,10
+	.byte	'EcuM_PCConfigNeverUsed',0
+	.word	233
+	.byte	1,2,35,0,0,16
+	.byte	'EcuM_PCConfigType',0,16,191,4,3
+	.word	8258
+	.byte	16
+	.byte	'Can_30_Core_ExternalTickType',0,17,184,2,16
+	.word	2186
+	.byte	11,1
+	.word	233
+	.byte	12,0,0,13
+	.byte	'Can_30_Core_RxQueueBufTypeTag',0,17,198,2,16,6,10
+	.byte	'data',0
+	.word	8381
+	.byte	1,2,35,0,10
+	.byte	'id',0
+	.word	3480
+	.byte	2,2,35,2,10
+	.byte	'Hrh',0
+	.word	233
+	.byte	1,2,35,4,10
+	.byte	'dlc',0
+	.word	233
+	.byte	1,2,35,5,0,16
+	.byte	'Can_30_Core_RxQueueBufType',0,17,204,2,3
+	.word	8390
+	.byte	14
+	.word	3480
+	.byte	14
+	.word	3480
+	.byte	14
+	.word	3480
+	.byte	13
+	.byte	'Can_30_Core_RxQueueTypeTag',0,17,206,2,16,6,10
+	.byte	'WriteIndex',0
+	.word	8515
+	.byte	2,2,35,0,10
+	.byte	'ReadIndex',0
+	.word	8520
+	.byte	2,2,35,2,10
+	.byte	'FillLevel',0
+	.word	8525
+	.byte	2,2,35,4,0,16
+	.byte	'Can_30_Core_RxQueueType',0,17,211,2,3
+	.word	8530
+	.byte	28,17,214,2,9,4,7
+	.byte	'CAN_30_CORE_SILENT_INACTIVE',0,0,7
+	.byte	'CAN_30_CORE_SILENT_ACTIVE',0,1,0,16
+	.byte	'Can_30_Core_SilentModeType',0,17,217,2,3
+	.word	8655
+	.byte	28,17,142,3,9,4,7
+	.byte	'CAN_30_CORE_BUFFER_FREE',0,0,7
+	.byte	'CAN_30_CORE_BUFFER_CANCEL',0,1,7
+	.byte	'CAN_30_CORE_BUFFER_CANCEL_SW',0,2,7
+	.byte	'CAN_30_CORE_BUFFER_SEND',0,3,0,16
+	.byte	'Can_30_Core_TxBufferStatusType',0,17,147,3,3
+	.word	8756
+	.byte	16
+	.byte	'CddMirror_MirrorModeType',0,17,149,3,15
+	.word	233
+	.byte	16
+	.byte	'Can_30_Core_ControllerConfigIterType',0,17,206,14,21
+	.word	233
+	.byte	16
+	.byte	'Can_30_Core_MailboxIterType',0,17,224,14,21
+	.word	233
+	.byte	16
+	.byte	'Can_30_Core_ActiveSendDataType',0,17,129,15,15
+	.word	233
+	.byte	16
+	.byte	'Can_30_Core_PduOfActiveSendObjectType',0,17,132,15,19
+	.word	233
+	.byte	16
+	.byte	'Can_30_Core_CanIfChannelIdType',0,17,135,15,15
+	.word	233
+	.byte	16
+	.byte	'Can_30_Core_BusOffRecoveryCounterOfControllerDataType',0,17,246,15,15
+	.word	233
+	.byte	16
+	.byte	'Can_30_Core_CanInterruptNestingCounterOfControllerDataType',0,17,249,15,15
+	.word	233
+	.byte	16
+	.byte	'Can_30_Core_ContinueBusOffRecoveryOfControllerDataType',0,17,252,15,17
+	.word	233
+	.byte	16
+	.byte	'Can_30_Core_IsBusOffOfControllerDataType',0,17,255,15,17
+	.word	233
+	.byte	16
+	.byte	'Can_30_Core_IsWakeupOfControllerDataType',0,17,130,16,17
+	.word	233
+	.byte	16
+	.byte	'Can_30_Core_LastInitObjectOfControllerDataType',0,17,133,16,15
+	.word	233
+	.byte	16
+	.byte	'Can_30_Core_LogStatusOfControllerDataType',0,17,136,16,15
+	.word	233
+	.byte	16
+	.byte	'Can_30_Core_ModeTransitionRequestOfControllerDataType',0,17,139,16,15
+	.word	233
+	.byte	16
+	.byte	'Can_30_Core_RamCheckTransitionRequestOfControllerDataType',0,17,142,16,17
+	.word	233
+	.byte	16
+	.byte	'Can_30_Core_InitObjectBaudrateType',0,17,235,16,16
+	.word	3480
+	.byte	16
+	.byte	'Can_30_Core_InitObjectFdBrsConfigType',0,17,238,16,15
+	.word	233
+	.byte	16
+	.byte	'Can_30_Core_MailboxSizeOfMailboxType',0,17,128,17,15
+	.word	233
+	.byte	16
+	.byte	'Can_30_Core_MailboxTypeOfMailboxType',0,17,131,17,15
+	.word	233
+	.byte	16
+	.byte	'Can_30_Core_FillCountOfTxHwFifoType',0,17,140,17,15
+	.word	233
+	.byte	16
+	.byte	'Can_30_Core_ReadIndexOfTxHwFifoType',0,17,143,17,15
+	.word	233
+	.byte	16
+	.byte	'Can_30_Core_WriteIndexOfTxHwFifoType',0,17,146,17,15
+	.word	233
+	.byte	13
+	.byte	'sCan_30_Core_ActiveSendObjectType',0,17,162,17,16,20,10
+	.byte	'PduOfActiveSendObject',0
+	.word	233
+	.byte	1,2,35,0,10
+	.byte	'PduInfoOfActiveSendObject',0
+	.word	5071
+	.byte	12,2,35,4,10
+	.byte	'StateOfActiveSendObject',0
+	.word	8756
+	.byte	4,2,35,16,0,16
+	.byte	'Can_30_Core_ActiveSendObjectType',0,17,167,17,3
+	.word	10009
+	.byte	13
+	.byte	'sCan_30_Core_ControllerConfigType',0,17,170,17,16,1,10
+	.byte	'Can_30_Core_ControllerConfigNeverUsed',0
+	.word	233
+	.byte	1,2,35,0,0,16
+	.byte	'Can_30_Core_ControllerConfigType',0,17,173,17,3
+	.word	10191
+	.byte	13
+	.byte	'sCan_30_Core_ControllerDataType',0,17,176,17,16,16,10
+	.byte	'BusOffRecoveryCounterOfControllerData',0
+	.word	233
+	.byte	1,2,35,0,10
+	.byte	'CanInterruptNestingCounterOfControllerData',0
+	.word	233
+	.byte	1,2,35,1,10
+	.byte	'ContinueBusOffRecoveryOfControllerData',0
+	.word	233
+	.byte	1,2,35,2,10
+	.byte	'IsBusOffOfControllerData',0
+	.word	233
+	.byte	1,2,35,3,10
+	.byte	'IsWakeupOfControllerData',0
+	.word	233
+	.byte	1,2,35,4,10
+	.byte	'LastInitObjectOfControllerData',0
+	.word	233
+	.byte	1,2,35,5,10
+	.byte	'LogStatusOfControllerData',0
+	.word	233
+	.byte	1,2,35,6,10
+	.byte	'ModeTransitionRequestOfControllerData',0
+	.word	233
+	.byte	1,2,35,7,10
+	.byte	'RamCheckTransitionRequestOfControllerData',0
+	.word	233
+	.byte	1,2,35,8,10
+	.byte	'MirrorModeStateOfControllerData',0
+	.word	233
+	.byte	1,2,35,9,10
+	.byte	'SilentModeStateOfControllerData',0
+	.word	8655
+	.byte	4,2,35,10,0,16
+	.byte	'Can_30_Core_ControllerDataType',0,17,189,17,3
+	.word	10321
+	.byte	13
+	.byte	'sCan_30_Core_ExtensionConfigType',0,17,192,17,16,1,10
+	.byte	'Can_30_Core_ExtensionConfigNeverUsed',0
+	.word	233
+	.byte	1,2,35,0,0,16
+	.byte	'Can_30_Core_ExtensionConfigType',0,17,195,17,3
+	.word	10870
+	.byte	13
+	.byte	'sCan_30_Core_GeneralFeatureType',0,17,198,17,16,1,10
+	.byte	'Can_30_Core_GeneralFeatureNeverUsed',0
+	.word	233
+	.byte	1,2,35,0,0,16
+	.byte	'Can_30_Core_GeneralFeatureType',0,17,201,17,3
+	.word	10997
+	.byte	13
+	.byte	'sCan_30_Core_MailboxType',0,17,204,17,16,2,10
+	.byte	'MailboxSizeOfMailbox',0
+	.word	233
+	.byte	1,2,35,0,10
+	.byte	'MailboxTypeOfMailbox',0
+	.word	233
+	.byte	1,2,35,1,0,16
+	.byte	'Can_30_Core_MailboxType',0,17,208,17,3
+	.word	11121
+	.byte	13
+	.byte	'sCan_30_Core_TxHwFifoType',0,17,211,17,16,4,10
+	.byte	'FillCountOfTxHwFifo',0
+	.word	233
+	.byte	1,2,35,0,10
+	.byte	'ReadIndexOfTxHwFifo',0
+	.word	233
+	.byte	1,2,35,1,10
+	.byte	'WriteIndexOfTxHwFifo',0
+	.word	233
+	.byte	1,2,35,2,0,16
+	.byte	'Can_30_Core_TxHwFifoType',0,17,216,17,3
+	.word	11246
+	.byte	13
+	.byte	'Can_30_Core_ActiveSendDataStructSTag',0,17,228,17,16,1,10
+	.byte	'ActiveSendData_0',0
+	.word	233
+	.byte	1,2,35,0,0,16
+	.byte	'Can_30_Core_ActiveSendDataStructSType',0,17,231,17,3
+	.word	11401
+	.byte	13
+	.byte	'Can_30_Core_ActiveSendObjectStructSTag',0,17,234,17,16,20,10
+	.byte	'ActiveSendObject_0',0
+	.word	10009
+	.byte	20,2,35,0,0,16
+	.byte	'Can_30_Core_ActiveSendObjectStructSType',0,17,237,17,3
+	.word	11518
+	.byte	13
+	.byte	'Can_30_Core_TxHwFifoStructSTag',0,17,240,17,16,4,10
+	.byte	'FIFO_0',0
+	.word	11246
+	.byte	4,2,35,0,0,16
+	.byte	'Can_30_Core_TxHwFifoStructSType',0,17,243,17,3
+	.word	11641
+	.byte	13
+	.byte	'sCan_30_Core_PCConfigType',0,17,214,18,16,1,10
+	.byte	'Can_30_Core_PCConfigNeverUsed',0
+	.word	233
+	.byte	1,2,35,0,0,16
+	.byte	'Can_30_Core_PCConfigType',0,17,217,18,3
+	.word	11736
+	.byte	16
+	.byte	'Can_30_Core_ConfigType',0,17,219,18,34
+	.word	11736
+	.byte	16
+	.byte	'Can_30_Core_ServiceId',0,2,152,1,3
+	.word	320
+	.byte	16
+	.byte	'Can_30_Core_ErrorId',0,2,186,1,3
+	.word	1625
+	.byte	28,18,156,1,9,4,7
+	.byte	'BswTask',0,0,7
+	.byte	'Default_Init_Task',0,1,7
+	.byte	'Default_Init_Task_Trusted',0,2,7
+	.byte	'IdleTask_OsCore',0,3,7
+	.byte	'IoTask',0,4,7
+	.byte	'SwcTask',0,5,7
+	.byte	'INVALID_TASK',0,6,7
+	.byte	'OS_TASKID_COUNT',0,6,0,16
+	.byte	'TaskType',0,18,166,1,3
+	.word	11934
+	.byte	28,18,169,1,9,4,7
+	.byte	'ADC0SR0_ISR',0,0,7
+	.byte	'CounterIsr_SystemTimer',0,1,7
+	.byte	'vCan_30_Mcan_Isr_0',0,2,7
+	.byte	'INVALID_ISR',0,3,7
+	.byte	'OS_ISRID_COUNT',0,3,0,16
+	.byte	'ISRType',0,18,176,1,3
+	.word	12087
+	.byte	11,64
+	.word	2186
+	.byte	12,15,0,13
+	.byte	'Os_ExceptionContextType_Tag',0,19,71,8,160,1,10
+	.byte	'AddressRegisters',0
+	.word	12202
+	.byte	64,2,35,0,10
+	.byte	'DataRegisters',0
+	.word	12202
+	.byte	64,2,35,64,10
+	.byte	'Ra',0
+	.word	2186
+	.byte	4,3,35,128,1,10
+	.byte	'Psw',0
+	.word	2186
+	.byte	4,3,35,132,1,10
+	.byte	'ExceptionSource',0
+	.word	2186
+	.byte	4,3,35,136,1,10
+	.byte	'Pcpn',0
+	.word	2186
+	.byte	4,3,35,140,1,10
+	.byte	'Pie',0
+	.word	2186
+	.byte	4,3,35,144,1,10
+	.byte	'MpuRegionForStackLow',0
+	.word	2186
+	.byte	4,3,35,148,1,10
+	.byte	'MpuRegionForStackUpper',0
+	.word	2186
+	.byte	4,3,35,152,1,10
+	.byte	'RawPCXI',0
+	.word	2186
+	.byte	4,3,35,156,1,0,16
+	.byte	'Os_ExceptionContextType',0,20,59,44
+	.word	12211
+	.byte	16
+	.byte	'Os_InterruptSourceIdType',0,21,238,1,16
+	.word	2186
+	.byte	16
+	.byte	'Os_ExceptionSourceIdType',0,21,246,1,16
+	.word	2186
+	.byte	28,21,161,2,9,4,7
+	.byte	'RUNNING',0,0,7
+	.byte	'READY',0,1,7
+	.byte	'WAITING',0,2,7
+	.byte	'SUSPENDED',0,3,0,16
+	.byte	'TaskStateType',0,21,175,2,3
+	.word	12559
+	.byte	16
+	.byte	'EventMaskType',0,21,182,2,16
+	.word	4560
+	.byte	16
+	.byte	'Os_TickType',0,21,200,2,19
+	.word	2186
+	.byte	16
+	.byte	'TickType',0,21,206,2,21
+	.word	2186
+	.byte	27,21,220,2,9,12,10
+	.byte	'maxallowedvalue',0
+	.word	2186
+	.byte	4,2,35,0,10
+	.byte	'ticksperbase',0
+	.word	2186
+	.byte	4,2,35,4,10
+	.byte	'mincycle',0
+	.word	2186
+	.byte	4,2,35,8,0,16
+	.byte	'AlarmBaseType',0,21,228,2,2
+	.word	12691
+	.byte	28,21,128,3,9,4,7
+	.byte	'APPLICATION_TERMINATED',0,0,7
+	.byte	'APPLICATION_RESTARTING',0,1,7
+	.byte	'APPLICATION_ACCESSIBLE',0,2,0,16
+	.byte	'ApplicationStateType',0,21,133,3,3
+	.word	12786
+	.byte	28,21,177,3,9,4,7
+	.byte	'OSServiceId_GetApplicationID',0,0,7
+	.byte	'OSServiceId_GetISRID',0,1,7
+	.byte	'OSServiceId_CallTrustedFunction',0,2,7
+	.byte	'OSServiceId_CheckISRMemoryAccess',0,3,7
+	.byte	'OSServiceId_CheckTaskMemoryAccess',0,4,7
+	.byte	'OSServiceId_CheckObjectAccess',0,5,7
+	.byte	'OSServiceId_CheckObjectOwnership',0,6,7
+	.byte	'OSServiceId_StartScheduleTableRel',0,7,7
+	.byte	'OSServiceId_StartScheduleTableAbs',0,8,7
+	.byte	'OSServiceId_StopScheduleTable',0,9,7
+	.byte	'OSServiceId_NextScheduleTable',0,10,7
+	.byte	'OSServiceId_StartScheduleTableSynchron',0,11,7
+	.byte	'OSServiceId_SyncScheduleTable',0,12,7
+	.byte	'OSServiceId_SetScheduleTableAsync',0,13,7
+	.byte	'OSServiceId_GetScheduleTableStatus',0,14,7
+	.byte	'OSServiceId_IncrementCounter',0,15,7
+	.byte	'OSServiceId_GetCounterValue',0,16,7
+	.byte	'OSServiceId_GetElapsedValue',0,17,7
+	.byte	'OSServiceId_TerminateApplication',0,18,7
+	.byte	'OSServiceId_AllowAccess',0,19,7
+	.byte	'OSServiceId_GetApplicationState',0,20,7
+	.byte	'OSServiceId_GetNumberOfActivatedCores',0,21,7
+	.byte	'OSServiceId_GetCoreID',0,22,7
+	.byte	'OSServiceId_StartCore',0,23,7
+	.byte	'OSServiceId_StartNonAutosarCore',0,24,7
+	.byte	'OSServiceId_GetSpinlock',0,25,7
+	.byte	'OSServiceId_ReleaseSpinlock',0,26,7
+	.byte	'OSServiceId_TryToGetSpinlock',0,27,7
+	.byte	'OSServiceId_ShutdownAllCores',0,28,7
+	.byte	'OSServiceId_ControlIdle',0,29,7
+	.byte	'OSServiceId_IocSend',0,30,7
+	.byte	'OSServiceId_IocWrite',0,31,7
+	.byte	'OSServiceId_IocSendGroup',0,32,7
+	.byte	'OSServiceId_IocWriteGroup',0,33,7
+	.byte	'OSServiceId_IocReceive',0,34,7
+	.byte	'OSServiceId_IocRead',0,35,7
+	.byte	'OSServiceId_IocReceiveGroup',0,36,7
+	.byte	'OSServiceId_IocReadGroup',0,37,7
+	.byte	'OSServiceId_IocEmptyQueue',0,38,7
+	.byte	'OSServiceId_GetCurrentApplicationID',0,39,7
+	.byte	'OSServiceId_ActivateTaskAsyn',0,51,7
+	.byte	'OSServiceId_SetEventAsyn',0,52,7
+	.byte	'OSServiceId_GetExceptionContext',0,160,1,7
+	.byte	'OSServiceId_SetExceptionContext',0,161,1,7
+	.byte	'OSServiceId_CallNonTrustedFunction',0,162,1,7
+	.byte	'OSServiceId_AppKill',0,163,1,7
+	.byte	'OSServiceId_AlarmActionSetEvent',0,164,1,7
+	.byte	'OSServiceId_AlarmActionActivateTask',0,165,1,7
+	.byte	'OSServiceId_AlarmActionIncrementCounter',0,166,1,7
+	.byte	'OSServiceId_AlarmActionCallback',0,167,1,7
+	.byte	'OSServiceId_TimerIsr',0,168,1,7
+	.byte	'OSServiceId_IsrWrapper',0,169,1,7
+	.byte	'OSServiceId_GetTaskStackUsage',0,170,1,7
+	.byte	'OSServiceId_GetISRStackUsage',0,171,1,7
+	.byte	'OSServiceId_GetKernelStackUsage',0,172,1,7
+	.byte	'OSServiceId_GetStartupHookStackUsage',0,173,1,7
+	.byte	'OSServiceId_GetErrorHookStackUsage',0,174,1,7
+	.byte	'OSServiceId_GetShutdownHookStackUsage',0,175,1,7
+	.byte	'OSServiceId_GetProtectionHookStackUsage',0,176,1,7
+	.byte	'OSServiceId_GetSemaphore',0,177,1,7
+	.byte	'OSServiceId_ReleaseSemaphore',0,178,1,7
+	.byte	'OSServiceId_ScheduleTableActivateTask',0,179,1,7
+	.byte	'OSServiceId_ScheduleTableSetEvent',0,180,1,7
+	.byte	'OSServiceId_DisableInterruptSource',0,181,1,7
+	.byte	'OSServiceId_EnableInterruptSource',0,182,1,7
+	.byte	'OSServiceId_ClearPendingInterrupt',0,183,1,7
+	.byte	'OSServiceId_GetUnhandledIrq',0,184,1,7
+	.byte	'OSServiceId_GetUnhandledExc',0,185,1,7
+	.byte	'OSServiceId_HookCallCallback',0,186,1,7
+	.byte	'OSServiceId_IsInterruptSourceEnabled',0,187,1,7
+	.byte	'OSServiceId_IsInterruptPending',0,188,1,7
+	.byte	'OSServiceId_CallFastTrustedFunction',0,189,1,7
+	.byte	'OSServiceId_BarrierSynchronize',0,190,1,7
+	.byte	'OSServiceId_InitialEnableInterruptSources',0,191,1,7
+	.byte	'OSServiceId_GetCoreStartState',0,192,1,7
+	.byte	'OSServiceId_GetNonTrustedFunctionStackUsage',0,193,1,7
+	.byte	'OSServiceId_FrtSetFutureCompareValue',0,194,1,7
+	.byte	'OSServiceId_FrtSetCompareValue',0,195,1,7
+	.byte	'OSServiceId_GetInitHookStackUsage',0,196,1,7
+	.byte	'OSServiceId_StartOS',0,208,1,7
+	.byte	'OSServiceId_GetActiveApplicationMode',0,210,1,7
+	.byte	'OSServiceId_DisableAllInterrupts',0,211,1,7
+	.byte	'OSServiceId_EnableAllInterrupts',0,212,1,7
+	.byte	'OSServiceId_SuspendAllInterrupts',0,213,1,7
+	.byte	'OSServiceId_ResumeAllInterrupts',0,214,1,7
+	.byte	'OSServiceId_SuspendOSInterrupts',0,215,1,7
+	.byte	'OSServiceId_ResumeOSInterrupts',0,216,1,7
+	.byte	'OSServiceId_ActivateTask',0,217,1,7
+	.byte	'OSServiceId_TerminateTask',0,218,1,7
+	.byte	'OSServiceId_ChainTask',0,219,1,7
+	.byte	'OSServiceId_GetTaskID',0,220,1,7
+	.byte	'OSServiceId_GetTaskState',0,221,1,7
+	.byte	'OSServiceId_Schedule',0,222,1,7
+	.byte	'OSServiceId_SetEvent',0,223,1,7
+	.byte	'OSServiceId_ClearEvent',0,224,1,7
+	.byte	'OSServiceId_GetEvent',0,225,1,7
+	.byte	'OSServiceId_WaitEvent',0,226,1,7
+	.byte	'OSServiceId_GetAlarmBase',0,227,1,7
+	.byte	'OSServiceId_GetAlarm',0,228,1,7
+	.byte	'OSServiceId_SetRelAlarm',0,229,1,7
+	.byte	'OSServiceId_SetAbsAlarm',0,230,1,7
+	.byte	'OSServiceId_CancelAlarm',0,231,1,7
+	.byte	'OSServiceId_GetResource',0,232,1,7
+	.byte	'OSServiceId_ReleaseResource',0,233,1,7
+	.byte	'OSSERVICEID_COUNT',0,255,1,0,16
+	.byte	'OSServiceIdType',0,21,162,4,3
+	.word	12898
+	.byte	28,21,178,4,9,4,7
+	.byte	'OS_STATUS_OK',0,0,7
+	.byte	'OS_STATUS_CALLEVEL',0,2,7
+	.byte	'OS_STATUS_LIMIT',0,4,7
+	.byte	'OS_STATUS_RESOURCE',0,6,7
+	.byte	'OS_STATUS_SERVICEID',0,9,7
+	.byte	'OS_STATUS_ILLEGAL_ADDRESS',0,10,7
+	.byte	'OS_STATUS_MISSINGEND',0,11,7
+	.byte	'OS_STATUS_DISABLEDINT',0,12,7
+	.byte	'OS_STATUS_STACKFAULT',0,13,7
+	.byte	'OS_STATUS_PROTECTION_MEMORY',0,14,7
+	.byte	'OS_STATUS_PROTECTION_TIME',0,15,7
+	.byte	'OS_STATUS_PROTECTION_ARRIVAL',0,16,7
+	.byte	'OS_STATUS_PROTECTION_LOCKED',0,17,7
+	.byte	'OS_STATUS_PROTECTION_EXCEPTION',0,18,7
+	.byte	'OS_STATUS_INTERFERENCE_DEADLOCK',0,19,7
+	.byte	'OS_STATUS_NESTING_DEADLOCK',0,20,7
+	.byte	'OS_STATUS_SPINLOCK',0,21,7
+	.byte	'OS_STATUS_CORE',0,22,7
+	.byte	'OS_STATUS_OVERFLOW',0,245,1,7
+	.byte	'OS_STATUS_KILL_KERNEL_OBJ',0,246,1,7
+	.byte	'OS_STATUS_NO_RESTARTTASK',0,247,1,7
+	.byte	'OS_STATUS_CALL_NOT_ALLOWED',0,248,1,7
+	.byte	'OS_STATUS_FUNCTION_UNAVAILABLE',0,249,1,7
+	.byte	'OS_STATUS_PROTECTION_SYSCALL',0,250,1,7
+	.byte	'OS_STATUS_PROTECTION_IRQ',0,251,1,7
+	.byte	'OS_STATUS_API_ERROR',0,252,1,7
+	.byte	'OS_STATUS_ASSERTION',0,253,1,7
+	.byte	'OS_STATUS_OVERLOAD',0,254,1,7
+	.byte	'OS_STATUS_FRT_NO_FUTURE_VALUE',0,255,1,7
+	.byte	'OS_STATUS_ACCESSRIGHTS_1',0,129,2,7
+	.byte	'OS_STATUS_CALLEVEL_SHARED_STACK',0,130,2,7
+	.byte	'OS_STATUS_ID_1',0,131,2,7
+	.byte	'OS_STATUS_UNLOCKED',0,133,2,7
+	.byte	'OS_STATUS_STATE_1',0,135,2,7
+	.byte	'OS_STATUS_VALUE_IS_ZERO_1',0,136,2,7
+	.byte	'OS_STATUS_CORE_CROSS_DATA',0,150,2,7
+	.byte	'OS_STATUS_PARAM_POINTER_1',0,151,2,7
+	.byte	'OS_STATUS_STACKUSAGE_DISABLED_BY_CONFIG',0,241,3,7
+	.byte	'OS_STATUS_NO_BARRIER_PARTICIPANT',0,242,3,7
+	.byte	'OS_STATUS_UNIMPLEMENTED_CLEARPENDING',0,243,3,7
+	.byte	'OS_STATUS_NO_NTFSTACK_POOL_EMPTY',0,244,3,7
+	.byte	'OS_STATUS_FRT_SET_COMPARE_VALUE_FAILED',0,255,3,7
+	.byte	'OS_STATUS_ACCESSRIGHTS_2',0,129,4,7
+	.byte	'OS_STATUS_CALLEVEL_CROSS_CORE_SYNC',0,130,4,7
+	.byte	'OS_STATUS_ID_2',0,131,4,7
+	.byte	'OS_STATUS_NOFUNC_1',0,133,4,7
+	.byte	'OS_STATUS_STATE_2',0,135,4,7
+	.byte	'OS_STATUS_VALUE_IS_ZERO_2',0,136,4,7
+	.byte	'OS_STATUS_PARAM_POINTER_2',0,151,4,7
+	.byte	'OS_STATUS_EVENT_DISABLED_BY_CONFIG',0,241,5,7
+	.byte	'OS_STATUS_UNIMPLEMENTED_EXCEPTIONCONTEXT',0,243,5,7
+	.byte	'OS_STATUS_NO_NTFSTACK_APPLIMIT_EXCEEDED',0,244,5,7
+	.byte	'OS_STATUS_NOTACCESSIBLE_1',0,129,6,7
+	.byte	'OS_STATUS_ID_TYPE_1',0,131,6,7
+	.byte	'OS_STATUS_NOFUNC_2',0,133,6,7
+	.byte	'OS_STATUS_STATE_STOPPED',0,135,6,7
+	.byte	'OS_STATUS_VALUE_IS_TOO_HIGH_1',0,136,6,7
+	.byte	'OS_STATUS_PARAM_POINTER_3',0,151,6,7
+	.byte	'OS_STATUS_XSIGNAL_DISABLED_BY_CONFIG',0,241,7,7
+	.byte	'OS_STATUS_NOTACCESSIBLE_2',0,129,8,7
+	.byte	'OS_STATUS_ID_DIFFERENT_COUNTER',0,131,8,7
+	.byte	'OS_STATUS_SPINLOCK_ORDER',0,133,8,7
+	.byte	'OS_STATUS_STATE_RUNNING',0,135,8,7
+	.byte	'OS_STATUS_VALUE_IS_TOO_HIGH_2',0,136,8,7
+	.byte	'OS_STATUS_NOEXTENDEDTASK_1',0,129,10,7
+	.byte	'OS_STATUS_ID_DIFFERENT_SYNC',0,131,10,7
+	.byte	'OS_STATUS_STOPPED_1',0,133,10,7
+	.byte	'OS_STATUS_STATE_NEXTED',0,135,10,7
+	.byte	'OS_STATUS_VALUE_IS_TOO_HIGH_3',0,136,10,7
+	.byte	'OS_STATUS_NOEXTENDEDTASK_2',0,129,12,7
+	.byte	'OS_STATUS_HOOK_NOT_AVAILABLE',0,131,12,7
+	.byte	'OS_STATUS_NOT_STOPPED_2',0,133,12,7
+	.byte	'OS_STATUS_STATE_WAITING',0,135,12,7
+	.byte	'OS_STATUS_VALUE_IS_OUT_OF_BOUNDS_1',0,136,12,7
+	.byte	'OS_STATUS_NOEXTENDEDTASK_CALLER',0,129,14,7
+	.byte	'OS_STATUS_NEXTED_1',0,133,14,7
+	.byte	'OS_STATUS_STATE_NO_RESTART',0,135,14,7
+	.byte	'OS_STATUS_VALUE_IS_OUT_OF_BOUNDS_2',0,136,14,7
+	.byte	'OS_STATUS_LOCKED',0,129,16,7
+	.byte	'OS_STATUS_KILLING_IS_DISABLED',0,133,16,7
+	.byte	'OS_STATUS_STATE_ALREADY_TERMINATED',0,135,16,7
+	.byte	'OS_STATUS_VALUE_IS_TOO_LOW_1',0,136,16,7
+	.byte	'OS_STATUS_PRIORITY',0,129,18,7
+	.byte	'OS_STATUS_ORDER',0,133,18,7
+	.byte	'OS_STATUS_STATE_RESTARTING_NO_MEMBER',0,135,18,7
+	.byte	'OS_STATUS_VALUE_IS_TOO_LOW_2',0,136,18,7
+	.byte	'OS_STATUS_NOT_THE_OWNER_1',0,129,20,7
+	.byte	'OS_STATUS_STATE_ALREADY_RESTARTING',0,135,20,7
+	.byte	'OS_STATUS_VALUE_IS_TOO_LOW_3',0,136,20,7
+	.byte	'OS_STATUS_VALUE_IS_NOT_BOOLEAN',0,136,22,0,16
+	.byte	'Os_StatusType',0,21,246,5,3
+	.word	16284
+	.byte	27,21,219,6,9,12,10
+	.byte	'Service',0
+	.word	12898
+	.byte	4,2,35,0,10
+	.byte	'Error',0
+	.word	233
+	.byte	1,2,35,4,10
+	.byte	'DetailedError',0
+	.word	16284
+	.byte	4,2,35,6,0,16
+	.byte	'Os_ErrorInformationType',0,21,229,6,3
+	.word	18929
+	.byte	28,21,133,7,9,4,7
+	.byte	'SCHEDULETABLE_STOPPED',0,0,7
+	.byte	'SCHEDULETABLE_NEXT',0,1,7
+	.byte	'SCHEDULETABLE_WAITING',0,2,7
+	.byte	'SCHEDULETABLE_RUNNING',0,3,7
+	.byte	'SCHEDULETABLE_RUNNING_AND_SYNCHRONOUS',0,4,0,16
+	.byte	'ScheduleTableStatusType',0,21,150,7,3
+	.word	19024
+	.byte	28,21,162,7,9,4,7
+	.byte	'OS_MEM_ACCESS_TYPE_NON',0,0,7
+	.byte	'OS_MEM_ACCESS_TYPE_R',0,1,7
+	.byte	'OS_MEM_ACCESS_TYPE_READ',0,1,7
+	.byte	'OS_MEM_ACCESS_TYPE_W',0,2,7
+	.byte	'OS_MEM_ACCESS_TYPE_WRITE',0,2,7
+	.byte	'OS_MEM_ACCESS_TYPE_RW',0,3,7
+	.byte	'OS_MEM_ACCESS_TYPE_EXECUTE',0,4,7
+	.byte	'OS_MEM_ACCESS_TYPE_X',0,4,7
+	.byte	'OS_MEM_ACCESS_TYPE_RX',0,5,7
+	.byte	'OS_MEM_ACCESS_TYPE_WX',0,6,7
+	.byte	'OS_MEM_ACCESS_TYPE_RWX',0,7,7
+	.byte	'OS_MEM_ACCESS_TYPE_S',0,8,7
+	.byte	'OS_MEM_ACCESS_TYPE_STACK',0,8,7
+	.byte	'OS_MEM_ACCESS_TYPE_RS',0,9,7
+	.byte	'OS_MEM_ACCESS_TYPE_WS',0,10,7
+	.byte	'OS_MEM_ACCESS_TYPE_RWS',0,11,7
+	.byte	'OS_MEM_ACCESS_TYPE_XS',0,12,7
+	.byte	'OS_MEM_ACCESS_TYPE_RXS',0,13,7
+	.byte	'OS_MEM_ACCESS_TYPE_WXS',0,14,7
+	.byte	'OS_MEM_ACCESS_TYPE_RWXS',0,15,0,16
+	.byte	'Os_MemAccessType',0,21,184,7,3
+	.word	19197
+	.byte	16
+	.byte	'Os_Hal_AddressType',0,22,102,16
+	.word	2186
+	.byte	16
+	.byte	'Os_AccessCheckAddress',0,23,150,2,29
+	.word	2186
+	.byte	16
+	.byte	'vCan_30_Mcan_ControllerConfigIterType',0,24,245,12,21
+	.word	233
+	.byte	16
+	.byte	'vCan_30_Mcan_GeneralConfigIterType',0,24,251,12,21
+	.word	233
+	.byte	16
+	.byte	'vCan_30_Mcan_MailboxIterType',0,24,254,12,21
+	.word	233
+	.byte	16
+	.byte	'vCan_30_Mcan_SubSystemConfigIterType',0,24,135,13,21
+	.word	233
+	.byte	16
+	.byte	'vCan_30_Mcan_InterruptOldStatusOfControllerDataType',0,24,149,15,16
+	.word	2186
+	.byte	16
+	.byte	'vCan_30_Mcan_PendingTxBuffersOfControllerDataType',0,24,152,15,16
+	.word	2186
+	.byte	16
+	.byte	'vCan_30_Mcan_ProtocolStatusOfControllerDataType',0,24,155,15,16
+	.word	2186
+	.byte	16
+	.byte	'vCan_30_Mcan_Element0OfExtendedFilterElementType',0,24,158,15,15
+	.word	233
+	.byte	16
+	.byte	'vCan_30_Mcan_Element1OfExtendedFilterElementType',0,24,161,15,15
+	.word	233
+	.byte	16
+	.byte	'vCan_30_Mcan_AddressOfMailboxType',0,24,230,15,16
+	.word	2186
+	.byte	16
+	.byte	'vCan_30_Mcan_HwHandleOfMailboxType',0,24,248,15,15
+	.word	233
+	.byte	16
+	.byte	'vCan_30_Mcan_MailboxSizeOfMailboxType',0,24,251,15,15
+	.word	233
+	.byte	16
+	.byte	'vCan_30_Mcan_MailboxTypeOfMailboxType',0,24,254,15,15
+	.word	233
+	.byte	16
+	.byte	'vCan_30_Mcan_StandardFilterElementEndIdxOfMailboxType',0,24,135,16,15
+	.word	233
+	.byte	16
+	.byte	'vCan_30_Mcan_StandardFilterElementStartIdxOfMailboxType',0,24,138,16,15
+	.word	233
+	.byte	16
+	.byte	'vCan_30_Mcan_ControllerConfigIdxOfPhysToLogChannelType',0,24,150,16,15
+	.word	233
+	.byte	16
+	.byte	'vCan_30_Mcan_Element0OfStandardFilterElementType',0,24,159,16,16
+	.word	2186
+	.byte	13
+	.byte	'svCan_30_Mcan_BaudrateConfigType',0,24,190,16,16,1,10
+	.byte	'vCan_30_Mcan_BaudrateConfigNeverUsed',0
+	.word	233
+	.byte	1,2,35,0,0,16
+	.byte	'vCan_30_Mcan_BaudrateConfigType',0,24,193,16,3
+	.word	20683
+	.byte	13
+	.byte	'svCan_30_Mcan_ControllerConfigType',0,24,196,16,16,1,10
+	.byte	'vCan_30_Mcan_ControllerConfigNeverUsed',0
+	.word	233
+	.byte	1,2,35,0,0,16
+	.byte	'vCan_30_Mcan_ControllerConfigType',0,24,199,16,3
+	.word	20810
+	.byte	13
+	.byte	'svCan_30_Mcan_ControllerDataType',0,24,202,16,16,12,10
+	.byte	'InterruptOldStatusOfControllerData',0
+	.word	2186
+	.byte	4,2,35,0,10
+	.byte	'PendingTxBuffersOfControllerData',0
+	.word	2186
+	.byte	4,2,35,4,10
+	.byte	'ProtocolStatusOfControllerData',0
+	.word	2186
+	.byte	4,2,35,8,0,16
+	.byte	'vCan_30_Mcan_ControllerDataType',0,24,207,16,3
+	.word	20943
+	.byte	13
+	.byte	'svCan_30_Mcan_ExtendedFilterElementType',0,24,210,16,16,1,10
+	.byte	'vCan_30_Mcan_ExtendedFilterElementNeverUsed',0
+	.word	233
+	.byte	1,2,35,0,0,16
+	.byte	'vCan_30_Mcan_ExtendedFilterElementType',0,24,213,16,3
+	.word	21150
+	.byte	13
+	.byte	'svCan_30_Mcan_GeneralConfigType',0,24,216,16,16,1,10
+	.byte	'vCan_30_Mcan_GeneralConfigNeverUsed',0
+	.word	233
+	.byte	1,2,35,0,0,16
+	.byte	'vCan_30_Mcan_GeneralConfigType',0,24,219,16,3
+	.word	21298
+	.byte	13
+	.byte	'svCan_30_Mcan_GeneralDataType',0,24,222,16,16,1,10
+	.byte	'vCan_30_Mcan_GeneralDataNeverUsed',0
+	.word	233
+	.byte	1,2,35,0,0,16
+	.byte	'vCan_30_Mcan_GeneralDataType',0,24,225,16,3
+	.word	21422
+	.byte	13
+	.byte	'svCan_30_Mcan_MailboxType',0,24,228,16,16,12,10
+	.byte	'AddressOfMailbox',0
+	.word	2186
+	.byte	4,2,35,0,10
+	.byte	'HwHandleOfMailbox',0
+	.word	233
+	.byte	1,2,35,4,10
+	.byte	'MailboxSizeOfMailbox',0
+	.word	233
+	.byte	1,2,35,5,10
+	.byte	'MailboxTypeOfMailbox',0
+	.word	233
+	.byte	1,2,35,6,10
+	.byte	'StandardFilterElementEndIdxOfMailbox',0
+	.word	233
+	.byte	1,2,35,7,10
+	.byte	'StandardFilterElementStartIdxOfMailbox',0
+	.word	233
+	.byte	1,2,35,8,0,16
+	.byte	'vCan_30_Mcan_MailboxType',0,24,236,16,3
+	.word	21540
+	.byte	13
+	.byte	'svCan_30_Mcan_MailboxDataType',0,24,239,16,16,1,10
+	.byte	'vCan_30_Mcan_MailboxDataNeverUsed',0
+	.word	233
+	.byte	1,2,35,0,0,16
+	.byte	'vCan_30_Mcan_MailboxDataType',0,24,242,16,3
+	.word	21814
+	.byte	13
+	.byte	'svCan_30_Mcan_PhysToLogChannelType',0,24,245,16,16,1,10
+	.byte	'ControllerConfigIdxOfPhysToLogChannel',0
+	.word	233
+	.byte	1,2,35,0,0,16
+	.byte	'vCan_30_Mcan_PhysToLogChannelType',0,24,248,16,3
+	.word	21932
+	.byte	13
+	.byte	'svCan_30_Mcan_StandardFilterElementType',0,24,251,16,16,4,10
+	.byte	'Element0OfStandardFilterElement',0
+	.word	2186
+	.byte	4,2,35,0,0,16
+	.byte	'vCan_30_Mcan_StandardFilterElementType',0,24,254,16,3
+	.word	22064
+	.byte	13
+	.byte	'svCan_30_Mcan_SubSystemConfigType',0,24,129,17,16,1,10
+	.byte	'vCan_30_Mcan_SubSystemConfigNeverUsed',0
+	.word	233
+	.byte	1,2,35,0,0,16
+	.byte	'vCan_30_Mcan_SubSystemConfigType',0,24,132,17,3
+	.word	22200
+	.byte	13
+	.byte	'svCan_30_Mcan_SubSystemDataType',0,24,135,17,16,1,10
+	.byte	'vCan_30_Mcan_SubSystemDataNeverUsed',0
+	.word	233
+	.byte	1,2,35,0,0,16
+	.byte	'vCan_30_Mcan_SubSystemDataType',0,24,138,17,3
+	.word	22330
+	.byte	13
+	.byte	'svCan_30_Mcan_TxHardwareObjectType',0,24,141,17,16,1,10
+	.byte	'vCan_30_Mcan_TxHardwareObjectNeverUsed',0
+	.word	233
+	.byte	1,2,35,0,0,16
+	.byte	'vCan_30_Mcan_TxHardwareObjectType',0,24,144,17,3
+	.word	22454
+	.byte	13
+	.byte	'vCan_30_Mcan_ControllerDataStructSTag',0,24,156,17,16,12,10
+	.byte	'CT_CAN00_6199f384',0
+	.word	20943
+	.byte	12,2,35,0,0,16
+	.byte	'vCan_30_Mcan_ControllerDataStructSType',0,24,159,17,3
+	.word	22587
+	.byte	13
+	.byte	'vCan_30_Mcan_SubSystemDataStructSTag',0,24,162,17,16,1,10
+	.byte	'SubSystem0',0
+	.word	22330
+	.byte	1,2,35,0,0,16
+	.byte	'vCan_30_Mcan_SubSystemDataStructSType',0,24,165,17,3
+	.word	22707
+	.byte	11,12
+	.word	20943
+	.byte	12,0,0,30
+	.byte	'vCan_30_Mcan_ControllerDataUTag',0,24,177,17,15,12,10
+	.byte	'raw',0
+	.word	22818
+	.byte	12,2,35,0,10
+	.byte	'str',0
+	.word	22587
+	.byte	12,2,35,0,0,16
+	.byte	'vCan_30_Mcan_ControllerDataUType',0,24,181,17,3
+	.word	22827
+	.byte	13
+	.byte	'svCan_30_Mcan_PCConfigType',0,24,129,18,16,1,10
+	.byte	'vCan_30_Mcan_PCConfigNeverUsed',0
+	.word	233
+	.byte	1,2,35,0,0,16
+	.byte	'vCan_30_Mcan_PCConfigType',0,24,132,18,3
+	.word	22934
+	.byte	16
+	.byte	'vCan_30_Mcan_ConfigType',0,24,134,18,35
+	.word	22934
+	.byte	11,36
+	.word	21540
+	.byte	12,2,0,17
+	.word	23076
+	.byte	31
+	.byte	'vCan_30_Mcan_Mailbox',0,24,221,18,60
+	.word	23085
+	.byte	1,1,31
+	.byte	'vCan_30_Mcan_ControllerData',0,24,155,19,72
+	.word	22827
+	.byte	1,1,16
+	.byte	'VStdLib_CntType',0,25,170,1,22
+	.word	2186
+	.byte	14
+	.word	2271
+	.byte	16
+	.byte	'vCan_30_Mcan_CanNodeType',0,4,255,2,3
+	.word	23186
+	.byte	11,12
+	.word	2186
+	.byte	12,2,0,11,188,1
+	.word	2186
+	.byte	12,46,0,13
+	.byte	'vCan_30_Mcan_McMcan_NodeRegTag',0,4,130,3,25,128,2,10
+	.byte	'ACCENNODE0',0
+	.word	2186
+	.byte	4,2,35,0,10
+	.byte	'unused1',0
+	.word	2186
+	.byte	4,2,35,4,10
+	.byte	'STARTADR',0
+	.word	2186
+	.byte	4,2,35,8,10
+	.byte	'ENDADR',0
+	.word	2186
+	.byte	4,2,35,12,10
+	.byte	'ISREG',0
+	.word	2186
+	.byte	4,2,35,16,10
+	.byte	'GRINT1',0
+	.word	2186
+	.byte	4,2,35,20,10
+	.byte	'GRINT2',0
+	.word	2186
+	.byte	4,2,35,24,10
+	.byte	'unused2',0
+	.word	2186
+	.byte	4,2,35,28,10
+	.byte	'NTCCR',0
+	.word	2186
+	.byte	4,2,35,32,10
+	.byte	'NTATTR',0
+	.word	2186
+	.byte	4,2,35,36,10
+	.byte	'NTBTTR',0
+	.word	2186
+	.byte	4,2,35,40,10
+	.byte	'NTCTTR',0
+	.word	2186
+	.byte	4,2,35,44,10
+	.byte	'NTRTR',0
+	.word	2186
+	.byte	4,2,35,48,10
+	.byte	'unused3',0
+	.word	23225
+	.byte	12,2,35,52,10
+	.byte	'NPCR',0
+	.word	2186
+	.byte	4,2,35,64,10
+	.byte	'unused4',0
+	.word	23234
+	.byte	188,1,2,35,68,0,14
+	.word	23244
+	.byte	16
+	.byte	'vCan_30_Mcan_McMcan_NodeRegType',0,4,148,3,3
+	.word	23545
+	.byte	11,44
+	.word	2186
+	.byte	12,10,0,11,148,1
+	.word	2186
+	.byte	12,36,0,13
+	.byte	'vCan_30_Mcan_McMcan_SubSysRegTag',0,4,150,3,25,128,2,10
+	.byte	'CLC',0
+	.word	2186
+	.byte	4,2,35,0,10
+	.byte	'unused1',0
+	.word	23591
+	.byte	44,2,35,4,10
+	.byte	'MCR',0
+	.word	2186
+	.byte	4,2,35,48,10
+	.byte	'BUFADR',0
+	.word	2186
+	.byte	4,2,35,52,10
+	.byte	'unused2',0
+	.word	2262
+	.byte	8,2,35,56,10
+	.byte	'MECR',0
+	.word	2186
+	.byte	4,2,35,64,10
+	.byte	'MESTAT',0
+	.word	2186
+	.byte	4,2,35,68,10
+	.byte	'unused3',0
+	.word	23600
+	.byte	148,1,2,35,72,10
+	.byte	'ACCENCTR0',0
+	.word	2186
+	.byte	4,3,35,220,1,10
+	.byte	'unused4',0
+	.word	2262
+	.byte	8,3,35,224,1,10
+	.byte	'OCS',0
+	.word	2186
+	.byte	4,3,35,232,1,10
+	.byte	'KRSTCLR',0
+	.word	2186
+	.byte	4,3,35,236,1,10
+	.byte	'KRST1',0
+	.word	2186
+	.byte	4,3,35,240,1,10
+	.byte	'KRST0',0
+	.word	2186
+	.byte	4,3,35,244,1,10
+	.byte	'unused5',0
+	.word	2186
+	.byte	4,3,35,248,1,10
+	.byte	'ACCEN0',0
+	.word	2186
+	.byte	4,3,35,252,1,0,14
+	.word	23610
+	.byte	16
+	.byte	'vCan_30_Mcan_McMcan_SubSysRegType',0,4,168,3,3
+	.word	23912
+	.byte	11,132,1
+	.word	2186
+	.byte	12,32,0,13
+	.byte	'vCan_30_Mcan_McMcanGen2_NodeRegTag',0,4,171,3,25,128,2,10
+	.byte	'ACCENNODE_WRA',0
+	.word	2186
+	.byte	4,2,35,0,10
+	.byte	'ACCENNODE_WRB',0
+	.word	2186
+	.byte	4,2,35,4,10
+	.byte	'ACCENNODE_RDA',0
+	.word	2186
+	.byte	4,2,35,8,10
+	.byte	'ACCENNODE_RDB',0
+	.word	2186
+	.byte	4,2,35,12,10
+	.byte	'ACCENNODE_VM',0
+	.word	2186
+	.byte	4,2,35,16,10
+	.byte	'ACCENNODE_PRS',0
+	.word	2186
+	.byte	4,2,35,20,10
+	.byte	'unused1',0
+	.word	2262
+	.byte	8,2,35,24,10
+	.byte	'STARTADR',0
+	.word	2186
+	.byte	4,2,35,32,10
+	.byte	'ENDADR',0
+	.word	2186
+	.byte	4,2,35,36,10
+	.byte	'INTRSIG',0
+	.word	2186
+	.byte	4,2,35,40,10
+	.byte	'GRINT0',0
+	.word	2186
+	.byte	4,2,35,44,10
+	.byte	'GRINT1',0
+	.word	2186
+	.byte	4,2,35,48,10
+	.byte	'GRINT2',0
+	.word	2186
+	.byte	4,2,35,52,10
+	.byte	'NTCCR',0
+	.word	2186
+	.byte	4,2,35,56,10
+	.byte	'NTATTR',0
+	.word	2186
+	.byte	4,2,35,60,10
+	.byte	'NTBTTR',0
+	.word	2186
+	.byte	4,2,35,64,10
+	.byte	'NTCTTR',0
+	.word	2186
+	.byte	4,2,35,68,10
+	.byte	'NTRTR',0
+	.word	2186
+	.byte	4,2,35,72,10
+	.byte	'NPCR',0
+	.word	2186
+	.byte	4,2,35,76,10
+	.byte	'CRE_CONFIG',0
+	.word	2186
+	.byte	4,2,35,80,10
+	.byte	'CRE_CONFIG_ADDR',0
+	.word	2186
+	.byte	4,2,35,84,10
+	.byte	'CRE_HBUF_RXz_CONFIG',0
+	.word	2186
+	.byte	4,2,35,88,10
+	.byte	'CRE_HBUF_RXz_STAT',0
+	.word	2186
+	.byte	4,2,35,92,10
+	.byte	'unused2',0
+	.word	2262
+	.byte	8,2,35,96,10
+	.byte	'CRE_HBUF_TX_CONFIG',0
+	.word	2186
+	.byte	4,2,35,104,10
+	.byte	'CRE_HBUF_TX_STAT',0
+	.word	2186
+	.byte	4,2,35,108,10
+	.byte	'CRE_IR',0
+	.word	2186
+	.byte	4,2,35,112,10
+	.byte	'IDMU_FRTCONFIG',0
+	.word	2186
+	.byte	4,2,35,116,10
+	.byte	'IDMU_RXTPCFG',0
+	.word	2186
+	.byte	4,2,35,120,10
+	.byte	'unused3',0
+	.word	23960
+	.byte	132,1,2,35,124,0,14
+	.word	23970
+	.byte	16
+	.byte	'vCan_30_Mcan_McMcanGen2_NodeRegType',0,4,203,3,3
+	.word	24610
+	.byte	11,40
+	.word	2186
+	.byte	12,9,0,13
+	.byte	'vCan_30_Mcan_McMcanGen2_SubSysRegTag',0,4,205,3,25,136,1,10
+	.byte	'CLC',0
+	.word	2186
+	.byte	4,2,35,0,10
+	.byte	'OCS',0
+	.word	2186
+	.byte	4,2,35,4,10
+	.byte	'ID',0
+	.word	2186
+	.byte	4,2,35,8,10
+	.byte	'RST_CTRLA',0
+	.word	2186
+	.byte	4,2,35,12,10
+	.byte	'RST_CTRLB',0
+	.word	2186
+	.byte	4,2,35,16,10
+	.byte	'RST_STAT',0
+	.word	2186
+	.byte	4,2,35,20,10
+	.byte	'PROTE',0
+	.word	2186
+	.byte	4,2,35,24,10
+	.byte	'PROTSE',0
+	.word	2186
+	.byte	4,2,35,28,10
+	.byte	'unused1',0
+	.word	2244
+	.byte	16,2,35,32,10
+	.byte	'ACCEN_WRA',0
+	.word	2186
+	.byte	4,2,35,48,10
+	.byte	'ACCEN_WRB',0
+	.word	2186
+	.byte	4,2,35,52,10
+	.byte	'ACCEN_RDA',0
+	.word	2186
+	.byte	4,2,35,56,10
+	.byte	'ACCEN_RDB',0
+	.word	2186
+	.byte	4,2,35,60,10
+	.byte	'ACCEN_VM',0
+	.word	2186
+	.byte	4,2,35,64,10
+	.byte	'ACCEN_PRS',0
+	.word	2186
+	.byte	4,2,35,68,10
+	.byte	'unused2',0
+	.word	24660
+	.byte	40,2,35,72,10
+	.byte	'MCR',0
+	.word	2186
+	.byte	4,2,35,112,10
+	.byte	'BUFADR',0
+	.word	2186
+	.byte	4,2,35,116,10
+	.byte	'unused3',0
+	.word	2262
+	.byte	8,2,35,120,10
+	.byte	'MECR',0
+	.word	2186
+	.byte	4,3,35,128,1,10
+	.byte	'MESTAT',0
+	.word	2186
+	.byte	4,3,35,132,1,0,14
+	.word	24669
+	.byte	16
+	.byte	'vCan_30_Mcan_McMcanGen2_SubSysRegType',0,4,228,3,3
+	.word	25064
+	.byte	11,84
+	.word	2186
+	.byte	12,20,0,13
+	.byte	'vCan_30_Mcan_McanSs_ChannelRegTag',0,4,231,3,25,132,1,10
+	.byte	'PID',0
+	.word	2186
+	.byte	4,2,35,0,10
+	.byte	'CTRL',0
+	.word	2186
+	.byte	4,2,35,4,10
+	.byte	'STAT',0
+	.word	2186
+	.byte	4,2,35,8,10
+	.byte	'ICS',0
+	.word	2186
+	.byte	4,2,35,12,10
+	.byte	'IRS',0
+	.word	2186
+	.byte	4,2,35,16,10
+	.byte	'IECS',0
+	.word	2186
+	.byte	4,2,35,20,10
+	.byte	'IE',0
+	.word	2186
+	.byte	4,2,35,24,10
+	.byte	'IES',0
+	.word	2186
+	.byte	4,2,35,28,10
+	.byte	'EOI',0
+	.word	2186
+	.byte	4,2,35,32,10
+	.byte	'EXT_TS_PRESCALER',0
+	.word	2186
+	.byte	4,2,35,36,10
+	.byte	'EXT_TS_UNSERVICED_INTR_CNTR',0
+	.word	2186
+	.byte	4,2,35,40,10
+	.byte	'unused1',0
+	.word	25116
+	.byte	84,2,35,44,10
+	.byte	'ECC_EOI',0
+	.word	2186
+	.byte	4,3,35,128,1,0,14
+	.word	25125
+	.byte	16
+	.byte	'vCan_30_Mcan_McanSs_ChannelRegType',0,4,246,3,3
+	.word	25384
+	.byte	11,4
+	.word	2186
+	.byte	12,0,0,11,60
+	.word	2186
+	.byte	12,14,0,11,120
+	.word	2186
+	.byte	12,29,0,13
+	.byte	'vCan_30_Mcan_McanSsEcc_ChannelRegTag',0,4,249,3,25,144,4,10
+	.byte	'AGGR_REVISION',0
+	.word	2186
+	.byte	4,2,35,0,10
+	.byte	'unused1',0
+	.word	25433
+	.byte	4,2,35,4,10
+	.byte	'VECTOR',0
+	.word	2186
+	.byte	4,2,35,8,10
+	.byte	'MISC_STATUS',0
+	.word	2186
+	.byte	4,2,35,12,10
+	.byte	'unused2',0
+	.word	23591
+	.byte	44,2,35,16,10
+	.byte	'SEC_EOI_REG',0
+	.word	2186
+	.byte	4,2,35,60,10
+	.byte	'SEC_STATUS_REG0',0
+	.word	2186
+	.byte	4,2,35,64,10
+	.byte	'unused3',0
+	.word	25442
+	.byte	60,2,35,68,10
+	.byte	'SEC_ENABLE_SET_REG0',0
+	.word	2186
+	.byte	4,3,35,128,1,10
+	.byte	'unused4',0
+	.word	25442
+	.byte	60,3,35,132,1,10
+	.byte	'SEC_ENABLE_CLR_REG0',0
+	.word	2186
+	.byte	4,3,35,192,1,10
+	.byte	'unused5',0
+	.word	25451
+	.byte	120,3,35,196,1,10
+	.byte	'DED_EOI_REG',0
+	.word	2186
+	.byte	4,3,35,188,2,10
+	.byte	'DED_STATUS_REG0',0
+	.word	2186
+	.byte	4,3,35,192,2,10
+	.byte	'unused6',0
+	.word	25442
+	.byte	60,3,35,196,2,10
+	.byte	'DED_ENABLE_SET_REG0',0
+	.word	2186
+	.byte	4,3,35,128,3,10
+	.byte	'unused7',0
+	.word	25442
+	.byte	60,3,35,132,3,10
+	.byte	'DED_ENABLE_CLR_REG0',0
+	.word	2186
+	.byte	4,3,35,192,3,10
+	.byte	'unused8',0
+	.word	25442
+	.byte	60,3,35,196,3,10
+	.byte	'AGGR_ENABLE_SET',0
+	.word	2186
+	.byte	4,3,35,128,4,10
+	.byte	'AGGR_ENABLE_CLR',0
+	.word	2186
+	.byte	4,3,35,132,4,10
+	.byte	'AGGR_STATUS_SET',0
+	.word	2186
+	.byte	4,3,35,136,4,10
+	.byte	'AGGR_STATUS_CLR',0
+	.word	2186
+	.byte	4,3,35,140,4,0,14
+	.word	25460
+	.byte	16
+	.byte	'vCan_30_Mcan_McanSsEcc_ChannelRegType',0,4,146,4,3
+	.word	26024
+	.byte	11,24
+	.word	2186
+	.byte	12,5,0,13
+	.byte	'vCan_30_Mcan_McanSsMspm0_ChannelRegTag',0,4,149,4,25,236,1,10
+	.byte	'MCANSS_IIDX',0
+	.word	2186
+	.byte	4,2,35,0,10
+	.byte	'unused1',0
+	.word	25433
+	.byte	4,2,35,4,10
+	.byte	'MCANSS_IMASK',0
+	.word	2186
+	.byte	4,2,35,8,10
+	.byte	'unused2',0
+	.word	25433
+	.byte	4,2,35,12,10
+	.byte	'MCANSS_RIS',0
+	.word	2186
+	.byte	4,2,35,16,10
+	.byte	'unused3',0
+	.word	25433
+	.byte	4,2,35,20,10
+	.byte	'MCANSS_MIS',0
+	.word	2186
+	.byte	4,2,35,24,10
+	.byte	'unused4',0
+	.word	25433
+	.byte	4,2,35,28,10
+	.byte	'MCANSS_ISET',0
+	.word	2186
+	.byte	4,2,35,32,10
+	.byte	'unused5',0
+	.word	25433
+	.byte	4,2,35,36,10
+	.byte	'MCANSS_ICLR',0
+	.word	2186
+	.byte	4,2,35,40,10
+	.byte	'unused6',0
+	.word	23600
+	.byte	148,1,2,35,44,10
+	.byte	'MCANSS_EVT_MODE',0
+	.word	2186
+	.byte	4,3,35,192,1,10
+	.byte	'unused7',0
+	.word	26076
+	.byte	24,3,35,196,1,10
+	.byte	'MCANSS_DESC',0
+	.word	2186
+	.byte	4,3,35,220,1,10
+	.byte	'MCANSS_CLKEN',0
+	.word	2186
+	.byte	4,3,35,224,1,10
+	.byte	'MCANSS_CLKDIV',0
+	.word	2186
+	.byte	4,3,35,228,1,10
+	.byte	'MCANSS_CLKCTL',0
+	.word	2186
+	.byte	4,3,35,232,1,0,14
+	.word	26085
+	.byte	16
+	.byte	'vCan_30_Mcan_McanSsMspm0_ChannelRegType',0,4,169,4,3
+	.word	26497
+	.byte	13
+	.byte	'vCan_30_Mcan_McanSsPwren_ChannelRegTag',0,4,171,4,25,24,10
+	.byte	'MCANSS_PWREN',0
+	.word	2186
+	.byte	4,2,35,0,10
+	.byte	'MCANSS_RSTCTL',0
+	.word	2186
+	.byte	4,2,35,4,10
+	.byte	'unused',0
+	.word	23225
+	.byte	12,2,35,8,10
+	.byte	'MCANSS_STAT',0
+	.word	2186
+	.byte	4,2,35,20,0,14
+	.word	26551
+	.byte	16
+	.byte	'vCan_30_Mcan_McanSsPwren_ChannelRegType',0,4,177,4,2
+	.word	26679
+	.byte	11,28
+	.word	2186
+	.byte	12,6,0,13
+	.byte	'vCan_30_Mcan_TtCanFd_ChannelRegTag',0,4,181,4,25,60,10
+	.byte	'CAN_CH_RXFTOP_CTL',0
+	.word	2186
+	.byte	4,2,35,0,10
+	.byte	'unused2',0
+	.word	26733
+	.byte	28,2,35,4,10
+	.byte	'CAN_CH_RXFTOP0_STAT',0
+	.word	2186
+	.byte	4,2,35,32,10
+	.byte	'unused3',0
+	.word	25433
+	.byte	4,2,35,36,10
+	.byte	'CAN_CH_RXFTOP0_DATA',0
+	.word	2186
+	.byte	4,2,35,40,10
+	.byte	'unused4',0
+	.word	25433
+	.byte	4,2,35,44,10
+	.byte	'CAN_CH_RXFTOP1_STAT',0
+	.word	2186
+	.byte	4,2,35,48,10
+	.byte	'unused5',0
+	.word	25433
+	.byte	4,2,35,52,10
+	.byte	'CAN_CH_RXFTOP1_DATA',0
+	.word	2186
+	.byte	4,2,35,56,0,14
+	.word	26742
+	.byte	16
+	.byte	'vCan_30_Mcan_TtCanFd_ChannelRegType',0,4,192,4,3
+	.word	26995
+	.byte	11,88
+	.word	2186
+	.byte	12,21,0,13
+	.byte	'vCan_30_Mcan_TtCanFd_SubSysRegTag',0,4,195,4,25,136,1,10
+	.byte	'CAN_CTL',0
+	.word	2186
+	.byte	4,2,35,0,10
+	.byte	'CAN_STATUS',0
+	.word	2186
+	.byte	4,2,35,4,10
+	.byte	'CAN_DESIGN_CFG',0
+	.word	2186
+	.byte	4,2,35,8,10
+	.byte	'unused4',0
+	.word	25433
+	.byte	4,2,35,12,10
+	.byte	'CAN_INTR0_CAUSE',0
+	.word	2186
+	.byte	4,2,35,16,10
+	.byte	'CAN_INTR1_CAUSE',0
+	.word	2186
+	.byte	4,2,35,20,10
+	.byte	'unused5',0
+	.word	2262
+	.byte	8,2,35,24,10
+	.byte	'CAN_TS_CTL',0
+	.word	2186
+	.byte	4,2,35,32,10
+	.byte	'CAN_TS_CNT',0
+	.word	2186
+	.byte	4,2,35,36,10
+	.byte	'unused6',0
+	.word	27045
+	.byte	88,2,35,40,10
+	.byte	'CAN_ECC_CTL',0
+	.word	2186
+	.byte	4,3,35,128,1,10
+	.byte	'CAN_ECC_ERR_INJ',0
+	.word	2186
+	.byte	4,3,35,132,1,0,14
+	.word	27054
+	.byte	16
+	.byte	'vCan_30_Mcan_TtCanFd_SubSysRegType',0,4,209,4,3
+	.word	27346
+	.byte	11,76
+	.word	2186
+	.byte	12,18,0,11,72
+	.word	2186
+	.byte	12,17,0,11,56
+	.word	2186
+	.byte	12,13,0,11,52
+	.word	2186
+	.byte	12,12,0,13
+	.byte	'vCan_30_Mcan_StellarMcan_ChannelRegTag',0,4,212,4,25,160,9,10
+	.byte	'CREL',0
+	.word	2186
+	.byte	4,2,35,0,10
+	.byte	'TSCFG',0
+	.word	2186
+	.byte	4,2,35,4,10
+	.byte	'TSS1',0
+	.word	2186
+	.byte	4,2,35,8,10
+	.byte	'TSS2',0
+	.word	2186
+	.byte	4,2,35,12,10
+	.byte	'TSn',0
+	.word	12202
+	.byte	64,2,35,16,10
+	.byte	'ATB',0
+	.word	2186
+	.byte	4,2,35,80,10
+	.byte	'unusedTsu1',0
+	.word	27395
+	.byte	76,2,35,84,10
+	.byte	'DmuTxElem',0
+	.word	27404
+	.byte	72,3,35,160,1,10
+	.byte	'unusedDmu1',0
+	.word	27413
+	.byte	56,3,35,232,1,10
+	.byte	'DmuRx0Elem',0
+	.word	27404
+	.byte	72,3,35,160,2,10
+	.byte	'unusedDmu2',0
+	.word	27413
+	.byte	56,3,35,232,2,10
+	.byte	'DmuRx1Elem',0
+	.word	27404
+	.byte	72,3,35,160,3,10
+	.byte	'unusedDmu3',0
+	.word	27413
+	.byte	56,3,35,232,3,10
+	.byte	'DmuTxEvtElem',0
+	.word	23225
+	.byte	12,3,35,160,4,10
+	.byte	'unusedDmu4',0
+	.word	27422
+	.byte	52,3,35,172,4,10
+	.byte	'DMUCR',0
+	.word	2186
+	.byte	4,3,35,224,4,10
+	.byte	'DMUI',0
+	.word	2186
+	.byte	4,3,35,228,4,10
+	.byte	'DMUQC',0
+	.word	2186
+	.byte	4,3,35,232,4,10
+	.byte	'DMUIR',0
+	.word	2186
+	.byte	4,3,35,236,4,10
+	.byte	'DMUIE',0
+	.word	2186
+	.byte	4,3,35,240,4,10
+	.byte	'DMUC',0
+	.word	2186
+	.byte	4,3,35,244,4,10
+	.byte	'unusedDmu5',0
+	.word	24660
+	.byte	40,3,35,248,4,10
+	.byte	'DmuTxElemDbg',0
+	.word	27404
+	.byte	72,3,35,160,5,10
+	.byte	'unusedDmu6',0
+	.word	27413
+	.byte	56,3,35,232,5,10
+	.byte	'DmuRx0ElemDbg',0
+	.word	27404
+	.byte	72,3,35,160,6,10
+	.byte	'unusedDmu7',0
+	.word	27413
+	.byte	56,3,35,232,6,10
+	.byte	'DmuRx1ElemDbg',0
+	.word	27404
+	.byte	72,3,35,160,7,10
+	.byte	'unusedDmu8',0
+	.word	27413
+	.byte	56,3,35,232,7,10
+	.byte	'DmuTxEvtElemDbg',0
+	.word	2262
+	.byte	8,3,35,160,8,10
+	.byte	'unusedDmu9',0
+	.word	25451
+	.byte	120,3,35,168,8,0,14
+	.word	27431
+	.byte	16
+	.byte	'vCan_30_Mcan_StellarMcan_ChannelRegType',0,4,247,4,3
+	.word	28046
+	.byte	13
+	.byte	'vCan_30_Mcan_MRAMCfg_GlobalRegTag',0,4,250,4,25,40,10
+	.byte	'CFG0_MRAM_ADDR',0
+	.word	2186
+	.byte	4,2,35,0,10
+	.byte	'CFG1_MRAM_ADDR',0
+	.word	2186
+	.byte	4,2,35,4,10
+	.byte	'CFG2_MRAM_ADDR',0
+	.word	2186
+	.byte	4,2,35,8,10
+	.byte	'CFG3_MRAM_ADDR',0
+	.word	2186
+	.byte	4,2,35,12,10
+	.byte	'unused',0
+	.word	2244
+	.byte	16,2,35,16,10
+	.byte	'CAN_CFG_WR_PW',0
+	.word	2186
+	.byte	4,2,35,32,10
+	.byte	'CAN_CFG_WR_LOCK',0
+	.word	2186
+	.byte	4,2,35,36,0,14
+	.word	28100
+	.byte	16
+	.byte	'vCan_30_Mcan_MRAMCfg_GlobalRegType',0,4,133,5,3
+	.word	28301
+	.byte	11,64
+	.word	3480
+	.byte	12,31,0,11,64
+	.word	233
+	.byte	12,63,0,9,4,136,5,18,64,10
+	.byte	'DoubleWord',0
+	.word	12202
+	.byte	64,2,35,0,10
+	.byte	'Word',0
+	.word	28350
+	.byte	64,2,35,0,10
+	.byte	'Byte',0
+	.word	28359
+	.byte	64,2,35,0,0,14
+	.word	28368
+	.byte	16
+	.byte	'vCan_30_Mcan_BufferData',0,4,141,5,3
+	.word	28423
+	.byte	14
+	.word	28368
+	.byte	13
+	.byte	'vCan_30_Mcan_BufferTag',0,4,143,5,25,72,10
+	.byte	'E0',0
+	.word	2186
+	.byte	4,2,35,0,10
+	.byte	'E1',0
+	.word	2186
+	.byte	4,2,35,4,10
+	.byte	'Data',0
+	.word	28461
+	.byte	64,2,35,8,0,14
+	.word	28466
+	.byte	16
+	.byte	'vCan_30_Mcan_BufferType',0,4,157,5,3
+	.word	28534
+	.byte	27,4,159,5,9,4,10
+	.byte	'S0',0
+	.word	2186
+	.byte	4,2,35,0,0,16
+	.byte	'vCan_30_Mcan_SIFEType',0,4,162,5,3
+	.word	28572
+	.byte	27,4,164,5,9,8,10
+	.byte	'F0',0
+	.word	2186
+	.byte	4,2,35,0,10
+	.byte	'F1',0
+	.word	2186
+	.byte	4,2,35,4,0,16
+	.byte	'vCan_30_Mcan_XIFEType',0,4,168,5,3
+	.word	28622
+	.byte	14
+	.word	28466
+	.byte	15
+	.word	28684
+	.byte	16
+	.byte	'vCan_30_Mcan_BufferPtr',0,4,173,5,76
+	.word	28689
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L118:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,36,0,3,8,11,15,62,15,0,0,3,46,1,3,8,32,13,58,15,59,15
+	.byte	57,15,73,19,54,15,39,12,0,0,4,5,0,3,8,58,15,59,15,57,15,73,19,0,0,5,11,0,0,0,6,4,1,3,8,58,15,59,15,57
+	.byte	15,11,15,0,0,7,40,0,3,8,28,13,0,0,8,46,1,3,8,32,13,58,15,59,15,57,15,54,15,39,12,0,0,9,23,1,58,15,59,15
+	.byte	57,15,11,15,0,0,10,13,0,3,8,73,19,11,15,56,9,0,0,11,1,1,11,15,73,19,0,0,12,33,0,47,15,0,0,13,19,1,3,8
+	.byte	58,15,59,15,57,15,11,15,0,0,14,53,0,73,19,0,0,15,15,0,73,19,0,0,16,22,0,3,8,58,15,59,15,57,15,73,19,0
+	.byte	0,17,38,0,73,19,0,0,18,11,1,0,0,19,46,1,3,8,58,15,59,15,57,15,73,19,54,15,39,12,63,12,60,12,0,0,20,46
+	.byte	1,49,19,0,0,21,5,0,49,19,0,0,22,46,1,3,8,58,15,59,15,57,15,54,15,39,12,63,12,60,12,0,0,23,29,1,49,19,0
+	.byte	0,24,11,0,49,19,0,0,25,46,0,3,8,58,15,59,15,57,15,73,19,54,15,39,12,63,12,60,12,0,0,26,21,0,54,15,0,0
+	.byte	27,19,1,58,15,59,15,57,15,11,15,0,0,28,4,1,58,15,59,15,57,15,11,15,0,0,29,21,0,54,15,39,12,0,0,30,23,1
+	.byte	3,8,58,15,59,15,57,15,11,15,0,0,31,52,0,3,8,58,15,59,15,57,15,73,19,63,12,60,12,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L119:
+	.word	.L371-.L370
+.L370:
+	.half	3
+	.word	.L373-.L372
+.L372:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'GenData',0
+	.byte	'../../../../BSW/Components/vCan_30_Mcan/Implementation',0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Can_30_Core\\Implementation\\Can_30_Core_vCan.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Can_30_Core\\Implementation\\Can_30_Core_Types.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\vCan_30_Mcan\\Implementation\\vCan_30_Mcan.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\vCan_30_Mcan\\Implementation\\vCan_30_Mcan_HALInterface.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Det\\Implementation\\Det.h',0,0,0,0
+	.byte	'Can_DrvGeneralTypes.h',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\vCan_30_Mcan\\Implementation\\vCan_30_Mcan_Initialization.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\vCan_30_Mcan\\Implementation\\vCan_30_Mcan_InterruptService.h',0,0,0
+	.byte	0
+	.byte	'vCan_30_Mcan_ErrorHandler.c',0,2,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\Platform_Types.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\Std_Types.h',0,0,0,0
+	.byte	'ComStack_Cfg.h',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\ComStack_Types.h',0,0,0,0
+	.byte	'Det_Cfg.h',0,1,0,0
+	.byte	'Rte_Type.h',0,1,0,0
+	.byte	'EcuM_Cfg.h',0,1,0,0
+	.byte	'Can_30_Core_Cfg.h',0,1,0,0
+	.byte	'Os_Types_Lcfg.h',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Os\\Implementation\\Os_Hal_OsInt.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Os\\Implementation\\Os_Hal_Os_Types.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Os\\Implementation\\Os_Types.h',0,0,0,0
+	.byte	'Os_Hal_Lcfg.h',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Os\\Implementation\\OsInt.h',0,0,0,0
+	.byte	'vCan_30_Mcan_Cfg.h',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\VStdLib\\Implementation\\vstdlib.h',0,0,0,0,0
+.L373:
+.L371:
+	.sdecl	'.debug_info',debug,cluster('vCan_30_Mcan_GetStatusBegin')
+	.sect	'.debug_info'
+.L120:
+	.word	319
+	.half	3
+	.word	.L121
+	.byte	4,1
+	.byte	'../../../../BSW/Components/vCan_30_Mcan/Implementation/vCan_30_Mcan_ErrorHandler.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L123,.L122
+	.byte	2
+	.word	.L116
+	.byte	3
+	.byte	'vCan_30_Mcan_GetStatusBegin',0,1,93,31,1,1,1
+	.word	.L91,.L198,.L90
+	.byte	4
+	.byte	'Controller',0,1,93,65
+	.word	.L199,.L200
+	.byte	5
+	.word	.L91,.L198
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('vCan_30_Mcan_GetStatusBegin')
+	.sect	'.debug_abbrev'
+.L121:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('vCan_30_Mcan_GetStatusBegin')
+	.sect	'.debug_line'
+.L122:
+	.word	.L375-.L374
+.L374:
+	.half	3
+	.word	.L377-.L376
+.L376:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/vCan_30_Mcan/Implementation',0,0
+	.byte	'vCan_30_Mcan_ErrorHandler.c',0,1,0,0,0
+.L377:
+	.byte	5,1,7,0,5,2
+	.word	.L91
+	.byte	3,224,0,1,7,9
+	.half	.L125-.L91
+	.byte	0,1,1
+.L375:
+	.sdecl	'.debug_ranges',debug,cluster('vCan_30_Mcan_GetStatusBegin')
+	.sect	'.debug_ranges'
+.L123:
+	.word	-1,.L124,0,.L125-.L124,0,0
+	.sdecl	'.debug_info',debug,cluster('vCan_30_Mcan_IsHwBusOff')
+	.sect	'.debug_info'
+.L126:
+	.word	486
+	.half	3
+	.word	.L127
+	.byte	4,1
+	.byte	'../../../../BSW/Components/vCan_30_Mcan/Implementation/vCan_30_Mcan_ErrorHandler.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L129,.L128
+	.byte	2
+	.word	.L116
+	.byte	3
+	.byte	'vCan_30_Mcan_IsHwBusOff',0,1,121,34
+	.word	.L199
+	.byte	1,1,1
+	.word	.L93,.L201,.L92
+	.byte	4
+	.byte	'Controller',0,1,121,64
+	.word	.L199,.L202
+	.byte	5
+	.word	.L93,.L201
+	.byte	6
+	.byte	'retval',0,1,124,23
+	.word	.L199,.L203
+	.byte	6
+	.byte	'errorId',0,1,125,23
+	.word	.L204,.L205
+	.byte	7
+	.word	.L206,.L4,.L207
+	.byte	8
+	.word	.L208,.L209
+	.byte	8
+	.word	.L210,.L211
+	.byte	9
+	.word	.L212,.L4,.L207
+	.byte	7
+	.word	.L213,.L4,.L214
+	.byte	8
+	.word	.L215,.L216
+	.byte	10
+	.word	.L217,.L4,.L214
+	.byte	0,0,0,7
+	.word	.L218,.L3,.L7
+	.byte	8
+	.word	.L219,.L220
+	.byte	8
+	.word	.L221,.L222
+	.byte	10
+	.word	.L223,.L3,.L7
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('vCan_30_Mcan_IsHwBusOff')
+	.sect	'.debug_abbrev'
+.L127:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,1,49,16,17
+	.byte	1,18,1,0,0,10,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('vCan_30_Mcan_IsHwBusOff')
+	.sect	'.debug_line'
+.L128:
+	.word	.L379-.L378
+.L378:
+	.half	3
+	.word	.L381-.L380
+.L380:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/vCan_30_Mcan/Implementation',0,0
+	.byte	'vCan_30_Mcan_ErrorHandler.c',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\vCan_30_Mcan\\Implementation\\vCan_30_Mcan_HALInterface.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Can_30_Core\\Implementation\\Can_30_Core_vCan.h',0,0,0,0,0
+.L381:
+	.byte	5,34,7,0,5,2
+	.word	.L93
+	.byte	3,248,0,1,5,31,9
+	.half	.L334-.L93
+	.byte	3,3,1,9
+	.half	.L335-.L334
+	.byte	3,1,1,5,77,3,4,1,5,3,9
+	.half	.L333-.L335
+	.byte	1,5,13,7,9
+	.half	.L382-.L333
+	.byte	3,2,1,5,35,1,5,8,9
+	.half	.L2-.L382
+	.byte	3,3,1,5,13,7,9
+	.half	.L383-.L2
+	.byte	3,2,1,5,45,1,4,2,5,10,9
+	.half	.L4-.L383
+	.byte	3,167,11,1,5,44,9
+	.half	.L214-.L4
+	.byte	3,29,1,4,1,5,14,9
+	.half	.L207-.L214
+	.byte	3,196,116,1,4,3,5,67,9
+	.half	.L3-.L207
+	.byte	3,250,2,1,5,5,7,9
+	.half	.L384-.L3
+	.byte	3,3,1,4,1,5,3,9
+	.half	.L7-.L384
+	.byte	3,139,125,1,5,1,3,1,1,7,9
+	.half	.L131-.L7
+	.byte	0,1,1
+.L379:
+	.sdecl	'.debug_ranges',debug,cluster('vCan_30_Mcan_IsHwBusOff')
+	.sect	'.debug_ranges'
+.L129:
+	.word	-1,.L130,0,.L131-.L130,0,0
+	.sdecl	'.debug_info',debug,cluster('vCan_30_Mcan_IsHwPassive')
+	.sect	'.debug_info'
+.L132:
+	.word	491
+	.half	3
+	.word	.L133
+	.byte	4,1
+	.byte	'../../../../BSW/Components/vCan_30_Mcan/Implementation/vCan_30_Mcan_ErrorHandler.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L135,.L134
+	.byte	2
+	.word	.L116
+	.byte	3
+	.byte	'vCan_30_Mcan_IsHwPassive',0,1,176,1,34
+	.word	.L199
+	.byte	1,1,1
+	.word	.L95,.L224,.L94
+	.byte	4
+	.byte	'Controller',0,1,176,1,65
+	.word	.L199,.L225
+	.byte	5
+	.word	.L95,.L224
+	.byte	6
+	.byte	'retval',0,1,179,1,23
+	.word	.L199,.L226
+	.byte	6
+	.byte	'errorId',0,1,180,1,23
+	.word	.L204,.L227
+	.byte	7
+	.word	.L206,.L11,.L228
+	.byte	8
+	.word	.L208,.L229
+	.byte	8
+	.word	.L210,.L230
+	.byte	9
+	.word	.L212,.L11,.L228
+	.byte	7
+	.word	.L213,.L11,.L231
+	.byte	8
+	.word	.L215,.L232
+	.byte	10
+	.word	.L217,.L11,.L231
+	.byte	0,0,0,7
+	.word	.L218,.L10,.L14
+	.byte	8
+	.word	.L219,.L233
+	.byte	8
+	.word	.L221,.L234
+	.byte	10
+	.word	.L223,.L10,.L14
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('vCan_30_Mcan_IsHwPassive')
+	.sect	'.debug_abbrev'
+.L133:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,1,49,16,17
+	.byte	1,18,1,0,0,10,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('vCan_30_Mcan_IsHwPassive')
+	.sect	'.debug_line'
+.L134:
+	.word	.L386-.L385
+.L385:
+	.half	3
+	.word	.L388-.L387
+.L387:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/vCan_30_Mcan/Implementation',0,0
+	.byte	'vCan_30_Mcan_ErrorHandler.c',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\vCan_30_Mcan\\Implementation\\vCan_30_Mcan_HALInterface.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Can_30_Core\\Implementation\\Can_30_Core_vCan.h',0,0,0,0,0
+.L388:
+	.byte	5,34,7,0,5,2
+	.word	.L95
+	.byte	3,175,1,1,5,31,9
+	.half	.L337-.L95
+	.byte	3,3,1,9
+	.half	.L338-.L337
+	.byte	3,1,1,5,77,3,4,1,5,3,9
+	.half	.L336-.L338
+	.byte	1,5,13,7,9
+	.half	.L389-.L336
+	.byte	3,2,1,5,35,1,5,8,9
+	.half	.L9-.L389
+	.byte	3,3,1,5,13,7,9
+	.half	.L390-.L9
+	.byte	3,2,1,5,45,1,4,2,5,10,9
+	.half	.L11-.L390
+	.byte	3,240,10,1,5,44,9
+	.half	.L231-.L11
+	.byte	3,29,1,4,1,5,14,9
+	.half	.L228-.L231
+	.byte	3,251,116,1,4,3,5,67,9
+	.half	.L10-.L228
+	.byte	3,195,2,1,5,5,7,9
+	.half	.L391-.L10
+	.byte	3,3,1,4,1,5,3,9
+	.half	.L14-.L391
+	.byte	3,194,125,1,5,1,3,1,1,7,9
+	.half	.L137-.L14
+	.byte	0,1,1
+.L386:
+	.sdecl	'.debug_ranges',debug,cluster('vCan_30_Mcan_IsHwPassive')
+	.sect	'.debug_ranges'
+.L135:
+	.word	-1,.L136,0,.L137-.L136,0,0
+	.sdecl	'.debug_info',debug,cluster('vCan_30_Mcan_IsHwWarning')
+	.sect	'.debug_info'
+.L138:
+	.word	491
+	.half	3
+	.word	.L139
+	.byte	4,1
+	.byte	'../../../../BSW/Components/vCan_30_Mcan/Implementation/vCan_30_Mcan_ErrorHandler.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L141,.L140
+	.byte	2
+	.word	.L116
+	.byte	3
+	.byte	'vCan_30_Mcan_IsHwWarning',0,1,231,1,34
+	.word	.L199
+	.byte	1,1,1
+	.word	.L97,.L235,.L96
+	.byte	4
+	.byte	'Controller',0,1,231,1,65
+	.word	.L199,.L236
+	.byte	5
+	.word	.L97,.L235
+	.byte	6
+	.byte	'retval',0,1,234,1,23
+	.word	.L199,.L237
+	.byte	6
+	.byte	'errorId',0,1,235,1,23
+	.word	.L204,.L238
+	.byte	7
+	.word	.L206,.L18,.L239
+	.byte	8
+	.word	.L208,.L240
+	.byte	8
+	.word	.L210,.L241
+	.byte	9
+	.word	.L212,.L18,.L239
+	.byte	7
+	.word	.L213,.L18,.L242
+	.byte	8
+	.word	.L215,.L243
+	.byte	10
+	.word	.L217,.L18,.L242
+	.byte	0,0,0,7
+	.word	.L218,.L17,.L21
+	.byte	8
+	.word	.L219,.L244
+	.byte	8
+	.word	.L221,.L245
+	.byte	10
+	.word	.L223,.L17,.L21
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('vCan_30_Mcan_IsHwWarning')
+	.sect	'.debug_abbrev'
+.L139:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,1,49,16,17
+	.byte	1,18,1,0,0,10,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('vCan_30_Mcan_IsHwWarning')
+	.sect	'.debug_line'
+.L140:
+	.word	.L393-.L392
+.L392:
+	.half	3
+	.word	.L395-.L394
+.L394:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/vCan_30_Mcan/Implementation',0,0
+	.byte	'vCan_30_Mcan_ErrorHandler.c',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\vCan_30_Mcan\\Implementation\\vCan_30_Mcan_HALInterface.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Can_30_Core\\Implementation\\Can_30_Core_vCan.h',0,0,0,0,0
+.L395:
+	.byte	5,34,7,0,5,2
+	.word	.L97
+	.byte	3,230,1,1,5,31,9
+	.half	.L340-.L97
+	.byte	3,3,1,9
+	.half	.L341-.L340
+	.byte	3,1,1,5,77,3,4,1,5,3,9
+	.half	.L339-.L341
+	.byte	1,5,13,7,9
+	.half	.L396-.L339
+	.byte	3,2,1,5,35,1,5,8,9
+	.half	.L16-.L396
+	.byte	3,3,1,5,13,7,9
+	.half	.L397-.L16
+	.byte	3,2,1,5,45,1,4,2,5,10,9
+	.half	.L18-.L397
+	.byte	3,185,10,1,5,44,9
+	.half	.L242-.L18
+	.byte	3,29,1,4,1,5,14,9
+	.half	.L239-.L242
+	.byte	3,178,117,1,4,3,5,67,9
+	.half	.L17-.L239
+	.byte	3,140,2,1,5,5,7,9
+	.half	.L398-.L17
+	.byte	3,3,1,4,1,5,3,9
+	.half	.L21-.L398
+	.byte	3,249,125,1,5,1,3,1,1,7,9
+	.half	.L143-.L21
+	.byte	0,1,1
+.L393:
+	.sdecl	'.debug_ranges',debug,cluster('vCan_30_Mcan_IsHwWarning')
+	.sect	'.debug_ranges'
+.L141:
+	.word	-1,.L142,0,.L143-.L142,0,0
+	.sdecl	'.debug_info',debug,cluster('vCan_30_Mcan_ErrorHandlingBegin')
+	.sect	'.debug_info'
+.L144:
+	.word	428
+	.half	3
+	.word	.L145
+	.byte	4,1
+	.byte	'../../../../BSW/Components/vCan_30_Mcan/Implementation/vCan_30_Mcan_ErrorHandler.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L147,.L146
+	.byte	2
+	.word	.L116
+	.byte	3
+	.byte	'vCan_30_Mcan_ErrorHandlingBegin',0,1,161,2,31,1,1,1
+	.word	.L99,.L246,.L98
+	.byte	4
+	.byte	'Controller',0,1,161,2,69
+	.word	.L199,.L247
+	.byte	5
+	.word	.L99,.L246
+	.byte	6
+	.byte	'errorId',0,1,164,2,23
+	.word	.L204,.L248
+	.byte	7
+	.word	.L213,.L25,.L249
+	.byte	8
+	.word	.L215,.L250
+	.byte	9
+	.word	.L217,.L25,.L249
+	.byte	0,7
+	.word	.L218,.L24,.L27
+	.byte	8
+	.word	.L219,.L251
+	.byte	8
+	.word	.L221,.L252
+	.byte	9
+	.word	.L223,.L24,.L27
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('vCan_30_Mcan_ErrorHandlingBegin')
+	.sect	'.debug_abbrev'
+.L145:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,0,49,16,17,1,18
+	.byte	1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('vCan_30_Mcan_ErrorHandlingBegin')
+	.sect	'.debug_line'
+.L146:
+	.word	.L400-.L399
+.L399:
+	.half	3
+	.word	.L402-.L401
+.L401:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/vCan_30_Mcan/Implementation',0,0
+	.byte	'vCan_30_Mcan_ErrorHandler.c',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\vCan_30_Mcan\\Implementation\\vCan_30_Mcan_HALInterface.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Can_30_Core\\Implementation\\Can_30_Core_vCan.h',0,0,0,0,0
+.L402:
+	.byte	5,31,7,0,5,2
+	.word	.L99
+	.byte	3,160,2,1,9
+	.half	.L343-.L99
+	.byte	3,3,1,5,77,3,4,1,5,3,9
+	.half	.L342-.L343
+	.byte	1,5,13,7,9
+	.half	.L403-.L342
+	.byte	3,2,1,5,35,1,5,8,9
+	.half	.L23-.L403
+	.byte	3,3,1,5,13,7,9
+	.half	.L404-.L23
+	.byte	3,2,1,5,45,1,4,2,5,10,9
+	.half	.L25-.L404
+	.byte	3,128,10,1,4,1,5,5,9
+	.half	.L249-.L25
+	.byte	3,133,118,1,4,3,5,67,9
+	.half	.L24-.L249
+	.byte	3,214,1,1,5,5,7,9
+	.half	.L405-.L24
+	.byte	3,3,1,4,1,5,1,9
+	.half	.L27-.L405
+	.byte	3,173,126,1,7,9
+	.half	.L149-.L27
+	.byte	0,1,1
+.L400:
+	.sdecl	'.debug_ranges',debug,cluster('vCan_30_Mcan_ErrorHandlingBegin')
+	.sect	'.debug_ranges'
+.L147:
+	.word	-1,.L148,0,.L149-.L148,0,0
+	.sdecl	'.debug_info',debug,cluster('vCan_30_Mcan_ErrorStatePassiveTransitionOccurred')
+	.sect	'.debug_info'
+.L150:
+	.word	515
+	.half	3
+	.word	.L151
+	.byte	4,1
+	.byte	'../../../../BSW/Components/vCan_30_Mcan/Implementation/vCan_30_Mcan_ErrorHandler.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L153,.L152
+	.byte	2
+	.word	.L116
+	.byte	3
+	.byte	'vCan_30_Mcan_ErrorStatePassiveTransitionOccurred',0,1,222,2,34
+	.word	.L199
+	.byte	1,1,1
+	.word	.L101,.L253,.L100
+	.byte	4
+	.byte	'Controller',0,1,222,2,89
+	.word	.L199,.L254
+	.byte	5
+	.word	.L101,.L253
+	.byte	6
+	.byte	'retval',0,1,225,2,23
+	.word	.L199,.L255
+	.byte	6
+	.byte	'errorId',0,1,226,2,23
+	.word	.L204,.L256
+	.byte	7
+	.word	.L206,.L30,.L257
+	.byte	8
+	.word	.L208,.L258
+	.byte	8
+	.word	.L210,.L259
+	.byte	9
+	.word	.L212,.L30,.L257
+	.byte	7
+	.word	.L213,.L30,.L260
+	.byte	8
+	.word	.L215,.L261
+	.byte	10
+	.word	.L217,.L30,.L260
+	.byte	0,0,0,7
+	.word	.L218,.L29,.L34
+	.byte	8
+	.word	.L219,.L262
+	.byte	8
+	.word	.L221,.L263
+	.byte	10
+	.word	.L223,.L29,.L34
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('vCan_30_Mcan_ErrorStatePassiveTransitionOccurred')
+	.sect	'.debug_abbrev'
+.L151:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,1,49,16,17
+	.byte	1,18,1,0,0,10,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('vCan_30_Mcan_ErrorStatePassiveTransitionOccurred')
+	.sect	'.debug_line'
+.L152:
+	.word	.L407-.L406
+.L406:
+	.half	3
+	.word	.L409-.L408
+.L408:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/vCan_30_Mcan/Implementation',0,0
+	.byte	'vCan_30_Mcan_ErrorHandler.c',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\vCan_30_Mcan\\Implementation\\vCan_30_Mcan_HALInterface.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Can_30_Core\\Implementation\\Can_30_Core_vCan.h',0,0,0,0,0
+.L409:
+	.byte	5,34,7,0,5,2
+	.word	.L101
+	.byte	3,221,2,1,5,31,9
+	.half	.L346-.L101
+	.byte	3,3,1,9
+	.half	.L347-.L346
+	.byte	3,1,1,5,77,3,4,1,5,3,9
+	.half	.L345-.L347
+	.byte	1,5,13,7,9
+	.half	.L410-.L345
+	.byte	3,2,1,5,35,1,5,8,9
+	.half	.L28-.L410
+	.byte	3,3,1,5,13,7,9
+	.half	.L411-.L28
+	.byte	3,2,1,5,45,1,4,2,5,10,9
+	.half	.L30-.L411
+	.byte	3,194,9,1,5,46,9
+	.half	.L260-.L30
+	.byte	3,29,1,5,44,9
+	.half	.L412-.L260
+	.byte	1,4,1,5,5,9
+	.half	.L257-.L412
+	.byte	3,166,118,1,5,12,7,9
+	.half	.L413-.L257
+	.byte	3,3,1,5,39,9
+	.half	.L414-.L413
+	.byte	3,5,1,5,7,9
+	.half	.L415-.L414
+	.byte	3,123,1,5,16,9
+	.half	.L416-.L415
+	.byte	3,2,1,5,51,3,3,1,4,3,5,67,9
+	.half	.L29-.L416
+	.byte	3,144,1,1,5,5,7,9
+	.half	.L417-.L29
+	.byte	3,3,1,4,1,5,3,9
+	.half	.L34-.L417
+	.byte	3,245,126,1,5,1,3,1,1,7,9
+	.half	.L155-.L34
+	.byte	0,1,1
+.L407:
+	.sdecl	'.debug_ranges',debug,cluster('vCan_30_Mcan_ErrorStatePassiveTransitionOccurred')
+	.sect	'.debug_ranges'
+.L153:
+	.word	-1,.L154,0,.L155-.L154,0,0
+	.sdecl	'.debug_info',debug,cluster('vCan_30_Mcan_ErrorNotificationHandling')
+	.sect	'.debug_info'
+.L156:
+	.word	436
+	.half	3
+	.word	.L157
+	.byte	4,1
+	.byte	'../../../../BSW/Components/vCan_30_Mcan/Implementation/vCan_30_Mcan_ErrorHandler.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L159,.L158
+	.byte	2
+	.word	.L116
+	.byte	3
+	.byte	'vCan_30_Mcan_ErrorNotificationHandling',0,1,182,3,31,1,1,1
+	.word	.L103,.L264,.L102
+	.byte	4
+	.byte	'Controller',0,1,183,3,9
+	.word	.L199,.L265
+	.byte	5
+	.word	.L103,.L264
+	.byte	6
+	.byte	'errorId',0,1,186,3,23
+	.word	.L204,.L266
+	.byte	5
+	.word	.L38,.L37
+	.byte	6
+	.byte	'lastErrorCode',0,1,201,3,11
+	.word	.L199,.L267
+	.byte	0,7
+	.word	.L218,.L37,.L53
+	.byte	8
+	.word	.L219,.L268
+	.byte	8
+	.word	.L221,.L269
+	.byte	9
+	.word	.L223,.L37,.L53
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('vCan_30_Mcan_ErrorNotificationHandling')
+	.sect	'.debug_abbrev'
+.L157:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,0,49,16,17,1,18
+	.byte	1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('vCan_30_Mcan_ErrorNotificationHandling')
+	.sect	'.debug_line'
+.L158:
+	.word	.L419-.L418
+.L418:
+	.half	3
+	.word	.L421-.L420
+.L420:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/vCan_30_Mcan/Implementation',0,0
+	.byte	'vCan_30_Mcan_ErrorHandler.c',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Can_30_Core\\Implementation\\Can_30_Core_vCan.h',0,0,0,0,0
+.L421:
+	.byte	5,31,7,0,5,2
+	.word	.L103
+	.byte	3,181,3,1,9
+	.half	.L349-.L103
+	.byte	3,4,1,5,77,3,4,1,5,3,9
+	.half	.L348-.L349
+	.byte	1,5,13,7,9
+	.half	.L422-.L348
+	.byte	3,2,1,5,35,1,5,8,9
+	.half	.L36-.L422
+	.byte	3,3,1,5,13,7,9
+	.half	.L423-.L36
+	.byte	3,2,1,5,45,1,5,37,9
+	.half	.L38-.L423
+	.byte	3,6,1,5,74,9
+	.half	.L351-.L38
+	.byte	1,5,10,9
+	.half	.L352-.L351
+	.byte	3,3,1,5,5,9
+	.half	.L424-.L352
+	.byte	1,5,117,7,9
+	.half	.L425-.L424
+	.byte	3,2,1,5,92,9
+	.half	.L350-.L425
+	.byte	1,5,9,9
+	.half	.L40-.L350
+	.byte	3,3,1,5,72,7,9
+	.half	.L426-.L40
+	.byte	1,5,91,7,9
+	.half	.L41-.L426
+	.byte	3,2,1,5,12,9
+	.half	.L42-.L41
+	.byte	3,6,1,7,9
+	.half	.L427-.L42
+	.byte	3,5,1,7,9
+	.half	.L428-.L427
+	.byte	3,5,1,7,9
+	.half	.L429-.L428
+	.byte	3,5,1,7,9
+	.half	.L430-.L429
+	.byte	3,11,1,7,9
+	.half	.L353-.L430
+	.byte	1,5,51,9
+	.half	.L43-.L353
+	.byte	3,104,1,5,9,3,1,1,5,51,9
+	.half	.L44-.L43
+	.byte	3,4,1,5,9,3,1,1,5,51,9
+	.half	.L45-.L44
+	.byte	3,4,1,5,9,3,1,1,5,51,9
+	.half	.L46-.L45
+	.byte	3,4,1,5,9,3,1,1,5,51,9
+	.half	.L47-.L46
+	.byte	3,10,1,5,39,9
+	.half	.L52-.L47
+	.byte	1,5,51,1,4,2,5,67,9
+	.half	.L37-.L52
+	.byte	3,19,1,5,5,7,9
+	.half	.L431-.L37
+	.byte	3,3,1,4,1,5,1,9
+	.half	.L53-.L431
+	.byte	3,118,1,7,9
+	.half	.L161-.L53
+	.byte	0,1,1
+.L419:
+	.sdecl	'.debug_ranges',debug,cluster('vCan_30_Mcan_ErrorNotificationHandling')
+	.sect	'.debug_ranges'
+.L159:
+	.word	-1,.L160,0,.L161-.L160,0,0
+	.sdecl	'.debug_info',debug,cluster('vCan_30_Mcan_BusOffOccurred')
+	.sect	'.debug_info'
+.L162:
+	.word	668
+	.half	3
+	.word	.L163
+	.byte	4,1
+	.byte	'../../../../BSW/Components/vCan_30_Mcan/Implementation/vCan_30_Mcan_ErrorHandler.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L165,.L164
+	.byte	2
+	.word	.L116
+	.byte	3
+	.byte	'vCan_30_Mcan_BusOffOccurred',0,1,162,4,34
+	.word	.L199
+	.byte	1,1,1
+	.word	.L105,.L270,.L104
+	.byte	4
+	.byte	'Controller',0,1,162,4,68
+	.word	.L199,.L271
+	.byte	5
+	.word	.L105,.L270
+	.byte	6
+	.byte	'retval',0,1,165,4,23
+	.word	.L199,.L272
+	.byte	6
+	.byte	'errorId',0,1,166,4,23
+	.word	.L204,.L273
+	.byte	5
+	.word	.L56,.L55
+	.byte	7
+	.word	.L206,.L56,.L274
+	.byte	8
+	.word	.L208,.L275
+	.byte	8
+	.word	.L210,.L276
+	.byte	9
+	.word	.L212,.L56,.L274
+	.byte	7
+	.word	.L213,.L56,.L277
+	.byte	8
+	.word	.L215,.L278
+	.byte	10
+	.word	.L217,.L56,.L277
+	.byte	0,0,0,7
+	.word	.L206,.L58,.L279
+	.byte	8
+	.word	.L208,.L275
+	.byte	8
+	.word	.L210,.L276
+	.byte	9
+	.word	.L212,.L58,.L279
+	.byte	7
+	.word	.L213,.L58,.L280
+	.byte	8
+	.word	.L215,.L278
+	.byte	10
+	.word	.L217,.L58,.L280
+	.byte	0,0,0,7
+	.word	.L206,.L281,.L282
+	.byte	8
+	.word	.L208,.L275
+	.byte	8
+	.word	.L210,.L276
+	.byte	9
+	.word	.L212,.L281,.L282
+	.byte	7
+	.word	.L213,.L281,.L283
+	.byte	8
+	.word	.L215,.L278
+	.byte	10
+	.word	.L217,.L281,.L283
+	.byte	0,0,0,0,7
+	.word	.L218,.L55,.L62
+	.byte	8
+	.word	.L219,.L284
+	.byte	8
+	.word	.L221,.L285
+	.byte	10
+	.word	.L223,.L55,.L62
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('vCan_30_Mcan_BusOffOccurred')
+	.sect	'.debug_abbrev'
+.L163:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,1,49,16,17
+	.byte	1,18,1,0,0,10,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('vCan_30_Mcan_BusOffOccurred')
+	.sect	'.debug_line'
+.L164:
+	.word	.L433-.L432
+.L432:
+	.half	3
+	.word	.L435-.L434
+.L434:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/vCan_30_Mcan/Implementation',0,0
+	.byte	'vCan_30_Mcan_ErrorHandler.c',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\vCan_30_Mcan\\Implementation\\vCan_30_Mcan_HALInterface.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Can_30_Core\\Implementation\\Can_30_Core_vCan.h',0,0,0,0,0
+.L435:
+	.byte	5,34,7,0,5,2
+	.word	.L105
+	.byte	3,161,4,1,5,31,9
+	.half	.L356-.L105
+	.byte	3,3,1,9
+	.half	.L358-.L356
+	.byte	3,1,1,5,77,3,4,1,5,3,9
+	.half	.L355-.L358
+	.byte	1,5,13,7,9
+	.half	.L436-.L355
+	.byte	3,2,1,5,35,1,5,8,9
+	.half	.L54-.L436
+	.byte	3,3,1,5,13,7,9
+	.half	.L437-.L54
+	.byte	3,2,1,5,45,1,5,47,9
+	.half	.L56-.L437
+	.byte	3,7,1,4,2,5,10,9
+	.half	.L438-.L56
+	.byte	3,247,7,1,5,46,9
+	.half	.L277-.L438
+	.byte	3,29,1,5,44,9
+	.half	.L439-.L277
+	.byte	1,4,1,5,5,9
+	.half	.L274-.L439
+	.byte	3,236,119,1,5,12,7,9
+	.half	.L440-.L274
+	.byte	3,2,1,5,39,9
+	.half	.L357-.L440
+	.byte	3,4,1,5,7,9
+	.half	.L441-.L357
+	.byte	3,124,1,5,16,9
+	.half	.L442-.L441
+	.byte	3,2,1,5,51,3,2,1,4,2,5,10,9
+	.half	.L58-.L442
+	.byte	3,241,7,1,5,46,9
+	.half	.L280-.L58
+	.byte	3,29,1,5,44,9
+	.half	.L443-.L280
+	.byte	1,4,1,5,5,9
+	.half	.L279-.L443
+	.byte	3,254,119,1,4,2,5,10,7,9
+	.half	.L281-.L279
+	.byte	3,229,7,1,5,44,9
+	.half	.L283-.L281
+	.byte	3,29,1,4,1,5,16,9
+	.half	.L282-.L283
+	.byte	3,131,120,1,5,39,9
+	.half	.L444-.L282
+	.byte	3,8,1,5,51,1,4,3,5,67,9
+	.half	.L55-.L444
+	.byte	3,179,127,1,5,5,7,9
+	.half	.L445-.L55
+	.byte	3,3,1,4,1,5,3,9
+	.half	.L62-.L445
+	.byte	3,210,0,1,5,1,3,1,1,7,9
+	.half	.L167-.L62
+	.byte	0,1,1
+.L433:
+	.sdecl	'.debug_ranges',debug,cluster('vCan_30_Mcan_BusOffOccurred')
+	.sect	'.debug_ranges'
+.L165:
+	.word	-1,.L166,0,.L167-.L166,0,0
+	.sdecl	'.debug_info',debug,cluster('vCan_30_Mcan_OverrunOccurred')
+	.sect	'.debug_info'
+.L168:
+	.word	583
+	.half	3
+	.word	.L169
+	.byte	4,1
+	.byte	'../../../../BSW/Components/vCan_30_Mcan/Implementation/vCan_30_Mcan_ErrorHandler.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L171,.L170
+	.byte	2
+	.word	.L116
+	.byte	3
+	.byte	'vCan_30_Mcan_OverrunOccurred',0,1,254,4,31,1,1,1
+	.word	.L107,.L286,.L106
+	.byte	4
+	.byte	'Controller',0,1,254,4,66
+	.word	.L199,.L287
+	.byte	5
+	.word	.L107,.L286
+	.byte	6
+	.byte	'errorId',0,1,129,5,23
+	.word	.L204,.L288
+	.byte	5
+	.word	.L66,.L65
+	.byte	6
+	.byte	'mailboxHandle',0,1,145,5,22
+	.word	.L199,.L289
+	.byte	7
+	.word	.L290
+	.byte	6
+	.byte	'hwHandle',0,1,149,5,24
+	.word	.L199,.L295
+	.byte	8
+	.word	.L206,.L293,.L294
+	.byte	9
+	.word	.L208,.L296
+	.byte	9
+	.word	.L210,.L297
+	.byte	10
+	.word	.L212,.L298
+	.byte	8
+	.word	.L213,.L293,.L294
+	.byte	9
+	.word	.L215,.L301
+	.byte	11
+	.word	.L217,.L302
+	.byte	0,8
+	.word	.L213,.L299,.L303
+	.byte	9
+	.word	.L215,.L301
+	.byte	0,0,0,8
+	.word	.L206,.L299,.L300
+	.byte	9
+	.word	.L208,.L296
+	.byte	9
+	.word	.L210,.L297
+	.byte	0,0,0,8
+	.word	.L218,.L65,.L74
+	.byte	9
+	.word	.L219,.L304
+	.byte	9
+	.word	.L221,.L305
+	.byte	12
+	.word	.L223,.L65,.L74
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('vCan_30_Mcan_OverrunOccurred')
+	.sect	'.debug_abbrev'
+.L169:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,7,11,1,85,6,0,0,8,29,1,49,16,17,1,18,1,0,0,9,5,0,49,16,2,6,0,0,10,11
+	.byte	1,49,16,85,6,0,0,11,11,0,49,16,85,6,0,0,12,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('vCan_30_Mcan_OverrunOccurred')
+	.sect	'.debug_line'
+.L170:
+	.word	.L447-.L446
+.L446:
+	.half	3
+	.word	.L449-.L448
+.L448:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/vCan_30_Mcan/Implementation',0,0
+	.byte	'vCan_30_Mcan_ErrorHandler.c',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\vCan_30_Mcan\\Implementation\\vCan_30_Mcan_HALInterface.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Can_30_Core\\Implementation\\Can_30_Core_vCan.h',0,0,0,0,0
+.L449:
+	.byte	5,31,7,0,5,2
+	.word	.L107
+	.byte	3,253,4,1,9
+	.half	.L360-.L107
+	.byte	3,3,1,5,77,3,4,1,5,3,9
+	.half	.L359-.L360
+	.byte	1,5,13,7,9
+	.half	.L450-.L359
+	.byte	3,2,1,5,35,1,5,8,9
+	.half	.L64-.L450
+	.byte	3,3,1,5,13,7,9
+	.half	.L451-.L64
+	.byte	3,2,1,5,45,1,5,36,9
+	.half	.L66-.L451
+	.byte	3,5,1,5,54,3,4,1,5,88,9
+	.half	.L291-.L66
+	.byte	3,3,1,5,82,1,5,54,9
+	.half	.L292-.L291
+	.byte	3,125,1,5,82,9
+	.half	.L293-.L292
+	.byte	3,3,1,5,112,9
+	.half	.L294-.L293
+	.byte	3,122,1,5,54,9
+	.half	.L68-.L294
+	.byte	3,3,1,5,23,9
+	.half	.L361-.L68
+	.byte	3,126,1,5,88,9
+	.half	.L452-.L361
+	.byte	3,5,1,4,2,5,10,9
+	.half	.L299-.L452
+	.byte	3,151,7,1,5,44,9
+	.half	.L303-.L299
+	.byte	3,29,1,5,52,9
+	.half	.L453-.L303
+	.byte	1,4,1,5,7,9
+	.half	.L300-.L453
+	.byte	3,204,120,1,5,41,7,9
+	.half	.L454-.L300
+	.byte	3,3,1,5,53,1,5,29,9
+	.half	.L455-.L454
+	.byte	3,2,1,5,41,9
+	.half	.L456-.L455
+	.byte	1,5,23,9
+	.half	.L71-.L456
+	.byte	3,118,1,5,112,3,127,1,4,3,5,67,7,9
+	.half	.L65-.L71
+	.byte	3,248,126,1,5,5,7,9
+	.half	.L457-.L65
+	.byte	3,3,1,4,1,5,1,9
+	.half	.L74-.L457
+	.byte	3,152,1,1,7,9
+	.half	.L173-.L74
+	.byte	0,1,1
+.L447:
+	.sdecl	'.debug_ranges',debug,cluster('vCan_30_Mcan_OverrunOccurred')
+	.sect	'.debug_ranges'
+.L171:
+	.word	-1,.L172,0,.L173-.L172,0,0
+.L290:
+	.word	-1,.L107,.L291-.L107,.L292-.L107,.L293-.L107,.L294-.L107,.L68-.L107,.L71-.L107,0,0
+.L298:
+	.word	-1,.L107,.L293-.L107,.L294-.L107,.L299-.L107,.L300-.L107,0,0
+.L302:
+	.word	-1,.L107,.L293-.L107,.L294-.L107,.L299-.L107,.L303-.L107,0,0
+	.sdecl	'.debug_info',debug,cluster('vCan_30_Mcan_ErrorHandlingEnd')
+	.sect	'.debug_info'
+.L174:
+	.word	323
+	.half	3
+	.word	.L175
+	.byte	4,1
+	.byte	'../../../../BSW/Components/vCan_30_Mcan/Implementation/vCan_30_Mcan_ErrorHandler.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L177,.L176
+	.byte	2
+	.word	.L116
+	.byte	3
+	.byte	'vCan_30_Mcan_ErrorHandlingEnd',0,1,187,5,31,1,1,1
+	.word	.L109,.L306,.L108
+	.byte	4
+	.byte	'Controller',0,1,187,5,67
+	.word	.L199,.L307
+	.byte	5
+	.word	.L109,.L306
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('vCan_30_Mcan_ErrorHandlingEnd')
+	.sect	'.debug_abbrev'
+.L175:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('vCan_30_Mcan_ErrorHandlingEnd')
+	.sect	'.debug_line'
+.L176:
+	.word	.L459-.L458
+.L458:
+	.half	3
+	.word	.L461-.L460
+.L460:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/vCan_30_Mcan/Implementation',0,0
+	.byte	'vCan_30_Mcan_ErrorHandler.c',0,1,0,0,0
+.L461:
+	.byte	5,1,7,0,5,2
+	.word	.L109
+	.byte	3,190,5,1,7,9
+	.half	.L179-.L109
+	.byte	0,1,1
+.L459:
+	.sdecl	'.debug_ranges',debug,cluster('vCan_30_Mcan_ErrorHandlingEnd')
+	.sect	'.debug_ranges'
+.L177:
+	.word	-1,.L178,0,.L179-.L178,0,0
+	.sdecl	'.debug_info',debug,cluster('vCan_30_Mcan_GetControllerRxErrorCounter')
+	.sect	'.debug_info'
+.L180:
+	.word	557
+	.half	3
+	.word	.L181
+	.byte	4,1
+	.byte	'../../../../BSW/Components/vCan_30_Mcan/Implementation/vCan_30_Mcan_ErrorHandler.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L183,.L182
+	.byte	2
+	.word	.L116
+	.byte	3
+	.byte	'vCan_30_Mcan_GetControllerRxErrorCounter',0,1,214,5,33
+	.word	.L308
+	.byte	1,1,1
+	.word	.L111,.L309,.L110
+	.byte	4
+	.byte	'Controller',0,1,214,5,80
+	.word	.L199,.L310
+	.byte	5
+	.word	.L111,.L309
+	.byte	6
+	.byte	'rxErrCount',0,1,217,5,23
+	.word	.L308,.L311
+	.byte	6
+	.byte	'errorId',0,1,218,5,23
+	.word	.L204,.L312
+	.byte	5
+	.word	.L77,.L76
+	.byte	7
+	.word	.L206,.L77,.L313
+	.byte	8
+	.word	.L208,.L314
+	.byte	8
+	.word	.L210,.L315
+	.byte	9
+	.word	.L212,.L77,.L313
+	.byte	7
+	.word	.L213,.L77,.L316
+	.byte	8
+	.word	.L215,.L317
+	.byte	10
+	.word	.L217,.L77,.L316
+	.byte	0,0,0,7
+	.word	.L213,.L79,.L318
+	.byte	8
+	.word	.L215,.L317
+	.byte	10
+	.word	.L217,.L79,.L318
+	.byte	0,0,7
+	.word	.L218,.L76,.L81
+	.byte	8
+	.word	.L219,.L319
+	.byte	8
+	.word	.L221,.L320
+	.byte	10
+	.word	.L223,.L76,.L81
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('vCan_30_Mcan_GetControllerRxErrorCounter')
+	.sect	'.debug_abbrev'
+.L181:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,1,49,16,17
+	.byte	1,18,1,0,0,10,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('vCan_30_Mcan_GetControllerRxErrorCounter')
+	.sect	'.debug_line'
+.L182:
+	.word	.L463-.L462
+.L462:
+	.half	3
+	.word	.L465-.L464
+.L464:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/vCan_30_Mcan/Implementation',0,0
+	.byte	'vCan_30_Mcan_ErrorHandler.c',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\vCan_30_Mcan\\Implementation\\vCan_30_Mcan_HALInterface.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Can_30_Core\\Implementation\\Can_30_Core_vCan.h',0,0,0,0,0
+.L465:
+	.byte	5,33,7,0,5,2
+	.word	.L111
+	.byte	3,213,5,1,5,34,9
+	.half	.L364-.L111
+	.byte	3,3,1,9
+	.half	.L365-.L364
+	.byte	3,1,1,5,77,3,4,1,5,3,9
+	.half	.L363-.L365
+	.byte	1,5,13,7,9
+	.half	.L466-.L363
+	.byte	3,2,1,5,35,1,5,8,9
+	.half	.L75-.L466
+	.byte	3,3,1,5,13,7,9
+	.half	.L467-.L75
+	.byte	3,2,1,5,45,1,5,47,9
+	.half	.L77-.L467
+	.byte	3,8,1,4,2,5,10,9
+	.half	.L468-.L77
+	.byte	3,194,6,1,5,46,9
+	.half	.L316-.L468
+	.byte	3,29,1,5,44,9
+	.half	.L469-.L316
+	.byte	1,4,1,5,5,9
+	.half	.L313-.L469
+	.byte	3,161,121,1,5,18,7,9
+	.half	.L470-.L313
+	.byte	3,2,1,5,50,1,4,2,5,10,9
+	.half	.L79-.L470
+	.byte	3,192,6,1,4,1,5,96,9
+	.half	.L318-.L79
+	.byte	3,196,121,1,5,72,9
+	.half	.L366-.L318
+	.byte	1,4,3,5,67,9
+	.half	.L76-.L366
+	.byte	3,151,126,1,5,5,7,9
+	.half	.L471-.L76
+	.byte	3,3,1,4,1,5,3,9
+	.half	.L81-.L471
+	.byte	3,238,1,1,5,1,3,1,1,7,9
+	.half	.L185-.L81
+	.byte	0,1,1
+.L463:
+	.sdecl	'.debug_ranges',debug,cluster('vCan_30_Mcan_GetControllerRxErrorCounter')
+	.sect	'.debug_ranges'
+.L183:
+	.word	-1,.L184,0,.L185-.L184,0,0
+	.sdecl	'.debug_info',debug,cluster('vCan_30_Mcan_GetControllerTxErrorCounter')
+	.sect	'.debug_info'
+.L186:
+	.word	465
+	.half	3
+	.word	.L187
+	.byte	4,1
+	.byte	'../../../../BSW/Components/vCan_30_Mcan/Implementation/vCan_30_Mcan_ErrorHandler.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L189,.L188
+	.byte	2
+	.word	.L116
+	.byte	3
+	.byte	'vCan_30_Mcan_GetControllerTxErrorCounter',0,1,147,6,33
+	.word	.L308
+	.byte	1,1,1
+	.word	.L113,.L321,.L112
+	.byte	4
+	.byte	'Controller',0,1,147,6,80
+	.word	.L199,.L322
+	.byte	5
+	.word	.L113,.L321
+	.byte	6
+	.byte	'txErrCount',0,1,150,6,23
+	.word	.L308,.L323
+	.byte	6
+	.byte	'errorId',0,1,151,6,23
+	.word	.L204,.L324
+	.byte	7
+	.word	.L213,.L85,.L325
+	.byte	8
+	.word	.L215,.L326
+	.byte	9
+	.word	.L217,.L85,.L325
+	.byte	0,7
+	.word	.L218,.L84,.L87
+	.byte	8
+	.word	.L219,.L327
+	.byte	8
+	.word	.L221,.L328
+	.byte	9
+	.word	.L223,.L84,.L87
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('vCan_30_Mcan_GetControllerTxErrorCounter')
+	.sect	'.debug_abbrev'
+.L187:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,0,49,16,17
+	.byte	1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('vCan_30_Mcan_GetControllerTxErrorCounter')
+	.sect	'.debug_line'
+.L188:
+	.word	.L473-.L472
+.L472:
+	.half	3
+	.word	.L475-.L474
+.L474:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/vCan_30_Mcan/Implementation',0,0
+	.byte	'vCan_30_Mcan_ErrorHandler.c',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\vCan_30_Mcan\\Implementation\\vCan_30_Mcan_HALInterface.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Can_30_Core\\Implementation\\Can_30_Core_vCan.h',0,0,0,0,0
+.L475:
+	.byte	5,33,7,0,5,2
+	.word	.L113
+	.byte	3,146,6,1,5,34,9
+	.half	.L368-.L113
+	.byte	3,3,1,9
+	.half	.L369-.L368
+	.byte	3,1,1,5,77,3,4,1,5,3,9
+	.half	.L367-.L369
+	.byte	1,5,13,7,9
+	.half	.L476-.L367
+	.byte	3,2,1,5,35,1,5,8,9
+	.half	.L83-.L476
+	.byte	3,3,1,5,13,7,9
+	.half	.L477-.L83
+	.byte	3,2,1,5,45,1,4,2,5,10,9
+	.half	.L85-.L477
+	.byte	3,141,6,1,4,1,5,102,9
+	.half	.L325-.L85
+	.byte	3,249,121,1,4,3,5,67,9
+	.half	.L84-.L325
+	.byte	3,226,125,1,5,5,7,9
+	.half	.L478-.L84
+	.byte	3,3,1,4,1,5,3,9
+	.half	.L87-.L478
+	.byte	3,162,2,1,5,1,3,1,1,7,9
+	.half	.L191-.L87
+	.byte	0,1,1
+.L473:
+	.sdecl	'.debug_ranges',debug,cluster('vCan_30_Mcan_GetControllerTxErrorCounter')
+	.sect	'.debug_ranges'
+.L189:
+	.word	-1,.L190,0,.L191-.L190,0,0
+	.sdecl	'.debug_info',debug,cluster('vCan_30_Mcan_ErrInterrupt')
+	.sect	'.debug_info'
+.L192:
+	.word	356
+	.half	3
+	.word	.L193
+	.byte	4,1
+	.byte	'../../../../BSW/Components/vCan_30_Mcan/Implementation/vCan_30_Mcan_ErrorHandler.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L195,.L194
+	.byte	2
+	.word	.L116
+	.byte	3
+	.byte	'vCan_30_Mcan_ErrInterrupt',0,1,197,6,54,1,1,1
+	.word	.L115,.L329,.L114
+	.byte	4
+	.byte	'Controller',0,1,197,6,86
+	.word	.L199,.L330
+	.byte	5
+	.word	.L115,.L329
+	.byte	6
+	.word	.L213,.L115,.L331
+	.byte	7
+	.word	.L215,.L332
+	.byte	8
+	.word	.L217,.L115,.L331
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('vCan_30_Mcan_ErrInterrupt')
+	.sect	'.debug_abbrev'
+.L193:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,29,1,49
+	.byte	16,17,1,18,1,0,0,7,5,0,49,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('vCan_30_Mcan_ErrInterrupt')
+	.sect	'.debug_line'
+.L194:
+	.word	.L480-.L479
+.L479:
+	.half	3
+	.word	.L482-.L481
+.L481:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/vCan_30_Mcan/Implementation',0,0
+	.byte	'vCan_30_Mcan_ErrorHandler.c',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\vCan_30_Mcan\\Implementation\\vCan_30_Mcan_HALInterface.h',0,0,0,0,0
+.L482:
+	.byte	4,2,5,10,7,0,5,2
+	.word	.L115
+	.byte	3,174,12,1,4,1,5,83,9
+	.half	.L331-.L115
+	.byte	3,154,122,1,5,81,9
+	.half	.L483-.L331
+	.byte	1,5,3,9
+	.half	.L484-.L483
+	.byte	1,5,31,7,9
+	.half	.L485-.L484
+	.byte	3,3,1,5,1,7,9
+	.half	.L89-.L485
+	.byte	3,3,1,7,9
+	.half	.L197-.L89
+	.byte	0,1,1
+.L480:
+	.sdecl	'.debug_ranges',debug,cluster('vCan_30_Mcan_ErrInterrupt')
+	.sect	'.debug_ranges'
+.L195:
+	.word	-1,.L196,0,.L197-.L196,0,0
+	.sdecl	'.debug_loc',debug,cluster('vCan_30_Mcan_BusOffOccurred')
+	.sect	'.debug_loc'
+.L278:
+	.word	0,0
+.L275:
+	.word	0,0
+.L284:
+	.word	0,0
+.L271:
+	.word	-1,.L105,0,.L355-.L105
+	.half	1
+	.byte	84
+	.word	.L356-.L105,.L357-.L105
+	.half	1
+	.byte	95
+	.word	0,0
+.L285:
+	.word	0,0
+.L276:
+	.word	0,0
+.L273:
+	.word	-1,.L105,.L355-.L105,.L270-.L105
+	.half	1
+	.byte	89
+	.word	0,0
+.L272:
+	.word	-1,.L105,.L358-.L105,.L270-.L105
+	.half	1
+	.byte	88
+	.word	0,0
+.L104:
+	.word	-1,.L105,0,.L270-.L105
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('vCan_30_Mcan_ErrInterrupt')
+	.sect	'.debug_loc'
+.L332:
+	.word	0,0
+.L330:
+	.word	-1,.L115,0,.L329-.L115
+	.half	1
+	.byte	84
+	.word	0,0
+.L114:
+	.word	-1,.L115,0,.L329-.L115
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('vCan_30_Mcan_ErrorHandlingBegin')
+	.sect	'.debug_loc'
+.L250:
+	.word	0,0
+.L251:
+	.word	0,0
+.L247:
+	.word	-1,.L99,0,.L342-.L99
+	.half	1
+	.byte	84
+	.word	.L343-.L99,.L249-.L99
+	.half	1
+	.byte	95
+	.word	0,0
+.L252:
+	.word	0,0
+.L248:
+	.word	-1,.L99,.L342-.L99,.L246-.L99
+	.half	1
+	.byte	88
+	.word	.L344-.L99,.L27-.L99
+	.half	1
+	.byte	87
+	.word	0,0
+.L98:
+	.word	-1,.L99,0,.L246-.L99
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('vCan_30_Mcan_ErrorHandlingEnd')
+	.sect	'.debug_loc'
+.L307:
+	.word	-1,.L109,0,.L306-.L109
+	.half	1
+	.byte	84
+	.word	0,0
+.L108:
+	.word	-1,.L109,0,.L306-.L109
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('vCan_30_Mcan_ErrorNotificationHandling')
+	.sect	'.debug_loc'
+.L268:
+	.word	0,0
+.L265:
+	.word	-1,.L103,0,.L348-.L103
+	.half	1
+	.byte	84
+	.word	.L349-.L103,.L350-.L103
+	.half	1
+	.byte	95
+	.word	0,0
+.L269:
+	.word	0,0
+.L266:
+	.word	-1,.L103,.L348-.L103,.L264-.L103
+	.half	1
+	.byte	88
+	.word	.L354-.L103,.L53-.L103
+	.half	1
+	.byte	87
+	.word	0,0
+.L267:
+	.word	-1,.L103,.L38-.L103,.L351-.L103
+	.half	1
+	.byte	95
+	.word	.L351-.L103,.L352-.L103
+	.half	1
+	.byte	84
+	.word	.L350-.L103,.L41-.L103
+	.half	1
+	.byte	95
+	.word	.L42-.L103,.L353-.L103
+	.half	1
+	.byte	95
+	.word	0,0
+.L102:
+	.word	-1,.L103,0,.L264-.L103
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('vCan_30_Mcan_ErrorStatePassiveTransitionOccurred')
+	.sect	'.debug_loc'
+.L261:
+	.word	0,0
+.L258:
+	.word	0,0
+.L262:
+	.word	0,0
+.L254:
+	.word	-1,.L101,0,.L345-.L101
+	.half	1
+	.byte	84
+	.word	.L346-.L101,.L260-.L101
+	.half	1
+	.byte	95
+	.word	0,0
+.L263:
+	.word	0,0
+.L259:
+	.word	0,0
+.L256:
+	.word	-1,.L101,.L345-.L101,.L253-.L101
+	.half	1
+	.byte	89
+	.word	0,0
+.L255:
+	.word	-1,.L101,.L347-.L101,.L253-.L101
+	.half	1
+	.byte	88
+	.word	0,0
+.L100:
+	.word	-1,.L101,0,.L253-.L101
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('vCan_30_Mcan_GetControllerRxErrorCounter')
+	.sect	'.debug_loc'
+.L317:
+	.word	0,0
+.L314:
+	.word	0,0
+.L319:
+	.word	0,0
+.L310:
+	.word	-1,.L111,0,.L363-.L111
+	.half	1
+	.byte	84
+	.word	.L364-.L111,.L309-.L111
+	.half	1
+	.byte	88
+	.word	0,0
+.L320:
+	.word	0,0
+.L315:
+	.word	0,0
+.L312:
+	.word	-1,.L111,.L363-.L111,.L309-.L111
+	.half	1
+	.byte	89
+	.word	0,0
+.L311:
+	.word	-1,.L111,.L365-.L111,.L316-.L111
+	.half	1
+	.byte	95
+	.word	.L366-.L111,.L309-.L111
+	.half	1
+	.byte	95
+	.word	0,0
+.L110:
+	.word	-1,.L111,0,.L309-.L111
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('vCan_30_Mcan_GetControllerTxErrorCounter')
+	.sect	'.debug_loc'
+.L326:
+	.word	0,0
+.L327:
+	.word	0,0
+.L322:
+	.word	-1,.L113,0,.L367-.L113
+	.half	1
+	.byte	84
+	.word	.L368-.L113,.L325-.L113
+	.half	1
+	.byte	95
+	.word	0,0
+.L328:
+	.word	0,0
+.L324:
+	.word	-1,.L113,.L367-.L113,.L321-.L113
+	.half	1
+	.byte	89
+	.word	0,0
+.L323:
+	.word	-1,.L113,.L369-.L113,.L321-.L113
+	.half	1
+	.byte	88
+	.word	0,0
+.L112:
+	.word	-1,.L113,0,.L321-.L113
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('vCan_30_Mcan_GetStatusBegin')
+	.sect	'.debug_loc'
+.L200:
+	.word	-1,.L91,0,.L198-.L91
+	.half	1
+	.byte	84
+	.word	0,0
+.L90:
+	.word	-1,.L91,0,.L198-.L91
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('vCan_30_Mcan_IsHwBusOff')
+	.sect	'.debug_loc'
+.L216:
+	.word	0,0
+.L209:
+	.word	0,0
+.L220:
+	.word	0,0
+.L202:
+	.word	-1,.L93,0,.L333-.L93
+	.half	1
+	.byte	84
+	.word	.L334-.L93,.L214-.L93
+	.half	1
+	.byte	95
+	.word	0,0
+.L222:
+	.word	0,0
+.L211:
+	.word	0,0
+.L205:
+	.word	-1,.L93,.L333-.L93,.L201-.L93
+	.half	1
+	.byte	89
+	.word	0,0
+.L203:
+	.word	-1,.L93,.L335-.L93,.L201-.L93
+	.half	1
+	.byte	88
+	.word	0,0
+.L92:
+	.word	-1,.L93,0,.L201-.L93
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('vCan_30_Mcan_IsHwPassive')
+	.sect	'.debug_loc'
+.L232:
+	.word	0,0
+.L229:
+	.word	0,0
+.L233:
+	.word	0,0
+.L225:
+	.word	-1,.L95,0,.L336-.L95
+	.half	1
+	.byte	84
+	.word	.L337-.L95,.L231-.L95
+	.half	1
+	.byte	95
+	.word	0,0
+.L234:
+	.word	0,0
+.L230:
+	.word	0,0
+.L227:
+	.word	-1,.L95,.L336-.L95,.L224-.L95
+	.half	1
+	.byte	89
+	.word	0,0
+.L226:
+	.word	-1,.L95,.L338-.L95,.L224-.L95
+	.half	1
+	.byte	88
+	.word	0,0
+.L94:
+	.word	-1,.L95,0,.L224-.L95
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('vCan_30_Mcan_IsHwWarning')
+	.sect	'.debug_loc'
+.L243:
+	.word	0,0
+.L240:
+	.word	0,0
+.L244:
+	.word	0,0
+.L236:
+	.word	-1,.L97,0,.L339-.L97
+	.half	1
+	.byte	84
+	.word	.L340-.L97,.L242-.L97
+	.half	1
+	.byte	95
+	.word	0,0
+.L245:
+	.word	0,0
+.L241:
+	.word	0,0
+.L238:
+	.word	-1,.L97,.L339-.L97,.L235-.L97
+	.half	1
+	.byte	89
+	.word	0,0
+.L237:
+	.word	-1,.L97,.L341-.L97,.L235-.L97
+	.half	1
+	.byte	88
+	.word	0,0
+.L96:
+	.word	-1,.L97,0,.L235-.L97
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('vCan_30_Mcan_OverrunOccurred')
+	.sect	'.debug_loc'
+.L301:
+	.word	0,0
+.L296:
+	.word	0,0
+.L304:
+	.word	0,0
+.L287:
+	.word	-1,.L107,0,.L359-.L107
+	.half	1
+	.byte	84
+	.word	.L360-.L107,.L68-.L107
+	.half	1
+	.byte	95
+	.word	0,0
+.L305:
+	.word	0,0
+.L297:
+	.word	0,0
+.L288:
+	.word	-1,.L107,.L359-.L107,.L286-.L107
+	.half	1
+	.byte	88
+	.word	.L362-.L107,.L74-.L107
+	.half	1
+	.byte	87
+	.word	0,0
+.L295:
+	.word	-1,.L107,.L361-.L107,.L303-.L107
+	.half	1
+	.byte	95
+	.word	0,0
+.L289:
+	.word	-1,.L107,.L291-.L107,.L65-.L107
+	.half	1
+	.byte	89
+	.word	0,0
+.L106:
+	.word	-1,.L107,0,.L286-.L107
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L486:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('vCan_30_Mcan_GetStatusBegin')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L486,.L91,.L198-.L91
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('vCan_30_Mcan_IsHwBusOff')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L486,.L93,.L201-.L93
+	.sdecl	'.debug_frame',debug,cluster('vCan_30_Mcan_IsHwPassive')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L486,.L95,.L224-.L95
+	.sdecl	'.debug_frame',debug,cluster('vCan_30_Mcan_IsHwWarning')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L486,.L97,.L235-.L97
+	.sdecl	'.debug_frame',debug,cluster('vCan_30_Mcan_ErrorHandlingBegin')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L486,.L99,.L246-.L99
+	.sdecl	'.debug_frame',debug,cluster('vCan_30_Mcan_ErrorStatePassiveTransitionOccurred')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L486,.L101,.L253-.L101
+	.sdecl	'.debug_frame',debug,cluster('vCan_30_Mcan_ErrorNotificationHandling')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L486,.L103,.L264-.L103
+	.sdecl	'.debug_frame',debug,cluster('vCan_30_Mcan_BusOffOccurred')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L486,.L105,.L270-.L105
+	.sdecl	'.debug_frame',debug,cluster('vCan_30_Mcan_OverrunOccurred')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L486,.L107,.L286-.L107
+	.sdecl	'.debug_frame',debug,cluster('vCan_30_Mcan_ErrorHandlingEnd')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L486,.L109,.L306-.L109
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('vCan_30_Mcan_GetControllerRxErrorCounter')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L486,.L111,.L309-.L111
+	.sdecl	'.debug_frame',debug,cluster('vCan_30_Mcan_GetControllerTxErrorCounter')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L486,.L113,.L321-.L113
+	.sdecl	'.debug_frame',debug,cluster('vCan_30_Mcan_ErrInterrupt')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L486,.L115,.L329-.L115
+	; Module end

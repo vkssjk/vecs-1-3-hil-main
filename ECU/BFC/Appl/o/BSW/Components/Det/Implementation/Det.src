@@ -1,0 +1,1399 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v6.2r1 Build 17012451 SN 07925145"
+	.compiler_invocation	"ctc -f cc14176a -c99 --integer-enumeration -D__CPU__=userdef162 -D__CPU_USERDEF162__ --core=tc1.6.2 --fp-model=+float -DBRS_PLATFORM_AURIX -DBRS_COMP_TASKING -I../../../../BSW/Components/BswM/Implementation -I../../../../BSW/Components/CanIf/Implementation -I../../../../BSW/Components/CanSM/Implementation -I../../../../BSW/Components/CanTp/Implementation -I../../../../BSW/Components/Can_30_Core/Implementation -I../../../../BSW/Components/Com/Implementation -I../../../../BSW/Components/ComM/Implementation -I../../../../BSW/Components/Crc -I../../../../BSW/Components/Crc/Implementation -I../../../../BSW/Components/Dcm/Implementation -I../../../../BSW/Components/Dem/Implementation -I../../../../BSW/Components/Det/Implementation -I../../../../BSW/Components/EcuM/Implementation -I../../../../BSW/Components/GenData -I../../../../BSW/Components/Mcal_Tc3xx -I../../../../BSW/Components/Mcal_Tc3xx/Implementation -I../../../../BSW/Components/MemIf -I../../../../BSW/Components/MemIf/Implementation -I../../../../BSW/Components/NvM -I../../../../BSW/Components/NvM/Implementation -I../../../../BSW/Components/Os/Implementation -I../../../../BSW/Components/PduR/Implementation -I../../../../BSW/Components/VStdLib/Implementation -I../../../../BSW/Components/vCan_30_Mcan/Implementation -I../../../../BSW/DemoComponents/vLinkGen/Implementation -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Autosar_Srv -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Integration -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Irq/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Infra_Prod/Sfr/TC39xB/_Reg -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Adc/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Dio/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Fee/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Fls_17_Dmu/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/McalLib/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/McalLib/ssc/inc/AS440 -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Mcu/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Port/ssc/inc -I../../../../BSW/Components/_Common/Implementation -IGenData -IInclude -ID:/TASKING/TriCorev6.2r1/ctc/include -IGenData/Components -IGenData/inc --debug-info=default --align=4 --default-a0-size=0 --default-a1-size=0 --default-near-size=0 --optimize=acefgIklMnopRsUvwy,+predict --tradeoff=2 --language=-gcc,+volatile,-strings,-comments -o o\\BSW\\Components\\Det\\Implementation\\Det.src ../../../../BSW/Components/Det/Implementation/Det.c"
+	.compiler_name		"ctc"
+	;source	'../../../../BSW/Components/Det/Implementation/Det.c'
+
+	
+$TC162
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('Det_EndlessLoop')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function Det_EndlessLoop
+.L65:
+	.align	4
+Det_EndlessLoop:	.type	func
+.L8:
+	movh.a	a15,#@his(detStatus)
+	lea	a15,[a15]@los(detStatus)
+.L143:
+	add.a	a15,#4
+.L2:
+	ld.bu	d15,[a15]
+.L144:
+	jeq	d15,#0,.L2
+.L145:
+	mov	d15,#0
+	st.b	[a15],d15
+.L146:
+	ret
+.L93:
+	
+__Det_EndlessLoop_function_end:
+	.size	Det_EndlessLoop,__Det_EndlessLoop_function_end-Det_EndlessLoop
+.L66:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('Det_Init')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	Det_Init
+; Function Det_Init
+.L29:
+	.align	4
+Det_Init:	.type	func
+.L10:
+	movh.a	a15,#@his(detStatus)
+	lea	a15,[a15]@los(detStatus)
+.L104:
+	mov	d15,#0
+	st.b	[a15],d15
+.L105:
+	st.b	[a15]1,d15
+.L106:
+	st.b	[a15]6,d15
+.L107:
+	st.b	[a15]2,d15
+.L108:
+	st.b	[a15]3,d15
+.L109:
+	st.b	[a15]4,d15
+.L110:
+	movh.a	a15,#@his(detModuleInit)
+.L111:
+	mov	d15,#1
+	st.b	[a15]@los(detModuleInit),d15
+.L112:
+	ret
+.L71:
+	
+__Det_Init_function_end:
+	.size	Det_Init,__Det_Init_function_end-Det_Init
+.L30:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('Det_Start')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	Det_Start
+; Function Det_Start
+.L35:
+	.align	4
+Det_Start:	.type	func
+.L12:
+	ret
+.L74:
+	
+__Det_Start_function_end:
+	.size	Det_Start,__Det_Start_function_end-Det_Start
+.L36:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('Det_InitMemory')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	Det_InitMemory
+; Function Det_InitMemory
+.L41:
+	.align	4
+Det_InitMemory:	.type	func
+.L14:
+	movh.a	a15,#@his(detModuleInit)
+.L121:
+	mov	d15,#0
+	st.b	[a15]@los(detModuleInit),d15
+.L122:
+	ret
+.L75:
+	
+__Det_InitMemory_function_end:
+	.size	Det_InitMemory,__Det_InitMemory_function_end-Det_InitMemory
+.L42:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('Det_ReportError')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	Det_ReportError
+; Function Det_ReportError
+.L47:
+	.align	4
+Det_ReportError:	.type	func
+.L16:
+	movh.a	a15,#@his(detModuleInit)
+	ld.bu	d15,[a15]@los(detModuleInit)
+.L127:
+	jne	d15,#1,.L3
+.L128:
+	call	Det_EndlessLoop
+.L3:
+	mov	d2,#0
+	ret
+.L77:
+	
+__Det_ReportError_function_end:
+	.size	Det_ReportError,__Det_ReportError_function_end-Det_ReportError
+.L48:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('Det_ReportRuntimeError')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	Det_ReportRuntimeError
+; Function Det_ReportRuntimeError
+.L53:
+	.align	4
+Det_ReportRuntimeError:	.type	func
+.L18:
+	movh.a	a15,#@his(detModuleInit)
+	ld.bu	d15,[a15]@los(detModuleInit)
+.L133:
+	mov	d2,#0
+	ret
+.L83:
+	
+__Det_ReportRuntimeError_function_end:
+	.size	Det_ReportRuntimeError,__Det_ReportRuntimeError_function_end-Det_ReportRuntimeError
+.L54:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('Det_ReportTransientFault')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	Det_ReportTransientFault
+; Function Det_ReportTransientFault
+.L59:
+	.align	4
+Det_ReportTransientFault:	.type	func
+.L20:
+	movh.a	a15,#@his(detModuleInit)
+	ld.bu	d15,[a15]@los(detModuleInit)
+.L138:
+	mov	d2,#0
+	ret
+.L88:
+	
+__Det_ReportTransientFault_function_end:
+	.size	Det_ReportTransientFault,__Det_ReportTransientFault_function_end-Det_ReportTransientFault
+.L60:
+	; End of function
+	
+	.sdecl	'.data.MSR_VAR_INIT',data,cluster('detModuleInit')
+	.sect	'.data.MSR_VAR_INIT'
+	.align	4
+detModuleInit:	.type	object
+	.size	detModuleInit,1
+	.space	1
+	.sdecl	'.bss.MSR_VAR_NO_INIT',data,cluster('detStatus')
+	.sect	'.bss.MSR_VAR_NO_INIT'
+	.global	detStatus
+	.align	4
+detStatus:	.type	object
+	.size	detStatus,8
+	.space	8
+	.calls	'Det_ReportError','Det_EndlessLoop'
+	.calls	'Det_EndlessLoop','',0
+	.calls	'Det_Init','',0
+	.calls	'Det_Start','',0
+	.calls	'Det_InitMemory','',0
+	.calls	'Det_ReportError','',0
+	.calls	'Det_ReportRuntimeError','',0
+	.calls	'Det_ReportTransientFault','',0
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L22:
+	.word	10582
+	.half	3
+	.word	.L23
+	.byte	4
+.L21:
+	.byte	1
+	.byte	'../../../../BSW/Components/Det/Implementation/Det.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L24
+.L76:
+	.byte	2
+	.byte	'unsigned char',0,1,8,3
+	.byte	'sDet_PCConfigType',0,1,243,1,16,1,4
+	.byte	'Det_PCConfigNeverUsed',0
+	.word	202
+	.byte	1,2,35,0,0,5
+	.word	219
+	.byte	6
+	.word	275
+.L72:
+	.byte	5
+	.word	280
+.L78:
+	.byte	2
+	.byte	'unsigned short int',0,2,7,7,1,6
+	.word	312
+	.byte	8
+	.byte	'__codeptr',0,2,1,1
+	.word	314
+	.byte	8
+	.byte	'boolean',0,3,140,1,29
+	.word	202
+	.byte	2
+	.byte	'char',0,1,6,8
+	.byte	'sint8',0,3,142,1,31
+	.word	354
+	.byte	8
+	.byte	'uint8',0,3,143,1,31
+	.word	202
+	.byte	2
+	.byte	'short int',0,2,5,8
+	.byte	'sint16',0,3,144,1,31
+	.word	392
+	.byte	8
+	.byte	'uint16',0,3,145,1,31
+	.word	290
+	.byte	2
+	.byte	'long int',0,4,5,8
+	.byte	'sint32',0,3,146,1,31
+	.word	437
+	.byte	2
+	.byte	'unsigned long int',0,4,7,8
+	.byte	'uint32',0,3,147,1,31
+	.word	465
+	.byte	2
+	.byte	'unsigned long long int',0,8,7,8
+	.byte	'uint64',0,3,160,1,30
+	.word	502
+	.byte	8
+	.byte	'StatusType',0,4,115,23
+	.word	202
+	.byte	8
+	.byte	'Std_ReturnType',0,4,120,15
+	.word	202
+	.byte	8
+	.byte	'Std_TransformerErrorCode',0,4,131,1,15
+	.word	202
+	.byte	8
+	.byte	'Std_TransformerClass',0,4,133,1,15
+	.word	202
+	.byte	8
+	.byte	'Det_PCConfigType',0,1,246,1,3
+	.word	219
+	.byte	8
+	.byte	'Det_ConfigType',0,1,248,1,26
+	.word	219
+	.byte	9,5,167,1,9,8,4
+	.byte	'globalFilterActive',0
+	.word	202
+	.byte	1,2,35,0,4
+	.byte	'logActive',0
+	.word	202
+	.byte	1,2,35,1,4
+	.byte	'breakOnLogOverrun',0
+	.word	202
+	.byte	1,2,35,2,4
+	.byte	'breakFilterActive',0
+	.word	202
+	.byte	1,2,35,3,4
+	.byte	'unlockBreak',0
+	.word	202
+	.byte	1,2,35,4,4
+	.byte	'dltFilterActive',0
+	.word	202
+	.byte	1,2,35,5,4
+	.byte	'logIndex',0
+	.word	202
+	.byte	1,2,35,6,0,8
+	.byte	'DetStatusType',0,5,176,1,3
+	.word	700
+.L94:
+	.byte	10
+	.word	700
+	.byte	8
+	.byte	'PduLengthType',0,6,70,16
+	.word	290
+	.byte	6
+	.word	202
+	.byte	8
+	.byte	'SduDataPtrType',0,7,178,1,54
+	.word	922
+	.byte	11,7,201,1,9,4,12
+	.byte	'TP_DATACONF',0,0,12
+	.byte	'TP_DATARETRY',0,1,12
+	.byte	'TP_CONFPENDING',0,2,0,8
+	.byte	'TpDataStateType',0,7,208,1,3
+	.word	951
+	.byte	8
+	.byte	'Dcm_DataElement_Boot_Software_Boot_Software_Identification_PrimitiveType',0,8,84,16
+	.word	465
+	.byte	8
+	.byte	'Dcm_DataElement_Boot_Software_NumberOfModules_PrimitiveType',0,8,87,15
+	.word	202
+	.byte	8
+	.byte	'Dcm_DataElement_DID_0x0017_DID_Sint32_Array_ArrayType',0,8,90,16
+	.word	437
+	.byte	8
+	.byte	'Dcm_DataElement_DID_0x0018_DID_Uint32_Array_ArrayType',0,8,93,16
+	.word	465
+	.byte	8
+	.byte	'Dcm_DataElement_DID_0x0019_DID_Sint16_Array_ArrayType',0,8,96,16
+	.word	392
+	.byte	8
+	.byte	'Dcm_DataElement_DID_0x001A_DID_Uint16_Array_ArrayType',0,8,99,16
+	.word	290
+	.byte	8
+	.byte	'Dcm_DataElement_DID_0x001B_DID_Sint8_Array_ArrayType',0,8,102,15
+	.word	354
+	.byte	8
+	.byte	'Dcm_DataElement_DID_0xF410_DID_Data_PrimitiveType',0,8,105,16
+	.word	290
+	.byte	8
+	.byte	'Dcm_DataElement_DID_0xF412_DID_Data_PrimitiveType',0,8,108,16
+	.word	290
+	.byte	8
+	.byte	'Dcm_DataElement_DID_0xF413_DID_Data_PrimitiveType',0,8,111,16
+	.word	290
+	.byte	8
+	.byte	'Dcm_DataElement_DataDiagnosticIdentifier_DID_DataDiagnosticIdentifier_PrimitiveType',0,8,114,16
+	.word	290
+	.byte	8
+	.byte	'Dcm_DataElement_DevelopmentData_CanDriverVersion_PrimitiveType',0,8,117,16
+	.word	290
+	.byte	8
+	.byte	'Dcm_DataElement_DevelopmentData_DiagnosticModuleVersion_PrimitiveType',0,8,120,16
+	.word	290
+	.byte	8
+	.byte	'Dcm_DataElement_DevelopmentData_NmVersion_PrimitiveType',0,8,123,16
+	.word	290
+	.byte	8
+	.byte	'Dcm_DataElement_DevelopmentData_OperatingSystemVersion_PrimitiveType',0,8,126,16
+	.word	290
+	.byte	8
+	.byte	'Dcm_DataElement_DevelopmentData_TransportLayerVersion_PrimitiveType',0,8,129,1,16
+	.word	290
+	.byte	8
+	.byte	'Dcm_DataElement_Example_ReadWriteData_GlobalTime_PrimitiveType',0,8,132,1,16
+	.word	465
+	.byte	8
+	.byte	'Dcm_DataElement_Example_WriteOnlyDID_DID_DataObject_PrimitiveType',0,8,135,1,15
+	.word	202
+	.byte	8
+	.byte	'Dcm_DataElement_SampleIoControl_DID_Data_PrimitiveType',0,8,138,1,16
+	.word	465
+	.byte	8
+	.byte	'Dcm_DataElement_SerialNumber_SerialNumber_PrimitiveType',0,8,141,1,16
+	.word	465
+	.byte	8
+	.byte	'Dcm_RequestDataOut_SampleRoutineControl_Out_ResultPrimitiveType',0,8,147,1,16
+	.word	290
+	.byte	8
+	.byte	'Dcm_RequestDataOut_SampleRoutineControl_StartOnly_Out_ResultPrimitiveType',0,8,153,1,16
+	.word	465
+	.byte	8
+	.byte	'Dcm_StartDataIn_SampleRoutineControl_In_Option0PrimitiveType',0,8,159,1,15
+	.word	202
+	.byte	8
+	.byte	'Dcm_StartDataIn_SampleRoutineControl_StartOnly_In_Option1ArrayType',0,8,165,1,15
+	.word	202
+	.byte	8
+	.byte	'Dcm_StartDataOut_SampleRoutineControl_Out_InitStatePrimitiveType',0,8,168,1,16
+	.word	465
+	.byte	8
+	.byte	'Dcm_StopDataOut_SampleRoutineControl_Out_StopStatePrimitiveType',0,8,174,1,16
+	.word	465
+	.byte	11,9,156,1,9,4,12
+	.byte	'BswTask',0,0,12
+	.byte	'Default_Init_Task',0,1,12
+	.byte	'Default_Init_Task_Trusted',0,2,12
+	.byte	'IdleTask_OsCore',0,3,12
+	.byte	'IoTask',0,4,12
+	.byte	'SwcTask',0,5,12
+	.byte	'INVALID_TASK',0,6,12
+	.byte	'OS_TASKID_COUNT',0,6,0,8
+	.byte	'TaskType',0,9,166,1,3
+	.word	2845
+	.byte	13,64
+	.word	465
+	.byte	14,15,0,3
+	.byte	'Os_ExceptionContextType_Tag',0,10,71,8,160,1,4
+	.byte	'AddressRegisters',0
+	.word	2998
+	.byte	64,2,35,0,4
+	.byte	'DataRegisters',0
+	.word	2998
+	.byte	64,2,35,64,4
+	.byte	'Ra',0
+	.word	465
+	.byte	4,3,35,128,1,4
+	.byte	'Psw',0
+	.word	465
+	.byte	4,3,35,132,1,4
+	.byte	'ExceptionSource',0
+	.word	465
+	.byte	4,3,35,136,1,4
+	.byte	'Pcpn',0
+	.word	465
+	.byte	4,3,35,140,1,4
+	.byte	'Pie',0
+	.word	465
+	.byte	4,3,35,144,1,4
+	.byte	'MpuRegionForStackLow',0
+	.word	465
+	.byte	4,3,35,148,1,4
+	.byte	'MpuRegionForStackUpper',0
+	.word	465
+	.byte	4,3,35,152,1,4
+	.byte	'RawPCXI',0
+	.word	465
+	.byte	4,3,35,156,1,0,8
+	.byte	'Os_ExceptionContextType',0,11,59,44
+	.word	3007
+	.byte	8
+	.byte	'Os_InterruptSourceIdType',0,12,238,1,16
+	.word	465
+	.byte	8
+	.byte	'Os_ExceptionSourceIdType',0,12,246,1,16
+	.word	465
+	.byte	11,12,161,2,9,4,12
+	.byte	'RUNNING',0,0,12
+	.byte	'READY',0,1,12
+	.byte	'WAITING',0,2,12
+	.byte	'SUSPENDED',0,3,0,8
+	.byte	'TaskStateType',0,12,175,2,3
+	.word	3355
+	.byte	8
+	.byte	'EventMaskType',0,12,182,2,16
+	.word	502
+	.byte	8
+	.byte	'Os_TickType',0,12,200,2,19
+	.word	465
+	.byte	8
+	.byte	'TickType',0,12,206,2,21
+	.word	465
+	.byte	9,12,220,2,9,12,4
+	.byte	'maxallowedvalue',0
+	.word	465
+	.byte	4,2,35,0,4
+	.byte	'ticksperbase',0
+	.word	465
+	.byte	4,2,35,4,4
+	.byte	'mincycle',0
+	.word	465
+	.byte	4,2,35,8,0,8
+	.byte	'AlarmBaseType',0,12,228,2,2
+	.word	3487
+	.byte	11,12,128,3,9,4,12
+	.byte	'APPLICATION_TERMINATED',0,0,12
+	.byte	'APPLICATION_RESTARTING',0,1,12
+	.byte	'APPLICATION_ACCESSIBLE',0,2,0,8
+	.byte	'ApplicationStateType',0,12,133,3,3
+	.word	3582
+	.byte	11,12,177,3,9,4,12
+	.byte	'OSServiceId_GetApplicationID',0,0,12
+	.byte	'OSServiceId_GetISRID',0,1,12
+	.byte	'OSServiceId_CallTrustedFunction',0,2,12
+	.byte	'OSServiceId_CheckISRMemoryAccess',0,3,12
+	.byte	'OSServiceId_CheckTaskMemoryAccess',0,4,12
+	.byte	'OSServiceId_CheckObjectAccess',0,5,12
+	.byte	'OSServiceId_CheckObjectOwnership',0,6,12
+	.byte	'OSServiceId_StartScheduleTableRel',0,7,12
+	.byte	'OSServiceId_StartScheduleTableAbs',0,8,12
+	.byte	'OSServiceId_StopScheduleTable',0,9,12
+	.byte	'OSServiceId_NextScheduleTable',0,10,12
+	.byte	'OSServiceId_StartScheduleTableSynchron',0,11,12
+	.byte	'OSServiceId_SyncScheduleTable',0,12,12
+	.byte	'OSServiceId_SetScheduleTableAsync',0,13,12
+	.byte	'OSServiceId_GetScheduleTableStatus',0,14,12
+	.byte	'OSServiceId_IncrementCounter',0,15,12
+	.byte	'OSServiceId_GetCounterValue',0,16,12
+	.byte	'OSServiceId_GetElapsedValue',0,17,12
+	.byte	'OSServiceId_TerminateApplication',0,18,12
+	.byte	'OSServiceId_AllowAccess',0,19,12
+	.byte	'OSServiceId_GetApplicationState',0,20,12
+	.byte	'OSServiceId_GetNumberOfActivatedCores',0,21,12
+	.byte	'OSServiceId_GetCoreID',0,22,12
+	.byte	'OSServiceId_StartCore',0,23,12
+	.byte	'OSServiceId_StartNonAutosarCore',0,24,12
+	.byte	'OSServiceId_GetSpinlock',0,25,12
+	.byte	'OSServiceId_ReleaseSpinlock',0,26,12
+	.byte	'OSServiceId_TryToGetSpinlock',0,27,12
+	.byte	'OSServiceId_ShutdownAllCores',0,28,12
+	.byte	'OSServiceId_ControlIdle',0,29,12
+	.byte	'OSServiceId_IocSend',0,30,12
+	.byte	'OSServiceId_IocWrite',0,31,12
+	.byte	'OSServiceId_IocSendGroup',0,32,12
+	.byte	'OSServiceId_IocWriteGroup',0,33,12
+	.byte	'OSServiceId_IocReceive',0,34,12
+	.byte	'OSServiceId_IocRead',0,35,12
+	.byte	'OSServiceId_IocReceiveGroup',0,36,12
+	.byte	'OSServiceId_IocReadGroup',0,37,12
+	.byte	'OSServiceId_IocEmptyQueue',0,38,12
+	.byte	'OSServiceId_GetCurrentApplicationID',0,39,12
+	.byte	'OSServiceId_ActivateTaskAsyn',0,51,12
+	.byte	'OSServiceId_SetEventAsyn',0,52,12
+	.byte	'OSServiceId_GetExceptionContext',0,160,1,12
+	.byte	'OSServiceId_SetExceptionContext',0,161,1,12
+	.byte	'OSServiceId_CallNonTrustedFunction',0,162,1,12
+	.byte	'OSServiceId_AppKill',0,163,1,12
+	.byte	'OSServiceId_AlarmActionSetEvent',0,164,1,12
+	.byte	'OSServiceId_AlarmActionActivateTask',0,165,1,12
+	.byte	'OSServiceId_AlarmActionIncrementCounter',0,166,1,12
+	.byte	'OSServiceId_AlarmActionCallback',0,167,1,12
+	.byte	'OSServiceId_TimerIsr',0,168,1,12
+	.byte	'OSServiceId_IsrWrapper',0,169,1,12
+	.byte	'OSServiceId_GetTaskStackUsage',0,170,1,12
+	.byte	'OSServiceId_GetISRStackUsage',0,171,1,12
+	.byte	'OSServiceId_GetKernelStackUsage',0,172,1,12
+	.byte	'OSServiceId_GetStartupHookStackUsage',0,173,1,12
+	.byte	'OSServiceId_GetErrorHookStackUsage',0,174,1,12
+	.byte	'OSServiceId_GetShutdownHookStackUsage',0,175,1,12
+	.byte	'OSServiceId_GetProtectionHookStackUsage',0,176,1,12
+	.byte	'OSServiceId_GetSemaphore',0,177,1,12
+	.byte	'OSServiceId_ReleaseSemaphore',0,178,1,12
+	.byte	'OSServiceId_ScheduleTableActivateTask',0,179,1,12
+	.byte	'OSServiceId_ScheduleTableSetEvent',0,180,1,12
+	.byte	'OSServiceId_DisableInterruptSource',0,181,1,12
+	.byte	'OSServiceId_EnableInterruptSource',0,182,1,12
+	.byte	'OSServiceId_ClearPendingInterrupt',0,183,1,12
+	.byte	'OSServiceId_GetUnhandledIrq',0,184,1,12
+	.byte	'OSServiceId_GetUnhandledExc',0,185,1,12
+	.byte	'OSServiceId_HookCallCallback',0,186,1,12
+	.byte	'OSServiceId_IsInterruptSourceEnabled',0,187,1,12
+	.byte	'OSServiceId_IsInterruptPending',0,188,1,12
+	.byte	'OSServiceId_CallFastTrustedFunction',0,189,1,12
+	.byte	'OSServiceId_BarrierSynchronize',0,190,1,12
+	.byte	'OSServiceId_InitialEnableInterruptSources',0,191,1,12
+	.byte	'OSServiceId_GetCoreStartState',0,192,1,12
+	.byte	'OSServiceId_GetNonTrustedFunctionStackUsage',0,193,1,12
+	.byte	'OSServiceId_FrtSetFutureCompareValue',0,194,1,12
+	.byte	'OSServiceId_FrtSetCompareValue',0,195,1,12
+	.byte	'OSServiceId_GetInitHookStackUsage',0,196,1,12
+	.byte	'OSServiceId_StartOS',0,208,1,12
+	.byte	'OSServiceId_GetActiveApplicationMode',0,210,1,12
+	.byte	'OSServiceId_DisableAllInterrupts',0,211,1,12
+	.byte	'OSServiceId_EnableAllInterrupts',0,212,1,12
+	.byte	'OSServiceId_SuspendAllInterrupts',0,213,1,12
+	.byte	'OSServiceId_ResumeAllInterrupts',0,214,1,12
+	.byte	'OSServiceId_SuspendOSInterrupts',0,215,1,12
+	.byte	'OSServiceId_ResumeOSInterrupts',0,216,1,12
+	.byte	'OSServiceId_ActivateTask',0,217,1,12
+	.byte	'OSServiceId_TerminateTask',0,218,1,12
+	.byte	'OSServiceId_ChainTask',0,219,1,12
+	.byte	'OSServiceId_GetTaskID',0,220,1,12
+	.byte	'OSServiceId_GetTaskState',0,221,1,12
+	.byte	'OSServiceId_Schedule',0,222,1,12
+	.byte	'OSServiceId_SetEvent',0,223,1,12
+	.byte	'OSServiceId_ClearEvent',0,224,1,12
+	.byte	'OSServiceId_GetEvent',0,225,1,12
+	.byte	'OSServiceId_WaitEvent',0,226,1,12
+	.byte	'OSServiceId_GetAlarmBase',0,227,1,12
+	.byte	'OSServiceId_GetAlarm',0,228,1,12
+	.byte	'OSServiceId_SetRelAlarm',0,229,1,12
+	.byte	'OSServiceId_SetAbsAlarm',0,230,1,12
+	.byte	'OSServiceId_CancelAlarm',0,231,1,12
+	.byte	'OSServiceId_GetResource',0,232,1,12
+	.byte	'OSServiceId_ReleaseResource',0,233,1,12
+	.byte	'OSSERVICEID_COUNT',0,255,1,0,8
+	.byte	'OSServiceIdType',0,12,162,4,3
+	.word	3694
+	.byte	11,12,178,4,9,4,12
+	.byte	'OS_STATUS_OK',0,0,12
+	.byte	'OS_STATUS_CALLEVEL',0,2,12
+	.byte	'OS_STATUS_LIMIT',0,4,12
+	.byte	'OS_STATUS_RESOURCE',0,6,12
+	.byte	'OS_STATUS_SERVICEID',0,9,12
+	.byte	'OS_STATUS_ILLEGAL_ADDRESS',0,10,12
+	.byte	'OS_STATUS_MISSINGEND',0,11,12
+	.byte	'OS_STATUS_DISABLEDINT',0,12,12
+	.byte	'OS_STATUS_STACKFAULT',0,13,12
+	.byte	'OS_STATUS_PROTECTION_MEMORY',0,14,12
+	.byte	'OS_STATUS_PROTECTION_TIME',0,15,12
+	.byte	'OS_STATUS_PROTECTION_ARRIVAL',0,16,12
+	.byte	'OS_STATUS_PROTECTION_LOCKED',0,17,12
+	.byte	'OS_STATUS_PROTECTION_EXCEPTION',0,18,12
+	.byte	'OS_STATUS_INTERFERENCE_DEADLOCK',0,19,12
+	.byte	'OS_STATUS_NESTING_DEADLOCK',0,20,12
+	.byte	'OS_STATUS_SPINLOCK',0,21,12
+	.byte	'OS_STATUS_CORE',0,22,12
+	.byte	'OS_STATUS_OVERFLOW',0,245,1,12
+	.byte	'OS_STATUS_KILL_KERNEL_OBJ',0,246,1,12
+	.byte	'OS_STATUS_NO_RESTARTTASK',0,247,1,12
+	.byte	'OS_STATUS_CALL_NOT_ALLOWED',0,248,1,12
+	.byte	'OS_STATUS_FUNCTION_UNAVAILABLE',0,249,1,12
+	.byte	'OS_STATUS_PROTECTION_SYSCALL',0,250,1,12
+	.byte	'OS_STATUS_PROTECTION_IRQ',0,251,1,12
+	.byte	'OS_STATUS_API_ERROR',0,252,1,12
+	.byte	'OS_STATUS_ASSERTION',0,253,1,12
+	.byte	'OS_STATUS_OVERLOAD',0,254,1,12
+	.byte	'OS_STATUS_FRT_NO_FUTURE_VALUE',0,255,1,12
+	.byte	'OS_STATUS_ACCESSRIGHTS_1',0,129,2,12
+	.byte	'OS_STATUS_CALLEVEL_SHARED_STACK',0,130,2,12
+	.byte	'OS_STATUS_ID_1',0,131,2,12
+	.byte	'OS_STATUS_UNLOCKED',0,133,2,12
+	.byte	'OS_STATUS_STATE_1',0,135,2,12
+	.byte	'OS_STATUS_VALUE_IS_ZERO_1',0,136,2,12
+	.byte	'OS_STATUS_CORE_CROSS_DATA',0,150,2,12
+	.byte	'OS_STATUS_PARAM_POINTER_1',0,151,2,12
+	.byte	'OS_STATUS_STACKUSAGE_DISABLED_BY_CONFIG',0,241,3,12
+	.byte	'OS_STATUS_NO_BARRIER_PARTICIPANT',0,242,3,12
+	.byte	'OS_STATUS_UNIMPLEMENTED_CLEARPENDING',0,243,3,12
+	.byte	'OS_STATUS_NO_NTFSTACK_POOL_EMPTY',0,244,3,12
+	.byte	'OS_STATUS_FRT_SET_COMPARE_VALUE_FAILED',0,255,3,12
+	.byte	'OS_STATUS_ACCESSRIGHTS_2',0,129,4,12
+	.byte	'OS_STATUS_CALLEVEL_CROSS_CORE_SYNC',0,130,4,12
+	.byte	'OS_STATUS_ID_2',0,131,4,12
+	.byte	'OS_STATUS_NOFUNC_1',0,133,4,12
+	.byte	'OS_STATUS_STATE_2',0,135,4,12
+	.byte	'OS_STATUS_VALUE_IS_ZERO_2',0,136,4,12
+	.byte	'OS_STATUS_PARAM_POINTER_2',0,151,4,12
+	.byte	'OS_STATUS_EVENT_DISABLED_BY_CONFIG',0,241,5,12
+	.byte	'OS_STATUS_UNIMPLEMENTED_EXCEPTIONCONTEXT',0,243,5,12
+	.byte	'OS_STATUS_NO_NTFSTACK_APPLIMIT_EXCEEDED',0,244,5,12
+	.byte	'OS_STATUS_NOTACCESSIBLE_1',0,129,6,12
+	.byte	'OS_STATUS_ID_TYPE_1',0,131,6,12
+	.byte	'OS_STATUS_NOFUNC_2',0,133,6,12
+	.byte	'OS_STATUS_STATE_STOPPED',0,135,6,12
+	.byte	'OS_STATUS_VALUE_IS_TOO_HIGH_1',0,136,6,12
+	.byte	'OS_STATUS_PARAM_POINTER_3',0,151,6,12
+	.byte	'OS_STATUS_XSIGNAL_DISABLED_BY_CONFIG',0,241,7,12
+	.byte	'OS_STATUS_NOTACCESSIBLE_2',0,129,8,12
+	.byte	'OS_STATUS_ID_DIFFERENT_COUNTER',0,131,8,12
+	.byte	'OS_STATUS_SPINLOCK_ORDER',0,133,8,12
+	.byte	'OS_STATUS_STATE_RUNNING',0,135,8,12
+	.byte	'OS_STATUS_VALUE_IS_TOO_HIGH_2',0,136,8,12
+	.byte	'OS_STATUS_NOEXTENDEDTASK_1',0,129,10,12
+	.byte	'OS_STATUS_ID_DIFFERENT_SYNC',0,131,10,12
+	.byte	'OS_STATUS_STOPPED_1',0,133,10,12
+	.byte	'OS_STATUS_STATE_NEXTED',0,135,10,12
+	.byte	'OS_STATUS_VALUE_IS_TOO_HIGH_3',0,136,10,12
+	.byte	'OS_STATUS_NOEXTENDEDTASK_2',0,129,12,12
+	.byte	'OS_STATUS_HOOK_NOT_AVAILABLE',0,131,12,12
+	.byte	'OS_STATUS_NOT_STOPPED_2',0,133,12,12
+	.byte	'OS_STATUS_STATE_WAITING',0,135,12,12
+	.byte	'OS_STATUS_VALUE_IS_OUT_OF_BOUNDS_1',0,136,12,12
+	.byte	'OS_STATUS_NOEXTENDEDTASK_CALLER',0,129,14,12
+	.byte	'OS_STATUS_NEXTED_1',0,133,14,12
+	.byte	'OS_STATUS_STATE_NO_RESTART',0,135,14,12
+	.byte	'OS_STATUS_VALUE_IS_OUT_OF_BOUNDS_2',0,136,14,12
+	.byte	'OS_STATUS_LOCKED',0,129,16,12
+	.byte	'OS_STATUS_KILLING_IS_DISABLED',0,133,16,12
+	.byte	'OS_STATUS_STATE_ALREADY_TERMINATED',0,135,16,12
+	.byte	'OS_STATUS_VALUE_IS_TOO_LOW_1',0,136,16,12
+	.byte	'OS_STATUS_PRIORITY',0,129,18,12
+	.byte	'OS_STATUS_ORDER',0,133,18,12
+	.byte	'OS_STATUS_STATE_RESTARTING_NO_MEMBER',0,135,18,12
+	.byte	'OS_STATUS_VALUE_IS_TOO_LOW_2',0,136,18,12
+	.byte	'OS_STATUS_NOT_THE_OWNER_1',0,129,20,12
+	.byte	'OS_STATUS_STATE_ALREADY_RESTARTING',0,135,20,12
+	.byte	'OS_STATUS_VALUE_IS_TOO_LOW_3',0,136,20,12
+	.byte	'OS_STATUS_VALUE_IS_NOT_BOOLEAN',0,136,22,0,8
+	.byte	'Os_StatusType',0,12,246,5,3
+	.word	7080
+	.byte	9,12,219,6,9,12,4
+	.byte	'Service',0
+	.word	3694
+	.byte	4,2,35,0,4
+	.byte	'Error',0
+	.word	202
+	.byte	1,2,35,4,4
+	.byte	'DetailedError',0
+	.word	7080
+	.byte	4,2,35,6,0,8
+	.byte	'Os_ErrorInformationType',0,12,229,6,3
+	.word	9725
+	.byte	11,12,133,7,9,4,12
+	.byte	'SCHEDULETABLE_STOPPED',0,0,12
+	.byte	'SCHEDULETABLE_NEXT',0,1,12
+	.byte	'SCHEDULETABLE_WAITING',0,2,12
+	.byte	'SCHEDULETABLE_RUNNING',0,3,12
+	.byte	'SCHEDULETABLE_RUNNING_AND_SYNCHRONOUS',0,4,0,8
+	.byte	'ScheduleTableStatusType',0,12,150,7,3
+	.word	9820
+	.byte	11,12,162,7,9,4,12
+	.byte	'OS_MEM_ACCESS_TYPE_NON',0,0,12
+	.byte	'OS_MEM_ACCESS_TYPE_R',0,1,12
+	.byte	'OS_MEM_ACCESS_TYPE_READ',0,1,12
+	.byte	'OS_MEM_ACCESS_TYPE_W',0,2,12
+	.byte	'OS_MEM_ACCESS_TYPE_WRITE',0,2,12
+	.byte	'OS_MEM_ACCESS_TYPE_RW',0,3,12
+	.byte	'OS_MEM_ACCESS_TYPE_EXECUTE',0,4,12
+	.byte	'OS_MEM_ACCESS_TYPE_X',0,4,12
+	.byte	'OS_MEM_ACCESS_TYPE_RX',0,5,12
+	.byte	'OS_MEM_ACCESS_TYPE_WX',0,6,12
+	.byte	'OS_MEM_ACCESS_TYPE_RWX',0,7,12
+	.byte	'OS_MEM_ACCESS_TYPE_S',0,8,12
+	.byte	'OS_MEM_ACCESS_TYPE_STACK',0,8,12
+	.byte	'OS_MEM_ACCESS_TYPE_RS',0,9,12
+	.byte	'OS_MEM_ACCESS_TYPE_WS',0,10,12
+	.byte	'OS_MEM_ACCESS_TYPE_RWS',0,11,12
+	.byte	'OS_MEM_ACCESS_TYPE_XS',0,12,12
+	.byte	'OS_MEM_ACCESS_TYPE_RXS',0,13,12
+	.byte	'OS_MEM_ACCESS_TYPE_WXS',0,14,12
+	.byte	'OS_MEM_ACCESS_TYPE_RWXS',0,15,0,8
+	.byte	'Os_MemAccessType',0,12,184,7,3
+	.word	9993
+	.byte	8
+	.byte	'Os_Hal_AddressType',0,13,102,16
+	.word	465
+	.byte	8
+	.byte	'Os_AccessCheckAddress',0,14,150,2,29
+	.word	465
+.L95:
+	.byte	10
+	.word	202
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L23:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,36,0,3,8,11,15,62,15,0,0,3,19,1,3,8,58,15,59,15,57,15
+	.byte	11,15,0,0,4,13,0,3,8,73,19,11,15,56,9,0,0,5,38,0,73,19,0,0,6,15,0,73,19,0,0,7,21,0,54,15,0,0,8,22,0,3
+	.byte	8,58,15,59,15,57,15,73,19,0,0,9,19,1,58,15,59,15,57,15,11,15,0,0,10,53,0,73,19,0,0,11,4,1,58,15,59,15
+	.byte	57,15,11,15,0,0,12,40,0,3,8,28,13,0,0,13,1,1,11,15,73,19,0,0,14,33,0,47,15,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L24:
+	.word	.L97-.L96
+.L96:
+	.half	3
+	.word	.L99-.L98
+.L98:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'GenData',0
+	.byte	'../../../../BSW/Components/Det/Implementation',0,0
+	.byte	'Det_Cfg.h',0,1,0,0
+	.byte	'Det.c',0,2,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\Platform_Types.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\Std_Types.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Det\\Implementation\\Det.h',0,0,0,0
+	.byte	'ComStack_Cfg.h',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\ComStack_Types.h',0,0,0,0
+	.byte	'Rte_Type.h',0,1,0,0
+	.byte	'Os_Types_Lcfg.h',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Os\\Implementation\\Os_Hal_OsInt.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Os\\Implementation\\Os_Hal_Os_Types.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Os\\Implementation\\Os_Types.h',0,0,0,0
+	.byte	'Os_Hal_Lcfg.h',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Os\\Implementation\\OsInt.h',0,0,0,0,0
+.L99:
+.L97:
+	.sdecl	'.debug_info',debug,cluster('Det_Init')
+	.sect	'.debug_info'
+.L25:
+	.word	270
+	.half	3
+	.word	.L26
+	.byte	4,1
+	.byte	'../../../../BSW/Components/Det/Implementation/Det.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L28,.L27
+	.byte	2
+	.word	.L21
+	.byte	3
+	.byte	'Det_Init',0,1,199,3,22,1,1,1
+	.word	.L10,.L71,.L9
+	.byte	4
+	.byte	'ConfigPtr',0,1,199,3,85
+	.word	.L72,.L73
+	.byte	5
+	.word	.L10,.L71
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('Det_Init')
+	.sect	'.debug_abbrev'
+.L26:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('Det_Init')
+	.sect	'.debug_line'
+.L27:
+	.word	.L101-.L100
+.L100:
+	.half	3
+	.word	.L103-.L102
+.L102:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/Det/Implementation',0,0
+	.byte	'Det.c',0,1,0,0,0
+.L103:
+	.byte	5,3,7,0,5,2
+	.word	.L10
+	.byte	3,204,3,1,5,34,9
+	.half	.L104-.L10
+	.byte	1,5,32,1,5,23,9
+	.half	.L105-.L104
+	.byte	3,1,1,5,22,9
+	.half	.L106-.L105
+	.byte	3,1,1,5,31,9
+	.half	.L107-.L106
+	.byte	3,1,1,9
+	.half	.L108-.L107
+	.byte	3,1,1,5,25,9
+	.half	.L109-.L108
+	.byte	3,1,1,5,3,9
+	.half	.L110-.L109
+	.byte	3,53,1,5,19,9
+	.half	.L111-.L110
+	.byte	1,5,17,1,5,1,9
+	.half	.L112-.L111
+	.byte	3,1,1,7,9
+	.half	.L30-.L112
+	.byte	0,1,1
+.L101:
+	.sdecl	'.debug_ranges',debug,cluster('Det_Init')
+	.sect	'.debug_ranges'
+.L28:
+	.word	-1,.L29,0,.L30-.L29,0,0
+	.sdecl	'.debug_info',debug,cluster('Det_Start')
+	.sect	'.debug_info'
+.L31:
+	.word	248
+	.half	3
+	.word	.L32
+	.byte	4,1
+	.byte	'../../../../BSW/Components/Det/Implementation/Det.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L34,.L33
+	.byte	2
+	.word	.L21
+	.byte	3
+	.byte	'Det_Start',0,1,146,4,22,1,1,1
+	.word	.L12,.L74,.L11
+	.byte	4
+	.word	.L12,.L74
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('Det_Start')
+	.sect	'.debug_abbrev'
+.L32:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('Det_Start')
+	.sect	'.debug_line'
+.L33:
+	.word	.L114-.L113
+.L113:
+	.half	3
+	.word	.L116-.L115
+.L115:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/Det/Implementation',0,0
+	.byte	'Det.c',0,1,0,0,0
+.L116:
+	.byte	5,1,7,0,5,2
+	.word	.L12
+	.byte	3,147,4,1,7,9
+	.half	.L36-.L12
+	.byte	0,1,1
+.L114:
+	.sdecl	'.debug_ranges',debug,cluster('Det_Start')
+	.sect	'.debug_ranges'
+.L34:
+	.word	-1,.L35,0,.L36-.L35,0,0
+	.sdecl	'.debug_info',debug,cluster('Det_InitMemory')
+	.sect	'.debug_info'
+.L37:
+	.word	253
+	.half	3
+	.word	.L38
+	.byte	4,1
+	.byte	'../../../../BSW/Components/Det/Implementation/Det.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L40,.L39
+	.byte	2
+	.word	.L21
+	.byte	3
+	.byte	'Det_InitMemory',0,1,158,4,22,1,1,1
+	.word	.L14,.L75,.L13
+	.byte	4
+	.word	.L14,.L75
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('Det_InitMemory')
+	.sect	'.debug_abbrev'
+.L38:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('Det_InitMemory')
+	.sect	'.debug_line'
+.L39:
+	.word	.L118-.L117
+.L117:
+	.half	3
+	.word	.L120-.L119
+.L119:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/Det/Implementation',0,0
+	.byte	'Det.c',0,1,0,0,0
+.L120:
+	.byte	5,3,7,0,5,2
+	.word	.L14
+	.byte	3,159,4,1,5,19,9
+	.half	.L121-.L14
+	.byte	1,5,17,1,5,1,9
+	.half	.L122-.L121
+	.byte	3,1,1,7,9
+	.half	.L42-.L122
+	.byte	0,1,1
+.L118:
+	.sdecl	'.debug_ranges',debug,cluster('Det_InitMemory')
+	.sect	'.debug_ranges'
+.L40:
+	.word	-1,.L41,0,.L42-.L41,0,0
+	.sdecl	'.debug_info',debug,cluster('Det_ReportError')
+	.sect	'.debug_info'
+.L43:
+	.word	344
+	.half	3
+	.word	.L44
+	.byte	4,1
+	.byte	'../../../../BSW/Components/Det/Implementation/Det.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L46,.L45
+	.byte	2
+	.word	.L21
+	.byte	3
+	.byte	'Det_ReportError',0,1,182,4,32
+	.word	.L76
+	.byte	1,1,1
+	.word	.L16,.L77,.L15
+	.byte	4
+	.byte	'ModuleId',0,1,182,4,56
+	.word	.L78,.L79
+	.byte	4
+	.byte	'InstanceId',0,1,182,4,72
+	.word	.L76,.L80
+	.byte	4
+	.byte	'ApiId',0,1,182,4,90
+	.word	.L76,.L81
+	.byte	4
+	.byte	'ErrorId',0,1,182,4,103
+	.word	.L76,.L82
+	.byte	5
+	.word	.L16,.L77
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('Det_ReportError')
+	.sect	'.debug_abbrev'
+.L44:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('Det_ReportError')
+	.sect	'.debug_line'
+.L45:
+	.word	.L124-.L123
+.L123:
+	.half	3
+	.word	.L126-.L125
+.L125:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/Det/Implementation',0,0
+	.byte	'Det.c',0,1,0,0,0
+.L126:
+	.byte	5,6,7,0,5,2
+	.word	.L16
+	.byte	3,214,4,1,5,3,9
+	.half	.L127-.L16
+	.byte	1,5,28,7,9
+	.half	.L128-.L127
+	.byte	3,63,1,5,10,9
+	.half	.L3-.L128
+	.byte	3,18,1,5,1,3,1,1,7,9
+	.half	.L48-.L3
+	.byte	0,1,1
+.L124:
+	.sdecl	'.debug_ranges',debug,cluster('Det_ReportError')
+	.sect	'.debug_ranges'
+.L46:
+	.word	-1,.L47,0,.L48-.L47,0,0
+	.sdecl	'.debug_info',debug,cluster('Det_ReportRuntimeError')
+	.sect	'.debug_info'
+.L49:
+	.word	351
+	.half	3
+	.word	.L50
+	.byte	4,1
+	.byte	'../../../../BSW/Components/Det/Implementation/Det.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L52,.L51
+	.byte	2
+	.word	.L21
+	.byte	3
+	.byte	'Det_ReportRuntimeError',0,1,188,5,32
+	.word	.L76
+	.byte	1,1,1
+	.word	.L18,.L83,.L17
+	.byte	4
+	.byte	'ModuleId',0,1,188,5,63
+	.word	.L78,.L84
+	.byte	4
+	.byte	'InstanceId',0,1,188,5,79
+	.word	.L76,.L85
+	.byte	4
+	.byte	'ApiId',0,1,188,5,97
+	.word	.L76,.L86
+	.byte	4
+	.byte	'ErrorId',0,1,188,5,110
+	.word	.L76,.L87
+	.byte	5
+	.word	.L18,.L83
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('Det_ReportRuntimeError')
+	.sect	'.debug_abbrev'
+.L50:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('Det_ReportRuntimeError')
+	.sect	'.debug_line'
+.L51:
+	.word	.L130-.L129
+.L129:
+	.half	3
+	.word	.L132-.L131
+.L131:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/Det/Implementation',0,0
+	.byte	'Det.c',0,1,0,0,0
+.L132:
+	.byte	5,6,7,0,5,2
+	.word	.L18
+	.byte	3,217,5,1,5,10,9
+	.half	.L133-.L18
+	.byte	3,53,1,5,1,3,1,1,7,9
+	.half	.L54-.L133
+	.byte	0,1,1
+.L130:
+	.sdecl	'.debug_ranges',debug,cluster('Det_ReportRuntimeError')
+	.sect	'.debug_ranges'
+.L52:
+	.word	-1,.L53,0,.L54-.L53,0,0
+	.sdecl	'.debug_info',debug,cluster('Det_ReportTransientFault')
+	.sect	'.debug_info'
+.L55:
+	.word	353
+	.half	3
+	.word	.L56
+	.byte	4,1
+	.byte	'../../../../BSW/Components/Det/Implementation/Det.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L58,.L57
+	.byte	2
+	.word	.L21
+	.byte	3
+	.byte	'Det_ReportTransientFault',0,1,163,6,32
+	.word	.L76
+	.byte	1,1,1
+	.word	.L20,.L88,.L19
+	.byte	4
+	.byte	'ModuleId',0,1,163,6,65
+	.word	.L78,.L89
+	.byte	4
+	.byte	'InstanceId',0,1,163,6,81
+	.word	.L76,.L90
+	.byte	4
+	.byte	'ApiId',0,1,163,6,99
+	.word	.L76,.L91
+	.byte	4
+	.byte	'ErrorId',0,1,163,6,112
+	.word	.L76,.L92
+	.byte	5
+	.word	.L20,.L88
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('Det_ReportTransientFault')
+	.sect	'.debug_abbrev'
+.L56:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('Det_ReportTransientFault')
+	.sect	'.debug_line'
+.L57:
+	.word	.L135-.L134
+.L134:
+	.half	3
+	.word	.L137-.L136
+.L136:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/Det/Implementation',0,0
+	.byte	'Det.c',0,1,0,0,0
+.L137:
+	.byte	5,6,7,0,5,2
+	.word	.L20
+	.byte	3,192,6,1,5,10,9
+	.half	.L138-.L20
+	.byte	3,51,1,5,1,3,2,1,7,9
+	.half	.L60-.L138
+	.byte	0,1,1
+.L135:
+	.sdecl	'.debug_ranges',debug,cluster('Det_ReportTransientFault')
+	.sect	'.debug_ranges'
+.L58:
+	.word	-1,.L59,0,.L60-.L59,0,0
+	.sdecl	'.debug_info',debug,cluster('Det_EndlessLoop')
+	.sect	'.debug_info'
+.L61:
+	.word	253
+	.half	3
+	.word	.L62
+	.byte	4,1
+	.byte	'../../../../BSW/Components/Det/Implementation/Det.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L64,.L63
+	.byte	2
+	.word	.L21
+	.byte	3
+	.byte	'Det_EndlessLoop',0,1,147,3,32,1,1
+	.word	.L8,.L93,.L7
+	.byte	4
+	.word	.L8,.L93
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('Det_EndlessLoop')
+	.sect	'.debug_abbrev'
+.L62:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('Det_EndlessLoop')
+	.sect	'.debug_line'
+.L63:
+	.word	.L140-.L139
+.L139:
+	.half	3
+	.word	.L142-.L141
+.L141:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/Det/Implementation',0,0
+	.byte	'Det.c',0,1,0,0,0
+.L142:
+	.byte	5,9,7,0,5,2
+	.word	.L8
+	.byte	3,150,3,1,5,18,9
+	.half	.L143-.L8
+	.byte	1,5,39,9
+	.half	.L144-.L143
+	.byte	1,5,27,7,9
+	.half	.L145-.L144
+	.byte	3,28,1,5,25,1,5,1,9
+	.half	.L146-.L145
+	.byte	3,5,1,7,9
+	.half	.L66-.L146
+	.byte	0,1,1
+.L140:
+	.sdecl	'.debug_ranges',debug,cluster('Det_EndlessLoop')
+	.sect	'.debug_ranges'
+.L64:
+	.word	-1,.L65,0,.L66-.L65,0,0
+	.sdecl	'.debug_info',debug,cluster('detStatus')
+	.sect	'.debug_info'
+.L67:
+	.word	226
+	.half	3
+	.word	.L68
+	.byte	4,1
+	.byte	'../../../../BSW/Components/Det/Implementation/Det.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1,2
+	.word	.L21
+	.byte	3
+	.byte	'detStatus',0,2,176,1,38
+	.word	.L94
+	.byte	1,5,3
+	.word	detStatus
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('detStatus')
+	.sect	'.debug_abbrev'
+.L68:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('detModuleInit')
+	.sect	'.debug_info'
+.L69:
+	.word	229
+	.half	3
+	.word	.L70
+	.byte	4,1
+	.byte	'../../../../BSW/Components/Det/Implementation/Det.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1,2
+	.word	.L21
+	.byte	3
+	.byte	'detModuleInit',0,2,131,1,42
+	.word	.L95
+	.byte	5,3
+	.word	detModuleInit
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('detModuleInit')
+	.sect	'.debug_abbrev'
+.L70:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
+	.sdecl	'.debug_loc',debug,cluster('Det_EndlessLoop')
+	.sect	'.debug_loc'
+.L7:
+	.word	-1,.L8,0,.L93-.L8
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('Det_Init')
+	.sect	'.debug_loc'
+.L73:
+	.word	-1,.L10,0,.L71-.L10
+	.half	1
+	.byte	100
+	.word	0,0
+.L9:
+	.word	-1,.L10,0,.L71-.L10
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('Det_InitMemory')
+	.sect	'.debug_loc'
+.L13:
+	.word	-1,.L14,0,.L75-.L14
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('Det_ReportError')
+	.sect	'.debug_loc'
+.L81:
+	.word	-1,.L16,0,.L3-.L16
+	.half	1
+	.byte	86
+	.word	0,0
+.L15:
+	.word	-1,.L16,0,.L77-.L16
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L82:
+	.word	-1,.L16,0,.L3-.L16
+	.half	1
+	.byte	87
+	.word	0,0
+.L80:
+	.word	-1,.L16,0,.L3-.L16
+	.half	1
+	.byte	85
+	.word	0,0
+.L79:
+	.word	-1,.L16,0,.L3-.L16
+	.half	1
+	.byte	84
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('Det_ReportRuntimeError')
+	.sect	'.debug_loc'
+.L86:
+	.word	-1,.L18,0,.L83-.L18
+	.half	1
+	.byte	86
+	.word	0,0
+.L17:
+	.word	-1,.L18,0,.L83-.L18
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L87:
+	.word	-1,.L18,0,.L83-.L18
+	.half	1
+	.byte	87
+	.word	0,0
+.L85:
+	.word	-1,.L18,0,.L83-.L18
+	.half	1
+	.byte	85
+	.word	0,0
+.L84:
+	.word	-1,.L18,0,.L83-.L18
+	.half	1
+	.byte	84
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('Det_ReportTransientFault')
+	.sect	'.debug_loc'
+.L91:
+	.word	-1,.L20,0,.L88-.L20
+	.half	1
+	.byte	86
+	.word	0,0
+.L19:
+	.word	-1,.L20,0,.L88-.L20
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L92:
+	.word	-1,.L20,0,.L88-.L20
+	.half	1
+	.byte	87
+	.word	0,0
+.L90:
+	.word	-1,.L20,0,.L88-.L20
+	.half	1
+	.byte	85
+	.word	0,0
+.L89:
+	.word	-1,.L20,0,.L88-.L20
+	.half	1
+	.byte	84
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('Det_Start')
+	.sect	'.debug_loc'
+.L11:
+	.word	-1,.L12,0,.L74-.L12
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L147:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('Det_EndlessLoop')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L147,.L8,.L93-.L8
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('Det_Init')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L147,.L10,.L71-.L10
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('Det_Start')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L147,.L12,.L74-.L12
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('Det_InitMemory')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L147,.L14,.L75-.L14
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('Det_ReportError')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L147,.L16,.L77-.L16
+	.sdecl	'.debug_frame',debug,cluster('Det_ReportRuntimeError')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L147,.L18,.L83-.L18
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('Det_ReportTransientFault')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L147,.L20,.L88-.L20
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	; Module end

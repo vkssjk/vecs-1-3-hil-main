@@ -1,0 +1,249 @@
+name: ECU Test Level 3
+#
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build-sut:
+    name: Build SUT
+    runs-on: lvl3
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Cache SUT
+        id: cache-sut
+        uses: actions/cache@v4
+        env:
+          NODE_EXTRA_CA_CERTS: .\certs\Vector_Root_2.0.crt 
+        with:
+          path: |
+            .\ECU\Level3SUT
+          key: ${{ hashFiles('.\ECU\BFC\Appl\Source', '.\ECU\BFC\Appl\IncludeVtt','.\ECU\BFC\LightControl.dpa','.\ECU\BFC\Config\**') }}
+
+      - name: Cache vCAST
+        id: cache-vcast
+        uses: actions/cache@v4
+        env:
+            NODE_EXTRA_CA_CERTS: .\certs\Vector_Root_2.0.crt 
+        with:
+          path: |
+            .\ECU\VectorCAST
+          key: ${{ hashFiles('.\ECU\BFC\Appl\Source\**', '.\ECU\BFC\Appl\IncludeVtt\**') }}          
+
+      - name: Check if ZIP file exists
+        id: check_zip
+        run: |
+          if (Test-Path -Path ".\..\BSW.zip") {
+            echo "::set-output name=zip-exists::true"
+          } else {
+            echo "::set-output name=zip-exists::false"
+          }
+        
+      - name: Check if SIP file exists
+        id: check_SIP
+        run: |
+          if (Test-Path -Path ".\..\BSW") {
+            echo "::set-output name=SIP-exists::true"
+          } else {
+            echo "::set-output name=SIP-exists::false"
+          }
+  
+      - name: Download SIP 
+        if: steps.check_zip.outputs.zip-exists == 'false'
+        run: curl -L -o .\..\BSW.zip https:\\portal.vector.com\shared\36d0729e-2c75-401b-b9bf-107f6459b57f\BSW.zip
+        
+      - name: Unzip the file
+        if: steps.check_SIP.outputs.SIP-exists == 'false'
+        run: |
+          pwsh -Command "Expand-Archive -Path .\..\BSW.zip" -DestinationPath .\..
+
+      - name: Cache BSW
+        if: steps.cache-sut.outputs.cache-hit != 'true'
+        id: cache-bsw
+        env:
+          NODE_EXTRA_CA_CERTS: .\certs\Vector_Root_2.0.crt 
+        uses: actions/cache@v4
+        with:
+          path: |
+            .\ECU\BFC\Appl\GenDataVTT
+          key: ${{ hashFiles('.\ECU\BFC\LightControl.dpa','.\ECU\BFC\Config\**','.\ECU\LightControl-level3.vttmake') }}
+
+      - name: Create Cover Environment for VectorCAST
+        if: steps.cache-vcast.outputs.cache-hit != 'true'
+        run: |
+          & "$env:VECTORCAST_DIR\clicast.exe" cover env create cover_folder
+        working-directory: .\ECU\VectorCAST
+        
+      - name: Adding compiler template
+        if: steps.cache-vcast.outputs.cache-hit != 'true'
+        run: |  
+          & "$env:VECTORCAST_DIR\clicast.exe" -lc template VISUAL_CPP_C_X
+          & "$env:VECTORCAST_DIR\clicast.exe" option VCAST_COVERAGE_FOR_HEADERS TRUE
+          & "$env:VECTORCAST_DIR\clicast.exe" option VCAST_PACK_INSTRUMENTATION_STORAGE FALSE
+          & "$env:VECTORCAST_DIR\clicast.exe" option VCAST_COVERAGE_UNIT_REGISTRATION VCAST_STATIC_REGISTRATION
+          & "$env:VECTORCAST_DIR\clicast.exe" option C_DEFINE_LIST VCAST_FLUSH_DATA=1
+        working-directory: .\ECU\VectorCAST
+        
+        
+      - name: Adding Application Files
+        if: steps.cache-vcast.outputs.cache-hit != 'true'
+        run: |
+          & "$env:VECTORCAST_DIR\clicast.exe" -lc -e cover_folder cover Base_dir Add Source_Root .\..\
+          & "$env:VECTORCAST_DIR\clicast.exe" -lc -e cover_folder cover base_dir whitelist Source_Root .\BFC\Appl\Source\LightCtrl.c
+          & "$env:VECTORCAST_DIR\clicast.exe" -lc -e cover_folder cover base_dir whitelist Source_Root .\BFC\Appl\Source\IoHwAb.c
+          & "$env:VECTORCAST_DIR\clicast.exe" -lc -e cover_folder cover base_dir whitelist Source_Root .\BFC\Appl\Source\BSW_Handler.c
+          & "$env:VECTORCAST_DIR\clicast.exe" -lc -e cover_folder cover base_dir Update
+          & "$env:VECTORCAST_DIR\clicast.exe" -lc -e cover_folder cover environment set_coverage_type STATEMENT+BRANCH
+          & "$env:VECTORCAST_DIR\clicast.exe" -lc -e cover_folder cover append_cover_io -u LightCtrl.c true
+        working-directory: .\ECU\VectorCAST        
+
+      - name: Run DaVinci & vVIRTUALtarget
+        if: steps.cache-sut.outputs.cache-hit != 'true'
+        env:
+          cacheBSW: ${{ steps.cache-bsw.outputs.cache-hit }}
+          cacheVCAST: ${{ steps.cache-vcast.outputs.cache-hit }}
+          NODE_EXTRA_CA_CERTS: .\certs\Vector_Root_2.0.crt
+        run: |
+          if ($env:cacheBSW -ne 'true' || $env:cacheVCAST -ne 'true' ){
+            & "$env:VECTORCAST_DIR\clicast.exe" -lc -e cover_folder cover build --intercept ".\vttmake.bat"            
+          }
+          else {
+            & "$env:VECTORCAST_DIR\clicast.exe" -lc -e cover_folder cover build --intercept ".\vttmake_DVCfg.bat"
+          }
+          if(-Not $?)
+          {
+            Write-Host "VttMake step failed." -ForegroundColor red
+            Exit -1
+          }
+        working-directory: .\ECU\VectorCAST
+
+  build-simulation:
+    name: Build simulation
+    needs: [build-sut]
+    runs-on: lvl3
+    steps:
+      - name: Make environment
+        run: |
+            &"$env:CANoe4SWSE_InstallDir\environment-make.exe" -o .\compiled-environment-and-tests -A Win32 -s L3_vECU .\environment-make\venvironment.yaml;
+      - name: Make test units
+        run: |
+            &"$env:CANoe4SWSE_InstallDir\test-unit-make.exe" -e .\compiled-environment-and-tests\L3_vECU.venvironment -o .\compiled-environment-and-tests .\tests\auto\auto.vtestunit.yaml .\tests\basic\basic.vtestunit.yaml .\tests\testmsg\cycletime.vtestunit.yaml   
+
+  run-tests-simulation:
+    name: Run simulation
+    needs: build-simulation
+    runs-on: lvl3
+    steps:
+      - name: Run CANoe4SW Server Edition
+        id: canoe4swse
+        run : |
+          & "$env:CANoe4SWSE_InstallDir\canoe4sw-se.exe" .\compiled-environment-and-tests\L3_vECU.venvironment -d .\simulation --win32 --port-rtk-api none --test-unit .\compiled-environment-and-tests\auto.vtestunit --test-unit .\compiled-environment-and-tests\basic.vtestunit --test-unit .\compiled-environment-and-tests\cycletime.vtestunit
+          Write-Host "CANoe4SW Server Edition returned exit code $LASTEXITCODE"
+        continue-on-error: true  
+
+      - name: Add coverage data file and generate reports
+        run: |
+          & "$env:VECTORCAST_DIR\clicast.exe" -e cover_folder cover staged_instrumentation load
+          & "$env:VECTORCAST_DIR\clicast.exe" -e cover_folder cover result add ".\..\..\TESTINSS.DAT" system_tests
+          & "$env:VECTORCAST_DIR\clicast.exe" -e cover_folder cover report aggregate
+          & "$env:VECTORCAST_DIR\manage.exe" -p project --delete
+          & "$env:VECTORCAST_DIR\manage.exe" -p project --create
+          & "$env:VECTORCAST_DIR\manage.exe" -p project --level compiler_template_not_used/TestSuite --create
+          & "$env:VECTORCAST_DIR\manage.exe" -p project --level compiler_template_not_used/TestSuite --import cover_folder 
+          & "$env:VECTORCAST_DIR\vpython.exe" .\vectorcast_gitlab\vc_scripts\generate_results.py project.vcm --cobertura
+        working-directory: .\ECU\VectorCAST
+
+      - name: Export CANoe test reports
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v3
+        env:
+          NODE_EXTRA_CA_CERTS: .\certs\Vector_Root_2.0.crt 
+        with:
+          name: Test Reports CANoe-vECU lvl3
+          path: |
+            .\simulation\TestReports\
+          retention-days: 7
+
+      - name: Export vCAST coverage reports
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v3
+        env:
+          NODE_EXTRA_CA_CERTS: .\certs\Vector_Root_2.0.crt 
+        with:
+          name: Test Reports vCAST-vECU lvl3
+          path: |
+            .\ECU\VectorCAST\*.html
+          retention-days: 7                     
+
+  # Job to display the test reports
+  job-DisplayTestReports:
+    name: Display Test Report
+    if: ${{ !cancelled() }}
+    needs: run-tests-simulation
+    runs-on: lvl3
+    steps:
+      # convert all test reports to XUnit format
+      - name: Convert all test reports to XUnit format
+        run: |
+          get-childitem . -Filter *.vtestreport | foreach {
+            &"$env:TestReportViewer_InstallDir\ReportViewerCli.exe" -r $_ -xu
+          }
+        working-directory: .\Simulation\TestReports
+
+      - name: Display Code Coverage Report
+        uses: 5monkeys/cobertura-action@master
+        env:
+          NODE_EXTRA_CA_CERTS: .\certs\Vector_Root_2.0.crt         
+        with:
+          path: ECU\VectorCAST\xml_data\cobertura\coverage_results_project.xml
+          minimum_coverage: 20
+          show_line: true
+          show_branch: true
+          skip_covered: false
+          report_name: VectorCAST Code Coverage
+          show_missing: true        
+
+      # display the test results using the dorny\test-reporter action
+      - name: Display test results
+        uses: dorny/test-reporter@v1.9.1
+        env:
+          NODE_EXTRA_CA_CERTS: .\certs\Vector_Root_2.0.crt        
+        with:
+          name: vECU lvl3 Test Results                                       # Name of the check run which will be created
+          path: "./simulation/TestReports/*.xml"                   # Path to test results
+          reporter: java-junit                                          # Format of test results
+          fail-on-error: 'true'                                        # Mark as failing job if test report contains any failed test (workaround because run simulation step must pass for Vcast reporting) 
+
+  # Job to display the test reports in squore
+  job-AddToSquore:
+    name: Add Test Report to Squore
+    if: ${{ !cancelled() }}
+    needs: run-tests-simulation
+    runs-on: dev
+    steps:
+      - name: Download test reports
+        uses: actions/download-artifact@v2
+        env:
+          NODE_EXTRA_CA_CERTS: .\..\..\..\certs\Vector_Root_2.0.crt  
+        with:
+          name: Test Reports CANoe-vECU lvl3
+          path: ./downloaded-reports-lvl3/
+
+      # convert all test reports to XML format for Squore
+      - name: Convert all test reports to xml format
+        run: |
+          get-childitem . -Filter *.vtestreport | foreach {
+            &"$env:TestReportViewer_InstallDir\ReportViewerCli.exe" -r $_ -e
+          }
+        working-directory: .\downloaded-reports-lvl3\  
+      
+      #http://se01096nb:8180/ user:vecs pass:vecs123
+      - name: Upload test reports to Squore
+        run: |
+          & .\import.bat "lvl3" "lvl3-${{ github.run_id }}-${{ github.run_attempt }}"
+        working-directory: .\..\..\..\SquoreAgent\  

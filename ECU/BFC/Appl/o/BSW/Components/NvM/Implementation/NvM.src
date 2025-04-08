@@ -1,0 +1,7250 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v6.2r1 Build 17012451 SN 07925145"
+	.compiler_invocation	"ctc -f cc16820a -c99 --integer-enumeration -D__CPU__=userdef162 -D__CPU_USERDEF162__ --core=tc1.6.2 --fp-model=+float -DBRS_PLATFORM_AURIX -DBRS_COMP_TASKING -I../../../../BSW/Components/BswM/Implementation -I../../../../BSW/Components/CanIf/Implementation -I../../../../BSW/Components/CanSM/Implementation -I../../../../BSW/Components/CanTp/Implementation -I../../../../BSW/Components/Can_30_Core/Implementation -I../../../../BSW/Components/Com/Implementation -I../../../../BSW/Components/ComM/Implementation -I../../../../BSW/Components/Crc -I../../../../BSW/Components/Crc/Implementation -I../../../../BSW/Components/Dcm/Implementation -I../../../../BSW/Components/Dem/Implementation -I../../../../BSW/Components/Det/Implementation -I../../../../BSW/Components/EcuM/Implementation -I../../../../BSW/Components/GenData -I../../../../BSW/Components/Mcal_Tc3xx -I../../../../BSW/Components/Mcal_Tc3xx/Implementation -I../../../../BSW/Components/MemIf -I../../../../BSW/Components/MemIf/Implementation -I../../../../BSW/Components/NvM -I../../../../BSW/Components/NvM/Implementation -I../../../../BSW/Components/Os/Implementation -I../../../../BSW/Components/PduR/Implementation -I../../../../BSW/Components/VStdLib/Implementation -I../../../../BSW/Components/vCan_30_Mcan/Implementation -I../../../../BSW/DemoComponents/vLinkGen/Implementation -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Autosar_Srv -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Integration -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Irq/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Infra_Prod/Sfr/TC39xB/_Reg -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Adc/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Dio/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Fee/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Fls_17_Dmu/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/McalLib/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/McalLib/ssc/inc/AS440 -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Mcu/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Port/ssc/inc -I../../../../BSW/Components/_Common/Implementation -IGenData -IInclude -ID:/TASKING/TriCorev6.2r1/ctc/include -IGenData/Components -IGenData/inc --debug-info=default --align=4 --default-a0-size=0 --default-a1-size=0 --default-near-size=0 --optimize=acefgIklMnopRsUvwy,+predict --tradeoff=2 --language=-gcc,+volatile,-strings,-comments -o o\\BSW\\Components\\NvM\\Implementation\\NvM.src ../../../../BSW/Components/NvM/Implementation/NvM.c"
+	.compiler_name		"ctc"
+	;source	'../../../../BSW/Components/NvM/Implementation/NvM.c'
+
+	
+$TC162
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_Init')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_Init
+; Function NvM_Init
+.L344:
+	.align	4
+NvM_Init:	.type	func
+.L293:
+	call	NvM_QueueInit
+.L748:
+	mov	d15,#0
+	movh.a	a15,#@his(NvM_ApiFlags_u8)
+.L749:
+	st.b	[a15]@los(NvM_ApiFlags_u8),d15
+.L750:
+	movh.a	a15,#@his(NvM_BlockMngmtArea_at)
+	lea	a15,[a15]@los(NvM_BlockMngmtArea_at)
+.L751:
+	st.b	[a15]1,d15
+.L752:
+	mov.a	a2,#2
+.L2:
+	st.b	[a15+]4,d15
+	loop	a2,.L2
+.L753:
+	movh.a	a15,#@his(NvM_DcmBlockMngmt_t)
+	lea	a15,[a15]@los(NvM_DcmBlockMngmt_t)
+.L754:
+	st.b	[a15],d15
+.L755:
+	st.b	[a15]2,d15
+.L756:
+	st.b	[a15]1,d15
+.L757:
+	call	NvM_JobProcInit
+.L758:
+	j	NvM_MemIfAbstraction_Init
+.L474:
+	
+__NvM_Init_function_end:
+	.size	NvM_Init,__NvM_Init_function_end-NvM_Init
+.L345:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_SetDataIndex')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_SetDataIndex
+; Function NvM_SetDataIndex
+.L350:
+	.align	4
+NvM_SetDataIndex:	.type	func
+.L295:
+	movh.a	a15,#@his(NvM_TaskState_t)
+	ld.w	d15,[a15]@los(NvM_TaskState_t)
+.L763:
+	mov	d8,#1
+.L670:
+	mov	d7,#0
+.L671:
+	jne	d15,#0,.L3
+.L764:
+	mov	d7,#20
+	j	.L4
+.L3:
+	insert	d0,d4,#0,#15,#17
+	add	d15,d0,#-1
+	extr.u	d15,d15,#0,#16
+.L765:
+	jlt.u	d15,#2,.L5
+.L766:
+	mov	d7,#10
+	j	.L6
+.L5:
+	jeq	d4,#0,.L7
+.L767:
+	movh.a	a15,#@his(NvM_CurrentJob_t)
+	lea	a15,[a15]@los(NvM_CurrentJob_t)
+.L768:
+	ld.w	d15,[a15]2
+.L769:
+	jeq	d15,#5,.L8
+.L770:
+	jne	d15,#6,.L9
+.L8:
+	ld.hu	d1,[a15]0
+.L771:
+	movh.a	a15,#@his(NvM_ApiFlags_u8)
+	ld.bu	d15,[a15]@los(NvM_ApiFlags_u8)
+.L772:
+	jz.t	d15:1,.L10
+.L773:
+	lt.u	d15,d4,d1
+	j	.L11
+.L10:
+	lt.u	d15,d1,d4
+	j	.L12
+.L9:
+.L7:
+	jne	d4,d0,.L13
+.L774:
+	movh.a	a15,#@his(NvM_BlockMngmtArea_at)
+	lea	a15,[a15]@los(NvM_BlockMngmtArea_at)
+.L775:
+	addsc.a	a15,a15,d0,#2
+.L776:
+	j	.L14
+.L13:
+	movh.a	a15,#@his(NvM_DcmBlockMngmt_t)
+	lea	a15,[a15]@los(NvM_DcmBlockMngmt_t)
+.L14:
+	ld.bu	d15,[a15]1
+.L490:
+	eq	d15,d15,#2
+.L12:
+.L11:
+	jeq	d15,#0,.L15
+.L484:
+	mov	d7,#21
+	j	.L16
+.L15:
+	mul	d15,d0,#68
+	movh.a	a15,#@his(NvM_BlockDescriptorTable_at)
+.L672:
+	lea	a15,[a15]@los(NvM_BlockDescriptorTable_at)
+.L777:
+	addsc.a	a15,a15,d15,#0
+.L778:
+	ld.bu	d15,[a15]61
+.L779:
+	jlt.u	d5,d15,.L17
+.L780:
+	mov	d7,#12
+	j	.L18
+.L17:
+	ld.bu	d15,[a15]63
+	extr.u	d15,d15,#4,#2
+.L781:
+	jz.t	d15:1,.L19
+.L494:
+	jne	d4,d0,.L20
+.L782:
+	movh.a	a15,#@his(NvM_BlockMngmtArea_at)
+	lea	a15,[a15]@los(NvM_BlockMngmtArea_at)
+.L783:
+	addsc.a	a15,a15,d0,#2
+.L784:
+	j	.L21
+.L20:
+	movh.a	a15,#@his(NvM_DcmBlockMngmt_t)
+	lea	a15,[a15]@los(NvM_DcmBlockMngmt_t)
+.L21:
+	st.b	[a15],d5
+.L495:
+	mov	d8,#0
+	j	.L22
+.L19:
+	mov	d7,#11
+.L22:
+.L18:
+.L16:
+.L6:
+.L4:
+	jeq	d7,#0,.L23
+.L785:
+	mov	d4,#20
+.L668:
+	mov	d5,#0
+.L669:
+	mov	d6,#1
+	call	Det_ReportError
+.L23:
+	mov	d2,d8
+	ret
+.L478:
+	
+__NvM_SetDataIndex_function_end:
+	.size	NvM_SetDataIndex,__NvM_SetDataIndex_function_end-NvM_SetDataIndex
+.L351:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_GetDataIndex')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_GetDataIndex
+; Function NvM_GetDataIndex
+.L356:
+	.align	4
+NvM_GetDataIndex:	.type	func
+.L297:
+	mov	d8,#1
+.L674:
+	mov	d7,#0
+	jnz.a	a4,.L25
+.L675:
+	mov	d7,#14
+	j	.L26
+.L25:
+	movh.a	a15,#@his(NvM_TaskState_t)
+	ld.w	d15,[a15]@los(NvM_TaskState_t)
+.L790:
+	jne	d15,#0,.L27
+.L791:
+	mov	d7,#20
+	j	.L28
+.L27:
+	insert	d15,d4,#0,#15,#17
+	add	d0,d15,#-1
+	extr.u	d0,d0,#0,#16
+.L792:
+	jlt.u	d0,#2,.L29
+.L793:
+	mov	d7,#10
+	j	.L30
+.L29:
+	mul	d0,d15,#68
+	movh.a	a15,#@his(NvM_BlockDescriptorTable_at)
+	lea	a15,[a15]@los(NvM_BlockDescriptorTable_at)
+.L794:
+	addsc.a	a15,a15,d0,#0
+.L795:
+	ld.bu	d0,[a15]63
+	extr.u	d0,d0,#4,#2
+.L796:
+	jz.t	d0:1,.L31
+.L502:
+	jne	d15,d4,.L32
+.L797:
+	movh.a	a15,#@his(NvM_BlockMngmtArea_at)
+	lea	a15,[a15]@los(NvM_BlockMngmtArea_at)
+.L798:
+	addsc.a	a15,a15,d15,#2
+.L799:
+	j	.L33
+.L32:
+	movh.a	a15,#@his(NvM_DcmBlockMngmt_t)
+	lea	a15,[a15]@los(NvM_DcmBlockMngmt_t)
+.L33:
+	ld.bu	d15,[a15]
+.L503:
+	mov	d8,#0
+	j	.L34
+.L31:
+	mov	d7,#11
+.L30:
+	mov	d15,#0
+.L28:
+.L34:
+	st.b	[a4],d15
+.L26:
+	jeq	d7,#0,.L35
+.L800:
+	mov	d4,#20
+.L673:
+	mov	d5,#0
+	mov	d6,#2
+	call	Det_ReportError
+.L35:
+	mov	d2,d8
+	ret
+.L496:
+	
+__NvM_GetDataIndex_function_end:
+	.size	NvM_GetDataIndex,__NvM_GetDataIndex_function_end-NvM_GetDataIndex
+.L357:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_SetBlockProtection')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_SetBlockProtection
+; Function NvM_SetBlockProtection
+.L362:
+	.align	4
+NvM_SetBlockProtection:	.type	func
+.L299:
+	movh.a	a15,#@his(NvM_TaskState_t)
+.L805:
+	mov	d8,d5
+	ld.w	d15,[a15]@los(NvM_TaskState_t)
+.L677:
+	mov	d9,#1
+.L678:
+	mov	d10,#0
+.L679:
+	jne	d15,#0,.L37
+.L806:
+	mov	d10,#20
+	j	.L38
+.L37:
+	insert	d15,d4,#0,#15,#17
+	add	d0,d15,#-1
+	extr.u	d0,d0,#0,#16
+.L807:
+	jlt.u	d0,#2,.L39
+.L808:
+	mov	d10,#10
+	j	.L40
+.L39:
+	mul	d0,d15,#68
+	movh.a	a15,#@his(NvM_BlockDescriptorTable_at)
+.L809:
+	movh.a	a4,#@his(NvM_BlockMngmtArea_at)
+.L810:
+	lea	a15,[a15]@los(NvM_BlockDescriptorTable_at)
+.L811:
+	addsc.a	a2,a15,d0,#0
+.L812:
+	lea	a4,[a4]@los(NvM_BlockMngmtArea_at)
+.L813:
+	addsc.a	a15,a4,d15,#2
+.L814:
+	ld.bu	d1,[a2]61
+.L815:
+	ld.bu	d0,[a15]
+.L816:
+	jlt.u	d0,d1,.L41
+.L817:
+	mov	d10,#12
+	j	.L42
+.L41:
+	jeq	d4,#0,.L43
+.L818:
+	movh.a	a15,#@his(NvM_CurrentJob_t)
+	lea	a15,[a15]@los(NvM_CurrentJob_t)
+.L819:
+	ld.w	d0,[a15]2
+.L820:
+	jeq	d0,#5,.L44
+.L821:
+	jne	d0,#6,.L45
+.L44:
+	ld.hu	d0,[a15]0
+.L822:
+	movh.a	a15,#@his(NvM_ApiFlags_u8)
+	ld.bu	d1,[a15]@los(NvM_ApiFlags_u8)
+.L823:
+	jz.t	d1:1,.L46
+.L824:
+	lt.u	d0,d4,d0
+	j	.L47
+.L46:
+	lt.u	d0,d0,d4
+	j	.L48
+.L45:
+.L43:
+	jne	d15,d4,.L49
+.L825:
+	addsc.a	a15,a4,d15,#2
+.L826:
+	j	.L50
+.L49:
+	movh.a	a15,#@his(NvM_DcmBlockMngmt_t)
+	lea	a15,[a15]@los(NvM_DcmBlockMngmt_t)
+.L50:
+	ld.bu	d0,[a15]1
+.L513:
+	eq	d0,d0,#2
+.L48:
+.L47:
+	jeq	d0,#0,.L51
+.L510:
+	mov	d10,#21
+	j	.L52
+.L51:
+	jne	d15,d4,.L53
+.L827:
+	addsc.a	a15,a4,d15,#2
+.L828:
+	j	.L54
+.L53:
+	movh.a	a15,#@his(NvM_DcmBlockMngmt_t)
+	lea	a15,[a15]@los(NvM_DcmBlockMngmt_t)
+.L54:
+	ld.bu	d15,[a2]48
+	extr.u	d4,d15,#2,#1
+	call	NvM_IsBooleanBitfieldTrue
+.L676:
+	jne	d2,#0,.L55
+.L829:
+	call	NvM_EnterCriticalSection
+.L516:
+	ld.bu	d15,[a15]2
+.L517:
+	jeq	d8,#0,.L56
+.L830:
+	or	d15,#128
+	j	.L57
+.L56:
+	and	d15,#127
+.L57:
+	st.b	[a15]2,d15
+.L518:
+	call	NvM_ExitCriticalSection
+.L831:
+	mov	d9,#0
+	j	.L58
+.L55:
+	mov	d10,#24
+.L58:
+.L52:
+.L42:
+.L40:
+.L38:
+	jeq	d10,#0,.L59
+.L832:
+	mov	d4,#20
+	mov	d5,#0
+	mov	d6,#3
+	mov	d7,d10
+	call	Det_ReportError
+.L59:
+	mov	d2,d9
+	ret
+.L505:
+	
+__NvM_SetBlockProtection_function_end:
+	.size	NvM_SetBlockProtection,__NvM_SetBlockProtection_function_end-NvM_SetBlockProtection
+.L363:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_GetErrorStatus')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_GetErrorStatus
+; Function NvM_GetErrorStatus
+.L368:
+	.align	4
+NvM_GetErrorStatus:	.type	func
+.L301:
+	movh.a	a15,#@his(NvM_TaskState_t)
+	ld.w	d15,[a15]@los(NvM_TaskState_t)
+.L837:
+	mov	d8,#1
+.L681:
+	mov	d7,#0
+.L682:
+	jne	d15,#0,.L61
+.L838:
+	mov	d7,#20
+	j	.L62
+.L61:
+	insert	d15,d4,#0,#15,#17
+.L839:
+	jlt.u	d15,#3,.L63
+.L840:
+	mov	d7,#10
+	j	.L64
+.L63:
+	jnz.a	a4,.L65
+.L841:
+	mov	d7,#14
+	j	.L66
+.L65:
+	jeq	d4,#0,.L67
+.L842:
+	movh.a	a15,#@his(NvM_CurrentJob_t)
+	lea	a15,[a15]@los(NvM_CurrentJob_t)
+.L843:
+	ld.w	d0,[a15]2
+.L844:
+	jeq	d0,#5,.L68
+.L845:
+	jne	d0,#6,.L69
+.L68:
+	ld.hu	d0,[a15]0
+.L846:
+	movh.a	a15,#@his(NvM_ApiFlags_u8)
+	ld.bu	d1,[a15]@los(NvM_ApiFlags_u8)
+.L847:
+	jz.t	d1:1,.L70
+.L848:
+	lt.u	d0,d4,d0
+	j	.L71
+.L70:
+	lt.u	d0,d0,d4
+	j	.L72
+.L69:
+.L67:
+	jne	d15,d4,.L73
+.L849:
+	movh.a	a15,#@his(NvM_BlockMngmtArea_at)
+	lea	a15,[a15]@los(NvM_BlockMngmtArea_at)
+.L850:
+	addsc.a	a15,a15,d15,#2
+.L851:
+	j	.L74
+.L73:
+	movh.a	a15,#@his(NvM_DcmBlockMngmt_t)
+	lea	a15,[a15]@los(NvM_DcmBlockMngmt_t)
+.L74:
+	ld.bu	d0,[a15]1
+.L528:
+	eq	d0,d0,#2
+.L72:
+.L71:
+	jeq	d0,#0,.L75
+.L525:
+	mov	d15,#2
+	j	.L76
+.L75:
+	jne	d15,d4,.L77
+.L852:
+	movh.a	a15,#@his(NvM_BlockMngmtArea_at)
+	lea	a15,[a15]@los(NvM_BlockMngmtArea_at)
+.L853:
+	addsc.a	a15,a15,d15,#2
+.L854:
+	j	.L78
+.L77:
+	movh.a	a15,#@his(NvM_DcmBlockMngmt_t)
+	lea	a15,[a15]@los(NvM_DcmBlockMngmt_t)
+.L78:
+	ld.bu	d15,[a15]1
+.L76:
+	mov	d8,#0
+	st.b	[a4],d15
+.L66:
+.L64:
+.L62:
+	jeq	d7,#0,.L79
+.L855:
+	mov	d4,#20
+.L680:
+	mov	d5,#0
+	mov	d6,#4
+	call	Det_ReportError
+.L79:
+	mov	d2,d8
+	ret
+.L519:
+	
+__NvM_GetErrorStatus_function_end:
+	.size	NvM_GetErrorStatus,__NvM_GetErrorStatus_function_end-NvM_GetErrorStatus
+.L369:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_SetRamBlockStatus')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_SetRamBlockStatus
+; Function NvM_SetRamBlockStatus
+.L374:
+	.align	4
+NvM_SetRamBlockStatus:	.type	func
+.L303:
+	movh.a	a15,#@his(NvM_TaskState_t)
+.L860:
+	mov	e8,d5,d4
+	ld.w	d15,[a15]@los(NvM_TaskState_t)
+.L861:
+	mov	d10,#1
+.L684:
+	mov	d11,#0
+.L685:
+	jne	d15,#0,.L81
+.L862:
+	mov	d11,#20
+	j	.L82
+.L81:
+	insert	d12,d8,#0,#15,#17
+.L686:
+	add	d15,d12,#-1
+	extr.u	d0,d15,#0,#16
+.L863:
+	jlt.u	d0,#2,.L83
+.L864:
+	mov	d11,#10
+	j	.L84
+.L83:
+	mul	d15,d12,#68
+	movh.a	a15,#@his(NvM_BlockDescriptorTable_at)
+.L865:
+	movh.a	a12,#@his(NvM_BlockMngmtArea_at)
+.L866:
+	lea	a15,[a15]@los(NvM_BlockDescriptorTable_at)
+.L867:
+	addsc.a	a2,a15,d15,#0
+.L868:
+	lea	a12,[a12]@los(NvM_BlockMngmtArea_at)
+.L869:
+	addsc.a	a15,a12,d12,#2
+.L870:
+	ld.bu	d0,[a2]61
+.L871:
+	ld.bu	d15,[a15]
+.L872:
+	jlt.u	d15,d0,.L85
+.L873:
+	mov	d11,#12
+	j	.L86
+.L85:
+	jeq	d8,#0,.L87
+.L687:
+	movh.a	a15,#@his(NvM_CurrentJob_t)
+	lea	a15,[a15]@los(NvM_CurrentJob_t)
+.L874:
+	ld.w	d15,[a15]2
+.L875:
+	jeq	d15,#5,.L88
+.L876:
+	jne	d15,#6,.L89
+.L88:
+	ld.hu	d0,[a15]0
+.L877:
+	movh.a	a15,#@his(NvM_ApiFlags_u8)
+	ld.bu	d15,[a15]@los(NvM_ApiFlags_u8)
+.L878:
+	jz.t	d15:1,.L90
+.L688:
+	lt.u	d15,d8,d0
+	j	.L91
+.L90:
+	lt.u	d15,d0,d8
+	j	.L92
+.L89:
+.L87:
+	jne	d8,d12,.L93
+.L689:
+	addsc.a	a15,a12,d12,#2
+.L879:
+	j	.L94
+.L93:
+	movh.a	a15,#@his(NvM_DcmBlockMngmt_t)
+	lea	a15,[a15]@los(NvM_DcmBlockMngmt_t)
+.L94:
+	ld.bu	d15,[a15]1
+.L538:
+	eq	d15,d15,#2
+.L92:
+.L91:
+	jeq	d15,#0,.L95
+.L535:
+	mov	d11,#21
+	j	.L96
+.L95:
+	ld.bu	d15,[a2]49
+.L690:
+	extr.u	d4,d15,#1,#1
+	call	NvM_IsBooleanBitfieldTrue
+.L683:
+	jeq	d2,#0,.L97
+.L540:
+	jne	d8,d12,.L98
+.L691:
+	addsc.a	a15,a12,d12,#2
+.L880:
+	j	.L99
+.L98:
+	movh.a	a15,#@his(NvM_DcmBlockMngmt_t)
+	lea	a15,[a15]@los(NvM_DcmBlockMngmt_t)
+.L99:
+	call	NvM_EnterCriticalSection
+.L542:
+	ld.bu	d15,[a15]2
+.L543:
+	jeq	d9,#0,.L100
+.L692:
+	or	d15,#3
+	j	.L101
+.L100:
+	and	d15,#252
+.L101:
+	st.b	[a15]2,d15
+.L544:
+	call	NvM_ExitCriticalSection
+.L881:
+	mov	d10,#0
+	j	.L102
+.L97:
+	mov	d11,#11
+.L102:
+.L96:
+.L86:
+.L84:
+.L82:
+	jeq	d11,#0,.L103
+.L882:
+	mov	d4,#20
+	mov	d5,#0
+	mov	d6,#5
+	mov	d7,d11
+	call	Det_ReportError
+.L103:
+	mov	d2,d10
+	ret
+.L530:
+	
+__NvM_SetRamBlockStatus_function_end:
+	.size	NvM_SetRamBlockStatus,__NvM_SetRamBlockStatus_function_end-NvM_SetRamBlockStatus
+.L375:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_ReadBlock')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_ReadBlock
+; Function NvM_ReadBlock
+.L380:
+	.align	4
+NvM_ReadBlock:	.type	func
+.L305:
+	movh.a	a15,#@his(NvM_TaskState_t)
+.L887:
+	mov	d8,d4
+	ld.w	d15,[a15]@los(NvM_TaskState_t)
+.L694:
+	mov	d9,#1
+	mov.aa	a12,a4
+.L695:
+	mov	d10,#0
+.L696:
+	jne	d15,#0,.L105
+.L888:
+	mov	d10,#20
+	j	.L106
+.L105:
+	insert	d11,d8,#0,#15,#17
+	add	d15,d11,#-1
+	extr.u	d0,d15,#0,#16
+.L889:
+	jlt.u	d0,#2,.L107
+.L890:
+	mov	d10,#10
+	j	.L108
+.L107:
+	mul	d15,d11,#68
+	movh.a	a15,#@his(NvM_BlockDescriptorTable_at)
+.L891:
+	movh.a	a13,#@his(NvM_BlockMngmtArea_at)
+.L892:
+	lea	a15,[a15]@los(NvM_BlockDescriptorTable_at)
+.L893:
+	addsc.a	a15,a15,d15,#0
+.L894:
+	lea	a13,[a13]@los(NvM_BlockMngmtArea_at)
+.L895:
+	addsc.a	a2,a13,d11,#2
+.L896:
+	ld.bu	d15,[a15]61
+.L897:
+	ld.bu	d0,[a2]
+.L898:
+	jlt.u	d0,d15,.L109
+.L899:
+	mov	d10,#12
+	j	.L110
+.L109:
+	mov	d0,d9
+	jnz.a	a12,.L111
+.L697:
+	mov	d0,#0
+.L900:
+	jne	d11,d8,.L112
+.L901:
+	ld.w	d15,[a15]
+.L902:
+	jne	d15,#0,.L113
+.L903:
+	ld.w	d15,[a15]24
+.L904:
+	jeq	d15,#0,.L114
+.L113:
+	mov	d0,d9
+.L114:
+.L112:
+.L111:
+	jne	d0,#0,.L115
+.L552:
+	mov	d10,#13
+	j	.L116
+.L115:
+	jeq	d8,#0,.L117
+.L905:
+	movh.a	a15,#@his(NvM_CurrentJob_t)
+	lea	a15,[a15]@los(NvM_CurrentJob_t)
+.L906:
+	ld.w	d15,[a15]2
+.L907:
+	jeq	d15,#5,.L118
+.L908:
+	jne	d15,#6,.L119
+.L118:
+	ld.hu	d0,[a15]0
+.L698:
+	movh.a	a15,#@his(NvM_ApiFlags_u8)
+	ld.bu	d15,[a15]@los(NvM_ApiFlags_u8)
+.L909:
+	jz.t	d15:1,.L120
+.L910:
+	lt.u	d15,d8,d0
+	j	.L121
+.L120:
+	lt.u	d15,d0,d8
+	j	.L122
+.L119:
+.L117:
+	jne	d8,d11,.L123
+.L911:
+	mov.aa	a15,a2
+.L912:
+	j	.L124
+.L123:
+	movh.a	a15,#@his(NvM_DcmBlockMngmt_t)
+	lea	a15,[a15]@los(NvM_DcmBlockMngmt_t)
+.L124:
+	ld.bu	d15,[a15]1
+.L562:
+	eq	d15,d15,#2
+.L122:
+.L121:
+	jeq	d15,#0,.L125
+.L559:
+	mov	d10,#21
+	j	.L126
+.L125:
+	mov	d5,d9
+	call	NvM_QueueJob
+.L693:
+	jeq	d2,#0,.L127
+.L913:
+	jnz.a	a12,.L128
+.L564:
+	jne	d8,d11,.L129
+.L914:
+	addsc.a	a15,a13,d11,#2
+.L915:
+	j	.L130
+.L129:
+	movh.a	a15,#@his(NvM_DcmBlockMngmt_t)
+	lea	a15,[a15]@los(NvM_DcmBlockMngmt_t)
+.L130:
+	call	NvM_EnterCriticalSection
+.L566:
+	ld.bu	d15,[a15]2
+.L567:
+	and	d15,#252
+	st.b	[a15]2,d15
+.L916:
+	call	NvM_ExitCriticalSection
+.L128:
+	mov	d9,#0
+.L127:
+.L126:
+.L116:
+.L110:
+.L108:
+.L106:
+	jeq	d10,#0,.L131
+.L917:
+	mov	d4,#20
+	mov	d5,#0
+	mov	d6,#6
+	mov	d7,d10
+	call	Det_ReportError
+.L131:
+	mov	d2,d9
+	ret
+.L545:
+	
+__NvM_ReadBlock_function_end:
+	.size	NvM_ReadBlock,__NvM_ReadBlock_function_end-NvM_ReadBlock
+.L381:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_ReadPRAMBlock')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_ReadPRAMBlock
+; Function NvM_ReadPRAMBlock
+.L386:
+	.align	4
+NvM_ReadPRAMBlock:	.type	func
+.L307:
+	mov.a	a4,#0
+	j	NvM_ReadBlock
+.L568:
+	
+__NvM_ReadPRAMBlock_function_end:
+	.size	NvM_ReadPRAMBlock,__NvM_ReadPRAMBlock_function_end-NvM_ReadPRAMBlock
+.L387:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_WriteBlock')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_WriteBlock
+; Function NvM_WriteBlock
+.L392:
+	.align	4
+NvM_WriteBlock:	.type	func
+.L309:
+	movh.a	a15,#@his(NvM_TaskState_t)
+	ld.w	d15,[a15]@los(NvM_TaskState_t)
+.L926:
+	mov	d8,#1
+	mov.aa	a12,a4
+.L701:
+	mov	d9,#0
+.L702:
+	jne	d15,#0,.L134
+.L927:
+	mov	d9,#20
+	j	.L135
+.L134:
+	insert	d15,d4,#0,#15,#17
+	add	d0,d15,#-1
+	extr.u	d0,d0,#0,#16
+.L928:
+	jlt.u	d0,#2,.L136
+.L929:
+	mov	d9,#10
+	j	.L137
+.L136:
+	mul	d0,d15,#68
+	movh.a	a15,#@his(NvM_BlockDescriptorTable_at)
+.L930:
+	movh.a	a2,#@his(NvM_BlockMngmtArea_at)
+.L931:
+	lea	a15,[a15]@los(NvM_BlockDescriptorTable_at)
+.L932:
+	addsc.a	a15,a15,d0,#0
+.L933:
+	lea	a2,[a2]@los(NvM_BlockMngmtArea_at)
+.L934:
+	addsc.a	a4,a2,d15,#2
+.L700:
+	ld.bu	d1,[a15]61
+.L935:
+	ld.bu	d0,[a4]
+.L936:
+	jlt.u	d0,d1,.L138
+.L937:
+	mov	d9,#12
+	j	.L139
+.L138:
+	mov	d0,d8
+	jnz.a	a12,.L140
+.L703:
+	mov	d0,#0
+.L938:
+	jne	d15,d4,.L141
+.L939:
+	ld.w	d1,[a15]
+.L940:
+	jne	d1,#0,.L142
+.L941:
+	ld.w	d1,[a15]24
+.L942:
+	jeq	d1,#0,.L143
+.L142:
+	mov	d0,d8
+.L143:
+.L141:
+.L140:
+	jne	d0,#0,.L144
+.L576:
+	mov	d9,#13
+	j	.L145
+.L144:
+	jeq	d4,#0,.L146
+.L943:
+	movh.a	a15,#@his(NvM_CurrentJob_t)
+	lea	a15,[a15]@los(NvM_CurrentJob_t)
+.L944:
+	ld.w	d0,[a15]2
+.L704:
+	jeq	d0,#5,.L147
+.L945:
+	jne	d0,#6,.L148
+.L147:
+	ld.hu	d0,[a15]0
+.L946:
+	movh.a	a15,#@his(NvM_ApiFlags_u8)
+	ld.bu	d1,[a15]@los(NvM_ApiFlags_u8)
+.L947:
+	jz.t	d1:1,.L149
+.L948:
+	lt.u	d0,d4,d0
+	j	.L150
+.L149:
+	lt.u	d0,d0,d4
+	j	.L151
+.L148:
+.L146:
+	jne	d15,d4,.L152
+.L949:
+	mov.aa	a15,a4
+.L950:
+	j	.L153
+.L152:
+	movh.a	a15,#@his(NvM_DcmBlockMngmt_t)
+	lea	a15,[a15]@los(NvM_DcmBlockMngmt_t)
+.L153:
+	ld.bu	d0,[a15]1
+.L583:
+	eq	d0,d0,#2
+.L151:
+.L150:
+	jeq	d0,#0,.L154
+.L580:
+	mov	d9,#21
+	j	.L155
+.L154:
+	jne	d15,d4,.L156
+.L951:
+	mov.aa	a15,a4
+.L952:
+	j	.L157
+.L156:
+	movh.a	a15,#@his(NvM_DcmBlockMngmt_t)
+	lea	a15,[a15]@los(NvM_DcmBlockMngmt_t)
+.L157:
+	ld.bu	d15,[a15]2
+.L953:
+	jnz.t	d15:7,.L158
+.L954:
+	movh.a	a2,#@his(NvM_DcmBlockMngmt_t)
+	lea	a2,[a2]@los(NvM_DcmBlockMngmt_t)
+.L955:
+	jeq.a	a15,a2,.L159
+.L956:
+	and	d15,#64
+.L957:
+	eq	d0,d15,#0
+	j	.L160
+.L159:
+	mov	d0,d8
+.L160:
+.L158:
+	jeq	d0,#0,.L161
+.L589:
+	mov	d5,#0
+	mov.aa	a4,a12
+.L705:
+	call	NvM_QueueJob
+.L699:
+	jeq	d2,#0,.L162
+.L958:
+	jnz.a	a12,.L163
+.L959:
+	call	NvM_EnterCriticalSection
+.L586:
+	ld.bu	d15,[a15]2
+.L587:
+	or	d15,#3
+	st.b	[a15]2,d15
+.L960:
+	call	NvM_ExitCriticalSection
+.L163:
+	mov	d8,#0
+.L162:
+.L161:
+.L155:
+.L145:
+.L139:
+.L137:
+.L135:
+	jeq	d9,#0,.L164
+.L961:
+	mov	d4,#20
+	mov	d5,#0
+	mov	d6,#7
+	mov	d7,d9
+	call	Det_ReportError
+.L164:
+	mov	d2,d8
+	ret
+.L570:
+	
+__NvM_WriteBlock_function_end:
+	.size	NvM_WriteBlock,__NvM_WriteBlock_function_end-NvM_WriteBlock
+.L393:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_WritePRAMBlock')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_WritePRAMBlock
+; Function NvM_WritePRAMBlock
+.L398:
+	.align	4
+NvM_WritePRAMBlock:	.type	func
+.L311:
+	mov.a	a4,#0
+	j	NvM_WriteBlock
+.L594:
+	
+__NvM_WritePRAMBlock_function_end:
+	.size	NvM_WritePRAMBlock,__NvM_WritePRAMBlock_function_end-NvM_WritePRAMBlock
+.L399:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_RestoreBlockDefaults')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_RestoreBlockDefaults
+; Function NvM_RestoreBlockDefaults
+.L404:
+	.align	4
+NvM_RestoreBlockDefaults:	.type	func
+.L313:
+	movh.a	a15,#@his(NvM_TaskState_t)
+.L970:
+	mov	d8,d4
+	ld.w	d15,[a15]@los(NvM_TaskState_t)
+.L708:
+	mov	d9,#1
+	mov.aa	a12,a4
+.L709:
+	mov	d10,#0
+.L710:
+	jne	d15,#0,.L167
+.L971:
+	mov	d10,#20
+	j	.L168
+.L167:
+	insert	d11,d8,#0,#15,#17
+	add	d15,d11,#-1
+	extr.u	d0,d15,#0,#16
+.L972:
+	jlt.u	d0,#2,.L169
+.L973:
+	mov	d10,#10
+	j	.L170
+.L169:
+	mul	d15,d11,#68
+	movh.a	a15,#@his(NvM_BlockDescriptorTable_at)
+.L974:
+	movh.a	a13,#@his(NvM_BlockMngmtArea_at)
+.L975:
+	lea	a15,[a15]@los(NvM_BlockDescriptorTable_at)
+.L976:
+	addsc.a	a4,a15,d15,#0
+.L707:
+	lea	a13,[a13]@los(NvM_BlockMngmtArea_at)
+.L977:
+	addsc.a	a15,a13,d11,#2
+.L978:
+	ld.bu	d15,[a4]61
+.L979:
+	ld.bu	d0,[a15]
+.L980:
+	jlt.u	d0,d15,.L171
+.L981:
+	mov	d10,#12
+	j	.L172
+.L171:
+	mov	d0,d9
+	jnz.a	a12,.L173
+.L711:
+	mov	d0,#0
+.L982:
+	jne	d11,d8,.L174
+.L983:
+	ld.w	d15,[a4]
+.L984:
+	jne	d15,#0,.L175
+.L985:
+	ld.w	d15,[a4]24
+.L986:
+	jeq	d15,#0,.L176
+.L175:
+	mov	d0,d9
+.L176:
+.L174:
+.L173:
+	jne	d0,#0,.L177
+.L601:
+	mov	d10,#13
+	j	.L178
+.L177:
+	ld.w	d15,[a4]4
+.L987:
+	jne	d15,#0,.L179
+.L988:
+	call	NvM_QryIsInitCallbackConfigured
+.L706:
+	jne	d2,#0,.L180
+.L989:
+	mov	d10,#24
+	j	.L181
+.L180:
+.L179:
+	jeq	d8,#0,.L182
+.L990:
+	movh.a	a15,#@his(NvM_CurrentJob_t)
+	lea	a15,[a15]@los(NvM_CurrentJob_t)
+.L991:
+	ld.w	d15,[a15]2
+.L992:
+	jeq	d15,#5,.L183
+.L993:
+	jne	d15,#6,.L184
+.L183:
+	ld.hu	d0,[a15]0
+.L994:
+	movh.a	a15,#@his(NvM_ApiFlags_u8)
+	ld.bu	d15,[a15]@los(NvM_ApiFlags_u8)
+.L995:
+	jz.t	d15:1,.L185
+.L996:
+	lt.u	d15,d8,d0
+	j	.L186
+.L185:
+	lt.u	d15,d0,d8
+	j	.L187
+.L184:
+.L182:
+	jne	d8,d11,.L188
+.L997:
+	addsc.a	a15,a13,d11,#2
+.L998:
+	j	.L189
+.L188:
+	movh.a	a15,#@his(NvM_DcmBlockMngmt_t)
+	lea	a15,[a15]@los(NvM_DcmBlockMngmt_t)
+.L189:
+	ld.bu	d15,[a15]1
+.L608:
+	eq	d15,d15,#2
+.L187:
+.L186:
+	jeq	d15,#0,.L190
+.L605:
+	mov	d10,#21
+	j	.L191
+.L190:
+	mov	d4,d8
+	mov.aa	a4,a12
+.L712:
+	mov	d5,#2
+	call	NvM_QueueJob
+.L713:
+	jeq	d2,#0,.L192
+.L999:
+	jnz.a	a12,.L193
+.L610:
+	jne	d8,d11,.L194
+.L1000:
+	addsc.a	a15,a13,d11,#2
+.L1001:
+	j	.L195
+.L194:
+	movh.a	a15,#@his(NvM_DcmBlockMngmt_t)
+	lea	a15,[a15]@los(NvM_DcmBlockMngmt_t)
+.L195:
+	call	NvM_EnterCriticalSection
+.L612:
+	ld.bu	d15,[a15]2
+.L613:
+	and	d15,#252
+	st.b	[a15]2,d15
+.L1002:
+	call	NvM_ExitCriticalSection
+.L193:
+	mov	d9,#0
+.L192:
+.L191:
+.L181:
+.L178:
+.L172:
+.L170:
+.L168:
+	jeq	d10,#0,.L196
+.L1003:
+	mov	d4,#20
+	mov	d5,#0
+	mov	d6,#8
+	mov	d7,d10
+	call	Det_ReportError
+.L196:
+	mov	d2,d9
+	ret
+.L596:
+	
+__NvM_RestoreBlockDefaults_function_end:
+	.size	NvM_RestoreBlockDefaults,__NvM_RestoreBlockDefaults_function_end-NvM_RestoreBlockDefaults
+.L405:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_RestorePRAMBlockDefaults')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_RestorePRAMBlockDefaults
+; Function NvM_RestorePRAMBlockDefaults
+.L410:
+	.align	4
+NvM_RestorePRAMBlockDefaults:	.type	func
+.L315:
+	mov.a	a4,#0
+	j	NvM_RestoreBlockDefaults
+.L614:
+	
+__NvM_RestorePRAMBlockDefaults_function_end:
+	.size	NvM_RestorePRAMBlockDefaults,__NvM_RestorePRAMBlockDefaults_function_end-NvM_RestorePRAMBlockDefaults
+.L411:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_EraseNvBlock')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_EraseNvBlock
+; Function NvM_EraseNvBlock
+.L416:
+	.align	4
+NvM_EraseNvBlock:	.type	func
+.L317:
+	movh.a	a15,#@his(NvM_TaskState_t)
+	ld.w	d15,[a15]@los(NvM_TaskState_t)
+.L1012:
+	mov	d8,#1
+.L715:
+	mov	d9,#0
+.L716:
+	jne	d15,#0,.L199
+.L1013:
+	mov	d9,#20
+	j	.L200
+.L199:
+	insert	d15,d4,#0,#15,#17
+	add	d0,d15,#-1
+	extr.u	d0,d0,#0,#16
+.L1014:
+	jlt.u	d0,#2,.L201
+.L1015:
+	mov	d9,#10
+	j	.L202
+.L201:
+	mul	d0,d15,#68
+	movh.a	a15,#@his(NvM_BlockDescriptorTable_at)
+.L1016:
+	movh.a	a2,#@his(NvM_BlockMngmtArea_at)
+.L1017:
+	lea	a15,[a15]@los(NvM_BlockDescriptorTable_at)
+.L1018:
+	addsc.a	a15,a15,d0,#0
+.L1019:
+	lea	a2,[a2]@los(NvM_BlockMngmtArea_at)
+.L1020:
+	addsc.a	a4,a2,d15,#2
+.L1021:
+	ld.bu	d1,[a15]61
+.L1022:
+	ld.bu	d0,[a4]
+.L1023:
+	jlt.u	d0,d1,.L203
+.L1024:
+	mov	d9,#12
+	j	.L204
+.L203:
+	ld.bu	d0,[a15]62
+.L1025:
+	jeq	d0,#0,.L205
+.L1026:
+	mov	d9,#24
+	j	.L206
+.L205:
+	jeq	d4,#0,.L207
+.L1027:
+	movh.a	a15,#@his(NvM_CurrentJob_t)
+	lea	a15,[a15]@los(NvM_CurrentJob_t)
+.L1028:
+	ld.w	d0,[a15]2
+.L1029:
+	jeq	d0,#5,.L208
+.L1030:
+	jne	d0,#6,.L209
+.L208:
+	ld.hu	d0,[a15]0
+.L1031:
+	movh.a	a15,#@his(NvM_ApiFlags_u8)
+	ld.bu	d1,[a15]@los(NvM_ApiFlags_u8)
+.L1032:
+	jz.t	d1:1,.L210
+.L1033:
+	lt.u	d0,d4,d0
+	j	.L211
+.L210:
+	lt.u	d0,d0,d4
+	j	.L212
+.L209:
+.L207:
+	jne	d15,d4,.L213
+.L1034:
+	mov.aa	a15,a4
+.L1035:
+	j	.L214
+.L213:
+	movh.a	a15,#@his(NvM_DcmBlockMngmt_t)
+	lea	a15,[a15]@los(NvM_DcmBlockMngmt_t)
+.L214:
+	ld.bu	d0,[a15]1
+.L623:
+	eq	d0,d0,#2
+.L212:
+.L211:
+	jeq	d0,#0,.L215
+.L620:
+	mov	d9,#21
+	j	.L216
+.L215:
+	jne	d15,d4,.L217
+.L1036:
+	mov.aa	a15,a4
+.L1037:
+	j	.L218
+.L217:
+	movh.a	a15,#@his(NvM_DcmBlockMngmt_t)
+	lea	a15,[a15]@los(NvM_DcmBlockMngmt_t)
+.L218:
+	ld.bu	d15,[a15]2
+.L1038:
+	jnz.t	d15:7,.L219
+.L1039:
+	movh.a	a2,#@his(NvM_DcmBlockMngmt_t)
+	lea	a2,[a2]@los(NvM_DcmBlockMngmt_t)
+.L1040:
+	jeq.a	a15,a2,.L220
+.L1041:
+	and	d15,#64
+.L1042:
+	eq	d0,d15,#0
+	j	.L221
+.L220:
+	mov	d0,d8
+.L221:
+.L219:
+	jeq	d0,#0,.L222
+.L627:
+	mov	d5,#4
+	mov.a	a4,#0
+	call	NvM_QueueJob
+.L714:
+	eq	d8,d2,#0
+.L222:
+.L216:
+.L206:
+.L204:
+.L202:
+.L200:
+	jeq	d9,#0,.L223
+.L1043:
+	mov	d4,#20
+	mov	d5,#0
+	mov	d6,#9
+	mov	d7,d9
+	call	Det_ReportError
+.L223:
+	mov	d2,d8
+	ret
+.L616:
+	
+__NvM_EraseNvBlock_function_end:
+	.size	NvM_EraseNvBlock,__NvM_EraseNvBlock_function_end-NvM_EraseNvBlock
+.L417:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_InvalidateNvBlock')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_InvalidateNvBlock
+; Function NvM_InvalidateNvBlock
+.L422:
+	.align	4
+NvM_InvalidateNvBlock:	.type	func
+.L319:
+	movh.a	a15,#@his(NvM_TaskState_t)
+	ld.w	d15,[a15]@los(NvM_TaskState_t)
+.L1048:
+	mov	d8,#1
+.L718:
+	mov	d9,#0
+.L719:
+	jne	d15,#0,.L225
+.L1049:
+	mov	d9,#20
+	j	.L226
+.L225:
+	insert	d15,d4,#0,#15,#17
+	add	d0,d15,#-1
+	extr.u	d0,d0,#0,#16
+.L1050:
+	jlt.u	d0,#2,.L227
+.L1051:
+	mov	d9,#10
+	j	.L228
+.L227:
+	movh.a	a2,#@his(NvM_BlockMngmtArea_at)
+	lea	a2,[a2]@los(NvM_BlockMngmtArea_at)
+.L1052:
+	addsc.a	a15,a2,d15,#2
+.L1053:
+	mul	d1,d15,#68
+.L1054:
+	ld.bu	d0,[a15]
+.L1055:
+	movh.a	a15,#@his(NvM_BlockDescriptorTable_at)
+	lea	a15,[a15]@los(NvM_BlockDescriptorTable_at)
+.L1056:
+	addsc.a	a15,a15,d1,#0
+.L1057:
+	ld.bu	d1,[a15]61
+.L1058:
+	jlt.u	d0,d1,.L229
+.L1059:
+	mov	d9,#12
+	j	.L230
+.L229:
+	jeq	d4,#0,.L231
+.L1060:
+	movh.a	a15,#@his(NvM_CurrentJob_t)
+	lea	a15,[a15]@los(NvM_CurrentJob_t)
+.L1061:
+	ld.w	d0,[a15]2
+.L1062:
+	jeq	d0,#5,.L232
+.L1063:
+	jne	d0,#6,.L233
+.L232:
+	ld.hu	d0,[a15]0
+.L1064:
+	movh.a	a15,#@his(NvM_ApiFlags_u8)
+	ld.bu	d1,[a15]@los(NvM_ApiFlags_u8)
+.L1065:
+	jz.t	d1:1,.L234
+.L1066:
+	lt.u	d0,d4,d0
+	j	.L235
+.L234:
+	lt.u	d0,d0,d4
+	j	.L236
+.L233:
+.L231:
+	jne	d15,d4,.L237
+.L1067:
+	addsc.a	a15,a2,d15,#2
+.L1068:
+	j	.L238
+.L237:
+	movh.a	a15,#@his(NvM_DcmBlockMngmt_t)
+	lea	a15,[a15]@los(NvM_DcmBlockMngmt_t)
+.L238:
+	ld.bu	d0,[a15]1
+.L637:
+	eq	d0,d0,#2
+.L236:
+.L235:
+	jeq	d0,#0,.L239
+.L634:
+	mov	d9,#21
+	j	.L240
+.L239:
+	jne	d15,d4,.L241
+.L1069:
+	addsc.a	a15,a2,d15,#2
+.L1070:
+	j	.L242
+.L241:
+	movh.a	a15,#@his(NvM_DcmBlockMngmt_t)
+	lea	a15,[a15]@los(NvM_DcmBlockMngmt_t)
+.L242:
+	ld.bu	d15,[a15]2
+.L1071:
+	jnz.t	d15:7,.L243
+.L1072:
+	movh.a	a2,#@his(NvM_DcmBlockMngmt_t)
+	lea	a2,[a2]@los(NvM_DcmBlockMngmt_t)
+.L1073:
+	jeq.a	a15,a2,.L244
+.L1074:
+	and	d15,#64
+.L1075:
+	eq	d0,d15,#0
+	j	.L245
+.L244:
+	mov	d0,d8
+.L245:
+.L243:
+	jeq	d0,#0,.L246
+.L641:
+	mov	d5,#3
+	mov.a	a4,#0
+	call	NvM_QueueJob
+.L717:
+	eq	d8,d2,#0
+.L246:
+.L240:
+.L230:
+.L228:
+.L226:
+	jeq	d9,#0,.L247
+.L1076:
+	mov	d4,#20
+	mov	d5,#0
+	mov	d6,#11
+	mov	d7,d9
+	call	Det_ReportError
+.L247:
+	mov	d2,d8
+	ret
+.L630:
+	
+__NvM_InvalidateNvBlock_function_end:
+	.size	NvM_InvalidateNvBlock,__NvM_InvalidateNvBlock_function_end-NvM_InvalidateNvBlock
+.L423:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_CancelJobs')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_CancelJobs
+; Function NvM_CancelJobs
+.L428:
+	.align	4
+NvM_CancelJobs:	.type	func
+.L321:
+	movh.a	a15,#@his(NvM_TaskState_t)
+	ld.w	d0,[a15]@los(NvM_TaskState_t)
+.L1081:
+	mov	d8,#1
+.L721:
+	mov	d15,#0
+.L722:
+	jne	d0,#0,.L249
+.L1082:
+	mov	d15,#20
+	j	.L250
+.L249:
+	insert	d0,d4,#0,#15,#17
+	add	d0,#-1
+	extr.u	d0,d0,#0,#16
+.L1083:
+	jlt.u	d0,#2,.L251
+.L1084:
+	mov	d15,#10
+	j	.L252
+.L251:
+	call	NvM_UnQueueJob
+.L720:
+	eq	d8,d2,#0
+.L252:
+.L250:
+	jeq	d15,#0,.L253
+.L1085:
+	mov	d4,#20
+	mov	d5,#0
+	mov	d6,#16
+	mov	d7,d15
+	call	Det_ReportError
+.L253:
+	mov	d2,d8
+	ret
+.L644:
+	
+__NvM_CancelJobs_function_end:
+	.size	NvM_CancelJobs,__NvM_CancelJobs_function_end-NvM_CancelJobs
+.L429:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_ReadAll')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_ReadAll
+; Function NvM_ReadAll
+.L434:
+	.align	4
+NvM_ReadAll:	.type	func
+.L323:
+	movh.a	a15,#@his(NvM_TaskState_t)
+	ld.w	d15,[a15]@los(NvM_TaskState_t)
+.L1090:
+	mov	d8,#0
+.L723:
+	jne	d15,#0,.L255
+.L1091:
+	mov	d8,#20
+	j	.L256
+.L255:
+	movh.a	a15,#@his(NvM_BlockMngmtArea_at)
+	lea	a15,[a15]@los(NvM_BlockMngmtArea_at)
+.L1092:
+	ld.bu	d15,[+a15]1
+.L1093:
+	jne	d15,#2,.L257
+.L1094:
+	mov	d8,#21
+	j	.L258
+.L257:
+	call	NvM_EnterCriticalSection
+.L1095:
+	mov	d15,#2
+	st.b	[a15],d15
+.L1096:
+	movh.a	a15,#@his(NvM_ApiFlags_u8)
+	ld.bu	d15,[a15]@los(NvM_ApiFlags_u8)
+.L1097:
+	and	d15,#191
+.L1098:
+	or	d15,#4
+	st.b	[a15]@los(NvM_ApiFlags_u8),d15
+.L1099:
+	call	NvM_ExitCriticalSection
+.L1100:
+	mov	d4,#12
+.L1101:
+	mov	d5,#2
+	call	NvM_MultiBlockCbk
+.L258:
+.L256:
+	jeq	d8,#0,.L259
+.L1102:
+	mov	d4,#20
+	mov	d5,#0
+	mov	d6,#12
+	mov	d7,d8
+.L724:
+	j	Det_ReportError
+.L259:
+	ret
+.L648:
+	
+__NvM_ReadAll_function_end:
+	.size	NvM_ReadAll,__NvM_ReadAll_function_end-NvM_ReadAll
+.L435:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_KillReadAll')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_KillReadAll
+; Function NvM_KillReadAll
+.L440:
+	.align	4
+NvM_KillReadAll:	.type	func
+.L325:
+	movh.a	a15,#@his(NvM_TaskState_t)
+	ld.w	d15,[a15]@los(NvM_TaskState_t)
+.L1107:
+	mov	d8,#0
+.L725:
+	jne	d15,#0,.L260
+.L1108:
+	mov	d8,#20
+	j	.L261
+.L260:
+	movh.a	a15,#@his(NvM_ApiFlags_u8)
+	lea	a15,[a15]@los(NvM_ApiFlags_u8)
+	ld.bu	d15,[a15]
+.L1109:
+	jz.t	d15:2,.L262
+.L1110:
+	call	NvM_EnterCriticalSection
+.L1111:
+	ld.bu	d15,[a15]
+.L1112:
+	or	d15,#64
+	st.b	[a15],d15
+.L1113:
+	call	NvM_ExitCriticalSection
+.L262:
+.L261:
+	jeq	d8,#0,.L263
+.L1114:
+	mov	d4,#20
+	mov	d5,#0
+	mov	d6,#22
+	mov	d7,d8
+.L726:
+	j	Det_ReportError
+.L263:
+	ret
+.L650:
+	
+__NvM_KillReadAll_function_end:
+	.size	NvM_KillReadAll,__NvM_KillReadAll_function_end-NvM_KillReadAll
+.L441:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_WriteAll')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_WriteAll
+; Function NvM_WriteAll
+.L446:
+	.align	4
+NvM_WriteAll:	.type	func
+.L327:
+	movh.a	a15,#@his(NvM_TaskState_t)
+	ld.w	d15,[a15]@los(NvM_TaskState_t)
+.L1119:
+	mov	d8,#0
+.L727:
+	jne	d15,#0,.L264
+.L1120:
+	mov	d8,#20
+	j	.L265
+.L264:
+	movh.a	a15,#@his(NvM_BlockMngmtArea_at)
+	lea	a15,[a15]@los(NvM_BlockMngmtArea_at)
+.L1121:
+	ld.bu	d15,[+a15]1
+.L1122:
+	jne	d15,#2,.L266
+.L1123:
+	mov	d8,#21
+	j	.L267
+.L266:
+	call	NvM_EnterCriticalSection
+.L1124:
+	mov	d15,#2
+	st.b	[a15],d15
+.L1125:
+	movh.a	a15,#@his(NvM_ApiFlags_u8)
+	ld.bu	d15,[a15]@los(NvM_ApiFlags_u8)
+.L1126:
+	and	d15,#207
+.L1127:
+	or	d15,#2
+	st.b	[a15]@los(NvM_ApiFlags_u8),d15
+.L1128:
+	call	NvM_ExitCriticalSection
+.L1129:
+	mov	d4,#13
+.L1130:
+	mov	d5,#2
+	call	NvM_MultiBlockCbk
+.L267:
+.L265:
+	jeq	d8,#0,.L268
+.L1131:
+	mov	d4,#20
+	mov	d5,#0
+	mov	d6,#13
+	mov	d7,d8
+.L728:
+	j	Det_ReportError
+.L268:
+	ret
+.L652:
+	
+__NvM_WriteAll_function_end:
+	.size	NvM_WriteAll,__NvM_WriteAll_function_end-NvM_WriteAll
+.L447:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_CancelWriteAll')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_CancelWriteAll
+; Function NvM_CancelWriteAll
+.L452:
+	.align	4
+NvM_CancelWriteAll:	.type	func
+.L329:
+	movh.a	a15,#@his(NvM_TaskState_t)
+	ld.w	d15,[a15]@los(NvM_TaskState_t)
+.L1136:
+	mov	d8,#0
+.L729:
+	jne	d15,#0,.L269
+.L1137:
+	mov	d8,#20
+	j	.L270
+.L269:
+	call	NvM_EnterCriticalSection
+.L1138:
+	movh.a	a15,#@his(NvM_ApiFlags_u8)
+	ld.bu	d15,[a15]@los(NvM_ApiFlags_u8)
+.L1139:
+	or	d15,#16
+	st.b	[a15]@los(NvM_ApiFlags_u8),d15
+.L1140:
+	call	NvM_ExitCriticalSection
+.L270:
+	jeq	d8,#0,.L271
+.L1141:
+	mov	d4,#20
+	mov	d5,#0
+	mov	d6,#10
+	mov	d7,d8
+.L730:
+	j	Det_ReportError
+.L271:
+	ret
+.L654:
+	
+__NvM_CancelWriteAll_function_end:
+	.size	NvM_CancelWriteAll,__NvM_CancelWriteAll_function_end-NvM_CancelWriteAll
+.L453:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_KillWriteAll')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_KillWriteAll
+; Function NvM_KillWriteAll
+.L458:
+	.align	4
+NvM_KillWriteAll:	.type	func
+.L331:
+	movh.a	a15,#@his(NvM_TaskState_t)
+	ld.w	d15,[a15]@los(NvM_TaskState_t)
+.L1146:
+	mov	d8,#0
+.L731:
+	jne	d15,#0,.L272
+.L1147:
+	mov	d8,#20
+	j	.L273
+.L272:
+	movh.a	a12,#@his(NvM_ApiFlags_u8)
+	lea	a12,[a12]@los(NvM_ApiFlags_u8)
+	ld.bu	d0,[a12]
+.L1148:
+	jz.t	d0:1,.L274
+.L658:
+	mov	d9,#0
+	movh.a	a15,#@his(NvM_CurrentBlockInfo_t+4)
+.L732:
+	ld.a	a15,[a15]@los(NvM_CurrentBlockInfo_t+4)
+.L733:
+	call	NvM_EnterCriticalSection
+.L1149:
+	ld.bu	d15,[a12]
+.L1150:
+	movh.a	a2,#@his(NvM_CurrentJob_t)
+.L1151:
+	and	d15,#253
+	lea	a2,[a2]@los(NvM_CurrentJob_t)
+.L1152:
+	or	d15,#48
+	st.b	[a12],d15
+.L1153:
+	ld.w	d15,[a2]2
+.L1154:
+	jne	d15,#5,.L275
+.L1155:
+	ld.hu	d0,[a2]0
+.L1156:
+	insert	d1,d0,#0,#15,#17
+	add	d1,#-1
+	extr.u	d15,d1,#0,#16
+.L1157:
+	jge.u	d15,#2,.L276
+.L1158:
+	ld.bu	d15,[a15]2
+.L1159:
+	mov	d9,d0
+.L1160:
+	and	d15,#1
+	eq	d15,d15,#0
+.L1161:
+	sh	d15,#2
+	st.b	[a15]1,d15
+.L276:
+.L275:
+	movh.a	a2,#@his(NvM_BlockMngmtArea_at+1)
+.L1162:
+	mov	d15,#6
+	st.b	[a2]@los(NvM_BlockMngmtArea_at+1),d15
+.L1163:
+	call	NvM_ExitCriticalSection
+.L1164:
+	jeq	d9,#0,.L277
+.L1165:
+	mov	d5,#13
+	ld.bu	d6,[a15]1
+	mov	d4,d9
+	call	NvM_BlockNotification
+.L277:
+	mov	d4,#13
+.L1166:
+	mov	d5,#6
+	call	NvM_MultiBlockCbk
+.L274:
+.L273:
+	jeq	d8,#0,.L278
+.L1167:
+	mov	d4,#20
+	mov	e6,d8,d4
+	mov	d5,#0
+	j	Det_ReportError
+.L278:
+	ret
+.L656:
+	
+__NvM_KillWriteAll_function_end:
+	.size	NvM_KillWriteAll,__NvM_KillWriteAll_function_end-NvM_KillWriteAll
+.L459:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_MainFunction')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_MainFunction
+; Function NvM_MainFunction
+.L464:
+	.align	4
+NvM_MainFunction:	.type	func
+.L333:
+	movh.a	a13,#@his(NvM_TaskState_t)
+	lea	a13,[a13]@los(NvM_TaskState_t)
+	ld.w	d15,[a13]
+.L1172:
+	mov	d8,#0
+.L734:
+	jne	d15,#0,.L279
+.L1173:
+	mov	d8,#20
+	j	.L280
+.L279:
+	movh.a	a15,#@his(NvM_CurrentBlockInfo_t+70)
+.L1174:
+	lea	a15,[a15]@los(NvM_CurrentBlockInfo_t+70)
+	ld.bu	d15,[a15]
+.L1175:
+	movh.a	a12,#@his(NvM_JobMainState_t)
+.L1176:
+	and	d15,#254
+	st.b	[a15],d15
+.L1177:
+	movh.a	a14,#@his(NvM_JobSubState_t)
+.L1178:
+	lea	a12,[a12]@los(NvM_JobMainState_t)
+.L1179:
+	lea	a14,[a14]@los(NvM_JobSubState_t)
+.L281:
+	ld.w	d4,[a13]
+	call	NvM_Fsm
+.L1180:
+	st.w	[a13],d2
+.L1181:
+	ld.w	d4,[a12]
+	call	NvM_Fsm
+.L1182:
+	st.w	[a12],d2
+.L1183:
+	ld.w	d4,[a14]
+	call	NvM_Fsm
+.L1184:
+	st.w	[a14],d2
+.L1185:
+	ld.bu	d15,[a15]
+.L1186:
+	jz.t	d15:0,.L281
+.L280:
+	jeq	d8,#0,.L282
+.L1187:
+	mov	d4,#20
+	mov	d5,#0
+	mov	d6,#14
+	mov	d7,d8
+.L735:
+	j	Det_ReportError
+.L282:
+	ret
+.L662:
+	
+__NvM_MainFunction_function_end:
+	.size	NvM_MainFunction,__NvM_MainFunction_function_end-NvM_MainFunction
+.L465:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_SetBlockLockStatus')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_SetBlockLockStatus
+; Function NvM_SetBlockLockStatus
+.L470:
+	.align	4
+NvM_SetBlockLockStatus:	.type	func
+.L335:
+	movh.a	a15,#@his(NvM_TaskState_t)
+.L1192:
+	mov	d8,d5
+	ld.w	d15,[a15]@los(NvM_TaskState_t)
+.L737:
+	mov	d9,#0
+.L738:
+	jne	d15,#0,.L283
+.L1193:
+	mov	d9,#20
+	j	.L284
+.L283:
+	insert	d15,d4,#0,#15,#17
+	add	d0,d15,#-1
+	extr.u	d0,d0,#0,#16
+.L1194:
+	jlt.u	d0,#2,.L285
+.L1195:
+	mov	d9,#10
+	j	.L286
+.L285:
+	movh.a	a15,#@his(NvM_BlockMngmtArea_at)
+	lea	a15,[a15]@los(NvM_BlockMngmtArea_at)
+.L1196:
+	addsc.a	a15,a15,d15,#2
+.L1197:
+	mul	d15,d15,#68
+	movh.a	a2,#@his(NvM_BlockDescriptorTable_at)
+	lea	a2,[a2]@los(NvM_BlockDescriptorTable_at)
+.L1198:
+	addsc.a	a2,a2,d15,#0
+.L1199:
+	ld.bu	d0,[a15]
+.L1200:
+	ld.bu	d15,[a2]61
+.L1201:
+	jlt.u	d0,d15,.L287
+.L1202:
+	mov	d9,#12
+	j	.L288
+.L287:
+	call	NvM_EnterCriticalSection
+.L736:
+	ld.bu	d15,[+a15]2
+.L1203:
+	jeq	d8,#0,.L289
+.L1204:
+	or	d15,#64
+	j	.L290
+.L289:
+	and	d15,#191
+.L290:
+	st.b	[a15],d15
+.L1205:
+	call	NvM_ExitCriticalSection
+.L288:
+.L286:
+.L284:
+	jeq	d9,#0,.L291
+.L1206:
+	mov	d4,#20
+	mov	d5,#0
+	mov	d6,#19
+	mov	d7,d9
+.L739:
+	j	Det_ReportError
+.L291:
+	ret
+.L664:
+	
+__NvM_SetBlockLockStatus_function_end:
+	.size	NvM_SetBlockLockStatus,__NvM_SetBlockLockStatus_function_end-NvM_SetBlockLockStatus
+.L471:
+	; End of function
+	
+	.sdecl	'.bss.MSR_VAR_NO_INIT',data,cluster('NvM_ApiFlags_u8')
+	.sect	'.bss.MSR_VAR_NO_INIT'
+	.global	NvM_ApiFlags_u8
+	.align	4
+NvM_ApiFlags_u8:	.type	object
+	.size	NvM_ApiFlags_u8,1
+	.space	1
+	.calls	'NvM_Init','NvM_QueueInit'
+	.calls	'NvM_Init','NvM_JobProcInit'
+	.calls	'NvM_Init','NvM_MemIfAbstraction_Init'
+	.calls	'NvM_SetDataIndex','Det_ReportError'
+	.calls	'NvM_GetDataIndex','Det_ReportError'
+	.calls	'NvM_SetBlockProtection','NvM_IsBooleanBitfieldTrue'
+	.calls	'NvM_SetBlockProtection','NvM_EnterCriticalSection'
+	.calls	'NvM_SetBlockProtection','NvM_ExitCriticalSection'
+	.calls	'NvM_SetBlockProtection','Det_ReportError'
+	.calls	'NvM_GetErrorStatus','Det_ReportError'
+	.calls	'NvM_SetRamBlockStatus','NvM_IsBooleanBitfieldTrue'
+	.calls	'NvM_SetRamBlockStatus','NvM_EnterCriticalSection'
+	.calls	'NvM_SetRamBlockStatus','NvM_ExitCriticalSection'
+	.calls	'NvM_SetRamBlockStatus','Det_ReportError'
+	.calls	'NvM_ReadBlock','NvM_QueueJob'
+	.calls	'NvM_ReadBlock','NvM_EnterCriticalSection'
+	.calls	'NvM_ReadBlock','NvM_ExitCriticalSection'
+	.calls	'NvM_ReadBlock','Det_ReportError'
+	.calls	'NvM_ReadPRAMBlock','NvM_ReadBlock'
+	.calls	'NvM_WriteBlock','NvM_QueueJob'
+	.calls	'NvM_WriteBlock','NvM_EnterCriticalSection'
+	.calls	'NvM_WriteBlock','NvM_ExitCriticalSection'
+	.calls	'NvM_WriteBlock','Det_ReportError'
+	.calls	'NvM_WritePRAMBlock','NvM_WriteBlock'
+	.calls	'NvM_RestoreBlockDefaults','NvM_QryIsInitCallbackConfigured'
+	.calls	'NvM_RestoreBlockDefaults','NvM_QueueJob'
+	.calls	'NvM_RestoreBlockDefaults','NvM_EnterCriticalSection'
+	.calls	'NvM_RestoreBlockDefaults','NvM_ExitCriticalSection'
+	.calls	'NvM_RestoreBlockDefaults','Det_ReportError'
+	.calls	'NvM_RestorePRAMBlockDefaults','NvM_RestoreBlockDefaults'
+	.calls	'NvM_EraseNvBlock','NvM_QueueJob'
+	.calls	'NvM_EraseNvBlock','Det_ReportError'
+	.calls	'NvM_InvalidateNvBlock','NvM_QueueJob'
+	.calls	'NvM_InvalidateNvBlock','Det_ReportError'
+	.calls	'NvM_CancelJobs','NvM_UnQueueJob'
+	.calls	'NvM_CancelJobs','Det_ReportError'
+	.calls	'NvM_ReadAll','NvM_EnterCriticalSection'
+	.calls	'NvM_ReadAll','NvM_ExitCriticalSection'
+	.calls	'NvM_ReadAll','NvM_MultiBlockCbk'
+	.calls	'NvM_ReadAll','Det_ReportError'
+	.calls	'NvM_KillReadAll','NvM_EnterCriticalSection'
+	.calls	'NvM_KillReadAll','NvM_ExitCriticalSection'
+	.calls	'NvM_KillReadAll','Det_ReportError'
+	.calls	'NvM_WriteAll','NvM_EnterCriticalSection'
+	.calls	'NvM_WriteAll','NvM_ExitCriticalSection'
+	.calls	'NvM_WriteAll','NvM_MultiBlockCbk'
+	.calls	'NvM_WriteAll','Det_ReportError'
+	.calls	'NvM_CancelWriteAll','NvM_EnterCriticalSection'
+	.calls	'NvM_CancelWriteAll','NvM_ExitCriticalSection'
+	.calls	'NvM_CancelWriteAll','Det_ReportError'
+	.calls	'NvM_KillWriteAll','NvM_EnterCriticalSection'
+	.calls	'NvM_KillWriteAll','NvM_ExitCriticalSection'
+	.calls	'NvM_KillWriteAll','NvM_BlockNotification'
+	.calls	'NvM_KillWriteAll','NvM_MultiBlockCbk'
+	.calls	'NvM_KillWriteAll','Det_ReportError'
+	.calls	'NvM_MainFunction','NvM_Fsm'
+	.calls	'NvM_MainFunction','Det_ReportError'
+	.calls	'NvM_SetBlockLockStatus','NvM_EnterCriticalSection'
+	.calls	'NvM_SetBlockLockStatus','NvM_ExitCriticalSection'
+	.calls	'NvM_SetBlockLockStatus','Det_ReportError'
+	.calls	'NvM_Init','',0
+	.calls	'NvM_SetDataIndex','',0
+	.calls	'NvM_GetDataIndex','',0
+	.calls	'NvM_SetBlockProtection','',0
+	.calls	'NvM_GetErrorStatus','',0
+	.calls	'NvM_SetRamBlockStatus','',0
+	.calls	'NvM_ReadBlock','',0
+	.calls	'NvM_ReadPRAMBlock','',0
+	.calls	'NvM_WriteBlock','',0
+	.calls	'NvM_WritePRAMBlock','',0
+	.calls	'NvM_RestoreBlockDefaults','',0
+	.calls	'NvM_RestorePRAMBlockDefaults','',0
+	.calls	'NvM_EraseNvBlock','',0
+	.calls	'NvM_InvalidateNvBlock','',0
+	.calls	'NvM_CancelJobs','',0
+	.calls	'NvM_ReadAll','',0
+	.calls	'NvM_KillReadAll','',0
+	.calls	'NvM_WriteAll','',0
+	.calls	'NvM_CancelWriteAll','',0
+	.calls	'NvM_KillWriteAll','',0
+	.calls	'NvM_MainFunction','',0
+	.extern	Det_ReportError
+	.extern	NvM_EnterCriticalSection
+	.extern	NvM_ExitCriticalSection
+	.extern	NvM_BlockDescriptorTable_at
+	.extern	NvM_BlockNotification
+	.extern	NvM_MultiBlockCbk
+	.extern	NvM_QryIsInitCallbackConfigured
+	.extern	NvM_JobMainState_t
+	.extern	NvM_JobSubState_t
+	.extern	NvM_TaskState_t
+	.extern	NvM_CurrentJob_t
+	.extern	NvM_CurrentBlockInfo_t
+	.extern	NvM_BlockMngmtArea_at
+	.extern	NvM_DcmBlockMngmt_t
+	.extern	NvM_JobProcInit
+	.extern	NvM_Fsm
+	.extern	NvM_IsBooleanBitfieldTrue
+	.extern	NvM_QueueInit
+	.extern	NvM_QueueJob
+	.extern	NvM_UnQueueJob
+	.extern	NvM_MemIfAbstraction_Init
+	.calls	'NvM_SetBlockLockStatus','',0
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L337:
+	.word	14166
+	.half	3
+	.word	.L338
+	.byte	4
+.L336:
+	.byte	1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L339
+.L477:
+	.byte	2
+	.byte	'unsigned char',0,1,8,3,2,99,9,4,4
+	.byte	'NvDataIndex_t',0
+	.word	202
+	.byte	1,2,35,0,4
+	.byte	'NvRamErrorStatus_u8',0
+	.word	202
+	.byte	1,2,35,1,4
+	.byte	'NvRamAttributes_u8',0
+	.word	202
+	.byte	1,2,35,2,0,5
+	.word	219
+	.byte	6
+	.word	305
+	.byte	7
+	.byte	'NvM_RamMngmtConstPtrType',0,1,73,67
+	.word	310
+	.byte	5
+	.word	315
+.L588:
+	.byte	8
+	.byte	'NvM_WriteProtectionChecks',0,3,1,157,14,50
+	.word	202
+	.byte	1,1
+.L590:
+	.byte	9
+	.byte	'MngmtPtr',0,1,157,14,107
+	.word	348
+.L592:
+	.byte	10,0,5
+	.word	219
+	.byte	6
+	.word	411
+.L475:
+	.byte	2
+	.byte	'unsigned short int',0,2,7,5
+	.word	421
+	.byte	8
+	.byte	'NvM_CheckBlockType',0,3,1,189,14,50
+	.word	202
+	.byte	1,1,9
+	.byte	'BlockId',0,1,189,14,91
+	.word	443
+	.byte	10,0,5
+	.word	421
+	.byte	11
+	.byte	'void',0,5
+	.word	503
+.L572:
+	.byte	6
+	.word	509
+.L551:
+	.byte	8
+	.byte	'NvM_CheckAddress',0,3,1,203,14,50
+	.word	202
+	.byte	1,1
+.L553:
+	.byte	9
+	.byte	'BlockId',0,1,203,14,89
+	.word	498
+.L555:
+	.byte	9
+	.byte	'RamPtr',0,1,203,14,111
+	.word	514
+.L557:
+	.byte	10,0,5
+	.word	421
+	.byte	8
+	.byte	'NvM_CheckBlockId',0,3,1,230,14,50
+	.word	202
+	.byte	1,1,9
+	.byte	'BlockId',0,1,230,14,89
+	.word	583
+	.byte	10,0,5
+	.word	421
+	.byte	8
+	.byte	'NvM_CheckCurrDataIndex',0,3,1,245,14,50
+	.word	202
+	.byte	1,1,9
+	.byte	'BlockId',0,1,245,14,95
+	.word	636
+	.byte	10,0,5
+	.word	421
+	.byte	5
+	.word	202
+	.byte	8
+	.byte	'NvM_CheckDataIndex',0,3,1,131,15,50
+	.word	202
+	.byte	1,1,9
+	.byte	'BlockId',0,1,131,15,91
+	.word	695
+	.byte	9
+	.byte	'DataIndex',0,1,131,15,112
+	.word	700
+	.byte	10,0,5
+	.word	202
+	.byte	6
+	.word	774
+	.byte	8
+	.byte	'NvM_CheckNotNull',0,3,1,144,15,50
+	.word	202
+	.byte	1,1,9
+	.byte	'Ptr',0,1,144,15,81
+	.word	779
+	.byte	10,0,8
+	.byte	'NvM_CheckInitialized',0,3,1,157,15,50
+	.word	202
+	.byte	1,1,10,0,8
+	.byte	'NvM_CheckMultiBlockPending',0,3,1,170,15,50
+	.word	202
+	.byte	1,1,10,0,5
+	.word	421
+.L483:
+	.byte	8
+	.byte	'NvM_CheckBlockPending',0,3,1,190,15,50
+	.word	202
+	.byte	1,1
+.L485:
+	.byte	9
+	.byte	'BlockId',0,1,190,15,94
+	.word	904
+.L487:
+	.byte	12,10,0,0,6
+	.word	219
+	.byte	7
+	.byte	'NvM_RamMngmtPtrType',0,2,107,66
+	.word	964
+	.byte	5
+	.word	421
+.L489:
+	.byte	8
+	.byte	'NvM_GetMngmtAreaPtr',0,3,1,234,15,62
+	.word	969
+	.byte	1,1
+.L491:
+	.byte	9
+	.byte	'BlockId',0,1,234,15,104
+	.word	997
+.L493:
+	.byte	10,0,6
+	.word	219
+	.byte	13
+	.byte	'Det_ReportError',0,3,150,2,32
+	.word	202
+	.byte	1,1,1,1,9
+	.byte	'ModuleId',0,3,150,2,56
+	.word	421
+	.byte	9
+	.byte	'InstanceId',0,3,150,2,72
+	.word	202
+	.byte	9
+	.byte	'ApiId',0,3,150,2,90
+	.word	202
+	.byte	9
+	.byte	'ErrorId',0,3,150,2,103
+	.word	202
+	.byte	0
+.L498:
+	.byte	6
+	.word	202
+.L521:
+	.byte	6
+	.word	202
+.L547:
+	.byte	6
+	.word	503
+	.byte	5
+	.word	310
+	.byte	7
+	.byte	'NvM_RamMngmtConstPtrToConstType',0,2,109,73
+	.word	1173
+.L625:
+	.byte	5
+	.word	1178
+	.byte	5
+	.word	219
+	.byte	6
+	.word	1223
+.L639:
+	.byte	5
+	.word	1178
+.L660:
+	.byte	5
+	.word	969
+	.byte	14
+	.byte	'NvM_EnterCriticalSection',0,4,149,2,37,1,1,1,1,14
+	.byte	'NvM_ExitCriticalSection',0,4,161,2,37,1,1,1,1,15
+	.byte	'NvM_BlockNotification',0,5,209,1,37,1,1,1,1,9
+	.byte	'BlockId',0,5,209,1,75
+	.word	421
+	.byte	9
+	.byte	'ServiceId',0,5,209,1,102
+	.word	202
+	.byte	9
+	.byte	'JobResult',0,5,209,1,135,1
+	.word	202
+	.byte	0,15
+	.byte	'NvM_MultiBlockCbk',0,5,223,1,37,1,1,1,1,9
+	.byte	'ServiceId',0,5,223,1,73
+	.word	202
+	.byte	9
+	.byte	'JobResult',0,5,223,1,106
+	.word	202
+	.byte	0,7
+	.byte	'NvM_RamAddressType',0,4,129,1,48
+	.word	1158
+	.byte	7
+	.byte	'NvM_RomAddressType',0,4,131,1,51
+	.word	779
+	.byte	16
+	.word	202
+	.byte	1,1,6
+	.word	1520
+	.byte	7
+	.byte	'NvM_InitCbkPtrType',0,4,113,9
+	.word	1527
+	.byte	17
+	.word	202
+	.byte	1,1,18
+	.word	421
+	.byte	18
+	.word	1168
+	.byte	18
+	.word	421
+	.byte	0,6
+	.word	1559
+	.byte	7
+	.byte	'NvM_InitCbkExtPtrType',0,4,116,9
+	.word	1582
+	.byte	17
+	.word	202
+	.byte	1,1,18
+	.word	202
+	.byte	18
+	.word	202
+	.byte	0,6
+	.word	1617
+	.byte	7
+	.byte	'NvM_JobEndCbkPtrType',0,4,105,9
+	.word	1635
+	.byte	17
+	.word	202
+	.byte	1,1,18
+	.word	421
+	.byte	18
+	.word	202
+	.byte	18
+	.word	202
+	.byte	0,6
+	.word	1669
+	.byte	7
+	.byte	'NvM_JobEndCbkExtPtrType',0,4,108,9
+	.word	1692
+	.byte	17
+	.word	202
+	.byte	1,1,18
+	.word	514
+	.byte	0,6
+	.word	1729
+	.byte	7
+	.byte	'NvM_ReadRamFromNvMCbkPtrType',0,4,120,9
+	.word	1742
+	.byte	17
+	.word	202
+	.byte	1,1,18
+	.word	1168
+	.byte	0,6
+	.word	1784
+	.byte	7
+	.byte	'NvM_WriteRamToNvMCbkPtrType',0,4,119,9
+	.word	1797
+	.byte	19,1,1,18
+	.word	421
+	.byte	18
+	.word	1168
+	.byte	18
+	.word	421
+	.byte	0,6
+	.word	1838
+	.byte	7
+	.byte	'NvM_PreWriteTransformCbkPtrType',0,4,123,9
+	.word	1857
+	.byte	7
+	.byte	'NvM_PostReadTransformCbkPtrType',0,4,124,9
+	.word	1582
+	.byte	7
+	.byte	'NvM_RamDataIntegrityAddressType',0,4,137,1,51
+	.word	1158
+	.byte	3,4,80,9,2,20
+	.byte	'CalcRamBlockCrcEnabled',0,1
+	.word	202
+	.byte	1,7,2,35,0,20
+	.byte	'BlockWriteProtEnabled',0,1
+	.word	202
+	.byte	1,6,2,35,0,20
+	.byte	'BlockWriteBlockOnceEnabled',0,1
+	.word	202
+	.byte	1,5,2,35,0,20
+	.byte	'ResistantToChangedSwEnabled',0,1
+	.word	202
+	.byte	1,4,2,35,0,20
+	.byte	'SelectBlockForReadAllEnabled',0,1
+	.word	202
+	.byte	1,3,2,35,0,20
+	.byte	'SelectBlockForPreReadAllEnabled',0,1
+	.word	202
+	.byte	1,2,2,35,0,20
+	.byte	'SelectBlockForWriteAllEnabled',0,1
+	.word	202
+	.byte	1,1,2,35,0,20
+	.byte	'InvokeCallbacksForReadAllEnabled',0,1
+	.word	202
+	.byte	1,0,2,35,0,20
+	.byte	'InvokeCallbacksForWriteAllEnabled',0,1
+	.word	202
+	.byte	1,7,2,35,1,20
+	.byte	'BlockUseSetRamBlockStatusEnabled',0,1
+	.word	202
+	.byte	1,6,2,35,1,20
+	.byte	'BlockCheckLossOfRedundancyEnabled',0,1
+	.word	202
+	.byte	1,5,2,35,1,20
+	.byte	'NotifyBswM',0,1
+	.word	202
+	.byte	1,4,2,35,1,0,2
+	.byte	'unsigned int',0,4,7,3,4,173,1,9,68,4
+	.byte	'RamBlockDataAddr_t',0
+	.word	1464
+	.byte	4,2,35,0,4
+	.byte	'RomBlockDataAddr_pt',0
+	.word	1492
+	.byte	4,2,35,4,4
+	.byte	'InitCbkFunc_pt',0
+	.word	1532
+	.byte	4,2,35,8,4
+	.byte	'InitCbkExtFunc_pt',0
+	.word	1587
+	.byte	4,2,35,12,4
+	.byte	'JobEndCbkFunc_pt',0
+	.word	1640
+	.byte	4,2,35,16,4
+	.byte	'JobEndCbkExtFunc_pt',0
+	.word	1697
+	.byte	4,2,35,20,4
+	.byte	'CbkGetMirrorFunc_pt',0
+	.word	1747
+	.byte	4,2,35,24,4
+	.byte	'CbkSetMirrorFunc_pt',0
+	.word	1802
+	.byte	4,2,35,28,4
+	.byte	'CbkPreWriteTransform',0
+	.word	1862
+	.byte	4,2,35,32,4
+	.byte	'CbkPostReadTransform',0
+	.word	1902
+	.byte	4,2,35,36,4
+	.byte	'RamBlockDataIntegrityAddr_t',0
+	.word	1942
+	.byte	4,2,35,40,4
+	.byte	'DataIntegrityRecordCompMechanismBuffer',0
+	.word	1942
+	.byte	4,2,35,44,4
+	.byte	'Flags',0
+	.word	1983
+	.byte	2,2,35,48,4
+	.byte	'NvIdentifier_u16',0
+	.word	421
+	.byte	2,2,35,50,4
+	.byte	'NvBlockLength_u16',0
+	.word	421
+	.byte	2,2,35,52,4
+	.byte	'NvBlockNVRAMDataLength',0
+	.word	421
+	.byte	2,2,35,54,4
+	.byte	'NvCryptoReference',0
+	.word	202
+	.byte	1,2,35,56,4
+	.byte	'MacSize',0
+	.word	421
+	.byte	2,2,35,58,4
+	.byte	'MacReference',0
+	.word	202
+	.byte	1,2,35,60,4
+	.byte	'NvBlockCount_u8',0
+	.word	202
+	.byte	1,2,35,61,4
+	.byte	'BlockPrio_u8',0
+	.word	202
+	.byte	1,2,35,62,20
+	.byte	'DeviceId_u8',0,1
+	.word	202
+	.byte	4,4,2,35,63,20
+	.byte	'MngmtType_t',0,1
+	.word	202
+	.byte	2,2,2,35,63,20
+	.byte	'DataIntegritySettings',0,4
+	.word	2457
+	.byte	3,15,2,35,62,0,5
+	.word	2473
+	.byte	6
+	.word	3138
+	.byte	7
+	.byte	'NvM_BlockDescrPtrType',0,4,224,1,71
+	.word	3143
+	.byte	13
+	.byte	'NvM_QryIsInitCallbackConfigured',0,6,154,1,40
+	.word	202
+	.byte	1,1,1,1,9
+	.byte	'BlockDescriptor',0,6,154,1,94
+	.word	3148
+	.byte	0,5
+	.word	2473
+	.byte	6
+	.word	3250
+	.byte	6
+	.word	202
+	.byte	5
+	.word	202
+	.byte	6
+	.word	3265
+	.byte	6
+	.word	1520
+	.byte	6
+	.word	1559
+	.byte	6
+	.word	1617
+	.byte	6
+	.word	1669
+	.byte	6
+	.word	1729
+	.byte	6
+	.word	1784
+	.byte	6
+	.word	1838
+	.byte	6
+	.word	1559
+	.byte	6
+	.word	202
+	.byte	14
+	.byte	'NvM_JobProcInit',0,7,239,2,37,1,1,1,1,21,7,154,1,9,4,22
+	.byte	'NVM_STATE_UNINIT',0,0,22
+	.byte	'NVM_STATE_IDLE',0,1,22
+	.byte	'NVM_STATE_NORMAL_PRIO_JOB',0,2,22
+	.byte	'NVM_STATE_MULTI_BLOCK_JOB',0,3,22
+	.byte	'NVM_STATE_READ_READ_DATA',0,4,22
+	.byte	'NVM_STATE_READ_DATA_VALIDATION',0,5,22
+	.byte	'NVM_STATE_READ_VERIFY_DATA_INTEGRITY',0,6,22
+	.byte	'NVM_STATE_READ_PRE_CHECK_LOSS_OF_REDUNDANCY',0,7,22
+	.byte	'NVM_STATE_READ_CHECK_LOSS_OF_REDUNDANCY',0,8,22
+	.byte	'NVM_STATE_READ_IMPL_RECOV',0,9,22
+	.byte	'NVM_STATE_READ_LOAD_ROM',0,10,22
+	.byte	'NVM_STATE_READ_FINALIZE',0,11,22
+	.byte	'NVM_STATE_WRITE_COPY_BUFFER_DATA',0,12,22
+	.byte	'NVM_STATE_WRITE_GENERATE_DATA_INTEGRITY_INFORMATION',0,13,22
+	.byte	'NVM_STATE_WRITE_CHECK_DATAINTEGRITYRECORD_COMPMECHANISM_SKIP',0,14,22
+	.byte	'NVM_STATE_WRITE_READABILITY_CHECK_PRIMARY_BLOCK',0,15,22
+	.byte	'NVM_STATE_WRITE_READABILITY_CHECK_SECONDARY_BLOCK',0,16,22
+	.byte	'NVM_STATE_WRITE_NV_WRITE_REDUNDANT_DATA',0,17,22
+	.byte	'NVM_STATE_WRITE_NV_WRITE_DATA',0,18,22
+	.byte	'NVM_STATE_RESTORE_LOAD_ROM',0,19,22
+	.byte	'NVM_STATE_INVALIDATING_BLOCK',0,20,22
+	.byte	'NVM_STATE_ERASE_ERASE_BLOCK',0,21,22
+	.byte	'NVM_STATE_READALL_PROC_RAM_BLOCK',0,22,22
+	.byte	'NVM_STATE_READALL_PREPARE_DATAINTEGRITY_VERIFICATION',0,23,22
+	.byte	'NVM_STATE_READALL_CHK_SKIP',0,24,22
+	.byte	'NVM_STATE_READALL_KILLED',0,25,22
+	.byte	'NVM_STATE_READALL_WR_ONCE_PROT',0,26,22
+	.byte	'NVM_STATE_READALL_CHK_RAM_VALIDITY',0,27,22
+	.byte	'NVM_STATE_READALL_READ_NV',0,28,22
+	.byte	'NVM_STATE_READALL_LOAD_DEFAULTS',0,29,22
+	.byte	'NVM_STATE_READALL_READABILITY_CHECK',0,30,22
+	.byte	'NVM_STATE_WRITEALL_PROC_BLOCK',0,31,22
+	.byte	'NVM_STATE_WRITEALL_WRITE_FSM',0,32,22
+	.byte	'NVM_STATE_WRITEALL_WAIT_MEMHWA',0,33,22
+	.byte	'NVM_STATE_FSM_FINISHED',0,34,0,13
+	.byte	'NvM_Fsm',0,7,130,3,48
+	.word	3345
+	.byte	1,1,1,1,9
+	.byte	'NvM_CurrentState_t',0,7,130,3,72
+	.word	3345
+	.byte	0,5
+	.word	2457
+	.byte	13
+	.byte	'NvM_IsBooleanBitfieldTrue',0,7,149,3,40
+	.word	202
+	.byte	1,1,1,1,9
+	.byte	'BooleanBitfield',0,7,149,3,89
+	.word	4616
+	.byte	0,14
+	.byte	'NvM_QueueInit',0,8,54,37,1,1,1,1,21,4,227,1,9,4,22
+	.byte	'NVM_INT_FID_WRITE_BLOCK',0,0,22
+	.byte	'NVM_INT_FID_READ_BLOCK',0,1,22
+	.byte	'NVM_INT_FID_RESTORE_DEFAULTS',0,2,22
+	.byte	'NVM_INT_FID_INVALIDATE_NV_BLOCK',0,3,22
+	.byte	'NVM_INT_FID_ERASE_BLOCK',0,4,22
+	.byte	'NVM_INT_FID_WRITE_ALL',0,5,22
+	.byte	'NVM_INT_FID_READ_ALL',0,6,22
+	.byte	'NVM_INT_FID_PRE_READ_ALL',0,7,22
+	.byte	'NVM_INT_FID_REPAIR_REDUNDANT_BLOCKS',0,8,22
+	.byte	'NVM_INT_FID_NO_JOB_PENDING',0,9,0,13
+	.byte	'NvM_QueueJob',0,8,74,40
+	.word	202
+	.byte	1,1,1,1,9
+	.byte	'BlockId',0,8,74,69
+	.word	421
+	.byte	9
+	.byte	'ServiceId',0,8,74,104
+	.word	4708
+	.byte	9
+	.byte	'RamAddress',0,8,74,134,1
+	.word	1464
+	.byte	0,13
+	.byte	'NvM_UnQueueJob',0,8,91,40
+	.word	202
+	.byte	1,1,1,1,9
+	.byte	'BlockId',0,8,91,71
+	.word	421
+	.byte	0,14
+	.byte	'NvM_MemIfAbstraction_Init',0,9,112,22,1,1,1,1,23
+	.word	353
+	.byte	24
+	.word	391
+	.byte	10,0,23
+	.word	448
+	.byte	24
+	.word	479
+	.byte	10,0,23
+	.word	519
+	.byte	24
+	.word	548
+	.byte	24
+	.word	565
+	.byte	10,0,23
+	.word	588
+	.byte	24
+	.word	617
+	.byte	10,0,23
+	.word	641
+	.byte	24
+	.word	676
+	.byte	10,0,23
+	.word	705
+	.byte	24
+	.word	736
+	.byte	24
+	.word	753
+	.byte	10,0,23
+	.word	784
+	.byte	24
+	.word	813
+	.byte	10,0,23
+	.word	828
+	.byte	10,0,23
+	.word	863
+	.byte	10,0,23
+	.word	909
+	.byte	24
+	.word	943
+	.byte	12,25
+	.word	1002
+	.byte	24
+	.word	1034
+	.byte	26
+	.word	1051
+	.byte	0,10,0,0,23
+	.word	1002
+	.byte	24
+	.word	1034
+	.byte	10,0,27,1,6
+	.word	5306
+	.byte	7
+	.byte	'__codeptr',0,1,1,1
+	.word	5308
+	.byte	7
+	.byte	'boolean',0,10,140,1,29
+	.word	202
+	.byte	2
+	.byte	'char',0,1,6,7
+	.byte	'sint8',0,10,142,1,31
+	.word	5348
+	.byte	7
+	.byte	'uint8',0,10,143,1,31
+	.word	202
+	.byte	2
+	.byte	'short int',0,2,5,7
+	.byte	'sint16',0,10,144,1,31
+	.word	5386
+	.byte	7
+	.byte	'uint16',0,10,145,1,31
+	.word	421
+	.byte	2
+	.byte	'long int',0,4,5,7
+	.byte	'sint32',0,10,146,1,31
+	.word	5431
+	.byte	2
+	.byte	'unsigned long int',0,4,7,7
+	.byte	'uint32',0,10,147,1,31
+	.word	5459
+	.byte	7
+	.byte	'Std_ReturnType',0,11,120,15
+	.word	202
+	.byte	7
+	.byte	'Std_TransformerErrorCode',0,11,131,1,15
+	.word	202
+	.byte	7
+	.byte	'Std_TransformerClass',0,11,133,1,15
+	.word	202
+	.byte	7
+	.byte	'PduLengthType',0,12,70,16
+	.word	421
+	.byte	7
+	.byte	'SduDataPtrType',0,13,178,1,54
+	.word	1158
+	.byte	21,13,201,1,9,4,22
+	.byte	'TP_DATACONF',0,0,22
+	.byte	'TP_DATARETRY',0,1,22
+	.byte	'TP_CONFPENDING',0,2,0,7
+	.byte	'TpDataStateType',0,13,208,1,3
+	.word	5629
+	.byte	28
+	.byte	'sDet_PCConfigType',0,14,243,1,16,1,4
+	.byte	'Det_PCConfigNeverUsed',0
+	.word	202
+	.byte	1,2,35,0,0,7
+	.byte	'Det_PCConfigType',0,14,246,1,3
+	.word	5707
+	.byte	7
+	.byte	'Dcm_DataElement_Boot_Software_Boot_Software_Identification_PrimitiveType',0,15,84,16
+	.word	5459
+	.byte	7
+	.byte	'Dcm_DataElement_Boot_Software_NumberOfModules_PrimitiveType',0,15,87,15
+	.word	202
+	.byte	7
+	.byte	'Dcm_DataElement_DID_0x0017_DID_Sint32_Array_ArrayType',0,15,90,16
+	.word	5431
+	.byte	7
+	.byte	'Dcm_DataElement_DID_0x0018_DID_Uint32_Array_ArrayType',0,15,93,16
+	.word	5459
+	.byte	7
+	.byte	'Dcm_DataElement_DID_0x0019_DID_Sint16_Array_ArrayType',0,15,96,16
+	.word	5386
+	.byte	7
+	.byte	'Dcm_DataElement_DID_0x001A_DID_Uint16_Array_ArrayType',0,15,99,16
+	.word	421
+	.byte	7
+	.byte	'Dcm_DataElement_DID_0x001B_DID_Sint8_Array_ArrayType',0,15,102,15
+	.word	5348
+	.byte	7
+	.byte	'Dcm_DataElement_DID_0xF410_DID_Data_PrimitiveType',0,15,105,16
+	.word	421
+	.byte	7
+	.byte	'Dcm_DataElement_DID_0xF412_DID_Data_PrimitiveType',0,15,108,16
+	.word	421
+	.byte	7
+	.byte	'Dcm_DataElement_DID_0xF413_DID_Data_PrimitiveType',0,15,111,16
+	.word	421
+	.byte	7
+	.byte	'Dcm_DataElement_DataDiagnosticIdentifier_DID_DataDiagnosticIdentifier_PrimitiveType',0,15,114,16
+	.word	421
+	.byte	7
+	.byte	'Dcm_DataElement_DevelopmentData_CanDriverVersion_PrimitiveType',0,15,117,16
+	.word	421
+	.byte	7
+	.byte	'Dcm_DataElement_DevelopmentData_DiagnosticModuleVersion_PrimitiveType',0,15,120,16
+	.word	421
+	.byte	7
+	.byte	'Dcm_DataElement_DevelopmentData_NmVersion_PrimitiveType',0,15,123,16
+	.word	421
+	.byte	7
+	.byte	'Dcm_DataElement_DevelopmentData_OperatingSystemVersion_PrimitiveType',0,15,126,16
+	.word	421
+	.byte	7
+	.byte	'Dcm_DataElement_DevelopmentData_TransportLayerVersion_PrimitiveType',0,15,129,1,16
+	.word	421
+	.byte	7
+	.byte	'Dcm_DataElement_Example_ReadWriteData_GlobalTime_PrimitiveType',0,15,132,1,16
+	.word	5459
+	.byte	7
+	.byte	'Dcm_DataElement_Example_WriteOnlyDID_DID_DataObject_PrimitiveType',0,15,135,1,15
+	.word	202
+	.byte	7
+	.byte	'Dcm_DataElement_SampleIoControl_DID_Data_PrimitiveType',0,15,138,1,16
+	.word	5459
+	.byte	7
+	.byte	'Dcm_DataElement_SerialNumber_SerialNumber_PrimitiveType',0,15,141,1,16
+	.word	5459
+	.byte	7
+	.byte	'Dcm_RequestDataOut_SampleRoutineControl_Out_ResultPrimitiveType',0,15,147,1,16
+	.word	421
+	.byte	7
+	.byte	'Dcm_RequestDataOut_SampleRoutineControl_StartOnly_Out_ResultPrimitiveType',0,15,153,1,16
+	.word	5459
+	.byte	7
+	.byte	'Dcm_StartDataIn_SampleRoutineControl_In_Option0PrimitiveType',0,15,159,1,15
+	.word	202
+	.byte	7
+	.byte	'Dcm_StartDataIn_SampleRoutineControl_StartOnly_In_Option1ArrayType',0,15,165,1,15
+	.word	202
+	.byte	7
+	.byte	'Dcm_StartDataOut_SampleRoutineControl_Out_InitStatePrimitiveType',0,15,168,1,16
+	.word	5459
+	.byte	7
+	.byte	'Dcm_StopDataOut_SampleRoutineControl_Out_StopStatePrimitiveType',0,15,174,1,16
+	.word	5459
+	.byte	7
+	.byte	'NvM_RequestResultType',0,15,238,2,15
+	.word	202
+	.byte	7
+	.byte	'NvM_ServiceIdType',0,15,241,2,15
+	.word	202
+	.byte	7
+	.byte	'NvM_BlockIdType',0,15,134,3,16
+	.word	421
+	.byte	21,16,59,9,4,22
+	.byte	'MEMIF_UNINIT',0,0,22
+	.byte	'MEMIF_IDLE',0,1,22
+	.byte	'MEMIF_BUSY',0,2,22
+	.byte	'MEMIF_BUSY_INTERNAL',0,3,0,7
+	.byte	'MemIf_StatusType',0,16,65,3
+	.word	7688
+	.byte	21,16,72,9,4,22
+	.byte	'MEMIF_JOB_OK',0,0,22
+	.byte	'MEMIF_JOB_FAILED',0,1,22
+	.byte	'MEMIF_JOB_PENDING',0,2,22
+	.byte	'MEMIF_JOB_CANCELED',0,3,22
+	.byte	'MEMIF_BLOCK_INCONSISTENT',0,4,22
+	.byte	'MEMIF_BLOCK_INVALID',0,5,0,7
+	.byte	'MemIf_JobResultType',0,16,80,3
+	.word	7782
+	.byte	6
+	.word	202
+	.byte	17
+	.word	202
+	.byte	1,1,18
+	.word	421
+	.byte	18
+	.word	421
+	.byte	18
+	.word	7940
+	.byte	18
+	.word	421
+	.byte	0,6
+	.word	7945
+	.byte	7
+	.byte	'MemIf_ApiReadType',0,17,137,1,9
+	.word	7973
+	.byte	17
+	.word	202
+	.byte	1,1,18
+	.word	421
+	.byte	18
+	.word	7940
+	.byte	0,6
+	.word	8005
+	.byte	7
+	.byte	'MemIf_ApiWriteType',0,17,138,1,9
+	.word	8023
+	.byte	17
+	.word	202
+	.byte	1,1,18
+	.word	421
+	.byte	0,6
+	.word	8056
+	.byte	7
+	.byte	'MemIf_ApiEraseImmediateBlockType',0,17,139,1,9
+	.word	8069
+	.byte	7
+	.byte	'MemIf_ApiInvalidateBlockType',0,17,140,1,9
+	.word	8069
+	.byte	29,1,1,6
+	.word	8154
+	.byte	7
+	.byte	'MemIf_ApiCancelType',0,17,141,1,9
+	.word	8157
+	.byte	16
+	.word	7688
+	.byte	1,1,6
+	.word	8191
+	.byte	7
+	.byte	'MemIf_ApiGetStatusType',0,17,142,1,9
+	.word	8198
+	.byte	16
+	.word	7782
+	.byte	1,1,6
+	.word	8235
+	.byte	7
+	.byte	'MemIf_ApiGetJobResultType',0,17,143,1,9
+	.word	8242
+	.byte	21,16,88,9,4,22
+	.byte	'MEMIF_MODE_SLOW',0,0,22
+	.byte	'MEMIF_MODE_FAST',0,1,0,19,1,1,18
+	.word	8282
+	.byte	0,6
+	.word	8324
+	.byte	7
+	.byte	'MemIf_ApiSetModeType',0,17,144,1,9
+	.word	8333
+	.byte	7
+	.byte	'NvM_BitFieldType',0,4,78,22
+	.word	2457
+	.byte	7
+	.byte	'NvM_BlockDescriptorFlagsType',0,4,94,3
+	.word	1983
+	.byte	7
+	.byte	'NvM_DataIntegrityType',0,4,97,26
+	.word	2457
+	.byte	7
+	.byte	'NvM_BlockDescriptorType',0,4,201,1,3
+	.word	2473
+	.byte	7
+	.byte	'NvM_CsmJobIdType',0,4,209,1,16
+	.word	5459
+	.byte	7
+	.byte	'NvM_InternalServiceIdType',0,4,239,1,3
+	.word	4708
+	.byte	7
+	.byte	'NvM_QueueEntryRefType',0,4,242,1,15
+	.word	202
+	.byte	30
+	.word	2473
+	.byte	31,0,5
+	.word	8585
+	.byte	32
+	.byte	'NvM_BlockDescriptorTable_at',0,4,229,2,57
+	.word	8592
+	.byte	1,1,7
+	.byte	'NvM_ConstRamAddressType',0,2,97,50
+	.word	779
+	.byte	7
+	.byte	'NvM_RamMngmtAreaType',0,2,104,3
+	.word	219
+	.byte	21,5,38,9,4,22
+	.byte	'NVM_ACT_ID_SetInitialAttr',0,0,22
+	.byte	'NVM_ACT_ID_InitMainFsm',0,1,22
+	.byte	'NVM_ACT_ID_InitBlock',0,2,22
+	.byte	'NVM_ACT_ID_InitReadAll',0,3,22
+	.byte	'NVM_ACT_ID_InitReadBlockSubFsm',0,4,22
+	.byte	'NVM_ACT_ID_InitRestoreBlockDefaultsSubFsm',0,5,22
+	.byte	'NVM_ACT_ID_InitWriteAll',0,6,22
+	.byte	'NVM_ACT_ID_InitWriteBlock',0,7,22
+	.byte	'NVM_ACT_ID_InitWriteBlockFsm',0,8,22
+	.byte	'NVM_ACT_ID_InitRestoreBlockDefaults',0,9,22
+	.byte	'NVM_ACT_ID_FinishMainJob',0,10,22
+	.byte	'NVM_ACT_ID_KillWritAll',0,11,22
+	.byte	'NVM_ACT_ID_FinishBlock',0,12,22
+	.byte	'NVM_ACT_ID_InitNextBlockReadAll',0,13,22
+	.byte	'NVM_ACT_ID_InitNextBlockWriteAll',0,14,22
+	.byte	'NVM_ACT_ID_FinishReadBlock',0,15,22
+	.byte	'NVM_ACT_ID_FinishWriteBlock',0,16,22
+	.byte	'NVM_ACT_ID_FinishEraseBlock',0,17,22
+	.byte	'NVM_ACT_ID_EraseNvBlock',0,18,22
+	.byte	'NVM_ACT_ID_InvalidateNvBlock',0,19,22
+	.byte	'NVM_ACT_ID_WriteNvBlock',0,20,22
+	.byte	'NVM_ACT_ID_ReadNvBlock',0,21,22
+	.byte	'NVM_ACT_ID_ReadNvBlockDataIntegrityRecordOnly',0,22,22
+	.byte	'NVM_ACT_ID_ReadCopyData',0,23,22
+	.byte	'NVM_ACT_ID_RestoreRomDefaults',0,24,22
+	.byte	'NVM_ACT_ID_FinishRestoreRomDefaults',0,25,22
+	.byte	'NVM_ACT_ID_TestBlockBlank',0,26,22
+	.byte	'NVM_ACT_ID_ValidateRam',0,27,22
+	.byte	'NVM_ACT_ID_SetupRedundant',0,28,22
+	.byte	'NVM_ACT_ID_SetupOther',0,29,22
+	.byte	'NVM_ACT_ID_UpdateNvState',0,30,22
+	.byte	'NVM_ACT_ID_SetReqIntegrityFailed',0,31,22
+	.byte	'NVM_ACT_ID_SetReqSkipped',0,32,22
+	.byte	'NVM_ACT_ID_SetReqNotOk',0,33,22
+	.byte	'NVM_ACT_ID_SetReqOk',0,34,22
+	.byte	'NVM_ACT_ID_SetBlockPendingWriteAll',0,35,22
+	.byte	'NVM_ACT_ID_CopyNvDataToBuf',0,36,22
+	.byte	'NVM_ACT_ID_GetMultiBlockJob',0,37,22
+	.byte	'NVM_ACT_ID_CancelNV',0,38,22
+	.byte	'NVM_ACT_ID_KillSubFsm',0,39,22
+	.byte	'NVM_ACT_ID_NotifyLossOfRedundancy',0,40,22
+	.byte	'NVM_ACT_ID_FinishReadBlockAndSetSkipped',0,41,22
+	.byte	'NVM_ACT_ID_SetupDataIntegrityGeneration',0,42,22
+	.byte	'NVM_ACT_ID_SetupDataIntegrityVerification_ReadBlock',0,43,22
+	.byte	'NVM_ACT_ID_SetupDataIntegrityVerification_ReadAll',0,44,22
+	.byte	'NVM_ACT_ID_ProcessDataIntegrityJob',0,45,22
+	.byte	'NVM_ACT_ID_ExportDataIntegrityInformation',0,46,22
+	.byte	'NVM_ACT_ID_CopyRamDataToInternalBuffer',0,47,22
+	.byte	'NVM_ACT_ID_GetNormalPrioJob',0,48,22
+	.byte	'NVM_ACT_ID_Wait',0,49,22
+	.byte	'NVM_ACT_ID_Nop',0,50,0,7
+	.byte	'NvM_StateActionIdType',0,5,131,1,3
+	.word	8697
+	.byte	21,18,41,9,4,22
+	.byte	'NVM_DATAINTEGRITYSTATUS_PENDING',0,0,22
+	.byte	'NVM_DATAINTEGRITYSTATUS_FINISHED_SUCCESSFUL',0,1,22
+	.byte	'NVM_DATAINTEGRITYSTATUS_FINISHED_UNSUCCESSFUL',0,2,0,7
+	.byte	'NvM_DataIntegrityStatus',0,18,48,3
+	.word	10318
+	.byte	19,1,1,18
+	.word	1168
+	.byte	0,6
+	.word	10484
+	.byte	7
+	.byte	'NvM_DataIntegrityProcessFPtr',0,18,53,9
+	.word	10493
+	.byte	17
+	.word	10318
+	.byte	1,1,18
+	.word	514
+	.byte	0,6
+	.word	10535
+	.byte	7
+	.byte	'NvM_DataIntegrityGetStatusFPtr',0,18,54,9
+	.word	10548
+	.byte	5
+	.word	202
+	.byte	6
+	.word	10592
+	.byte	17
+	.word	202
+	.byte	1,1,18
+	.word	514
+	.byte	18
+	.word	10597
+	.byte	0,6
+	.word	10602
+	.byte	7
+	.byte	'NvM_DataIntegrityCompareFPtr',0,18,55,9
+	.word	10620
+	.byte	19,1,1,18
+	.word	514
+	.byte	18
+	.word	7940
+	.byte	0,6
+	.word	10662
+	.byte	7
+	.byte	'NvM_DataIntegrityExportFPtr',0,18,56,9
+	.word	10676
+	.byte	28
+	.byte	'NvM_DataIntegrityJobStruct',0,18,58,16,20,4
+	.byte	'Process',0
+	.word	10498
+	.byte	4,2,35,0,4
+	.byte	'GetStatus',0
+	.word	10553
+	.byte	4,2,35,4,4
+	.byte	'Compare',0
+	.word	10625
+	.byte	4,2,35,8,4
+	.byte	'Export',0
+	.word	10681
+	.byte	4,2,35,12,4
+	.byte	'SubJobPtr',0
+	.word	1168
+	.byte	4,2,35,16,0,7
+	.byte	'NvM_DataIntegrityJob',0,18,66,3
+	.word	10717
+	.byte	6
+	.word	10484
+	.byte	6
+	.word	10535
+	.byte	6
+	.word	10602
+	.byte	6
+	.word	10662
+	.byte	7
+	.byte	'NvM_CrcBufferPtrType',0,19,60,59
+	.word	1158
+	.byte	6
+	.word	5459
+	.byte	19,1,1,18
+	.word	10597
+	.byte	18
+	.word	421
+	.byte	18
+	.word	10916
+	.byte	18
+	.word	202
+	.byte	0,6
+	.word	10921
+	.byte	7
+	.byte	'NvM_CrcCalculateFPtr',0,19,66,9
+	.word	10945
+	.byte	17
+	.word	202
+	.byte	1,1,18
+	.word	10597
+	.byte	18
+	.word	10597
+	.byte	0,6
+	.word	10979
+	.byte	7
+	.byte	'NvM_CrcCompareFPtr',0,19,67,9
+	.word	10997
+	.byte	19,1,1,18
+	.word	7940
+	.byte	18
+	.word	10597
+	.byte	0,6
+	.word	11029
+	.byte	7
+	.byte	'NvM_CrcCopyToBufferFPtr',0,19,68,9
+	.word	11043
+	.byte	28
+	.byte	'NvM_CrcHandlerClass',0,19,71,8,20,4
+	.byte	'calc',0
+	.word	10950
+	.byte	4,2,35,0,4
+	.byte	'compare',0
+	.word	11002
+	.byte	4,2,35,4,4
+	.byte	'copyToBuffer',0
+	.word	11048
+	.byte	4,2,35,8,4
+	.byte	'initialCrcValue',0
+	.word	5459
+	.byte	4,2,35,12,4
+	.byte	'crcLength',0
+	.word	202
+	.byte	1,2,35,16,0,5
+	.word	11080
+	.byte	6
+	.word	11203
+	.byte	7
+	.byte	'NvM_CrcHandlerClassConstPtr',0,19,80,75
+	.word	11208
+	.byte	6
+	.word	10921
+	.byte	6
+	.word	10979
+	.byte	6
+	.word	11029
+	.byte	21,19,86,9,4,22
+	.byte	'NVM_CRCPROCESSINGSTATUS_COMPATIBILITY',0,0,22
+	.byte	'NVM_CRCPROCESSINGSTATUS_GENERATE_PENDING',0,1,22
+	.byte	'NVM_CRCPROCESSINGSTATUS_GENERATE_FINISHED',0,2,22
+	.byte	'NVM_CRCPROCESSINGSTATUS_VALIDATE_GENERATION_PENDING',0,3,22
+	.byte	'NVM_CRCPROCESSINGSTATUS_VALIDATE_FINISHED_SUCCESSFUL',0,4,22
+	.byte	'NVM_CRCPROCESSINGSTATUS_VALIDATE_FINISHED_UNSUCCESSFUL',0,5,0,7
+	.byte	'NvM_CrcProcessingStatus',0,19,99,3
+	.word	11264
+	.byte	28
+	.byte	'NvM_CrcJobStruct',0,19,101,16,28,4
+	.byte	'CurrentCrcValue',0
+	.word	5459
+	.byte	4,2,35,0,4
+	.byte	'RamData_pt',0
+	.word	8636
+	.byte	4,2,35,4,4
+	.byte	'CrcBuffer',0
+	.word	10887
+	.byte	4,2,35,8,4
+	.byte	'HandlerInstance_pt',0
+	.word	11213
+	.byte	4,2,35,12,4
+	.byte	'ProcessingStatus',0
+	.word	11264
+	.byte	4,2,35,16,4
+	.byte	'RemainingLength_u16',0
+	.word	421
+	.byte	2,2,35,20,4
+	.byte	'BytesPerProcessCycle',0
+	.word	421
+	.byte	2,2,35,22,4
+	.byte	'IsFirstCall',0
+	.word	202
+	.byte	1,2,35,24,0,7
+	.byte	'NvM_CrcJobType',0,19,111,3
+	.word	11595
+	.byte	5
+	.word	202
+	.byte	6
+	.word	11839
+	.byte	6
+	.word	202
+	.byte	5
+	.word	11080
+	.byte	6
+	.word	11854
+	.byte	21,6,33,9,4,22
+	.byte	'NVM_QRY_ID_BLK_RELEVANT_FOR_WRITE_ALL',0,0,22
+	.byte	'NVM_QRY_ID_CANCEL_WRITE_ALL',0,1,22
+	.byte	'NVM_QR_ID_WRITEALL_KILLED',0,2,22
+	.byte	'NVM_QRY_ID_IS_DATA_INTEGRITY_JOB_PENDING',0,3,22
+	.byte	'NVM_QRY_ID_IS_DATA_INTEGRITY_JOB_FINISHED_SUCCESSFUL',0,4,22
+	.byte	'NVM_QRY_ID_IS_DATA_INTEGRITY_ALGORITHM_CONFIGURED',0,5,22
+	.byte	'NVM_QRY_ID_DATA_COPY_BUSY',0,6,22
+	.byte	'NVM_QRY_ID_LAST_BLOCK_DONE_READALL',0,7,22
+	.byte	'NVM_QRY_ID_LAST_BLOCK_DONE_WRITEALL',0,8,22
+	.byte	'NVM_QRY_ID_LAST_RESULT_OK',0,9,22
+	.byte	'NVM_QRY_ID_MAIN_FSM_RUNNING',0,10,22
+	.byte	'NVM_QRY_ID_MULTI_BLK_JOB',0,11,22
+	.byte	'NVM_QRY_ID_NORMAL_PRIO_JOB',0,12,22
+	.byte	'NVM_QRY_ID_NV_BUSY',0,13,22
+	.byte	'NVM_QRY_ID_MEMHWA_BUSY',0,14,22
+	.byte	'NVM_QRY_ID_CALC_RAM_BLOCK_CRC_ENABLED_AND_RAM_VALID',0,15,22
+	.byte	'NVM_QRY_ID_PRIMARY_REDUNDANT_BLOCK',0,16,22
+	.byte	'NVM_QRY_ID_SECONDARY_REDUNDANT_BLOCK',0,17,22
+	.byte	'NVM_QRY_ID_SKIP_BLOCK',0,18,22
+	.byte	'NVM_QRY_ID_SUB_FSM_RUNNING',0,19,22
+	.byte	'NVM_QRY_ID_WRITE_BLOCK_ONCE',0,20,22
+	.byte	'NVM_QRY_ID_WRITE_RETRIES_EXCEEDED',0,21,22
+	.byte	'NVM_QRY_ID_HAS_ROM',0,22,22
+	.byte	'NVM_QRY_ID_EXT_RUNTIME',0,23,22
+	.byte	'NvM_QRY_ID_DATAINTEGRITYRECORD_COMP_MECHANISM_SKIPWRITE',0,24,22
+	.byte	'NVM_QRY_ID_POST_READ_TRANSFORM',0,25,22
+	.byte	'NVM_QRY_ID_READALL_KILLED',0,26,22
+	.byte	'NVM_QRY_ID_SYNCDECRYPT',0,27,22
+	.byte	'NVM_QRY_ID_CSM_RETRIES_NECESSARY',0,28,22
+	.byte	'NVM_QRY_ID_BLOCK_CHECK_LOSS_OF_REDUNDANCY',0,29,22
+	.byte	'NVM_QRY_ID_FIRST_REDUNDANT_BLOCK_FAILED',0,30,22
+	.byte	'NVM_QRY_ID_REDUNDANT_CRC_MATCHES',0,31,22
+	.byte	'NVM_QRY_ID_HAS_EXPLICITSYNCHRONIZATION',0,32,22
+	.byte	'NVM_QRY_ID_EXPLICITSYNC_ATTEMPT_NECESSARY',0,33,22
+	.byte	'NVM_QRY_ID_EXPLICITSYNC_ATTEMPT_FAILED',0,34,22
+	.byte	'NVM_QRY_ID_FALSE',0,35,22
+	.byte	'NVM_QRY_ID_TRUE',0,36,0,7
+	.byte	'NvM_StateQueryIdType',0,6,102,3
+	.word	11864
+	.byte	3,7,111,9,12,4
+	.byte	'JobBlockId_t',0
+	.word	421
+	.byte	2,2,35,0,4
+	.byte	'JobServiceId_t',0
+	.word	4708
+	.byte	4,2,35,2,4
+	.byte	'RamAddr_t',0
+	.word	1464
+	.byte	4,2,35,8,0,7
+	.byte	'NvM_JobType',0,7,116,3
+	.word	13168
+	.byte	3,7,120,9,76,4
+	.byte	'Descriptor_pt',0
+	.word	3148
+	.byte	4,2,35,0,4
+	.byte	'Mngmt_pt',0
+	.word	969
+	.byte	4,2,35,4,4
+	.byte	'RamAddr_t',0
+	.word	1464
+	.byte	4,2,35,8,4
+	.byte	'NvRamAddr_t',0
+	.word	1464
+	.byte	4,2,35,12,4
+	.byte	'DataIntegrityJob',0
+	.word	10717
+	.byte	20,2,35,16,4
+	.byte	'BlockCrcJob_t',0
+	.word	11595
+	.byte	28,2,35,36,4
+	.byte	'NvIdentifier_u16',0
+	.word	421
+	.byte	2,2,35,64,4
+	.byte	'ByteCount_u16',0
+	.word	421
+	.byte	2,2,35,66,4
+	.byte	'LastResult_t',0
+	.word	202
+	.byte	1,2,35,68,4
+	.byte	'WriteRetryCounter_u8',0
+	.word	202
+	.byte	1,2,35,69,4
+	.byte	'InternalFlags_u8',0
+	.word	202
+	.byte	1,2,35,70,4
+	.byte	'NvState_u8',0
+	.word	202
+	.byte	1,2,35,71,4
+	.byte	'ExplSyncAttemptSuccessful',0
+	.word	202
+	.byte	1,2,35,72,4
+	.byte	'ExplSyncAttemptCounter',0
+	.word	202
+	.byte	1,2,35,73,0,7
+	.byte	'NvM_BlockInfoType',0,7,141,1,3
+	.word	13259
+	.byte	7
+	.byte	'NvM_StateIdType',0,7,241,1,3
+	.word	3345
+	.byte	3,7,250,1,9,8,4
+	.byte	'ExitHandler_t',0
+	.word	8697
+	.byte	4,2,35,0,4
+	.byte	'EntryHandler_t',0
+	.word	8697
+	.byte	4,2,35,4,0,7
+	.byte	'NvM_StateChangeActionsType',0,7,254,1,3
+	.word	13661
+	.byte	33,8
+	.word	11864
+	.byte	34,1,0,3,7,130,2,9,20,4
+	.byte	'Queries_at',0
+	.word	13751
+	.byte	8,2,35,0,4
+	.byte	'Actions_t',0
+	.word	13661
+	.byte	8,2,35,8,4
+	.byte	'NextState_t',0
+	.word	3345
+	.byte	4,2,35,16,0,7
+	.byte	'NvM_StateChangeIfDescrType',0,7,135,2,3
+	.word	13760
+	.byte	3,7,137,2,9,12,4
+	.byte	'Actions_t',0
+	.word	13661
+	.byte	8,2,35,0,4
+	.byte	'NextState_t',0
+	.word	3345
+	.byte	4,2,35,8,0,7
+	.byte	'NvM_StateChangeElseDescrType',0,7,141,2,3
+	.word	13863
+	.byte	32
+	.byte	'NvM_JobMainState_t',0,7,161,2,44
+	.word	3345
+	.byte	1,1,32
+	.byte	'NvM_JobSubState_t',0,7,164,2,44
+	.word	3345
+	.byte	1,1,32
+	.byte	'NvM_TaskState_t',0,7,176,2,47
+	.word	3345
+	.byte	1,1,32
+	.byte	'NvM_CurrentJob_t',0,7,185,2,43
+	.word	13168
+	.byte	1,1,32
+	.byte	'NvM_CurrentBlockInfo_t',0,7,188,2,49
+	.word	13259
+	.byte	1,1,33,12
+	.word	219
+	.byte	34,2,0,32
+	.byte	'NvM_BlockMngmtArea_at',0,7,196,2,51
+	.word	14096
+	.byte	1,1,32
+	.byte	'NvM_DcmBlockMngmt_t',0,7,199,2,51
+	.word	219
+	.byte	1,1,0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L338:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,36,0,3,8,11,15,62,15,0,0,3,19,1,58,15,59,15,57,15,11,15
+	.byte	0,0,4,13,0,3,8,73,19,11,15,56,9,0,0,5,38,0,73,19,0,0,6,15,0,73,19,0,0,7,22,0,3,8,58,15,59,15,57,15,73
+	.byte	19,0,0,8,46,1,3,8,32,13,58,15,59,15,57,15,73,19,54,15,39,12,0,0,9,5,0,3,8,58,15,59,15,57,15,73,19,0,0
+	.byte	10,11,0,0,0,11,59,0,3,8,0,0,12,11,1,0,0,13,46,1,3,8,58,15,59,15,57,15,73,19,54,15,39,12,63,12,60,12,0
+	.byte	0,14,46,0,3,8,58,15,59,15,57,15,54,15,39,12,63,12,60,12,0,0,15,46,1,3,8,58,15,59,15,57,15,54,15,39,12
+	.byte	63,12,60,12,0,0,16,21,0,73,19,54,15,39,12,0,0,17,21,1,73,19,54,15,39,12,0,0,18,5,0,73,19,0,0,19,21,1,54
+	.byte	15,39,12,0,0,20,13,0,3,8,11,15,73,19,13,15,12,15,56,9,0,0,21,4,1,58,15,59,15,57,15,11,15,0,0,22,40,0,3
+	.byte	8,28,13,0,0,23,46,1,49,19,0,0,24,5,0,49,19,0,0,25,29,1,49,19,0,0,26,11,0,49,19,0,0,27,21,0,54,15,0,0,28
+	.byte	19,1,3,8,58,15,59,15,57,15,11,15,0,0,29,21,0,54,15,39,12,0,0,30,1,1,73,19,0,0,31,33,0,0,0,32,52,0,3,8
+	.byte	58,15,59,15,57,15,73,19,63,12,60,12,0,0,33,1,1,11,15,73,19,0,0,34,33,0,47,15,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L339:
+	.word	.L741-.L740
+.L740:
+	.half	3
+	.word	.L743-.L742
+.L742:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0
+	.byte	'GenData',0,0
+	.byte	'NvM.c',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\NvM\\Implementation\\NvM_IntTypes.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Det\\Implementation\\Det.h',0,0,0,0
+	.byte	'NvM_PrivateCfg.h',0,2,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\NvM\\Implementation\\NvM_Act.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\NvM\\Implementation\\NvM_Qry.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\NvM\\Implementation\\NvM_JobProc.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\NvM\\Implementation\\NvM_Queue.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\NvM\\Implementation\\NvM_MemIfAbstraction.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\Platform_Types.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\Std_Types.h',0,0,0,0
+	.byte	'ComStack_Cfg.h',0,2,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\ComStack_Types.h',0,0,0,0
+	.byte	'Det_Cfg.h',0,2,0,0
+	.byte	'Rte_Type.h',0,2,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\MemIf\\Implementation\\MemIf_Types.h',0,0,0,0
+	.byte	'MemIf_Cfg.h',0,2,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\NvM\\Implementation\\NvM_DataIntegrity.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\NvM\\Implementation\\NvM_Crc.h',0,0,0,0,0
+.L743:
+.L741:
+	.sdecl	'.debug_info',debug,cluster('NvM_Init')
+	.sect	'.debug_info'
+.L340:
+	.word	263
+	.half	3
+	.word	.L341
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L343,.L342
+	.byte	2
+	.word	.L336
+	.byte	3
+	.byte	'NvM_Init',0,1,196,2,29,1,1,1
+	.word	.L293,.L474,.L292
+	.byte	4
+	.word	.L293,.L474
+	.byte	5
+	.byte	'i',0,1,198,2,18
+	.word	.L475,.L476
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_Init')
+	.sect	'.debug_abbrev'
+.L341:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_Init')
+	.sect	'.debug_line'
+.L342:
+	.word	.L745-.L744
+.L744:
+	.half	3
+	.word	.L747-.L746
+.L746:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM.c',0,1,0,0,0
+.L747:
+	.byte	5,18,7,0,5,2
+	.word	.L293
+	.byte	3,201,2,1,5,23,9
+	.half	.L748-.L293
+	.byte	3,10,1,5,5,1,5,21,9
+	.half	.L749-.L748
+	.byte	1,5,5,9
+	.half	.L750-.L749
+	.byte	3,1,1,5,51,9
+	.half	.L751-.L750
+	.byte	1,9
+	.half	.L752-.L751
+	.byte	3,3,1,5,46,9
+	.half	.L2-.L752
+	.byte	3,2,1,5,51,3,126,1,5,5,7,9
+	.half	.L753-.L2
+	.byte	3,6,1,5,39,9
+	.half	.L754-.L753
+	.byte	1,5,44,9
+	.half	.L755-.L754
+	.byte	3,1,1,5,45,9
+	.half	.L756-.L755
+	.byte	3,1,1,5,20,9
+	.half	.L757-.L756
+	.byte	3,2,1,5,30,9
+	.half	.L758-.L757
+	.byte	3,1,1,5,1,7,9
+	.half	.L345-.L758
+	.byte	3,1,0,1,1
+.L745:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_Init')
+	.sect	'.debug_ranges'
+.L343:
+	.word	-1,.L344,0,.L345-.L344,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_SetDataIndex')
+	.sect	'.debug_info'
+.L346:
+	.word	498
+	.half	3
+	.word	.L347
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L349,.L348
+	.byte	2
+	.word	.L336
+	.byte	3
+	.byte	'NvM_SetDataIndex',0,1,247,2,39
+	.word	.L477
+	.byte	1,1,1
+	.word	.L295,.L478,.L294
+	.byte	4
+	.byte	'BlockId',0,1,247,2,72
+	.word	.L475,.L479
+	.byte	4
+	.byte	'DataIndex',0,1,247,2,87
+	.word	.L477,.L480
+	.byte	5
+	.word	.L295,.L478
+	.byte	6
+	.byte	'returnValue',0,1,249,2,20
+	.word	.L477,.L481
+	.byte	6
+	.byte	'detErrorId',0,1,250,2,11
+	.word	.L477,.L482
+	.byte	7
+	.word	.L483,.L5,.L484
+	.byte	8
+	.word	.L485,.L486
+	.byte	9
+	.word	.L487,.L5,.L484
+	.byte	6
+	.byte	'blockPending',0,1,192,15,13
+	.word	.L477,.L488
+	.byte	7
+	.word	.L489,.L7,.L490
+	.byte	8
+	.word	.L491,.L492
+	.byte	10
+	.word	.L493,.L7,.L490
+	.byte	0,0,0,5
+	.word	.L494,.L19
+	.byte	7
+	.word	.L489,.L494,.L495
+	.byte	8
+	.word	.L491,.L492
+	.byte	10
+	.word	.L493,.L494,.L495
+	.byte	0,0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_SetDataIndex')
+	.sect	'.debug_abbrev'
+.L347:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,1,49,16,17
+	.byte	1,18,1,0,0,10,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_SetDataIndex')
+	.sect	'.debug_line'
+.L348:
+	.word	.L760-.L759
+.L759:
+	.half	3
+	.word	.L762-.L761
+.L761:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM.c',0,1,0,0,0
+.L762:
+	.byte	5,22,7,0,5,2
+	.word	.L295
+	.byte	3,158,15,1,5,32,9
+	.half	.L763-.L295
+	.byte	3,218,115,1,5,22,9
+	.half	.L670-.L763
+	.byte	3,1,1,5,5,9
+	.half	.L671-.L670
+	.byte	3,3,1,5,20,7,9
+	.half	.L764-.L671
+	.byte	3,2,1,5,43,1,5,64,9
+	.half	.L3-.L764
+	.byte	3,233,11,1,5,10,9
+	.half	.L765-.L3
+	.byte	3,153,116,1,5,20,7,9
+	.half	.L766-.L765
+	.byte	3,2,1,5,42,1,5,8,9
+	.half	.L5-.L766
+	.byte	3,192,12,1,5,28,7,9
+	.half	.L767-.L5
+	.byte	1,5,44,9
+	.half	.L768-.L767
+	.byte	1,5,27,9
+	.half	.L769-.L768
+	.byte	1,5,122,7,9
+	.half	.L770-.L769
+	.byte	1,5,64,7,9
+	.half	.L8-.L770
+	.byte	3,10,1,5,13,9
+	.half	.L771-.L8
+	.byte	3,125,1,5,9,9
+	.half	.L772-.L771
+	.byte	1,5,46,7,9
+	.half	.L773-.L772
+	.byte	3,3,1,5,78,1,5,46,9
+	.half	.L10-.L773
+	.byte	3,6,1,5,9,3,125,1,5,12,9
+	.half	.L7-.L10
+	.byte	3,28,1,5,60,7,9
+	.half	.L774-.L7
+	.byte	1,5,81,9
+	.half	.L775-.L774
+	.byte	1,5,92,9
+	.half	.L776-.L775
+	.byte	1,5,96,9
+	.half	.L13-.L776
+	.byte	1,5,62,9
+	.half	.L14-.L13
+	.byte	3,110,1,5,84,9
+	.half	.L490-.L14
+	.byte	1,5,10,9
+	.half	.L11-.L490
+	.byte	3,171,115,1,5,20,7,9
+	.half	.L484-.L11
+	.byte	3,2,1,5,41,1,5,61,9
+	.half	.L15-.L484
+	.byte	3,254,11,1,5,34,1,5,61,9
+	.half	.L777-.L15
+	.byte	1,5,93,9
+	.half	.L778-.L777
+	.byte	1,5,10,9
+	.half	.L779-.L778
+	.byte	3,132,116,1,5,20,7,9
+	.half	.L780-.L779
+	.byte	3,2,1,5,48,1,5,80,9
+	.half	.L17-.L780
+	.byte	3,180,11,1,5,9,9
+	.half	.L781-.L17
+	.byte	3,209,116,1,5,12,7,9
+	.half	.L494-.L781
+	.byte	3,220,12,1,5,60,7,9
+	.half	.L782-.L494
+	.byte	1,5,81,9
+	.half	.L783-.L782
+	.byte	1,5,92,9
+	.half	.L784-.L783
+	.byte	1,5,96,9
+	.half	.L20-.L784
+	.byte	1,5,46,9
+	.half	.L21-.L20
+	.byte	3,169,115,1,5,25,9
+	.half	.L495-.L21
+	.byte	3,2,1,5,57,3,123,1,5,24,9
+	.half	.L19-.L495
+	.byte	3,10,1,5,5,9
+	.half	.L4-.L19
+	.byte	3,6,1,5,9,7,9
+	.half	.L785-.L4
+	.byte	3,2,1,5,5,9
+	.half	.L23-.L785
+	.byte	3,6,1,5,1,3,1,1,7,9
+	.half	.L351-.L23
+	.byte	0,1,1
+.L760:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_SetDataIndex')
+	.sect	'.debug_ranges'
+.L349:
+	.word	-1,.L350,0,.L351-.L350,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_GetDataIndex')
+	.sect	'.debug_info'
+.L352:
+	.word	402
+	.half	3
+	.word	.L353
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L355,.L354
+	.byte	2
+	.word	.L336
+	.byte	3
+	.byte	'NvM_GetDataIndex',0,1,189,3,39
+	.word	.L477
+	.byte	1,1,1
+	.word	.L297,.L496,.L296
+	.byte	4
+	.byte	'BlockId',0,1,189,3,72
+	.word	.L475,.L497
+	.byte	4
+	.byte	'DataIndexPtr',0,1,189,3,120
+	.word	.L498,.L499
+	.byte	5
+	.word	.L297,.L496
+	.byte	6
+	.byte	'returnValue',0,1,191,3,20
+	.word	.L477,.L500
+	.byte	6
+	.byte	'detErrorId',0,1,192,3,11
+	.word	.L477,.L501
+	.byte	5
+	.word	.L502,.L31
+	.byte	7
+	.word	.L489,.L502,.L503
+	.byte	8
+	.word	.L491,.L504
+	.byte	9
+	.word	.L493,.L502,.L503
+	.byte	0,0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_GetDataIndex')
+	.sect	'.debug_abbrev'
+.L353:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,0,49,16,17
+	.byte	1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_GetDataIndex')
+	.sect	'.debug_line'
+.L354:
+	.word	.L787-.L786
+.L786:
+	.half	3
+	.word	.L789-.L788
+.L788:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM.c',0,1,0,0,0
+.L789:
+	.byte	5,32,7,0,5,2
+	.word	.L297
+	.byte	3,190,3,1,5,22,9
+	.half	.L674-.L297
+	.byte	3,1,1,5,5,3,4,1,5,20,7,9
+	.half	.L675-.L674
+	.byte	3,2,1,5,38,1,5,22,9
+	.half	.L25-.L675
+	.byte	3,217,11,1,5,10,9
+	.half	.L790-.L25
+	.byte	3,169,116,1,5,20,7,9
+	.half	.L791-.L790
+	.byte	3,4,1,5,27,3,126,1,5,64,9
+	.half	.L27-.L791
+	.byte	3,158,11,1,5,10,9
+	.half	.L792-.L27
+	.byte	3,230,116,1,5,20,7,9
+	.half	.L793-.L792
+	.byte	3,4,1,5,27,3,126,1,5,48,9
+	.half	.L29-.L793
+	.byte	3,239,10,1,5,21,1,5,48,9
+	.half	.L794-.L29
+	.byte	1,5,80,9
+	.half	.L795-.L794
+	.byte	1,5,9,9
+	.half	.L796-.L795
+	.byte	3,152,117,1,5,12,7,9
+	.half	.L502-.L796
+	.byte	3,149,12,1,5,60,7,9
+	.half	.L797-.L502
+	.byte	1,5,81,9
+	.half	.L798-.L797
+	.byte	1,5,92,9
+	.half	.L799-.L798
+	.byte	1,5,96,9
+	.half	.L32-.L799
+	.byte	1,5,40,9
+	.half	.L33-.L32
+	.byte	3,239,115,1,5,25,9
+	.half	.L503-.L33
+	.byte	3,2,1,5,57,3,124,1,5,24,9
+	.half	.L31-.L503
+	.byte	3,11,1,5,29,9
+	.half	.L30-.L31
+	.byte	3,125,1,5,27,9
+	.half	.L34-.L30
+	.byte	1,5,5,9
+	.half	.L26-.L34
+	.byte	3,9,1,5,9,7,9
+	.half	.L800-.L26
+	.byte	3,2,1,5,5,9
+	.half	.L35-.L800
+	.byte	3,6,1,5,1,3,1,1,7,9
+	.half	.L357-.L35
+	.byte	0,1,1
+.L787:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_GetDataIndex')
+	.sect	'.debug_ranges'
+.L355:
+	.word	-1,.L356,0,.L357-.L356,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_SetBlockProtection')
+	.sect	'.debug_info'
+.L358:
+	.word	554
+	.half	3
+	.word	.L359
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L361,.L360
+	.byte	2
+	.word	.L336
+	.byte	3
+	.byte	'NvM_SetBlockProtection',0,1,136,4,39
+	.word	.L477
+	.byte	1,1,1
+	.word	.L299,.L505,.L298
+	.byte	4
+	.byte	'BlockId',0,1,136,4,78
+	.word	.L475,.L506
+	.byte	4
+	.byte	'ProtectionEnabled',0,1,136,4,95
+	.word	.L477,.L507
+	.byte	5
+	.word	.L299,.L505
+	.byte	6
+	.byte	'returnValue',0,1,138,4,18
+	.word	.L477,.L508
+	.byte	6
+	.byte	'detErrorId',0,1,139,4,9
+	.word	.L477,.L509
+	.byte	7
+	.word	.L483,.L41,.L510
+	.byte	8
+	.word	.L485,.L511
+	.byte	9
+	.word	.L487,.L41,.L510
+	.byte	6
+	.byte	'blockPending',0,1,192,15,13
+	.word	.L477,.L512
+	.byte	7
+	.word	.L489,.L43,.L513
+	.byte	8
+	.word	.L491,.L514
+	.byte	10
+	.word	.L493,.L43,.L513
+	.byte	0,0,0,5
+	.word	.L51,.L38
+	.byte	7
+	.word	.L489,.L51,.L54
+	.byte	8
+	.word	.L491,.L514
+	.byte	11
+	.word	.L493,.L515
+	.byte	0,7
+	.word	.L489,.L516,.L517
+	.byte	8
+	.word	.L491,.L514
+	.byte	0,7
+	.word	.L489,.L57,.L518
+	.byte	8
+	.word	.L491,.L514
+	.byte	0,0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_SetBlockProtection')
+	.sect	'.debug_abbrev'
+.L359:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,1,49,16,17
+	.byte	1,18,1,0,0,10,11,0,49,16,17,1,18,1,0,0,11,11,0,49,16,85,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_SetBlockProtection')
+	.sect	'.debug_line'
+.L360:
+	.word	.L802-.L801
+.L801:
+	.half	3
+	.word	.L804-.L803
+.L803:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM.c',0,1,0,0,0
+.L804:
+	.byte	5,22,7,0,5,2
+	.word	.L299
+	.byte	3,158,15,1,5,39,9
+	.half	.L805-.L299
+	.byte	3,233,116,1,5,22,3,151,11,1,5,30,9
+	.half	.L677-.L805
+	.byte	3,235,116,1,5,20,9
+	.half	.L678-.L677
+	.byte	3,1,1,5,3,9
+	.half	.L679-.L678
+	.byte	3,3,1,5,16,7,9
+	.half	.L806-.L679
+	.byte	3,2,1,5,39,1,5,64,9
+	.half	.L37-.L806
+	.byte	3,216,10,1,5,8,9
+	.half	.L807-.L37
+	.byte	3,170,117,1,5,16,7,9
+	.half	.L808-.L807
+	.byte	3,2,1,5,38,1,5,36,9
+	.half	.L39-.L808
+	.byte	3,228,10,1,5,9,1,5,22,9
+	.half	.L809-.L39
+	.byte	3,127,1,5,9,9
+	.half	.L810-.L809
+	.byte	3,1,1,5,36,9
+	.half	.L811-.L810
+	.byte	1,5,22,9
+	.half	.L812-.L811
+	.byte	3,127,1,5,43,9
+	.half	.L813-.L812
+	.byte	1,5,68,9
+	.half	.L814-.L813
+	.byte	3,1,1,5,75,9
+	.half	.L815-.L814
+	.byte	3,127,1,5,8,9
+	.half	.L816-.L815
+	.byte	3,159,117,1,5,16,7,9
+	.half	.L817-.L816
+	.byte	3,2,1,5,44,1,5,8,9
+	.half	.L41-.L817
+	.byte	3,171,11,1,5,28,7,9
+	.half	.L818-.L41
+	.byte	1,5,44,9
+	.half	.L819-.L818
+	.byte	1,5,27,9
+	.half	.L820-.L819
+	.byte	1,5,122,7,9
+	.half	.L821-.L820
+	.byte	1,5,64,7,9
+	.half	.L44-.L821
+	.byte	3,10,1,5,13,9
+	.half	.L822-.L44
+	.byte	3,125,1,5,9,9
+	.half	.L823-.L822
+	.byte	1,5,46,7,9
+	.half	.L824-.L823
+	.byte	3,3,1,5,78,1,5,46,9
+	.half	.L46-.L824
+	.byte	3,6,1,5,9,3,125,1,5,12,9
+	.half	.L43-.L46
+	.byte	3,28,1,5,81,7,9
+	.half	.L825-.L43
+	.byte	1,5,92,9
+	.half	.L826-.L825
+	.byte	1,5,96,9
+	.half	.L49-.L826
+	.byte	1,5,62,9
+	.half	.L50-.L49
+	.byte	3,110,1,5,84,9
+	.half	.L513-.L50
+	.byte	1,5,8,9
+	.half	.L47-.L513
+	.byte	3,192,116,1,5,16,7,9
+	.half	.L510-.L47
+	.byte	3,2,1,5,37,1,5,12,9
+	.half	.L51-.L510
+	.byte	3,208,11,1,5,81,7,9
+	.half	.L827-.L51
+	.byte	1,5,92,9
+	.half	.L828-.L827
+	.byte	1,5,96,9
+	.half	.L53-.L828
+	.byte	1,5,74,9
+	.half	.L54-.L53
+	.byte	3,186,116,1,5,5,9
+	.half	.L676-.L54
+	.byte	3,127,1,5,31,7,9
+	.half	.L829-.L676
+	.byte	3,3,1,5,27,9
+	.half	.L516-.L829
+	.byte	3,4,1,5,7,9
+	.half	.L517-.L516
+	.byte	3,126,1,5,48,7,9
+	.half	.L830-.L517
+	.byte	3,2,1,5,66,1,5,48,9
+	.half	.L56-.L830
+	.byte	3,4,1,5,30,9
+	.half	.L518-.L56
+	.byte	3,3,1,5,19,9
+	.half	.L831-.L518
+	.byte	3,2,1,5,32,3,126,1,5,18,9
+	.half	.L55-.L831
+	.byte	3,7,1,5,3,9
+	.half	.L38-.L55
+	.byte	3,6,1,5,5,7,9
+	.half	.L832-.L38
+	.byte	3,2,1,5,3,9
+	.half	.L59-.L832
+	.byte	3,6,1,5,1,3,1,1,7,9
+	.half	.L363-.L59
+	.byte	0,1,1
+.L802:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_SetBlockProtection')
+	.sect	'.debug_ranges'
+.L361:
+	.word	-1,.L362,0,.L363-.L362,0,0
+.L515:
+	.word	-1,.L299,.L51-.L299,.L54-.L299,.L516-.L299,.L517-.L299,.L57-.L299,.L518-.L299,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_GetErrorStatus')
+	.sect	'.debug_info'
+.L364:
+	.word	507
+	.half	3
+	.word	.L365
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L367,.L366
+	.byte	2
+	.word	.L336
+	.byte	3
+	.byte	'NvM_GetErrorStatus',0,1,219,4,39
+	.word	.L477
+	.byte	1,1,1
+	.word	.L301,.L519,.L300
+	.byte	4
+	.byte	'BlockId',0,1,219,4,74
+	.word	.L475,.L520
+	.byte	4
+	.byte	'RequestResultPtr',0,1,220,4,60
+	.word	.L521,.L522
+	.byte	5
+	.word	.L301,.L519
+	.byte	6
+	.byte	'returnValue',0,1,222,4,20
+	.word	.L477,.L523
+	.byte	6
+	.byte	'detErrorId',0,1,223,4,11
+	.word	.L477,.L524
+	.byte	7
+	.word	.L483,.L65,.L525
+	.byte	8
+	.word	.L485,.L526
+	.byte	9
+	.word	.L487,.L65,.L525
+	.byte	6
+	.byte	'blockPending',0,1,192,15,13
+	.word	.L477,.L527
+	.byte	7
+	.word	.L489,.L67,.L528
+	.byte	8
+	.word	.L491,.L529
+	.byte	10
+	.word	.L493,.L67,.L528
+	.byte	0,0,0,5
+	.word	.L75,.L76
+	.byte	7
+	.word	.L489,.L75,.L76
+	.byte	8
+	.word	.L491,.L529
+	.byte	10
+	.word	.L493,.L75,.L76
+	.byte	0,0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_GetErrorStatus')
+	.sect	'.debug_abbrev'
+.L365:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,1,49,16,17
+	.byte	1,18,1,0,0,10,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_GetErrorStatus')
+	.sect	'.debug_line'
+.L366:
+	.word	.L834-.L833
+.L833:
+	.half	3
+	.word	.L836-.L835
+.L835:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM.c',0,1,0,0,0
+.L836:
+	.byte	5,22,7,0,5,2
+	.word	.L301
+	.byte	3,158,15,1,5,32,9
+	.half	.L837-.L301
+	.byte	3,191,117,1,5,22,9
+	.half	.L681-.L837
+	.byte	3,1,1,5,5,9
+	.half	.L682-.L681
+	.byte	3,3,1,5,20,7,9
+	.half	.L838-.L682
+	.byte	3,2,1,5,43,1,5,14,9
+	.half	.L61-.L838
+	.byte	3,3,1,5,10,9
+	.half	.L839-.L61
+	.byte	1,5,20,7,9
+	.half	.L840-.L839
+	.byte	3,2,1,5,42,1,5,10,9
+	.half	.L63-.L840
+	.byte	3,2,1,5,20,7,9
+	.half	.L841-.L63
+	.byte	3,2,1,5,38,1,5,8,9
+	.half	.L65-.L841
+	.byte	3,214,10,1,5,28,7,9
+	.half	.L842-.L65
+	.byte	1,5,44,9
+	.half	.L843-.L842
+	.byte	1,5,27,9
+	.half	.L844-.L843
+	.byte	1,5,122,7,9
+	.half	.L845-.L844
+	.byte	1,5,64,7,9
+	.half	.L68-.L845
+	.byte	3,10,1,5,13,9
+	.half	.L846-.L68
+	.byte	3,125,1,5,9,9
+	.half	.L847-.L846
+	.byte	1,5,46,7,9
+	.half	.L848-.L847
+	.byte	3,3,1,5,78,1,5,46,9
+	.half	.L70-.L848
+	.byte	3,6,1,5,9,3,125,1,5,12,9
+	.half	.L67-.L70
+	.byte	3,28,1,5,60,7,9
+	.half	.L849-.L67
+	.byte	1,5,81,9
+	.half	.L850-.L849
+	.byte	1,5,92,9
+	.half	.L851-.L850
+	.byte	1,5,96,9
+	.half	.L73-.L851
+	.byte	1,5,62,9
+	.half	.L74-.L73
+	.byte	3,110,1,5,84,9
+	.half	.L528-.L74
+	.byte	1,5,9,9
+	.half	.L71-.L528
+	.byte	3,152,117,1,5,33,7,9
+	.half	.L525-.L71
+	.byte	3,2,1,5,48,1,5,12,9
+	.half	.L75-.L525
+	.byte	3,248,10,1,5,60,7,9
+	.half	.L852-.L75
+	.byte	1,5,81,9
+	.half	.L853-.L852
+	.byte	1,5,92,9
+	.half	.L854-.L853
+	.byte	1,5,96,9
+	.half	.L77-.L854
+	.byte	1,5,44,9
+	.half	.L78-.L77
+	.byte	3,143,117,1,5,21,9
+	.half	.L76-.L78
+	.byte	3,3,1,5,31,3,125,1,5,5,9
+	.half	.L62-.L76
+	.byte	3,7,1,5,9,7,9
+	.half	.L855-.L62
+	.byte	3,2,1,5,5,9
+	.half	.L79-.L855
+	.byte	3,6,1,5,1,3,1,1,7,9
+	.half	.L369-.L79
+	.byte	0,1,1
+.L834:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_GetErrorStatus')
+	.sect	'.debug_ranges'
+.L367:
+	.word	-1,.L368,0,.L369-.L368,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_SetRamBlockStatus')
+	.sect	'.debug_info'
+.L370:
+	.word	558
+	.half	3
+	.word	.L371
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L373,.L372
+	.byte	2
+	.word	.L336
+	.byte	3
+	.byte	'NvM_SetRamBlockStatus',0,1,206,5,39
+	.word	.L477
+	.byte	1,1,1
+	.word	.L303,.L530,.L302
+	.byte	4
+	.byte	'BlockId',0,1,206,5,77
+	.word	.L475,.L531
+	.byte	4
+	.byte	'BlockChanged',0,1,206,5,94
+	.word	.L477,.L532
+	.byte	5
+	.word	.L303,.L530
+	.byte	6
+	.byte	'returnValue',0,1,208,5,18
+	.word	.L477,.L533
+	.byte	6
+	.byte	'detErrorId',0,1,209,5,9
+	.word	.L477,.L534
+	.byte	7
+	.word	.L483,.L85,.L535
+	.byte	8
+	.word	.L485,.L536
+	.byte	9
+	.word	.L487,.L85,.L535
+	.byte	6
+	.byte	'blockPending',0,1,192,15,13
+	.word	.L477,.L537
+	.byte	7
+	.word	.L489,.L87,.L538
+	.byte	8
+	.word	.L491,.L539
+	.byte	10
+	.word	.L493,.L87,.L538
+	.byte	0,0,0,5
+	.word	.L95,.L82
+	.byte	5
+	.word	.L540,.L97
+	.byte	7
+	.word	.L489,.L540,.L99
+	.byte	8
+	.word	.L491,.L539
+	.byte	11
+	.word	.L493,.L541
+	.byte	0,7
+	.word	.L489,.L542,.L543
+	.byte	8
+	.word	.L491,.L539
+	.byte	0,7
+	.word	.L489,.L101,.L544
+	.byte	8
+	.word	.L491,.L539
+	.byte	0,0,0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_SetRamBlockStatus')
+	.sect	'.debug_abbrev'
+.L371:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,1,49,16,17
+	.byte	1,18,1,0,0,10,11,0,49,16,17,1,18,1,0,0,11,11,0,49,16,85,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_SetRamBlockStatus')
+	.sect	'.debug_line'
+.L372:
+	.word	.L857-.L856
+.L856:
+	.half	3
+	.word	.L859-.L858
+.L858:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM.c',0,1,0,0,0
+.L859:
+	.byte	5,22,7,0,5,2
+	.word	.L303
+	.byte	3,158,15,1,5,39,9
+	.half	.L860-.L303
+	.byte	3,175,118,1,5,22,3,209,9,1,5,30,9
+	.half	.L861-.L860
+	.byte	3,177,118,1,5,20,9
+	.half	.L684-.L861
+	.byte	3,1,1,5,3,9
+	.half	.L685-.L684
+	.byte	3,4,1,5,16,7,9
+	.half	.L862-.L685
+	.byte	3,2,1,5,39,1,5,64,9
+	.half	.L81-.L862
+	.byte	3,145,9,1,5,8,9
+	.half	.L863-.L81
+	.byte	3,241,118,1,5,16,7,9
+	.half	.L864-.L863
+	.byte	3,2,1,5,38,1,5,36,9
+	.half	.L83-.L864
+	.byte	3,157,9,1,5,9,1,5,22,9
+	.half	.L865-.L83
+	.byte	3,127,1,5,9,9
+	.half	.L866-.L865
+	.byte	3,1,1,5,36,9
+	.half	.L867-.L866
+	.byte	1,5,22,9
+	.half	.L868-.L867
+	.byte	3,127,1,5,43,9
+	.half	.L869-.L868
+	.byte	1,5,68,9
+	.half	.L870-.L869
+	.byte	3,1,1,5,75,9
+	.half	.L871-.L870
+	.byte	3,127,1,5,8,9
+	.half	.L872-.L871
+	.byte	3,230,118,1,5,16,7,9
+	.half	.L873-.L872
+	.byte	3,2,1,5,44,1,5,8,9
+	.half	.L85-.L873
+	.byte	3,228,9,1,5,28,7,9
+	.half	.L687-.L85
+	.byte	1,5,44,9
+	.half	.L874-.L687
+	.byte	1,5,27,9
+	.half	.L875-.L874
+	.byte	1,5,122,7,9
+	.half	.L876-.L875
+	.byte	1,5,64,7,9
+	.half	.L88-.L876
+	.byte	3,10,1,5,13,9
+	.half	.L877-.L88
+	.byte	3,125,1,5,9,9
+	.half	.L878-.L877
+	.byte	1,5,46,7,9
+	.half	.L688-.L878
+	.byte	3,3,1,5,78,1,5,46,9
+	.half	.L90-.L688
+	.byte	3,6,1,5,9,3,125,1,5,12,9
+	.half	.L87-.L90
+	.byte	3,28,1,5,81,7,9
+	.half	.L689-.L87
+	.byte	1,5,92,9
+	.half	.L879-.L689
+	.byte	1,5,96,9
+	.half	.L93-.L879
+	.byte	1,5,62,9
+	.half	.L94-.L93
+	.byte	3,110,1,5,84,9
+	.half	.L538-.L94
+	.byte	1,5,8,9
+	.half	.L91-.L538
+	.byte	3,135,118,1,5,16,7,9
+	.half	.L535-.L91
+	.byte	3,2,1,5,37,1,5,55,9
+	.half	.L95-.L535
+	.byte	3,8,1,5,5,9
+	.half	.L683-.L95
+	.byte	1,5,12,7,9
+	.half	.L540-.L683
+	.byte	3,129,10,1,5,81,7,9
+	.half	.L691-.L540
+	.byte	1,5,92,9
+	.half	.L880-.L691
+	.byte	1,5,96,9
+	.half	.L98-.L880
+	.byte	1,5,31,9
+	.half	.L99-.L98
+	.byte	3,133,118,1,5,22,9
+	.half	.L542-.L99
+	.byte	3,3,1,5,7,9
+	.half	.L543-.L542
+	.byte	3,126,1,5,43,7,9
+	.half	.L692-.L543
+	.byte	3,2,1,5,91,1,5,43,9
+	.half	.L100-.L692
+	.byte	3,4,1,5,30,9
+	.half	.L544-.L100
+	.byte	3,2,1,5,19,9
+	.half	.L881-.L544
+	.byte	3,11,1,5,32,3,117,1,5,18,9
+	.half	.L97-.L881
+	.byte	3,21,1,5,3,9
+	.half	.L82-.L97
+	.byte	3,6,1,5,5,7,9
+	.half	.L882-.L82
+	.byte	3,2,1,5,3,9
+	.half	.L103-.L882
+	.byte	3,6,1,5,1,3,1,1,7,9
+	.half	.L375-.L103
+	.byte	0,1,1
+.L857:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_SetRamBlockStatus')
+	.sect	'.debug_ranges'
+.L373:
+	.word	-1,.L374,0,.L375-.L374,0,0
+.L541:
+	.word	-1,.L303,.L540-.L303,.L99-.L303,.L542-.L303,.L543-.L303,.L101-.L303,.L544-.L303,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_ReadBlock')
+	.sect	'.debug_info'
+.L376:
+	.word	586
+	.half	3
+	.word	.L377
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L379,.L378
+	.byte	2
+	.word	.L336
+	.byte	3
+	.byte	'NvM_ReadBlock',0,1,183,6,39
+	.word	.L477
+	.byte	1,1,1
+	.word	.L305,.L545,.L304
+	.byte	4
+	.byte	'BlockId',0,1,183,6,69
+	.word	.L475,.L546
+	.byte	4
+	.byte	'NvM_DstPtr',0,1,183,6,116
+	.word	.L547,.L548
+	.byte	5
+	.word	.L305,.L545
+	.byte	6
+	.byte	'returnValue',0,1,185,6,20
+	.word	.L477,.L549
+	.byte	6
+	.byte	'detErrorId',0,1,186,6,11
+	.word	.L477,.L550
+	.byte	7
+	.word	.L551,.L109,.L552
+	.byte	8
+	.word	.L553,.L554
+	.byte	8
+	.word	.L555,.L556
+	.byte	9
+	.word	.L557,.L109,.L552
+	.byte	6
+	.byte	'returnValue',0,1,206,14,13
+	.word	.L477,.L558
+	.byte	0,0,7
+	.word	.L483,.L115,.L559
+	.byte	8
+	.word	.L485,.L560
+	.byte	9
+	.word	.L487,.L115,.L559
+	.byte	6
+	.byte	'blockPending',0,1,192,15,13
+	.word	.L477,.L561
+	.byte	7
+	.word	.L489,.L117,.L562
+	.byte	8
+	.word	.L491,.L563
+	.byte	10
+	.word	.L493,.L117,.L562
+	.byte	0,0,0,5
+	.word	.L564,.L128
+	.byte	7
+	.word	.L489,.L564,.L130
+	.byte	8
+	.word	.L491,.L563
+	.byte	11
+	.word	.L493,.L565
+	.byte	0,7
+	.word	.L489,.L566,.L567
+	.byte	8
+	.word	.L491,.L563
+	.byte	0,0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_ReadBlock')
+	.sect	'.debug_abbrev'
+.L377:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,1,49,16,17
+	.byte	1,18,1,0,0,10,11,0,49,16,17,1,18,1,0,0,11,11,0,49,16,85,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_ReadBlock')
+	.sect	'.debug_line'
+.L378:
+	.word	.L884-.L883
+.L883:
+	.half	3
+	.word	.L886-.L885
+.L885:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM.c',0,1,0,0,0
+.L886:
+	.byte	5,22,7,0,5,2
+	.word	.L305
+	.byte	3,158,15,1,5,39,9
+	.half	.L887-.L305
+	.byte	3,152,119,1,5,22,3,232,8,1,5,32,9
+	.half	.L694-.L887
+	.byte	3,154,119,1,5,39,3,126,1,5,22,9
+	.half	.L695-.L694
+	.byte	3,3,1,5,5,9
+	.half	.L696-.L695
+	.byte	3,3,1,5,20,7,9
+	.half	.L888-.L696
+	.byte	3,2,1,5,43,1,5,64,9
+	.half	.L105-.L888
+	.byte	3,169,8,1,5,10,9
+	.half	.L889-.L105
+	.byte	3,217,119,1,5,20,7,9
+	.half	.L890-.L889
+	.byte	3,2,1,5,42,1,5,36,9
+	.half	.L107-.L890
+	.byte	3,181,8,1,5,9,1,5,22,9
+	.half	.L891-.L107
+	.byte	3,127,1,5,9,9
+	.half	.L892-.L891
+	.byte	3,1,1,5,36,9
+	.half	.L893-.L892
+	.byte	1,5,22,9
+	.half	.L894-.L893
+	.byte	3,127,1,5,43,9
+	.half	.L895-.L894
+	.byte	1,5,68,9
+	.half	.L896-.L895
+	.byte	3,1,1,5,75,9
+	.half	.L897-.L896
+	.byte	3,127,1,5,10,9
+	.half	.L898-.L897
+	.byte	3,206,119,1,5,20,7,9
+	.half	.L899-.L898
+	.byte	3,2,1,5,48,1,5,25,9
+	.half	.L109-.L899
+	.byte	3,135,8,1,5,5,3,5,1,5,77,7,9
+	.half	.L697-.L109
+	.byte	3,2,1,5,33,9
+	.half	.L900-.L697
+	.byte	1,5,22,7,9
+	.half	.L901-.L900
+	.byte	3,1,1,5,14,9
+	.half	.L902-.L901
+	.byte	1,5,67,7,9
+	.half	.L903-.L902
+	.byte	1,5,89,9
+	.half	.L904-.L903
+	.byte	1,5,77,7,9
+	.half	.L113-.L904
+	.byte	3,127,1,5,10,9
+	.half	.L111-.L113
+	.byte	3,244,119,1,5,20,7,9
+	.half	.L552-.L111
+	.byte	3,2,1,5,41,1,5,8,9
+	.half	.L115-.L552
+	.byte	3,248,8,1,5,28,7,9
+	.half	.L905-.L115
+	.byte	1,5,44,9
+	.half	.L906-.L905
+	.byte	1,5,27,9
+	.half	.L907-.L906
+	.byte	1,5,122,7,9
+	.half	.L908-.L907
+	.byte	1,5,64,7,9
+	.half	.L118-.L908
+	.byte	3,10,1,5,13,9
+	.half	.L698-.L118
+	.byte	3,125,1,5,9,9
+	.half	.L909-.L698
+	.byte	1,5,46,7,9
+	.half	.L910-.L909
+	.byte	3,3,1,5,78,1,5,46,9
+	.half	.L120-.L910
+	.byte	3,6,1,5,9,3,125,1,5,12,9
+	.half	.L117-.L120
+	.byte	3,28,1,5,81,7,9
+	.half	.L911-.L117
+	.byte	1,5,92,9
+	.half	.L912-.L911
+	.byte	1,5,96,9
+	.half	.L123-.L912
+	.byte	1,5,62,9
+	.half	.L124-.L123
+	.byte	3,110,1,5,84,9
+	.half	.L562-.L124
+	.byte	1,5,10,9
+	.half	.L121-.L562
+	.byte	3,243,118,1,5,20,7,9
+	.half	.L559-.L121
+	.byte	3,2,1,5,41,1,5,35,9
+	.half	.L125-.L559
+	.byte	3,6,1,5,59,1,5,9,9
+	.half	.L693-.L125
+	.byte	1,5,13,7,9
+	.half	.L913-.L693
+	.byte	3,2,1,5,12,7,9
+	.half	.L564-.L913
+	.byte	3,149,9,1,5,81,7,9
+	.half	.L914-.L564
+	.byte	1,5,92,9
+	.half	.L915-.L914
+	.byte	1,5,96,9
+	.half	.L129-.L915
+	.byte	1,5,41,9
+	.half	.L130-.L129
+	.byte	3,239,118,1,5,35,9
+	.half	.L566-.L130
+	.byte	3,2,1,5,56,9
+	.half	.L567-.L566
+	.byte	1,5,40,9
+	.half	.L916-.L567
+	.byte	3,2,1,5,25,9
+	.half	.L128-.L916
+	.byte	3,3,1,5,5,9
+	.half	.L106-.L128
+	.byte	3,5,1,5,9,7,9
+	.half	.L917-.L106
+	.byte	3,2,1,5,5,9
+	.half	.L131-.L917
+	.byte	3,6,1,5,1,3,1,1,7,9
+	.half	.L381-.L131
+	.byte	0,1,1
+.L884:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_ReadBlock')
+	.sect	'.debug_ranges'
+.L379:
+	.word	-1,.L380,0,.L381-.L380,0,0
+.L565:
+	.word	-1,.L305,.L564-.L305,.L130-.L305,.L566-.L305,.L567-.L305,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_ReadPRAMBlock')
+	.sect	'.debug_info'
+.L382:
+	.word	281
+	.half	3
+	.word	.L383
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L385,.L384
+	.byte	2
+	.word	.L336
+	.byte	3
+	.byte	'NvM_ReadPRAMBlock',0,1,250,6,39
+	.word	.L477
+	.byte	1,1,1
+	.word	.L307,.L568,.L306
+	.byte	4
+	.byte	'BlockId',0,1,250,6,73
+	.word	.L475,.L569
+	.byte	5
+	.word	.L307,.L568
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_ReadPRAMBlock')
+	.sect	'.debug_abbrev'
+.L383:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_ReadPRAMBlock')
+	.sect	'.debug_line'
+.L384:
+	.word	.L919-.L918
+.L918:
+	.half	3
+	.word	.L921-.L920
+.L920:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM.c',0,1,0,0,0
+.L921:
+	.byte	5,35,7,0,5,2
+	.word	.L307
+	.byte	3,251,6,1,5,1,9
+	.half	.L387-.L307
+	.byte	3,1,0,1,1
+.L919:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_ReadPRAMBlock')
+	.sect	'.debug_ranges'
+.L385:
+	.word	-1,.L386,0,.L387-.L386,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_WriteBlock')
+	.sect	'.debug_info'
+.L388:
+	.word	649
+	.half	3
+	.word	.L389
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L391,.L390
+	.byte	2
+	.word	.L336
+	.byte	3
+	.byte	'NvM_WriteBlock',0,1,147,7,39
+	.word	.L477
+	.byte	1,1,1
+	.word	.L309,.L570,.L308
+	.byte	4
+	.byte	'BlockId',0,1,147,7,70
+	.word	.L475,.L571
+	.byte	4
+	.byte	'NvM_SrcPtr',0,1,147,7,119
+	.word	.L572,.L573
+	.byte	5
+	.word	.L309,.L570
+	.byte	6
+	.byte	'returnValue',0,1,149,7,20
+	.word	.L477,.L574
+	.byte	6
+	.byte	'detErrorId',0,1,150,7,11
+	.word	.L477,.L575
+	.byte	7
+	.word	.L551,.L138,.L576
+	.byte	8
+	.word	.L553,.L577
+	.byte	8
+	.word	.L555,.L578
+	.byte	9
+	.word	.L557,.L138,.L576
+	.byte	6
+	.byte	'returnValue',0,1,206,14,13
+	.word	.L477,.L579
+	.byte	0,0,7
+	.word	.L483,.L144,.L580
+	.byte	8
+	.word	.L485,.L581
+	.byte	9
+	.word	.L487,.L144,.L580
+	.byte	6
+	.byte	'blockPending',0,1,192,15,13
+	.word	.L477,.L582
+	.byte	7
+	.word	.L489,.L146,.L583
+	.byte	8
+	.word	.L491,.L584
+	.byte	10
+	.word	.L493,.L146,.L583
+	.byte	0,0,0,5
+	.word	.L154,.L135
+	.byte	7
+	.word	.L489,.L154,.L157
+	.byte	8
+	.word	.L491,.L584
+	.byte	11
+	.word	.L493,.L585
+	.byte	0,7
+	.word	.L588,.L157,.L589
+	.byte	8
+	.word	.L590,.L591
+	.byte	9
+	.word	.L592,.L157,.L589
+	.byte	6
+	.byte	'returnValue',0,1,159,14,13
+	.word	.L477,.L593
+	.byte	0,0,7
+	.word	.L489,.L586,.L587
+	.byte	8
+	.word	.L491,.L584
+	.byte	0,0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_WriteBlock')
+	.sect	'.debug_abbrev'
+.L389:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,1,49,16,17
+	.byte	1,18,1,0,0,10,11,0,49,16,17,1,18,1,0,0,11,11,0,49,16,85,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_WriteBlock')
+	.sect	'.debug_line'
+.L390:
+	.word	.L923-.L922
+.L922:
+	.half	3
+	.word	.L925-.L924
+.L924:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM.c',0,1,0,0,0
+.L925:
+	.byte	5,22,7,0,5,2
+	.word	.L309
+	.byte	3,158,15,1,5,32,9
+	.half	.L926-.L309
+	.byte	3,246,119,1,5,39,3,126,1,5,22,9
+	.half	.L701-.L926
+	.byte	3,3,1,5,5,9
+	.half	.L702-.L701
+	.byte	3,3,1,5,20,7,9
+	.half	.L927-.L702
+	.byte	3,2,1,5,43,1,5,64,9
+	.half	.L134-.L927
+	.byte	3,205,7,1,5,10,9
+	.half	.L928-.L134
+	.byte	3,181,120,1,5,20,7,9
+	.half	.L929-.L928
+	.byte	3,2,1,5,42,1,5,36,9
+	.half	.L136-.L929
+	.byte	3,217,7,1,5,9,1,5,22,9
+	.half	.L930-.L136
+	.byte	3,127,1,5,9,9
+	.half	.L931-.L930
+	.byte	3,1,1,5,36,9
+	.half	.L932-.L931
+	.byte	1,5,22,9
+	.half	.L933-.L932
+	.byte	3,127,1,5,43,9
+	.half	.L934-.L933
+	.byte	1,5,68,9
+	.half	.L700-.L934
+	.byte	3,1,1,5,75,9
+	.half	.L935-.L700
+	.byte	3,127,1,5,10,9
+	.half	.L936-.L935
+	.byte	3,170,120,1,5,20,7,9
+	.half	.L937-.L936
+	.byte	3,2,1,5,48,1,5,25,9
+	.half	.L138-.L937
+	.byte	3,171,7,1,5,5,3,5,1,5,77,7,9
+	.half	.L703-.L138
+	.byte	3,2,1,5,33,9
+	.half	.L938-.L703
+	.byte	1,5,22,7,9
+	.half	.L939-.L938
+	.byte	3,1,1,5,14,9
+	.half	.L940-.L939
+	.byte	1,5,67,7,9
+	.half	.L941-.L940
+	.byte	1,5,89,9
+	.half	.L942-.L941
+	.byte	1,5,77,7,9
+	.half	.L142-.L942
+	.byte	3,127,1,5,10,9
+	.half	.L140-.L142
+	.byte	3,208,120,1,5,20,7,9
+	.half	.L576-.L140
+	.byte	3,2,1,5,41,1,5,8,9
+	.half	.L144-.L576
+	.byte	3,156,8,1,5,28,7,9
+	.half	.L943-.L144
+	.byte	1,5,44,9
+	.half	.L944-.L943
+	.byte	1,5,27,9
+	.half	.L704-.L944
+	.byte	1,5,122,7,9
+	.half	.L945-.L704
+	.byte	1,5,64,7,9
+	.half	.L147-.L945
+	.byte	3,10,1,5,13,9
+	.half	.L946-.L147
+	.byte	3,125,1,5,9,9
+	.half	.L947-.L946
+	.byte	1,5,46,7,9
+	.half	.L948-.L947
+	.byte	3,3,1,5,78,1,5,46,9
+	.half	.L149-.L948
+	.byte	3,6,1,5,9,3,125,1,5,12,9
+	.half	.L146-.L149
+	.byte	3,28,1,5,81,7,9
+	.half	.L949-.L146
+	.byte	1,5,92,9
+	.half	.L950-.L949
+	.byte	1,5,96,9
+	.half	.L152-.L950
+	.byte	1,5,62,9
+	.half	.L153-.L152
+	.byte	3,110,1,5,84,9
+	.half	.L583-.L153
+	.byte	1,5,10,9
+	.half	.L150-.L583
+	.byte	3,207,119,1,5,20,7,9
+	.half	.L580-.L150
+	.byte	3,2,1,5,41,1,5,12,9
+	.half	.L154-.L580
+	.byte	3,193,8,1,5,81,7,9
+	.half	.L951-.L154
+	.byte	1,5,92,9
+	.half	.L952-.L951
+	.byte	1,5,96,9
+	.half	.L156-.L952
+	.byte	1,5,18,9
+	.half	.L157-.L156
+	.byte	3,182,126,1,5,5,9
+	.half	.L953-.L157
+	.byte	1,5,27,7,9
+	.half	.L954-.L953
+	.byte	3,5,1,5,10,9
+	.half	.L955-.L954
+	.byte	1,5,63,7,9
+	.half	.L956-.L955
+	.byte	3,2,1,5,84,9
+	.half	.L957-.L956
+	.byte	1,5,90,1,5,21,9
+	.half	.L159-.L957
+	.byte	3,5,1,5,9,9
+	.half	.L158-.L159
+	.byte	3,132,121,1,5,39,7,9
+	.half	.L589-.L158
+	.byte	3,3,1,5,64,1,5,13,9
+	.half	.L699-.L589
+	.byte	1,5,17,7,9
+	.half	.L958-.L699
+	.byte	3,2,1,5,45,7,9
+	.half	.L959-.L958
+	.byte	3,2,1,5,39,9
+	.half	.L586-.L959
+	.byte	3,2,1,5,60,9
+	.half	.L587-.L586
+	.byte	1,5,44,9
+	.half	.L960-.L587
+	.byte	3,2,1,5,29,9
+	.half	.L163-.L960
+	.byte	3,3,1,5,5,9
+	.half	.L135-.L163
+	.byte	3,6,1,5,9,7,9
+	.half	.L961-.L135
+	.byte	3,2,1,5,5,9
+	.half	.L164-.L961
+	.byte	3,6,1,5,1,3,1,1,7,9
+	.half	.L393-.L164
+	.byte	0,1,1
+.L923:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_WriteBlock')
+	.sect	'.debug_ranges'
+.L391:
+	.word	-1,.L392,0,.L393-.L392,0,0
+.L585:
+	.word	-1,.L309,.L154-.L309,.L157-.L309,.L586-.L309,.L587-.L309,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_WritePRAMBlock')
+	.sect	'.debug_info'
+.L394:
+	.word	282
+	.half	3
+	.word	.L395
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L397,.L396
+	.byte	2
+	.word	.L336
+	.byte	3
+	.byte	'NvM_WritePRAMBlock',0,1,217,7,39
+	.word	.L477
+	.byte	1,1,1
+	.word	.L311,.L594,.L310
+	.byte	4
+	.byte	'BlockId',0,1,217,7,74
+	.word	.L475,.L595
+	.byte	5
+	.word	.L311,.L594
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_WritePRAMBlock')
+	.sect	'.debug_abbrev'
+.L395:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_WritePRAMBlock')
+	.sect	'.debug_line'
+.L396:
+	.word	.L963-.L962
+.L962:
+	.half	3
+	.word	.L965-.L964
+.L964:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM.c',0,1,0,0,0
+.L965:
+	.byte	5,36,7,0,5,2
+	.word	.L311
+	.byte	3,218,7,1,5,1,9
+	.half	.L399-.L311
+	.byte	3,1,0,1,1
+.L963:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_WritePRAMBlock')
+	.sect	'.debug_ranges'
+.L397:
+	.word	-1,.L398,0,.L399-.L398,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_RestoreBlockDefaults')
+	.sect	'.debug_info'
+.L400:
+	.word	597
+	.half	3
+	.word	.L401
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L403,.L402
+	.byte	2
+	.word	.L336
+	.byte	3
+	.byte	'NvM_RestoreBlockDefaults',0,1,242,7,39
+	.word	.L477
+	.byte	1,1,1
+	.word	.L313,.L596,.L312
+	.byte	4
+	.byte	'BlockId',0,1,242,7,80
+	.word	.L475,.L597
+	.byte	4
+	.byte	'NvM_DstPtr',0,1,242,7,127
+	.word	.L547,.L598
+	.byte	5
+	.word	.L313,.L596
+	.byte	6
+	.byte	'returnValue',0,1,244,7,20
+	.word	.L477,.L599
+	.byte	6
+	.byte	'detErrorId',0,1,245,7,11
+	.word	.L477,.L600
+	.byte	7
+	.word	.L551,.L171,.L601
+	.byte	8
+	.word	.L553,.L602
+	.byte	8
+	.word	.L555,.L603
+	.byte	9
+	.word	.L557,.L171,.L601
+	.byte	6
+	.byte	'returnValue',0,1,206,14,13
+	.word	.L477,.L604
+	.byte	0,0,7
+	.word	.L483,.L179,.L605
+	.byte	8
+	.word	.L485,.L606
+	.byte	9
+	.word	.L487,.L179,.L605
+	.byte	6
+	.byte	'blockPending',0,1,192,15,13
+	.word	.L477,.L607
+	.byte	7
+	.word	.L489,.L182,.L608
+	.byte	8
+	.word	.L491,.L609
+	.byte	10
+	.word	.L493,.L182,.L608
+	.byte	0,0,0,5
+	.word	.L610,.L193
+	.byte	7
+	.word	.L489,.L610,.L195
+	.byte	8
+	.word	.L491,.L609
+	.byte	11
+	.word	.L493,.L611
+	.byte	0,7
+	.word	.L489,.L612,.L613
+	.byte	8
+	.word	.L491,.L609
+	.byte	0,0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_RestoreBlockDefaults')
+	.sect	'.debug_abbrev'
+.L401:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,1,49,16,17
+	.byte	1,18,1,0,0,10,11,0,49,16,17,1,18,1,0,0,11,11,0,49,16,85,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_RestoreBlockDefaults')
+	.sect	'.debug_line'
+.L402:
+	.word	.L967-.L966
+.L966:
+	.half	3
+	.word	.L969-.L968
+.L968:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM.c',0,1,0,0,0
+.L969:
+	.byte	5,22,7,0,5,2
+	.word	.L313
+	.byte	3,158,15,1,5,39,9
+	.half	.L970-.L313
+	.byte	3,211,120,1,5,22,3,173,7,1,5,32,9
+	.half	.L708-.L970
+	.byte	3,213,120,1,5,39,3,126,1,5,22,9
+	.half	.L709-.L708
+	.byte	3,3,1,5,5,9
+	.half	.L710-.L709
+	.byte	3,3,1,5,20,7,9
+	.half	.L971-.L710
+	.byte	3,2,1,5,43,1,5,64,9
+	.half	.L167-.L971
+	.byte	3,238,6,1,5,10,9
+	.half	.L972-.L167
+	.byte	3,148,121,1,5,20,7,9
+	.half	.L973-.L972
+	.byte	3,2,1,5,42,1,5,36,9
+	.half	.L169-.L973
+	.byte	3,250,6,1,5,9,1,5,22,9
+	.half	.L974-.L169
+	.byte	3,127,1,5,9,9
+	.half	.L975-.L974
+	.byte	3,1,1,5,36,9
+	.half	.L976-.L975
+	.byte	1,5,22,9
+	.half	.L707-.L976
+	.byte	3,127,1,5,43,9
+	.half	.L977-.L707
+	.byte	1,5,68,9
+	.half	.L978-.L977
+	.byte	3,1,1,5,75,9
+	.half	.L979-.L978
+	.byte	3,127,1,5,10,9
+	.half	.L980-.L979
+	.byte	3,137,121,1,5,20,7,9
+	.half	.L981-.L980
+	.byte	3,2,1,5,48,1,5,25,9
+	.half	.L171-.L981
+	.byte	3,204,6,1,5,5,3,5,1,5,77,7,9
+	.half	.L711-.L171
+	.byte	3,2,1,5,33,9
+	.half	.L982-.L711
+	.byte	1,5,22,7,9
+	.half	.L983-.L982
+	.byte	3,1,1,5,14,9
+	.half	.L984-.L983
+	.byte	1,5,67,7,9
+	.half	.L985-.L984
+	.byte	1,5,89,9
+	.half	.L986-.L985
+	.byte	1,5,77,7,9
+	.half	.L175-.L986
+	.byte	3,127,1,5,10,9
+	.half	.L173-.L175
+	.byte	3,175,121,1,5,20,7,9
+	.half	.L601-.L173
+	.byte	3,2,1,5,41,1,5,74,9
+	.half	.L177-.L601
+	.byte	3,2,1,5,14,9
+	.half	.L987-.L177
+	.byte	1,5,70,7,9
+	.half	.L988-.L987
+	.byte	3,1,1,5,104,9
+	.half	.L706-.L988
+	.byte	1,5,20,7,9
+	.half	.L989-.L706
+	.byte	3,2,1,5,40,1,5,8,9
+	.half	.L179-.L989
+	.byte	3,184,7,1,5,28,7,9
+	.half	.L990-.L179
+	.byte	1,5,44,9
+	.half	.L991-.L990
+	.byte	1,5,27,9
+	.half	.L992-.L991
+	.byte	1,5,122,7,9
+	.half	.L993-.L992
+	.byte	1,5,64,7,9
+	.half	.L183-.L993
+	.byte	3,10,1,5,13,9
+	.half	.L994-.L183
+	.byte	3,125,1,5,9,9
+	.half	.L995-.L994
+	.byte	1,5,46,7,9
+	.half	.L996-.L995
+	.byte	3,3,1,5,78,1,5,46,9
+	.half	.L185-.L996
+	.byte	3,6,1,5,9,3,125,1,5,12,9
+	.half	.L182-.L185
+	.byte	3,28,1,5,81,7,9
+	.half	.L997-.L182
+	.byte	1,5,92,9
+	.half	.L998-.L997
+	.byte	1,5,96,9
+	.half	.L188-.L998
+	.byte	1,5,62,9
+	.half	.L189-.L188
+	.byte	3,110,1,5,84,9
+	.half	.L608-.L189
+	.byte	1,5,10,9
+	.half	.L186-.L608
+	.byte	3,179,120,1,5,20,7,9
+	.half	.L605-.L186
+	.byte	3,2,1,5,41,1,5,65,9
+	.half	.L190-.L605
+	.byte	3,6,1,5,35,9
+	.half	.L712-.L190
+	.byte	1,5,65,1,5,9,9
+	.half	.L713-.L712
+	.byte	1,5,13,7,9
+	.half	.L999-.L713
+	.byte	3,2,1,5,12,7,9
+	.half	.L610-.L999
+	.byte	3,213,7,1,5,81,7,9
+	.half	.L1000-.L610
+	.byte	1,5,92,9
+	.half	.L1001-.L1000
+	.byte	1,5,96,9
+	.half	.L194-.L1001
+	.byte	1,5,41,9
+	.half	.L195-.L194
+	.byte	3,175,120,1,5,35,9
+	.half	.L612-.L195
+	.byte	3,2,1,5,56,9
+	.half	.L613-.L612
+	.byte	1,5,40,9
+	.half	.L1002-.L613
+	.byte	3,2,1,5,25,9
+	.half	.L193-.L1002
+	.byte	3,3,1,5,5,9
+	.half	.L168-.L193
+	.byte	3,5,1,5,9,7,9
+	.half	.L1003-.L168
+	.byte	3,2,1,5,5,9
+	.half	.L196-.L1003
+	.byte	3,6,1,5,1,3,1,1,7,9
+	.half	.L405-.L196
+	.byte	0,1,1
+.L967:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_RestoreBlockDefaults')
+	.sect	'.debug_ranges'
+.L403:
+	.word	-1,.L404,0,.L405-.L404,0,0
+.L611:
+	.word	-1,.L313,.L610-.L313,.L195-.L313,.L612-.L313,.L613-.L313,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_RestorePRAMBlockDefaults')
+	.sect	'.debug_info'
+.L406:
+	.word	292
+	.half	3
+	.word	.L407
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L409,.L408
+	.byte	2
+	.word	.L336
+	.byte	3
+	.byte	'NvM_RestorePRAMBlockDefaults',0,1,186,8,39
+	.word	.L477
+	.byte	1,1,1
+	.word	.L315,.L614,.L314
+	.byte	4
+	.byte	'BlockId',0,1,186,8,84
+	.word	.L475,.L615
+	.byte	5
+	.word	.L315,.L614
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_RestorePRAMBlockDefaults')
+	.sect	'.debug_abbrev'
+.L407:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_RestorePRAMBlockDefaults')
+	.sect	'.debug_line'
+.L408:
+	.word	.L1005-.L1004
+.L1004:
+	.half	3
+	.word	.L1007-.L1006
+.L1006:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM.c',0,1,0,0,0
+.L1007:
+	.byte	5,46,7,0,5,2
+	.word	.L315
+	.byte	3,187,8,1,5,1,9
+	.half	.L411-.L315
+	.byte	3,1,0,1,1
+.L1005:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_RestorePRAMBlockDefaults')
+	.sect	'.debug_ranges'
+.L409:
+	.word	-1,.L410,0,.L411-.L410,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_EraseNvBlock')
+	.sect	'.debug_info'
+.L412:
+	.word	562
+	.half	3
+	.word	.L413
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L415,.L414
+	.byte	2
+	.word	.L336
+	.byte	3
+	.byte	'NvM_EraseNvBlock',0,1,210,8,39
+	.word	.L477
+	.byte	1,1,1
+	.word	.L317,.L616,.L316
+	.byte	4
+	.byte	'BlockId',0,1,210,8,72
+	.word	.L475,.L617
+	.byte	5
+	.word	.L317,.L616
+	.byte	6
+	.byte	'returnValue',0,1,212,8,20
+	.word	.L477,.L618
+	.byte	6
+	.byte	'detErrorId',0,1,213,8,11
+	.word	.L477,.L619
+	.byte	7
+	.word	.L483,.L205,.L620
+	.byte	8
+	.word	.L485,.L621
+	.byte	9
+	.word	.L487,.L205,.L620
+	.byte	6
+	.byte	'blockPending',0,1,192,15,13
+	.word	.L477,.L622
+	.byte	7
+	.word	.L489,.L207,.L623
+	.byte	8
+	.word	.L491,.L624
+	.byte	10
+	.word	.L493,.L207,.L623
+	.byte	0,0,0,5
+	.word	.L215,.L200
+	.byte	6
+	.byte	'ramMngmtPtr',0,1,239,8,41
+	.word	.L625,.L626
+	.byte	7
+	.word	.L489,.L215,.L218
+	.byte	8
+	.word	.L491,.L624
+	.byte	10
+	.word	.L493,.L215,.L218
+	.byte	0,7
+	.word	.L588,.L218,.L627
+	.byte	8
+	.word	.L590,.L628
+	.byte	9
+	.word	.L592,.L218,.L627
+	.byte	6
+	.byte	'returnValue',0,1,159,14,13
+	.word	.L477,.L629
+	.byte	0,0,0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_EraseNvBlock')
+	.sect	'.debug_abbrev'
+.L413:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,1,49,16,17
+	.byte	1,18,1,0,0,10,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_EraseNvBlock')
+	.sect	'.debug_line'
+.L414:
+	.word	.L1009-.L1008
+.L1008:
+	.half	3
+	.word	.L1011-.L1010
+.L1010:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM.c',0,1,0,0,0
+.L1011:
+	.byte	5,22,7,0,5,2
+	.word	.L317
+	.byte	3,158,15,1,5,32,9
+	.half	.L1012-.L317
+	.byte	3,181,121,1,5,22,9
+	.half	.L715-.L1012
+	.byte	3,1,1,5,5,9
+	.half	.L716-.L715
+	.byte	3,3,1,5,20,7,9
+	.half	.L1013-.L716
+	.byte	3,2,1,5,43,1,5,64,9
+	.half	.L199-.L1013
+	.byte	3,142,6,1,5,10,9
+	.half	.L1014-.L199
+	.byte	3,244,121,1,5,20,7,9
+	.half	.L1015-.L1014
+	.byte	3,2,1,5,42,1,5,36,9
+	.half	.L201-.L1015
+	.byte	3,154,6,1,5,9,1,5,22,9
+	.half	.L1016-.L201
+	.byte	3,127,1,5,9,9
+	.half	.L1017-.L1016
+	.byte	3,1,1,5,36,9
+	.half	.L1018-.L1017
+	.byte	1,5,22,9
+	.half	.L1019-.L1018
+	.byte	3,127,1,5,43,9
+	.half	.L1020-.L1019
+	.byte	1,5,68,9
+	.half	.L1021-.L1020
+	.byte	3,1,1,5,75,9
+	.half	.L1022-.L1021
+	.byte	3,127,1,5,10,9
+	.half	.L1023-.L1022
+	.byte	3,233,121,1,5,20,7,9
+	.half	.L1024-.L1023
+	.byte	3,2,1,5,48,1,5,73,9
+	.half	.L203-.L1024
+	.byte	3,2,1,5,10,9
+	.half	.L1025-.L203
+	.byte	1,5,20,7,9
+	.half	.L1026-.L1025
+	.byte	3,2,1,5,40,1,5,8,9
+	.half	.L205-.L1026
+	.byte	3,221,6,1,5,28,7,9
+	.half	.L1027-.L205
+	.byte	1,5,44,9
+	.half	.L1028-.L1027
+	.byte	1,5,27,9
+	.half	.L1029-.L1028
+	.byte	1,5,122,7,9
+	.half	.L1030-.L1029
+	.byte	1,5,64,7,9
+	.half	.L208-.L1030
+	.byte	3,10,1,5,13,9
+	.half	.L1031-.L208
+	.byte	3,125,1,5,9,9
+	.half	.L1032-.L1031
+	.byte	1,5,46,7,9
+	.half	.L1033-.L1032
+	.byte	3,3,1,5,78,1,5,46,9
+	.half	.L210-.L1033
+	.byte	3,6,1,5,9,3,125,1,5,12,9
+	.half	.L207-.L210
+	.byte	3,28,1,5,81,7,9
+	.half	.L1034-.L207
+	.byte	1,5,92,9
+	.half	.L1035-.L1034
+	.byte	1,5,96,9
+	.half	.L213-.L1035
+	.byte	1,5,62,9
+	.half	.L214-.L213
+	.byte	3,110,1,5,84,9
+	.half	.L623-.L214
+	.byte	1,5,10,9
+	.half	.L211-.L623
+	.byte	3,142,121,1,5,20,7,9
+	.half	.L620-.L211
+	.byte	3,2,1,5,41,1,5,12,9
+	.half	.L215-.L620
+	.byte	3,130,7,1,5,81,7,9
+	.half	.L1036-.L215
+	.byte	1,5,92,9
+	.half	.L1037-.L1036
+	.byte	1,5,96,9
+	.half	.L217-.L1037
+	.byte	1,5,18,9
+	.half	.L218-.L217
+	.byte	3,182,126,1,5,5,9
+	.half	.L1038-.L218
+	.byte	1,5,27,7,9
+	.half	.L1039-.L1038
+	.byte	3,5,1,5,10,9
+	.half	.L1040-.L1039
+	.byte	1,5,63,7,9
+	.half	.L1041-.L1040
+	.byte	3,2,1,5,84,9
+	.half	.L1042-.L1041
+	.byte	1,5,90,1,5,21,9
+	.half	.L220-.L1042
+	.byte	3,5,1,5,9,9
+	.half	.L219-.L220
+	.byte	3,195,122,1,5,49,7,9
+	.half	.L627-.L219
+	.byte	3,2,1,5,74,1,5,39,9
+	.half	.L714-.L627
+	.byte	1,5,5,9
+	.half	.L200-.L714
+	.byte	3,5,1,5,9,7,9
+	.half	.L1043-.L200
+	.byte	3,2,1,5,5,9
+	.half	.L223-.L1043
+	.byte	3,6,1,5,1,3,1,1,7,9
+	.half	.L417-.L223
+	.byte	0,1,1
+.L1009:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_EraseNvBlock')
+	.sect	'.debug_ranges'
+.L415:
+	.word	-1,.L416,0,.L417-.L416,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_InvalidateNvBlock')
+	.sect	'.debug_info'
+.L418:
+	.word	567
+	.half	3
+	.word	.L419
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L421,.L420
+	.byte	2
+	.word	.L336
+	.byte	3
+	.byte	'NvM_InvalidateNvBlock',0,1,147,9,39
+	.word	.L477
+	.byte	1,1,1
+	.word	.L319,.L630,.L318
+	.byte	4
+	.byte	'BlockId',0,1,147,9,77
+	.word	.L475,.L631
+	.byte	5
+	.word	.L319,.L630
+	.byte	6
+	.byte	'returnValue',0,1,149,9,20
+	.word	.L477,.L632
+	.byte	6
+	.byte	'detErrorId',0,1,150,9,11
+	.word	.L477,.L633
+	.byte	7
+	.word	.L483,.L229,.L634
+	.byte	8
+	.word	.L485,.L635
+	.byte	9
+	.word	.L487,.L229,.L634
+	.byte	6
+	.byte	'blockPending',0,1,192,15,13
+	.word	.L477,.L636
+	.byte	7
+	.word	.L489,.L231,.L637
+	.byte	8
+	.word	.L491,.L638
+	.byte	10
+	.word	.L493,.L231,.L637
+	.byte	0,0,0,5
+	.word	.L239,.L226
+	.byte	6
+	.byte	'ramMngmtPtr',0,1,172,9,41
+	.word	.L639,.L640
+	.byte	7
+	.word	.L489,.L239,.L242
+	.byte	8
+	.word	.L491,.L638
+	.byte	10
+	.word	.L493,.L239,.L242
+	.byte	0,7
+	.word	.L588,.L242,.L641
+	.byte	8
+	.word	.L590,.L642
+	.byte	9
+	.word	.L592,.L242,.L641
+	.byte	6
+	.byte	'returnValue',0,1,159,14,13
+	.word	.L477,.L643
+	.byte	0,0,0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_InvalidateNvBlock')
+	.sect	'.debug_abbrev'
+.L419:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,1,49,16,17
+	.byte	1,18,1,0,0,10,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_InvalidateNvBlock')
+	.sect	'.debug_line'
+.L420:
+	.word	.L1045-.L1044
+.L1044:
+	.half	3
+	.word	.L1047-.L1046
+.L1046:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM.c',0,1,0,0,0
+.L1047:
+	.byte	5,22,7,0,5,2
+	.word	.L319
+	.byte	3,158,15,1,5,32,9
+	.half	.L1048-.L319
+	.byte	3,246,121,1,5,22,9
+	.half	.L718-.L1048
+	.byte	3,1,1,5,5,9
+	.half	.L719-.L718
+	.byte	3,3,1,5,20,7,9
+	.half	.L1049-.L719
+	.byte	3,2,1,5,43,1,5,64,9
+	.half	.L225-.L1049
+	.byte	3,205,5,1,5,10,9
+	.half	.L1050-.L225
+	.byte	3,181,122,1,5,20,7,9
+	.half	.L1051-.L1050
+	.byte	3,2,1,5,42,1,5,22,9
+	.half	.L227-.L1051
+	.byte	3,216,5,1,5,43,9
+	.half	.L1052-.L227
+	.byte	1,5,36,9
+	.half	.L1053-.L1052
+	.byte	3,1,1,5,75,9
+	.half	.L1054-.L1053
+	.byte	3,127,1,5,9,9
+	.half	.L1055-.L1054
+	.byte	3,1,1,5,36,9
+	.half	.L1056-.L1055
+	.byte	1,5,68,9
+	.half	.L1057-.L1056
+	.byte	1,5,10,9
+	.half	.L1058-.L1057
+	.byte	3,169,122,1,5,20,7,9
+	.half	.L1059-.L1058
+	.byte	3,2,1,5,48,1,5,8,9
+	.half	.L229-.L1059
+	.byte	3,160,6,1,5,28,7,9
+	.half	.L1060-.L229
+	.byte	1,5,44,9
+	.half	.L1061-.L1060
+	.byte	1,5,27,9
+	.half	.L1062-.L1061
+	.byte	1,5,122,7,9
+	.half	.L1063-.L1062
+	.byte	1,5,64,7,9
+	.half	.L232-.L1063
+	.byte	3,10,1,5,13,9
+	.half	.L1064-.L232
+	.byte	3,125,1,5,9,9
+	.half	.L1065-.L1064
+	.byte	1,5,46,7,9
+	.half	.L1066-.L1065
+	.byte	3,3,1,5,78,1,5,46,9
+	.half	.L234-.L1066
+	.byte	3,6,1,5,9,3,125,1,5,12,9
+	.half	.L231-.L234
+	.byte	3,28,1,5,81,7,9
+	.half	.L1067-.L231
+	.byte	1,5,92,9
+	.half	.L1068-.L1067
+	.byte	1,5,96,9
+	.half	.L237-.L1068
+	.byte	1,5,62,9
+	.half	.L238-.L237
+	.byte	3,110,1,5,84,9
+	.half	.L637-.L238
+	.byte	1,5,10,9
+	.half	.L235-.L637
+	.byte	3,203,121,1,5,20,7,9
+	.half	.L634-.L235
+	.byte	3,2,1,5,41,1,5,12,9
+	.half	.L239-.L634
+	.byte	3,197,6,1,5,81,7,9
+	.half	.L1069-.L239
+	.byte	1,5,92,9
+	.half	.L1070-.L1069
+	.byte	1,5,96,9
+	.half	.L241-.L1070
+	.byte	1,5,18,9
+	.half	.L242-.L241
+	.byte	3,182,126,1,5,5,9
+	.half	.L1071-.L242
+	.byte	1,5,27,7,9
+	.half	.L1072-.L1071
+	.byte	3,5,1,5,10,9
+	.half	.L1073-.L1072
+	.byte	1,5,63,7,9
+	.half	.L1074-.L1073
+	.byte	3,2,1,5,84,9
+	.half	.L1075-.L1074
+	.byte	1,5,90,1,5,21,9
+	.half	.L244-.L1075
+	.byte	3,5,1,5,9,9
+	.half	.L243-.L244
+	.byte	3,128,123,1,5,49,7,9
+	.half	.L641-.L243
+	.byte	3,2,1,5,82,1,5,39,9
+	.half	.L717-.L641
+	.byte	1,5,5,9
+	.half	.L226-.L717
+	.byte	3,5,1,5,9,7,9
+	.half	.L1076-.L226
+	.byte	3,2,1,5,5,9
+	.half	.L247-.L1076
+	.byte	3,6,1,5,1,3,1,1,7,9
+	.half	.L423-.L247
+	.byte	0,1,1
+.L1045:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_InvalidateNvBlock')
+	.sect	'.debug_ranges'
+.L421:
+	.word	-1,.L422,0,.L423-.L422,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_CancelJobs')
+	.sect	'.debug_info'
+.L424:
+	.word	328
+	.half	3
+	.word	.L425
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L427,.L426
+	.byte	2
+	.word	.L336
+	.byte	3
+	.byte	'NvM_CancelJobs',0,1,207,9,39
+	.word	.L477
+	.byte	1,1,1
+	.word	.L321,.L644,.L320
+	.byte	4
+	.byte	'BlockId',0,1,207,9,70
+	.word	.L475,.L645
+	.byte	5
+	.word	.L321,.L644
+	.byte	6
+	.byte	'returnValue',0,1,209,9,20
+	.word	.L477,.L646
+	.byte	6
+	.byte	'detErrorId',0,1,210,9,11
+	.word	.L477,.L647
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_CancelJobs')
+	.sect	'.debug_abbrev'
+.L425:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_CancelJobs')
+	.sect	'.debug_line'
+.L426:
+	.word	.L1078-.L1077
+.L1077:
+	.half	3
+	.word	.L1080-.L1079
+.L1079:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM.c',0,1,0,0,0
+.L1080:
+	.byte	5,22,7,0,5,2
+	.word	.L321
+	.byte	3,158,15,1,5,32,9
+	.half	.L1081-.L321
+	.byte	3,178,122,1,5,22,9
+	.half	.L721-.L1081
+	.byte	3,1,1,5,5,9
+	.half	.L722-.L721
+	.byte	3,3,1,5,20,7,9
+	.half	.L1082-.L722
+	.byte	3,2,1,5,43,1,5,64,9
+	.half	.L249-.L1082
+	.byte	3,145,5,1,5,10,9
+	.half	.L1083-.L249
+	.byte	3,241,122,1,5,20,7,9
+	.half	.L1084-.L1083
+	.byte	3,2,1,5,42,1,5,38,9
+	.half	.L251-.L1084
+	.byte	3,5,1,5,37,9
+	.half	.L720-.L251
+	.byte	1,5,5,9
+	.half	.L250-.L720
+	.byte	3,4,1,5,9,7,9
+	.half	.L1085-.L250
+	.byte	3,2,1,5,5,9
+	.half	.L253-.L1085
+	.byte	3,6,1,5,1,3,1,1,7,9
+	.half	.L429-.L253
+	.byte	0,1,1
+.L1078:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_CancelJobs')
+	.sect	'.debug_ranges'
+.L427:
+	.word	-1,.L428,0,.L429-.L428,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_ReadAll')
+	.sect	'.debug_info'
+.L430:
+	.word	275
+	.half	3
+	.word	.L431
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L433,.L432
+	.byte	2
+	.word	.L336
+	.byte	3
+	.byte	'NvM_ReadAll',0,1,130,10,29,1,1,1
+	.word	.L323,.L648,.L322
+	.byte	4
+	.word	.L323,.L648
+	.byte	5
+	.byte	'detErrorId',0,1,132,10,11
+	.word	.L477,.L649
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_ReadAll')
+	.sect	'.debug_abbrev'
+.L431:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_ReadAll')
+	.sect	'.debug_line'
+.L432:
+	.word	.L1087-.L1086
+.L1086:
+	.half	3
+	.word	.L1089-.L1088
+.L1088:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM.c',0,1,0,0,0
+.L1089:
+	.byte	5,22,7,0,5,2
+	.word	.L323
+	.byte	3,158,15,1,9
+	.half	.L1090-.L323
+	.byte	3,229,122,1,5,5,9
+	.half	.L723-.L1090
+	.byte	3,3,1,5,20,7,9
+	.half	.L1091-.L723
+	.byte	3,2,1,5,43,1,5,22,9
+	.half	.L255-.L1091
+	.byte	3,163,5,1,5,46,9
+	.half	.L1092-.L255
+	.byte	1,5,10,9
+	.half	.L1093-.L1092
+	.byte	3,223,122,1,5,20,7,9
+	.half	.L1094-.L1093
+	.byte	3,2,1,5,41,1,5,33,9
+	.half	.L257-.L1094
+	.byte	3,5,1,5,56,9
+	.half	.L1095-.L257
+	.byte	3,2,1,5,54,1,5,9,9
+	.half	.L1096-.L1095
+	.byte	3,1,1,5,25,9
+	.half	.L1097-.L1096
+	.byte	1,9
+	.half	.L1098-.L1097
+	.byte	3,1,1,5,32,9
+	.half	.L1099-.L1098
+	.byte	3,2,1,5,27,9
+	.half	.L1100-.L1099
+	.byte	3,2,1,5,52,9
+	.half	.L1101-.L1100
+	.byte	1,5,5,9
+	.half	.L256-.L1101
+	.byte	3,4,1,5,9,7,9
+	.half	.L1102-.L256
+	.byte	3,2,1,5,1,9
+	.half	.L259-.L1102
+	.byte	3,5,1,7,9
+	.half	.L435-.L259
+	.byte	0,1,1
+.L1087:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_ReadAll')
+	.sect	'.debug_ranges'
+.L433:
+	.word	-1,.L434,0,.L435-.L434,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_KillReadAll')
+	.sect	'.debug_info'
+.L436:
+	.word	279
+	.half	3
+	.word	.L437
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L439,.L438
+	.byte	2
+	.word	.L336
+	.byte	3
+	.byte	'NvM_KillReadAll',0,1,236,10,29,1,1,1
+	.word	.L325,.L650,.L324
+	.byte	4
+	.word	.L325,.L650
+	.byte	5
+	.byte	'detErrorId',0,1,238,10,11
+	.word	.L477,.L651
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_KillReadAll')
+	.sect	'.debug_abbrev'
+.L437:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_KillReadAll')
+	.sect	'.debug_line'
+.L438:
+	.word	.L1104-.L1103
+.L1103:
+	.half	3
+	.word	.L1106-.L1105
+.L1105:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM.c',0,1,0,0,0
+.L1106:
+	.byte	5,22,7,0,5,2
+	.word	.L325
+	.byte	3,158,15,1,9
+	.half	.L1107-.L325
+	.byte	3,207,123,1,5,5,9
+	.half	.L725-.L1107
+	.byte	3,3,1,5,20,7,9
+	.half	.L1108-.L725
+	.byte	3,2,1,5,43,1,5,13,9
+	.half	.L260-.L1108
+	.byte	3,5,1,5,9,9
+	.half	.L1109-.L260
+	.byte	1,5,37,7,9
+	.half	.L1110-.L1109
+	.byte	3,2,1,5,13,9
+	.half	.L1111-.L1110
+	.byte	3,1,1,5,29,9
+	.half	.L1112-.L1111
+	.byte	1,5,36,9
+	.half	.L1113-.L1112
+	.byte	3,1,1,5,5,9
+	.half	.L261-.L1113
+	.byte	3,5,1,5,9,7,9
+	.half	.L1114-.L261
+	.byte	3,2,1,5,1,9
+	.half	.L263-.L1114
+	.byte	3,5,1,7,9
+	.half	.L441-.L263
+	.byte	0,1,1
+.L1104:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_KillReadAll')
+	.sect	'.debug_ranges'
+.L439:
+	.word	-1,.L440,0,.L441-.L440,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_WriteAll')
+	.sect	'.debug_info'
+.L442:
+	.word	276
+	.half	3
+	.word	.L443
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L445,.L444
+	.byte	2
+	.word	.L336
+	.byte	3
+	.byte	'NvM_WriteAll',0,1,156,11,29,1,1,1
+	.word	.L327,.L652,.L326
+	.byte	4
+	.word	.L327,.L652
+	.byte	5
+	.byte	'detErrorId',0,1,158,11,11
+	.word	.L477,.L653
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_WriteAll')
+	.sect	'.debug_abbrev'
+.L443:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_WriteAll')
+	.sect	'.debug_line'
+.L444:
+	.word	.L1116-.L1115
+.L1115:
+	.half	3
+	.word	.L1118-.L1117
+.L1117:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM.c',0,1,0,0,0
+.L1118:
+	.byte	5,22,7,0,5,2
+	.word	.L327
+	.byte	3,158,15,1,9
+	.half	.L1119-.L327
+	.byte	3,255,123,1,5,5,9
+	.half	.L727-.L1119
+	.byte	3,3,1,5,20,7,9
+	.half	.L1120-.L727
+	.byte	3,2,1,5,43,1,5,22,9
+	.half	.L264-.L1120
+	.byte	3,137,4,1,5,46,9
+	.half	.L1121-.L264
+	.byte	1,5,10,9
+	.half	.L1122-.L1121
+	.byte	3,249,123,1,5,20,7,9
+	.half	.L1123-.L1122
+	.byte	3,2,1,5,41,1,5,33,9
+	.half	.L266-.L1123
+	.byte	3,5,1,5,57,9
+	.half	.L1124-.L266
+	.byte	3,2,1,5,55,1,5,9,9
+	.half	.L1125-.L1124
+	.byte	3,2,1,5,25,9
+	.half	.L1126-.L1125
+	.byte	1,9
+	.half	.L1127-.L1126
+	.byte	3,1,1,5,32,9
+	.half	.L1128-.L1127
+	.byte	3,2,1,5,27,9
+	.half	.L1129-.L1128
+	.byte	3,2,1,5,53,9
+	.half	.L1130-.L1129
+	.byte	1,5,5,9
+	.half	.L265-.L1130
+	.byte	3,4,1,5,9,7,9
+	.half	.L1131-.L265
+	.byte	3,2,1,5,1,9
+	.half	.L268-.L1131
+	.byte	3,5,1,7,9
+	.half	.L447-.L268
+	.byte	0,1,1
+.L1116:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_WriteAll')
+	.sect	'.debug_ranges'
+.L445:
+	.word	-1,.L446,0,.L447-.L446,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_CancelWriteAll')
+	.sect	'.debug_info'
+.L448:
+	.word	282
+	.half	3
+	.word	.L449
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L451,.L450
+	.byte	2
+	.word	.L336
+	.byte	3
+	.byte	'NvM_CancelWriteAll',0,1,207,11,29,1,1,1
+	.word	.L329,.L654,.L328
+	.byte	4
+	.word	.L329,.L654
+	.byte	5
+	.byte	'detErrorId',0,1,209,11,11
+	.word	.L477,.L655
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_CancelWriteAll')
+	.sect	'.debug_abbrev'
+.L449:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_CancelWriteAll')
+	.sect	'.debug_line'
+.L450:
+	.word	.L1133-.L1132
+.L1132:
+	.half	3
+	.word	.L1135-.L1134
+.L1134:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM.c',0,1,0,0,0
+.L1135:
+	.byte	5,22,7,0,5,2
+	.word	.L329
+	.byte	3,158,15,1,9
+	.half	.L1136-.L329
+	.byte	3,178,124,1,5,5,9
+	.half	.L729-.L1136
+	.byte	3,3,1,5,20,7,9
+	.half	.L1137-.L729
+	.byte	3,2,1,5,43,1,5,33,9
+	.half	.L269-.L1137
+	.byte	3,5,1,5,9,9
+	.half	.L1138-.L269
+	.byte	3,2,1,5,25,9
+	.half	.L1139-.L1138
+	.byte	1,5,32,9
+	.half	.L1140-.L1139
+	.byte	3,2,1,5,5,9
+	.half	.L270-.L1140
+	.byte	3,4,1,5,9,7,9
+	.half	.L1141-.L270
+	.byte	3,2,1,5,1,9
+	.half	.L271-.L1141
+	.byte	3,5,1,7,9
+	.half	.L453-.L271
+	.byte	0,1,1
+.L1133:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_CancelWriteAll')
+	.sect	'.debug_ranges'
+.L451:
+	.word	-1,.L452,0,.L453-.L452,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_KillWriteAll')
+	.sect	'.debug_info'
+.L454:
+	.word	348
+	.half	3
+	.word	.L455
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L457,.L456
+	.byte	2
+	.word	.L336
+	.byte	3
+	.byte	'NvM_KillWriteAll',0,1,251,11,29,1,1,1
+	.word	.L331,.L656,.L330
+	.byte	4
+	.word	.L331,.L656
+	.byte	5
+	.byte	'detErrorId',0,1,253,11,11
+	.word	.L477,.L657
+	.byte	4
+	.word	.L658,.L273
+	.byte	5
+	.byte	'blockEndNotificationId',0,1,141,12,29
+	.word	.L475,.L659
+	.byte	5
+	.byte	'mngmt_pt',0,1,142,12,39
+	.word	.L660,.L661
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_KillWriteAll')
+	.sect	'.debug_abbrev'
+.L455:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_KillWriteAll')
+	.sect	'.debug_line'
+.L456:
+	.word	.L1143-.L1142
+.L1142:
+	.half	3
+	.word	.L1145-.L1144
+.L1144:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM.c',0,1,0,0,0
+.L1145:
+	.byte	5,22,7,0,5,2
+	.word	.L331
+	.byte	3,158,15,1,9
+	.half	.L1146-.L331
+	.byte	3,222,124,1,5,5,9
+	.half	.L731-.L1146
+	.byte	3,3,1,5,20,7,9
+	.half	.L1147-.L731
+	.byte	3,2,1,5,43,1,5,13,9
+	.half	.L272-.L1147
+	.byte	3,9,1,5,9,9
+	.half	.L1148-.L272
+	.byte	1,5,52,7,9
+	.half	.L658-.L1148
+	.byte	3,2,1,5,50,3,1,1,5,72,9
+	.half	.L732-.L658
+	.byte	1,5,37,9
+	.half	.L733-.L732
+	.byte	3,3,1,5,13,9
+	.half	.L1149-.L733
+	.byte	3,5,1,5,17,9
+	.half	.L1150-.L1149
+	.byte	3,5,1,5,29,9
+	.half	.L1151-.L1150
+	.byte	3,123,1,5,17,3,5,1,5,29,9
+	.half	.L1152-.L1151
+	.byte	3,124,1,5,33,9
+	.half	.L1153-.L1152
+	.byte	3,4,1,5,16,9
+	.half	.L1154-.L1153
+	.byte	1,5,54,7,9
+	.half	.L1155-.L1154
+	.byte	3,1,1,5,64,9
+	.half	.L1156-.L1155
+	.byte	3,204,2,1,5,37,9
+	.half	.L1157-.L1156
+	.byte	3,180,125,1,5,31,7,9
+	.half	.L1158-.L1157
+	.byte	3,6,1,5,40,9
+	.half	.L1159-.L1158
+	.byte	3,124,1,5,52,9
+	.half	.L1160-.L1159
+	.byte	3,4,1,5,47,9
+	.half	.L1161-.L1160
+	.byte	3,127,1,5,13,9
+	.half	.L275-.L1161
+	.byte	3,5,1,5,60,9
+	.half	.L1162-.L275
+	.byte	1,5,58,1,5,36,9
+	.half	.L1163-.L1162
+	.byte	3,2,1,5,13,9
+	.half	.L1164-.L1163
+	.byte	3,2,1,5,63,7,9
+	.half	.L1165-.L1164
+	.byte	3,2,1,5,97,1,5,31,9
+	.half	.L277-.L1165
+	.byte	3,3,1,5,57,9
+	.half	.L1166-.L277
+	.byte	1,5,5,9
+	.half	.L273-.L1166
+	.byte	3,5,1,5,9,7,9
+	.half	.L1167-.L273
+	.byte	3,2,1,5,1,9
+	.half	.L278-.L1167
+	.byte	3,5,1,7,9
+	.half	.L459-.L278
+	.byte	0,1,1
+.L1143:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_KillWriteAll')
+	.sect	'.debug_ranges'
+.L457:
+	.word	-1,.L458,0,.L459-.L458,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_MainFunction')
+	.sect	'.debug_info'
+.L460:
+	.word	280
+	.half	3
+	.word	.L461
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L463,.L462
+	.byte	2
+	.word	.L336
+	.byte	3
+	.byte	'NvM_MainFunction',0,1,250,12,29,1,1,1
+	.word	.L333,.L662,.L332
+	.byte	4
+	.word	.L333,.L662
+	.byte	5
+	.byte	'detErrorId',0,1,252,12,11
+	.word	.L477,.L663
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_MainFunction')
+	.sect	'.debug_abbrev'
+.L461:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_MainFunction')
+	.sect	'.debug_line'
+.L462:
+	.word	.L1169-.L1168
+.L1168:
+	.half	3
+	.word	.L1171-.L1170
+.L1170:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM.c',0,1,0,0,0
+.L1171:
+	.byte	5,22,7,0,5,2
+	.word	.L333
+	.byte	3,158,15,1,9
+	.half	.L1172-.L333
+	.byte	3,221,125,1,5,5,9
+	.half	.L734-.L1172
+	.byte	3,3,1,5,20,7,9
+	.half	.L1173-.L734
+	.byte	3,2,1,5,43,1,5,9,9
+	.half	.L279-.L1173
+	.byte	3,6,1,5,31,9
+	.half	.L1174-.L279
+	.byte	1,5,42,9
+	.half	.L1175-.L1174
+	.byte	3,12,1,5,49,9
+	.half	.L1176-.L1175
+	.byte	3,116,1,5,41,9
+	.half	.L1177-.L1176
+	.byte	3,14,1,5,42,9
+	.half	.L1178-.L1177
+	.byte	3,126,1,5,41,9
+	.half	.L1179-.L1178
+	.byte	3,2,1,5,39,9
+	.half	.L281-.L1179
+	.byte	3,124,1,5,29,9
+	.half	.L1180-.L281
+	.byte	1,5,42,9
+	.half	.L1181-.L1180
+	.byte	3,2,1,5,32,9
+	.half	.L1182-.L1181
+	.byte	1,5,41,9
+	.half	.L1183-.L1182
+	.byte	3,2,1,5,31,9
+	.half	.L1184-.L1183
+	.byte	1,5,39,9
+	.half	.L1185-.L1184
+	.byte	3,2,1,5,87,9
+	.half	.L1186-.L1185
+	.byte	1,5,5,7,9
+	.half	.L280-.L1186
+	.byte	3,4,1,5,9,7,9
+	.half	.L1187-.L280
+	.byte	3,2,1,5,1,9
+	.half	.L282-.L1187
+	.byte	3,5,1,7,9
+	.half	.L465-.L282
+	.byte	0,1,1
+.L1169:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_MainFunction')
+	.sect	'.debug_ranges'
+.L463:
+	.word	-1,.L464,0,.L465-.L464,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_SetBlockLockStatus')
+	.sect	'.debug_info'
+.L466:
+	.word	332
+	.half	3
+	.word	.L467
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L469,.L468
+	.byte	2
+	.word	.L336
+	.byte	3
+	.byte	'NvM_SetBlockLockStatus',0,1,224,13,29,1,1,1
+	.word	.L335,.L664,.L334
+	.byte	4
+	.byte	'BlockId',0,1,224,13,68
+	.word	.L475,.L665
+	.byte	4
+	.byte	'BlockLocked',0,1,224,13,85
+	.word	.L477,.L666
+	.byte	5
+	.word	.L335,.L664
+	.byte	6
+	.byte	'detErrorId',0,1,226,13,11
+	.word	.L477,.L667
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_SetBlockLockStatus')
+	.sect	'.debug_abbrev'
+.L467:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_SetBlockLockStatus')
+	.sect	'.debug_line'
+.L468:
+	.word	.L1189-.L1188
+.L1188:
+	.half	3
+	.word	.L1191-.L1190
+.L1190:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM.c',0,1,0,0,0
+.L1191:
+	.byte	5,22,7,0,5,2
+	.word	.L335
+	.byte	3,158,15,1,5,29,9
+	.half	.L1192-.L335
+	.byte	3,193,126,1,5,22,3,191,1,1,9
+	.half	.L737-.L1192
+	.byte	3,195,126,1,5,5,9
+	.half	.L738-.L737
+	.byte	3,3,1,5,20,7,9
+	.half	.L1193-.L738
+	.byte	3,2,1,5,43,1,5,64,9
+	.half	.L283-.L1193
+	.byte	3,129,1,1,5,10,9
+	.half	.L1194-.L283
+	.byte	3,129,127,1,5,20,7,9
+	.half	.L1195-.L1194
+	.byte	3,2,1,5,42,1,5,22,9
+	.half	.L285-.L1195
+	.byte	3,140,1,1,5,43,9
+	.half	.L1196-.L285
+	.byte	1,5,36,9
+	.half	.L1197-.L1196
+	.byte	3,1,1,5,9,1,5,36,9
+	.half	.L1198-.L1197
+	.byte	1,5,75,9
+	.half	.L1199-.L1198
+	.byte	3,127,1,5,68,9
+	.half	.L1200-.L1199
+	.byte	3,1,1,5,10,9
+	.half	.L1201-.L1200
+	.byte	3,245,126,1,5,20,7,9
+	.half	.L1202-.L1201
+	.byte	3,2,1,5,48,1,5,33,9
+	.half	.L287-.L1202
+	.byte	3,5,1,5,66,9
+	.half	.L736-.L287
+	.byte	3,4,1,5,9,9
+	.half	.L1203-.L736
+	.byte	3,126,1,5,86,7,9
+	.half	.L1204-.L1203
+	.byte	3,2,1,5,106,1,5,86,9
+	.half	.L289-.L1204
+	.byte	3,4,1,5,32,9
+	.half	.L1205-.L289
+	.byte	3,3,1,5,5,9
+	.half	.L284-.L1205
+	.byte	3,4,1,5,9,7,9
+	.half	.L1206-.L284
+	.byte	3,2,1,5,1,9
+	.half	.L291-.L1206
+	.byte	3,5,1,7,9
+	.half	.L471-.L291
+	.byte	0,1,1
+.L1189:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_SetBlockLockStatus')
+	.sect	'.debug_ranges'
+.L469:
+	.word	-1,.L470,0,.L471-.L470,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_ApiFlags_u8')
+	.sect	'.debug_info'
+.L472:
+	.word	231
+	.half	3
+	.word	.L473
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1,2
+	.word	.L336
+	.byte	3
+	.byte	'NvM_ApiFlags_u8',0,1,82,27
+	.word	.L477
+	.byte	1,5,3
+	.word	NvM_ApiFlags_u8
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_ApiFlags_u8')
+	.sect	'.debug_abbrev'
+.L473:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_CancelJobs')
+	.sect	'.debug_loc'
+.L645:
+	.word	-1,.L321,0,.L720-.L321
+	.half	1
+	.byte	84
+	.word	0,0
+.L320:
+	.word	-1,.L321,0,.L644-.L321
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L647:
+	.word	-1,.L321,.L722-.L321,.L644-.L321
+	.half	1
+	.byte	95
+	.word	0,0
+.L646:
+	.word	-1,.L321,.L721-.L321,.L644-.L321
+	.half	1
+	.byte	88
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_CancelWriteAll')
+	.sect	'.debug_loc'
+.L328:
+	.word	-1,.L329,0,.L654-.L329
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L655:
+	.word	-1,.L329,.L729-.L329,.L654-.L329
+	.half	1
+	.byte	88
+	.word	.L730-.L329,.L271-.L329
+	.half	1
+	.byte	87
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_EraseNvBlock')
+	.sect	'.debug_loc'
+.L617:
+	.word	-1,.L317,0,.L714-.L317
+	.half	1
+	.byte	84
+	.word	0,0
+.L621:
+	.word	0,0
+.L624:
+	.word	0,0
+.L628:
+	.word	0,0
+.L316:
+	.word	-1,.L317,0,.L616-.L317
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L622:
+	.word	-1,.L317,.L211-.L317,.L219-.L317
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L619:
+	.word	-1,.L317,.L716-.L317,.L616-.L317
+	.half	1
+	.byte	89
+	.word	0,0
+.L626:
+	.word	0,0
+.L618:
+	.word	-1,.L317,.L715-.L317,.L616-.L317
+	.half	1
+	.byte	88
+	.word	0,0
+.L629:
+	.word	-1,.L317,.L219-.L317,.L627-.L317
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_GetDataIndex')
+	.sect	'.debug_loc'
+.L497:
+	.word	-1,.L297,0,.L673-.L297
+	.half	1
+	.byte	84
+	.word	0,0
+.L504:
+	.word	0,0
+.L499:
+	.word	-1,.L297,0,.L35-.L297
+	.half	1
+	.byte	100
+	.word	0,0
+.L296:
+	.word	-1,.L297,0,.L496-.L297
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L501:
+	.word	-1,.L297,.L675-.L297,.L35-.L297
+	.half	1
+	.byte	87
+	.word	0,0
+.L500:
+	.word	-1,.L297,.L674-.L297,.L496-.L297
+	.half	1
+	.byte	88
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_GetErrorStatus')
+	.sect	'.debug_loc'
+.L520:
+	.word	-1,.L301,0,.L680-.L301
+	.half	1
+	.byte	84
+	.word	0,0
+.L526:
+	.word	0,0
+.L529:
+	.word	0,0
+.L300:
+	.word	-1,.L301,0,.L519-.L301
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L522:
+	.word	-1,.L301,0,.L79-.L301
+	.half	1
+	.byte	100
+	.word	0,0
+.L527:
+	.word	-1,.L301,.L71-.L301,.L62-.L301
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L524:
+	.word	-1,.L301,.L682-.L301,.L79-.L301
+	.half	1
+	.byte	87
+	.word	0,0
+.L523:
+	.word	-1,.L301,.L681-.L301,.L519-.L301
+	.half	1
+	.byte	88
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_Init')
+	.sect	'.debug_loc'
+.L292:
+	.word	-1,.L293,0,.L474-.L293
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L476:
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_InvalidateNvBlock')
+	.sect	'.debug_loc'
+.L631:
+	.word	-1,.L319,0,.L717-.L319
+	.half	1
+	.byte	84
+	.word	0,0
+.L635:
+	.word	0,0
+.L638:
+	.word	0,0
+.L642:
+	.word	0,0
+.L318:
+	.word	-1,.L319,0,.L630-.L319
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L636:
+	.word	-1,.L319,.L235-.L319,.L243-.L319
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L633:
+	.word	-1,.L319,.L719-.L319,.L630-.L319
+	.half	1
+	.byte	89
+	.word	0,0
+.L640:
+	.word	0,0
+.L632:
+	.word	-1,.L319,.L718-.L319,.L630-.L319
+	.half	1
+	.byte	88
+	.word	0,0
+.L643:
+	.word	-1,.L319,.L243-.L319,.L641-.L319
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_KillReadAll')
+	.sect	'.debug_loc'
+.L324:
+	.word	-1,.L325,0,.L650-.L325
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L651:
+	.word	-1,.L325,.L725-.L325,.L650-.L325
+	.half	1
+	.byte	88
+	.word	.L726-.L325,.L263-.L325
+	.half	1
+	.byte	87
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_KillWriteAll')
+	.sect	'.debug_loc'
+.L330:
+	.word	-1,.L331,0,.L656-.L331
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L659:
+	.word	-1,.L331,.L732-.L331,.L273-.L331
+	.half	1
+	.byte	89
+	.word	0,0
+.L657:
+	.word	-1,.L331,.L731-.L331,.L656-.L331
+	.half	1
+	.byte	88
+	.word	0,0
+.L661:
+	.word	-1,.L331,.L733-.L331,.L273-.L331
+	.half	1
+	.byte	111
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_MainFunction')
+	.sect	'.debug_loc'
+.L332:
+	.word	-1,.L333,0,.L662-.L333
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L663:
+	.word	-1,.L333,.L734-.L333,.L662-.L333
+	.half	1
+	.byte	88
+	.word	.L735-.L333,.L282-.L333
+	.half	1
+	.byte	87
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_ReadAll')
+	.sect	'.debug_loc'
+.L322:
+	.word	-1,.L323,0,.L648-.L323
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L649:
+	.word	-1,.L323,.L723-.L323,.L648-.L323
+	.half	1
+	.byte	88
+	.word	.L724-.L323,.L259-.L323
+	.half	1
+	.byte	87
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_ReadBlock')
+	.sect	'.debug_loc'
+.L546:
+	.word	-1,.L305,0,.L693-.L305
+	.half	1
+	.byte	84
+	.word	.L694-.L305,.L545-.L305
+	.half	1
+	.byte	88
+	.word	0,0
+.L554:
+	.word	0,0
+.L560:
+	.word	0,0
+.L563:
+	.word	0,0
+.L548:
+	.word	-1,.L305,0,.L693-.L305
+	.half	1
+	.byte	100
+	.word	.L695-.L305,.L545-.L305
+	.half	1
+	.byte	108
+	.word	0,0
+.L304:
+	.word	-1,.L305,0,.L545-.L305
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L556:
+	.word	0,0
+.L561:
+	.word	-1,.L305,.L121-.L305,.L567-.L305
+	.half	1
+	.byte	95
+	.word	0,0
+.L550:
+	.word	-1,.L305,.L696-.L305,.L545-.L305
+	.half	1
+	.byte	90
+	.word	0,0
+.L549:
+	.word	-1,.L305,.L695-.L305,.L545-.L305
+	.half	1
+	.byte	89
+	.word	0,0
+.L558:
+	.word	-1,.L305,.L697-.L305,.L698-.L305
+	.half	5
+	.byte	144,32,157,32,0
+	.word	.L117-.L305,.L121-.L305
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_ReadPRAMBlock')
+	.sect	'.debug_loc'
+.L569:
+	.word	-1,.L307,0,.L568-.L307
+	.half	1
+	.byte	84
+	.word	0,0
+.L306:
+	.word	-1,.L307,0,.L568-.L307
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_RestoreBlockDefaults')
+	.sect	'.debug_loc'
+.L597:
+	.word	-1,.L313,0,.L706-.L313
+	.half	1
+	.byte	84
+	.word	.L708-.L313,.L596-.L313
+	.half	1
+	.byte	88
+	.word	.L712-.L313,.L713-.L313
+	.half	1
+	.byte	84
+	.word	0,0
+.L602:
+	.word	0,0
+.L606:
+	.word	0,0
+.L609:
+	.word	0,0
+.L598:
+	.word	-1,.L313,0,.L707-.L313
+	.half	1
+	.byte	100
+	.word	.L709-.L313,.L596-.L313
+	.half	1
+	.byte	108
+	.word	.L712-.L313,.L713-.L313
+	.half	1
+	.byte	100
+	.word	0,0
+.L312:
+	.word	-1,.L313,0,.L596-.L313
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L603:
+	.word	0,0
+.L607:
+	.word	-1,.L313,.L186-.L313,.L613-.L313
+	.half	1
+	.byte	95
+	.word	0,0
+.L600:
+	.word	-1,.L313,.L710-.L313,.L596-.L313
+	.half	1
+	.byte	90
+	.word	0,0
+.L599:
+	.word	-1,.L313,.L709-.L313,.L596-.L313
+	.half	1
+	.byte	89
+	.word	0,0
+.L604:
+	.word	-1,.L313,.L711-.L313,.L706-.L313
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_RestorePRAMBlockDefaults')
+	.sect	'.debug_loc'
+.L615:
+	.word	-1,.L315,0,.L614-.L315
+	.half	1
+	.byte	84
+	.word	0,0
+.L314:
+	.word	-1,.L315,0,.L614-.L315
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_SetBlockLockStatus')
+	.sect	'.debug_loc'
+.L665:
+	.word	-1,.L335,0,.L736-.L335
+	.half	1
+	.byte	84
+	.word	0,0
+.L666:
+	.word	-1,.L335,0,.L736-.L335
+	.half	1
+	.byte	85
+	.word	.L737-.L335,.L664-.L335
+	.half	1
+	.byte	88
+	.word	0,0
+.L334:
+	.word	-1,.L335,0,.L664-.L335
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L667:
+	.word	-1,.L335,.L738-.L335,.L664-.L335
+	.half	1
+	.byte	89
+	.word	.L739-.L335,.L291-.L335
+	.half	1
+	.byte	87
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_SetBlockProtection')
+	.sect	'.debug_loc'
+.L506:
+	.word	-1,.L299,0,.L676-.L299
+	.half	1
+	.byte	84
+	.word	0,0
+.L511:
+	.word	0,0
+.L514:
+	.word	0,0
+.L298:
+	.word	-1,.L299,0,.L505-.L299
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L507:
+	.word	-1,.L299,0,.L676-.L299
+	.half	1
+	.byte	85
+	.word	.L677-.L299,.L505-.L299
+	.half	1
+	.byte	88
+	.word	0,0
+.L512:
+	.word	-1,.L299,.L47-.L299,.L676-.L299
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L509:
+	.word	-1,.L299,.L679-.L299,.L505-.L299
+	.half	1
+	.byte	90
+	.word	0,0
+.L508:
+	.word	-1,.L299,.L678-.L299,.L505-.L299
+	.half	1
+	.byte	89
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_SetDataIndex')
+	.sect	'.debug_loc'
+.L479:
+	.word	-1,.L295,0,.L668-.L295
+	.half	1
+	.byte	84
+	.word	0,0
+.L486:
+	.word	0,0
+.L492:
+	.word	0,0
+.L480:
+	.word	-1,.L295,0,.L669-.L295
+	.half	1
+	.byte	85
+	.word	0,0
+.L294:
+	.word	-1,.L295,0,.L478-.L295
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L488:
+	.word	-1,.L295,.L11-.L295,.L672-.L295
+	.half	1
+	.byte	95
+	.word	0,0
+.L482:
+	.word	-1,.L295,.L671-.L295,.L23-.L295
+	.half	1
+	.byte	87
+	.word	0,0
+.L481:
+	.word	-1,.L295,.L670-.L295,.L478-.L295
+	.half	1
+	.byte	88
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_SetRamBlockStatus')
+	.sect	'.debug_loc'
+.L532:
+	.word	-1,.L303,0,.L683-.L303
+	.half	1
+	.byte	85
+	.word	.L543-.L303,.L692-.L303
+	.half	1
+	.byte	89
+	.word	0,0
+.L531:
+	.word	-1,.L303,0,.L683-.L303
+	.half	1
+	.byte	84
+	.word	.L81-.L303,.L686-.L303
+	.half	1
+	.byte	88
+	.word	.L85-.L303,.L687-.L303
+	.half	1
+	.byte	88
+	.word	.L688-.L303,.L689-.L303
+	.half	1
+	.byte	88
+	.word	.L540-.L303,.L691-.L303
+	.half	1
+	.byte	88
+	.word	0,0
+.L536:
+	.word	0,0
+.L539:
+	.word	0,0
+.L302:
+	.word	-1,.L303,0,.L530-.L303
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L537:
+	.word	-1,.L303,.L91-.L303,.L690-.L303
+	.half	1
+	.byte	95
+	.word	0,0
+.L534:
+	.word	-1,.L303,.L685-.L303,.L530-.L303
+	.half	1
+	.byte	91
+	.word	0,0
+.L533:
+	.word	-1,.L303,.L684-.L303,.L530-.L303
+	.half	1
+	.byte	90
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_WriteAll')
+	.sect	'.debug_loc'
+.L326:
+	.word	-1,.L327,0,.L652-.L327
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L653:
+	.word	-1,.L327,.L727-.L327,.L652-.L327
+	.half	1
+	.byte	88
+	.word	.L728-.L327,.L268-.L327
+	.half	1
+	.byte	87
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_WriteBlock')
+	.sect	'.debug_loc'
+.L571:
+	.word	-1,.L309,0,.L699-.L309
+	.half	1
+	.byte	84
+	.word	0,0
+.L577:
+	.word	0,0
+.L581:
+	.word	0,0
+.L584:
+	.word	0,0
+.L591:
+	.word	0,0
+.L573:
+	.word	-1,.L309,0,.L700-.L309
+	.half	1
+	.byte	100
+	.word	.L701-.L309,.L570-.L309
+	.half	1
+	.byte	108
+	.word	.L705-.L309,.L699-.L309
+	.half	1
+	.byte	100
+	.word	0,0
+.L308:
+	.word	-1,.L309,0,.L570-.L309
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L578:
+	.word	0,0
+.L582:
+	.word	-1,.L309,.L150-.L309,.L158-.L309
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L575:
+	.word	-1,.L309,.L702-.L309,.L570-.L309
+	.half	1
+	.byte	89
+	.word	0,0
+.L574:
+	.word	-1,.L309,.L701-.L309,.L570-.L309
+	.half	1
+	.byte	88
+	.word	0,0
+.L593:
+	.word	-1,.L309,.L158-.L309,.L589-.L309
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L579:
+	.word	-1,.L309,.L703-.L309,.L704-.L309
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_WritePRAMBlock')
+	.sect	'.debug_loc'
+.L595:
+	.word	-1,.L311,0,.L594-.L311
+	.half	1
+	.byte	84
+	.word	0,0
+.L310:
+	.word	-1,.L311,0,.L594-.L311
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L1207:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('NvM_Init')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1207,.L293,.L474-.L293
+	.sdecl	'.debug_frame',debug,cluster('NvM_SetDataIndex')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1207,.L295,.L478-.L295
+	.sdecl	'.debug_frame',debug,cluster('NvM_GetDataIndex')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1207,.L297,.L496-.L297
+	.sdecl	'.debug_frame',debug,cluster('NvM_SetBlockProtection')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1207,.L299,.L505-.L299
+	.sdecl	'.debug_frame',debug,cluster('NvM_GetErrorStatus')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1207,.L301,.L519-.L301
+	.sdecl	'.debug_frame',debug,cluster('NvM_SetRamBlockStatus')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1207,.L303,.L530-.L303
+	.sdecl	'.debug_frame',debug,cluster('NvM_ReadBlock')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1207,.L305,.L545-.L305
+	.sdecl	'.debug_frame',debug,cluster('NvM_ReadPRAMBlock')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1207,.L307,.L568-.L307
+	.sdecl	'.debug_frame',debug,cluster('NvM_WriteBlock')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1207,.L309,.L570-.L309
+	.sdecl	'.debug_frame',debug,cluster('NvM_WritePRAMBlock')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1207,.L311,.L594-.L311
+	.sdecl	'.debug_frame',debug,cluster('NvM_RestoreBlockDefaults')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1207,.L313,.L596-.L313
+	.sdecl	'.debug_frame',debug,cluster('NvM_RestorePRAMBlockDefaults')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1207,.L315,.L614-.L315
+	.sdecl	'.debug_frame',debug,cluster('NvM_EraseNvBlock')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1207,.L317,.L616-.L317
+	.sdecl	'.debug_frame',debug,cluster('NvM_InvalidateNvBlock')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1207,.L319,.L630-.L319
+	.sdecl	'.debug_frame',debug,cluster('NvM_CancelJobs')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1207,.L321,.L644-.L321
+	.sdecl	'.debug_frame',debug,cluster('NvM_ReadAll')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1207,.L323,.L648-.L323
+	.sdecl	'.debug_frame',debug,cluster('NvM_KillReadAll')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1207,.L325,.L650-.L325
+	.sdecl	'.debug_frame',debug,cluster('NvM_WriteAll')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1207,.L327,.L652-.L327
+	.sdecl	'.debug_frame',debug,cluster('NvM_CancelWriteAll')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1207,.L329,.L654-.L329
+	.sdecl	'.debug_frame',debug,cluster('NvM_KillWriteAll')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1207,.L331,.L656-.L331
+	.sdecl	'.debug_frame',debug,cluster('NvM_MainFunction')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1207,.L333,.L662-.L333
+	.sdecl	'.debug_frame',debug,cluster('NvM_SetBlockLockStatus')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1207,.L335,.L664-.L335
+	; Module end

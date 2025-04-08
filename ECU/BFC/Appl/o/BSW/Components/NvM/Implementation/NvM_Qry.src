@@ -1,0 +1,4934 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v6.2r1 Build 17012451 SN 07925145"
+	.compiler_invocation	"ctc -f cc6884a -c99 --integer-enumeration -D__CPU__=userdef162 -D__CPU_USERDEF162__ --core=tc1.6.2 --fp-model=+float -DBRS_PLATFORM_AURIX -DBRS_COMP_TASKING -I../../../../BSW/Components/BswM/Implementation -I../../../../BSW/Components/CanIf/Implementation -I../../../../BSW/Components/CanSM/Implementation -I../../../../BSW/Components/CanTp/Implementation -I../../../../BSW/Components/Can_30_Core/Implementation -I../../../../BSW/Components/Com/Implementation -I../../../../BSW/Components/ComM/Implementation -I../../../../BSW/Components/Crc -I../../../../BSW/Components/Crc/Implementation -I../../../../BSW/Components/Dcm/Implementation -I../../../../BSW/Components/Dem/Implementation -I../../../../BSW/Components/Det/Implementation -I../../../../BSW/Components/EcuM/Implementation -I../../../../BSW/Components/GenData -I../../../../BSW/Components/Mcal_Tc3xx -I../../../../BSW/Components/Mcal_Tc3xx/Implementation -I../../../../BSW/Components/MemIf -I../../../../BSW/Components/MemIf/Implementation -I../../../../BSW/Components/NvM -I../../../../BSW/Components/NvM/Implementation -I../../../../BSW/Components/Os/Implementation -I../../../../BSW/Components/PduR/Implementation -I../../../../BSW/Components/VStdLib/Implementation -I../../../../BSW/Components/vCan_30_Mcan/Implementation -I../../../../BSW/DemoComponents/vLinkGen/Implementation -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Autosar_Srv -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Integration -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Irq/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Infra_Prod/Sfr/TC39xB/_Reg -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Adc/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Dio/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Fee/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Fls_17_Dmu/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/McalLib/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/McalLib/ssc/inc/AS440 -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Mcu/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Port/ssc/inc -I../../../../BSW/Components/_Common/Implementation -IGenData -IInclude -ID:/TASKING/TriCorev6.2r1/ctc/include -IGenData/Components -IGenData/inc --debug-info=default --align=4 --default-a0-size=0 --default-a1-size=0 --default-near-size=0 --optimize=acefgIklMnopRsUvwy,+predict --tradeoff=2 --language=-gcc,+volatile,-strings,-comments -o o\\BSW\\Components\\NvM\\Implementation\\NvM_Qry.src ../../../../BSW/Components/NvM/Implementation/NvM_Qry.c"
+	.compiler_name		"ctc"
+	;source	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c'
+
+	
+$TC162
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryBlockRelevantForWriteAll')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QryBlockRelevantForWriteAll
+.L179:
+	.align	4
+NvM_QryBlockRelevantForWriteAll:	.type	func
+.L74:
+	movh.a	a12,#@his(NvM_CurrentBlockInfo_t)
+	lea	a12,[a12]@los(NvM_CurrentBlockInfo_t)
+.L478:
+	ld.a	a15,[a12]
+.L479:
+	mov	d8,#0
+.L429:
+	ld.bu	d15,[a15]48
+	extr.u	d4,d15,#6,#1
+	call	NvM_IsBooleanBitfieldTrue
+.L430:
+	mov.aa	a13,a12
+	ld.a	a15,[+a13]4
+.L480:
+	ld.bu	d15,[a15]2
+.L481:
+	and	d15,#192
+.L482:
+	eq	d15,d15,#0
+.L432:
+	jeq	d2,#0,.L2
+.L483:
+	jeq	d15,#0,.L3
+.L386:
+	ld.a	a15,[a12]
+.L484:
+	ld.bu	d15,[a15]49
+.L433:
+	extr.u	d4,d15,#1,#1
+	call	NvM_IsBooleanBitfieldTrue
+.L431:
+	jeq	d2,#0,.L4
+.L388:
+	ld.a	a15,[a13]
+.L485:
+	ld.bu	d15,[a15]2
+.L486:
+	and	d15,#3
+.L487:
+	eq	d8,d15,#3
+	j	.L5
+.L4:
+	mov	d8,#1
+.L5:
+.L3:
+.L2:
+	movh.a	a15,#@his(NvM_CurrentJob_t)
+.L488:
+	ld.hu	d15,[a15]@los(NvM_CurrentJob_t)
+.L489:
+	eq	d15,d15,#1
+.L490:
+	seln	d2,d15,d8,#0
+	ret
+.L382:
+	
+__NvM_QryBlockRelevantForWriteAll_function_end:
+	.size	NvM_QryBlockRelevantForWriteAll,__NvM_QryBlockRelevantForWriteAll_function_end-NvM_QryBlockRelevantForWriteAll
+.L180:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryCancelWriteAll')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QryCancelWriteAll
+.L185:
+	.align	4
+NvM_QryCancelWriteAll:	.type	func
+.L76:
+	movh.a	a15,#@his(NvM_ApiFlags_u8)
+	ld.bu	d15,[a15]@los(NvM_ApiFlags_u8)
+.L495:
+	and	d15,#16
+.L496:
+	ne	d2,d15,#0
+	ret
+.L389:
+	
+__NvM_QryCancelWriteAll_function_end:
+	.size	NvM_QryCancelWriteAll,__NvM_QryCancelWriteAll_function_end-NvM_QryCancelWriteAll
+.L186:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryWriteAllKilled')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QryWriteAllKilled
+.L191:
+	.align	4
+NvM_QryWriteAllKilled:	.type	func
+.L78:
+	movh.a	a15,#@his(NvM_CurrentJob_t+2)
+.L501:
+	ld.w	d15,[a15]@los(NvM_CurrentJob_t+2)
+.L502:
+	mov	d2,#0
+.L503:
+	jne	d15,#5,.L9
+.L504:
+	movh.a	a15,#@his(NvM_ApiFlags_u8)
+	ld.bu	d15,[a15]@los(NvM_ApiFlags_u8)
+.L505:
+	and	d15,#32
+.L506:
+	cmov	d2,d15,#1
+.L9:
+	ret
+.L390:
+	
+__NvM_QryWriteAllKilled_function_end:
+	.size	NvM_QryWriteAllKilled,__NvM_QryWriteAllKilled_function_end-NvM_QryWriteAllKilled
+.L192:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryIsDataIntegrityJobPending')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QryIsDataIntegrityJobPending
+.L197:
+	.align	4
+NvM_QryIsDataIntegrityJobPending:	.type	func
+.L80:
+	movh.a	a15,#@his(NvM_CurrentBlockInfo_t+16)
+.L511:
+	lea	a4,[a15]@los(NvM_CurrentBlockInfo_t+16)
+	call	NvM_DataIntegrity_GetStatus
+.L512:
+	eq	d2,d2,#0
+	ret
+.L391:
+	
+__NvM_QryIsDataIntegrityJobPending_function_end:
+	.size	NvM_QryIsDataIntegrityJobPending,__NvM_QryIsDataIntegrityJobPending_function_end-NvM_QryIsDataIntegrityJobPending
+.L198:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryIsDataIntegrityJobFinishedSuccessful')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QryIsDataIntegrityJobFinishedSuccessful
+.L203:
+	.align	4
+NvM_QryIsDataIntegrityJobFinishedSuccessful:	.type	func
+.L82:
+	movh.a	a15,#@his(NvM_CurrentBlockInfo_t+16)
+.L517:
+	lea	a4,[a15]@los(NvM_CurrentBlockInfo_t+16)
+	call	NvM_DataIntegrity_GetStatus
+.L518:
+	eq	d2,d2,#1
+	ret
+.L392:
+	
+__NvM_QryIsDataIntegrityJobFinishedSuccessful_function_end:
+	.size	NvM_QryIsDataIntegrityJobFinishedSuccessful,__NvM_QryIsDataIntegrityJobFinishedSuccessful_function_end-NvM_QryIsDataIntegrityJobFinishedSuccessful
+.L204:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryIsDataIntegrityAlgorithmConfigured')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QryIsDataIntegrityAlgorithmConfigured
+.L209:
+	.align	4
+NvM_QryIsDataIntegrityAlgorithmConfigured:	.type	func
+.L84:
+	movh.a	a15,#@his(NvM_CurrentBlockInfo_t)
+.L523:
+	ld.a	a15,[a15]@los(NvM_CurrentBlockInfo_t)
+.L524:
+	ld.w	d15,[a15]62
+	extr.u	d15,d15,#14,#3
+.L525:
+	ne	d2,d15,#0
+	ret
+.L393:
+	
+__NvM_QryIsDataIntegrityAlgorithmConfigured_function_end:
+	.size	NvM_QryIsDataIntegrityAlgorithmConfigured,__NvM_QryIsDataIntegrityAlgorithmConfigured_function_end-NvM_QryIsDataIntegrityAlgorithmConfigured
+.L210:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryDataCopyBusy')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QryDataCopyBusy
+.L215:
+	.align	4
+NvM_QryDataCopyBusy:	.type	func
+.L86:
+	movh.a	a15,#@his(NvM_CurrentBlockInfo_t+66)
+.L530:
+	ld.hu	d15,[a15]@los(NvM_CurrentBlockInfo_t+66)
+.L531:
+	ne	d2,d15,#0
+	ret
+.L394:
+	
+__NvM_QryDataCopyBusy_function_end:
+	.size	NvM_QryDataCopyBusy,__NvM_QryDataCopyBusy_function_end-NvM_QryDataCopyBusy
+.L216:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryLastBlockDone_ReadAll')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QryLastBlockDone_ReadAll
+.L221:
+	.align	4
+NvM_QryLastBlockDone_ReadAll:	.type	func
+.L88:
+	movh.a	a15,#@his(NvM_CurrentJob_t)
+.L536:
+	ld.hu	d15,[a15]@los(NvM_CurrentJob_t)
+.L537:
+	ge.u	d2,d15,#3
+	ret
+.L395:
+	
+__NvM_QryLastBlockDone_ReadAll_function_end:
+	.size	NvM_QryLastBlockDone_ReadAll,__NvM_QryLastBlockDone_ReadAll_function_end-NvM_QryLastBlockDone_ReadAll
+.L222:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryLastBlockDone_WriteAll')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QryLastBlockDone_WriteAll
+.L227:
+	.align	4
+NvM_QryLastBlockDone_WriteAll:	.type	func
+.L90:
+	movh.a	a15,#@his(NvM_CurrentJob_t)
+.L542:
+	ld.hu	d15,[a15]@los(NvM_CurrentJob_t)
+.L543:
+	eq	d2,d15,#0
+	ret
+.L396:
+	
+__NvM_QryLastBlockDone_WriteAll_function_end:
+	.size	NvM_QryLastBlockDone_WriteAll,__NvM_QryLastBlockDone_WriteAll_function_end-NvM_QryLastBlockDone_WriteAll
+.L228:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryLastResultOk')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QryLastResultOk
+.L233:
+	.align	4
+NvM_QryLastResultOk:	.type	func
+.L92:
+	movh.a	a15,#@his(NvM_CurrentBlockInfo_t+68)
+.L548:
+	ld.bu	d15,[a15]@los(NvM_CurrentBlockInfo_t+68)
+.L549:
+	eq	d2,d15,#0
+	ret
+.L397:
+	
+__NvM_QryLastResultOk_function_end:
+	.size	NvM_QryLastResultOk,__NvM_QryLastResultOk_function_end-NvM_QryLastResultOk
+.L234:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryMainFsmRunning')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QryMainFsmRunning
+.L239:
+	.align	4
+NvM_QryMainFsmRunning:	.type	func
+.L94:
+	movh.a	a15,#@his(NvM_JobMainState_t)
+	ld.w	d15,[a15]@los(NvM_JobMainState_t)
+.L554:
+	ne	d2,d15,#34
+	ret
+.L398:
+	
+__NvM_QryMainFsmRunning_function_end:
+	.size	NvM_QryMainFsmRunning,__NvM_QryMainFsmRunning_function_end-NvM_QryMainFsmRunning
+.L240:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryMultiJob')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QryMultiJob
+.L245:
+	.align	4
+NvM_QryMultiJob:	.type	func
+.L96:
+	movh.a	a15,#@his(NvM_ApiFlags_u8)
+	ld.bu	d15,[a15]@los(NvM_ApiFlags_u8)
+.L559:
+	and	d15,#6
+.L560:
+	ne	d2,d15,#0
+	ret
+.L399:
+	
+__NvM_QryMultiJob_function_end:
+	.size	NvM_QryMultiJob,__NvM_QryMultiJob_function_end-NvM_QryMultiJob
+.L246:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryNvBusy')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QryNvBusy
+.L251:
+	.align	4
+NvM_QryNvBusy:	.type	func
+.L98:
+	movh.a	a15,#@his(NvM_CurrentBlockInfo_t)
+	lea	a15,[a15]@los(NvM_CurrentBlockInfo_t)
+.L565:
+	ld.a	a2,[a15+]68
+.L566:
+	mov	d8,#0
+.L434:
+	ld.bu	d15,[a2]63
+.L567:
+	ld.bu	d0,[a15]
+.L435:
+	and	d15,#15
+.L568:
+	jne	d0,#2,.L21
+.L569:
+	mov	d4,d15
+	call	NvM_MemIfAbstraction_GetStatus
+.L570:
+	jne	d2,#2,.L22
+.L571:
+	mov	d8,#1
+	j	.L23
+.L22:
+	mov	d4,d15
+	call	NvM_MemIfAbstraction_GetJobResult
+.L572:
+	jeq	d2,#0,.L24
+.L573:
+	jeq	d2,#4,.L25
+.L574:
+	jeq	d2,#5,.L26
+.L575:
+	j	.L27
+.L24:
+	mov	d15,#0
+	j	.L28
+.L25:
+	mov	d15,#3
+	j	.L29
+.L26:
+	mov	d15,#5
+	j	.L30
+.L27:
+	mov	d15,#1
+.L28:
+.L29:
+.L30:
+	st.b	[a15],d15
+.L23:
+.L21:
+	mov	d2,d8
+	ret
+.L400:
+	
+__NvM_QryNvBusy_function_end:
+	.size	NvM_QryNvBusy,__NvM_QryNvBusy_function_end-NvM_QryNvBusy
+.L252:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryMemHwaBusy')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QryMemHwaBusy
+.L257:
+	.align	4
+NvM_QryMemHwaBusy:	.type	func
+.L100:
+	mov	d4,#255
+	call	NvM_MemIfAbstraction_GetStatus
+.L436:
+	mov	d15,#0
+.L580:
+	jeq	d2,#2,.L32
+.L581:
+	jne	d2,#3,.L33
+.L32:
+	mov	d15,#1
+.L33:
+	mov	d2,d15
+	ret
+.L404:
+	
+__NvM_QryMemHwaBusy_function_end:
+	.size	NvM_QryMemHwaBusy,__NvM_QryMemHwaBusy_function_end-NvM_QryMemHwaBusy
+.L258:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryPrimaryRedundantBlock')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QryPrimaryRedundantBlock
+.L263:
+	.align	4
+NvM_QryPrimaryRedundantBlock:	.type	func
+.L102:
+	movh.a	a15,#@his(NvM_CurrentBlockInfo_t)
+	lea	a15,[a15]@los(NvM_CurrentBlockInfo_t)
+.L586:
+	ld.a	a2,[a15]
+.L587:
+	mov	d2,#0
+.L588:
+	ld.bu	d15,[a2]63
+	extr.u	d15,d15,#4,#2
+.L589:
+	jz.t	d15:0,.L35
+.L590:
+	ld.hu	d15,[a15]64
+.L591:
+	and	d15,#1
+.L592:
+	cmovn	d2,d15,#1
+.L35:
+	ret
+.L407:
+	
+__NvM_QryPrimaryRedundantBlock_function_end:
+	.size	NvM_QryPrimaryRedundantBlock,__NvM_QryPrimaryRedundantBlock_function_end-NvM_QryPrimaryRedundantBlock
+.L264:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QrySecondaryRedundantBlock')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QrySecondaryRedundantBlock
+.L269:
+	.align	4
+NvM_QrySecondaryRedundantBlock:	.type	func
+.L104:
+	movh.a	a15,#@his(NvM_CurrentBlockInfo_t)
+	lea	a15,[a15]@los(NvM_CurrentBlockInfo_t)
+.L597:
+	ld.a	a2,[a15]
+.L598:
+	mov	d2,#0
+.L599:
+	ld.bu	d15,[a2]63
+	extr.u	d15,d15,#4,#2
+.L600:
+	jz.t	d15:0,.L38
+.L601:
+	ld.hu	d15,[a15]64
+.L602:
+	and	d15,#1
+.L603:
+	cmov	d2,d15,#1
+.L38:
+	ret
+.L408:
+	
+__NvM_QrySecondaryRedundantBlock_function_end:
+	.size	NvM_QrySecondaryRedundantBlock,__NvM_QrySecondaryRedundantBlock_function_end-NvM_QrySecondaryRedundantBlock
+.L270:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QrySkipBlock')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QrySkipBlock
+.L275:
+	.align	4
+NvM_QrySkipBlock:	.type	func
+.L106:
+	movh.a	a15,#@his(NvM_CurrentBlockInfo_t)
+.L608:
+	ld.a	a15,[a15]@los(NvM_CurrentBlockInfo_t)
+.L609:
+	ld.bu	d15,[a15]48
+	extr.u	d4,d15,#4,#1
+	call	NvM_IsBooleanBitfieldTrue
+.L610:
+	eq	d2,d2,#0
+	ret
+.L409:
+	
+__NvM_QrySkipBlock_function_end:
+	.size	NvM_QrySkipBlock,__NvM_QrySkipBlock_function_end-NvM_QrySkipBlock
+.L276:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QrySubFsmRunning')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QrySubFsmRunning
+.L281:
+	.align	4
+NvM_QrySubFsmRunning:	.type	func
+.L108:
+	movh.a	a15,#@his(NvM_JobSubState_t)
+	ld.w	d15,[a15]@los(NvM_JobSubState_t)
+.L615:
+	ne	d2,d15,#34
+	ret
+.L410:
+	
+__NvM_QrySubFsmRunning_function_end:
+	.size	NvM_QrySubFsmRunning,__NvM_QrySubFsmRunning_function_end-NvM_QrySubFsmRunning
+.L282:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryFalse')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QryFalse
+.L287:
+	.align	4
+NvM_QryFalse:	.type	func
+.L110:
+	mov	d2,#0
+	ret
+.L411:
+	
+__NvM_QryFalse_function_end:
+	.size	NvM_QryFalse,__NvM_QryFalse_function_end-NvM_QryFalse
+.L288:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryTrue')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QryTrue
+.L293:
+	.align	4
+NvM_QryTrue:	.type	func
+.L112:
+	mov	d2,#1
+	ret
+.L412:
+	
+__NvM_QryTrue_function_end:
+	.size	NvM_QryTrue,__NvM_QryTrue_function_end-NvM_QryTrue
+.L294:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryWriteBlockOnce')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QryWriteBlockOnce
+.L299:
+	.align	4
+NvM_QryWriteBlockOnce:	.type	func
+.L114:
+	movh.a	a15,#@his(NvM_CurrentBlockInfo_t)
+.L628:
+	ld.a	a15,[a15]@los(NvM_CurrentBlockInfo_t)
+.L629:
+	ld.bu	d15,[a15]48
+	extr.u	d4,d15,#2,#1
+	call	NvM_IsBooleanBitfieldTrue
+.L630:
+	ne	d2,d2,#0
+	ret
+.L413:
+	
+__NvM_QryWriteBlockOnce_function_end:
+	.size	NvM_QryWriteBlockOnce,__NvM_QryWriteBlockOnce_function_end-NvM_QryWriteBlockOnce
+.L300:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryWriteRetriesExceeded')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QryWriteRetriesExceeded
+.L305:
+	.align	4
+NvM_QryWriteRetriesExceeded:	.type	func
+.L116:
+	movh.a	a15,#@his(NvM_CurrentBlockInfo_t+69)
+.L635:
+	ld.bu	d15,[a15]@los(NvM_CurrentBlockInfo_t+69)
+.L636:
+	mov	d0,#1
+.L637:
+	lt.u	d2,d0,d15
+	ret
+.L414:
+	
+__NvM_QryWriteRetriesExceeded_function_end:
+	.size	NvM_QryWriteRetriesExceeded,__NvM_QryWriteRetriesExceeded_function_end-NvM_QryWriteRetriesExceeded
+.L306:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryCalcRamBlockCrcEnabledAndRamValid')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_QryCalcRamBlockCrcEnabledAndRamValid
+; Function NvM_QryCalcRamBlockCrcEnabledAndRamValid
+.L173:
+	.align	4
+NvM_QryCalcRamBlockCrcEnabledAndRamValid:	.type	func
+.L118:
+	movh.a	a15,#@his(NvM_CurrentBlockInfo_t)
+	lea	a15,[a15]@los(NvM_CurrentBlockInfo_t)
+.L466:
+	ld.a	a2,[a15]
+.L467:
+	mov	d8,#0
+.L468:
+	ld.bu	d15,[a2]48
+	and	d4,d15,#1
+	call	NvM_IsBooleanBitfieldTrue
+.L469:
+	jeq	d2,#0,.L47
+.L470:
+	ld.a	a15,[a15]4
+.L471:
+	ld.bu	d15,[a15]2
+.L472:
+	and	d15,#1
+.L473:
+	cmov	d8,d15,#1
+.L47:
+	mov	d2,d8
+	ret
+.L381:
+	
+__NvM_QryCalcRamBlockCrcEnabledAndRamValid_function_end:
+	.size	NvM_QryCalcRamBlockCrcEnabledAndRamValid,__NvM_QryCalcRamBlockCrcEnabledAndRamValid_function_end-NvM_QryCalcRamBlockCrcEnabledAndRamValid
+.L174:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryHasRom')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QryHasRom
+.L311:
+	.align	4
+NvM_QryHasRom:	.type	func
+.L120:
+	movh.a	a15,#@his(NvM_CurrentBlockInfo_t)
+.L642:
+	ld.a	a15,[a15]@los(NvM_CurrentBlockInfo_t)
+.L643:
+	mov	d8,#0
+.L644:
+	ld.w	d15,[a15]4
+.L645:
+	jne	d15,#0,.L50
+.L646:
+	mov.aa	a4,a15
+	call	NvM_QryIsInitCallbackConfigured
+.L647:
+	jeq	d2,#0,.L51
+.L648:
+	ld.bu	d15,[a15]48
+	extr.u	d4,d15,#7,#1
+	call	NvM_IsBooleanBitfieldTrue
+.L649:
+	jeq	d2,#0,.L52
+.L50:
+	mov	d8,#1
+.L52:
+.L51:
+	mov	d2,d8
+	ret
+.L415:
+	
+__NvM_QryHasRom_function_end:
+	.size	NvM_QryHasRom,__NvM_QryHasRom_function_end-NvM_QryHasRom
+.L312:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryExtRuntime')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QryExtRuntime
+.L317:
+	.align	4
+NvM_QryExtRuntime:	.type	func
+.L122:
+	mov	d2,#0
+	ret
+.L416:
+	
+__NvM_QryExtRuntime_function_end:
+	.size	NvM_QryExtRuntime,__NvM_QryExtRuntime_function_end-NvM_QryExtRuntime
+.L318:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryDataIntegrityRecordCompareMechanismSkipWrite')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QryDataIntegrityRecordCompareMechanismSkipWrite
+.L323:
+	.align	4
+NvM_QryDataIntegrityRecordCompareMechanismSkipWrite:	.type	func
+.L124:
+	movh.a	a2,#@his(NvM_CurrentBlockInfo_t)
+	lea	a2,[a2]@los(NvM_CurrentBlockInfo_t)
+.L658:
+	ld.a	a15,[a2]
+.L659:
+	mov	d2,#0
+.L437:
+	ld.a	a5,[a15]44
+.L660:
+	jz.a	a5,.L55
+.L661:
+	lea	a4,[a2]16
+.L662:
+	j	NvM_DataIntegrity_Compare
+.L55:
+	ret
+.L417:
+	
+__NvM_QryDataIntegrityRecordCompareMechanismSkipWrite_function_end:
+	.size	NvM_QryDataIntegrityRecordCompareMechanismSkipWrite,__NvM_QryDataIntegrityRecordCompareMechanismSkipWrite_function_end-NvM_QryDataIntegrityRecordCompareMechanismSkipWrite
+.L324:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryPostReadTransform')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QryPostReadTransform
+.L329:
+	.align	4
+NvM_QryPostReadTransform:	.type	func
+.L126:
+	movh.a	a15,#@his(NvM_CurrentBlockInfo_t)
+	lea	a15,[a15]@los(NvM_CurrentBlockInfo_t)
+.L667:
+	ld.a	a2,[a15]
+.L668:
+	mov	d2,#1
+.L438:
+	ld.a	a5,[a2]36
+.L669:
+	jz.a	a5,.L57
+.L670:
+	movh.a	a4,#@his(NvM_CurrentJob_t)
+.L671:
+	ld.hu	d4,[a4]@los(NvM_CurrentJob_t)
+.L672:
+	ld.a	a4,[a15]8
+.L673:
+	ld.hu	d5,[a2]52
+	calli	a5
+.L439:
+	eq	d2,d2,#0
+.L57:
+	ret
+.L419:
+	
+__NvM_QryPostReadTransform_function_end:
+	.size	NvM_QryPostReadTransform,__NvM_QryPostReadTransform_function_end-NvM_QryPostReadTransform
+.L330:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QrySyncDecrypt')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_QrySyncDecrypt
+; Function NvM_QrySyncDecrypt
+.L167:
+	.align	4
+NvM_QrySyncDecrypt:	.type	func
+.L128:
+	mov	d2,#1
+	ret
+.L380:
+	
+__NvM_QrySyncDecrypt_function_end:
+	.size	NvM_QrySyncDecrypt,__NvM_QrySyncDecrypt_function_end-NvM_QrySyncDecrypt
+.L168:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryCsmRetryNecessary')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QryCsmRetryNecessary
+.L335:
+	.align	4
+NvM_QryCsmRetryNecessary:	.type	func
+.L130:
+	mov	d2,#0
+	ret
+.L421:
+	
+__NvM_QryCsmRetryNecessary_function_end:
+	.size	NvM_QryCsmRetryNecessary,__NvM_QryCsmRetryNecessary_function_end-NvM_QryCsmRetryNecessary
+.L336:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryBlockCheckLossOfRedundancy')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QryBlockCheckLossOfRedundancy
+.L341:
+	.align	4
+NvM_QryBlockCheckLossOfRedundancy:	.type	func
+.L132:
+	movh.a	a15,#@his(NvM_CurrentBlockInfo_t)
+.L682:
+	ld.a	a15,[a15]@los(NvM_CurrentBlockInfo_t)
+.L683:
+	ld.bu	d15,[a15]49
+	extr.u	d4,d15,#2,#1
+	j	NvM_IsBooleanBitfieldTrue
+.L422:
+	
+__NvM_QryBlockCheckLossOfRedundancy_function_end:
+	.size	NvM_QryBlockCheckLossOfRedundancy,__NvM_QryBlockCheckLossOfRedundancy_function_end-NvM_QryBlockCheckLossOfRedundancy
+.L342:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryFirstRedundantBlockFailed')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QryFirstRedundantBlockFailed
+.L347:
+	.align	4
+NvM_QryFirstRedundantBlockFailed:	.type	func
+.L134:
+	movh.a	a15,#@his(NvM_CurrentBlockInfo_t+71)
+	ld.bu	d15,[a15]@los(NvM_CurrentBlockInfo_t+71)
+	sha	d15,#-5
+	and	d15,#3
+.L688:
+	ne	d2,d15,#0
+	ret
+.L423:
+	
+__NvM_QryFirstRedundantBlockFailed_function_end:
+	.size	NvM_QryFirstRedundantBlockFailed,__NvM_QryFirstRedundantBlockFailed_function_end-NvM_QryFirstRedundantBlockFailed
+.L348:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryRedundantCrcMatches')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QryRedundantCrcMatches
+.L353:
+	.align	4
+NvM_QryRedundantCrcMatches:	.type	func
+.L136:
+	movh.a	a15,#@his(NvM_CurrentBlockInfo_t+16)
+.L693:
+	lea	a4,[a15]@los(NvM_CurrentBlockInfo_t+16)
+.L694:
+	movh.a	a5,#@his(NvM_SecondaryRedundantBlockDataIntegrityRecord)
+	lea	a5,[a5]@los(NvM_SecondaryRedundantBlockDataIntegrityRecord)
+	j	NvM_DataIntegrity_Compare
+.L424:
+	
+__NvM_QryRedundantCrcMatches_function_end:
+	.size	NvM_QryRedundantCrcMatches,__NvM_QryRedundantCrcMatches_function_end-NvM_QryRedundantCrcMatches
+.L354:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryHasExplicitSynchronization')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QryHasExplicitSynchronization
+.L359:
+	.align	4
+NvM_QryHasExplicitSynchronization:	.type	func
+.L138:
+	movh.a	a15,#@his(NvM_CurrentBlockInfo_t)
+.L699:
+	ld.a	a15,[a15]@los(NvM_CurrentBlockInfo_t)
+.L700:
+	ld.a	a15,[a15]28
+.L701:
+	mov.a	a2,#0
+.L702:
+	ne.a	d2,a15,a2
+.L703:
+	ret
+.L425:
+	
+__NvM_QryHasExplicitSynchronization_function_end:
+	.size	NvM_QryHasExplicitSynchronization,__NvM_QryHasExplicitSynchronization_function_end-NvM_QryHasExplicitSynchronization
+.L360:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryExplicitSyncAttemptNecessary')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QryExplicitSyncAttemptNecessary
+.L365:
+	.align	4
+NvM_QryExplicitSyncAttemptNecessary:	.type	func
+.L140:
+	movh.a	a15,#@his(NvM_CurrentBlockInfo_t)
+	lea	a15,[a15]@los(NvM_CurrentBlockInfo_t)
+.L708:
+	ld.bu	d15,[a15]72
+.L709:
+	mov	d2,#0
+.L710:
+	jne	d15,#0,.L65
+.L711:
+	ld.bu	d15,[a15]73
+.L712:
+	cmovn	d2,d15,#1
+.L65:
+	ret
+.L426:
+	
+__NvM_QryExplicitSyncAttemptNecessary_function_end:
+	.size	NvM_QryExplicitSyncAttemptNecessary,__NvM_QryExplicitSyncAttemptNecessary_function_end-NvM_QryExplicitSyncAttemptNecessary
+.L366:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryExplicitSyncAttemptFailed')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function NvM_QryExplicitSyncAttemptFailed
+.L371:
+	.align	4
+NvM_QryExplicitSyncAttemptFailed:	.type	func
+.L142:
+	movh.a	a15,#@his(NvM_CurrentBlockInfo_t+72)
+.L717:
+	ld.bu	d15,[a15]@los(NvM_CurrentBlockInfo_t+72)
+.L718:
+	eq	d2,d15,#0
+	ret
+.L427:
+	
+__NvM_QryExplicitSyncAttemptFailed_function_end:
+	.size	NvM_QryExplicitSyncAttemptFailed,__NvM_QryExplicitSyncAttemptFailed_function_end-NvM_QryExplicitSyncAttemptFailed
+.L372:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryReadAllKilled')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_QryReadAllKilled
+; Function NvM_QryReadAllKilled
+.L155:
+	.align	4
+NvM_QryReadAllKilled:	.type	func
+.L144:
+	movh.a	a15,#@his(NvM_ApiFlags_u8)
+	ld.bu	d15,[a15]@los(NvM_ApiFlags_u8)
+.L448:
+	and	d15,#64
+.L449:
+	ne	d2,d15,#0
+	ret
+.L376:
+	
+__NvM_QryReadAllKilled_function_end:
+	.size	NvM_QryReadAllKilled,__NvM_QryReadAllKilled_function_end-NvM_QryReadAllKilled
+.L156:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('NvM_QryIsInitCallbackConfigured')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	NvM_QryIsInitCallbackConfigured
+; Function NvM_QryIsInitCallbackConfigured
+.L161:
+	.align	4
+NvM_QryIsInitCallbackConfigured:	.type	func
+.L146:
+	ld.w	d15,[a4]8
+.L454:
+	mov	d2,#0
+.L455:
+	jne	d15,#0,.L70
+.L456:
+	ld.w	d15,[a4]12
+.L457:
+	jeq	d15,#0,.L71
+.L70:
+	mov	d2,#1
+.L71:
+	ret
+.L377:
+	
+__NvM_QryIsInitCallbackConfigured_function_end:
+	.size	NvM_QryIsInitCallbackConfigured,__NvM_QryIsInitCallbackConfigured_function_end-NvM_QryIsInitCallbackConfigured
+.L162:
+	; End of function
+	
+	.sdecl	'.rodata.MSR_CONST',data,rom,cluster('NvM_QueryTable_ap')
+	.sect	'.rodata.MSR_CONST'
+	.global	NvM_QueryTable_ap
+	.align	4
+NvM_QueryTable_ap:	.type	object
+	.size	NvM_QueryTable_ap,148
+	.word	NvM_QryBlockRelevantForWriteAll,NvM_QryCancelWriteAll,NvM_QryWriteAllKilled,NvM_QryIsDataIntegrityJobPending
+	.word	NvM_QryIsDataIntegrityJobFinishedSuccessful,NvM_QryIsDataIntegrityAlgorithmConfigured,NvM_QryDataCopyBusy,NvM_QryLastBlockDone_ReadAll
+	.word	NvM_QryLastBlockDone_WriteAll,NvM_QryLastResultOk,NvM_QryMainFsmRunning,NvM_QryMultiJob
+	.word	NvM_QryNormalPrioJob,NvM_QryNvBusy,NvM_QryMemHwaBusy,NvM_QryCalcRamBlockCrcEnabledAndRamValid
+	.word	NvM_QryPrimaryRedundantBlock,NvM_QrySecondaryRedundantBlock,NvM_QrySkipBlock,NvM_QrySubFsmRunning
+	.word	NvM_QryWriteBlockOnce,NvM_QryWriteRetriesExceeded,NvM_QryHasRom,NvM_QryExtRuntime
+	.word	NvM_QryDataIntegrityRecordCompareMechanismSkipWrite,NvM_QryPostReadTransform,NvM_QryReadAllKilled,NvM_QrySyncDecrypt
+	.word	NvM_QryCsmRetryNecessary,NvM_QryBlockCheckLossOfRedundancy,NvM_QryFirstRedundantBlockFailed,NvM_QryRedundantCrcMatches
+	.word	NvM_QryHasExplicitSynchronization,NvM_QryExplicitSyncAttemptNecessary,NvM_QryExplicitSyncAttemptFailed,NvM_QryFalse
+	.word	NvM_QryTrue
+	.calls	'__INDIRECT__','NvM_QryReadAllKilled'
+	.calls	'__INDIRECT__','NvM_QrySyncDecrypt'
+	.calls	'__INDIRECT__','NvM_QryCalcRamBlockCrcEnabledAndRamValid'
+	.calls	'__INDIRECT__','NvM_QryNormalPrioJob'
+	.calls	'__INDIRECT__','NvM_QryBlockRelevantForWriteAll'
+	.calls	'__INDIRECT__','NvM_QryCancelWriteAll'
+	.calls	'__INDIRECT__','NvM_QryWriteAllKilled'
+	.calls	'__INDIRECT__','NvM_QryIsDataIntegrityJobPending'
+	.calls	'__INDIRECT__','NvM_QryIsDataIntegrityJobFinishedSuccessful'
+	.calls	'__INDIRECT__','NvM_QryIsDataIntegrityAlgorithmConfigured'
+	.calls	'__INDIRECT__','NvM_QryDataCopyBusy'
+	.calls	'__INDIRECT__','NvM_QryLastBlockDone_ReadAll'
+	.calls	'__INDIRECT__','NvM_QryLastBlockDone_WriteAll'
+	.calls	'__INDIRECT__','NvM_QryLastResultOk'
+	.calls	'__INDIRECT__','NvM_QryMainFsmRunning'
+	.calls	'__INDIRECT__','NvM_QryMultiJob'
+	.calls	'__INDIRECT__','NvM_QryNvBusy'
+	.calls	'__INDIRECT__','NvM_QryMemHwaBusy'
+	.calls	'__INDIRECT__','NvM_QryPrimaryRedundantBlock'
+	.calls	'__INDIRECT__','NvM_QrySecondaryRedundantBlock'
+	.calls	'__INDIRECT__','NvM_QrySkipBlock'
+	.calls	'__INDIRECT__','NvM_QrySubFsmRunning'
+	.calls	'__INDIRECT__','NvM_QryFalse'
+	.calls	'__INDIRECT__','NvM_QryTrue'
+	.calls	'__INDIRECT__','NvM_QryWriteBlockOnce'
+	.calls	'__INDIRECT__','NvM_QryWriteRetriesExceeded'
+	.calls	'__INDIRECT__','NvM_QryHasRom'
+	.calls	'__INDIRECT__','NvM_QryExtRuntime'
+	.calls	'__INDIRECT__','NvM_QryDataIntegrityRecordCompareMechanismSkipWrite'
+	.calls	'__INDIRECT__','NvM_QryPostReadTransform'
+	.calls	'__INDIRECT__','NvM_QryCsmRetryNecessary'
+	.calls	'__INDIRECT__','NvM_QryBlockCheckLossOfRedundancy'
+	.calls	'__INDIRECT__','NvM_QryFirstRedundantBlockFailed'
+	.calls	'__INDIRECT__','NvM_QryRedundantCrcMatches'
+	.calls	'__INDIRECT__','NvM_QryHasExplicitSynchronization'
+	.calls	'__INDIRECT__','NvM_QryExplicitSyncAttemptNecessary'
+	.calls	'__INDIRECT__','NvM_QryExplicitSyncAttemptFailed'
+	.calls	'NvM_QryBlockRelevantForWriteAll','NvM_IsBooleanBitfieldTrue'
+	.calls	'NvM_QryIsDataIntegrityJobPending','NvM_DataIntegrity_GetStatus'
+	.calls	'NvM_QryIsDataIntegrityJobFinishedSuccessful','NvM_DataIntegrity_GetStatus'
+	.calls	'NvM_QryNvBusy','NvM_MemIfAbstraction_GetStatus'
+	.calls	'NvM_QryNvBusy','NvM_MemIfAbstraction_GetJobResult'
+	.calls	'NvM_QryMemHwaBusy','NvM_MemIfAbstraction_GetStatus'
+	.calls	'NvM_QrySkipBlock','NvM_IsBooleanBitfieldTrue'
+	.calls	'NvM_QryWriteBlockOnce','NvM_IsBooleanBitfieldTrue'
+	.calls	'NvM_QryCalcRamBlockCrcEnabledAndRamValid','NvM_IsBooleanBitfieldTrue'
+	.calls	'NvM_QryHasRom','NvM_QryIsInitCallbackConfigured'
+	.calls	'NvM_QryHasRom','NvM_IsBooleanBitfieldTrue'
+	.calls	'NvM_QryDataIntegrityRecordCompareMechanismSkipWrite','NvM_DataIntegrity_Compare'
+	.calls	'NvM_QryPostReadTransform','__INDIRECT__'
+	.calls	'NvM_QryBlockCheckLossOfRedundancy','NvM_IsBooleanBitfieldTrue'
+	.calls	'NvM_QryRedundantCrcMatches','NvM_DataIntegrity_Compare'
+	.calls	'NvM_QryBlockRelevantForWriteAll','',0
+	.calls	'NvM_QryCancelWriteAll','',0
+	.calls	'NvM_QryWriteAllKilled','',0
+	.calls	'NvM_QryIsDataIntegrityJobPending','',0
+	.calls	'NvM_QryIsDataIntegrityJobFinishedSuccessful','',0
+	.calls	'NvM_QryIsDataIntegrityAlgorithmConfigured','',0
+	.calls	'NvM_QryDataCopyBusy','',0
+	.calls	'NvM_QryLastBlockDone_ReadAll','',0
+	.calls	'NvM_QryLastBlockDone_WriteAll','',0
+	.calls	'NvM_QryLastResultOk','',0
+	.calls	'NvM_QryMainFsmRunning','',0
+	.calls	'NvM_QryMultiJob','',0
+	.calls	'NvM_QryNvBusy','',0
+	.calls	'NvM_QryMemHwaBusy','',0
+	.calls	'NvM_QryPrimaryRedundantBlock','',0
+	.calls	'NvM_QrySecondaryRedundantBlock','',0
+	.calls	'NvM_QrySkipBlock','',0
+	.calls	'NvM_QrySubFsmRunning','',0
+	.calls	'NvM_QryFalse','',0
+	.calls	'NvM_QryTrue','',0
+	.calls	'NvM_QryWriteBlockOnce','',0
+	.calls	'NvM_QryWriteRetriesExceeded','',0
+	.calls	'NvM_QryCalcRamBlockCrcEnabledAndRamValid','',0
+	.calls	'NvM_QryHasRom','',0
+	.calls	'NvM_QryExtRuntime','',0
+	.calls	'NvM_QryDataIntegrityRecordCompareMechanismSkipWrite','',0
+	.calls	'NvM_QryPostReadTransform','',0
+	.calls	'NvM_QrySyncDecrypt','',0
+	.calls	'NvM_QryCsmRetryNecessary','',0
+	.calls	'NvM_QryBlockCheckLossOfRedundancy','',0
+	.calls	'NvM_QryFirstRedundantBlockFailed','',0
+	.calls	'NvM_QryRedundantCrcMatches','',0
+	.calls	'NvM_QryHasExplicitSynchronization','',0
+	.calls	'NvM_QryExplicitSyncAttemptNecessary','',0
+	.calls	'NvM_QryExplicitSyncAttemptFailed','',0
+	.calls	'NvM_QryReadAllKilled','',0
+	.extern	NvM_DataIntegrity_GetStatus
+	.extern	NvM_DataIntegrity_Compare
+	.extern	NvM_JobMainState_t
+	.extern	NvM_JobSubState_t
+	.extern	NvM_ApiFlags_u8
+	.extern	NvM_CurrentJob_t
+	.extern	NvM_CurrentBlockInfo_t
+	.extern	NvM_SecondaryRedundantBlockDataIntegrityRecord
+	.extern	NvM_IsBooleanBitfieldTrue
+	.extern	NvM_QryNormalPrioJob
+	.extern	NvM_MemIfAbstraction_GetStatus
+	.extern	NvM_MemIfAbstraction_GetJobResult
+	.extern	__INDIRECT__
+	.calls	'NvM_QryIsInitCallbackConfigured','',0
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L148:
+	.word	13013
+	.half	3
+	.word	.L149
+	.byte	4
+.L147:
+	.byte	1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L150
+	.byte	2,1,41,9,4,3
+	.byte	'NVM_DATAINTEGRITYSTATUS_PENDING',0,0,3
+	.byte	'NVM_DATAINTEGRITYSTATUS_FINISHED_SUCCESSFUL',0,1,3
+	.byte	'NVM_DATAINTEGRITYSTATUS_FINISHED_UNSUCCESSFUL',0,2,0,4
+	.byte	'void',0,5
+	.word	340
+	.byte	6,1,1,7
+	.word	346
+	.byte	0,5
+	.word	351
+	.byte	8
+	.byte	'NvM_DataIntegrityProcessFPtr',0,1,53,9
+	.word	360
+	.byte	9
+	.word	340
+	.byte	5
+	.word	402
+	.byte	10
+	.word	206
+	.byte	1,1,7
+	.word	407
+	.byte	0,5
+	.word	412
+	.byte	8
+	.byte	'NvM_DataIntegrityGetStatusFPtr',0,1,54,9
+	.word	425
+.L375:
+	.byte	11
+	.byte	'unsigned char',0,1,8,9
+	.word	469
+	.byte	5
+	.word	486
+	.byte	10
+	.word	469
+	.byte	1,1,7
+	.word	407
+	.byte	7
+	.word	491
+	.byte	0,5
+	.word	496
+	.byte	8
+	.byte	'NvM_DataIntegrityCompareFPtr',0,1,55,9
+	.word	514
+	.byte	5
+	.word	469
+	.byte	6,1,1,7
+	.word	407
+	.byte	7
+	.word	556
+	.byte	0,5
+	.word	561
+	.byte	8
+	.byte	'NvM_DataIntegrityExportFPtr',0,1,56,9
+	.word	575
+	.byte	12
+	.byte	'NvM_DataIntegrityJobStruct',0,1,58,16,20,13
+	.byte	'Process',0
+	.word	365
+	.byte	4,2,35,0,13
+	.byte	'GetStatus',0
+	.word	430
+	.byte	4,2,35,4,13
+	.byte	'Compare',0
+	.word	519
+	.byte	4,2,35,8,13
+	.byte	'Export',0
+	.word	580
+	.byte	4,2,35,12,13
+	.byte	'SubJobPtr',0
+	.word	346
+	.byte	4,2,35,16,0,9
+	.word	616
+	.byte	5
+	.word	737
+	.byte	8
+	.byte	'NvM_DataIntegrityJobConstPtrType',0,1,51,81
+	.word	742
+	.byte	14
+	.byte	'NvM_DataIntegrity_GetStatus',0,1,151,1,56
+	.word	206
+	.byte	1,1,1,1,15
+	.byte	'Self',0,1,152,1,38
+	.word	747
+	.byte	0,9
+	.word	616
+	.byte	5
+	.word	844
+	.byte	5
+	.word	351
+	.byte	5
+	.word	412
+	.byte	5
+	.word	496
+	.byte	5
+	.word	561
+	.byte	9
+	.word	469
+	.byte	5
+	.word	874
+	.byte	8
+	.byte	'NvM_ConstRamAddressType',0,2,97,50
+	.word	879
+	.byte	14
+	.byte	'NvM_DataIntegrity_Compare',0,1,186,1,40
+	.word	469
+	.byte	1,1,1,1,15
+	.byte	'Self',0,1,187,1,38
+	.word	747
+	.byte	15
+	.byte	'ToCompare',0,1,188,1,29
+	.word	884
+	.byte	0,9
+	.word	469
+	.byte	5
+	.word	989
+	.byte	5
+	.word	469
+	.byte	8
+	.byte	'NvM_RamAddressType',0,3,129,1,48
+	.word	999
+	.byte	8
+	.byte	'NvM_RomAddressType',0,3,131,1,51
+	.word	879
+	.byte	16
+	.word	469
+	.byte	1,1,5
+	.word	1060
+	.byte	8
+	.byte	'NvM_InitCbkPtrType',0,3,113,9
+	.word	1067
+	.byte	11
+	.byte	'unsigned short int',0,2,7,10
+	.word	469
+	.byte	1,1,7
+	.word	1099
+	.byte	7
+	.word	346
+	.byte	7
+	.word	1099
+	.byte	0,5
+	.word	1121
+	.byte	8
+	.byte	'NvM_InitCbkExtPtrType',0,3,116,9
+	.word	1144
+	.byte	10
+	.word	469
+	.byte	1,1,7
+	.word	469
+	.byte	7
+	.word	469
+	.byte	0,5
+	.word	1179
+	.byte	8
+	.byte	'NvM_JobEndCbkPtrType',0,3,105,9
+	.word	1197
+	.byte	10
+	.word	469
+	.byte	1,1,7
+	.word	1099
+	.byte	7
+	.word	469
+	.byte	7
+	.word	469
+	.byte	0,5
+	.word	1231
+	.byte	8
+	.byte	'NvM_JobEndCbkExtPtrType',0,3,108,9
+	.word	1254
+	.byte	10
+	.word	469
+	.byte	1,1,7
+	.word	407
+	.byte	0,5
+	.word	1291
+	.byte	8
+	.byte	'NvM_ReadRamFromNvMCbkPtrType',0,3,120,9
+	.word	1304
+	.byte	10
+	.word	469
+	.byte	1,1,7
+	.word	346
+	.byte	0,5
+	.word	1346
+	.byte	8
+	.byte	'NvM_WriteRamToNvMCbkPtrType',0,3,119,9
+	.word	1359
+	.byte	6,1,1,7
+	.word	1099
+	.byte	7
+	.word	346
+	.byte	7
+	.word	1099
+	.byte	0,5
+	.word	1400
+	.byte	8
+	.byte	'NvM_PreWriteTransformCbkPtrType',0,3,123,9
+	.word	1419
+	.byte	8
+	.byte	'NvM_PostReadTransformCbkPtrType',0,3,124,9
+	.word	1144
+	.byte	8
+	.byte	'NvM_RamDataIntegrityAddressType',0,3,137,1,51
+	.word	999
+	.byte	17,3,80,9,2,18
+	.byte	'CalcRamBlockCrcEnabled',0,1
+	.word	469
+	.byte	1,7,2,35,0,18
+	.byte	'BlockWriteProtEnabled',0,1
+	.word	469
+	.byte	1,6,2,35,0,18
+	.byte	'BlockWriteBlockOnceEnabled',0,1
+	.word	469
+	.byte	1,5,2,35,0,18
+	.byte	'ResistantToChangedSwEnabled',0,1
+	.word	469
+	.byte	1,4,2,35,0,18
+	.byte	'SelectBlockForReadAllEnabled',0,1
+	.word	469
+	.byte	1,3,2,35,0,18
+	.byte	'SelectBlockForPreReadAllEnabled',0,1
+	.word	469
+	.byte	1,2,2,35,0,18
+	.byte	'SelectBlockForWriteAllEnabled',0,1
+	.word	469
+	.byte	1,1,2,35,0,18
+	.byte	'InvokeCallbacksForReadAllEnabled',0,1
+	.word	469
+	.byte	1,0,2,35,0,18
+	.byte	'InvokeCallbacksForWriteAllEnabled',0,1
+	.word	469
+	.byte	1,7,2,35,1,18
+	.byte	'BlockUseSetRamBlockStatusEnabled',0,1
+	.word	469
+	.byte	1,6,2,35,1,18
+	.byte	'BlockCheckLossOfRedundancyEnabled',0,1
+	.word	469
+	.byte	1,5,2,35,1,18
+	.byte	'NotifyBswM',0,1
+	.word	469
+	.byte	1,4,2,35,1,0,11
+	.byte	'unsigned int',0,4,7,17,3,173,1,9,68,13
+	.byte	'RamBlockDataAddr_t',0
+	.word	1004
+	.byte	4,2,35,0,13
+	.byte	'RomBlockDataAddr_pt',0
+	.word	1032
+	.byte	4,2,35,4,13
+	.byte	'InitCbkFunc_pt',0
+	.word	1072
+	.byte	4,2,35,8,13
+	.byte	'InitCbkExtFunc_pt',0
+	.word	1149
+	.byte	4,2,35,12,13
+	.byte	'JobEndCbkFunc_pt',0
+	.word	1202
+	.byte	4,2,35,16,13
+	.byte	'JobEndCbkExtFunc_pt',0
+	.word	1259
+	.byte	4,2,35,20,13
+	.byte	'CbkGetMirrorFunc_pt',0
+	.word	1309
+	.byte	4,2,35,24,13
+	.byte	'CbkSetMirrorFunc_pt',0
+	.word	1364
+	.byte	4,2,35,28,13
+	.byte	'CbkPreWriteTransform',0
+	.word	1424
+	.byte	4,2,35,32,13
+	.byte	'CbkPostReadTransform',0
+	.word	1464
+	.byte	4,2,35,36,13
+	.byte	'RamBlockDataIntegrityAddr_t',0
+	.word	1504
+	.byte	4,2,35,40,13
+	.byte	'DataIntegrityRecordCompMechanismBuffer',0
+	.word	1504
+	.byte	4,2,35,44,13
+	.byte	'Flags',0
+	.word	1545
+	.byte	2,2,35,48,13
+	.byte	'NvIdentifier_u16',0
+	.word	1099
+	.byte	2,2,35,50,13
+	.byte	'NvBlockLength_u16',0
+	.word	1099
+	.byte	2,2,35,52,13
+	.byte	'NvBlockNVRAMDataLength',0
+	.word	1099
+	.byte	2,2,35,54,13
+	.byte	'NvCryptoReference',0
+	.word	469
+	.byte	1,2,35,56,13
+	.byte	'MacSize',0
+	.word	1099
+	.byte	2,2,35,58,13
+	.byte	'MacReference',0
+	.word	469
+	.byte	1,2,35,60,13
+	.byte	'NvBlockCount_u8',0
+	.word	469
+	.byte	1,2,35,61,13
+	.byte	'BlockPrio_u8',0
+	.word	469
+	.byte	1,2,35,62,18
+	.byte	'DeviceId_u8',0,1
+	.word	469
+	.byte	4,4,2,35,63,18
+	.byte	'MngmtType_t',0,1
+	.word	469
+	.byte	2,2,2,35,63,18
+	.byte	'DataIntegritySettings',0,4
+	.word	2019
+	.byte	3,15,2,35,62,0,9
+	.word	2035
+	.byte	5
+	.word	2700
+	.byte	5
+	.word	469
+	.byte	9
+	.word	469
+	.byte	5
+	.word	2715
+	.byte	5
+	.word	1060
+	.byte	5
+	.word	1121
+	.byte	5
+	.word	1179
+	.byte	5
+	.word	1231
+	.byte	5
+	.word	1291
+	.byte	5
+	.word	1346
+	.byte	5
+	.word	1400
+	.byte	5
+	.word	1121
+	.byte	5
+	.word	469
+	.byte	9
+	.word	2035
+	.byte	5
+	.word	2770
+.L378:
+	.byte	8
+	.byte	'NvM_BlockDescrPtrType',0,3,224,1,71
+	.word	2775
+	.byte	9
+	.word	2019
+	.byte	14
+	.byte	'NvM_IsBooleanBitfieldTrue',0,4,149,3,40
+	.word	469
+	.byte	1,1,1,1,15
+	.byte	'BooleanBitfield',0,4,149,3,89
+	.word	2811
+	.byte	0,19
+	.byte	'NvM_QryNormalPrioJob',0,5,106,40
+	.word	469
+	.byte	1,1,1,1,2,7,59,9,4,3
+	.byte	'MEMIF_UNINIT',0,0,3
+	.byte	'MEMIF_IDLE',0,1,3
+	.byte	'MEMIF_BUSY',0,2,3
+	.byte	'MEMIF_BUSY_INTERNAL',0,3,0,14
+	.byte	'NvM_MemIfAbstraction_GetStatus',0,6,238,1,34
+	.word	2914
+	.byte	1,1,1,1,15
+	.byte	'DeviceIndex',0,6,239,1,11
+	.word	469
+	.byte	0,2,7,72,9,4,3
+	.byte	'MEMIF_JOB_OK',0,0,3
+	.byte	'MEMIF_JOB_FAILED',0,1,3
+	.byte	'MEMIF_JOB_PENDING',0,2,3
+	.byte	'MEMIF_JOB_CANCELED',0,3,3
+	.byte	'MEMIF_BLOCK_INCONSISTENT',0,4,3
+	.byte	'MEMIF_BLOCK_INVALID',0,5,0,14
+	.byte	'NvM_MemIfAbstraction_GetJobResult',0,6,253,1,37
+	.word	3049
+	.byte	1,1,1,1,15
+	.byte	'DeviceIndex',0,6,254,1,11
+	.word	469
+	.byte	0
+.L401:
+	.byte	9
+	.word	469
+.L405:
+	.byte	9
+	.word	2914
+	.byte	20
+	.byte	'__INDIRECT__',0,8,1,1,1,1,1,21,1,5
+	.word	3278
+	.byte	8
+	.byte	'__codeptr',0,8,1,1
+	.word	3280
+	.byte	8
+	.byte	'boolean',0,9,140,1,29
+	.word	469
+	.byte	11
+	.byte	'char',0,1,6,8
+	.byte	'sint8',0,9,142,1,31
+	.word	3320
+	.byte	8
+	.byte	'uint8',0,9,143,1,31
+	.word	469
+	.byte	11
+	.byte	'short int',0,2,5,8
+	.byte	'sint16',0,9,144,1,31
+	.word	3358
+	.byte	8
+	.byte	'uint16',0,9,145,1,31
+	.word	1099
+	.byte	11
+	.byte	'long int',0,4,5,8
+	.byte	'sint32',0,9,146,1,31
+	.word	3403
+	.byte	11
+	.byte	'unsigned long int',0,4,7,8
+	.byte	'uint32',0,9,147,1,31
+	.word	3431
+	.byte	8
+	.byte	'Std_ReturnType',0,10,120,15
+	.word	469
+	.byte	8
+	.byte	'Std_TransformerErrorCode',0,10,131,1,15
+	.word	469
+	.byte	8
+	.byte	'Std_TransformerClass',0,10,133,1,15
+	.word	469
+	.byte	8
+	.byte	'PduLengthType',0,11,70,16
+	.word	1099
+	.byte	8
+	.byte	'SduDataPtrType',0,12,178,1,54
+	.word	999
+	.byte	2,12,201,1,9,4,3
+	.byte	'TP_DATACONF',0,0,3
+	.byte	'TP_DATARETRY',0,1,3
+	.byte	'TP_CONFPENDING',0,2,0,8
+	.byte	'TpDataStateType',0,12,208,1,3
+	.word	3601
+	.byte	12
+	.byte	'sDet_PCConfigType',0,13,243,1,16,1,13
+	.byte	'Det_PCConfigNeverUsed',0
+	.word	469
+	.byte	1,2,35,0,0,8
+	.byte	'Det_PCConfigType',0,13,246,1,3
+	.word	3679
+	.byte	8
+	.byte	'Dcm_DataElement_Boot_Software_Boot_Software_Identification_PrimitiveType',0,14,84,16
+	.word	3431
+	.byte	8
+	.byte	'Dcm_DataElement_Boot_Software_NumberOfModules_PrimitiveType',0,14,87,15
+	.word	469
+	.byte	8
+	.byte	'Dcm_DataElement_DID_0x0017_DID_Sint32_Array_ArrayType',0,14,90,16
+	.word	3403
+	.byte	8
+	.byte	'Dcm_DataElement_DID_0x0018_DID_Uint32_Array_ArrayType',0,14,93,16
+	.word	3431
+	.byte	8
+	.byte	'Dcm_DataElement_DID_0x0019_DID_Sint16_Array_ArrayType',0,14,96,16
+	.word	3358
+	.byte	8
+	.byte	'Dcm_DataElement_DID_0x001A_DID_Uint16_Array_ArrayType',0,14,99,16
+	.word	1099
+	.byte	8
+	.byte	'Dcm_DataElement_DID_0x001B_DID_Sint8_Array_ArrayType',0,14,102,15
+	.word	3320
+	.byte	8
+	.byte	'Dcm_DataElement_DID_0xF410_DID_Data_PrimitiveType',0,14,105,16
+	.word	1099
+	.byte	8
+	.byte	'Dcm_DataElement_DID_0xF412_DID_Data_PrimitiveType',0,14,108,16
+	.word	1099
+	.byte	8
+	.byte	'Dcm_DataElement_DID_0xF413_DID_Data_PrimitiveType',0,14,111,16
+	.word	1099
+	.byte	8
+	.byte	'Dcm_DataElement_DataDiagnosticIdentifier_DID_DataDiagnosticIdentifier_PrimitiveType',0,14,114,16
+	.word	1099
+	.byte	8
+	.byte	'Dcm_DataElement_DevelopmentData_CanDriverVersion_PrimitiveType',0,14,117,16
+	.word	1099
+	.byte	8
+	.byte	'Dcm_DataElement_DevelopmentData_DiagnosticModuleVersion_PrimitiveType',0,14,120,16
+	.word	1099
+	.byte	8
+	.byte	'Dcm_DataElement_DevelopmentData_NmVersion_PrimitiveType',0,14,123,16
+	.word	1099
+	.byte	8
+	.byte	'Dcm_DataElement_DevelopmentData_OperatingSystemVersion_PrimitiveType',0,14,126,16
+	.word	1099
+	.byte	8
+	.byte	'Dcm_DataElement_DevelopmentData_TransportLayerVersion_PrimitiveType',0,14,129,1,16
+	.word	1099
+	.byte	8
+	.byte	'Dcm_DataElement_Example_ReadWriteData_GlobalTime_PrimitiveType',0,14,132,1,16
+	.word	3431
+	.byte	8
+	.byte	'Dcm_DataElement_Example_WriteOnlyDID_DID_DataObject_PrimitiveType',0,14,135,1,15
+	.word	469
+	.byte	8
+	.byte	'Dcm_DataElement_SampleIoControl_DID_Data_PrimitiveType',0,14,138,1,16
+	.word	3431
+	.byte	8
+	.byte	'Dcm_DataElement_SerialNumber_SerialNumber_PrimitiveType',0,14,141,1,16
+	.word	3431
+	.byte	8
+	.byte	'Dcm_RequestDataOut_SampleRoutineControl_Out_ResultPrimitiveType',0,14,147,1,16
+	.word	1099
+	.byte	8
+	.byte	'Dcm_RequestDataOut_SampleRoutineControl_StartOnly_Out_ResultPrimitiveType',0,14,153,1,16
+	.word	3431
+	.byte	8
+	.byte	'Dcm_StartDataIn_SampleRoutineControl_In_Option0PrimitiveType',0,14,159,1,15
+	.word	469
+	.byte	8
+	.byte	'Dcm_StartDataIn_SampleRoutineControl_StartOnly_In_Option1ArrayType',0,14,165,1,15
+	.word	469
+	.byte	8
+	.byte	'Dcm_StartDataOut_SampleRoutineControl_Out_InitStatePrimitiveType',0,14,168,1,16
+	.word	3431
+	.byte	8
+	.byte	'Dcm_StopDataOut_SampleRoutineControl_Out_StopStatePrimitiveType',0,14,174,1,16
+	.word	3431
+	.byte	8
+	.byte	'NvM_RequestResultType',0,14,238,2,15
+	.word	469
+	.byte	8
+	.byte	'NvM_ServiceIdType',0,14,241,2,15
+	.word	469
+	.byte	8
+	.byte	'NvM_BlockIdType',0,14,134,3,16
+	.word	1099
+	.byte	8
+	.byte	'MemIf_StatusType',0,7,65,3
+	.word	2914
+	.byte	8
+	.byte	'MemIf_JobResultType',0,7,80,3
+	.word	3049
+	.byte	10
+	.word	469
+	.byte	1,1,7
+	.word	1099
+	.byte	7
+	.word	1099
+	.byte	7
+	.word	556
+	.byte	7
+	.word	1099
+	.byte	0,5
+	.word	5713
+	.byte	8
+	.byte	'MemIf_ApiReadType',0,15,137,1,9
+	.word	5741
+	.byte	10
+	.word	469
+	.byte	1,1,7
+	.word	1099
+	.byte	7
+	.word	556
+	.byte	0,5
+	.word	5773
+	.byte	8
+	.byte	'MemIf_ApiWriteType',0,15,138,1,9
+	.word	5791
+	.byte	10
+	.word	469
+	.byte	1,1,7
+	.word	1099
+	.byte	0,5
+	.word	5824
+	.byte	8
+	.byte	'MemIf_ApiEraseImmediateBlockType',0,15,139,1,9
+	.word	5837
+	.byte	8
+	.byte	'MemIf_ApiInvalidateBlockType',0,15,140,1,9
+	.word	5837
+	.byte	22,1,1,5
+	.word	5922
+	.byte	8
+	.byte	'MemIf_ApiCancelType',0,15,141,1,9
+	.word	5925
+	.byte	16
+	.word	2914
+	.byte	1,1,5
+	.word	5959
+	.byte	8
+	.byte	'MemIf_ApiGetStatusType',0,15,142,1,9
+	.word	5966
+	.byte	16
+	.word	3049
+	.byte	1,1,5
+	.word	6003
+	.byte	8
+	.byte	'MemIf_ApiGetJobResultType',0,15,143,1,9
+	.word	6010
+	.byte	2,7,88,9,4,3
+	.byte	'MEMIF_MODE_SLOW',0,0,3
+	.byte	'MEMIF_MODE_FAST',0,1,0,6,1,1,7
+	.word	6050
+	.byte	0,5
+	.word	6092
+	.byte	8
+	.byte	'MemIf_ApiSetModeType',0,15,144,1,9
+	.word	6101
+	.byte	8
+	.byte	'NvM_BitFieldType',0,3,78,22
+	.word	2019
+	.byte	8
+	.byte	'NvM_BlockDescriptorFlagsType',0,3,94,3
+	.word	1545
+	.byte	8
+	.byte	'NvM_DataIntegrityType',0,3,97,26
+	.word	2019
+	.byte	8
+	.byte	'NvM_BlockDescriptorType',0,3,201,1,3
+	.word	2035
+	.byte	8
+	.byte	'NvM_CsmJobIdType',0,3,209,1,16
+	.word	3431
+	.byte	2,3,227,1,9,4,3
+	.byte	'NVM_INT_FID_WRITE_BLOCK',0,0,3
+	.byte	'NVM_INT_FID_READ_BLOCK',0,1,3
+	.byte	'NVM_INT_FID_RESTORE_DEFAULTS',0,2,3
+	.byte	'NVM_INT_FID_INVALIDATE_NV_BLOCK',0,3,3
+	.byte	'NVM_INT_FID_ERASE_BLOCK',0,4,3
+	.byte	'NVM_INT_FID_WRITE_ALL',0,5,3
+	.byte	'NVM_INT_FID_READ_ALL',0,6,3
+	.byte	'NVM_INT_FID_PRE_READ_ALL',0,7,3
+	.byte	'NVM_INT_FID_REPAIR_REDUNDANT_BLOCKS',0,8,3
+	.byte	'NVM_INT_FID_NO_JOB_PENDING',0,9,0,8
+	.byte	'NvM_InternalServiceIdType',0,3,239,1,3
+	.word	6287
+	.byte	8
+	.byte	'NvM_QueueEntryRefType',0,3,242,1,15
+	.word	469
+	.byte	17,2,99,9,4,13
+	.byte	'NvDataIndex_t',0
+	.word	469
+	.byte	1,2,35,0,13
+	.byte	'NvRamErrorStatus_u8',0
+	.word	469
+	.byte	1,2,35,1,13
+	.byte	'NvRamAttributes_u8',0
+	.word	469
+	.byte	1,2,35,2,0,8
+	.byte	'NvM_RamMngmtAreaType',0,2,104,3
+	.word	6643
+	.byte	5
+	.word	6643
+	.byte	8
+	.byte	'NvM_RamMngmtPtrType',0,2,107,66
+	.word	6758
+	.byte	2,16,38,9,4,3
+	.byte	'NVM_ACT_ID_SetInitialAttr',0,0,3
+	.byte	'NVM_ACT_ID_InitMainFsm',0,1,3
+	.byte	'NVM_ACT_ID_InitBlock',0,2,3
+	.byte	'NVM_ACT_ID_InitReadAll',0,3,3
+	.byte	'NVM_ACT_ID_InitReadBlockSubFsm',0,4,3
+	.byte	'NVM_ACT_ID_InitRestoreBlockDefaultsSubFsm',0,5,3
+	.byte	'NVM_ACT_ID_InitWriteAll',0,6,3
+	.byte	'NVM_ACT_ID_InitWriteBlock',0,7,3
+	.byte	'NVM_ACT_ID_InitWriteBlockFsm',0,8,3
+	.byte	'NVM_ACT_ID_InitRestoreBlockDefaults',0,9,3
+	.byte	'NVM_ACT_ID_FinishMainJob',0,10,3
+	.byte	'NVM_ACT_ID_KillWritAll',0,11,3
+	.byte	'NVM_ACT_ID_FinishBlock',0,12,3
+	.byte	'NVM_ACT_ID_InitNextBlockReadAll',0,13,3
+	.byte	'NVM_ACT_ID_InitNextBlockWriteAll',0,14,3
+	.byte	'NVM_ACT_ID_FinishReadBlock',0,15,3
+	.byte	'NVM_ACT_ID_FinishWriteBlock',0,16,3
+	.byte	'NVM_ACT_ID_FinishEraseBlock',0,17,3
+	.byte	'NVM_ACT_ID_EraseNvBlock',0,18,3
+	.byte	'NVM_ACT_ID_InvalidateNvBlock',0,19,3
+	.byte	'NVM_ACT_ID_WriteNvBlock',0,20,3
+	.byte	'NVM_ACT_ID_ReadNvBlock',0,21,3
+	.byte	'NVM_ACT_ID_ReadNvBlockDataIntegrityRecordOnly',0,22,3
+	.byte	'NVM_ACT_ID_ReadCopyData',0,23,3
+	.byte	'NVM_ACT_ID_RestoreRomDefaults',0,24,3
+	.byte	'NVM_ACT_ID_FinishRestoreRomDefaults',0,25,3
+	.byte	'NVM_ACT_ID_TestBlockBlank',0,26,3
+	.byte	'NVM_ACT_ID_ValidateRam',0,27,3
+	.byte	'NVM_ACT_ID_SetupRedundant',0,28,3
+	.byte	'NVM_ACT_ID_SetupOther',0,29,3
+	.byte	'NVM_ACT_ID_UpdateNvState',0,30,3
+	.byte	'NVM_ACT_ID_SetReqIntegrityFailed',0,31,3
+	.byte	'NVM_ACT_ID_SetReqSkipped',0,32,3
+	.byte	'NVM_ACT_ID_SetReqNotOk',0,33,3
+	.byte	'NVM_ACT_ID_SetReqOk',0,34,3
+	.byte	'NVM_ACT_ID_SetBlockPendingWriteAll',0,35,3
+	.byte	'NVM_ACT_ID_CopyNvDataToBuf',0,36,3
+	.byte	'NVM_ACT_ID_GetMultiBlockJob',0,37,3
+	.byte	'NVM_ACT_ID_CancelNV',0,38,3
+	.byte	'NVM_ACT_ID_KillSubFsm',0,39,3
+	.byte	'NVM_ACT_ID_NotifyLossOfRedundancy',0,40,3
+	.byte	'NVM_ACT_ID_FinishReadBlockAndSetSkipped',0,41,3
+	.byte	'NVM_ACT_ID_SetupDataIntegrityGeneration',0,42,3
+	.byte	'NVM_ACT_ID_SetupDataIntegrityVerification_ReadBlock',0,43,3
+	.byte	'NVM_ACT_ID_SetupDataIntegrityVerification_ReadAll',0,44,3
+	.byte	'NVM_ACT_ID_ProcessDataIntegrityJob',0,45,3
+	.byte	'NVM_ACT_ID_ExportDataIntegrityInformation',0,46,3
+	.byte	'NVM_ACT_ID_CopyRamDataToInternalBuffer',0,47,3
+	.byte	'NVM_ACT_ID_GetNormalPrioJob',0,48,3
+	.byte	'NVM_ACT_ID_Wait',0,49,3
+	.byte	'NVM_ACT_ID_Nop',0,50,0,8
+	.byte	'NvM_StateActionIdType',0,16,131,1,3
+	.word	6791
+	.byte	8
+	.byte	'NvM_DataIntegrityStatus',0,1,48,3
+	.word	206
+	.byte	8
+	.byte	'NvM_DataIntegrityJob',0,1,66,3
+	.word	616
+	.byte	8
+	.byte	'NvM_CrcBufferPtrType',0,17,60,59
+	.word	999
+	.byte	5
+	.word	3431
+	.byte	6,1,1,7
+	.word	491
+	.byte	7
+	.word	1099
+	.byte	7
+	.word	8502
+	.byte	7
+	.word	469
+	.byte	0,5
+	.word	8507
+	.byte	8
+	.byte	'NvM_CrcCalculateFPtr',0,17,66,9
+	.word	8531
+	.byte	10
+	.word	469
+	.byte	1,1,7
+	.word	491
+	.byte	7
+	.word	491
+	.byte	0,5
+	.word	8565
+	.byte	8
+	.byte	'NvM_CrcCompareFPtr',0,17,67,9
+	.word	8583
+	.byte	6,1,1,7
+	.word	556
+	.byte	7
+	.word	491
+	.byte	0,5
+	.word	8615
+	.byte	8
+	.byte	'NvM_CrcCopyToBufferFPtr',0,17,68,9
+	.word	8629
+	.byte	12
+	.byte	'NvM_CrcHandlerClass',0,17,71,8,20,13
+	.byte	'calc',0
+	.word	8536
+	.byte	4,2,35,0,13
+	.byte	'compare',0
+	.word	8588
+	.byte	4,2,35,4,13
+	.byte	'copyToBuffer',0
+	.word	8634
+	.byte	4,2,35,8,13
+	.byte	'initialCrcValue',0
+	.word	3431
+	.byte	4,2,35,12,13
+	.byte	'crcLength',0
+	.word	469
+	.byte	1,2,35,16,0,9
+	.word	8666
+	.byte	5
+	.word	8789
+	.byte	8
+	.byte	'NvM_CrcHandlerClassConstPtr',0,17,80,75
+	.word	8794
+	.byte	5
+	.word	8507
+	.byte	5
+	.word	8565
+	.byte	5
+	.word	8615
+	.byte	2,17,86,9,4,3
+	.byte	'NVM_CRCPROCESSINGSTATUS_COMPATIBILITY',0,0,3
+	.byte	'NVM_CRCPROCESSINGSTATUS_GENERATE_PENDING',0,1,3
+	.byte	'NVM_CRCPROCESSINGSTATUS_GENERATE_FINISHED',0,2,3
+	.byte	'NVM_CRCPROCESSINGSTATUS_VALIDATE_GENERATION_PENDING',0,3,3
+	.byte	'NVM_CRCPROCESSINGSTATUS_VALIDATE_FINISHED_SUCCESSFUL',0,4,3
+	.byte	'NVM_CRCPROCESSINGSTATUS_VALIDATE_FINISHED_UNSUCCESSFUL',0,5,0,8
+	.byte	'NvM_CrcProcessingStatus',0,17,99,3
+	.word	8850
+	.byte	12
+	.byte	'NvM_CrcJobStruct',0,17,101,16,28,13
+	.byte	'CurrentCrcValue',0
+	.word	3431
+	.byte	4,2,35,0,13
+	.byte	'RamData_pt',0
+	.word	884
+	.byte	4,2,35,4,13
+	.byte	'CrcBuffer',0
+	.word	8473
+	.byte	4,2,35,8,13
+	.byte	'HandlerInstance_pt',0
+	.word	8799
+	.byte	4,2,35,12,13
+	.byte	'ProcessingStatus',0
+	.word	8850
+	.byte	4,2,35,16,13
+	.byte	'RemainingLength_u16',0
+	.word	1099
+	.byte	2,2,35,20,13
+	.byte	'BytesPerProcessCycle',0
+	.word	1099
+	.byte	2,2,35,22,13
+	.byte	'IsFirstCall',0
+	.word	469
+	.byte	1,2,35,24,0,8
+	.byte	'NvM_CrcJobType',0,17,111,3
+	.word	9181
+	.byte	5
+	.word	469
+	.byte	9
+	.word	8666
+	.byte	5
+	.word	9430
+	.byte	2,18,33,9,4,3
+	.byte	'NVM_QRY_ID_BLK_RELEVANT_FOR_WRITE_ALL',0,0,3
+	.byte	'NVM_QRY_ID_CANCEL_WRITE_ALL',0,1,3
+	.byte	'NVM_QR_ID_WRITEALL_KILLED',0,2,3
+	.byte	'NVM_QRY_ID_IS_DATA_INTEGRITY_JOB_PENDING',0,3,3
+	.byte	'NVM_QRY_ID_IS_DATA_INTEGRITY_JOB_FINISHED_SUCCESSFUL',0,4,3
+	.byte	'NVM_QRY_ID_IS_DATA_INTEGRITY_ALGORITHM_CONFIGURED',0,5,3
+	.byte	'NVM_QRY_ID_DATA_COPY_BUSY',0,6,3
+	.byte	'NVM_QRY_ID_LAST_BLOCK_DONE_READALL',0,7,3
+	.byte	'NVM_QRY_ID_LAST_BLOCK_DONE_WRITEALL',0,8,3
+	.byte	'NVM_QRY_ID_LAST_RESULT_OK',0,9,3
+	.byte	'NVM_QRY_ID_MAIN_FSM_RUNNING',0,10,3
+	.byte	'NVM_QRY_ID_MULTI_BLK_JOB',0,11,3
+	.byte	'NVM_QRY_ID_NORMAL_PRIO_JOB',0,12,3
+	.byte	'NVM_QRY_ID_NV_BUSY',0,13,3
+	.byte	'NVM_QRY_ID_MEMHWA_BUSY',0,14,3
+	.byte	'NVM_QRY_ID_CALC_RAM_BLOCK_CRC_ENABLED_AND_RAM_VALID',0,15,3
+	.byte	'NVM_QRY_ID_PRIMARY_REDUNDANT_BLOCK',0,16,3
+	.byte	'NVM_QRY_ID_SECONDARY_REDUNDANT_BLOCK',0,17,3
+	.byte	'NVM_QRY_ID_SKIP_BLOCK',0,18,3
+	.byte	'NVM_QRY_ID_SUB_FSM_RUNNING',0,19,3
+	.byte	'NVM_QRY_ID_WRITE_BLOCK_ONCE',0,20,3
+	.byte	'NVM_QRY_ID_WRITE_RETRIES_EXCEEDED',0,21,3
+	.byte	'NVM_QRY_ID_HAS_ROM',0,22,3
+	.byte	'NVM_QRY_ID_EXT_RUNTIME',0,23,3
+	.byte	'NvM_QRY_ID_DATAINTEGRITYRECORD_COMP_MECHANISM_SKIPWRITE',0,24,3
+	.byte	'NVM_QRY_ID_POST_READ_TRANSFORM',0,25,3
+	.byte	'NVM_QRY_ID_READALL_KILLED',0,26,3
+	.byte	'NVM_QRY_ID_SYNCDECRYPT',0,27,3
+	.byte	'NVM_QRY_ID_CSM_RETRIES_NECESSARY',0,28,3
+	.byte	'NVM_QRY_ID_BLOCK_CHECK_LOSS_OF_REDUNDANCY',0,29,3
+	.byte	'NVM_QRY_ID_FIRST_REDUNDANT_BLOCK_FAILED',0,30,3
+	.byte	'NVM_QRY_ID_REDUNDANT_CRC_MATCHES',0,31,3
+	.byte	'NVM_QRY_ID_HAS_EXPLICITSYNCHRONIZATION',0,32,3
+	.byte	'NVM_QRY_ID_EXPLICITSYNC_ATTEMPT_NECESSARY',0,33,3
+	.byte	'NVM_QRY_ID_EXPLICITSYNC_ATTEMPT_FAILED',0,34,3
+	.byte	'NVM_QRY_ID_FALSE',0,35,3
+	.byte	'NVM_QRY_ID_TRUE',0,36,0,8
+	.byte	'NvM_StateQueryIdType',0,18,102,3
+	.word	9440
+	.byte	5
+	.word	1060
+	.byte	8
+	.byte	'NvM_QryFctPtrType',0,18,107,9
+	.word	10744
+	.byte	23,148,1
+	.word	10749
+	.byte	24,36,0
+.L428:
+	.byte	9
+	.word	10775
+	.byte	5
+	.word	1060
+	.byte	17,4,111,9,12,13
+	.byte	'JobBlockId_t',0
+	.word	1099
+	.byte	2,2,35,0,13
+	.byte	'JobServiceId_t',0
+	.word	6287
+	.byte	4,2,35,2,13
+	.byte	'RamAddr_t',0
+	.word	1004
+	.byte	4,2,35,8,0,8
+	.byte	'NvM_JobType',0,4,116,3
+	.word	10795
+	.byte	17,4,120,9,76,13
+	.byte	'Descriptor_pt',0
+	.word	2780
+	.byte	4,2,35,0,13
+	.byte	'Mngmt_pt',0
+	.word	6763
+	.byte	4,2,35,4,13
+	.byte	'RamAddr_t',0
+	.word	1004
+	.byte	4,2,35,8,13
+	.byte	'NvRamAddr_t',0
+	.word	1004
+	.byte	4,2,35,12,13
+	.byte	'DataIntegrityJob',0
+	.word	616
+	.byte	20,2,35,16,13
+	.byte	'BlockCrcJob_t',0
+	.word	9181
+	.byte	28,2,35,36,13
+	.byte	'NvIdentifier_u16',0
+	.word	1099
+	.byte	2,2,35,64,13
+	.byte	'ByteCount_u16',0
+	.word	1099
+	.byte	2,2,35,66,13
+	.byte	'LastResult_t',0
+	.word	469
+	.byte	1,2,35,68,13
+	.byte	'WriteRetryCounter_u8',0
+	.word	469
+	.byte	1,2,35,69,13
+	.byte	'InternalFlags_u8',0
+	.word	469
+	.byte	1,2,35,70,13
+	.byte	'NvState_u8',0
+	.word	469
+	.byte	1,2,35,71,13
+	.byte	'ExplSyncAttemptSuccessful',0
+	.word	469
+	.byte	1,2,35,72,13
+	.byte	'ExplSyncAttemptCounter',0
+	.word	469
+	.byte	1,2,35,73,0,8
+	.byte	'NvM_BlockInfoType',0,4,141,1,3
+	.word	10886
+	.byte	5
+	.word	6643
+	.byte	2,4,154,1,9,4,3
+	.byte	'NVM_STATE_UNINIT',0,0,3
+	.byte	'NVM_STATE_IDLE',0,1,3
+	.byte	'NVM_STATE_NORMAL_PRIO_JOB',0,2,3
+	.byte	'NVM_STATE_MULTI_BLOCK_JOB',0,3,3
+	.byte	'NVM_STATE_READ_READ_DATA',0,4,3
+	.byte	'NVM_STATE_READ_DATA_VALIDATION',0,5,3
+	.byte	'NVM_STATE_READ_VERIFY_DATA_INTEGRITY',0,6,3
+	.byte	'NVM_STATE_READ_PRE_CHECK_LOSS_OF_REDUNDANCY',0,7,3
+	.byte	'NVM_STATE_READ_CHECK_LOSS_OF_REDUNDANCY',0,8,3
+	.byte	'NVM_STATE_READ_IMPL_RECOV',0,9,3
+	.byte	'NVM_STATE_READ_LOAD_ROM',0,10,3
+	.byte	'NVM_STATE_READ_FINALIZE',0,11,3
+	.byte	'NVM_STATE_WRITE_COPY_BUFFER_DATA',0,12,3
+	.byte	'NVM_STATE_WRITE_GENERATE_DATA_INTEGRITY_INFORMATION',0,13,3
+	.byte	'NVM_STATE_WRITE_CHECK_DATAINTEGRITYRECORD_COMPMECHANISM_SKIP',0,14,3
+	.byte	'NVM_STATE_WRITE_READABILITY_CHECK_PRIMARY_BLOCK',0,15,3
+	.byte	'NVM_STATE_WRITE_READABILITY_CHECK_SECONDARY_BLOCK',0,16,3
+	.byte	'NVM_STATE_WRITE_NV_WRITE_REDUNDANT_DATA',0,17,3
+	.byte	'NVM_STATE_WRITE_NV_WRITE_DATA',0,18,3
+	.byte	'NVM_STATE_RESTORE_LOAD_ROM',0,19,3
+	.byte	'NVM_STATE_INVALIDATING_BLOCK',0,20,3
+	.byte	'NVM_STATE_ERASE_ERASE_BLOCK',0,21,3
+	.byte	'NVM_STATE_READALL_PROC_RAM_BLOCK',0,22,3
+	.byte	'NVM_STATE_READALL_PREPARE_DATAINTEGRITY_VERIFICATION',0,23,3
+	.byte	'NVM_STATE_READALL_CHK_SKIP',0,24,3
+	.byte	'NVM_STATE_READALL_KILLED',0,25,3
+	.byte	'NVM_STATE_READALL_WR_ONCE_PROT',0,26,3
+	.byte	'NVM_STATE_READALL_CHK_RAM_VALIDITY',0,27,3
+	.byte	'NVM_STATE_READALL_READ_NV',0,28,3
+	.byte	'NVM_STATE_READALL_LOAD_DEFAULTS',0,29,3
+	.byte	'NVM_STATE_READALL_READABILITY_CHECK',0,30,3
+	.byte	'NVM_STATE_WRITEALL_PROC_BLOCK',0,31,3
+	.byte	'NVM_STATE_WRITEALL_WRITE_FSM',0,32,3
+	.byte	'NVM_STATE_WRITEALL_WAIT_MEMHWA',0,33,3
+	.byte	'NVM_STATE_FSM_FINISHED',0,34,0,8
+	.byte	'NvM_StateIdType',0,4,241,1,3
+	.word	11268
+	.byte	17,4,250,1,9,8,13
+	.byte	'ExitHandler_t',0
+	.word	6791
+	.byte	4,2,35,0,13
+	.byte	'EntryHandler_t',0
+	.word	6791
+	.byte	4,2,35,4,0,8
+	.byte	'NvM_StateChangeActionsType',0,4,254,1,3
+	.word	12514
+	.byte	23,8
+	.word	9440
+	.byte	24,1,0,17,4,130,2,9,20,13
+	.byte	'Queries_at',0
+	.word	12604
+	.byte	8,2,35,0,13
+	.byte	'Actions_t',0
+	.word	12514
+	.byte	8,2,35,8,13
+	.byte	'NextState_t',0
+	.word	11268
+	.byte	4,2,35,16,0,8
+	.byte	'NvM_StateChangeIfDescrType',0,4,135,2,3
+	.word	12613
+	.byte	17,4,137,2,9,12,13
+	.byte	'Actions_t',0
+	.word	12514
+	.byte	8,2,35,0,13
+	.byte	'NextState_t',0
+	.word	11268
+	.byte	4,2,35,8,0,8
+	.byte	'NvM_StateChangeElseDescrType',0,4,141,2,3
+	.word	12716
+	.byte	25
+	.byte	'NvM_JobMainState_t',0,4,161,2,44
+	.word	11268
+	.byte	1,1,25
+	.byte	'NvM_JobSubState_t',0,4,164,2,44
+	.word	11268
+	.byte	1,1,25
+	.byte	'NvM_ApiFlags_u8',0,4,167,2,34
+	.word	469
+	.byte	1,1,25
+	.byte	'NvM_CurrentJob_t',0,4,185,2,43
+	.word	10795
+	.byte	1,1,25
+	.byte	'NvM_CurrentBlockInfo_t',0,4,188,2,49
+	.word	10886
+	.byte	1,1,23,4
+	.word	469
+	.byte	24,3,0,25
+	.byte	'NvM_SecondaryRedundantBlockDataIntegrityRecord',0,4,209,2,37
+	.word	12949
+	.byte	1,1,0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L149:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,4,1,58,15,59,15,57,15,11,15,0,0,3,40,0,3,8,28,13,0,0,4
+	.byte	59,0,3,8,0,0,5,15,0,73,19,0,0,6,21,1,54,15,39,12,0,0,7,5,0,73,19,0,0,8,22,0,3,8,58,15,59,15,57,15,73,19
+	.byte	0,0,9,38,0,73,19,0,0,10,21,1,73,19,54,15,39,12,0,0,11,36,0,3,8,11,15,62,15,0,0,12,19,1,3,8,58,15,59,15
+	.byte	57,15,11,15,0,0,13,13,0,3,8,73,19,11,15,56,9,0,0,14,46,1,3,8,58,15,59,15,57,15,73,19,54,15,39,12,63,12
+	.byte	60,12,0,0,15,5,0,3,8,58,15,59,15,57,15,73,19,0,0,16,21,0,73,19,54,15,39,12,0,0,17,19,1,58,15,59,15,57
+	.byte	15,11,15,0,0,18,13,0,3,8,11,15,73,19,13,15,12,15,56,9,0,0,19,46,0,3,8,58,15,59,15,57,15,73,19,54,15,39
+	.byte	12,63,12,60,12,0,0,20,46,0,3,8,58,15,59,15,57,15,54,15,63,12,60,12,0,0,21,21,0,54,15,0,0,22,21,0,54,15
+	.byte	39,12,0,0,23,1,1,11,15,73,19,0,0,24,33,0,47,15,0,0,25,52,0,3,8,58,15,59,15,57,15,73,19,63,12,60,12,0,0
+	.byte	0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L150:
+	.word	.L441-.L440
+.L440:
+	.half	3
+	.word	.L443-.L442
+.L442:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'GenData',0
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\NvM\\Implementation\\NvM_DataIntegrity.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\NvM\\Implementation\\NvM_IntTypes.h',0,0,0,0
+	.byte	'NvM_PrivateCfg.h',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\NvM\\Implementation\\NvM_JobProc.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\NvM\\Implementation\\NvM_Queue.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\NvM\\Implementation\\NvM_MemIfAbstraction.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\MemIf\\Implementation\\MemIf_Types.h',0,0,0,0
+	.byte	'NvM_Qry.c',0,2,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\Platform_Types.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\Std_Types.h',0,0,0,0
+	.byte	'ComStack_Cfg.h',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\ComStack_Types.h',0,0,0,0
+	.byte	'Det_Cfg.h',0,1,0,0
+	.byte	'Rte_Type.h',0,1,0,0
+	.byte	'MemIf_Cfg.h',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\NvM\\Implementation\\NvM_Act.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\NvM\\Implementation\\NvM_Crc.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\NvM\\Implementation\\NvM_Qry.h',0,0,0,0,0
+.L443:
+.L441:
+	.sdecl	'.debug_info',debug,cluster('NvM_QryReadAllKilled')
+	.sect	'.debug_info'
+.L151:
+	.word	267
+	.half	3
+	.word	.L152
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L154,.L153
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryReadAllKilled',0,1,135,12,33
+	.word	.L375
+	.byte	1,1,1
+	.word	.L144,.L376,.L143
+	.byte	4
+	.word	.L144,.L376
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryReadAllKilled')
+	.sect	'.debug_abbrev'
+.L152:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryReadAllKilled')
+	.sect	'.debug_line'
+.L153:
+	.word	.L445-.L444
+.L444:
+	.half	3
+	.word	.L447-.L446
+.L446:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L447:
+	.byte	5,12,7,0,5,2
+	.word	.L144
+	.byte	3,136,12,1,5,28,9
+	.half	.L448-.L144
+	.byte	1,5,1,9
+	.half	.L449-.L448
+	.byte	3,1,1,7,9
+	.half	.L156-.L449
+	.byte	0,1,1
+.L445:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryReadAllKilled')
+	.sect	'.debug_ranges'
+.L154:
+	.word	-1,.L155,0,.L156-.L155,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryIsInitCallbackConfigured')
+	.sect	'.debug_info'
+.L157:
+	.word	307
+	.half	3
+	.word	.L158
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L160,.L159
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryIsInitCallbackConfigured',0,1,148,12,33
+	.word	.L375
+	.byte	1,1,1
+	.word	.L146,.L377,.L145
+	.byte	4
+	.byte	'BlockDescriptor',0,1,148,12,87
+	.word	.L378,.L379
+	.byte	5
+	.word	.L146,.L377
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryIsInitCallbackConfigured')
+	.sect	'.debug_abbrev'
+.L158:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryIsInitCallbackConfigured')
+	.sect	'.debug_line'
+.L159:
+	.word	.L451-.L450
+.L450:
+	.half	3
+	.word	.L453-.L452
+.L452:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L453:
+	.byte	5,27,7,0,5,2
+	.word	.L146
+	.byte	3,149,12,1,5,57,9
+	.half	.L454-.L146
+	.byte	1,5,11,9
+	.half	.L455-.L454
+	.byte	1,5,76,7,9
+	.half	.L456-.L455
+	.byte	1,5,96,9
+	.half	.L457-.L456
+	.byte	1,5,57,7,9
+	.half	.L70-.L457
+	.byte	1,5,1,9
+	.half	.L71-.L70
+	.byte	3,1,1,7,9
+	.half	.L162-.L71
+	.byte	0,1,1
+.L451:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryIsInitCallbackConfigured')
+	.sect	'.debug_ranges'
+.L160:
+	.word	-1,.L161,0,.L162-.L161,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QrySyncDecrypt')
+	.sect	'.debug_info'
+.L163:
+	.word	265
+	.half	3
+	.word	.L164
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L166,.L165
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QrySyncDecrypt',0,1,190,10,33
+	.word	.L375
+	.byte	1,1,1
+	.word	.L128,.L380,.L127
+	.byte	4
+	.word	.L128,.L380
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QrySyncDecrypt')
+	.sect	'.debug_abbrev'
+.L164:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QrySyncDecrypt')
+	.sect	'.debug_line'
+.L165:
+	.word	.L459-.L458
+.L458:
+	.half	3
+	.word	.L461-.L460
+.L460:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L461:
+	.byte	5,12,7,0,5,2
+	.word	.L128
+	.byte	3,227,10,1,5,1,3,2,1,7,9
+	.half	.L168-.L128
+	.byte	0,1,1
+.L459:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QrySyncDecrypt')
+	.sect	'.debug_ranges'
+.L166:
+	.word	-1,.L167,0,.L168-.L167,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryCalcRamBlockCrcEnabledAndRamValid')
+	.sect	'.debug_info'
+.L169:
+	.word	287
+	.half	3
+	.word	.L170
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L172,.L171
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryCalcRamBlockCrcEnabledAndRamValid',0,1,146,9,33
+	.word	.L375
+	.byte	1,1,1
+	.word	.L118,.L381,.L117
+	.byte	4
+	.word	.L118,.L381
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryCalcRamBlockCrcEnabledAndRamValid')
+	.sect	'.debug_abbrev'
+.L170:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryCalcRamBlockCrcEnabledAndRamValid')
+	.sect	'.debug_line'
+.L171:
+	.word	.L463-.L462
+.L462:
+	.half	3
+	.word	.L465-.L464
+.L464:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L465:
+	.byte	5,37,7,0,5,2
+	.word	.L118
+	.byte	3,147,9,1,5,59,9
+	.half	.L466-.L118
+	.byte	1,5,7,9
+	.half	.L467-.L466
+	.byte	3,1,1,5,80,9
+	.half	.L468-.L467
+	.byte	3,127,1,5,11,9
+	.half	.L469-.L468
+	.byte	1,5,34,7,9
+	.half	.L470-.L469
+	.byte	3,1,1,5,43,9
+	.half	.L471-.L470
+	.byte	1,5,87,9
+	.half	.L472-.L471
+	.byte	1,5,7,9
+	.half	.L473-.L472
+	.byte	1,5,3,9
+	.half	.L47-.L473
+	.byte	3,127,1,5,1,3,2,1,7,9
+	.half	.L174-.L47
+	.byte	0,1,1
+.L463:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryCalcRamBlockCrcEnabledAndRamValid')
+	.sect	'.debug_ranges'
+.L172:
+	.word	-1,.L173,0,.L174-.L173,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryBlockRelevantForWriteAll')
+	.sect	'.debug_info'
+.L175:
+	.word	444
+	.half	3
+	.word	.L176
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L178,.L177
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryBlockRelevantForWriteAll',0,1,214,5,43
+	.word	.L375
+	.byte	1,1
+	.word	.L74,.L382,.L73
+	.byte	4
+	.word	.L74,.L382
+	.byte	5
+	.byte	'retVal_isRelevantForWriteAll',0,1,216,5,11
+	.word	.L375,.L383
+	.byte	5
+	.byte	'isSelectedForWriteAll',0,1,218,5,11
+	.word	.L375,.L384
+	.byte	5
+	.byte	'isWriteableAndUnlocked',0,1,221,5,11
+	.word	.L375,.L385
+	.byte	4
+	.word	.L386,.L2
+	.byte	5
+	.byte	'useSetRamBlockStatus',0,1,227,5,13
+	.word	.L375,.L387
+	.byte	6
+	.word	.L388,.L4
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryBlockRelevantForWriteAll')
+	.sect	'.debug_abbrev'
+.L176:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,6,11,0
+	.byte	17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryBlockRelevantForWriteAll')
+	.sect	'.debug_line'
+.L177:
+	.word	.L475-.L474
+.L474:
+	.half	3
+	.word	.L477-.L476
+.L476:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L477:
+	.byte	5,7,7,0,5,2
+	.word	.L74
+	.byte	3,218,5,1,5,29,9
+	.half	.L478-.L74
+	.byte	1,5,40,9
+	.half	.L479-.L478
+	.byte	3,125,1,5,50,9
+	.half	.L429-.L479
+	.byte	3,3,1,5,30,9
+	.half	.L430-.L429
+	.byte	3,3,1,5,39,9
+	.half	.L480-.L430
+	.byte	1,5,60,9
+	.half	.L481-.L480
+	.byte	1,5,101,9
+	.half	.L482-.L481
+	.byte	1,5,7,9
+	.half	.L432-.L482
+	.byte	3,2,1,5,32,7,9
+	.half	.L483-.L432
+	.byte	1,5,31,7,9
+	.half	.L386-.L483
+	.byte	3,4,1,5,52,9
+	.half	.L484-.L386
+	.byte	1,5,5,9
+	.half	.L431-.L484
+	.byte	3,2,1,5,34,7,9
+	.half	.L388-.L431
+	.byte	3,5,1,5,43,9
+	.half	.L485-.L388
+	.byte	1,5,64,9
+	.half	.L486-.L485
+	.byte	1,5,88,9
+	.half	.L487-.L486
+	.byte	1,5,51,3,126,1,5,36,9
+	.half	.L4-.L487
+	.byte	3,7,1,5,6,9
+	.half	.L2-.L4
+	.byte	3,9,1,5,22,9
+	.half	.L488-.L2
+	.byte	1,5,3,9
+	.half	.L489-.L488
+	.byte	1,5,34,9
+	.half	.L490-.L489
+	.byte	3,2,1,5,1,3,5,1,7,9
+	.half	.L180-.L490
+	.byte	0,1,1
+.L475:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryBlockRelevantForWriteAll')
+	.sect	'.debug_ranges'
+.L178:
+	.word	-1,.L179,0,.L180-.L179,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryCancelWriteAll')
+	.sect	'.debug_info'
+.L181:
+	.word	267
+	.half	3
+	.word	.L182
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L184,.L183
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryCancelWriteAll',0,1,138,6,43
+	.word	.L375
+	.byte	1,1
+	.word	.L76,.L389,.L75
+	.byte	4
+	.word	.L76,.L389
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryCancelWriteAll')
+	.sect	'.debug_abbrev'
+.L182:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryCancelWriteAll')
+	.sect	'.debug_line'
+.L183:
+	.word	.L492-.L491
+.L491:
+	.half	3
+	.word	.L494-.L493
+.L493:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L494:
+	.byte	5,12,7,0,5,2
+	.word	.L76
+	.byte	3,139,6,1,5,28,9
+	.half	.L495-.L76
+	.byte	1,5,61,9
+	.half	.L496-.L495
+	.byte	1,5,1,3,1,1,7,9
+	.half	.L186-.L496
+	.byte	0,1,1
+.L492:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryCancelWriteAll')
+	.sect	'.debug_ranges'
+.L184:
+	.word	-1,.L185,0,.L186-.L185,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryWriteAllKilled')
+	.sect	'.debug_info'
+.L187:
+	.word	267
+	.half	3
+	.word	.L188
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L190,.L189
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryWriteAllKilled',0,1,167,6,43
+	.word	.L375
+	.byte	1,1
+	.word	.L78,.L390,.L77
+	.byte	4
+	.word	.L78,.L390
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryWriteAllKilled')
+	.sect	'.debug_abbrev'
+.L188:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryWriteAllKilled')
+	.sect	'.debug_line'
+.L189:
+	.word	.L498-.L497
+.L497:
+	.half	3
+	.word	.L500-.L499
+.L499:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L500:
+	.byte	5,23,7,0,5,2
+	.word	.L78
+	.byte	3,168,6,1,5,39,9
+	.half	.L501-.L78
+	.byte	1,5,81,9
+	.half	.L502-.L501
+	.byte	1,5,22,9
+	.half	.L503-.L502
+	.byte	1,5,11,7,9
+	.half	.L504-.L503
+	.byte	3,1,1,5,58,9
+	.half	.L505-.L504
+	.byte	1,5,81,9
+	.half	.L506-.L505
+	.byte	3,127,1,5,1,9
+	.half	.L9-.L506
+	.byte	3,2,1,7,9
+	.half	.L192-.L9
+	.byte	0,1,1
+.L498:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryWriteAllKilled')
+	.sect	'.debug_ranges'
+.L190:
+	.word	-1,.L191,0,.L192-.L191,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryIsDataIntegrityJobPending')
+	.sect	'.debug_info'
+.L193:
+	.word	278
+	.half	3
+	.word	.L194
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L196,.L195
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryIsDataIntegrityJobPending',0,1,198,6,43
+	.word	.L375
+	.byte	1,1
+	.word	.L80,.L391,.L79
+	.byte	4
+	.word	.L80,.L391
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryIsDataIntegrityJobPending')
+	.sect	'.debug_abbrev'
+.L194:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryIsDataIntegrityJobPending')
+	.sect	'.debug_line'
+.L195:
+	.word	.L508-.L507
+.L507:
+	.half	3
+	.word	.L510-.L509
+.L509:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L510:
+	.byte	5,40,7,0,5,2
+	.word	.L80
+	.byte	3,199,6,1,5,62,9
+	.half	.L511-.L80
+	.byte	1,5,81,9
+	.half	.L512-.L511
+	.byte	1,5,1,3,1,1,7,9
+	.half	.L198-.L512
+	.byte	0,1,1
+.L508:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryIsDataIntegrityJobPending')
+	.sect	'.debug_ranges'
+.L196:
+	.word	-1,.L197,0,.L198-.L197,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryIsDataIntegrityJobFinishedSuccessful')
+	.sect	'.debug_info'
+.L199:
+	.word	289
+	.half	3
+	.word	.L200
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L202,.L201
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryIsDataIntegrityJobFinishedSuccessful',0,1,211,6,43
+	.word	.L375
+	.byte	1,1
+	.word	.L82,.L392,.L81
+	.byte	4
+	.word	.L82,.L392
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryIsDataIntegrityJobFinishedSuccessful')
+	.sect	'.debug_abbrev'
+.L200:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryIsDataIntegrityJobFinishedSuccessful')
+	.sect	'.debug_line'
+.L201:
+	.word	.L514-.L513
+.L513:
+	.half	3
+	.word	.L516-.L515
+.L515:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L516:
+	.byte	5,40,7,0,5,2
+	.word	.L82
+	.byte	3,212,6,1,5,62,9
+	.half	.L517-.L82
+	.byte	1,5,7,9
+	.half	.L518-.L517
+	.byte	3,1,1,5,1,3,1,1,7,9
+	.half	.L204-.L518
+	.byte	0,1,1
+.L514:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryIsDataIntegrityJobFinishedSuccessful')
+	.sect	'.debug_ranges'
+.L202:
+	.word	-1,.L203,0,.L204-.L203,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryIsDataIntegrityAlgorithmConfigured')
+	.sect	'.debug_info'
+.L205:
+	.word	287
+	.half	3
+	.word	.L206
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L208,.L207
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryIsDataIntegrityAlgorithmConfigured',0,1,225,6,43
+	.word	.L375
+	.byte	1,1
+	.word	.L84,.L393,.L83
+	.byte	4
+	.word	.L84,.L393
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryIsDataIntegrityAlgorithmConfigured')
+	.sect	'.debug_abbrev'
+.L206:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryIsDataIntegrityAlgorithmConfigured')
+	.sect	'.debug_line'
+.L207:
+	.word	.L520-.L519
+.L519:
+	.half	3
+	.word	.L522-.L521
+.L521:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L522:
+	.byte	5,11,7,0,5,2
+	.word	.L84
+	.byte	3,227,6,1,5,33,9
+	.half	.L523-.L84
+	.byte	1,5,47,9
+	.half	.L524-.L523
+	.byte	1,5,71,9
+	.half	.L525-.L524
+	.byte	1,5,1,3,1,1,7,9
+	.half	.L210-.L525
+	.byte	0,1,1
+.L520:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryIsDataIntegrityAlgorithmConfigured')
+	.sect	'.debug_ranges'
+.L208:
+	.word	-1,.L209,0,.L210-.L209,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryDataCopyBusy')
+	.sect	'.debug_info'
+.L211:
+	.word	265
+	.half	3
+	.word	.L212
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L214,.L213
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryDataCopyBusy',0,1,239,6,43
+	.word	.L375
+	.byte	1,1
+	.word	.L86,.L394,.L85
+	.byte	4
+	.word	.L86,.L394
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryDataCopyBusy')
+	.sect	'.debug_abbrev'
+.L212:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryDataCopyBusy')
+	.sect	'.debug_line'
+.L213:
+	.word	.L527-.L526
+.L526:
+	.half	3
+	.word	.L529-.L528
+.L528:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L529:
+	.byte	5,22,7,0,5,2
+	.word	.L86
+	.byte	3,240,6,1,5,44,9
+	.half	.L530-.L86
+	.byte	1,5,59,9
+	.half	.L531-.L530
+	.byte	1,5,1,3,1,1,7,9
+	.half	.L216-.L531
+	.byte	0,1,1
+.L527:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryDataCopyBusy')
+	.sect	'.debug_ranges'
+.L214:
+	.word	-1,.L215,0,.L216-.L215,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryLastBlockDone_ReadAll')
+	.sect	'.debug_info'
+.L217:
+	.word	274
+	.half	3
+	.word	.L218
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L220,.L219
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryLastBlockDone_ReadAll',0,1,252,6,43
+	.word	.L375
+	.byte	1,1
+	.word	.L88,.L395,.L87
+	.byte	4
+	.word	.L88,.L395
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryLastBlockDone_ReadAll')
+	.sect	'.debug_abbrev'
+.L218:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryLastBlockDone_ReadAll')
+	.sect	'.debug_line'
+.L219:
+	.word	.L533-.L532
+.L532:
+	.half	3
+	.word	.L535-.L534
+.L534:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L535:
+	.byte	5,22,7,0,5,2
+	.word	.L88
+	.byte	3,253,6,1,5,38,9
+	.half	.L536-.L88
+	.byte	1,5,52,9
+	.half	.L537-.L536
+	.byte	1,5,1,3,1,1,7,9
+	.half	.L222-.L537
+	.byte	0,1,1
+.L533:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryLastBlockDone_ReadAll')
+	.sect	'.debug_ranges'
+.L220:
+	.word	-1,.L221,0,.L222-.L221,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryLastBlockDone_WriteAll')
+	.sect	'.debug_info'
+.L223:
+	.word	275
+	.half	3
+	.word	.L224
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L226,.L225
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryLastBlockDone_WriteAll',0,1,137,7,43
+	.word	.L375
+	.byte	1,1
+	.word	.L90,.L396,.L89
+	.byte	4
+	.word	.L90,.L396
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryLastBlockDone_WriteAll')
+	.sect	'.debug_abbrev'
+.L224:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryLastBlockDone_WriteAll')
+	.sect	'.debug_line'
+.L225:
+	.word	.L539-.L538
+.L538:
+	.half	3
+	.word	.L541-.L540
+.L540:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L541:
+	.byte	5,22,7,0,5,2
+	.word	.L90
+	.byte	3,138,7,1,5,38,9
+	.half	.L542-.L90
+	.byte	1,5,52,9
+	.half	.L543-.L542
+	.byte	1,5,1,3,1,1,7,9
+	.half	.L228-.L543
+	.byte	0,1,1
+.L539:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryLastBlockDone_WriteAll')
+	.sect	'.debug_ranges'
+.L226:
+	.word	-1,.L227,0,.L228-.L227,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryLastResultOk')
+	.sect	'.debug_info'
+.L229:
+	.word	265
+	.half	3
+	.word	.L230
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L232,.L231
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryLastResultOk',0,1,150,7,43
+	.word	.L375
+	.byte	1,1
+	.word	.L92,.L397,.L91
+	.byte	4
+	.word	.L92,.L397
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryLastResultOk')
+	.sect	'.debug_abbrev'
+.L230:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryLastResultOk')
+	.sect	'.debug_line'
+.L231:
+	.word	.L545-.L544
+.L544:
+	.half	3
+	.word	.L547-.L546
+.L546:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L547:
+	.byte	5,36,7,0,5,2
+	.word	.L92
+	.byte	3,151,7,1,5,58,9
+	.half	.L548-.L92
+	.byte	1,5,33,9
+	.half	.L549-.L548
+	.byte	1,5,1,3,1,1,7,9
+	.half	.L234-.L549
+	.byte	0,1,1
+.L545:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryLastResultOk')
+	.sect	'.debug_ranges'
+.L232:
+	.word	-1,.L233,0,.L234-.L233,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryMainFsmRunning')
+	.sect	'.debug_info'
+.L235:
+	.word	267
+	.half	3
+	.word	.L236
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L238,.L237
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryMainFsmRunning',0,1,163,7,43
+	.word	.L375
+	.byte	1,1
+	.word	.L94,.L398,.L93
+	.byte	4
+	.word	.L94,.L398
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryMainFsmRunning')
+	.sect	'.debug_abbrev'
+.L236:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryMainFsmRunning')
+	.sect	'.debug_line'
+.L237:
+	.word	.L551-.L550
+.L550:
+	.half	3
+	.word	.L553-.L552
+.L552:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L553:
+	.byte	5,48,7,0,5,2
+	.word	.L94
+	.byte	3,164,7,1,5,45,9
+	.half	.L554-.L94
+	.byte	1,5,1,3,1,1,7,9
+	.half	.L240-.L554
+	.byte	0,1,1
+.L551:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryMainFsmRunning')
+	.sect	'.debug_ranges'
+.L238:
+	.word	-1,.L239,0,.L240-.L239,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryMultiJob')
+	.sect	'.debug_info'
+.L241:
+	.word	261
+	.half	3
+	.word	.L242
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L244,.L243
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryMultiJob',0,1,176,7,43
+	.word	.L375
+	.byte	1,1
+	.word	.L96,.L399,.L95
+	.byte	4
+	.word	.L96,.L399
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryMultiJob')
+	.sect	'.debug_abbrev'
+.L242:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryMultiJob')
+	.sect	'.debug_line'
+.L243:
+	.word	.L556-.L555
+.L555:
+	.half	3
+	.word	.L558-.L557
+.L557:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L558:
+	.byte	5,23,7,0,5,2
+	.word	.L96
+	.byte	3,177,7,1,5,39,9
+	.half	.L559-.L96
+	.byte	1,5,12,9
+	.half	.L560-.L559
+	.byte	3,8,1,5,1,3,1,1,7,9
+	.half	.L246-.L560
+	.byte	0,1,1
+.L556:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryMultiJob')
+	.sect	'.debug_ranges'
+.L244:
+	.word	-1,.L245,0,.L246-.L245,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryNvBusy')
+	.sect	'.debug_info'
+.L247:
+	.word	302
+	.half	3
+	.word	.L248
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L250,.L249
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryNvBusy',0,1,202,7,43
+	.word	.L375
+	.byte	1,1
+	.word	.L98,.L400,.L97
+	.byte	4
+	.word	.L98,.L400
+	.byte	5
+	.byte	'deviceId',0,1,205,7,17
+	.word	.L401,.L402
+	.byte	5
+	.byte	'retVal',0,1,206,7,13
+	.word	.L375,.L403
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryNvBusy')
+	.sect	'.debug_abbrev'
+.L248:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryNvBusy')
+	.sect	'.debug_line'
+.L249:
+	.word	.L562-.L561
+.L561:
+	.half	3
+	.word	.L564-.L563
+.L563:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L564:
+	.byte	5,35,7,0,5,2
+	.word	.L98
+	.byte	3,204,7,1,5,57,9
+	.half	.L565-.L98
+	.byte	1,5,20,9
+	.half	.L566-.L565
+	.byte	3,1,1,5,71,9
+	.half	.L434-.L566
+	.byte	3,127,1,5,30,9
+	.half	.L567-.L434
+	.byte	3,3,1,5,71,9
+	.half	.L435-.L567
+	.byte	3,125,1,5,5,9
+	.half	.L568-.L435
+	.byte	3,3,1,5,58,7,9
+	.half	.L569-.L568
+	.byte	3,2,1,5,9,9
+	.half	.L570-.L569
+	.byte	1,5,20,7,9
+	.half	.L571-.L570
+	.byte	3,2,1,5,26,1,5,54,9
+	.half	.L22-.L571
+	.byte	3,4,1,5,22,9
+	.half	.L572-.L22
+	.byte	3,2,1,7,9
+	.half	.L573-.L572
+	.byte	3,4,1,7,9
+	.half	.L574-.L573
+	.byte	3,4,1,7,9
+	.half	.L575-.L574
+	.byte	1,5,59,9
+	.half	.L24-.L575
+	.byte	3,121,1,5,21,3,1,1,5,59,9
+	.half	.L25-.L24
+	.byte	3,3,1,5,21,3,1,1,5,59,9
+	.half	.L26-.L25
+	.byte	3,3,1,5,21,3,1,1,5,59,9
+	.half	.L27-.L26
+	.byte	3,3,1,5,57,9
+	.half	.L30-.L27
+	.byte	1,5,5,9
+	.half	.L21-.L30
+	.byte	3,5,1,5,1,3,4,1,7,9
+	.half	.L252-.L21
+	.byte	0,1,1
+.L562:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryNvBusy')
+	.sect	'.debug_ranges'
+.L250:
+	.word	-1,.L251,0,.L252-.L251,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryMemHwaBusy')
+	.sect	'.debug_info'
+.L253:
+	.word	290
+	.half	3
+	.word	.L254
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L256,.L255
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryMemHwaBusy',0,1,250,7,43
+	.word	.L375
+	.byte	1,1
+	.word	.L100,.L404,.L99
+	.byte	4
+	.word	.L100,.L404
+	.byte	5
+	.byte	'MemHwaStatus',0,1,252,7,26
+	.word	.L405,.L406
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryMemHwaBusy')
+	.sect	'.debug_abbrev'
+.L254:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryMemHwaBusy')
+	.sect	'.debug_line'
+.L255:
+	.word	.L577-.L576
+.L576:
+	.half	3
+	.word	.L579-.L578
+.L578:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L579:
+	.byte	5,72,7,0,5,2
+	.word	.L100
+	.byte	3,251,7,1,5,49,9
+	.half	.L436-.L100
+	.byte	3,2,1,5,20,9
+	.half	.L580-.L436
+	.byte	1,5,66,7,9
+	.half	.L581-.L580
+	.byte	1,5,49,7,9
+	.half	.L32-.L581
+	.byte	1,5,3,9
+	.half	.L33-.L32
+	.byte	1,5,1,3,1,1,7,9
+	.half	.L258-.L33
+	.byte	0,1,1
+.L577:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryMemHwaBusy')
+	.sect	'.debug_ranges'
+.L256:
+	.word	-1,.L257,0,.L258-.L257,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryPrimaryRedundantBlock')
+	.sect	'.debug_info'
+.L259:
+	.word	274
+	.half	3
+	.word	.L260
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L262,.L261
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryPrimaryRedundantBlock',0,1,137,8,43
+	.word	.L375
+	.byte	1,1
+	.word	.L102,.L407,.L101
+	.byte	4
+	.word	.L102,.L407
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryPrimaryRedundantBlock')
+	.sect	'.debug_abbrev'
+.L260:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryPrimaryRedundantBlock')
+	.sect	'.debug_line'
+.L261:
+	.word	.L583-.L582
+.L582:
+	.half	3
+	.word	.L585-.L584
+.L584:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L585:
+	.byte	5,9,7,0,5,2
+	.word	.L102
+	.byte	3,139,8,1,5,31,9
+	.half	.L586-.L102
+	.byte	1,5,89,9
+	.half	.L587-.L586
+	.byte	1,5,45,9
+	.half	.L588-.L587
+	.byte	1,5,7,9
+	.half	.L589-.L588
+	.byte	1,5,31,7,9
+	.half	.L590-.L589
+	.byte	3,1,1,5,60,9
+	.half	.L591-.L590
+	.byte	1,5,89,9
+	.half	.L592-.L591
+	.byte	3,127,1,5,1,9
+	.half	.L35-.L592
+	.byte	3,2,1,7,9
+	.half	.L264-.L35
+	.byte	0,1,1
+.L583:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryPrimaryRedundantBlock')
+	.sect	'.debug_ranges'
+.L262:
+	.word	-1,.L263,0,.L264-.L263,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QrySecondaryRedundantBlock')
+	.sect	'.debug_info'
+.L265:
+	.word	276
+	.half	3
+	.word	.L266
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L268,.L267
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QrySecondaryRedundantBlock',0,1,152,8,43
+	.word	.L375
+	.byte	1,1
+	.word	.L104,.L408,.L103
+	.byte	4
+	.word	.L104,.L408
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QrySecondaryRedundantBlock')
+	.sect	'.debug_abbrev'
+.L266:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QrySecondaryRedundantBlock')
+	.sect	'.debug_line'
+.L267:
+	.word	.L594-.L593
+.L593:
+	.half	3
+	.word	.L596-.L595
+.L595:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L596:
+	.byte	5,9,7,0,5,2
+	.word	.L104
+	.byte	3,154,8,1,5,31,9
+	.half	.L597-.L104
+	.byte	1,5,89,9
+	.half	.L598-.L597
+	.byte	1,5,45,9
+	.half	.L599-.L598
+	.byte	1,5,7,9
+	.half	.L600-.L599
+	.byte	1,5,31,7,9
+	.half	.L601-.L600
+	.byte	3,1,1,5,60,9
+	.half	.L602-.L601
+	.byte	1,5,89,9
+	.half	.L603-.L602
+	.byte	3,127,1,5,1,9
+	.half	.L38-.L603
+	.byte	3,2,1,7,9
+	.half	.L270-.L38
+	.byte	0,1,1
+.L594:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QrySecondaryRedundantBlock')
+	.sect	'.debug_ranges'
+.L268:
+	.word	-1,.L269,0,.L270-.L269,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QrySkipBlock')
+	.sect	'.debug_info'
+.L271:
+	.word	262
+	.half	3
+	.word	.L272
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L274,.L273
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QrySkipBlock',0,1,170,8,43
+	.word	.L375
+	.byte	1,1
+	.word	.L106,.L409,.L105
+	.byte	4
+	.word	.L106,.L409
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QrySkipBlock')
+	.sect	'.debug_abbrev'
+.L272:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QrySkipBlock')
+	.sect	'.debug_line'
+.L273:
+	.word	.L605-.L604
+.L604:
+	.half	3
+	.word	.L607-.L606
+.L606:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L607:
+	.byte	5,34,7,0,5,2
+	.word	.L106
+	.byte	3,172,8,1,5,56,9
+	.half	.L608-.L106
+	.byte	1,5,77,9
+	.half	.L609-.L608
+	.byte	1,5,108,9
+	.half	.L610-.L609
+	.byte	1,5,1,3,5,1,7,9
+	.half	.L276-.L610
+	.byte	0,1,1
+.L605:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QrySkipBlock')
+	.sect	'.debug_ranges'
+.L274:
+	.word	-1,.L275,0,.L276-.L275,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QrySubFsmRunning')
+	.sect	'.debug_info'
+.L277:
+	.word	266
+	.half	3
+	.word	.L278
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L280,.L279
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QrySubFsmRunning',0,1,188,8,43
+	.word	.L375
+	.byte	1,1
+	.word	.L108,.L410,.L107
+	.byte	4
+	.word	.L108,.L410
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QrySubFsmRunning')
+	.sect	'.debug_abbrev'
+.L278:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QrySubFsmRunning')
+	.sect	'.debug_line'
+.L279:
+	.word	.L612-.L611
+.L611:
+	.half	3
+	.word	.L614-.L613
+.L613:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L614:
+	.byte	5,46,7,0,5,2
+	.word	.L108
+	.byte	3,189,8,1,5,43,9
+	.half	.L615-.L108
+	.byte	1,5,1,3,1,1,7,9
+	.half	.L282-.L615
+	.byte	0,1,1
+.L612:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QrySubFsmRunning')
+	.sect	'.debug_ranges'
+.L280:
+	.word	-1,.L281,0,.L282-.L281,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryFalse')
+	.sect	'.debug_info'
+.L283:
+	.word	258
+	.half	3
+	.word	.L284
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L286,.L285
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryFalse',0,1,202,8,43
+	.word	.L375
+	.byte	1,1
+	.word	.L110,.L411,.L109
+	.byte	4
+	.word	.L110,.L411
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryFalse')
+	.sect	'.debug_abbrev'
+.L284:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryFalse')
+	.sect	'.debug_line'
+.L285:
+	.word	.L617-.L616
+.L616:
+	.half	3
+	.word	.L619-.L618
+.L618:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L619:
+	.byte	5,10,7,0,5,2
+	.word	.L110
+	.byte	3,203,8,1,5,1,3,1,1,7,9
+	.half	.L288-.L110
+	.byte	0,1,1
+.L617:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryFalse')
+	.sect	'.debug_ranges'
+.L286:
+	.word	-1,.L287,0,.L288-.L287,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryTrue')
+	.sect	'.debug_info'
+.L289:
+	.word	257
+	.half	3
+	.word	.L290
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L292,.L291
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryTrue',0,1,216,8,43
+	.word	.L375
+	.byte	1,1
+	.word	.L112,.L412,.L111
+	.byte	4
+	.word	.L112,.L412
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryTrue')
+	.sect	'.debug_abbrev'
+.L290:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryTrue')
+	.sect	'.debug_line'
+.L291:
+	.word	.L621-.L620
+.L620:
+	.half	3
+	.word	.L623-.L622
+.L622:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L623:
+	.byte	5,10,7,0,5,2
+	.word	.L112
+	.byte	3,217,8,1,5,1,3,1,1,7,9
+	.half	.L294-.L112
+	.byte	0,1,1
+.L621:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryTrue')
+	.sect	'.debug_ranges'
+.L292:
+	.word	-1,.L293,0,.L294-.L293,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryWriteBlockOnce')
+	.sect	'.debug_info'
+.L295:
+	.word	267
+	.half	3
+	.word	.L296
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L298,.L297
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryWriteBlockOnce',0,1,232,8,43
+	.word	.L375
+	.byte	1,1
+	.word	.L114,.L413,.L113
+	.byte	4
+	.word	.L114,.L413
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryWriteBlockOnce')
+	.sect	'.debug_abbrev'
+.L296:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryWriteBlockOnce')
+	.sect	'.debug_line'
+.L297:
+	.word	.L625-.L624
+.L624:
+	.half	3
+	.word	.L627-.L626
+.L626:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L627:
+	.byte	5,33,7,0,5,2
+	.word	.L114
+	.byte	3,235,8,1,5,55,9
+	.half	.L628-.L114
+	.byte	1,5,76,9
+	.half	.L629-.L628
+	.byte	1,5,3,9
+	.half	.L630-.L629
+	.byte	1,5,1,3,11,1,7,9
+	.half	.L300-.L630
+	.byte	0,1,1
+.L625:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryWriteBlockOnce')
+	.sect	'.debug_ranges'
+.L298:
+	.word	-1,.L299,0,.L300-.L299,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryWriteRetriesExceeded')
+	.sect	'.debug_info'
+.L301:
+	.word	273
+	.half	3
+	.word	.L302
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L304,.L303
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryWriteRetriesExceeded',0,1,129,9,43
+	.word	.L375
+	.byte	1,1
+	.word	.L116,.L414,.L115
+	.byte	4
+	.word	.L116,.L414
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryWriteRetriesExceeded')
+	.sect	'.debug_abbrev'
+.L302:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryWriteRetriesExceeded')
+	.sect	'.debug_line'
+.L303:
+	.word	.L632-.L631
+.L631:
+	.half	3
+	.word	.L634-.L633
+.L633:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L634:
+	.byte	5,20,7,0,5,2
+	.word	.L116
+	.byte	3,132,9,1,5,42,9
+	.half	.L635-.L116
+	.byte	1,5,66,9
+	.half	.L636-.L635
+	.byte	1,5,64,9
+	.half	.L637-.L636
+	.byte	1,5,1,3,1,1,7,9
+	.half	.L306-.L637
+	.byte	0,1,1
+.L632:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryWriteRetriesExceeded')
+	.sect	'.debug_ranges'
+.L304:
+	.word	-1,.L305,0,.L306-.L305,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryHasRom')
+	.sect	'.debug_info'
+.L307:
+	.word	259
+	.half	3
+	.word	.L308
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L310,.L309
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryHasRom',0,1,162,9,43
+	.word	.L375
+	.byte	1,1
+	.word	.L120,.L415,.L119
+	.byte	4
+	.word	.L120,.L415
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryHasRom')
+	.sect	'.debug_abbrev'
+.L308:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryHasRom')
+	.sect	'.debug_line'
+.L309:
+	.word	.L639-.L638
+.L638:
+	.half	3
+	.word	.L641-.L640
+.L640:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L641:
+	.byte	5,8,7,0,5,2
+	.word	.L120
+	.byte	3,164,9,1,5,30,9
+	.half	.L642-.L120
+	.byte	1,5,7,9
+	.half	.L643-.L642
+	.byte	3,1,1,5,44,9
+	.half	.L644-.L643
+	.byte	3,127,1,5,7,9
+	.half	.L645-.L644
+	.byte	1,5,65,7,9
+	.half	.L646-.L645
+	.byte	3,1,1,5,11,9
+	.half	.L647-.L646
+	.byte	1,5,83,7,9
+	.half	.L648-.L647
+	.byte	3,1,1,5,39,9
+	.half	.L649-.L648
+	.byte	1,5,7,7,9
+	.half	.L50-.L649
+	.byte	3,127,1,5,3,9
+	.half	.L51-.L50
+	.byte	3,126,1,5,1,3,5,1,7,9
+	.half	.L312-.L51
+	.byte	0,1,1
+.L639:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryHasRom')
+	.sect	'.debug_ranges'
+.L310:
+	.word	-1,.L311,0,.L312-.L311,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryExtRuntime')
+	.sect	'.debug_info'
+.L313:
+	.word	263
+	.half	3
+	.word	.L314
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L316,.L315
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryExtRuntime',0,1,180,9,43
+	.word	.L375
+	.byte	1,1
+	.word	.L122,.L416,.L121
+	.byte	4
+	.word	.L122,.L416
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryExtRuntime')
+	.sect	'.debug_abbrev'
+.L314:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryExtRuntime')
+	.sect	'.debug_line'
+.L315:
+	.word	.L651-.L650
+.L650:
+	.half	3
+	.word	.L653-.L652
+.L652:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L653:
+	.byte	5,10,7,0,5,2
+	.word	.L122
+	.byte	3,187,9,1,5,1,3,2,1,7,9
+	.half	.L318-.L122
+	.byte	0,1,1
+.L651:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryExtRuntime')
+	.sect	'.debug_ranges'
+.L316:
+	.word	-1,.L317,0,.L318-.L317,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryDataIntegrityRecordCompareMechanismSkipWrite')
+	.sect	'.debug_info'
+.L319:
+	.word	321
+	.half	3
+	.word	.L320
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L322,.L321
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryDataIntegrityRecordCompareMechanismSkipWrite',0,1,138,10,43
+	.word	.L375
+	.byte	1,1
+	.word	.L124,.L417,.L123
+	.byte	4
+	.word	.L124,.L417
+	.byte	5
+	.byte	'skipWrite',0,1,140,10,11
+	.word	.L375,.L418
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryDataIntegrityRecordCompareMechanismSkipWrite')
+	.sect	'.debug_abbrev'
+.L320:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryDataIntegrityRecordCompareMechanismSkipWrite')
+	.sect	'.debug_line'
+.L321:
+	.word	.L655-.L654
+.L654:
+	.half	3
+	.word	.L657-.L656
+.L656:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L657:
+	.byte	5,6,7,0,5,2
+	.word	.L124
+	.byte	3,141,10,1,5,28,9
+	.half	.L658-.L124
+	.byte	1,5,21,9
+	.half	.L659-.L658
+	.byte	3,126,1,5,42,9
+	.half	.L437-.L659
+	.byte	3,2,1,5,3,9
+	.half	.L660-.L437
+	.byte	1,5,32,7,9
+	.half	.L661-.L660
+	.byte	3,3,1,5,45,9
+	.half	.L662-.L661
+	.byte	3,1,1,5,1,7,9
+	.half	.L55-.L662
+	.byte	3,4,1,7,9
+	.half	.L324-.L55
+	.byte	0,1,1
+.L655:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryDataIntegrityRecordCompareMechanismSkipWrite')
+	.sect	'.debug_ranges'
+.L322:
+	.word	-1,.L323,0,.L324-.L323,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryPostReadTransform')
+	.sect	'.debug_info'
+.L325:
+	.word	291
+	.half	3
+	.word	.L326
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L328,.L327
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryPostReadTransform',0,1,161,10,43
+	.word	.L375
+	.byte	1,1
+	.word	.L126,.L419,.L125
+	.byte	4
+	.word	.L126,.L419
+	.byte	5
+	.byte	'retVal',0,1,163,10,11
+	.word	.L375,.L420
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryPostReadTransform')
+	.sect	'.debug_abbrev'
+.L326:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryPostReadTransform')
+	.sect	'.debug_line'
+.L327:
+	.word	.L664-.L663
+.L663:
+	.half	3
+	.word	.L666-.L665
+.L665:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L666:
+	.byte	5,6,7,0,5,2
+	.word	.L126
+	.byte	3,164,10,1,5,28,9
+	.half	.L667-.L126
+	.byte	1,5,18,9
+	.half	.L668-.L667
+	.byte	3,126,1,5,42,9
+	.half	.L438-.L668
+	.byte	3,2,1,5,3,9
+	.half	.L669-.L438
+	.byte	1,5,9,7,9
+	.half	.L670-.L669
+	.byte	3,3,1,5,25,9
+	.half	.L671-.L670
+	.byte	1,5,31,9
+	.half	.L672-.L671
+	.byte	3,1,1,5,45,9
+	.half	.L673-.L672
+	.byte	3,1,1,5,66,9
+	.half	.L439-.L673
+	.byte	1,5,1,9
+	.half	.L57-.L439
+	.byte	3,4,1,7,9
+	.half	.L330-.L57
+	.byte	0,1,1
+.L664:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryPostReadTransform')
+	.sect	'.debug_ranges'
+.L328:
+	.word	-1,.L329,0,.L330-.L329,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryCsmRetryNecessary')
+	.sect	'.debug_info'
+.L331:
+	.word	270
+	.half	3
+	.word	.L332
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L334,.L333
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryCsmRetryNecessary',0,1,241,10,43
+	.word	.L375
+	.byte	1,1
+	.word	.L130,.L421,.L129
+	.byte	4
+	.word	.L130,.L421
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryCsmRetryNecessary')
+	.sect	'.debug_abbrev'
+.L332:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryCsmRetryNecessary')
+	.sect	'.debug_line'
+.L333:
+	.word	.L675-.L674
+.L674:
+	.half	3
+	.word	.L677-.L676
+.L676:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L677:
+	.byte	5,12,7,0,5,2
+	.word	.L130
+	.byte	3,252,10,1,5,1,3,2,1,7,9
+	.half	.L336-.L130
+	.byte	0,1,1
+.L675:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryCsmRetryNecessary')
+	.sect	'.debug_ranges'
+.L334:
+	.word	-1,.L335,0,.L336-.L335,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryBlockCheckLossOfRedundancy')
+	.sect	'.debug_info'
+.L337:
+	.word	279
+	.half	3
+	.word	.L338
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L340,.L339
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryBlockCheckLossOfRedundancy',0,1,152,11,43
+	.word	.L375
+	.byte	1,1
+	.word	.L132,.L422,.L131
+	.byte	4
+	.word	.L132,.L422
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryBlockCheckLossOfRedundancy')
+	.sect	'.debug_abbrev'
+.L338:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryBlockCheckLossOfRedundancy')
+	.sect	'.debug_line'
+.L339:
+	.word	.L679-.L678
+.L678:
+	.half	3
+	.word	.L681-.L680
+.L680:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L681:
+	.byte	5,36,7,0,5,2
+	.word	.L132
+	.byte	3,153,11,1,5,58,9
+	.half	.L682-.L132
+	.byte	1,5,79,9
+	.half	.L683-.L682
+	.byte	1,5,1,9
+	.half	.L342-.L683
+	.byte	3,1,0,1,1
+.L679:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryBlockCheckLossOfRedundancy')
+	.sect	'.debug_ranges'
+.L340:
+	.word	-1,.L341,0,.L342-.L341,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryFirstRedundantBlockFailed')
+	.sect	'.debug_info'
+.L343:
+	.word	278
+	.half	3
+	.word	.L344
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L346,.L345
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryFirstRedundantBlockFailed',0,1,165,11,43
+	.word	.L375
+	.byte	1,1
+	.word	.L134,.L423,.L133
+	.byte	4
+	.word	.L134,.L423
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryFirstRedundantBlockFailed')
+	.sect	'.debug_abbrev'
+.L344:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryFirstRedundantBlockFailed')
+	.sect	'.debug_line'
+.L345:
+	.word	.L685-.L684
+.L684:
+	.half	3
+	.word	.L687-.L686
+.L686:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L687:
+	.byte	5,10,7,0,5,2
+	.word	.L134
+	.byte	3,166,11,1,5,73,9
+	.half	.L688-.L134
+	.byte	1,5,1,3,1,1,7,9
+	.half	.L348-.L688
+	.byte	0,1,1
+.L685:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryFirstRedundantBlockFailed')
+	.sect	'.debug_ranges'
+.L346:
+	.word	-1,.L347,0,.L348-.L347,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryRedundantCrcMatches')
+	.sect	'.debug_info'
+.L349:
+	.word	272
+	.half	3
+	.word	.L350
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L352,.L351
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryRedundantCrcMatches',0,1,178,11,43
+	.word	.L375
+	.byte	1,1
+	.word	.L136,.L424,.L135
+	.byte	4
+	.word	.L136,.L424
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryRedundantCrcMatches')
+	.sect	'.debug_abbrev'
+.L350:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryRedundantCrcMatches')
+	.sect	'.debug_line'
+.L351:
+	.word	.L690-.L689
+.L689:
+	.half	3
+	.word	.L692-.L691
+.L691:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L692:
+	.byte	5,8,7,0,5,2
+	.word	.L136
+	.byte	3,183,11,1,5,30,9
+	.half	.L693-.L136
+	.byte	1,5,7,9
+	.half	.L694-.L693
+	.byte	3,1,1,5,1,9
+	.half	.L354-.L694
+	.byte	3,1,0,1,1
+.L690:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryRedundantCrcMatches')
+	.sect	'.debug_ranges'
+.L352:
+	.word	-1,.L353,0,.L354-.L353,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryHasExplicitSynchronization')
+	.sect	'.debug_info'
+.L355:
+	.word	279
+	.half	3
+	.word	.L356
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L358,.L357
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryHasExplicitSynchronization',0,1,213,11,43
+	.word	.L375
+	.byte	1,1
+	.word	.L138,.L425,.L137
+	.byte	4
+	.word	.L138,.L425
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryHasExplicitSynchronization')
+	.sect	'.debug_abbrev'
+.L356:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryHasExplicitSynchronization')
+	.sect	'.debug_line'
+.L357:
+	.word	.L696-.L695
+.L695:
+	.half	3
+	.word	.L698-.L697
+.L697:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L698:
+	.byte	5,11,7,0,5,2
+	.word	.L138
+	.byte	3,215,11,1,5,33,9
+	.half	.L699-.L138
+	.byte	1,5,47,9
+	.half	.L700-.L699
+	.byte	1,5,72,9
+	.half	.L701-.L700
+	.byte	1,5,69,9
+	.half	.L702-.L701
+	.byte	1,5,1,9
+	.half	.L703-.L702
+	.byte	3,1,1,7,9
+	.half	.L360-.L703
+	.byte	0,1,1
+.L696:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryHasExplicitSynchronization')
+	.sect	'.debug_ranges'
+.L358:
+	.word	-1,.L359,0,.L360-.L359,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryExplicitSyncAttemptNecessary')
+	.sect	'.debug_info'
+.L361:
+	.word	281
+	.half	3
+	.word	.L362
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L364,.L363
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryExplicitSyncAttemptNecessary',0,1,227,11,43
+	.word	.L375
+	.byte	1,1
+	.word	.L140,.L426,.L139
+	.byte	4
+	.word	.L140,.L426
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryExplicitSyncAttemptNecessary')
+	.sect	'.debug_abbrev'
+.L362:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryExplicitSyncAttemptNecessary')
+	.sect	'.debug_line'
+.L363:
+	.word	.L705-.L704
+.L704:
+	.half	3
+	.word	.L707-.L706
+.L706:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L707:
+	.byte	5,12,7,0,5,2
+	.word	.L140
+	.byte	3,232,11,1,5,34,9
+	.half	.L708-.L140
+	.byte	1,5,7,9
+	.half	.L709-.L708
+	.byte	3,1,1,5,11,9
+	.half	.L710-.L709
+	.byte	3,127,1,5,33,7,9
+	.half	.L711-.L710
+	.byte	3,1,1,5,7,9
+	.half	.L712-.L711
+	.byte	1,5,1,9
+	.half	.L65-.L712
+	.byte	3,1,1,7,9
+	.half	.L366-.L65
+	.byte	0,1,1
+.L705:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryExplicitSyncAttemptNecessary')
+	.sect	'.debug_ranges'
+.L364:
+	.word	-1,.L365,0,.L366-.L365,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QryExplicitSyncAttemptFailed')
+	.sect	'.debug_info'
+.L367:
+	.word	278
+	.half	3
+	.word	.L368
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L370,.L369
+	.byte	2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QryExplicitSyncAttemptFailed',0,1,245,11,43
+	.word	.L375
+	.byte	1,1
+	.word	.L142,.L427,.L141
+	.byte	4
+	.word	.L142,.L427
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QryExplicitSyncAttemptFailed')
+	.sect	'.debug_abbrev'
+.L368:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('NvM_QryExplicitSyncAttemptFailed')
+	.sect	'.debug_line'
+.L369:
+	.word	.L714-.L713
+.L713:
+	.half	3
+	.word	.L716-.L715
+.L715:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/NvM/Implementation',0,0
+	.byte	'NvM_Qry.c',0,1,0,0,0
+.L716:
+	.byte	5,11,7,0,5,2
+	.word	.L142
+	.byte	3,246,11,1,5,33,9
+	.half	.L717-.L142
+	.byte	1,5,60,9
+	.half	.L718-.L717
+	.byte	1,5,1,3,1,1,7,9
+	.half	.L372-.L718
+	.byte	0,1,1
+.L714:
+	.sdecl	'.debug_ranges',debug,cluster('NvM_QryExplicitSyncAttemptFailed')
+	.sect	'.debug_ranges'
+.L370:
+	.word	-1,.L371,0,.L372-.L371,0,0
+	.sdecl	'.debug_info',debug,cluster('NvM_QueryTable_ap')
+	.sect	'.debug_info'
+.L373:
+	.word	238
+	.half	3
+	.word	.L374
+	.byte	4,1
+	.byte	'../../../../BSW/Components/NvM/Implementation/NvM_Qry.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1,2
+	.word	.L147
+	.byte	3
+	.byte	'NvM_QueryTable_ap',0,8,255,4,45
+	.word	.L428
+	.byte	1,5,3
+	.word	NvM_QueryTable_ap
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('NvM_QueryTable_ap')
+	.sect	'.debug_abbrev'
+.L374:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryBlockCheckLossOfRedundancy')
+	.sect	'.debug_loc'
+.L131:
+	.word	-1,.L132,0,.L422-.L132
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryBlockRelevantForWriteAll')
+	.sect	'.debug_loc'
+.L73:
+	.word	-1,.L74,0,.L382-.L74
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L384:
+	.word	-1,.L74,.L430-.L74,.L431-.L74
+	.half	1
+	.byte	82
+	.word	0,0
+.L385:
+	.word	-1,.L74,.L432-.L74,.L433-.L74
+	.half	1
+	.byte	95
+	.word	0,0
+.L383:
+	.word	-1,.L74,.L429-.L74,.L382-.L74
+	.half	1
+	.byte	88
+	.word	0,0
+.L387:
+	.word	-1,.L74,.L431-.L74,.L2-.L74
+	.half	1
+	.byte	82
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryCalcRamBlockCrcEnabledAndRamValid')
+	.sect	'.debug_loc'
+.L117:
+	.word	-1,.L118,0,.L381-.L118
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryCancelWriteAll')
+	.sect	'.debug_loc'
+.L75:
+	.word	-1,.L76,0,.L389-.L76
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryCsmRetryNecessary')
+	.sect	'.debug_loc'
+.L129:
+	.word	-1,.L130,0,.L421-.L130
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryDataCopyBusy')
+	.sect	'.debug_loc'
+.L85:
+	.word	-1,.L86,0,.L394-.L86
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryDataIntegrityRecordCompareMechanismSkipWrite')
+	.sect	'.debug_loc'
+.L123:
+	.word	-1,.L124,0,.L417-.L124
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L418:
+	.word	-1,.L124,.L437-.L124,.L417-.L124
+	.half	1
+	.byte	82
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryExplicitSyncAttemptFailed')
+	.sect	'.debug_loc'
+.L141:
+	.word	-1,.L142,0,.L427-.L142
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryExplicitSyncAttemptNecessary')
+	.sect	'.debug_loc'
+.L139:
+	.word	-1,.L140,0,.L426-.L140
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryExtRuntime')
+	.sect	'.debug_loc'
+.L121:
+	.word	-1,.L122,0,.L416-.L122
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryFalse')
+	.sect	'.debug_loc'
+.L109:
+	.word	-1,.L110,0,.L411-.L110
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryFirstRedundantBlockFailed')
+	.sect	'.debug_loc'
+.L133:
+	.word	-1,.L134,0,.L423-.L134
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryHasExplicitSynchronization')
+	.sect	'.debug_loc'
+.L137:
+	.word	-1,.L138,0,.L425-.L138
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryHasRom')
+	.sect	'.debug_loc'
+.L119:
+	.word	-1,.L120,0,.L415-.L120
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryIsDataIntegrityAlgorithmConfigured')
+	.sect	'.debug_loc'
+.L83:
+	.word	-1,.L84,0,.L393-.L84
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryIsDataIntegrityJobFinishedSuccessful')
+	.sect	'.debug_loc'
+.L81:
+	.word	-1,.L82,0,.L392-.L82
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryIsDataIntegrityJobPending')
+	.sect	'.debug_loc'
+.L79:
+	.word	-1,.L80,0,.L391-.L80
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryIsInitCallbackConfigured')
+	.sect	'.debug_loc'
+.L379:
+	.word	-1,.L146,0,.L377-.L146
+	.half	1
+	.byte	100
+	.word	0,0
+.L145:
+	.word	-1,.L146,0,.L377-.L146
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryLastBlockDone_ReadAll')
+	.sect	'.debug_loc'
+.L87:
+	.word	-1,.L88,0,.L395-.L88
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryLastBlockDone_WriteAll')
+	.sect	'.debug_loc'
+.L89:
+	.word	-1,.L90,0,.L396-.L90
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryLastResultOk')
+	.sect	'.debug_loc'
+.L91:
+	.word	-1,.L92,0,.L397-.L92
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryMainFsmRunning')
+	.sect	'.debug_loc'
+.L93:
+	.word	-1,.L94,0,.L398-.L94
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryMemHwaBusy')
+	.sect	'.debug_loc'
+.L406:
+	.word	-1,.L100,.L436-.L100,.L404-.L100
+	.half	1
+	.byte	82
+	.word	0,0
+.L99:
+	.word	-1,.L100,0,.L404-.L100
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryMultiJob')
+	.sect	'.debug_loc'
+.L95:
+	.word	-1,.L96,0,.L399-.L96
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryNvBusy')
+	.sect	'.debug_loc'
+.L97:
+	.word	-1,.L98,0,.L400-.L98
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L402:
+	.word	-1,.L98,.L435-.L98,.L30-.L98
+	.half	1
+	.byte	95
+	.word	0,0
+.L403:
+	.word	-1,.L98,.L434-.L98,.L400-.L98
+	.half	1
+	.byte	88
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryPostReadTransform')
+	.sect	'.debug_loc'
+.L125:
+	.word	-1,.L126,0,.L419-.L126
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L420:
+	.word	-1,.L126,.L438-.L126,.L439-.L126
+	.half	1
+	.byte	82
+	.word	.L57-.L126,.L419-.L126
+	.half	1
+	.byte	82
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryPrimaryRedundantBlock')
+	.sect	'.debug_loc'
+.L101:
+	.word	-1,.L102,0,.L407-.L102
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryReadAllKilled')
+	.sect	'.debug_loc'
+.L143:
+	.word	-1,.L144,0,.L376-.L144
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryRedundantCrcMatches')
+	.sect	'.debug_loc'
+.L135:
+	.word	-1,.L136,0,.L424-.L136
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QrySecondaryRedundantBlock')
+	.sect	'.debug_loc'
+.L103:
+	.word	-1,.L104,0,.L408-.L104
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QrySkipBlock')
+	.sect	'.debug_loc'
+.L105:
+	.word	-1,.L106,0,.L409-.L106
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QrySubFsmRunning')
+	.sect	'.debug_loc'
+.L107:
+	.word	-1,.L108,0,.L410-.L108
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QrySyncDecrypt')
+	.sect	'.debug_loc'
+.L127:
+	.word	-1,.L128,0,.L380-.L128
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryTrue')
+	.sect	'.debug_loc'
+.L111:
+	.word	-1,.L112,0,.L412-.L112
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryWriteAllKilled')
+	.sect	'.debug_loc'
+.L77:
+	.word	-1,.L78,0,.L390-.L78
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryWriteBlockOnce')
+	.sect	'.debug_loc'
+.L113:
+	.word	-1,.L114,0,.L413-.L114
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('NvM_QryWriteRetriesExceeded')
+	.sect	'.debug_loc'
+.L115:
+	.word	-1,.L116,0,.L414-.L116
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L719:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryBlockRelevantForWriteAll')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L719,.L74,.L382-.L74
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryCancelWriteAll')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L719,.L76,.L389-.L76
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryWriteAllKilled')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L719,.L78,.L390-.L78
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryIsDataIntegrityJobPending')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L719,.L80,.L391-.L80
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryIsDataIntegrityJobFinishedSuccessful')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L719,.L82,.L392-.L82
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryIsDataIntegrityAlgorithmConfigured')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L719,.L84,.L393-.L84
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryDataCopyBusy')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L719,.L86,.L394-.L86
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryLastBlockDone_ReadAll')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L719,.L88,.L395-.L88
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryLastBlockDone_WriteAll')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L719,.L90,.L396-.L90
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryLastResultOk')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L719,.L92,.L397-.L92
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryMainFsmRunning')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L719,.L94,.L398-.L94
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryMultiJob')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L719,.L96,.L399-.L96
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryNvBusy')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L719,.L98,.L400-.L98
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryMemHwaBusy')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L719,.L100,.L404-.L100
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryPrimaryRedundantBlock')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L719,.L102,.L407-.L102
+	.byte	8,19,8,20,8,21,8,22,8,23,0,0
+	.sdecl	'.debug_frame',debug,cluster('NvM_QrySecondaryRedundantBlock')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L719,.L104,.L408-.L104
+	.byte	8,19,8,20,8,21,8,22,8,23,0,0
+	.sdecl	'.debug_frame',debug,cluster('NvM_QrySkipBlock')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L719,.L106,.L409-.L106
+	.sdecl	'.debug_frame',debug,cluster('NvM_QrySubFsmRunning')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L719,.L108,.L410-.L108
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryFalse')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L719,.L110,.L411-.L110
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryTrue')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L719,.L112,.L412-.L112
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryWriteBlockOnce')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L719,.L114,.L413-.L114
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryWriteRetriesExceeded')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L719,.L116,.L414-.L116
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryCalcRamBlockCrcEnabledAndRamValid')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L719,.L118,.L381-.L118
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryHasRom')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L719,.L120,.L415-.L120
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryExtRuntime')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L719,.L122,.L416-.L122
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryDataIntegrityRecordCompareMechanismSkipWrite')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L719,.L124,.L417-.L124
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryPostReadTransform')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L719,.L126,.L419-.L126
+	.sdecl	'.debug_frame',debug,cluster('NvM_QrySyncDecrypt')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L719,.L128,.L380-.L128
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryCsmRetryNecessary')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L719,.L130,.L421-.L130
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryBlockCheckLossOfRedundancy')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L719,.L132,.L422-.L132
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryFirstRedundantBlockFailed')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L719,.L134,.L423-.L134
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryRedundantCrcMatches')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L719,.L136,.L424-.L136
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryHasExplicitSynchronization')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L719,.L138,.L425-.L138
+	.byte	8,19,8,20,8,21,8,22,8,23,0,0
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryExplicitSyncAttemptNecessary')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L719,.L140,.L426-.L140
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryExplicitSyncAttemptFailed')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L719,.L142,.L427-.L142
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryReadAllKilled')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L719,.L144,.L376-.L144
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('NvM_QryIsInitCallbackConfigured')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L719,.L146,.L377-.L146
+	.byte	8,18,8,19,8,21,8,22,8,23,0,0
+	; Module end

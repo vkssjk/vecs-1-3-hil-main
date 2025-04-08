@@ -1,0 +1,6326 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v6.2r1 Build 17012451 SN 07925145"
+	.compiler_invocation	"ctc -f cc14772a -c99 --integer-enumeration -D__CPU__=userdef162 -D__CPU_USERDEF162__ --core=tc1.6.2 --fp-model=+float -DBRS_PLATFORM_AURIX -DBRS_COMP_TASKING -I../../../../BSW/Components/BswM/Implementation -I../../../../BSW/Components/CanIf/Implementation -I../../../../BSW/Components/CanSM/Implementation -I../../../../BSW/Components/CanTp/Implementation -I../../../../BSW/Components/Can_30_Core/Implementation -I../../../../BSW/Components/Com/Implementation -I../../../../BSW/Components/ComM/Implementation -I../../../../BSW/Components/Crc -I../../../../BSW/Components/Crc/Implementation -I../../../../BSW/Components/Dcm/Implementation -I../../../../BSW/Components/Dem/Implementation -I../../../../BSW/Components/Det/Implementation -I../../../../BSW/Components/EcuM/Implementation -I../../../../BSW/Components/GenData -I../../../../BSW/Components/Mcal_Tc3xx -I../../../../BSW/Components/Mcal_Tc3xx/Implementation -I../../../../BSW/Components/MemIf -I../../../../BSW/Components/MemIf/Implementation -I../../../../BSW/Components/NvM -I../../../../BSW/Components/NvM/Implementation -I../../../../BSW/Components/Os/Implementation -I../../../../BSW/Components/PduR/Implementation -I../../../../BSW/Components/VStdLib/Implementation -I../../../../BSW/Components/vCan_30_Mcan/Implementation -I../../../../BSW/DemoComponents/vLinkGen/Implementation -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Autosar_Srv -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Integration -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Irq/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Infra_Prod/Sfr/TC39xB/_Reg -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Adc/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Dio/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Fee/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Fls_17_Dmu/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/McalLib/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/McalLib/ssc/inc/AS440 -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Mcu/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Port/ssc/inc -I../../../../BSW/Components/_Common/Implementation -IGenData -IInclude -ID:/TASKING/TriCorev6.2r1/ctc/include -IGenData/Components -IGenData/inc --debug-info=default --align=4 --default-a0-size=0 --default-a1-size=0 --default-near-size=0 --optimize=acefgIklMnopRsUvwy,+predict --tradeoff=2 --language=-gcc,+volatile,-strings,-comments -o o\\BSW\\Components\\ComM\\Implementation\\ComM.src ../../../../BSW/Components/ComM/Implementation/ComM.c"
+	.compiler_name		"ctc"
+	;source	'../../../../BSW/Components/ComM/Implementation/ComM.c'
+
+	
+$TC162
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('ComM_PreInit')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	ComM_PreInit
+; Function ComM_PreInit
+.L183:
+	.align	4
+ComM_PreInit:	.type	func
+.L116:
+	call	ComM_Initialization_PreInit
+.L461:
+	mov	d4,#98
+.L573:
+	mov	d5,#0
+	j	ComM_ErrorReporting_ProcessDetErrorReport
+.L339:
+	
+__ComM_PreInit_function_end:
+	.size	ComM_PreInit,__ComM_PreInit_function_end-ComM_PreInit
+.L184:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('ComM_PostInit')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	ComM_PostInit
+; Function ComM_PostInit
+.L189:
+	.align	4
+ComM_PostInit:	.type	func
+.L118:
+	call	ComM_Initialization_PostInit
+.L462:
+	mov	d4,#99
+.L578:
+	mov	d5,d2
+.L463:
+	j	ComM_ErrorReporting_ProcessDetErrorReport
+.L342:
+	
+__ComM_PostInit_function_end:
+	.size	ComM_PostInit,__ComM_PostInit_function_end-ComM_PostInit
+.L190:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('ComM_Init')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	ComM_Init
+; Function ComM_Init
+.L195:
+	.align	4
+ComM_Init:	.type	func
+.L120:
+	call	GetCurrentApplicationID
+.L464:
+	mov	d4,d2
+	call	ComM_GetInternalPartitionIdx
+.L465:
+	mov	d8,d2
+	call	ComM_Initialization_IsPreInitialized
+.L466:
+	jne	d2,#0,.L2
+.L583:
+	mov	d2,#8
+	j	.L3
+.L2:
+	movh.a	a15,#@his(ComM_InitStatus)
+.L584:
+	ld.bu	d15,[a15]@los(ComM_InitStatus)
+.L585:
+	jne	d15,#1,.L4
+.L586:
+	mov	d2,#6
+	j	.L5
+.L4:
+	mov	d4,d8
+	call	ComM_Initialization_Init
+.L5:
+.L3:
+	mov	d4,#1
+.L587:
+	mov	d5,d2
+.L467:
+	j	ComM_ErrorReporting_ProcessDetErrorReport
+.L344:
+	
+__ComM_Init_function_end:
+	.size	ComM_Init,__ComM_Init_function_end-ComM_Init
+.L196:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('ComM_DeInit')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	ComM_DeInit
+; Function ComM_DeInit
+.L207:
+	.align	4
+ComM_DeInit:	.type	func
+.L122:
+	call	ComM_Initialization_IsPostInitialized
+.L596:
+	jne	d2,#0,.L6
+.L597:
+	mov	d2,#16
+	j	.L7
+.L6:
+	call	ComM_Initialization_DeInit
+.L7:
+	mov	d4,#2
+.L598:
+	mov	d5,d2
+.L468:
+	j	ComM_ErrorReporting_ProcessDetErrorReport
+.L349:
+	
+__ComM_DeInit_function_end:
+	.size	ComM_DeInit,__ComM_DeInit_function_end-ComM_DeInit
+.L208:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('ComM_InitMemory')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	ComM_InitMemory
+; Function ComM_InitMemory
+.L201:
+	.align	4
+ComM_InitMemory:	.type	func
+.L124:
+	j	ComM_Initialization_InitMemory
+.L348:
+	
+__ComM_InitMemory_function_end:
+	.size	ComM_InitMemory,__ComM_InitMemory_function_end-ComM_InitMemory
+.L202:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('ComM_GetStatus')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	ComM_GetStatus
+; Function ComM_GetStatus
+.L213:
+	.align	4
+ComM_GetStatus:	.type	func
+.L126:
+	mov	d15,#1
+.L470:
+	mov	d8,#0
+	jnz.a	a4,.L8
+.L471:
+	mov	d8,#2
+	j	.L9
+.L8:
+	call	ComM_Initialization_GetStatus
+.L469:
+	mov	d15,d2
+.L9:
+	mov	d4,#3
+.L603:
+	mov	d5,d8
+	call	ComM_ErrorReporting_ProcessDetErrorReport
+.L604:
+	mov	d2,d15
+	ret
+.L351:
+	
+__ComM_GetStatus_function_end:
+	.size	ComM_GetStatus,__ComM_GetStatus_function_end-ComM_GetStatus
+.L214:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('ComM_CommunicationAllowed')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	ComM_CommunicationAllowed
+; Function ComM_CommunicationAllowed
+.L327:
+	.align	4
+ComM_CommunicationAllowed:	.type	func
+.L128:
+	mov	d15,d4
+.L473:
+	mov	d8,d5
+.L474:
+	mov	d9,#0
+	call	ComM_Initialization_IsPostInitialized
+.L472:
+	jne	d2,#0,.L11
+.L769:
+	mov	d9,#16
+	j	.L12
+.L11:
+	jne	d15,#0,.L13
+.L449:
+	movh.a	a15,#@his(ComM_ComAllowed)
+.L770:
+	st.b	[a15]@los(ComM_ComAllowed),d8
+.L450:
+	j	.L14
+.L13:
+	mov	d9,#2
+.L14:
+.L12:
+	mov	d4,#53
+.L771:
+	mov	d5,d9
+.L475:
+	j	ComM_ErrorReporting_ProcessDetErrorReport
+.L444:
+	
+__ComM_CommunicationAllowed_function_end:
+	.size	ComM_CommunicationAllowed,__ComM_CommunicationAllowed_function_end-ComM_CommunicationAllowed
+.L328:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('ComM_GetState')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	ComM_GetState
+; Function ComM_GetState
+.L219:
+	.align	4
+ComM_GetState:	.type	func
+.L130:
+	mov	d15,d4
+	mov.aa	a15,a4
+.L477:
+	mov	d8,#1
+.L478:
+	mov	d9,#0
+	call	ComM_Initialization_IsPostInitialized
+.L476:
+	jne	d2,#0,.L15
+.L609:
+	mov	d9,#16
+.L610:
+	mov	d8,#5
+	j	.L16
+.L15:
+	jne	d15,#0,.L17
+.L611:
+	jnz.a	a15,.L18
+.L17:
+	mov	d9,#2
+	j	.L19
+.L18:
+	mov	d4,#0
+	mov.aa	a4,a15
+.L479:
+	call	ComM_Channel_GetState
+.L480:
+	mov	d8,#0
+.L19:
+.L16:
+	mov	d4,#57
+.L612:
+	mov	d5,d9
+	call	ComM_ErrorReporting_ProcessDetErrorReport
+.L613:
+	mov	d2,d8
+	ret
+.L356:
+	
+__ComM_GetState_function_end:
+	.size	ComM_GetState,__ComM_GetState_function_end-ComM_GetState
+.L220:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('ComM_GetMinFullComModeTimerStatus')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	ComM_GetMinFullComModeTimerStatus
+; Function ComM_GetMinFullComModeTimerStatus
+.L291:
+	.align	4
+ComM_GetMinFullComModeTimerStatus:	.type	func
+.L132:
+	mov	d15,d4
+	mov.aa	a15,a4
+.L482:
+	mov	d8,#1
+.L483:
+	mov	d9,#0
+	call	ComM_Initialization_IsPostInitialized
+.L481:
+	jne	d2,#0,.L21
+.L721:
+	mov	d9,#16
+.L722:
+	mov	d8,#5
+	j	.L22
+.L21:
+	jne	d15,#0,.L23
+.L723:
+	jnz.a	a15,.L24
+.L23:
+	mov	d9,#2
+	j	.L25
+.L24:
+	mov	d4,#0
+	mov.aa	a4,a15
+.L484:
+	call	ComM_Channel_GetMinFullComModeTimerStatus
+.L485:
+	mov	d8,#0
+.L25:
+.L22:
+	mov	d4,#56
+.L724:
+	mov	d5,d9
+	call	ComM_ErrorReporting_ProcessDetErrorReport
+.L725:
+	mov	d2,d8
+	ret
+.L420:
+	
+__ComM_GetMinFullComModeTimerStatus_function_end:
+	.size	ComM_GetMinFullComModeTimerStatus,__ComM_GetMinFullComModeTimerStatus_function_end-ComM_GetMinFullComModeTimerStatus
+.L292:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('ComM_GetInhibitionStatus')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	ComM_GetInhibitionStatus
+; Function ComM_GetInhibitionStatus
+.L249:
+	.align	4
+ComM_GetInhibitionStatus:	.type	func
+.L134:
+	mov	d15,d4
+	mov.aa	a15,a4
+.L487:
+	mov	d8,#1
+.L488:
+	mov	d9,#0
+	call	ComM_Initialization_IsPostInitialized
+.L486:
+	jne	d2,#0,.L27
+.L656:
+	mov	d9,#16
+.L657:
+	mov	d8,#5
+	j	.L28
+.L27:
+	jne	d15,#0,.L29
+.L658:
+	jnz.a	a15,.L30
+.L29:
+	mov	d9,#2
+	j	.L31
+.L30:
+	mov	d4,#0
+	mov.aa	a4,a15
+.L489:
+	call	ComM_ModeInhibition_GetInhibitionStatus
+.L490:
+	mov	d8,#0
+.L31:
+.L28:
+	mov	d4,#4
+.L659:
+	mov	d5,d9
+	call	ComM_ErrorReporting_ProcessDetErrorReport
+.L660:
+	mov	d2,d8
+	ret
+.L388:
+	
+__ComM_GetInhibitionStatus_function_end:
+	.size	ComM_GetInhibitionStatus,__ComM_GetInhibitionStatus_function_end-ComM_GetInhibitionStatus
+.L250:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('ComM_PreventWakeUp')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	ComM_PreventWakeUp
+; Function ComM_PreventWakeUp
+.L255:
+	.align	4
+ComM_PreventWakeUp:	.type	func
+.L136:
+	mov	d15,d4
+.L492:
+	mov	d8,d5
+.L493:
+	mov	d9,#1
+.L494:
+	mov	d10,#0
+	call	ComM_Initialization_IsPostInitialized
+.L491:
+	jne	d2,#0,.L33
+.L665:
+	mov	d10,#16
+.L666:
+	mov	d9,#5
+	j	.L34
+.L33:
+	jne	d15,#0,.L35
+.L667:
+	mov	d4,#0
+.L668:
+	mov	d5,d8
+	call	ComM_ModeInhibition_PreventWakeUp
+.L495:
+	mov	d9,d2
+	j	.L36
+.L35:
+	mov	d10,#2
+.L36:
+.L34:
+	mov	d4,#9
+.L669:
+	mov	d5,d10
+	call	ComM_ErrorReporting_ProcessDetErrorReport
+.L670:
+	mov	d2,d9
+	ret
+.L394:
+	
+__ComM_PreventWakeUp_function_end:
+	.size	ComM_PreventWakeUp,__ComM_PreventWakeUp_function_end-ComM_PreventWakeUp
+.L256:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('ComM_LimitChannelToNoComMode')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	ComM_LimitChannelToNoComMode
+; Function ComM_LimitChannelToNoComMode
+.L261:
+	.align	4
+ComM_LimitChannelToNoComMode:	.type	func
+.L138:
+	mov	d15,d4
+.L497:
+	mov	d8,d5
+.L498:
+	mov	d9,#1
+.L499:
+	mov	d10,#0
+	call	ComM_Initialization_IsPostInitialized
+.L496:
+	jne	d2,#0,.L38
+.L675:
+	mov	d10,#16
+.L676:
+	mov	d9,#5
+	j	.L39
+.L38:
+	jne	d15,#0,.L40
+.L677:
+	mov	d4,#0
+.L678:
+	mov	d5,d8
+	call	ComM_ModeInhibition_LimitChannelToNoComMode
+.L500:
+	mov	d9,d2
+	j	.L41
+.L40:
+	mov	d10,#2
+.L41:
+.L39:
+	mov	d4,#11
+.L679:
+	mov	d5,d10
+	call	ComM_ErrorReporting_ProcessDetErrorReport
+.L680:
+	mov	d2,d9
+	ret
+.L399:
+	
+__ComM_LimitChannelToNoComMode_function_end:
+	.size	ComM_LimitChannelToNoComMode,__ComM_LimitChannelToNoComMode_function_end-ComM_LimitChannelToNoComMode
+.L262:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('ComM_LimitECUToNoComMode')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	ComM_LimitECUToNoComMode
+; Function ComM_LimitECUToNoComMode
+.L267:
+	.align	4
+ComM_LimitECUToNoComMode:	.type	func
+.L140:
+	mov	d8,d4
+.L502:
+	mov	d15,#0
+	call	ComM_Initialization_IsPostInitialized
+.L501:
+	jne	d2,#0,.L43
+.L685:
+	mov	d15,#16
+.L686:
+	mov	d8,#5
+	j	.L44
+.L43:
+	mov	d4,d8
+	call	ComM_ModeInhibition_LimitECUToNoComMode
+.L503:
+	mov	d8,d2
+.L44:
+	mov	d4,#12
+.L687:
+	mov	d5,d15
+	call	ComM_ErrorReporting_ProcessDetErrorReport
+.L688:
+	mov	d2,d8
+	ret
+.L404:
+	
+__ComM_LimitECUToNoComMode_function_end:
+	.size	ComM_LimitECUToNoComMode,__ComM_LimitECUToNoComMode_function_end-ComM_LimitECUToNoComMode
+.L268:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('ComM_ReadInhibitCounter')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	ComM_ReadInhibitCounter
+; Function ComM_ReadInhibitCounter
+.L273:
+	.align	4
+ComM_ReadInhibitCounter:	.type	func
+.L142:
+	mov	d8,#1
+	mov.aa	a15,a4
+.L505:
+	mov	d15,#0
+	call	ComM_Initialization_IsPostInitialized
+.L504:
+	jne	d2,#0,.L46
+.L693:
+	mov	d15,#16
+.L694:
+	mov	d8,#5
+	j	.L47
+.L46:
+	jnz.a	a15,.L48
+.L695:
+	mov	d15,#2
+	j	.L49
+.L48:
+	mov.aa	a4,a15
+.L506:
+	call	ComM_ModeInhibition_ReadInhibitCounter
+.L507:
+	mov	d8,#0
+.L49:
+.L47:
+	mov	d4,#13
+.L696:
+	mov	d5,d15
+	call	ComM_ErrorReporting_ProcessDetErrorReport
+.L697:
+	mov	d2,d8
+	ret
+.L408:
+	
+__ComM_ReadInhibitCounter_function_end:
+	.size	ComM_ReadInhibitCounter,__ComM_ReadInhibitCounter_function_end-ComM_ReadInhibitCounter
+.L274:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('ComM_ResetInhibitCounter')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	ComM_ResetInhibitCounter
+; Function ComM_ResetInhibitCounter
+.L279:
+	.align	4
+ComM_ResetInhibitCounter:	.type	func
+.L144:
+	mov	d15,#0
+	call	ComM_Initialization_IsPostInitialized
+.L508:
+	jne	d2,#0,.L51
+.L702:
+	mov	d15,#16
+.L703:
+	mov	d8,#5
+	j	.L52
+.L51:
+	call	ComM_ModeInhibition_ResetInhibitCounter
+.L704:
+	mov	d8,#0
+.L52:
+	mov	d4,#14
+.L705:
+	mov	d5,d15
+	call	ComM_ErrorReporting_ProcessDetErrorReport
+.L706:
+	mov	d2,d8
+	ret
+.L413:
+	
+__ComM_ResetInhibitCounter_function_end:
+	.size	ComM_ResetInhibitCounter,__ComM_ResetInhibitCounter_function_end-ComM_ResetInhibitCounter
+.L280:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('ComM_SetECUGroupClassification')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	ComM_SetECUGroupClassification
+; Function ComM_SetECUGroupClassification
+.L285:
+	.align	4
+ComM_SetECUGroupClassification:	.type	func
+.L146:
+	mov	d8,d4
+.L510:
+	mov	d9,#1
+.L511:
+	mov	d15,#0
+	call	ComM_Initialization_IsPostInitialized
+.L509:
+	jne	d2,#0,.L54
+.L711:
+	mov	d15,#16
+.L712:
+	mov	d9,#5
+	j	.L55
+.L54:
+	jlt.u	d8,#4,.L56
+.L713:
+	mov	d15,#2
+	j	.L57
+.L56:
+	mov	d4,d8
+	call	ComM_ModeInhibition_SetECUGroupClassification
+.L714:
+	mov	d9,#0
+.L57:
+.L55:
+	mov	d4,#15
+.L715:
+	mov	d5,d15
+	call	ComM_ErrorReporting_ProcessDetErrorReport
+.L716:
+	mov	d2,d9
+	ret
+.L416:
+	
+__ComM_SetECUGroupClassification_function_end:
+	.size	ComM_SetECUGroupClassification,__ComM_SetECUGroupClassification_function_end-ComM_SetECUGroupClassification
+.L286:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('ComM_RequestComMode')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	ComM_RequestComMode
+; Function ComM_RequestComMode
+.L225:
+	.align	4
+ComM_RequestComMode:	.type	func
+.L148:
+	mov	d15,d5
+.L513:
+	mov	d8,#1
+.L514:
+	mov	d9,#0
+.L516:
+	extr.u	d10,d4,#0,#8
+	call	ComM_Initialization_IsPostInitialized
+.L512:
+	jne	d2,#0,.L59
+.L618:
+	mov	d9,#16
+.L619:
+	mov	d8,#5
+	j	.L60
+.L59:
+	jne	d10,#0,.L61
+.L620:
+	jeq	d15,#0,.L62
+.L621:
+	jeq	d15,#2,.L63
+.L61:
+	mov	d9,#2
+	j	.L64
+.L63:
+.L62:
+	mov	d4,#0
+.L622:
+	mov	d6,d4
+	mov	d5,d15
+	call	ComM_User_RequestComMode
+.L515:
+	mov	d8,d2
+.L64:
+.L60:
+	mov	d4,#5
+.L623:
+	mov	d5,d9
+	call	ComM_ErrorReporting_ProcessDetErrorReport
+.L624:
+	mov	d2,d8
+	ret
+.L362:
+	
+__ComM_RequestComMode_function_end:
+	.size	ComM_RequestComMode,__ComM_RequestComMode_function_end-ComM_RequestComMode
+.L226:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('ComM_GetMaxComMode')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	ComM_GetMaxComMode
+; Function ComM_GetMaxComMode
+.L231:
+	.align	4
+ComM_GetMaxComMode:	.type	func
+.L150:
+	mov	d15,d4
+	mov.aa	a15,a4
+.L518:
+	mov	d8,#1
+.L519:
+	mov	d9,#0
+.L520:
+	extr.u	d10,d15,#0,#8
+	call	ComM_Initialization_IsPostInitialized
+.L517:
+	jne	d2,#0,.L66
+.L629:
+	mov	d9,#16
+.L630:
+	mov	d8,#5
+	j	.L67
+.L66:
+	jne	d15,#0,.L68
+.L631:
+	jnz.a	a15,.L69
+.L68:
+	mov	d9,#2
+	j	.L70
+.L69:
+	mov	d4,d10
+	mov.aa	a4,a15
+.L521:
+	call	ComM_User_GetMaxComMode
+.L522:
+	mov	d8,#0
+.L70:
+.L67:
+	mov	d4,#6
+.L632:
+	mov	d5,d9
+	call	ComM_ErrorReporting_ProcessDetErrorReport
+.L633:
+	mov	d2,d8
+	ret
+.L369:
+	
+__ComM_GetMaxComMode_function_end:
+	.size	ComM_GetMaxComMode,__ComM_GetMaxComMode_function_end-ComM_GetMaxComMode
+.L232:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('ComM_GetRequestedComMode')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	ComM_GetRequestedComMode
+; Function ComM_GetRequestedComMode
+.L237:
+	.align	4
+ComM_GetRequestedComMode:	.type	func
+.L152:
+	mov	d8,#1
+	mov.aa	a15,a4
+.L524:
+	mov	d15,#0
+.L525:
+	extr.u	d9,d4,#0,#8
+	call	ComM_Initialization_IsPostInitialized
+.L523:
+	jne	d2,#0,.L72
+.L638:
+	mov	d15,#16
+.L639:
+	mov	d8,#5
+	j	.L73
+.L72:
+	jne	d9,#0,.L74
+.L640:
+	jnz.a	a15,.L75
+.L74:
+	mov	d15,#2
+	j	.L76
+.L75:
+	mov	d4,#0
+	mov.aa	a4,a15
+.L526:
+	mov	d5,d4
+	call	ComM_User_GetRequestedComMode
+.L527:
+	mov	d8,#0
+.L76:
+.L73:
+	mov	d4,#7
+.L641:
+	mov	d5,d15
+	call	ComM_ErrorReporting_ProcessDetErrorReport
+.L642:
+	mov	d2,d8
+	ret
+.L376:
+	
+__ComM_GetRequestedComMode_function_end:
+	.size	ComM_GetRequestedComMode,__ComM_GetRequestedComMode_function_end-ComM_GetRequestedComMode
+.L238:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('ComM_GetCurrentComMode')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	ComM_GetCurrentComMode
+; Function ComM_GetCurrentComMode
+.L243:
+	.align	4
+ComM_GetCurrentComMode:	.type	func
+.L154:
+	mov	d8,#1
+	mov.aa	a15,a4
+.L529:
+	mov	d15,#0
+.L531:
+	extr.u	d9,d4,#0,#8
+	call	ComM_Initialization_IsPostInitialized
+.L528:
+	jne	d2,#0,.L78
+.L647:
+	mov	d15,#16
+.L648:
+	mov	d8,#5
+	j	.L79
+.L78:
+	jne	d9,#0,.L80
+.L649:
+	jnz.a	a15,.L81
+.L80:
+	mov	d15,#2
+	j	.L82
+.L81:
+	mov	d4,#0
+	mov.aa	a4,a15
+.L532:
+	call	ComM_User_GetCurrentComMode
+.L530:
+	mov	d8,d2
+.L82:
+.L79:
+	mov	d4,#8
+.L650:
+	mov	d5,d15
+	call	ComM_ErrorReporting_ProcessDetErrorReport
+.L651:
+	mov	d2,d8
+	ret
+.L382:
+	
+__ComM_GetCurrentComMode_function_end:
+	.size	ComM_GetCurrentComMode,__ComM_GetCurrentComMode_function_end-ComM_GetCurrentComMode
+.L244:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('ComM_MainFunction')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	ComM_MainFunction
+; Function ComM_MainFunction
+.L177:
+	.align	4
+ComM_MainFunction:	.type	func
+.L156:
+	mov	d15,d4
+.L534:
+	mov	d8,#0
+	call	ComM_Initialization_IsPostInitialized
+.L533:
+	jeq	d2,#0,.L84
+.L566:
+	jeq	d15,#0,.L85
+.L567:
+	mov	d8,#2
+	j	.L86
+.L85:
+	mov	d4,#0
+	call	ComM_MainFunction_ProcessCycle
+.L86:
+.L84:
+	mov	d4,#96
+.L568:
+	mov	d5,d8
+.L535:
+	j	ComM_ErrorReporting_ProcessDetErrorReport
+.L335:
+	
+__ComM_MainFunction_function_end:
+	.size	ComM_MainFunction,__ComM_MainFunction_function_end-ComM_MainFunction
+.L178:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('ComM_BusSM_ModeIndication')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	ComM_BusSM_ModeIndication
+; Function ComM_BusSM_ModeIndication
+.L297:
+	.align	4
+ComM_BusSM_ModeIndication:	.type	func
+.L158:
+	mov	d15,d4
+	mov.aa	a15,a4
+.L537:
+	mov	d8,#0
+	call	ComM_Initialization_IsPostInitialized
+.L536:
+	jne	d2,#0,.L87
+.L730:
+	mov	d8,#16
+	j	.L88
+.L87:
+	jne	d15,#0,.L89
+.L731:
+	jz.a	a15,.L90
+.L732:
+	ld.bu	d15,[a15]
+.L538:
+	jlt.u	d15,#3,.L91
+.L90:
+.L89:
+	mov	d8,#2
+	j	.L92
+.L91:
+	mov	d4,#0
+	mov.aa	a4,a15
+.L539:
+	call	ComM_BusSM_ProcessModeIndication
+.L92:
+.L88:
+	mov	d4,#51
+.L733:
+	mov	d5,d8
+.L540:
+	j	ComM_ErrorReporting_ProcessDetErrorReport
+.L426:
+	
+__ComM_BusSM_ModeIndication_function_end:
+	.size	ComM_BusSM_ModeIndication,__ComM_BusSM_ModeIndication_function_end-ComM_BusSM_ModeIndication
+.L298:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('ComM_BusSM_BusSleepMode')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	ComM_BusSM_BusSleepMode
+; Function ComM_BusSM_BusSleepMode
+.L303:
+	.align	4
+ComM_BusSM_BusSleepMode:	.type	func
+.L160:
+	mov	d15,d4
+.L542:
+	mov	d8,#0
+	call	ComM_Initialization_IsPostInitialized
+.L541:
+	jne	d2,#0,.L93
+.L738:
+	mov	d8,#16
+	j	.L94
+.L93:
+	jne	d15,#0,.L95
+.L739:
+	mov	d4,#0
+	call	ComM_BusSM_ProcessBusSleepMode
+.L740:
+	j	.L96
+.L95:
+	mov	d8,#2
+.L96:
+.L94:
+	mov	d4,#52
+.L741:
+	mov	d5,d8
+.L543:
+	j	ComM_ErrorReporting_ProcessDetErrorReport
+.L430:
+	
+__ComM_BusSM_BusSleepMode_function_end:
+	.size	ComM_BusSM_BusSleepMode,__ComM_BusSM_BusSleepMode_function_end-ComM_BusSM_BusSleepMode
+.L304:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('ComM_DCM_ActiveDiagnostic')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	ComM_DCM_ActiveDiagnostic
+; Function ComM_DCM_ActiveDiagnostic
+.L309:
+	.align	4
+ComM_DCM_ActiveDiagnostic:	.type	func
+.L162:
+	mov	d15,d4
+	call	ComM_Initialization_IsPostInitialized
+.L544:
+	jne	d2,#0,.L97
+.L746:
+	mov	d2,#16
+	j	.L98
+.L97:
+	jne	d15,#0,.L99
+.L747:
+	mov	d4,#0
+	call	ComM_DCM_ProcessActiveDiagnostic
+.L545:
+	j	.L100
+.L99:
+	mov	d2,#2
+.L100:
+.L98:
+	mov	d4,#31
+.L748:
+	mov	d5,d2
+.L546:
+	j	ComM_ErrorReporting_ProcessDetErrorReport
+.L433:
+	
+__ComM_DCM_ActiveDiagnostic_function_end:
+	.size	ComM_DCM_ActiveDiagnostic,__ComM_DCM_ActiveDiagnostic_function_end-ComM_DCM_ActiveDiagnostic
+.L310:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('ComM_DCM_InactiveDiagnostic')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	ComM_DCM_InactiveDiagnostic
+; Function ComM_DCM_InactiveDiagnostic
+.L315:
+	.align	4
+ComM_DCM_InactiveDiagnostic:	.type	func
+.L164:
+	mov	d15,d4
+	call	ComM_Initialization_IsPostInitialized
+.L547:
+	jne	d2,#0,.L101
+.L753:
+	mov	d2,#16
+	j	.L102
+.L101:
+	jne	d15,#0,.L103
+.L754:
+	mov	d4,#0
+	call	ComM_DCM_ProcessInactiveDiagnostic
+.L548:
+	j	.L104
+.L103:
+	mov	d2,#2
+.L104:
+.L102:
+	mov	d4,#32
+.L755:
+	mov	d5,d2
+.L549:
+	j	ComM_ErrorReporting_ProcessDetErrorReport
+.L436:
+	
+__ComM_DCM_InactiveDiagnostic_function_end:
+	.size	ComM_DCM_InactiveDiagnostic,__ComM_DCM_InactiveDiagnostic_function_end-ComM_DCM_InactiveDiagnostic
+.L316:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('ComM_GetDcmRequestStatus')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	ComM_GetDcmRequestStatus
+; Function ComM_GetDcmRequestStatus
+.L321:
+	.align	4
+ComM_GetDcmRequestStatus:	.type	func
+.L166:
+	mov	d15,d4
+	mov.aa	a15,a4
+.L551:
+	mov	d8,#1
+.L552:
+	mov	d9,#0
+	call	ComM_Initialization_IsPostInitialized
+.L550:
+	jne	d2,#0,.L105
+.L760:
+	mov	d9,#16
+.L761:
+	mov	d8,#5
+	j	.L106
+.L105:
+	jne	d15,#0,.L107
+.L762:
+	jnz.a	a15,.L108
+.L107:
+	mov	d9,#2
+	j	.L109
+.L108:
+	mov	d4,#0
+	mov.aa	a4,a15
+.L553:
+	call	ComM_DCM_GetActiveRequestStatus
+.L554:
+	mov	d8,#0
+.L109:
+.L106:
+	mov	d4,#55
+.L763:
+	mov	d5,d9
+	call	ComM_ErrorReporting_ProcessDetErrorReport
+.L764:
+	mov	d2,d8
+	ret
+.L439:
+	
+__ComM_GetDcmRequestStatus_function_end:
+	.size	ComM_GetDcmRequestStatus,__ComM_GetDcmRequestStatus_function_end-ComM_GetDcmRequestStatus
+.L322:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('ComM_EcuM_WakeUpIndication')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	ComM_EcuM_WakeUpIndication
+; Function ComM_EcuM_WakeUpIndication
+.L333:
+	.align	4
+ComM_EcuM_WakeUpIndication:	.type	func
+.L168:
+	mov	d15,d4
+.L556:
+	mov	d8,#0
+	call	ComM_Initialization_IsPostInitialized
+.L555:
+	jne	d2,#0,.L111
+.L776:
+	mov	d8,#16
+	j	.L112
+.L111:
+	jne	d15,#0,.L113
+.L777:
+	mov	d4,#0
+	call	ComM_EcuM_ProcessWakeUpIndication
+.L778:
+	j	.L114
+.L113:
+	mov	d8,#2
+.L114:
+.L112:
+	mov	d4,#42
+.L779:
+	mov	d5,d8
+.L557:
+	j	ComM_ErrorReporting_ProcessDetErrorReport
+.L458:
+	
+__ComM_EcuM_WakeUpIndication_function_end:
+	.size	ComM_EcuM_WakeUpIndication,__ComM_EcuM_WakeUpIndication_function_end-ComM_EcuM_WakeUpIndication
+.L334:
+	; End of function
+	
+	.calls	'ComM_PreInit','ComM_Initialization_PreInit'
+	.calls	'ComM_PreInit','ComM_ErrorReporting_ProcessDetErrorReport'
+	.calls	'ComM_PostInit','ComM_Initialization_PostInit'
+	.calls	'ComM_PostInit','ComM_ErrorReporting_ProcessDetErrorReport'
+	.calls	'ComM_Init','GetCurrentApplicationID'
+	.calls	'ComM_Init','ComM_GetInternalPartitionIdx'
+	.calls	'ComM_Init','ComM_Initialization_IsPreInitialized'
+	.calls	'ComM_Init','ComM_Initialization_Init'
+	.calls	'ComM_Init','ComM_ErrorReporting_ProcessDetErrorReport'
+	.calls	'ComM_DeInit','ComM_Initialization_IsPostInitialized'
+	.calls	'ComM_DeInit','ComM_Initialization_DeInit'
+	.calls	'ComM_DeInit','ComM_ErrorReporting_ProcessDetErrorReport'
+	.calls	'ComM_InitMemory','ComM_Initialization_InitMemory'
+	.calls	'ComM_GetStatus','ComM_Initialization_GetStatus'
+	.calls	'ComM_GetStatus','ComM_ErrorReporting_ProcessDetErrorReport'
+	.calls	'ComM_CommunicationAllowed','ComM_Initialization_IsPostInitialized'
+	.calls	'ComM_CommunicationAllowed','ComM_ErrorReporting_ProcessDetErrorReport'
+	.calls	'ComM_GetState','ComM_Initialization_IsPostInitialized'
+	.calls	'ComM_GetState','ComM_Channel_GetState'
+	.calls	'ComM_GetState','ComM_ErrorReporting_ProcessDetErrorReport'
+	.calls	'ComM_GetMinFullComModeTimerStatus','ComM_Initialization_IsPostInitialized'
+	.calls	'ComM_GetMinFullComModeTimerStatus','ComM_Channel_GetMinFullComModeTimerStatus'
+	.calls	'ComM_GetMinFullComModeTimerStatus','ComM_ErrorReporting_ProcessDetErrorReport'
+	.calls	'ComM_GetInhibitionStatus','ComM_Initialization_IsPostInitialized'
+	.calls	'ComM_GetInhibitionStatus','ComM_ModeInhibition_GetInhibitionStatus'
+	.calls	'ComM_GetInhibitionStatus','ComM_ErrorReporting_ProcessDetErrorReport'
+	.calls	'ComM_PreventWakeUp','ComM_Initialization_IsPostInitialized'
+	.calls	'ComM_PreventWakeUp','ComM_ModeInhibition_PreventWakeUp'
+	.calls	'ComM_PreventWakeUp','ComM_ErrorReporting_ProcessDetErrorReport'
+	.calls	'ComM_LimitChannelToNoComMode','ComM_Initialization_IsPostInitialized'
+	.calls	'ComM_LimitChannelToNoComMode','ComM_ModeInhibition_LimitChannelToNoComMode'
+	.calls	'ComM_LimitChannelToNoComMode','ComM_ErrorReporting_ProcessDetErrorReport'
+	.calls	'ComM_LimitECUToNoComMode','ComM_Initialization_IsPostInitialized'
+	.calls	'ComM_LimitECUToNoComMode','ComM_ModeInhibition_LimitECUToNoComMode'
+	.calls	'ComM_LimitECUToNoComMode','ComM_ErrorReporting_ProcessDetErrorReport'
+	.calls	'ComM_ReadInhibitCounter','ComM_Initialization_IsPostInitialized'
+	.calls	'ComM_ReadInhibitCounter','ComM_ModeInhibition_ReadInhibitCounter'
+	.calls	'ComM_ReadInhibitCounter','ComM_ErrorReporting_ProcessDetErrorReport'
+	.calls	'ComM_ResetInhibitCounter','ComM_Initialization_IsPostInitialized'
+	.calls	'ComM_ResetInhibitCounter','ComM_ModeInhibition_ResetInhibitCounter'
+	.calls	'ComM_ResetInhibitCounter','ComM_ErrorReporting_ProcessDetErrorReport'
+	.calls	'ComM_SetECUGroupClassification','ComM_Initialization_IsPostInitialized'
+	.calls	'ComM_SetECUGroupClassification','ComM_ModeInhibition_SetECUGroupClassification'
+	.calls	'ComM_SetECUGroupClassification','ComM_ErrorReporting_ProcessDetErrorReport'
+	.calls	'ComM_RequestComMode','ComM_Initialization_IsPostInitialized'
+	.calls	'ComM_RequestComMode','ComM_User_RequestComMode'
+	.calls	'ComM_RequestComMode','ComM_ErrorReporting_ProcessDetErrorReport'
+	.calls	'ComM_GetMaxComMode','ComM_Initialization_IsPostInitialized'
+	.calls	'ComM_GetMaxComMode','ComM_User_GetMaxComMode'
+	.calls	'ComM_GetMaxComMode','ComM_ErrorReporting_ProcessDetErrorReport'
+	.calls	'ComM_GetRequestedComMode','ComM_Initialization_IsPostInitialized'
+	.calls	'ComM_GetRequestedComMode','ComM_User_GetRequestedComMode'
+	.calls	'ComM_GetRequestedComMode','ComM_ErrorReporting_ProcessDetErrorReport'
+	.calls	'ComM_GetCurrentComMode','ComM_Initialization_IsPostInitialized'
+	.calls	'ComM_GetCurrentComMode','ComM_User_GetCurrentComMode'
+	.calls	'ComM_GetCurrentComMode','ComM_ErrorReporting_ProcessDetErrorReport'
+	.calls	'ComM_MainFunction','ComM_Initialization_IsPostInitialized'
+	.calls	'ComM_MainFunction','ComM_MainFunction_ProcessCycle'
+	.calls	'ComM_MainFunction','ComM_ErrorReporting_ProcessDetErrorReport'
+	.calls	'ComM_BusSM_ModeIndication','ComM_Initialization_IsPostInitialized'
+	.calls	'ComM_BusSM_ModeIndication','ComM_BusSM_ProcessModeIndication'
+	.calls	'ComM_BusSM_ModeIndication','ComM_ErrorReporting_ProcessDetErrorReport'
+	.calls	'ComM_BusSM_BusSleepMode','ComM_Initialization_IsPostInitialized'
+	.calls	'ComM_BusSM_BusSleepMode','ComM_BusSM_ProcessBusSleepMode'
+	.calls	'ComM_BusSM_BusSleepMode','ComM_ErrorReporting_ProcessDetErrorReport'
+	.calls	'ComM_DCM_ActiveDiagnostic','ComM_Initialization_IsPostInitialized'
+	.calls	'ComM_DCM_ActiveDiagnostic','ComM_DCM_ProcessActiveDiagnostic'
+	.calls	'ComM_DCM_ActiveDiagnostic','ComM_ErrorReporting_ProcessDetErrorReport'
+	.calls	'ComM_DCM_InactiveDiagnostic','ComM_Initialization_IsPostInitialized'
+	.calls	'ComM_DCM_InactiveDiagnostic','ComM_DCM_ProcessInactiveDiagnostic'
+	.calls	'ComM_DCM_InactiveDiagnostic','ComM_ErrorReporting_ProcessDetErrorReport'
+	.calls	'ComM_GetDcmRequestStatus','ComM_Initialization_IsPostInitialized'
+	.calls	'ComM_GetDcmRequestStatus','ComM_DCM_GetActiveRequestStatus'
+	.calls	'ComM_GetDcmRequestStatus','ComM_ErrorReporting_ProcessDetErrorReport'
+	.calls	'ComM_EcuM_WakeUpIndication','ComM_Initialization_IsPostInitialized'
+	.calls	'ComM_EcuM_WakeUpIndication','ComM_EcuM_ProcessWakeUpIndication'
+	.calls	'ComM_EcuM_WakeUpIndication','ComM_ErrorReporting_ProcessDetErrorReport'
+	.calls	'ComM_PreInit','',0
+	.calls	'ComM_PostInit','',0
+	.calls	'ComM_Init','',0
+	.calls	'ComM_DeInit','',0
+	.calls	'ComM_InitMemory','',0
+	.calls	'ComM_GetStatus','',0
+	.calls	'ComM_CommunicationAllowed','',0
+	.calls	'ComM_GetState','',0
+	.calls	'ComM_GetMinFullComModeTimerStatus','',0
+	.calls	'ComM_GetInhibitionStatus','',0
+	.calls	'ComM_PreventWakeUp','',0
+	.calls	'ComM_LimitChannelToNoComMode','',0
+	.calls	'ComM_LimitECUToNoComMode','',0
+	.calls	'ComM_ReadInhibitCounter','',0
+	.calls	'ComM_ResetInhibitCounter','',0
+	.calls	'ComM_SetECUGroupClassification','',0
+	.calls	'ComM_RequestComMode','',0
+	.calls	'ComM_GetMaxComMode','',0
+	.calls	'ComM_GetRequestedComMode','',0
+	.calls	'ComM_GetCurrentComMode','',0
+	.calls	'ComM_MainFunction','',0
+	.calls	'ComM_BusSM_ModeIndication','',0
+	.calls	'ComM_BusSM_BusSleepMode','',0
+	.calls	'ComM_DCM_ActiveDiagnostic','',0
+	.calls	'ComM_DCM_InactiveDiagnostic','',0
+	.calls	'ComM_GetDcmRequestStatus','',0
+	.extern	GetCurrentApplicationID
+	.extern	ComM_ComAllowed
+	.extern	ComM_InitStatus
+	.extern	ComM_BusSM_ProcessModeIndication
+	.extern	ComM_BusSM_ProcessBusSleepMode
+	.extern	ComM_DCM_ProcessActiveDiagnostic
+	.extern	ComM_DCM_ProcessInactiveDiagnostic
+	.extern	ComM_DCM_GetActiveRequestStatus
+	.extern	ComM_EcuM_ProcessWakeUpIndication
+	.extern	ComM_Channel_GetMinFullComModeTimerStatus
+	.extern	ComM_Channel_GetState
+	.extern	ComM_ErrorReporting_ProcessDetErrorReport
+	.extern	ComM_Initialization_InitMemory
+	.extern	ComM_Initialization_PreInit
+	.extern	ComM_Initialization_Init
+	.extern	ComM_Initialization_PostInit
+	.extern	ComM_Initialization_DeInit
+	.extern	ComM_Initialization_GetStatus
+	.extern	ComM_Initialization_IsPostInitialized
+	.extern	ComM_Initialization_IsPreInitialized
+	.extern	ComM_ModeInhibition_GetInhibitionStatus
+	.extern	ComM_ModeInhibition_PreventWakeUp
+	.extern	ComM_ModeInhibition_LimitChannelToNoComMode
+	.extern	ComM_ModeInhibition_LimitECUToNoComMode
+	.extern	ComM_ModeInhibition_ReadInhibitCounter
+	.extern	ComM_ModeInhibition_ResetInhibitCounter
+	.extern	ComM_ModeInhibition_SetECUGroupClassification
+	.extern	ComM_User_RequestComMode
+	.extern	ComM_User_GetMaxComMode
+	.extern	ComM_User_GetRequestedComMode
+	.extern	ComM_User_GetCurrentComMode
+	.extern	ComM_GetInternalPartitionIdx
+	.extern	ComM_MainFunction_ProcessCycle
+	.calls	'ComM_EcuM_WakeUpIndication','',0
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L170:
+	.word	27233
+	.half	3
+	.word	.L171
+	.byte	4
+.L169:
+	.byte	1
+	.byte	'../../../../BSW/Components/ComM/Implementation/ComM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L172
+.L336:
+	.byte	2
+	.byte	'unsigned char',0,1,8,3
+	.byte	'ComM_GetInitStatus',0,3,1,246,15,56
+	.word	204
+	.byte	1,1,4
+	.byte	'partitionIndex',0,1,246,15,127
+	.word	204
+	.byte	5,0,6
+	.byte	'ComM_SetActiveComMode',0,3,1,131,20,41,1,1,4
+	.byte	'Index',0,1,131,20,90
+	.word	204
+	.byte	4
+	.byte	'Value',0,1,131,20,112
+	.word	204
+	.byte	4
+	.byte	'partitionIndex',0,1,131,20,171,1
+	.word	204
+	.byte	5,0,6
+	.byte	'ComM_SetBusComModeReq',0,3,1,143,20,41,1,1,4
+	.byte	'Index',0,1,143,20,90
+	.word	204
+	.byte	4
+	.byte	'Value',0,1,143,20,112
+	.word	204
+	.byte	4
+	.byte	'partitionIndex',0,1,143,20,171,1
+	.word	204
+	.byte	5,0,6
+	.byte	'ComM_SetBusSmState',0,3,1,169,20,41,1,1,4
+	.byte	'Index',0,1,169,20,84
+	.word	204
+	.byte	4
+	.byte	'Value',0,1,169,20,105
+	.word	204
+	.byte	4
+	.byte	'partitionIndex',0,1,169,20,164,1
+	.word	204
+	.byte	5,0
+.L448:
+	.byte	6
+	.byte	'ComM_SetComAllowed',0,3,1,174,20,41,1,1
+.L451:
+	.byte	4
+	.byte	'Index',0,1,174,20,84
+	.word	204
+.L453:
+	.byte	4
+	.byte	'Value',0,1,174,20,111
+	.word	204
+.L455:
+	.byte	4
+	.byte	'partitionIndex',0,1,174,20,170,1
+	.word	204
+.L457:
+	.byte	5,0,6
+	.byte	'ComM_SetInitStatus',0,3,1,217,20,41,1,1,4
+	.byte	'Value',0,1,217,20,80
+	.word	204
+	.byte	4
+	.byte	'partitionIndex',0,1,217,20,139,1
+	.word	204
+	.byte	5,0,6
+	.byte	'ComM_SetUserReqFullCom',0,3,1,188,21,41,1,1,4
+	.byte	'Index',0,1,188,21,92
+	.word	204
+	.byte	4
+	.byte	'Value',0,1,188,21,123
+	.word	204
+	.byte	4
+	.byte	'partitionIndex',0,1,188,21,182,1
+	.word	204
+	.byte	5,0,7,3,130,1,9,4,8
+	.byte	'SystemApplication_OsCore',0,0,8
+	.byte	'INVALID_OSAPPLICATION',0,1,8
+	.byte	'OS_APPID_COUNT',0,1,0,9
+	.byte	'GetCurrentApplicationID',0,2,134,25,32
+	.word	777
+	.byte	1,1,1,1,10
+	.word	221
+	.byte	11
+	.word	252
+	.byte	5,0,10
+	.word	278
+	.byte	11
+	.word	308
+	.byte	11
+	.word	323
+	.byte	11
+	.word	338
+	.byte	5,0,10
+	.word	365
+	.byte	11
+	.word	395
+	.byte	11
+	.word	410
+	.byte	11
+	.word	425
+	.byte	5,0,10
+	.word	452
+	.byte	11
+	.word	479
+	.byte	11
+	.word	494
+	.byte	11
+	.word	509
+	.byte	5,0,10
+	.word	536
+	.byte	11
+	.word	563
+	.byte	11
+	.word	578
+	.byte	11
+	.word	593
+	.byte	5,0,10
+	.word	620
+	.byte	11
+	.word	647
+	.byte	11
+	.word	662
+	.byte	5,0,10
+	.word	689
+	.byte	11
+	.word	720
+	.byte	11
+	.word	735
+	.byte	11
+	.word	750
+	.byte	5,0,12
+	.byte	'sComM_PCConfigType',0,4,241,19,16,1,13
+	.byte	'ComM_PCConfigNeverUsed',0
+	.word	204
+	.byte	1,2,35,0,0,14
+	.word	1028
+.L340:
+	.byte	15
+	.word	1086
+.L352:
+	.byte	15
+	.word	204
+.L358:
+	.byte	15
+	.word	204
+.L363:
+	.byte	2
+	.byte	'unsigned short int',0,2,7
+.L371:
+	.byte	15
+	.word	204
+.L390:
+	.byte	15
+	.word	204
+.L409:
+	.byte	15
+	.word	1106
+.L422:
+	.byte	15
+	.word	204
+	.byte	16
+	.byte	'ComM_BusSM_ProcessModeIndication',0,5,62,25,1,1,1,1,4
+	.byte	'Channel',0,5,62,77
+	.word	204
+	.byte	4
+	.byte	'ComMode',0,5,62,135,1
+	.word	1128
+	.byte	0,16
+	.byte	'ComM_BusSM_ProcessBusSleepMode',0,5,75,25,1,1,1,1,4
+	.byte	'Channel',0,5,75,76
+	.word	204
+	.byte	0,17
+	.byte	'ComM_DCM_ProcessActiveDiagnostic',0,6,61,33
+	.word	204
+	.byte	1,1,1,1,4
+	.byte	'Channel',0,6,61,85
+	.word	204
+	.byte	0,17
+	.byte	'ComM_DCM_ProcessInactiveDiagnostic',0,6,74,33
+	.word	204
+	.byte	1,1,1,1,4
+	.byte	'Channel',0,6,74,87
+	.word	204
+	.byte	0,16
+	.byte	'ComM_DCM_GetActiveRequestStatus',0,6,91,32,1,1,1,1,4
+	.byte	'Channel',0,6,91,83
+	.word	204
+	.byte	4
+	.byte	'Status',0,6,91,135,1
+	.word	1143
+	.byte	0,16
+	.byte	'ComM_EcuM_ProcessWakeUpIndication',0,7,61,25,1,1,1,1,4
+	.byte	'Channel',0,7,61,78
+	.word	204
+	.byte	0,16
+	.byte	'ComM_Channel_GetMinFullComModeTimerStatus',0,8,84,32,1,1,1,1,4
+	.byte	'Channel',0,8,84,93
+	.word	204
+	.byte	4
+	.byte	'Status',0,8,84,145,1
+	.word	1143
+	.byte	0,16
+	.byte	'ComM_Channel_GetState',0,8,166,1,32,1,1,1,1,4
+	.byte	'Channel',0,8,166,1,73
+	.word	204
+	.byte	4
+	.byte	'State',0,8,166,1,132,1
+	.word	1101
+	.byte	0,16
+	.byte	'ComM_ErrorReporting_ProcessDetErrorReport',0,9,62,25,1,1,1,1,4
+	.byte	'serviceId',0,9,62,74
+	.word	204
+	.byte	4
+	.byte	'errorId',0,9,62,91
+	.word	204
+	.byte	0,18
+	.byte	'ComM_Initialization_InitMemory',0,10,80,32,1,1,1,1,18
+	.byte	'ComM_Initialization_PreInit',0,10,92,32,1,1,1,1,14
+	.word	204
+	.byte	17
+	.byte	'ComM_Initialization_Init',0,10,109,33
+	.word	204
+	.byte	1,1,1,1,4
+	.byte	'partitionIdx',0,10,109,116
+	.word	1845
+	.byte	0,9
+	.byte	'ComM_Initialization_PostInit',0,10,122,33
+	.word	204
+	.byte	1,1,1,1,9
+	.byte	'ComM_Initialization_DeInit',0,10,135,1,33
+	.word	204
+	.byte	1,1,1,1,17
+	.byte	'ComM_Initialization_GetStatus',0,10,150,1,42
+	.word	204
+	.byte	1,1,1,1,4
+	.byte	'Status',0,10,150,1,128,1
+	.word	1096
+	.byte	0,9
+	.byte	'ComM_Initialization_IsPostInitialized',0,10,162,1,52
+	.word	204
+	.byte	1,1,1,1,9
+	.byte	'ComM_Initialization_IsPreInitialized',0,10,174,1,51
+	.word	204
+	.byte	1,1,1,1,16
+	.byte	'ComM_ModeInhibition_GetInhibitionStatus',0,11,146,1,32,1,1,1,1,4
+	.byte	'Channel',0,11,146,1,91
+	.word	204
+	.byte	4
+	.byte	'Status',0,11,146,1,161,1
+	.word	1133
+	.byte	0,17
+	.byte	'ComM_ModeInhibition_PreventWakeUp',0,11,163,1,42
+	.word	204
+	.byte	1,1,1,1,4
+	.byte	'Channel',0,11,163,1,95
+	.word	204
+	.byte	4
+	.byte	'Status',0,11,163,1,112
+	.word	204
+	.byte	0,17
+	.byte	'ComM_ModeInhibition_LimitChannelToNoComMode',0,11,182,1,42
+	.word	204
+	.byte	1,1,1,1,4
+	.byte	'Channel',0,11,182,1,105
+	.word	204
+	.byte	4
+	.byte	'Status',0,11,182,1,122
+	.word	204
+	.byte	0,17
+	.byte	'ComM_ModeInhibition_LimitECUToNoComMode',0,11,201,1,42
+	.word	204
+	.byte	1,1,1,1,4
+	.byte	'Status',0,11,201,1,91
+	.word	204
+	.byte	0,16
+	.byte	'ComM_ModeInhibition_ReadInhibitCounter',0,11,214,1,32,1,1,1,1,4
+	.byte	'CounterValue',0,11,214,1,114
+	.word	1138
+	.byte	0,18
+	.byte	'ComM_ModeInhibition_ResetInhibitCounter',0,11,227,1,32,1,1,1,1,16
+	.byte	'ComM_ModeInhibition_SetECUGroupClassification',0,11,240,1,32,1,1,1,1,4
+	.byte	'Status',0,11,240,1,105
+	.word	204
+	.byte	0,14
+	.word	204
+	.byte	17
+	.byte	'ComM_User_RequestComMode',0,12,85,42
+	.word	204
+	.byte	1,1,1,1,4
+	.byte	'User',0,12,85,86
+	.word	204
+	.byte	4
+	.byte	'ComMode',0,12,85,106
+	.word	204
+	.byte	4
+	.byte	'partitionIdx',0,12,85,187,1
+	.word	2670
+	.byte	0,16
+	.byte	'ComM_User_GetMaxComMode',0,12,99,32,1,1,1,1,4
+	.byte	'User',0,12,99,75
+	.word	204
+	.byte	4
+	.byte	'ComMode',0,12,99,130,1
+	.word	1128
+	.byte	0,14
+	.word	204
+	.byte	16
+	.byte	'ComM_User_GetRequestedComMode',0,12,114,32,1,1,1,1,4
+	.byte	'User',0,12,114,81
+	.word	204
+	.byte	4
+	.byte	'ComMode',0,12,114,136,1
+	.word	1128
+	.byte	4
+	.byte	'partitionIdx',0,12,114,217,1
+	.word	2827
+	.byte	0,17
+	.byte	'ComM_User_GetCurrentComMode',0,12,130,1,42
+	.word	204
+	.byte	1,1,1,1,4
+	.byte	'User',0,12,130,1,89
+	.word	204
+	.byte	4
+	.byte	'ComMode',0,12,130,1,144,1
+	.word	1128
+	.byte	0,14
+	.word	777
+	.byte	17
+	.byte	'ComM_GetInternalPartitionIdx',0,13,227,1,57
+	.word	204
+	.byte	1,1,1,1,4
+	.byte	'applicationId',0,13,227,1,123
+	.word	2997
+	.byte	0,16
+	.byte	'ComM_MainFunction_ProcessCycle',0,14,76,30,1,1,1,1,4
+	.byte	'Channel',0,14,76,79
+	.word	204
+	.byte	0,19,1,15
+	.word	3124
+	.byte	20
+	.byte	'__codeptr',0,15,1,1
+	.word	3126
+	.byte	20
+	.byte	'boolean',0,16,140,1,29
+	.word	204
+	.byte	2
+	.byte	'char',0,1,6,20
+	.byte	'sint8',0,16,142,1,31
+	.word	3166
+	.byte	20
+	.byte	'uint8',0,16,143,1,31
+	.word	204
+	.byte	2
+	.byte	'short int',0,2,5,20
+	.byte	'sint16',0,16,144,1,31
+	.word	3204
+	.byte	20
+	.byte	'uint16',0,16,145,1,31
+	.word	1106
+	.byte	2
+	.byte	'long int',0,4,5,20
+	.byte	'sint32',0,16,146,1,31
+	.word	3249
+	.byte	2
+	.byte	'unsigned long int',0,4,7,20
+	.byte	'uint32',0,16,147,1,31
+	.word	3277
+	.byte	20
+	.byte	'uint8_least',0,16,150,1,31
+	.word	204
+	.byte	20
+	.byte	'uint16_least',0,16,152,1,31
+	.word	1106
+	.byte	2
+	.byte	'unsigned long long int',0,8,7,20
+	.byte	'uint64',0,16,160,1,30
+	.word	3357
+	.byte	20
+	.byte	'StatusType',0,17,115,23
+	.word	204
+	.byte	20
+	.byte	'Std_ReturnType',0,17,120,15
+	.word	204
+	.byte	20
+	.byte	'Std_TransformerErrorCode',0,17,131,1,15
+	.word	204
+	.byte	20
+	.byte	'Std_TransformerClass',0,17,133,1,15
+	.word	204
+	.byte	20
+	.byte	'PduLengthType',0,18,70,16
+	.word	1106
+	.byte	15
+	.word	204
+	.byte	20
+	.byte	'SduDataPtrType',0,19,178,1,54
+	.word	3527
+	.byte	20
+	.byte	'NetworkHandleType',0,19,197,1,22
+	.word	204
+	.byte	7,19,201,1,9,4,8
+	.byte	'TP_DATACONF',0,0,8
+	.byte	'TP_DATARETRY',0,1,8
+	.byte	'TP_CONFPENDING',0,2,0,20
+	.byte	'TpDataStateType',0,19,208,1,3
+	.word	3583
+	.byte	12
+	.byte	'sDet_PCConfigType',0,20,243,1,16,1,13
+	.byte	'Det_PCConfigNeverUsed',0
+	.word	204
+	.byte	1,2,35,0,0,20
+	.byte	'Det_PCConfigType',0,20,246,1,3
+	.word	3661
+	.byte	20
+	.byte	'ComM_InhibitionStatusType',0,21,75,15
+	.word	204
+	.byte	20
+	.byte	'ComM_UserHandleType',0,21,78,16
+	.word	1106
+	.byte	20
+	.byte	'Dcm_DataElement_Boot_Software_Boot_Software_Identification_PrimitiveType',0,21,84,16
+	.word	3277
+	.byte	20
+	.byte	'Dcm_DataElement_Boot_Software_NumberOfModules_PrimitiveType',0,21,87,15
+	.word	204
+	.byte	20
+	.byte	'Dcm_DataElement_DID_0x0017_DID_Sint32_Array_ArrayType',0,21,90,16
+	.word	3249
+	.byte	20
+	.byte	'Dcm_DataElement_DID_0x0018_DID_Uint32_Array_ArrayType',0,21,93,16
+	.word	3277
+	.byte	20
+	.byte	'Dcm_DataElement_DID_0x0019_DID_Sint16_Array_ArrayType',0,21,96,16
+	.word	3204
+	.byte	20
+	.byte	'Dcm_DataElement_DID_0x001A_DID_Uint16_Array_ArrayType',0,21,99,16
+	.word	1106
+	.byte	20
+	.byte	'Dcm_DataElement_DID_0x001B_DID_Sint8_Array_ArrayType',0,21,102,15
+	.word	3166
+	.byte	20
+	.byte	'Dcm_DataElement_DID_0xF410_DID_Data_PrimitiveType',0,21,105,16
+	.word	1106
+	.byte	20
+	.byte	'Dcm_DataElement_DID_0xF412_DID_Data_PrimitiveType',0,21,108,16
+	.word	1106
+	.byte	20
+	.byte	'Dcm_DataElement_DID_0xF413_DID_Data_PrimitiveType',0,21,111,16
+	.word	1106
+	.byte	20
+	.byte	'Dcm_DataElement_DataDiagnosticIdentifier_DID_DataDiagnosticIdentifier_PrimitiveType',0,21,114,16
+	.word	1106
+	.byte	20
+	.byte	'Dcm_DataElement_DevelopmentData_CanDriverVersion_PrimitiveType',0,21,117,16
+	.word	1106
+	.byte	20
+	.byte	'Dcm_DataElement_DevelopmentData_DiagnosticModuleVersion_PrimitiveType',0,21,120,16
+	.word	1106
+	.byte	20
+	.byte	'Dcm_DataElement_DevelopmentData_NmVersion_PrimitiveType',0,21,123,16
+	.word	1106
+	.byte	20
+	.byte	'Dcm_DataElement_DevelopmentData_OperatingSystemVersion_PrimitiveType',0,21,126,16
+	.word	1106
+	.byte	20
+	.byte	'Dcm_DataElement_DevelopmentData_TransportLayerVersion_PrimitiveType',0,21,129,1,16
+	.word	1106
+	.byte	20
+	.byte	'Dcm_DataElement_Example_ReadWriteData_GlobalTime_PrimitiveType',0,21,132,1,16
+	.word	3277
+	.byte	20
+	.byte	'Dcm_DataElement_Example_WriteOnlyDID_DID_DataObject_PrimitiveType',0,21,135,1,15
+	.word	204
+	.byte	20
+	.byte	'Dcm_DataElement_SampleIoControl_DID_Data_PrimitiveType',0,21,138,1,16
+	.word	3277
+	.byte	20
+	.byte	'Dcm_DataElement_SerialNumber_SerialNumber_PrimitiveType',0,21,141,1,16
+	.word	3277
+	.byte	20
+	.byte	'Dcm_RequestDataOut_SampleRoutineControl_Out_ResultPrimitiveType',0,21,147,1,16
+	.word	1106
+	.byte	20
+	.byte	'Dcm_RequestDataOut_SampleRoutineControl_StartOnly_Out_ResultPrimitiveType',0,21,153,1,16
+	.word	3277
+	.byte	20
+	.byte	'Dcm_StartDataIn_SampleRoutineControl_In_Option0PrimitiveType',0,21,159,1,15
+	.word	204
+	.byte	20
+	.byte	'Dcm_StartDataIn_SampleRoutineControl_StartOnly_In_Option1ArrayType',0,21,165,1,15
+	.word	204
+	.byte	20
+	.byte	'Dcm_StartDataOut_SampleRoutineControl_Out_InitStatePrimitiveType',0,21,168,1,16
+	.word	3277
+	.byte	20
+	.byte	'Dcm_StopDataOut_SampleRoutineControl_Out_StopStatePrimitiveType',0,21,174,1,16
+	.word	3277
+	.byte	20
+	.byte	'ComM_ModeType',0,21,204,1,15
+	.word	204
+	.byte	21,1
+	.word	204
+	.byte	22,0,0,12
+	.byte	'ComM_InhibitionTypeTag',0,22,72,16,6,13
+	.byte	'ComM_ECUGroupClassification',0
+	.word	204
+	.byte	1,2,35,0,13
+	.byte	'ComM_InhibitCnt',0
+	.word	1106
+	.byte	2,2,35,2,13
+	.byte	'ComM_InhibitionStatus',0
+	.word	5644
+	.byte	1,2,35,4,0,20
+	.byte	'ComM_InhibitionType',0,22,77,3
+	.word	5653
+	.byte	20
+	.byte	'ComM_PreInitializedType',0,23,114,17
+	.word	204
+	.byte	20
+	.byte	'ComM_InitStatusType',0,23,116,15
+	.word	204
+	.byte	20
+	.byte	'ComM_BusType',0,23,118,15
+	.word	204
+	.byte	20
+	.byte	'ComM_StateType',0,23,120,15
+	.word	204
+	.byte	20
+	.byte	'ComM_PncModeType',0,23,122,15
+	.word	204
+	.byte	20
+	.byte	'ApplicationType',0,3,135,1,3
+	.word	777
+	.byte	7,3,156,1,9,4,8
+	.byte	'BswTask',0,0,8
+	.byte	'Default_Init_Task',0,1,8
+	.byte	'Default_Init_Task_Trusted',0,2,8
+	.byte	'IdleTask_OsCore',0,3,8
+	.byte	'IoTask',0,4,8
+	.byte	'SwcTask',0,5,8
+	.byte	'INVALID_TASK',0,6,8
+	.byte	'OS_TASKID_COUNT',0,6,0,20
+	.byte	'TaskType',0,3,166,1,3
+	.word	5957
+	.byte	21,64
+	.word	3277
+	.byte	22,15,0,12
+	.byte	'Os_ExceptionContextType_Tag',0,24,71,8,160,1,13
+	.byte	'AddressRegisters',0
+	.word	6110
+	.byte	64,2,35,0,13
+	.byte	'DataRegisters',0
+	.word	6110
+	.byte	64,2,35,64,13
+	.byte	'Ra',0
+	.word	3277
+	.byte	4,3,35,128,1,13
+	.byte	'Psw',0
+	.word	3277
+	.byte	4,3,35,132,1,13
+	.byte	'ExceptionSource',0
+	.word	3277
+	.byte	4,3,35,136,1,13
+	.byte	'Pcpn',0
+	.word	3277
+	.byte	4,3,35,140,1,13
+	.byte	'Pie',0
+	.word	3277
+	.byte	4,3,35,144,1,13
+	.byte	'MpuRegionForStackLow',0
+	.word	3277
+	.byte	4,3,35,148,1,13
+	.byte	'MpuRegionForStackUpper',0
+	.word	3277
+	.byte	4,3,35,152,1,13
+	.byte	'RawPCXI',0
+	.word	3277
+	.byte	4,3,35,156,1,0,20
+	.byte	'Os_ExceptionContextType',0,25,59,44
+	.word	6119
+	.byte	20
+	.byte	'Os_InterruptSourceIdType',0,26,238,1,16
+	.word	3277
+	.byte	20
+	.byte	'Os_ExceptionSourceIdType',0,26,246,1,16
+	.word	3277
+	.byte	7,26,161,2,9,4,8
+	.byte	'RUNNING',0,0,8
+	.byte	'READY',0,1,8
+	.byte	'WAITING',0,2,8
+	.byte	'SUSPENDED',0,3,0,20
+	.byte	'TaskStateType',0,26,175,2,3
+	.word	6467
+	.byte	20
+	.byte	'EventMaskType',0,26,182,2,16
+	.word	3357
+	.byte	20
+	.byte	'Os_TickType',0,26,200,2,19
+	.word	3277
+	.byte	20
+	.byte	'TickType',0,26,206,2,21
+	.word	3277
+	.byte	23,26,220,2,9,12,13
+	.byte	'maxallowedvalue',0
+	.word	3277
+	.byte	4,2,35,0,13
+	.byte	'ticksperbase',0
+	.word	3277
+	.byte	4,2,35,4,13
+	.byte	'mincycle',0
+	.word	3277
+	.byte	4,2,35,8,0,20
+	.byte	'AlarmBaseType',0,26,228,2,2
+	.word	6599
+	.byte	7,26,128,3,9,4,8
+	.byte	'APPLICATION_TERMINATED',0,0,8
+	.byte	'APPLICATION_RESTARTING',0,1,8
+	.byte	'APPLICATION_ACCESSIBLE',0,2,0,20
+	.byte	'ApplicationStateType',0,26,133,3,3
+	.word	6694
+	.byte	7,26,177,3,9,4,8
+	.byte	'OSServiceId_GetApplicationID',0,0,8
+	.byte	'OSServiceId_GetISRID',0,1,8
+	.byte	'OSServiceId_CallTrustedFunction',0,2,8
+	.byte	'OSServiceId_CheckISRMemoryAccess',0,3,8
+	.byte	'OSServiceId_CheckTaskMemoryAccess',0,4,8
+	.byte	'OSServiceId_CheckObjectAccess',0,5,8
+	.byte	'OSServiceId_CheckObjectOwnership',0,6,8
+	.byte	'OSServiceId_StartScheduleTableRel',0,7,8
+	.byte	'OSServiceId_StartScheduleTableAbs',0,8,8
+	.byte	'OSServiceId_StopScheduleTable',0,9,8
+	.byte	'OSServiceId_NextScheduleTable',0,10,8
+	.byte	'OSServiceId_StartScheduleTableSynchron',0,11,8
+	.byte	'OSServiceId_SyncScheduleTable',0,12,8
+	.byte	'OSServiceId_SetScheduleTableAsync',0,13,8
+	.byte	'OSServiceId_GetScheduleTableStatus',0,14,8
+	.byte	'OSServiceId_IncrementCounter',0,15,8
+	.byte	'OSServiceId_GetCounterValue',0,16,8
+	.byte	'OSServiceId_GetElapsedValue',0,17,8
+	.byte	'OSServiceId_TerminateApplication',0,18,8
+	.byte	'OSServiceId_AllowAccess',0,19,8
+	.byte	'OSServiceId_GetApplicationState',0,20,8
+	.byte	'OSServiceId_GetNumberOfActivatedCores',0,21,8
+	.byte	'OSServiceId_GetCoreID',0,22,8
+	.byte	'OSServiceId_StartCore',0,23,8
+	.byte	'OSServiceId_StartNonAutosarCore',0,24,8
+	.byte	'OSServiceId_GetSpinlock',0,25,8
+	.byte	'OSServiceId_ReleaseSpinlock',0,26,8
+	.byte	'OSServiceId_TryToGetSpinlock',0,27,8
+	.byte	'OSServiceId_ShutdownAllCores',0,28,8
+	.byte	'OSServiceId_ControlIdle',0,29,8
+	.byte	'OSServiceId_IocSend',0,30,8
+	.byte	'OSServiceId_IocWrite',0,31,8
+	.byte	'OSServiceId_IocSendGroup',0,32,8
+	.byte	'OSServiceId_IocWriteGroup',0,33,8
+	.byte	'OSServiceId_IocReceive',0,34,8
+	.byte	'OSServiceId_IocRead',0,35,8
+	.byte	'OSServiceId_IocReceiveGroup',0,36,8
+	.byte	'OSServiceId_IocReadGroup',0,37,8
+	.byte	'OSServiceId_IocEmptyQueue',0,38,8
+	.byte	'OSServiceId_GetCurrentApplicationID',0,39,8
+	.byte	'OSServiceId_ActivateTaskAsyn',0,51,8
+	.byte	'OSServiceId_SetEventAsyn',0,52,8
+	.byte	'OSServiceId_GetExceptionContext',0,160,1,8
+	.byte	'OSServiceId_SetExceptionContext',0,161,1,8
+	.byte	'OSServiceId_CallNonTrustedFunction',0,162,1,8
+	.byte	'OSServiceId_AppKill',0,163,1,8
+	.byte	'OSServiceId_AlarmActionSetEvent',0,164,1,8
+	.byte	'OSServiceId_AlarmActionActivateTask',0,165,1,8
+	.byte	'OSServiceId_AlarmActionIncrementCounter',0,166,1,8
+	.byte	'OSServiceId_AlarmActionCallback',0,167,1,8
+	.byte	'OSServiceId_TimerIsr',0,168,1,8
+	.byte	'OSServiceId_IsrWrapper',0,169,1,8
+	.byte	'OSServiceId_GetTaskStackUsage',0,170,1,8
+	.byte	'OSServiceId_GetISRStackUsage',0,171,1,8
+	.byte	'OSServiceId_GetKernelStackUsage',0,172,1,8
+	.byte	'OSServiceId_GetStartupHookStackUsage',0,173,1,8
+	.byte	'OSServiceId_GetErrorHookStackUsage',0,174,1,8
+	.byte	'OSServiceId_GetShutdownHookStackUsage',0,175,1,8
+	.byte	'OSServiceId_GetProtectionHookStackUsage',0,176,1,8
+	.byte	'OSServiceId_GetSemaphore',0,177,1,8
+	.byte	'OSServiceId_ReleaseSemaphore',0,178,1,8
+	.byte	'OSServiceId_ScheduleTableActivateTask',0,179,1,8
+	.byte	'OSServiceId_ScheduleTableSetEvent',0,180,1,8
+	.byte	'OSServiceId_DisableInterruptSource',0,181,1,8
+	.byte	'OSServiceId_EnableInterruptSource',0,182,1,8
+	.byte	'OSServiceId_ClearPendingInterrupt',0,183,1,8
+	.byte	'OSServiceId_GetUnhandledIrq',0,184,1,8
+	.byte	'OSServiceId_GetUnhandledExc',0,185,1,8
+	.byte	'OSServiceId_HookCallCallback',0,186,1,8
+	.byte	'OSServiceId_IsInterruptSourceEnabled',0,187,1,8
+	.byte	'OSServiceId_IsInterruptPending',0,188,1,8
+	.byte	'OSServiceId_CallFastTrustedFunction',0,189,1,8
+	.byte	'OSServiceId_BarrierSynchronize',0,190,1,8
+	.byte	'OSServiceId_InitialEnableInterruptSources',0,191,1,8
+	.byte	'OSServiceId_GetCoreStartState',0,192,1,8
+	.byte	'OSServiceId_GetNonTrustedFunctionStackUsage',0,193,1,8
+	.byte	'OSServiceId_FrtSetFutureCompareValue',0,194,1,8
+	.byte	'OSServiceId_FrtSetCompareValue',0,195,1,8
+	.byte	'OSServiceId_GetInitHookStackUsage',0,196,1,8
+	.byte	'OSServiceId_StartOS',0,208,1,8
+	.byte	'OSServiceId_GetActiveApplicationMode',0,210,1,8
+	.byte	'OSServiceId_DisableAllInterrupts',0,211,1,8
+	.byte	'OSServiceId_EnableAllInterrupts',0,212,1,8
+	.byte	'OSServiceId_SuspendAllInterrupts',0,213,1,8
+	.byte	'OSServiceId_ResumeAllInterrupts',0,214,1,8
+	.byte	'OSServiceId_SuspendOSInterrupts',0,215,1,8
+	.byte	'OSServiceId_ResumeOSInterrupts',0,216,1,8
+	.byte	'OSServiceId_ActivateTask',0,217,1,8
+	.byte	'OSServiceId_TerminateTask',0,218,1,8
+	.byte	'OSServiceId_ChainTask',0,219,1,8
+	.byte	'OSServiceId_GetTaskID',0,220,1,8
+	.byte	'OSServiceId_GetTaskState',0,221,1,8
+	.byte	'OSServiceId_Schedule',0,222,1,8
+	.byte	'OSServiceId_SetEvent',0,223,1,8
+	.byte	'OSServiceId_ClearEvent',0,224,1,8
+	.byte	'OSServiceId_GetEvent',0,225,1,8
+	.byte	'OSServiceId_WaitEvent',0,226,1,8
+	.byte	'OSServiceId_GetAlarmBase',0,227,1,8
+	.byte	'OSServiceId_GetAlarm',0,228,1,8
+	.byte	'OSServiceId_SetRelAlarm',0,229,1,8
+	.byte	'OSServiceId_SetAbsAlarm',0,230,1,8
+	.byte	'OSServiceId_CancelAlarm',0,231,1,8
+	.byte	'OSServiceId_GetResource',0,232,1,8
+	.byte	'OSServiceId_ReleaseResource',0,233,1,8
+	.byte	'OSSERVICEID_COUNT',0,255,1,0,20
+	.byte	'OSServiceIdType',0,26,162,4,3
+	.word	6806
+	.byte	7,26,178,4,9,4,8
+	.byte	'OS_STATUS_OK',0,0,8
+	.byte	'OS_STATUS_CALLEVEL',0,2,8
+	.byte	'OS_STATUS_LIMIT',0,4,8
+	.byte	'OS_STATUS_RESOURCE',0,6,8
+	.byte	'OS_STATUS_SERVICEID',0,9,8
+	.byte	'OS_STATUS_ILLEGAL_ADDRESS',0,10,8
+	.byte	'OS_STATUS_MISSINGEND',0,11,8
+	.byte	'OS_STATUS_DISABLEDINT',0,12,8
+	.byte	'OS_STATUS_STACKFAULT',0,13,8
+	.byte	'OS_STATUS_PROTECTION_MEMORY',0,14,8
+	.byte	'OS_STATUS_PROTECTION_TIME',0,15,8
+	.byte	'OS_STATUS_PROTECTION_ARRIVAL',0,16,8
+	.byte	'OS_STATUS_PROTECTION_LOCKED',0,17,8
+	.byte	'OS_STATUS_PROTECTION_EXCEPTION',0,18,8
+	.byte	'OS_STATUS_INTERFERENCE_DEADLOCK',0,19,8
+	.byte	'OS_STATUS_NESTING_DEADLOCK',0,20,8
+	.byte	'OS_STATUS_SPINLOCK',0,21,8
+	.byte	'OS_STATUS_CORE',0,22,8
+	.byte	'OS_STATUS_OVERFLOW',0,245,1,8
+	.byte	'OS_STATUS_KILL_KERNEL_OBJ',0,246,1,8
+	.byte	'OS_STATUS_NO_RESTARTTASK',0,247,1,8
+	.byte	'OS_STATUS_CALL_NOT_ALLOWED',0,248,1,8
+	.byte	'OS_STATUS_FUNCTION_UNAVAILABLE',0,249,1,8
+	.byte	'OS_STATUS_PROTECTION_SYSCALL',0,250,1,8
+	.byte	'OS_STATUS_PROTECTION_IRQ',0,251,1,8
+	.byte	'OS_STATUS_API_ERROR',0,252,1,8
+	.byte	'OS_STATUS_ASSERTION',0,253,1,8
+	.byte	'OS_STATUS_OVERLOAD',0,254,1,8
+	.byte	'OS_STATUS_FRT_NO_FUTURE_VALUE',0,255,1,8
+	.byte	'OS_STATUS_ACCESSRIGHTS_1',0,129,2,8
+	.byte	'OS_STATUS_CALLEVEL_SHARED_STACK',0,130,2,8
+	.byte	'OS_STATUS_ID_1',0,131,2,8
+	.byte	'OS_STATUS_UNLOCKED',0,133,2,8
+	.byte	'OS_STATUS_STATE_1',0,135,2,8
+	.byte	'OS_STATUS_VALUE_IS_ZERO_1',0,136,2,8
+	.byte	'OS_STATUS_CORE_CROSS_DATA',0,150,2,8
+	.byte	'OS_STATUS_PARAM_POINTER_1',0,151,2,8
+	.byte	'OS_STATUS_STACKUSAGE_DISABLED_BY_CONFIG',0,241,3,8
+	.byte	'OS_STATUS_NO_BARRIER_PARTICIPANT',0,242,3,8
+	.byte	'OS_STATUS_UNIMPLEMENTED_CLEARPENDING',0,243,3,8
+	.byte	'OS_STATUS_NO_NTFSTACK_POOL_EMPTY',0,244,3,8
+	.byte	'OS_STATUS_FRT_SET_COMPARE_VALUE_FAILED',0,255,3,8
+	.byte	'OS_STATUS_ACCESSRIGHTS_2',0,129,4,8
+	.byte	'OS_STATUS_CALLEVEL_CROSS_CORE_SYNC',0,130,4,8
+	.byte	'OS_STATUS_ID_2',0,131,4,8
+	.byte	'OS_STATUS_NOFUNC_1',0,133,4,8
+	.byte	'OS_STATUS_STATE_2',0,135,4,8
+	.byte	'OS_STATUS_VALUE_IS_ZERO_2',0,136,4,8
+	.byte	'OS_STATUS_PARAM_POINTER_2',0,151,4,8
+	.byte	'OS_STATUS_EVENT_DISABLED_BY_CONFIG',0,241,5,8
+	.byte	'OS_STATUS_UNIMPLEMENTED_EXCEPTIONCONTEXT',0,243,5,8
+	.byte	'OS_STATUS_NO_NTFSTACK_APPLIMIT_EXCEEDED',0,244,5,8
+	.byte	'OS_STATUS_NOTACCESSIBLE_1',0,129,6,8
+	.byte	'OS_STATUS_ID_TYPE_1',0,131,6,8
+	.byte	'OS_STATUS_NOFUNC_2',0,133,6,8
+	.byte	'OS_STATUS_STATE_STOPPED',0,135,6,8
+	.byte	'OS_STATUS_VALUE_IS_TOO_HIGH_1',0,136,6,8
+	.byte	'OS_STATUS_PARAM_POINTER_3',0,151,6,8
+	.byte	'OS_STATUS_XSIGNAL_DISABLED_BY_CONFIG',0,241,7,8
+	.byte	'OS_STATUS_NOTACCESSIBLE_2',0,129,8,8
+	.byte	'OS_STATUS_ID_DIFFERENT_COUNTER',0,131,8,8
+	.byte	'OS_STATUS_SPINLOCK_ORDER',0,133,8,8
+	.byte	'OS_STATUS_STATE_RUNNING',0,135,8,8
+	.byte	'OS_STATUS_VALUE_IS_TOO_HIGH_2',0,136,8,8
+	.byte	'OS_STATUS_NOEXTENDEDTASK_1',0,129,10,8
+	.byte	'OS_STATUS_ID_DIFFERENT_SYNC',0,131,10,8
+	.byte	'OS_STATUS_STOPPED_1',0,133,10,8
+	.byte	'OS_STATUS_STATE_NEXTED',0,135,10,8
+	.byte	'OS_STATUS_VALUE_IS_TOO_HIGH_3',0,136,10,8
+	.byte	'OS_STATUS_NOEXTENDEDTASK_2',0,129,12,8
+	.byte	'OS_STATUS_HOOK_NOT_AVAILABLE',0,131,12,8
+	.byte	'OS_STATUS_NOT_STOPPED_2',0,133,12,8
+	.byte	'OS_STATUS_STATE_WAITING',0,135,12,8
+	.byte	'OS_STATUS_VALUE_IS_OUT_OF_BOUNDS_1',0,136,12,8
+	.byte	'OS_STATUS_NOEXTENDEDTASK_CALLER',0,129,14,8
+	.byte	'OS_STATUS_NEXTED_1',0,133,14,8
+	.byte	'OS_STATUS_STATE_NO_RESTART',0,135,14,8
+	.byte	'OS_STATUS_VALUE_IS_OUT_OF_BOUNDS_2',0,136,14,8
+	.byte	'OS_STATUS_LOCKED',0,129,16,8
+	.byte	'OS_STATUS_KILLING_IS_DISABLED',0,133,16,8
+	.byte	'OS_STATUS_STATE_ALREADY_TERMINATED',0,135,16,8
+	.byte	'OS_STATUS_VALUE_IS_TOO_LOW_1',0,136,16,8
+	.byte	'OS_STATUS_PRIORITY',0,129,18,8
+	.byte	'OS_STATUS_ORDER',0,133,18,8
+	.byte	'OS_STATUS_STATE_RESTARTING_NO_MEMBER',0,135,18,8
+	.byte	'OS_STATUS_VALUE_IS_TOO_LOW_2',0,136,18,8
+	.byte	'OS_STATUS_NOT_THE_OWNER_1',0,129,20,8
+	.byte	'OS_STATUS_STATE_ALREADY_RESTARTING',0,135,20,8
+	.byte	'OS_STATUS_VALUE_IS_TOO_LOW_3',0,136,20,8
+	.byte	'OS_STATUS_VALUE_IS_NOT_BOOLEAN',0,136,22,0,20
+	.byte	'Os_StatusType',0,26,246,5,3
+	.word	10192
+	.byte	23,26,219,6,9,12,13
+	.byte	'Service',0
+	.word	6806
+	.byte	4,2,35,0,13
+	.byte	'Error',0
+	.word	204
+	.byte	1,2,35,4,13
+	.byte	'DetailedError',0
+	.word	10192
+	.byte	4,2,35,6,0,20
+	.byte	'Os_ErrorInformationType',0,26,229,6,3
+	.word	12837
+	.byte	7,26,133,7,9,4,8
+	.byte	'SCHEDULETABLE_STOPPED',0,0,8
+	.byte	'SCHEDULETABLE_NEXT',0,1,8
+	.byte	'SCHEDULETABLE_WAITING',0,2,8
+	.byte	'SCHEDULETABLE_RUNNING',0,3,8
+	.byte	'SCHEDULETABLE_RUNNING_AND_SYNCHRONOUS',0,4,0,20
+	.byte	'ScheduleTableStatusType',0,26,150,7,3
+	.word	12932
+	.byte	7,26,162,7,9,4,8
+	.byte	'OS_MEM_ACCESS_TYPE_NON',0,0,8
+	.byte	'OS_MEM_ACCESS_TYPE_R',0,1,8
+	.byte	'OS_MEM_ACCESS_TYPE_READ',0,1,8
+	.byte	'OS_MEM_ACCESS_TYPE_W',0,2,8
+	.byte	'OS_MEM_ACCESS_TYPE_WRITE',0,2,8
+	.byte	'OS_MEM_ACCESS_TYPE_RW',0,3,8
+	.byte	'OS_MEM_ACCESS_TYPE_EXECUTE',0,4,8
+	.byte	'OS_MEM_ACCESS_TYPE_X',0,4,8
+	.byte	'OS_MEM_ACCESS_TYPE_RX',0,5,8
+	.byte	'OS_MEM_ACCESS_TYPE_WX',0,6,8
+	.byte	'OS_MEM_ACCESS_TYPE_RWX',0,7,8
+	.byte	'OS_MEM_ACCESS_TYPE_S',0,8,8
+	.byte	'OS_MEM_ACCESS_TYPE_STACK',0,8,8
+	.byte	'OS_MEM_ACCESS_TYPE_RS',0,9,8
+	.byte	'OS_MEM_ACCESS_TYPE_WS',0,10,8
+	.byte	'OS_MEM_ACCESS_TYPE_RWS',0,11,8
+	.byte	'OS_MEM_ACCESS_TYPE_XS',0,12,8
+	.byte	'OS_MEM_ACCESS_TYPE_RXS',0,13,8
+	.byte	'OS_MEM_ACCESS_TYPE_WXS',0,14,8
+	.byte	'OS_MEM_ACCESS_TYPE_RWXS',0,15,0,20
+	.byte	'Os_MemAccessType',0,26,184,7,3
+	.word	13105
+	.byte	20
+	.byte	'Os_Hal_AddressType',0,27,102,16
+	.word	3277
+	.byte	20
+	.byte	'Os_AccessCheckAddress',0,28,150,2,29
+	.word	3277
+	.byte	24
+	.word	204
+	.byte	1,1,25
+	.word	204
+	.byte	0,15
+	.word	13692
+	.byte	20
+	.byte	'ComM_StateNotiFuncPtrType',0,4,146,9,9
+	.word	13705
+	.byte	24
+	.word	204
+	.byte	1,1,25
+	.word	204
+	.byte	25
+	.word	204
+	.byte	0,15
+	.word	13745
+	.byte	20
+	.byte	'RequestBusSMModeApiType',0,4,147,9,9
+	.word	13763
+	.byte	15
+	.word	204
+	.byte	24
+	.word	204
+	.byte	1,1,25
+	.word	204
+	.byte	25
+	.word	13801
+	.byte	0,15
+	.word	13806
+	.byte	20
+	.byte	'GetCurrentBusSMModeApiType',0,4,148,9,9
+	.word	13824
+	.byte	20
+	.byte	'ComM_SizeOfActiveComModeType',0,4,161,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfActivePncComModeType',0,4,164,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfBusComModeReqType',0,4,167,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfBusComModeReqFrShutdownType',0,4,170,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfBusPncComModeReqType',0,4,173,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfBusSleepModeIndicatedType',0,4,176,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfBusSmStateType',0,4,179,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfBusTypeFrType',0,4,182,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfChannelType',0,4,185,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfChannelPbType',0,4,188,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfComAllowedType',0,4,191,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfCoordPncWithGwPassiveAndManagedChannelsType',0,4,194,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfDcmIndicationType',0,4,197,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfDcmRequestActiveType',0,4,200,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfEcuMWakeUpIndicatedType',0,4,203,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfEiraTxSignalIndirectionType',0,4,206,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfExtendedRamCheckType',0,4,209,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfForwardSynchronizedPncShutdownIndicatedType',0,4,212,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfFrShutdownType',0,4,215,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfFullComRequestersType',0,4,218,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfFullCommRequestNotifType',0,4,221,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfFullNmTypeOfChannelType',0,4,224,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfKeepAwakeChannelsType',0,4,227,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfLastStateChangeType',0,4,230,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfLightNmTypeOfChannelType',0,4,233,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfLinslaveNmTypeOfChannelType',0,4,236,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfMinFullComModeTimerType',0,4,239,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfModeLimitationType',0,4,242,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfNmGwExtType',0,4,245,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfNmLightTimerType',0,4,248,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfNmStartUpIndicatedType',0,4,251,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfNoneNmTypeOfChannelType',0,4,254,9,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfOnlyNoneNmTypeOfChannelType',0,4,129,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfPartitionIdentifiersType',0,4,132,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfPncType',0,4,135,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfPnc0VectorAvoidanceType',0,4,138,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfPncChannelMappingType',0,4,141,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfPncCheckEnabledAtRuntimeType',0,4,144,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfPncEiraRxType',0,4,147,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfPncExtendedFunctionalityType',0,4,150,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfPncGwTypeActiveType',0,4,153,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfPncGwTypeNoneType',0,4,156,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfPncGwTypePassiveType',0,4,159,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfPncLimitationType',0,4,162,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfPncPSleepTimerType',0,4,165,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfPncPbType',0,4,168,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfPncPbIndType',0,4,171,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfPncSignalType',0,4,174,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfPncSignalIndType',0,4,177,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfPncSignalValuesType',0,4,180,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfPncToChannelRoutingStateType',0,4,183,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfPncWithoutChannelsType',0,4,186,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfPostInitializedType',0,4,189,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfResetRequiredType',0,4,192,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfSimulatedSmModeType',0,4,195,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfStateChangeType',0,4,198,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfSynchronousWakeUpType',0,4,201,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfUserType',0,4,204,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfUserByteMaskType',0,4,207,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfUserModeNotiFuncType',0,4,210,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfUserModeNotificationOnlyForPncUsersType',0,4,213,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfUserPncByteMaskType',0,4,216,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfUserReqFullComType',0,4,219,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfUserReqPncFullComType',0,4,222,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfUserWithSinglePncType',0,4,225,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SizeOfWakeupInhibitionType',0,4,228,10,15
+	.word	204
+	.byte	20
+	.byte	'ComM_BusTypeFrIterType',0,4,244,10,21
+	.word	204
+	.byte	20
+	.byte	'ComM_ChannelIterType',0,4,247,10,21
+	.word	204
+	.byte	20
+	.byte	'ComM_ChannelPbIterType',0,4,250,10,21
+	.word	204
+	.byte	20
+	.byte	'ComM_CoordPncWithGwPassiveAndManagedChannelsIterType',0,4,253,10,21
+	.word	204
+	.byte	20
+	.byte	'ComM_DcmIndicationIterType',0,4,128,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_EcuMWakeUpIndicatedIterType',0,4,131,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_ExtendedRamCheckIterType',0,4,137,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_FullComRequestersIterType',0,4,140,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_FullCommRequestNotifIterType',0,4,143,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_FullNmTypeOfChannelIterType',0,4,146,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_KeepAwakeChannelsIterType',0,4,149,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_LightNmTypeOfChannelIterType',0,4,152,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_LinslaveNmTypeOfChannelIterType',0,4,155,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_ModeLimitationIterType',0,4,158,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_NmGwExtIterType',0,4,161,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_NmStartUpIndicatedIterType',0,4,164,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_NoneNmTypeOfChannelIterType',0,4,167,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_OnlyNoneNmTypeOfChannelIterType',0,4,170,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_PartitionIdentifiersIterType',0,4,173,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_PncIterType',0,4,176,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_Pnc0VectorAvoidanceIterType',0,4,179,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_PncChannelMappingIterType',0,4,182,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_PncCheckEnabledAtRuntimeIterType',0,4,185,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_PncEiraRxIterType',0,4,188,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_PncExtendedFunctionalityIterType',0,4,191,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_PncGwTypeActiveIterType',0,4,194,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_PncGwTypeNoneIterType',0,4,197,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_PncGwTypePassiveIterType',0,4,200,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_PncLimitationIterType',0,4,203,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_PncPbIterType',0,4,206,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_PncPbIndIterType',0,4,209,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_PncSignalIterType',0,4,212,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_PncSignalIndIterType',0,4,215,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_PncSignalValuesIterType',0,4,218,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_PncWithoutChannelsIterType',0,4,221,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_PostInitializedIterType',0,4,224,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_SynchronousWakeUpIterType',0,4,227,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_UserIterType',0,4,230,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_UserByteMaskIterType',0,4,233,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_UserModeNotiFuncIterType',0,4,236,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_UserModeNotificationOnlyForPncUsersIterType',0,4,239,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_UserPncByteMaskIterType',0,4,242,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_UserReqFullComIterType',0,4,245,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_UserReqPncFullComIterType',0,4,248,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_UserWithSinglePncIterType',0,4,251,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_WakeupInhibitionIterType',0,4,254,11,21
+	.word	204
+	.byte	20
+	.byte	'ComM_ActiveComModeIterType',0,4,141,12,30
+	.word	204
+	.byte	20
+	.byte	'ComM_ActivePncComModeIterType',0,4,144,12,26
+	.word	204
+	.byte	20
+	.byte	'ComM_BusComModeReqIterType',0,4,147,12,30
+	.word	204
+	.byte	20
+	.byte	'ComM_BusComModeReqFrShutdownIterType',0,4,150,12,30
+	.word	204
+	.byte	20
+	.byte	'ComM_BusPncComModeReqIterType',0,4,153,12,26
+	.word	204
+	.byte	20
+	.byte	'ComM_BusSleepModeIndicatedIterType',0,4,156,12,30
+	.word	204
+	.byte	20
+	.byte	'ComM_BusSmStateIterType',0,4,159,12,30
+	.word	204
+	.byte	20
+	.byte	'ComM_ComAllowedIterType',0,4,162,12,30
+	.word	204
+	.byte	20
+	.byte	'ComM_DcmRequestActiveIterType',0,4,165,12,30
+	.word	204
+	.byte	20
+	.byte	'ComM_ForwardSynchronizedPncShutdownIndicatedIterType',0,4,168,12,26
+	.word	204
+	.byte	20
+	.byte	'ComM_FrShutdownIterType',0,4,171,12,30
+	.word	204
+	.byte	20
+	.byte	'ComM_LastStateChangeIterType',0,4,174,12,27
+	.word	204
+	.byte	20
+	.byte	'ComM_MinFullComModeTimerIterType',0,4,177,12,30
+	.word	204
+	.byte	20
+	.byte	'ComM_NmLightTimerIterType',0,4,180,12,30
+	.word	204
+	.byte	20
+	.byte	'ComM_PncPSleepTimerIterType',0,4,183,12,26
+	.word	204
+	.byte	20
+	.byte	'ComM_PncToChannelRoutingStateIterType',0,4,186,12,30
+	.word	204
+	.byte	20
+	.byte	'ComM_ResetRequiredIterType',0,4,189,12,30
+	.word	204
+	.byte	20
+	.byte	'ComM_SimulatedSmModeIterType',0,4,192,12,30
+	.word	204
+	.byte	20
+	.byte	'ComM_StateChangeIterType',0,4,195,12,30
+	.word	204
+	.byte	20
+	.byte	'ComM_BusSleepModeIndicatedType',0,4,207,12,17
+	.word	204
+	.byte	20
+	.byte	'ComM_BusTypeFrType',0,4,210,12,17
+	.word	204
+	.byte	20
+	.byte	'ComM_GwTypeOfChannelType',0,4,213,12,15
+	.word	204
+	.byte	20
+	.byte	'ComM_InhibitionInitValueOfChannelType',0,4,216,12,15
+	.word	204
+	.byte	20
+	.byte	'ComM_InvalidHndOfChannelType',0,4,219,12,17
+	.word	204
+	.byte	20
+	.byte	'ComM_J1939SupportOfChannelType',0,4,222,12,17
+	.word	204
+	.byte	20
+	.byte	'ComM_MainFunctionNeedsSyncOfChannelType',0,4,225,12,17
+	.word	204
+	.byte	20
+	.byte	'ComM_ManagingChannelIdOfChannelType',0,4,228,12,15
+	.word	204
+	.byte	20
+	.byte	'ComM_ManagingChannelOfChannelType',0,4,231,12,17
+	.word	204
+	.byte	20
+	.byte	'ComM_ManagingUserOfChannelType',0,4,234,12,15
+	.word	204
+	.byte	20
+	.byte	'ComM_MinFullComTimeOfChannelType',0,4,237,12,15
+	.word	204
+	.byte	20
+	.byte	'ComM_NmLightDurationOfChannelType',0,4,240,12,15
+	.word	204
+	.byte	20
+	.byte	'ComM_NmLightSilentDurationOfChannelType',0,4,243,12,15
+	.word	204
+	.byte	20
+	.byte	'ComM_NmSupportOfChannelType',0,4,246,12,17
+	.word	204
+	.byte	20
+	.byte	'ComM_NmTypeOfChannelType',0,4,249,12,15
+	.word	204
+	.byte	20
+	.byte	'ComM_PartitionConfigIdxOfChannelType',0,4,252,12,15
+	.word	204
+	.byte	20
+	.byte	'ComM_PassiveOrLinSlaveOfChannelType',0,4,255,12,17
+	.word	204
+	.byte	20
+	.byte	'ComM_PncNmRequestOfChannelType',0,4,130,13,17
+	.word	204
+	.byte	20
+	.byte	'ComM_ResetAfterForcingNoCommOfChannelType',0,4,133,13,17
+	.word	204
+	.byte	20
+	.byte	'ComM_SilentSupportOfChannelType',0,4,136,13,17
+	.word	204
+	.byte	20
+	.byte	'ComM_WakeupStateOfChannelType',0,4,139,13,15
+	.word	204
+	.byte	20
+	.byte	'ComM_InvalidHndOfChannelPbType',0,4,142,13,17
+	.word	204
+	.byte	20
+	.byte	'ComM_PncLimitationEndIdxOfChannelPbType',0,4,145,13,15
+	.word	204
+	.byte	20
+	.byte	'ComM_PncLimitationStartIdxOfChannelPbType',0,4,148,13,15
+	.word	204
+	.byte	20
+	.byte	'ComM_PncLimitationUsedOfChannelPbType',0,4,151,13,17
+	.word	204
+	.byte	20
+	.byte	'ComM_PncPbIndEndIdxOfChannelPbType',0,4,154,13,15
+	.word	204
+	.byte	20
+	.byte	'ComM_PncPbIndStartIdxOfChannelPbType',0,4,157,13,15
+	.word	204
+	.byte	20
+	.byte	'ComM_PncPbIndUsedOfChannelPbType',0,4,160,13,17
+	.word	204
+	.byte	20
+	.byte	'ComM_UserReqFullComEndIdxOfChannelPbType',0,4,163,13,15
+	.word	204
+	.byte	20
+	.byte	'ComM_UserReqFullComStartIdxOfChannelPbType',0,4,166,13,15
+	.word	204
+	.byte	20
+	.byte	'ComM_UserReqFullComUsedOfChannelPbType',0,4,169,13,17
+	.word	204
+	.byte	20
+	.byte	'ComM_ComAllowedType',0,4,172,13,17
+	.word	204
+	.byte	20
+	.byte	'ComM_CoordPncWithGwPassiveAndManagedChannelsType',0,4,175,13,17
+	.word	204
+	.byte	20
+	.byte	'ComM_DcmIndicationType',0,4,178,13,17
+	.word	204
+	.byte	20
+	.byte	'ComM_DcmRequestActiveType',0,4,181,13,17
+	.word	204
+	.byte	20
+	.byte	'ComM_EcuMWakeUpIndicatedType',0,4,184,13,17
+	.word	204
+	.byte	20
+	.byte	'ComM_ExtendedRamCheckType',0,4,187,13,17
+	.word	204
+	.byte	20
+	.byte	'ComM_FinalMagicNumberType',0,4,190,13,16
+	.word	1106
+	.byte	20
+	.byte	'ComM_ForwardSynchronizedPncShutdownIndicatedType',0,4,193,13,17
+	.word	204
+	.byte	20
+	.byte	'ComM_FrShutdownType',0,4,196,13,17
+	.word	204
+	.byte	20
+	.byte	'ComM_FullComRequestersType',0,4,199,13,16
+	.word	1106
+	.byte	20
+	.byte	'ComM_FullCommRequestNotifType',0,4,202,13,17
+	.word	204
+	.byte	20
+	.byte	'ComM_FullNmTypeOfChannelType',0,4,205,13,17
+	.word	204
+	.byte	20
+	.byte	'ComM_InitDataHashCodeType',0,4,208,13,16
+	.word	3249
+	.byte	20
+	.byte	'ComM_KeepAwakeChannelsType',0,4,211,13,17
+	.word	204
+	.byte	20
+	.byte	'ComM_LightNmTypeOfChannelType',0,4,214,13,17
+	.word	204
+	.byte	20
+	.byte	'ComM_LinslaveNmTypeOfChannelType',0,4,217,13,17
+	.word	204
+	.byte	20
+	.byte	'ComM_MinFullComModeTimerType',0,4,220,13,16
+	.word	1106
+	.byte	20
+	.byte	'ComM_ModeLimitationType',0,4,223,13,17
+	.word	204
+	.byte	20
+	.byte	'ComM_NmGwExtType',0,4,226,13,17
+	.word	204
+	.byte	20
+	.byte	'ComM_NmLightTimerType',0,4,229,13,16
+	.word	1106
+	.byte	20
+	.byte	'ComM_NmStartUpIndicatedType',0,4,232,13,17
+	.word	204
+	.byte	20
+	.byte	'ComM_NoneNmTypeOfChannelType',0,4,235,13,17
+	.word	204
+	.byte	20
+	.byte	'ComM_NotifyPncStateChangeType',0,4,238,13,17
+	.word	204
+	.byte	20
+	.byte	'ComM_NvMStoreReqType',0,4,241,13,17
+	.word	204
+	.byte	20
+	.byte	'ComM_OnlyNoneNmTypeOfChannelType',0,4,244,13,17
+	.word	204
+	.byte	20
+	.byte	'ComM_PartitionSNVOfPartitionIdentifiersType',0,4,247,13,16
+	.word	3277
+	.byte	20
+	.byte	'ComM_ClearMaskOfPncType',0,4,250,13,15
+	.word	204
+	.byte	20
+	.byte	'ComM_CoordinatedOfPncType',0,4,253,13,17
+	.word	204
+	.byte	20
+	.byte	'ComM_IntermediatePncCoordinatorOfPncType',0,4,128,14,17
+	.word	204
+	.byte	20
+	.byte	'ComM_PncIdOfPncType',0,4,131,14,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SetMaskOfPncType',0,4,134,14,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SystemUserOfPncType',0,4,137,14,15
+	.word	204
+	.byte	20
+	.byte	'ComM_TopLevelPncCoordinatorOfPncType',0,4,140,14,17
+	.word	204
+	.byte	20
+	.byte	'ComM_WakeupEnabledOfPncType',0,4,143,14,17
+	.word	204
+	.byte	20
+	.byte	'ComM_Pnc0VectorAvoidanceType',0,4,146,14,17
+	.word	204
+	.byte	20
+	.byte	'ComM_PncChannelMappingType',0,4,149,14,15
+	.word	204
+	.byte	20
+	.byte	'ComM_PncCheckEnabledAtRuntimeType',0,4,152,14,17
+	.word	204
+	.byte	20
+	.byte	'ComM_PncEiraRxType',0,4,155,14,17
+	.word	204
+	.byte	20
+	.byte	'ComM_PncEiraRxCountType',0,4,158,14,15
+	.word	204
+	.byte	20
+	.byte	'ComM_PncExtendedFunctionalityType',0,4,161,14,17
+	.word	204
+	.byte	20
+	.byte	'ComM_PncGwTypeActiveType',0,4,164,14,17
+	.word	204
+	.byte	20
+	.byte	'ComM_PncGwTypeNoneType',0,4,167,14,17
+	.word	204
+	.byte	20
+	.byte	'ComM_PncGwTypePassiveType',0,4,170,14,17
+	.word	204
+	.byte	20
+	.byte	'ComM_PncLimitationType',0,4,173,14,15
+	.word	204
+	.byte	20
+	.byte	'ComM_PncPSleepTimerType',0,4,176,14,16
+	.word	1106
+	.byte	20
+	.byte	'ComM_PncChannelMappingEndIdxOfPncPbType',0,4,179,14,15
+	.word	204
+	.byte	20
+	.byte	'ComM_PncChannelMappingStartIdxOfPncPbType',0,4,182,14,15
+	.word	204
+	.byte	20
+	.byte	'ComM_PncChannelMappingUsedOfPncPbType',0,4,185,14,17
+	.word	204
+	.byte	20
+	.byte	'ComM_PncSignalIndEndIdxOfPncPbType',0,4,188,14,15
+	.word	204
+	.byte	20
+	.byte	'ComM_PncSignalIndStartIdxOfPncPbType',0,4,191,14,15
+	.word	204
+	.byte	20
+	.byte	'ComM_PncSignalIndUsedOfPncPbType',0,4,194,14,17
+	.word	204
+	.byte	20
+	.byte	'ComM_SignalByteIndexOfPncPbType',0,4,197,14,15
+	.word	204
+	.byte	20
+	.byte	'ComM_UserReqPncFullComEndIdxOfPncPbType',0,4,200,14,15
+	.word	204
+	.byte	20
+	.byte	'ComM_UserReqPncFullComStartIdxOfPncPbType',0,4,203,14,15
+	.word	204
+	.byte	20
+	.byte	'ComM_PncPbIndType',0,4,206,14,15
+	.word	204
+	.byte	20
+	.byte	'ComM_BusTypeIdOfPncSignalType',0,4,209,14,15
+	.word	204
+	.byte	20
+	.byte	'ComM_ChannelIdxOfPncSignalType',0,4,212,14,15
+	.word	204
+	.byte	20
+	.byte	'ComM_ChannelUsedOfPncSignalType',0,4,215,14,17
+	.word	204
+	.byte	20
+	.byte	'ComM_TypeOfPncSignalType',0,4,218,14,15
+	.word	204
+	.byte	20
+	.byte	'ComM_PncSignalIndType',0,4,221,14,15
+	.word	204
+	.byte	20
+	.byte	'ComM_PncSignalValuesType',0,4,224,14,15
+	.word	204
+	.byte	20
+	.byte	'ComM_PncToChannelRoutingStateType',0,4,227,14,15
+	.word	204
+	.byte	20
+	.byte	'ComM_PncWithoutChannelsType',0,4,230,14,17
+	.word	204
+	.byte	20
+	.byte	'ComM_PostInitializedType',0,4,233,14,17
+	.word	204
+	.byte	20
+	.byte	'ComM_ResetRequiredType',0,4,236,14,17
+	.word	204
+	.byte	20
+	.byte	'ComM_SimulatedSmModeType',0,4,239,14,15
+	.word	204
+	.byte	20
+	.byte	'ComM_StateChangeType',0,4,242,14,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SynchronousWakeUpType',0,4,245,14,17
+	.word	204
+	.byte	20
+	.byte	'ComM_PartitionConfigIdxOfUserType',0,4,248,14,15
+	.word	204
+	.byte	20
+	.byte	'ComM_PncUserOfUserType',0,4,251,14,17
+	.word	204
+	.byte	20
+	.byte	'ComM_UserByteMaskEndIdxOfUserType',0,4,254,14,15
+	.word	204
+	.byte	20
+	.byte	'ComM_UserByteMaskStartIdxOfUserType',0,4,129,15,15
+	.word	204
+	.byte	20
+	.byte	'ComM_UserByteMaskUsedOfUserType',0,4,132,15,17
+	.word	204
+	.byte	20
+	.byte	'ComM_UserPncByteMaskEndIdxOfUserType',0,4,135,15,15
+	.word	204
+	.byte	20
+	.byte	'ComM_UserPncByteMaskLengthOfUserType',0,4,138,15,15
+	.word	204
+	.byte	20
+	.byte	'ComM_UserPncByteMaskStartIdxOfUserType',0,4,141,15,15
+	.word	204
+	.byte	20
+	.byte	'ComM_UserPncByteMaskUsedOfUserType',0,4,144,15,17
+	.word	204
+	.byte	20
+	.byte	'ComM_ChannelOfUserByteMaskType',0,4,147,15,15
+	.word	204
+	.byte	20
+	.byte	'ComM_ClearMaskOfUserByteMaskType',0,4,150,15,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SetMaskOfUserByteMaskType',0,4,153,15,15
+	.word	204
+	.byte	20
+	.byte	'ComM_UserReqFullComIdxOfUserByteMaskType',0,4,156,15,15
+	.word	204
+	.byte	20
+	.byte	'ComM_UserModeNotificationOnlyForPncUsersType',0,4,159,15,17
+	.word	204
+	.byte	20
+	.byte	'ComM_ClearMaskOfUserPncByteMaskType',0,4,162,15,15
+	.word	204
+	.byte	20
+	.byte	'ComM_PncIDOfUserPncByteMaskType',0,4,165,15,15
+	.word	204
+	.byte	20
+	.byte	'ComM_PncIdxOfUserPncByteMaskType',0,4,168,15,15
+	.word	204
+	.byte	20
+	.byte	'ComM_SetMaskOfUserPncByteMaskType',0,4,171,15,15
+	.word	204
+	.byte	20
+	.byte	'ComM_UserReqPncFullComIdxOfUserPncByteMaskType',0,4,174,15,15
+	.word	204
+	.byte	20
+	.byte	'ComM_UserReqFullComType',0,4,177,15,15
+	.word	204
+	.byte	20
+	.byte	'ComM_UserReqPncFullComType',0,4,180,15,15
+	.word	204
+	.byte	20
+	.byte	'ComM_UserWithSinglePncType',0,4,183,15,17
+	.word	204
+	.byte	20
+	.byte	'ComM_WakeupInhibitionType',0,4,186,15,17
+	.word	204
+	.byte	20
+	.byte	'ComM_PCPartitionConfigIdxOfPartitionIdentifiersType',0,4,220,15,15
+	.word	204
+	.byte	12
+	.byte	'sComM_ChannelType',0,4,245,15,16,8,13
+	.byte	'GetCurrentBusSMModeApiOfChannel',0
+	.word	13829
+	.byte	4,2,35,0,13
+	.byte	'RequestBusSMModeApiOfChannel',0
+	.word	13768
+	.byte	4,2,35,4,0,20
+	.byte	'ComM_ChannelType',0,4,249,15,3
+	.word	24064
+	.byte	15
+	.word	13806
+	.byte	15
+	.word	13745
+	.byte	12
+	.byte	'sComM_ChannelPbType',0,4,252,15,16,1,13
+	.byte	'ComM_ChannelPbNeverUsed',0
+	.word	204
+	.byte	1,2,35,0,0,20
+	.byte	'ComM_ChannelPbType',0,4,255,15,3
+	.word	24204
+	.byte	12
+	.byte	'sComM_EiraTxSignalIndirectionType',0,4,130,16,16,1,13
+	.byte	'ComM_EiraTxSignalIndirectionNeverUsed',0
+	.word	204
+	.byte	1,2,35,0,0,20
+	.byte	'ComM_EiraTxSignalIndirectionType',0,4,133,16,3
+	.word	24292
+	.byte	12
+	.byte	'sComM_PartitionIdentifiersType',0,4,136,16,16,6,13
+	.byte	'PartitionSNVOfPartitionIdentifiers',0
+	.word	3277
+	.byte	4,2,35,0,13
+	.byte	'PCPartitionConfigIdxOfPartitionIdentifiers',0
+	.word	204
+	.byte	1,2,35,4,0,20
+	.byte	'ComM_PartitionIdentifiersType',0,4,140,16,3
+	.word	24422
+	.byte	12
+	.byte	'sComM_PncType',0,4,143,16,16,1,13
+	.byte	'ComM_PncNeverUsed',0
+	.word	204
+	.byte	1,2,35,0,0,20
+	.byte	'ComM_PncType',0,4,146,16,3
+	.word	24595
+	.byte	12
+	.byte	'sComM_PncPbType',0,4,149,16,16,1,13
+	.byte	'ComM_PncPbNeverUsed',0
+	.word	204
+	.byte	1,2,35,0,0,20
+	.byte	'ComM_PncPbType',0,4,152,16,3
+	.word	24665
+	.byte	12
+	.byte	'sComM_PncSignalType',0,4,155,16,16,1,13
+	.byte	'ComM_PncSignalNeverUsed',0
+	.word	204
+	.byte	1,2,35,0,0,20
+	.byte	'ComM_PncSignalType',0,4,158,16,3
+	.word	24741
+	.byte	12
+	.byte	'sComM_UserType',0,4,161,16,16,1,13
+	.byte	'PncUserOfUser',0
+	.word	204
+	.byte	1,2,35,0,0,20
+	.byte	'ComM_UserType',0,4,164,16,3
+	.word	24829
+	.byte	12
+	.byte	'sComM_UserByteMaskType',0,4,167,16,16,1,13
+	.byte	'ComM_UserByteMaskNeverUsed',0
+	.word	204
+	.byte	1,2,35,0,0,20
+	.byte	'ComM_UserByteMaskType',0,4,170,16,3
+	.word	24897
+	.byte	12
+	.byte	'sComM_UserPncByteMaskType',0,4,173,16,16,1,13
+	.byte	'ComM_UserPncByteMaskNeverUsed',0
+	.word	204
+	.byte	1,2,35,0,0,20
+	.byte	'ComM_UserPncByteMaskType',0,4,176,16,3
+	.word	24994
+	.byte	12
+	.byte	'ComM_ActiveComModeStructSTag',0,4,188,16,16,1,13
+	.byte	'ComMChannel_0',0
+	.word	204
+	.byte	1,2,35,0,0,20
+	.byte	'ComM_ActiveComModeStructSType',0,4,191,16,3
+	.word	25100
+	.byte	12
+	.byte	'ComM_BusComModeReqStructSTag',0,4,194,16,16,1,13
+	.byte	'ComMChannel_0',0
+	.word	204
+	.byte	1,2,35,0,0,20
+	.byte	'ComM_BusComModeReqStructSType',0,4,197,16,3
+	.word	25198
+	.byte	12
+	.byte	'ComM_BusComModeReqFrShutdownStructSTag',0,4,200,16,16,1,13
+	.byte	'ComMChannel_0',0
+	.word	204
+	.byte	1,2,35,0,0,20
+	.byte	'ComM_BusComModeReqFrShutdownStructSType',0,4,203,16,3
+	.word	25296
+	.byte	12
+	.byte	'ComM_BusSleepModeIndicatedStructSTag',0,4,206,16,16,1,13
+	.byte	'ComMChannel_0',0
+	.word	204
+	.byte	1,2,35,0,0,20
+	.byte	'ComM_BusSleepModeIndicatedStructSType',0,4,209,16,3
+	.word	25414
+	.byte	12
+	.byte	'ComM_BusSmStateStructSTag',0,4,212,16,16,1,13
+	.byte	'ComMChannel_0',0
+	.word	204
+	.byte	1,2,35,0,0,20
+	.byte	'ComM_BusSmStateStructSType',0,4,215,16,3
+	.word	25528
+	.byte	12
+	.byte	'ComM_ComAllowedStructSTag',0,4,218,16,16,1,13
+	.byte	'ComMChannel_0',0
+	.word	204
+	.byte	1,2,35,0,0,20
+	.byte	'ComM_ComAllowedStructSType',0,4,221,16,3
+	.word	25620
+	.byte	12
+	.byte	'ComM_DcmRequestActiveStructSTag',0,4,224,16,16,1,13
+	.byte	'ComMChannel_0',0
+	.word	204
+	.byte	1,2,35,0,0,20
+	.byte	'ComM_DcmRequestActiveStructSType',0,4,227,16,3
+	.word	25712
+	.byte	12
+	.byte	'ComM_FrShutdownStructSTag',0,4,230,16,16,1,13
+	.byte	'ComMChannel_0',0
+	.word	204
+	.byte	1,2,35,0,0,20
+	.byte	'ComM_FrShutdownStructSType',0,4,233,16,3
+	.word	25816
+	.byte	12
+	.byte	'ComM_MinFullComModeTimerStructSTag',0,4,236,16,16,2,13
+	.byte	'ComMChannel_0',0
+	.word	1106
+	.byte	2,2,35,0,0,20
+	.byte	'ComM_MinFullComModeTimerStructSType',0,4,239,16,3
+	.word	25908
+	.byte	12
+	.byte	'ComM_NmLightTimerStructSTag',0,4,242,16,16,2,13
+	.byte	'ComMChannel_0',0
+	.word	1106
+	.byte	2,2,35,0,0,20
+	.byte	'ComM_NmLightTimerStructSType',0,4,245,16,3
+	.word	26018
+	.byte	12
+	.byte	'ComM_PncToChannelRoutingStateStructSTag',0,4,248,16,16,1,13
+	.byte	'ComMChannel_0',0
+	.word	204
+	.byte	1,2,35,0,0,20
+	.byte	'ComM_PncToChannelRoutingStateStructSType',0,4,251,16,3
+	.word	26114
+	.byte	12
+	.byte	'ComM_ResetRequiredStructSTag',0,4,254,16,16,1,13
+	.byte	'ComMChannel_0',0
+	.word	204
+	.byte	1,2,35,0,0,20
+	.byte	'ComM_ResetRequiredStructSType',0,4,129,17,3
+	.word	26234
+	.byte	12
+	.byte	'ComM_SimulatedSmModeStructSTag',0,4,132,17,16,1,13
+	.byte	'ComMChannel_0',0
+	.word	204
+	.byte	1,2,35,0,0,20
+	.byte	'ComM_SimulatedSmModeStructSType',0,4,135,17,3
+	.word	26332
+	.byte	12
+	.byte	'ComM_StateChangeStructSTag',0,4,138,17,16,1,13
+	.byte	'ComMChannel_0',0
+	.word	204
+	.byte	1,2,35,0,0,20
+	.byte	'ComM_StateChangeStructSType',0,4,141,17,3
+	.word	26434
+	.byte	21,1
+	.word	204
+	.byte	22,0,0,26
+	.byte	'ComM_ComAllowedUTag',0,4,188,17,15,1,13
+	.byte	'raw',0
+	.word	26528
+	.byte	1,2,35,0,13
+	.byte	'str',0
+	.word	25620
+	.byte	1,2,35,0,0,20
+	.byte	'ComM_ComAllowedUType',0,4,192,17,3
+	.word	26537
+	.byte	20
+	.byte	'ComM_ActiveComModePtrType',0,4,132,18,58
+	.word	1101
+	.byte	20
+	.byte	'ComM_BusComModeReqFrShutdownPtrType',0,4,141,18,58
+	.word	1101
+	.byte	15
+	.word	204
+	.byte	20
+	.byte	'ComM_DcmRequestActivePtrType',0,4,171,18,69
+	.word	26700
+	.byte	15
+	.word	5653
+	.byte	20
+	.byte	'ComM_InhibitionPtrType',0,4,198,18,68
+	.word	26743
+	.byte	15
+	.word	1106
+	.byte	20
+	.byte	'ComM_MinFullComModeTimerPtrType',0,4,216,18,72
+	.word	26780
+	.byte	15
+	.word	204
+	.byte	20
+	.byte	'ComM_PncSignalValuesPtrType',0,4,163,19,68
+	.word	26826
+	.byte	15
+	.word	204
+	.byte	20
+	.byte	'ComM_StateChangePtrType',0,4,181,19,64
+	.word	26868
+	.byte	12
+	.byte	'sComM_PCPartitionConfigType',0,4,223,19,16,1,13
+	.byte	'ComM_PCPartitionConfigNeverUsed',0
+	.word	204
+	.byte	1,2,35,0,0,20
+	.byte	'ComM_PCPartitionConfigType',0,4,226,19,3
+	.word	26906
+	.byte	20
+	.byte	'ComM_PCConfigType',0,4,244,19,3
+	.word	1028
+	.byte	20
+	.byte	'ComM_ConfigType',0,4,246,19,27
+	.word	1028
+	.byte	12
+	.byte	'sComM_PBPartitionConfigType',0,4,136,20,16,1,13
+	.byte	'ComM_PBPartitionConfigNeverUsed',0
+	.word	204
+	.byte	1,2,35,0,0,20
+	.byte	'ComM_PBPartitionConfigType',0,4,139,20,3
+	.word	27070
+	.byte	27
+	.byte	'ComM_ComAllowed',0,4,172,21,52
+	.word	26537
+	.byte	1,1,27
+	.byte	'ComM_InitStatus',0,4,223,21,51
+	.word	204
+	.byte	1,1,0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L171:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,36,0,3,8,11,15,62,15,0,0,3,46,1,3,8,32,13,58,15,59,15
+	.byte	57,15,73,19,54,15,39,12,0,0,4,5,0,3,8,58,15,59,15,57,15,73,19,0,0,5,11,0,0,0,6,46,1,3,8,32,13,58,15,59
+	.byte	15,57,15,54,15,39,12,0,0,7,4,1,58,15,59,15,57,15,11,15,0,0,8,40,0,3,8,28,13,0,0,9,46,0,3,8,58,15,59,15
+	.byte	57,15,73,19,54,15,39,12,63,12,60,12,0,0,10,46,1,49,19,0,0,11,5,0,49,19,0,0,12,19,1,3,8,58,15,59,15,57
+	.byte	15,11,15,0,0,13,13,0,3,8,73,19,11,15,56,9,0,0,14,38,0,73,19,0,0,15,15,0,73,19,0,0,16,46,1,3,8,58,15,59
+	.byte	15,57,15,54,15,39,12,63,12,60,12,0,0,17,46,1,3,8,58,15,59,15,57,15,73,19,54,15,39,12,63,12,60,12,0,0,18
+	.byte	46,0,3,8,58,15,59,15,57,15,54,15,39,12,63,12,60,12,0,0,19,21,0,54,15,0,0,20,22,0,3,8,58,15,59,15,57,15
+	.byte	73,19,0,0,21,1,1,11,15,73,19,0,0,22,33,0,47,15,0,0,23,19,1,58,15,59,15,57,15,11,15,0,0,24,21,1,73,19,54
+	.byte	15,39,12,0,0,25,5,0,73,19,0,0,26,23,1,3,8,58,15,59,15,57,15,11,15,0,0,27,52,0,3,8,58,15,59,15,57,15,73
+	.byte	19,63,12,60,12,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L172:
+	.word	.L559-.L558
+.L558:
+	.half	3
+	.word	.L561-.L560
+.L560:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'GenData',0
+	.byte	'../../../../BSW/Components/ComM/Implementation',0,0
+	.byte	'ComM_Private_Cfg.h',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Os\\Implementation\\Os.h',0,0,0,0
+	.byte	'Os_Types_Lcfg.h',0,1,0,0
+	.byte	'ComM_Cfg.h',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\ComM\\Implementation\\ComM_Private_BusSM.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\ComM\\Implementation\\ComM_Private_Dcm.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\ComM\\Implementation\\ComM_Private_EcuMBswM.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\ComM\\Implementation\\ComM_Channel_StatusAndState.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\ComM\\Implementation\\ComM_ErrorReporting.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\ComM\\Implementation\\ComM_Initialization.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\ComM\\Implementation\\ComM_ModeInhibition.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\ComM\\Implementation\\ComM_User.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\ComM\\Implementation\\ComM_Util.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\ComM\\Implementation\\ComM_MainFunction.h',0,0,0,0
+	.byte	'ComM.c',0,2,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\Platform_Types.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\Std_Types.h',0,0,0,0
+	.byte	'ComStack_Cfg.h',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\ComStack_Types.h',0,0,0,0
+	.byte	'Det_Cfg.h',0,1,0,0
+	.byte	'Rte_Type.h',0,1,0,0
+	.byte	'ComM_GenTypes.h',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\ComM\\Implementation\\ComM_Types.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Os\\Implementation\\Os_Hal_OsInt.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Os\\Implementation\\Os_Hal_Os_Types.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Os\\Implementation\\Os_Types.h',0,0,0,0
+	.byte	'Os_Hal_Lcfg.h',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Os\\Implementation\\OsInt.h',0,0,0,0,0
+.L561:
+.L559:
+	.sdecl	'.debug_info',debug,cluster('ComM_MainFunction')
+	.sect	'.debug_info'
+.L173:
+	.word	301
+	.half	3
+	.word	.L174
+	.byte	4,1
+	.byte	'../../../../BSW/Components/ComM/Implementation/ComM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L176,.L175
+	.byte	2
+	.word	.L169
+	.byte	3
+	.byte	'ComM_MainFunction',0,1,133,10,25,1,1,1
+	.word	.L156,.L335,.L155
+	.byte	4
+	.byte	'Channel',0,1,133,10,62
+	.word	.L336,.L337
+	.byte	5
+	.word	.L156,.L335
+	.byte	6
+	.byte	'errorId',0,1,136,10,10
+	.word	.L336,.L338
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ComM_MainFunction')
+	.sect	'.debug_abbrev'
+.L174:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ComM_MainFunction')
+	.sect	'.debug_line'
+.L175:
+	.word	.L563-.L562
+.L562:
+	.half	3
+	.word	.L565-.L564
+.L564:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/ComM/Implementation',0,0
+	.byte	'ComM.c',0,1,0,0,0
+.L565:
+	.byte	5,25,7,0,5,2
+	.word	.L156
+	.byte	3,132,10,1,5,18,9
+	.half	.L534-.L156
+	.byte	3,3,1,5,45,3,4,1,5,3,9
+	.half	.L533-.L534
+	.byte	1,5,8,7,9
+	.half	.L566-.L533
+	.byte	3,6,1,5,13,7,9
+	.half	.L567-.L566
+	.byte	3,2,1,5,38,1,5,37,9
+	.half	.L85-.L567
+	.byte	3,7,1,5,46,9
+	.half	.L84-.L85
+	.byte	3,4,1,5,69,9
+	.half	.L568-.L84
+	.byte	1,5,1,9
+	.half	.L178-.L568
+	.byte	3,1,0,1,1
+.L563:
+	.sdecl	'.debug_ranges',debug,cluster('ComM_MainFunction')
+	.sect	'.debug_ranges'
+.L176:
+	.word	-1,.L177,0,.L178-.L177,0,0
+	.sdecl	'.debug_info',debug,cluster('ComM_PreInit')
+	.sect	'.debug_info'
+.L179:
+	.word	276
+	.half	3
+	.word	.L180
+	.byte	4,1
+	.byte	'../../../../BSW/Components/ComM/Implementation/ComM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L182,.L181
+	.byte	2
+	.word	.L169
+	.byte	3
+	.byte	'ComM_PreInit',0,1,165,1,25,1,1,1
+	.word	.L116,.L339,.L115
+	.byte	4
+	.byte	'ConfigPtr',0,1,165,1,93
+	.word	.L340,.L341
+	.byte	5
+	.word	.L116,.L339
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ComM_PreInit')
+	.sect	'.debug_abbrev'
+.L180:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ComM_PreInit')
+	.sect	'.debug_line'
+.L181:
+	.word	.L570-.L569
+.L569:
+	.half	3
+	.word	.L572-.L571
+.L571:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/ComM/Implementation',0,0
+	.byte	'ComM.c',0,1,0,0,0
+.L572:
+	.byte	5,32,7,0,5,2
+	.word	.L116
+	.byte	3,183,1,1,5,46,9
+	.half	.L461-.L116
+	.byte	3,4,1,5,64,9
+	.half	.L573-.L461
+	.byte	1,5,1,9
+	.half	.L184-.L573
+	.byte	3,3,0,1,1
+.L570:
+	.sdecl	'.debug_ranges',debug,cluster('ComM_PreInit')
+	.sect	'.debug_ranges'
+.L182:
+	.word	-1,.L183,0,.L184-.L183,0,0
+	.sdecl	'.debug_info',debug,cluster('ComM_PostInit')
+	.sect	'.debug_info'
+.L185:
+	.word	276
+	.half	3
+	.word	.L186
+	.byte	4,1
+	.byte	'../../../../BSW/Components/ComM/Implementation/ComM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L188,.L187
+	.byte	2
+	.word	.L169
+	.byte	3
+	.byte	'ComM_PostInit',0,1,201,1,25,1,1,1
+	.word	.L118,.L342,.L117
+	.byte	4
+	.word	.L118,.L342
+	.byte	5
+	.byte	'errorId',0,1,204,1,9
+	.word	.L336,.L343
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ComM_PostInit')
+	.sect	'.debug_abbrev'
+.L186:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ComM_PostInit')
+	.sect	'.debug_line'
+.L187:
+	.word	.L575-.L574
+.L574:
+	.half	3
+	.word	.L577-.L576
+.L576:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/ComM/Implementation',0,0
+	.byte	'ComM.c',0,1,0,0,0
+.L577:
+	.byte	5,41,7,0,5,2
+	.word	.L118
+	.byte	3,207,1,1,5,46,9
+	.half	.L462-.L118
+	.byte	3,3,1,5,65,9
+	.half	.L578-.L462
+	.byte	1,5,1,9
+	.half	.L190-.L578
+	.byte	3,1,0,1,1
+.L575:
+	.sdecl	'.debug_ranges',debug,cluster('ComM_PostInit')
+	.sect	'.debug_ranges'
+.L188:
+	.word	-1,.L189,0,.L190-.L189,0,0
+	.sdecl	'.debug_info',debug,cluster('ComM_Init')
+	.sect	'.debug_info'
+.L191:
+	.word	321
+	.half	3
+	.word	.L192
+	.byte	4,1
+	.byte	'../../../../BSW/Components/ComM/Implementation/ComM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L194,.L193
+	.byte	2
+	.word	.L169
+	.byte	3
+	.byte	'ComM_Init',0,1,228,1,23,1,1,1
+	.word	.L120,.L344,.L119
+	.byte	4
+	.byte	'ConfigPtr',0,1,228,1,85
+	.word	.L340,.L345
+	.byte	5
+	.word	.L120,.L344
+	.byte	6
+	.byte	'errorId',0,1,231,1,9
+	.word	.L336,.L346
+	.byte	6
+	.byte	'partitionIdx',0,1,232,1,40
+	.word	.L336,.L347
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ComM_Init')
+	.sect	'.debug_abbrev'
+.L192:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ComM_Init')
+	.sect	'.debug_line'
+.L193:
+	.word	.L580-.L579
+.L579:
+	.half	3
+	.word	.L582-.L581
+.L581:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/ComM/Implementation',0
+	.byte	'GenData',0,0
+	.byte	'ComM.c',0,1,0,0
+	.byte	'ComM_Private_Cfg.h',0,2,0,0,0
+.L582:
+	.byte	5,108,7,0,5,2
+	.word	.L120
+	.byte	3,231,1,1,5,53,9
+	.half	.L465-.L120
+	.byte	1,5,44,3,22,1,5,3,9
+	.half	.L466-.L465
+	.byte	1,5,13,7,9
+	.half	.L583-.L466
+	.byte	3,2,1,5,32,1,4,2,5,36,9
+	.half	.L2-.L583
+	.byte	3,249,13,1,5,34,9
+	.half	.L584-.L2
+	.byte	1,4,1,5,3,9
+	.half	.L585-.L584
+	.byte	3,139,114,1,5,13,7,9
+	.half	.L586-.L585
+	.byte	3,2,1,5,41,1,5,40,9
+	.half	.L4-.L586
+	.byte	3,16,1,5,45,9
+	.half	.L3-.L4
+	.byte	3,4,1,5,60,9
+	.half	.L587-.L3
+	.byte	1,5,1,9
+	.half	.L196-.L587
+	.byte	3,3,0,1,1
+.L580:
+	.sdecl	'.debug_ranges',debug,cluster('ComM_Init')
+	.sect	'.debug_ranges'
+.L194:
+	.word	-1,.L195,0,.L196-.L195,0,0
+	.sdecl	'.debug_info',debug,cluster('ComM_InitMemory')
+	.sect	'.debug_info'
+.L197:
+	.word	256
+	.half	3
+	.word	.L198
+	.byte	4,1
+	.byte	'../../../../BSW/Components/ComM/Implementation/ComM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L200,.L199
+	.byte	2
+	.word	.L169
+	.byte	3
+	.byte	'ComM_InitMemory',0,1,219,2,23,1,1,1
+	.word	.L124,.L348,.L123
+	.byte	4
+	.word	.L124,.L348
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ComM_InitMemory')
+	.sect	'.debug_abbrev'
+.L198:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ComM_InitMemory')
+	.sect	'.debug_line'
+.L199:
+	.word	.L589-.L588
+.L588:
+	.half	3
+	.word	.L591-.L590
+.L590:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/ComM/Implementation',0,0
+	.byte	'ComM.c',0,1,0,0,0
+.L591:
+	.byte	5,33,7,0,5,2
+	.word	.L124
+	.byte	3,226,2,1,5,1,7,9
+	.half	.L202-.L124
+	.byte	3,1,0,1,1
+.L589:
+	.sdecl	'.debug_ranges',debug,cluster('ComM_InitMemory')
+	.sect	'.debug_ranges'
+.L200:
+	.word	-1,.L201,0,.L202-.L201,0,0
+	.sdecl	'.debug_info',debug,cluster('ComM_DeInit')
+	.sect	'.debug_info'
+.L203:
+	.word	274
+	.half	3
+	.word	.L204
+	.byte	4,1
+	.byte	'../../../../BSW/Components/ComM/Implementation/ComM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L206,.L205
+	.byte	2
+	.word	.L169
+	.byte	3
+	.byte	'ComM_DeInit',0,1,170,2,25,1,1,1
+	.word	.L122,.L349,.L121
+	.byte	4
+	.word	.L122,.L349
+	.byte	5
+	.byte	'errorId',0,1,173,2,9
+	.word	.L336,.L350
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ComM_DeInit')
+	.sect	'.debug_abbrev'
+.L204:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ComM_DeInit')
+	.sect	'.debug_line'
+.L205:
+	.word	.L593-.L592
+.L592:
+	.half	3
+	.word	.L595-.L594
+.L594:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/ComM/Implementation',0,0
+	.byte	'ComM.c',0,1,0,0,0
+.L595:
+	.byte	5,44,7,0,5,2
+	.word	.L122
+	.byte	3,193,2,1,5,3,9
+	.half	.L596-.L122
+	.byte	1,5,13,7,9
+	.half	.L597-.L596
+	.byte	3,2,1,5,33,1,5,41,9
+	.half	.L6-.L597
+	.byte	3,7,1,5,45,9
+	.half	.L7-.L6
+	.byte	3,4,1,5,62,9
+	.half	.L598-.L7
+	.byte	1,5,1,9
+	.half	.L208-.L598
+	.byte	3,1,0,1,1
+.L593:
+	.sdecl	'.debug_ranges',debug,cluster('ComM_DeInit')
+	.sect	'.debug_ranges'
+.L206:
+	.word	-1,.L207,0,.L208-.L207,0,0
+	.sdecl	'.debug_info',debug,cluster('ComM_GetStatus')
+	.sect	'.debug_info'
+.L209:
+	.word	321
+	.half	3
+	.word	.L210
+	.byte	4,1
+	.byte	'../../../../BSW/Components/ComM/Implementation/ComM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L212,.L211
+	.byte	2
+	.word	.L169
+	.byte	3
+	.byte	'ComM_GetStatus',0,1,239,2,35
+	.word	.L336
+	.byte	1,1,1
+	.word	.L126,.L351,.L125
+	.byte	4
+	.byte	'Status',0,1,239,2,106
+	.word	.L352,.L353
+	.byte	5
+	.word	.L126,.L351
+	.byte	6
+	.byte	'retVal',0,1,242,2,18
+	.word	.L336,.L354
+	.byte	6
+	.byte	'errorId',0,1,243,2,9
+	.word	.L336,.L355
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ComM_GetStatus')
+	.sect	'.debug_abbrev'
+.L210:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ComM_GetStatus')
+	.sect	'.debug_line'
+.L211:
+	.word	.L600-.L599
+.L599:
+	.half	3
+	.word	.L602-.L601
+.L601:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/ComM/Implementation',0,0
+	.byte	'ComM.c',0,1,0,0,0
+.L602:
+	.byte	5,25,7,0,5,2
+	.word	.L126
+	.byte	3,241,2,1,5,17,9
+	.half	.L470-.L126
+	.byte	3,1,1,5,3,3,5,1,5,13,7,9
+	.half	.L471-.L470
+	.byte	3,2,1,5,38,1,5,45,9
+	.half	.L8-.L471
+	.byte	3,7,1,5,12,9
+	.half	.L469-.L8
+	.byte	1,5,46,9
+	.half	.L9-.L469
+	.byte	3,4,1,5,66,9
+	.half	.L603-.L9
+	.byte	1,5,3,9
+	.half	.L604-.L603
+	.byte	3,2,1,5,1,3,1,1,7,9
+	.half	.L214-.L604
+	.byte	0,1,1
+.L600:
+	.sdecl	'.debug_ranges',debug,cluster('ComM_GetStatus')
+	.sect	'.debug_ranges'
+.L212:
+	.word	-1,.L213,0,.L214-.L213,0,0
+	.sdecl	'.debug_info',debug,cluster('ComM_GetState')
+	.sect	'.debug_info'
+.L215:
+	.word	340
+	.half	3
+	.word	.L216
+	.byte	4,1
+	.byte	'../../../../BSW/Components/ComM/Implementation/ComM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L218,.L217
+	.byte	2
+	.word	.L169
+	.byte	3
+	.byte	'ComM_GetState',0,1,239,3,35
+	.word	.L336
+	.byte	1,1,1
+	.word	.L130,.L356,.L129
+	.byte	4
+	.byte	'Channel',0,1,239,3,68
+	.word	.L336,.L357
+	.byte	4
+	.byte	'State',0,1,239,3,127
+	.word	.L358,.L359
+	.byte	5
+	.word	.L130,.L356
+	.byte	6
+	.byte	'retVal',0,1,242,3,18
+	.word	.L336,.L360
+	.byte	6
+	.byte	'errorId',0,1,243,3,9
+	.word	.L336,.L361
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ComM_GetState')
+	.sect	'.debug_abbrev'
+.L216:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ComM_GetState')
+	.sect	'.debug_line'
+.L217:
+	.word	.L606-.L605
+.L605:
+	.half	3
+	.word	.L608-.L607
+.L607:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/ComM/Implementation',0,0
+	.byte	'ComM.c',0,1,0,0,0
+.L608:
+	.byte	5,35,7,0,5,2
+	.word	.L130
+	.byte	3,238,3,1,5,25,9
+	.half	.L477-.L130
+	.byte	3,3,1,5,17,9
+	.half	.L478-.L477
+	.byte	3,1,1,5,45,3,5,1,5,3,9
+	.half	.L476-.L478
+	.byte	1,5,13,7,9
+	.half	.L609-.L476
+	.byte	3,2,1,5,12,9
+	.half	.L610-.L609
+	.byte	3,1,1,5,33,3,127,1,5,13,9
+	.half	.L15-.L610
+	.byte	3,4,1,5,8,7,9
+	.half	.L611-.L15
+	.byte	3,5,1,5,13,7,9
+	.half	.L17-.L611
+	.byte	3,2,1,5,38,1,5,28,9
+	.half	.L18-.L17
+	.byte	3,7,1,5,37,1,5,12,9
+	.half	.L480-.L18
+	.byte	3,1,1,5,46,9
+	.half	.L16-.L480
+	.byte	3,4,1,5,65,9
+	.half	.L612-.L16
+	.byte	1,5,3,9
+	.half	.L613-.L612
+	.byte	3,2,1,5,1,3,1,1,7,9
+	.half	.L220-.L613
+	.byte	0,1,1
+.L606:
+	.sdecl	'.debug_ranges',debug,cluster('ComM_GetState')
+	.sect	'.debug_ranges'
+.L218:
+	.word	-1,.L219,0,.L220-.L219,0,0
+	.sdecl	'.debug_info',debug,cluster('ComM_RequestComMode')
+	.sect	'.debug_info'
+.L221:
+	.word	366
+	.half	3
+	.word	.L222
+	.byte	4,1
+	.byte	'../../../../BSW/Components/ComM/Implementation/ComM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L224,.L223
+	.byte	2
+	.word	.L169
+	.byte	3
+	.byte	'ComM_RequestComMode',0,1,193,7,35
+	.word	.L336
+	.byte	1,1,1
+	.word	.L148,.L362,.L147
+	.byte	4
+	.byte	'User',0,1,193,7,76
+	.word	.L363,.L364
+	.byte	4
+	.byte	'ComMode',0,1,193,7,96
+	.word	.L336,.L365
+	.byte	5
+	.word	.L148,.L362
+	.byte	6
+	.byte	'retVal',0,1,196,7,18
+	.word	.L336,.L366
+	.byte	6
+	.byte	'errorId',0,1,197,7,9
+	.word	.L336,.L367
+	.byte	6
+	.byte	'userIdx',0,1,198,7,21
+	.word	.L336,.L368
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ComM_RequestComMode')
+	.sect	'.debug_abbrev'
+.L222:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ComM_RequestComMode')
+	.sect	'.debug_line'
+.L223:
+	.word	.L615-.L614
+.L614:
+	.half	3
+	.word	.L617-.L616
+.L616:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/ComM/Implementation',0,0
+	.byte	'ComM.c',0,1,0,0,0
+.L617:
+	.byte	5,35,7,0,5,2
+	.word	.L148
+	.byte	3,192,7,1,5,25,9
+	.half	.L513-.L148
+	.byte	3,3,1,5,17,9
+	.half	.L514-.L513
+	.byte	3,1,1,5,31,9
+	.half	.L516-.L514
+	.byte	3,1,1,5,45,3,5,1,5,3,9
+	.half	.L512-.L516
+	.byte	1,5,13,7,9
+	.half	.L618-.L512
+	.byte	3,2,1,5,12,9
+	.half	.L619-.L618
+	.byte	3,1,1,5,33,3,127,1,5,8,9
+	.half	.L59-.L619
+	.byte	3,4,1,5,13,7,9
+	.half	.L620-.L59
+	.byte	3,11,1,5,60,7,9
+	.half	.L621-.L620
+	.byte	1,5,13,7,9
+	.half	.L61-.L621
+	.byte	3,2,1,5,38,1,5,40,9
+	.half	.L62-.L61
+	.byte	3,7,1,5,143,1,9
+	.half	.L622-.L62
+	.byte	1,5,12,9
+	.half	.L515-.L622
+	.byte	1,5,46,9
+	.half	.L60-.L515
+	.byte	3,4,1,5,71,9
+	.half	.L623-.L60
+	.byte	1,5,3,9
+	.half	.L624-.L623
+	.byte	3,2,1,5,1,3,1,1,7,9
+	.half	.L226-.L624
+	.byte	0,1,1
+.L615:
+	.sdecl	'.debug_ranges',debug,cluster('ComM_RequestComMode')
+	.sect	'.debug_ranges'
+.L224:
+	.word	-1,.L225,0,.L226-.L225,0,0
+	.sdecl	'.debug_info',debug,cluster('ComM_GetMaxComMode')
+	.sect	'.debug_info'
+.L227:
+	.word	366
+	.half	3
+	.word	.L228
+	.byte	4,1
+	.byte	'../../../../BSW/Components/ComM/Implementation/ComM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L230,.L229
+	.byte	2
+	.word	.L169
+	.byte	3
+	.byte	'ComM_GetMaxComMode',0,1,249,7,35
+	.word	.L336
+	.byte	1,1,1
+	.word	.L150,.L369,.L149
+	.byte	4
+	.byte	'User',0,1,249,7,75
+	.word	.L363,.L370
+	.byte	4
+	.byte	'ComMode',0,1,249,7,130,1
+	.word	.L371,.L372
+	.byte	5
+	.word	.L150,.L369
+	.byte	6
+	.byte	'retVal',0,1,252,7,18
+	.word	.L336,.L373
+	.byte	6
+	.byte	'errorId',0,1,253,7,9
+	.word	.L336,.L374
+	.byte	6
+	.byte	'userIdx',0,1,254,7,21
+	.word	.L336,.L375
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ComM_GetMaxComMode')
+	.sect	'.debug_abbrev'
+.L228:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ComM_GetMaxComMode')
+	.sect	'.debug_line'
+.L229:
+	.word	.L626-.L625
+.L625:
+	.half	3
+	.word	.L628-.L627
+.L627:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/ComM/Implementation',0,0
+	.byte	'ComM.c',0,1,0,0,0
+.L628:
+	.byte	5,35,7,0,5,2
+	.word	.L150
+	.byte	3,248,7,1,5,25,9
+	.half	.L518-.L150
+	.byte	3,3,1,5,17,9
+	.half	.L519-.L518
+	.byte	3,1,1,5,31,9
+	.half	.L520-.L519
+	.byte	3,1,1,5,45,3,5,1,5,3,9
+	.half	.L517-.L520
+	.byte	1,5,13,7,9
+	.half	.L629-.L517
+	.byte	3,2,1,5,12,9
+	.half	.L630-.L629
+	.byte	3,1,1,5,33,3,127,1,5,8,9
+	.half	.L66-.L630
+	.byte	3,4,1,7,9
+	.half	.L631-.L66
+	.byte	3,5,1,5,13,7,9
+	.half	.L68-.L631
+	.byte	3,2,1,5,38,1,5,39,9
+	.half	.L69-.L68
+	.byte	3,7,1,5,12,9
+	.half	.L522-.L69
+	.byte	3,1,1,5,46,9
+	.half	.L67-.L522
+	.byte	3,4,1,5,70,9
+	.half	.L632-.L67
+	.byte	1,5,3,9
+	.half	.L633-.L632
+	.byte	3,2,1,5,1,3,1,1,7,9
+	.half	.L232-.L633
+	.byte	0,1,1
+.L626:
+	.sdecl	'.debug_ranges',debug,cluster('ComM_GetMaxComMode')
+	.sect	'.debug_ranges'
+.L230:
+	.word	-1,.L231,0,.L232-.L231,0,0
+	.sdecl	'.debug_info',debug,cluster('ComM_GetRequestedComMode')
+	.sect	'.debug_info'
+.L233:
+	.word	372
+	.half	3
+	.word	.L234
+	.byte	4,1
+	.byte	'../../../../BSW/Components/ComM/Implementation/ComM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L236,.L235
+	.byte	2
+	.word	.L169
+	.byte	3
+	.byte	'ComM_GetRequestedComMode',0,1,173,8,35
+	.word	.L336
+	.byte	1,1,1
+	.word	.L152,.L376,.L151
+	.byte	4
+	.byte	'User',0,1,173,8,81
+	.word	.L363,.L377
+	.byte	4
+	.byte	'ComMode',0,1,173,8,136,1
+	.word	.L371,.L378
+	.byte	5
+	.word	.L152,.L376
+	.byte	6
+	.byte	'retVal',0,1,176,8,18
+	.word	.L336,.L379
+	.byte	6
+	.byte	'errorId',0,1,177,8,9
+	.word	.L336,.L380
+	.byte	6
+	.byte	'userIdx',0,1,178,8,21
+	.word	.L336,.L381
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ComM_GetRequestedComMode')
+	.sect	'.debug_abbrev'
+.L234:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ComM_GetRequestedComMode')
+	.sect	'.debug_line'
+.L235:
+	.word	.L635-.L634
+.L634:
+	.half	3
+	.word	.L637-.L636
+.L636:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/ComM/Implementation',0,0
+	.byte	'ComM.c',0,1,0,0,0
+.L637:
+	.byte	5,25,7,0,5,2
+	.word	.L152
+	.byte	3,175,8,1,5,35,3,125,1,5,17,9
+	.half	.L524-.L152
+	.byte	3,4,1,5,31,9
+	.half	.L525-.L524
+	.byte	3,1,1,5,45,3,5,1,5,3,9
+	.half	.L523-.L525
+	.byte	1,5,13,7,9
+	.half	.L638-.L523
+	.byte	3,2,1,5,12,9
+	.half	.L639-.L638
+	.byte	3,1,1,5,33,3,127,1,5,8,9
+	.half	.L72-.L639
+	.byte	3,4,1,7,9
+	.half	.L640-.L72
+	.byte	3,10,1,5,13,7,9
+	.half	.L74-.L640
+	.byte	3,2,1,5,38,1,5,36,9
+	.half	.L75-.L74
+	.byte	3,7,1,5,139,1,1,5,12,9
+	.half	.L527-.L75
+	.byte	3,1,1,5,46,9
+	.half	.L73-.L527
+	.byte	3,4,1,5,76,9
+	.half	.L641-.L73
+	.byte	1,5,3,9
+	.half	.L642-.L641
+	.byte	3,2,1,5,1,3,1,1,7,9
+	.half	.L238-.L642
+	.byte	0,1,1
+.L635:
+	.sdecl	'.debug_ranges',debug,cluster('ComM_GetRequestedComMode')
+	.sect	'.debug_ranges'
+.L236:
+	.word	-1,.L237,0,.L238-.L237,0,0
+	.sdecl	'.debug_info',debug,cluster('ComM_GetCurrentComMode')
+	.sect	'.debug_info'
+.L239:
+	.word	370
+	.half	3
+	.word	.L240
+	.byte	4,1
+	.byte	'../../../../BSW/Components/ComM/Implementation/ComM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L242,.L241
+	.byte	2
+	.word	.L169
+	.byte	3
+	.byte	'ComM_GetCurrentComMode',0,1,229,8,35
+	.word	.L336
+	.byte	1,1,1
+	.word	.L154,.L382,.L153
+	.byte	4
+	.byte	'User',0,1,229,8,79
+	.word	.L363,.L383
+	.byte	4
+	.byte	'ComMode',0,1,229,8,134,1
+	.word	.L371,.L384
+	.byte	5
+	.word	.L154,.L382
+	.byte	6
+	.byte	'retVal',0,1,232,8,18
+	.word	.L336,.L385
+	.byte	6
+	.byte	'errorId',0,1,233,8,9
+	.word	.L336,.L386
+	.byte	6
+	.byte	'userIdx',0,1,234,8,21
+	.word	.L336,.L387
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ComM_GetCurrentComMode')
+	.sect	'.debug_abbrev'
+.L240:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ComM_GetCurrentComMode')
+	.sect	'.debug_line'
+.L241:
+	.word	.L644-.L643
+.L643:
+	.half	3
+	.word	.L646-.L645
+.L645:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/ComM/Implementation',0,0
+	.byte	'ComM.c',0,1,0,0,0
+.L646:
+	.byte	5,25,7,0,5,2
+	.word	.L154
+	.byte	3,231,8,1,5,35,3,125,1,5,17,9
+	.half	.L529-.L154
+	.byte	3,4,1,5,31,9
+	.half	.L531-.L529
+	.byte	3,1,1,5,45,3,5,1,5,3,9
+	.half	.L528-.L531
+	.byte	1,5,13,7,9
+	.half	.L647-.L528
+	.byte	3,2,1,5,12,9
+	.half	.L648-.L647
+	.byte	3,1,1,5,33,3,127,1,5,8,9
+	.half	.L78-.L648
+	.byte	3,4,1,7,9
+	.half	.L649-.L78
+	.byte	3,5,1,5,13,7,9
+	.half	.L80-.L649
+	.byte	3,2,1,5,38,1,5,43,9
+	.half	.L81-.L80
+	.byte	3,7,1,5,52,1,5,12,9
+	.half	.L530-.L81
+	.byte	1,5,46,9
+	.half	.L79-.L530
+	.byte	3,4,1,5,74,9
+	.half	.L650-.L79
+	.byte	1,5,3,9
+	.half	.L651-.L650
+	.byte	3,2,1,5,1,3,1,1,7,9
+	.half	.L244-.L651
+	.byte	0,1,1
+.L644:
+	.sdecl	'.debug_ranges',debug,cluster('ComM_GetCurrentComMode')
+	.sect	'.debug_ranges'
+.L242:
+	.word	-1,.L243,0,.L244-.L243,0,0
+	.sdecl	'.debug_info',debug,cluster('ComM_GetInhibitionStatus')
+	.sect	'.debug_info'
+.L245:
+	.word	353
+	.half	3
+	.word	.L246
+	.byte	4,1
+	.byte	'../../../../BSW/Components/ComM/Implementation/ComM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L248,.L247
+	.byte	2
+	.word	.L169
+	.byte	3
+	.byte	'ComM_GetInhibitionStatus',0,1,211,4,35
+	.word	.L336
+	.byte	1,1,1
+	.word	.L134,.L388,.L133
+	.byte	4
+	.byte	'Channel',0,1,211,4,79
+	.word	.L336,.L389
+	.byte	4
+	.byte	'Status',0,1,211,4,149,1
+	.word	.L390,.L391
+	.byte	5
+	.word	.L134,.L388
+	.byte	6
+	.byte	'retVal',0,1,214,4,18
+	.word	.L336,.L392
+	.byte	6
+	.byte	'errorId',0,1,215,4,9
+	.word	.L336,.L393
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ComM_GetInhibitionStatus')
+	.sect	'.debug_abbrev'
+.L246:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ComM_GetInhibitionStatus')
+	.sect	'.debug_line'
+.L247:
+	.word	.L653-.L652
+.L652:
+	.half	3
+	.word	.L655-.L654
+.L654:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/ComM/Implementation',0,0
+	.byte	'ComM.c',0,1,0,0,0
+.L655:
+	.byte	5,35,7,0,5,2
+	.word	.L134
+	.byte	3,210,4,1,5,25,9
+	.half	.L487-.L134
+	.byte	3,3,1,5,17,9
+	.half	.L488-.L487
+	.byte	3,1,1,5,45,3,5,1,5,3,9
+	.half	.L486-.L488
+	.byte	1,5,13,7,9
+	.half	.L656-.L486
+	.byte	3,2,1,5,12,9
+	.half	.L657-.L656
+	.byte	3,1,1,5,33,3,127,1,5,13,9
+	.half	.L27-.L657
+	.byte	3,4,1,5,8,7,9
+	.half	.L658-.L27
+	.byte	3,5,1,5,13,7,9
+	.half	.L29-.L658
+	.byte	3,2,1,5,38,1,5,46,9
+	.half	.L30-.L29
+	.byte	3,7,1,5,55,1,5,12,9
+	.half	.L490-.L30
+	.byte	3,1,1,5,46,9
+	.half	.L28-.L490
+	.byte	3,4,1,5,76,9
+	.half	.L659-.L28
+	.byte	1,5,3,9
+	.half	.L660-.L659
+	.byte	3,2,1,5,1,3,1,1,7,9
+	.half	.L250-.L660
+	.byte	0,1,1
+.L653:
+	.sdecl	'.debug_ranges',debug,cluster('ComM_GetInhibitionStatus')
+	.sect	'.debug_ranges'
+.L248:
+	.word	-1,.L249,0,.L250-.L249,0,0
+	.sdecl	'.debug_info',debug,cluster('ComM_PreventWakeUp')
+	.sect	'.debug_info'
+.L251:
+	.word	346
+	.half	3
+	.word	.L252
+	.byte	4,1
+	.byte	'../../../../BSW/Components/ComM/Implementation/ComM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L254,.L253
+	.byte	2
+	.word	.L169
+	.byte	3
+	.byte	'ComM_PreventWakeUp',0,1,133,5,35
+	.word	.L336
+	.byte	1,1,1
+	.word	.L136,.L394,.L135
+	.byte	4
+	.byte	'Channel',0,1,133,5,73
+	.word	.L336,.L395
+	.byte	4
+	.byte	'Status',0,1,133,5,90
+	.word	.L336,.L396
+	.byte	5
+	.word	.L136,.L394
+	.byte	6
+	.byte	'retVal',0,1,136,5,18
+	.word	.L336,.L397
+	.byte	6
+	.byte	'errorId',0,1,137,5,9
+	.word	.L336,.L398
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ComM_PreventWakeUp')
+	.sect	'.debug_abbrev'
+.L252:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ComM_PreventWakeUp')
+	.sect	'.debug_line'
+.L253:
+	.word	.L662-.L661
+.L661:
+	.half	3
+	.word	.L664-.L663
+.L663:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/ComM/Implementation',0,0
+	.byte	'ComM.c',0,1,0,0,0
+.L664:
+	.byte	5,35,7,0,5,2
+	.word	.L136
+	.byte	3,132,5,1,5,25,9
+	.half	.L493-.L136
+	.byte	3,3,1,5,17,9
+	.half	.L494-.L493
+	.byte	3,1,1,5,45,3,10,1,5,3,9
+	.half	.L491-.L494
+	.byte	1,5,13,7,9
+	.half	.L665-.L491
+	.byte	3,2,1,5,12,9
+	.half	.L666-.L665
+	.byte	3,1,1,5,33,3,127,1,5,13,9
+	.half	.L33-.L666
+	.byte	3,11,1,5,49,7,9
+	.half	.L667-.L33
+	.byte	3,9,1,5,58,9
+	.half	.L668-.L667
+	.byte	1,5,12,9
+	.half	.L495-.L668
+	.byte	1,5,80,3,119,1,5,13,9
+	.half	.L35-.L495
+	.byte	3,2,1,5,46,9
+	.half	.L34-.L35
+	.byte	3,11,1,5,70,9
+	.half	.L669-.L34
+	.byte	1,5,3,9
+	.half	.L670-.L669
+	.byte	3,2,1,5,1,3,1,1,7,9
+	.half	.L256-.L670
+	.byte	0,1,1
+.L662:
+	.sdecl	'.debug_ranges',debug,cluster('ComM_PreventWakeUp')
+	.sect	'.debug_ranges'
+.L254:
+	.word	-1,.L255,0,.L256-.L255,0,0
+	.sdecl	'.debug_info',debug,cluster('ComM_LimitChannelToNoComMode')
+	.sect	'.debug_info'
+.L257:
+	.word	356
+	.half	3
+	.word	.L258
+	.byte	4,1
+	.byte	'../../../../BSW/Components/ComM/Implementation/ComM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L260,.L259
+	.byte	2
+	.word	.L169
+	.byte	3
+	.byte	'ComM_LimitChannelToNoComMode',0,1,189,5,35
+	.word	.L336
+	.byte	1,1,1
+	.word	.L138,.L399,.L137
+	.byte	4
+	.byte	'Channel',0,1,189,5,83
+	.word	.L336,.L400
+	.byte	4
+	.byte	'Status',0,1,189,5,100
+	.word	.L336,.L401
+	.byte	5
+	.word	.L138,.L399
+	.byte	6
+	.byte	'retVal',0,1,192,5,18
+	.word	.L336,.L402
+	.byte	6
+	.byte	'errorId',0,1,193,5,9
+	.word	.L336,.L403
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ComM_LimitChannelToNoComMode')
+	.sect	'.debug_abbrev'
+.L258:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ComM_LimitChannelToNoComMode')
+	.sect	'.debug_line'
+.L259:
+	.word	.L672-.L671
+.L671:
+	.half	3
+	.word	.L674-.L673
+.L673:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/ComM/Implementation',0,0
+	.byte	'ComM.c',0,1,0,0,0
+.L674:
+	.byte	5,35,7,0,5,2
+	.word	.L138
+	.byte	3,188,5,1,5,25,9
+	.half	.L498-.L138
+	.byte	3,3,1,5,17,9
+	.half	.L499-.L498
+	.byte	3,1,1,5,45,3,11,1,5,3,9
+	.half	.L496-.L499
+	.byte	1,5,13,7,9
+	.half	.L675-.L496
+	.byte	3,2,1,5,12,9
+	.half	.L676-.L675
+	.byte	3,1,1,5,33,3,127,1,5,13,9
+	.half	.L38-.L676
+	.byte	3,11,1,5,59,7,9
+	.half	.L677-.L38
+	.byte	3,9,1,5,68,9
+	.half	.L678-.L677
+	.byte	1,5,12,9
+	.half	.L500-.L678
+	.byte	1,5,80,3,119,1,5,13,9
+	.half	.L40-.L500
+	.byte	3,2,1,5,46,9
+	.half	.L39-.L40
+	.byte	3,11,1,5,80,9
+	.half	.L679-.L39
+	.byte	1,5,3,9
+	.half	.L680-.L679
+	.byte	3,2,1,5,1,3,1,1,7,9
+	.half	.L262-.L680
+	.byte	0,1,1
+.L672:
+	.sdecl	'.debug_ranges',debug,cluster('ComM_LimitChannelToNoComMode')
+	.sect	'.debug_ranges'
+.L260:
+	.word	-1,.L261,0,.L262-.L261,0,0
+	.sdecl	'.debug_info',debug,cluster('ComM_LimitECUToNoComMode')
+	.sect	'.debug_info'
+.L263:
+	.word	331
+	.half	3
+	.word	.L264
+	.byte	4,1
+	.byte	'../../../../BSW/Components/ComM/Implementation/ComM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L266,.L265
+	.byte	2
+	.word	.L169
+	.byte	3
+	.byte	'ComM_LimitECUToNoComMode',0,1,245,5,35
+	.word	.L336
+	.byte	1,1,1
+	.word	.L140,.L404,.L139
+	.byte	4
+	.byte	'Status',0,1,245,5,69
+	.word	.L336,.L405
+	.byte	5
+	.word	.L140,.L404
+	.byte	6
+	.byte	'retVal',0,1,248,5,18
+	.word	.L336,.L406
+	.byte	6
+	.byte	'errorId',0,1,249,5,9
+	.word	.L336,.L407
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ComM_LimitECUToNoComMode')
+	.sect	'.debug_abbrev'
+.L264:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ComM_LimitECUToNoComMode')
+	.sect	'.debug_line'
+.L265:
+	.word	.L682-.L681
+.L681:
+	.half	3
+	.word	.L684-.L683
+.L683:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/ComM/Implementation',0,0
+	.byte	'ComM.c',0,1,0,0,0
+.L684:
+	.byte	5,35,7,0,5,2
+	.word	.L140
+	.byte	3,244,5,1,5,17,9
+	.half	.L502-.L140
+	.byte	3,4,1,5,45,3,10,1,5,3,9
+	.half	.L501-.L502
+	.byte	1,5,13,7,9
+	.half	.L685-.L501
+	.byte	3,2,1,5,12,9
+	.half	.L686-.L685
+	.byte	3,1,1,5,33,3,127,1,5,55,9
+	.half	.L43-.L686
+	.byte	3,15,1,5,12,9
+	.half	.L503-.L43
+	.byte	1,5,46,9
+	.half	.L44-.L503
+	.byte	3,4,1,5,76,9
+	.half	.L687-.L44
+	.byte	1,5,3,9
+	.half	.L688-.L687
+	.byte	3,2,1,5,1,3,1,1,7,9
+	.half	.L268-.L688
+	.byte	0,1,1
+.L682:
+	.sdecl	'.debug_ranges',debug,cluster('ComM_LimitECUToNoComMode')
+	.sect	'.debug_ranges'
+.L266:
+	.word	-1,.L267,0,.L268-.L267,0,0
+	.sdecl	'.debug_info',debug,cluster('ComM_ReadInhibitCounter')
+	.sect	'.debug_info'
+.L269:
+	.word	336
+	.half	3
+	.word	.L270
+	.byte	4,1
+	.byte	'../../../../BSW/Components/ComM/Implementation/ComM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L272,.L271
+	.byte	2
+	.word	.L169
+	.byte	3
+	.byte	'ComM_ReadInhibitCounter',0,1,167,6,35
+	.word	.L336
+	.byte	1,1,1
+	.word	.L142,.L408,.L141
+	.byte	4
+	.byte	'CounterValue',0,1,167,6,102
+	.word	.L409,.L410
+	.byte	5
+	.word	.L142,.L408
+	.byte	6
+	.byte	'retVal',0,1,170,6,18
+	.word	.L336,.L411
+	.byte	6
+	.byte	'errorId',0,1,171,6,9
+	.word	.L336,.L412
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ComM_ReadInhibitCounter')
+	.sect	'.debug_abbrev'
+.L270:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ComM_ReadInhibitCounter')
+	.sect	'.debug_line'
+.L271:
+	.word	.L690-.L689
+.L689:
+	.half	3
+	.word	.L692-.L691
+.L691:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/ComM/Implementation',0,0
+	.byte	'ComM.c',0,1,0,0,0
+.L692:
+	.byte	5,25,7,0,5,2
+	.word	.L142
+	.byte	3,169,6,1,5,35,3,125,1,5,17,9
+	.half	.L505-.L142
+	.byte	3,4,1,5,45,3,5,1,5,3,9
+	.half	.L504-.L505
+	.byte	1,5,13,7,9
+	.half	.L693-.L504
+	.byte	3,2,1,5,12,9
+	.half	.L694-.L693
+	.byte	3,1,1,5,33,3,127,1,5,8,9
+	.half	.L46-.L694
+	.byte	3,4,1,5,13,7,9
+	.half	.L695-.L46
+	.byte	3,2,1,5,38,1,5,45,9
+	.half	.L48-.L695
+	.byte	3,7,1,5,12,9
+	.half	.L507-.L48
+	.byte	3,1,1,5,46,9
+	.half	.L47-.L507
+	.byte	3,4,1,5,75,9
+	.half	.L696-.L47
+	.byte	1,5,3,9
+	.half	.L697-.L696
+	.byte	3,2,1,5,1,3,1,1,7,9
+	.half	.L274-.L697
+	.byte	0,1,1
+.L690:
+	.sdecl	'.debug_ranges',debug,cluster('ComM_ReadInhibitCounter')
+	.sect	'.debug_ranges'
+.L272:
+	.word	-1,.L273,0,.L274-.L273,0,0
+	.sdecl	'.debug_info',debug,cluster('ComM_ResetInhibitCounter')
+	.sect	'.debug_info'
+.L275:
+	.word	311
+	.half	3
+	.word	.L276
+	.byte	4,1
+	.byte	'../../../../BSW/Components/ComM/Implementation/ComM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L278,.L277
+	.byte	2
+	.word	.L169
+	.byte	3
+	.byte	'ComM_ResetInhibitCounter',0,1,211,6,35
+	.word	.L336
+	.byte	1,1,1
+	.word	.L144,.L413,.L143
+	.byte	4
+	.word	.L144,.L413
+	.byte	5
+	.byte	'retVal',0,1,214,6,18
+	.word	.L336,.L414
+	.byte	5
+	.byte	'errorId',0,1,215,6,9
+	.word	.L336,.L415
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ComM_ResetInhibitCounter')
+	.sect	'.debug_abbrev'
+.L276:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ComM_ResetInhibitCounter')
+	.sect	'.debug_line'
+.L277:
+	.word	.L699-.L698
+.L698:
+	.half	3
+	.word	.L701-.L700
+.L700:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/ComM/Implementation',0,0
+	.byte	'ComM.c',0,1,0,0,0
+.L701:
+	.byte	5,17,7,0,5,2
+	.word	.L144
+	.byte	3,214,6,1,5,45,3,10,1,5,3,9
+	.half	.L508-.L144
+	.byte	1,5,13,7,9
+	.half	.L702-.L508
+	.byte	3,2,1,5,12,9
+	.half	.L703-.L702
+	.byte	3,1,1,5,33,3,127,1,5,44,9
+	.half	.L51-.L703
+	.byte	3,15,1,5,12,9
+	.half	.L704-.L51
+	.byte	3,1,1,5,46,9
+	.half	.L52-.L704
+	.byte	3,4,1,5,76,9
+	.half	.L705-.L52
+	.byte	1,5,3,9
+	.half	.L706-.L705
+	.byte	3,2,1,5,1,3,1,1,7,9
+	.half	.L280-.L706
+	.byte	0,1,1
+.L699:
+	.sdecl	'.debug_ranges',debug,cluster('ComM_ResetInhibitCounter')
+	.sect	'.debug_ranges'
+.L278:
+	.word	-1,.L279,0,.L280-.L279,0,0
+	.sdecl	'.debug_info',debug,cluster('ComM_SetECUGroupClassification')
+	.sect	'.debug_info'
+.L281:
+	.word	337
+	.half	3
+	.word	.L282
+	.byte	4,1
+	.byte	'../../../../BSW/Components/ComM/Implementation/ComM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L284,.L283
+	.byte	2
+	.word	.L169
+	.byte	3
+	.byte	'ComM_SetECUGroupClassification',0,1,135,7,35
+	.word	.L336
+	.byte	1,1,1
+	.word	.L146,.L416,.L145
+	.byte	4
+	.byte	'Status',0,1,135,7,93
+	.word	.L336,.L417
+	.byte	5
+	.word	.L146,.L416
+	.byte	6
+	.byte	'retVal',0,1,138,7,18
+	.word	.L336,.L418
+	.byte	6
+	.byte	'errorId',0,1,139,7,9
+	.word	.L336,.L419
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ComM_SetECUGroupClassification')
+	.sect	'.debug_abbrev'
+.L282:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ComM_SetECUGroupClassification')
+	.sect	'.debug_line'
+.L283:
+	.word	.L708-.L707
+.L707:
+	.half	3
+	.word	.L710-.L709
+.L709:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/ComM/Implementation',0,0
+	.byte	'ComM.c',0,1,0,0,0
+.L710:
+	.byte	5,35,7,0,5,2
+	.word	.L146
+	.byte	3,134,7,1,5,25,9
+	.half	.L510-.L146
+	.byte	3,3,1,5,17,9
+	.half	.L511-.L510
+	.byte	3,1,1,5,45,3,10,1,5,3,9
+	.half	.L509-.L511
+	.byte	1,5,13,7,9
+	.half	.L711-.L509
+	.byte	3,2,1,5,12,9
+	.half	.L712-.L711
+	.byte	3,1,1,5,33,3,127,1,5,8,9
+	.half	.L54-.L712
+	.byte	3,11,1,5,13,7,9
+	.half	.L713-.L54
+	.byte	3,2,1,5,38,1,5,52,9
+	.half	.L56-.L713
+	.byte	3,7,1,5,12,9
+	.half	.L714-.L56
+	.byte	3,1,1,5,46,9
+	.half	.L55-.L714
+	.byte	3,4,1,5,82,9
+	.half	.L715-.L55
+	.byte	1,5,3,9
+	.half	.L716-.L715
+	.byte	3,2,1,5,1,3,1,1,7,9
+	.half	.L286-.L716
+	.byte	0,1,1
+.L708:
+	.sdecl	'.debug_ranges',debug,cluster('ComM_SetECUGroupClassification')
+	.sect	'.debug_ranges'
+.L284:
+	.word	-1,.L285,0,.L286-.L285,0,0
+	.sdecl	'.debug_info',debug,cluster('ComM_GetMinFullComModeTimerStatus')
+	.sect	'.debug_info'
+.L287:
+	.word	362
+	.half	3
+	.word	.L288
+	.byte	4,1
+	.byte	'../../../../BSW/Components/ComM/Implementation/ComM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L290,.L289
+	.byte	2
+	.word	.L169
+	.byte	3
+	.byte	'ComM_GetMinFullComModeTimerStatus',0,1,161,4,35
+	.word	.L336
+	.byte	1,1,1
+	.word	.L132,.L420,.L131
+	.byte	4
+	.byte	'Channel',0,1,161,4,88
+	.word	.L336,.L421
+	.byte	4
+	.byte	'Status',0,1,161,4,140,1
+	.word	.L422,.L423
+	.byte	5
+	.word	.L132,.L420
+	.byte	6
+	.byte	'retVal',0,1,164,4,18
+	.word	.L336,.L424
+	.byte	6
+	.byte	'errorId',0,1,165,4,9
+	.word	.L336,.L425
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ComM_GetMinFullComModeTimerStatus')
+	.sect	'.debug_abbrev'
+.L288:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ComM_GetMinFullComModeTimerStatus')
+	.sect	'.debug_line'
+.L289:
+	.word	.L718-.L717
+.L717:
+	.half	3
+	.word	.L720-.L719
+.L719:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/ComM/Implementation',0,0
+	.byte	'ComM.c',0,1,0,0,0
+.L720:
+	.byte	5,35,7,0,5,2
+	.word	.L132
+	.byte	3,160,4,1,5,25,9
+	.half	.L482-.L132
+	.byte	3,3,1,5,17,9
+	.half	.L483-.L482
+	.byte	3,1,1,5,45,3,5,1,5,3,9
+	.half	.L481-.L483
+	.byte	1,5,13,7,9
+	.half	.L721-.L481
+	.byte	3,2,1,5,12,9
+	.half	.L722-.L721
+	.byte	3,1,1,5,33,3,127,1,5,13,9
+	.half	.L21-.L722
+	.byte	3,4,1,5,8,7,9
+	.half	.L723-.L21
+	.byte	3,5,1,5,13,7,9
+	.half	.L23-.L723
+	.byte	3,2,1,5,38,1,5,48,9
+	.half	.L24-.L23
+	.byte	3,7,1,5,57,1,5,12,9
+	.half	.L485-.L24
+	.byte	3,1,1,5,46,9
+	.half	.L22-.L485
+	.byte	3,4,1,5,85,9
+	.half	.L724-.L22
+	.byte	1,5,3,9
+	.half	.L725-.L724
+	.byte	3,2,1,5,1,3,1,1,7,9
+	.half	.L292-.L725
+	.byte	0,1,1
+.L718:
+	.sdecl	'.debug_ranges',debug,cluster('ComM_GetMinFullComModeTimerStatus')
+	.sect	'.debug_ranges'
+.L290:
+	.word	-1,.L291,0,.L292-.L291,0,0
+	.sdecl	'.debug_info',debug,cluster('ComM_BusSM_ModeIndication')
+	.sect	'.debug_info'
+.L293:
+	.word	331
+	.half	3
+	.word	.L294
+	.byte	4,1
+	.byte	'../../../../BSW/Components/ComM/Implementation/ComM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L296,.L295
+	.byte	2
+	.word	.L169
+	.byte	3
+	.byte	'ComM_BusSM_ModeIndication',0,1,225,10,25,1,1,1
+	.word	.L158,.L426,.L157
+	.byte	4
+	.byte	'Channel',0,1,225,10,70
+	.word	.L336,.L427
+	.byte	4
+	.byte	'ComMode',0,1,225,10,128,1
+	.word	.L371,.L428
+	.byte	5
+	.word	.L158,.L426
+	.byte	6
+	.byte	'errorId',0,1,228,10,9
+	.word	.L336,.L429
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ComM_BusSM_ModeIndication')
+	.sect	'.debug_abbrev'
+.L294:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ComM_BusSM_ModeIndication')
+	.sect	'.debug_line'
+.L295:
+	.word	.L727-.L726
+.L726:
+	.half	3
+	.word	.L729-.L728
+.L728:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/ComM/Implementation',0,0
+	.byte	'ComM.c',0,1,0,0,0
+.L729:
+	.byte	5,25,7,0,5,2
+	.word	.L158
+	.byte	3,224,10,1,5,17,9
+	.half	.L537-.L158
+	.byte	3,3,1,5,45,3,5,1,5,3,9
+	.half	.L536-.L537
+	.byte	1,5,13,7,9
+	.half	.L730-.L536
+	.byte	3,2,1,5,33,1,5,13,9
+	.half	.L87-.L730
+	.byte	3,3,1,5,8,7,9
+	.half	.L731-.L87
+	.byte	3,5,1,5,13,7,9
+	.half	.L732-.L731
+	.byte	3,4,1,5,8,9
+	.half	.L538-.L732
+	.byte	1,5,13,7,9
+	.half	.L89-.L538
+	.byte	3,2,1,5,38,1,5,39,9
+	.half	.L91-.L89
+	.byte	3,7,1,5,48,1,5,46,9
+	.half	.L88-.L91
+	.byte	3,4,1,5,80,9
+	.half	.L733-.L88
+	.byte	1,5,1,9
+	.half	.L298-.L733
+	.byte	3,1,0,1,1
+.L727:
+	.sdecl	'.debug_ranges',debug,cluster('ComM_BusSM_ModeIndication')
+	.sect	'.debug_ranges'
+.L296:
+	.word	-1,.L297,0,.L298-.L297,0,0
+	.sdecl	'.debug_info',debug,cluster('ComM_BusSM_BusSleepMode')
+	.sect	'.debug_info'
+.L299:
+	.word	307
+	.half	3
+	.word	.L300
+	.byte	4,1
+	.byte	'../../../../BSW/Components/ComM/Implementation/ComM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L302,.L301
+	.byte	2
+	.word	.L169
+	.byte	3
+	.byte	'ComM_BusSM_BusSleepMode',0,1,145,11,25,1,1,1
+	.word	.L160,.L430,.L159
+	.byte	4
+	.byte	'Channel',0,1,145,11,68
+	.word	.L336,.L431
+	.byte	5
+	.word	.L160,.L430
+	.byte	6
+	.byte	'errorId',0,1,148,11,9
+	.word	.L336,.L432
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ComM_BusSM_BusSleepMode')
+	.sect	'.debug_abbrev'
+.L300:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ComM_BusSM_BusSleepMode')
+	.sect	'.debug_line'
+.L301:
+	.word	.L735-.L734
+.L734:
+	.half	3
+	.word	.L737-.L736
+.L736:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/ComM/Implementation',0,0
+	.byte	'ComM.c',0,1,0,0,0
+.L737:
+	.byte	5,25,7,0,5,2
+	.word	.L160
+	.byte	3,144,11,1,5,17,9
+	.half	.L542-.L160
+	.byte	3,3,1,5,45,3,5,1,5,3,9
+	.half	.L541-.L542
+	.byte	1,5,13,7,9
+	.half	.L738-.L541
+	.byte	3,2,1,5,33,1,5,13,9
+	.half	.L93-.L738
+	.byte	3,3,1,5,37,7,9
+	.half	.L739-.L93
+	.byte	3,9,1,5,80,9
+	.half	.L740-.L739
+	.byte	3,119,1,5,13,9
+	.half	.L95-.L740
+	.byte	3,2,1,5,46,9
+	.half	.L94-.L95
+	.byte	3,11,1,5,78,9
+	.half	.L741-.L94
+	.byte	1,5,1,9
+	.half	.L304-.L741
+	.byte	3,1,0,1,1
+.L735:
+	.sdecl	'.debug_ranges',debug,cluster('ComM_BusSM_BusSleepMode')
+	.sect	'.debug_ranges'
+.L302:
+	.word	-1,.L303,0,.L304-.L303,0,0
+	.sdecl	'.debug_info',debug,cluster('ComM_DCM_ActiveDiagnostic')
+	.sect	'.debug_info'
+.L305:
+	.word	309
+	.half	3
+	.word	.L306
+	.byte	4,1
+	.byte	'../../../../BSW/Components/ComM/Implementation/ComM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L308,.L307
+	.byte	2
+	.word	.L169
+	.byte	3
+	.byte	'ComM_DCM_ActiveDiagnostic',0,1,189,11,25,1,1,1
+	.word	.L162,.L433,.L161
+	.byte	4
+	.byte	'Channel',0,1,189,11,70
+	.word	.L336,.L434
+	.byte	5
+	.word	.L162,.L433
+	.byte	6
+	.byte	'errorId',0,1,192,11,9
+	.word	.L336,.L435
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ComM_DCM_ActiveDiagnostic')
+	.sect	'.debug_abbrev'
+.L306:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ComM_DCM_ActiveDiagnostic')
+	.sect	'.debug_line'
+.L307:
+	.word	.L743-.L742
+.L742:
+	.half	3
+	.word	.L745-.L744
+.L744:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/ComM/Implementation',0,0
+	.byte	'ComM.c',0,1,0,0,0
+.L745:
+	.byte	5,25,7,0,5,2
+	.word	.L162
+	.byte	3,188,11,1,5,45,3,8,1,5,3,9
+	.half	.L544-.L162
+	.byte	1,5,13,7,9
+	.half	.L746-.L544
+	.byte	3,2,1,5,33,1,5,13,9
+	.half	.L97-.L746
+	.byte	3,3,1,5,49,7,9
+	.half	.L747-.L97
+	.byte	3,9,1,5,80,9
+	.half	.L545-.L747
+	.byte	3,119,1,5,13,9
+	.half	.L99-.L545
+	.byte	3,2,1,5,46,9
+	.half	.L98-.L99
+	.byte	3,11,1,5,81,9
+	.half	.L748-.L98
+	.byte	1,5,1,9
+	.half	.L310-.L748
+	.byte	3,1,0,1,1
+.L743:
+	.sdecl	'.debug_ranges',debug,cluster('ComM_DCM_ActiveDiagnostic')
+	.sect	'.debug_ranges'
+.L308:
+	.word	-1,.L309,0,.L310-.L309,0,0
+	.sdecl	'.debug_info',debug,cluster('ComM_DCM_InactiveDiagnostic')
+	.sect	'.debug_info'
+.L311:
+	.word	311
+	.half	3
+	.word	.L312
+	.byte	4,1
+	.byte	'../../../../BSW/Components/ComM/Implementation/ComM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L314,.L313
+	.byte	2
+	.word	.L169
+	.byte	3
+	.byte	'ComM_DCM_InactiveDiagnostic',0,1,228,11,25,1,1,1
+	.word	.L164,.L436,.L163
+	.byte	4
+	.byte	'Channel',0,1,228,11,72
+	.word	.L336,.L437
+	.byte	5
+	.word	.L164,.L436
+	.byte	6
+	.byte	'errorId',0,1,231,11,9
+	.word	.L336,.L438
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ComM_DCM_InactiveDiagnostic')
+	.sect	'.debug_abbrev'
+.L312:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ComM_DCM_InactiveDiagnostic')
+	.sect	'.debug_line'
+.L313:
+	.word	.L750-.L749
+.L749:
+	.half	3
+	.word	.L752-.L751
+.L751:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/ComM/Implementation',0,0
+	.byte	'ComM.c',0,1,0,0,0
+.L752:
+	.byte	5,25,7,0,5,2
+	.word	.L164
+	.byte	3,227,11,1,5,45,3,8,1,5,3,9
+	.half	.L547-.L164
+	.byte	1,5,13,7,9
+	.half	.L753-.L547
+	.byte	3,2,1,5,33,1,5,13,9
+	.half	.L101-.L753
+	.byte	3,3,1,5,51,7,9
+	.half	.L754-.L101
+	.byte	3,9,1,5,80,9
+	.half	.L548-.L754
+	.byte	3,119,1,5,13,9
+	.half	.L103-.L548
+	.byte	3,2,1,5,46,9
+	.half	.L102-.L103
+	.byte	3,11,1,5,83,9
+	.half	.L755-.L102
+	.byte	1,5,1,9
+	.half	.L316-.L755
+	.byte	3,1,0,1,1
+.L750:
+	.sdecl	'.debug_ranges',debug,cluster('ComM_DCM_InactiveDiagnostic')
+	.sect	'.debug_ranges'
+.L314:
+	.word	-1,.L315,0,.L316-.L315,0,0
+	.sdecl	'.debug_info',debug,cluster('ComM_GetDcmRequestStatus')
+	.sect	'.debug_info'
+.L317:
+	.word	353
+	.half	3
+	.word	.L318
+	.byte	4,1
+	.byte	'../../../../BSW/Components/ComM/Implementation/ComM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L320,.L319
+	.byte	2
+	.word	.L169
+	.byte	3
+	.byte	'ComM_GetDcmRequestStatus',0,1,140,12,35
+	.word	.L336
+	.byte	1,1,1
+	.word	.L166,.L439,.L165
+	.byte	4
+	.byte	'Channel',0,1,140,12,79
+	.word	.L336,.L440
+	.byte	4
+	.byte	'Status',0,1,140,12,131,1
+	.word	.L422,.L441
+	.byte	5
+	.word	.L166,.L439
+	.byte	6
+	.byte	'retVal',0,1,143,12,18
+	.word	.L336,.L442
+	.byte	6
+	.byte	'errorId',0,1,144,12,9
+	.word	.L336,.L443
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ComM_GetDcmRequestStatus')
+	.sect	'.debug_abbrev'
+.L318:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ComM_GetDcmRequestStatus')
+	.sect	'.debug_line'
+.L319:
+	.word	.L757-.L756
+.L756:
+	.half	3
+	.word	.L759-.L758
+.L758:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/ComM/Implementation',0,0
+	.byte	'ComM.c',0,1,0,0,0
+.L759:
+	.byte	5,35,7,0,5,2
+	.word	.L166
+	.byte	3,139,12,1,5,25,9
+	.half	.L551-.L166
+	.byte	3,3,1,5,17,9
+	.half	.L552-.L551
+	.byte	3,1,1,5,45,3,5,1,5,3,9
+	.half	.L550-.L552
+	.byte	1,5,13,7,9
+	.half	.L760-.L550
+	.byte	3,2,1,5,12,9
+	.half	.L761-.L760
+	.byte	3,1,1,5,33,3,127,1,5,13,9
+	.half	.L105-.L761
+	.byte	3,4,1,5,8,7,9
+	.half	.L762-.L105
+	.byte	3,5,1,5,13,7,9
+	.half	.L107-.L762
+	.byte	3,2,1,5,38,1,9
+	.half	.L108-.L107
+	.byte	3,7,1,5,47,1,5,12,9
+	.half	.L554-.L108
+	.byte	3,1,1,5,46,9
+	.half	.L106-.L554
+	.byte	3,4,1,5,76,9
+	.half	.L763-.L106
+	.byte	1,5,3,9
+	.half	.L764-.L763
+	.byte	3,2,1,5,1,3,1,1,7,9
+	.half	.L322-.L764
+	.byte	0,1,1
+.L757:
+	.sdecl	'.debug_ranges',debug,cluster('ComM_GetDcmRequestStatus')
+	.sect	'.debug_ranges'
+.L320:
+	.word	-1,.L321,0,.L322-.L321,0,0
+	.sdecl	'.debug_info',debug,cluster('ComM_CommunicationAllowed')
+	.sect	'.debug_info'
+.L323:
+	.word	384
+	.half	3
+	.word	.L324
+	.byte	4,1
+	.byte	'../../../../BSW/Components/ComM/Implementation/ComM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L326,.L325
+	.byte	2
+	.word	.L169
+	.byte	3
+	.byte	'ComM_CommunicationAllowed',0,1,187,3,25,1,1,1
+	.word	.L128,.L444,.L127
+	.byte	4
+	.byte	'Channel',0,1,187,3,70
+	.word	.L336,.L445
+	.byte	4
+	.byte	'Allowed',0,1,187,3,87
+	.word	.L336,.L446
+	.byte	5
+	.word	.L128,.L444
+	.byte	6
+	.byte	'errorId',0,1,190,3,9
+	.word	.L336,.L447
+	.byte	7
+	.word	.L448,.L449,.L450
+	.byte	8
+	.word	.L451,.L452
+	.byte	8
+	.word	.L453,.L454
+	.byte	8
+	.word	.L455,.L456
+	.byte	9
+	.word	.L457,.L449,.L450
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ComM_CommunicationAllowed')
+	.sect	'.debug_abbrev'
+.L324:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,0,49,16,17,1,18
+	.byte	1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ComM_CommunicationAllowed')
+	.sect	'.debug_line'
+.L325:
+	.word	.L766-.L765
+.L765:
+	.half	3
+	.word	.L768-.L767
+.L767:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/ComM/Implementation',0
+	.byte	'GenData',0,0
+	.byte	'ComM.c',0,1,0,0
+	.byte	'ComM_Private_Cfg.h',0,2,0,0,0
+.L768:
+	.byte	5,25,7,0,5,2
+	.word	.L128
+	.byte	3,186,3,1,5,17,9
+	.half	.L474-.L128
+	.byte	3,3,1,5,45,3,10,1,5,3,9
+	.half	.L472-.L474
+	.byte	1,5,13,7,9
+	.half	.L769-.L472
+	.byte	3,2,1,5,33,1,5,13,9
+	.half	.L11-.L769
+	.byte	3,10,1,4,2,5,3,7,9
+	.half	.L449-.L11
+	.byte	3,221,16,1,5,66,9
+	.half	.L770-.L449
+	.byte	1,4,1,5,80,9
+	.half	.L450-.L770
+	.byte	3,163,111,1,5,13,9
+	.half	.L13-.L450
+	.byte	3,2,1,5,46,9
+	.half	.L12-.L13
+	.byte	3,11,1,5,77,9
+	.half	.L771-.L12
+	.byte	1,5,1,9
+	.half	.L328-.L771
+	.byte	3,1,0,1,1
+.L766:
+	.sdecl	'.debug_ranges',debug,cluster('ComM_CommunicationAllowed')
+	.sect	'.debug_ranges'
+.L326:
+	.word	-1,.L327,0,.L328-.L327,0,0
+	.sdecl	'.debug_info',debug,cluster('ComM_EcuM_WakeUpIndication')
+	.sect	'.debug_info'
+.L329:
+	.word	310
+	.half	3
+	.word	.L330
+	.byte	4,1
+	.byte	'../../../../BSW/Components/ComM/Implementation/ComM.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L332,.L331
+	.byte	2
+	.word	.L169
+	.byte	3
+	.byte	'ComM_EcuM_WakeUpIndication',0,1,194,12,25,1,1,1
+	.word	.L168,.L458,.L167
+	.byte	4
+	.byte	'Channel',0,1,194,12,71
+	.word	.L336,.L459
+	.byte	5
+	.word	.L168,.L458
+	.byte	6
+	.byte	'errorId',0,1,197,12,9
+	.word	.L336,.L460
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ComM_EcuM_WakeUpIndication')
+	.sect	'.debug_abbrev'
+.L330:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ComM_EcuM_WakeUpIndication')
+	.sect	'.debug_line'
+.L331:
+	.word	.L773-.L772
+.L772:
+	.half	3
+	.word	.L775-.L774
+.L774:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/ComM/Implementation',0,0
+	.byte	'ComM.c',0,1,0,0,0
+.L775:
+	.byte	5,25,7,0,5,2
+	.word	.L168
+	.byte	3,193,12,1,5,17,9
+	.half	.L556-.L168
+	.byte	3,3,1,5,45,3,5,1,5,3,9
+	.half	.L555-.L556
+	.byte	1,5,13,7,9
+	.half	.L776-.L555
+	.byte	3,2,1,5,33,1,5,13,9
+	.half	.L111-.L776
+	.byte	3,3,1,5,40,7,9
+	.half	.L777-.L111
+	.byte	3,9,1,5,80,9
+	.half	.L778-.L777
+	.byte	3,119,1,5,13,9
+	.half	.L113-.L778
+	.byte	3,2,1,5,46,9
+	.half	.L112-.L113
+	.byte	3,11,1,5,82,9
+	.half	.L779-.L112
+	.byte	1,5,1,9
+	.half	.L334-.L779
+	.byte	3,1,0,1,1
+.L773:
+	.sdecl	'.debug_ranges',debug,cluster('ComM_EcuM_WakeUpIndication')
+	.sect	'.debug_ranges'
+.L332:
+	.word	-1,.L333,0,.L334-.L333,0,0
+	.sdecl	'.debug_loc',debug,cluster('ComM_BusSM_BusSleepMode')
+	.sect	'.debug_loc'
+.L431:
+	.word	-1,.L160,0,.L541-.L160
+	.half	1
+	.byte	84
+	.word	.L542-.L160,.L430-.L160
+	.half	1
+	.byte	95
+	.word	0,0
+.L159:
+	.word	-1,.L160,0,.L430-.L160
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L432:
+	.word	-1,.L160,.L541-.L160,.L430-.L160
+	.half	1
+	.byte	88
+	.word	.L543-.L160,.L430-.L160
+	.half	1
+	.byte	85
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ComM_BusSM_ModeIndication')
+	.sect	'.debug_loc'
+.L427:
+	.word	-1,.L158,0,.L536-.L158
+	.half	1
+	.byte	84
+	.word	.L537-.L158,.L538-.L158
+	.half	1
+	.byte	95
+	.word	0,0
+.L157:
+	.word	-1,.L158,0,.L426-.L158
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L428:
+	.word	-1,.L158,0,.L536-.L158
+	.half	1
+	.byte	100
+	.word	.L537-.L158,.L426-.L158
+	.half	1
+	.byte	111
+	.word	.L539-.L158,.L88-.L158
+	.half	1
+	.byte	100
+	.word	0,0
+.L429:
+	.word	-1,.L158,.L536-.L158,.L426-.L158
+	.half	1
+	.byte	88
+	.word	.L540-.L158,.L426-.L158
+	.half	1
+	.byte	85
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ComM_CommunicationAllowed')
+	.sect	'.debug_loc'
+.L446:
+	.word	-1,.L128,0,.L472-.L128
+	.half	1
+	.byte	85
+	.word	.L474-.L128,.L444-.L128
+	.half	1
+	.byte	88
+	.word	0,0
+.L445:
+	.word	-1,.L128,0,.L472-.L128
+	.half	1
+	.byte	84
+	.word	.L473-.L128,.L444-.L128
+	.half	1
+	.byte	95
+	.word	0,0
+.L127:
+	.word	-1,.L128,0,.L444-.L128
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L452:
+	.word	0,0
+.L454:
+	.word	0,0
+.L447:
+	.word	-1,.L128,.L472-.L128,.L444-.L128
+	.half	1
+	.byte	89
+	.word	.L475-.L128,.L444-.L128
+	.half	1
+	.byte	85
+	.word	0,0
+.L456:
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ComM_DCM_ActiveDiagnostic')
+	.sect	'.debug_loc'
+.L434:
+	.word	-1,.L162,0,.L544-.L162
+	.half	1
+	.byte	84
+	.word	.L544-.L162,.L433-.L162
+	.half	1
+	.byte	95
+	.word	0,0
+.L161:
+	.word	-1,.L162,0,.L433-.L162
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L435:
+	.word	-1,.L162,.L545-.L162,.L99-.L162
+	.half	1
+	.byte	82
+	.word	.L98-.L162,.L433-.L162
+	.half	1
+	.byte	82
+	.word	.L546-.L162,.L433-.L162
+	.half	1
+	.byte	85
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ComM_DCM_InactiveDiagnostic')
+	.sect	'.debug_loc'
+.L437:
+	.word	-1,.L164,0,.L547-.L164
+	.half	1
+	.byte	84
+	.word	.L547-.L164,.L436-.L164
+	.half	1
+	.byte	95
+	.word	0,0
+.L163:
+	.word	-1,.L164,0,.L436-.L164
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L438:
+	.word	-1,.L164,.L548-.L164,.L103-.L164
+	.half	1
+	.byte	82
+	.word	.L102-.L164,.L436-.L164
+	.half	1
+	.byte	82
+	.word	.L549-.L164,.L436-.L164
+	.half	1
+	.byte	85
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ComM_DeInit')
+	.sect	'.debug_loc'
+.L121:
+	.word	-1,.L122,0,.L349-.L122
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L350:
+	.word	-1,.L122,.L7-.L122,.L349-.L122
+	.half	1
+	.byte	82
+	.word	.L468-.L122,.L349-.L122
+	.half	1
+	.byte	85
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ComM_EcuM_WakeUpIndication')
+	.sect	'.debug_loc'
+.L459:
+	.word	-1,.L168,0,.L555-.L168
+	.half	1
+	.byte	84
+	.word	.L556-.L168,.L458-.L168
+	.half	1
+	.byte	95
+	.word	0,0
+.L167:
+	.word	-1,.L168,0,.L458-.L168
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L460:
+	.word	-1,.L168,.L555-.L168,.L458-.L168
+	.half	1
+	.byte	88
+	.word	.L557-.L168,.L458-.L168
+	.half	1
+	.byte	85
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ComM_GetCurrentComMode')
+	.sect	'.debug_loc'
+.L153:
+	.word	-1,.L154,0,.L382-.L154
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L384:
+	.word	-1,.L154,0,.L528-.L154
+	.half	1
+	.byte	100
+	.word	.L529-.L154,.L382-.L154
+	.half	1
+	.byte	111
+	.word	.L532-.L154,.L530-.L154
+	.half	1
+	.byte	100
+	.word	0,0
+.L383:
+	.word	-1,.L154,0,.L528-.L154
+	.half	1
+	.byte	84
+	.word	0,0
+.L386:
+	.word	-1,.L154,.L531-.L154,.L382-.L154
+	.half	1
+	.byte	95
+	.word	0,0
+.L385:
+	.word	-1,.L154,.L529-.L154,.L530-.L154
+	.half	1
+	.byte	88
+	.word	.L530-.L154,.L79-.L154
+	.half	1
+	.byte	82
+	.word	.L79-.L154,.L382-.L154
+	.half	1
+	.byte	88
+	.word	0,0
+.L387:
+	.word	-1,.L154,.L528-.L154,.L382-.L154
+	.half	1
+	.byte	89
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ComM_GetDcmRequestStatus')
+	.sect	'.debug_loc'
+.L440:
+	.word	-1,.L166,0,.L550-.L166
+	.half	1
+	.byte	84
+	.word	.L551-.L166,.L439-.L166
+	.half	1
+	.byte	95
+	.word	0,0
+.L165:
+	.word	-1,.L166,0,.L439-.L166
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L441:
+	.word	-1,.L166,0,.L550-.L166
+	.half	1
+	.byte	100
+	.word	.L551-.L166,.L439-.L166
+	.half	1
+	.byte	111
+	.word	.L553-.L166,.L554-.L166
+	.half	1
+	.byte	100
+	.word	0,0
+.L443:
+	.word	-1,.L166,.L550-.L166,.L439-.L166
+	.half	1
+	.byte	89
+	.word	0,0
+.L442:
+	.word	-1,.L166,.L552-.L166,.L439-.L166
+	.half	1
+	.byte	88
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ComM_GetInhibitionStatus')
+	.sect	'.debug_loc'
+.L389:
+	.word	-1,.L134,0,.L486-.L134
+	.half	1
+	.byte	84
+	.word	.L487-.L134,.L388-.L134
+	.half	1
+	.byte	95
+	.word	0,0
+.L133:
+	.word	-1,.L134,0,.L388-.L134
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L391:
+	.word	-1,.L134,0,.L486-.L134
+	.half	1
+	.byte	100
+	.word	.L487-.L134,.L388-.L134
+	.half	1
+	.byte	111
+	.word	.L489-.L134,.L490-.L134
+	.half	1
+	.byte	100
+	.word	0,0
+.L393:
+	.word	-1,.L134,.L486-.L134,.L388-.L134
+	.half	1
+	.byte	89
+	.word	0,0
+.L392:
+	.word	-1,.L134,.L488-.L134,.L388-.L134
+	.half	1
+	.byte	88
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ComM_GetMaxComMode')
+	.sect	'.debug_loc'
+.L149:
+	.word	-1,.L150,0,.L369-.L150
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L372:
+	.word	-1,.L150,0,.L517-.L150
+	.half	1
+	.byte	100
+	.word	.L518-.L150,.L369-.L150
+	.half	1
+	.byte	111
+	.word	.L521-.L150,.L522-.L150
+	.half	1
+	.byte	100
+	.word	0,0
+.L370:
+	.word	-1,.L150,0,.L517-.L150
+	.half	1
+	.byte	84
+	.word	.L518-.L150,.L369-.L150
+	.half	1
+	.byte	95
+	.word	0,0
+.L374:
+	.word	-1,.L150,.L520-.L150,.L369-.L150
+	.half	1
+	.byte	89
+	.word	0,0
+.L373:
+	.word	-1,.L150,.L519-.L150,.L369-.L150
+	.half	1
+	.byte	88
+	.word	0,0
+.L375:
+	.word	-1,.L150,.L517-.L150,.L369-.L150
+	.half	1
+	.byte	90
+	.word	.L521-.L150,.L522-.L150
+	.half	1
+	.byte	84
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ComM_GetMinFullComModeTimerStatus')
+	.sect	'.debug_loc'
+.L421:
+	.word	-1,.L132,0,.L481-.L132
+	.half	1
+	.byte	84
+	.word	.L482-.L132,.L420-.L132
+	.half	1
+	.byte	95
+	.word	0,0
+.L131:
+	.word	-1,.L132,0,.L420-.L132
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L423:
+	.word	-1,.L132,0,.L481-.L132
+	.half	1
+	.byte	100
+	.word	.L482-.L132,.L420-.L132
+	.half	1
+	.byte	111
+	.word	.L484-.L132,.L485-.L132
+	.half	1
+	.byte	100
+	.word	0,0
+.L425:
+	.word	-1,.L132,.L481-.L132,.L420-.L132
+	.half	1
+	.byte	89
+	.word	0,0
+.L424:
+	.word	-1,.L132,.L483-.L132,.L420-.L132
+	.half	1
+	.byte	88
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ComM_GetRequestedComMode')
+	.sect	'.debug_loc'
+.L151:
+	.word	-1,.L152,0,.L376-.L152
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L378:
+	.word	-1,.L152,0,.L523-.L152
+	.half	1
+	.byte	100
+	.word	.L524-.L152,.L376-.L152
+	.half	1
+	.byte	111
+	.word	.L526-.L152,.L527-.L152
+	.half	1
+	.byte	100
+	.word	0,0
+.L377:
+	.word	-1,.L152,0,.L523-.L152
+	.half	1
+	.byte	84
+	.word	0,0
+.L380:
+	.word	-1,.L152,.L525-.L152,.L376-.L152
+	.half	1
+	.byte	95
+	.word	0,0
+.L379:
+	.word	-1,.L152,.L524-.L152,.L376-.L152
+	.half	1
+	.byte	88
+	.word	0,0
+.L381:
+	.word	-1,.L152,.L523-.L152,.L376-.L152
+	.half	1
+	.byte	89
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ComM_GetState')
+	.sect	'.debug_loc'
+.L357:
+	.word	-1,.L130,0,.L476-.L130
+	.half	1
+	.byte	84
+	.word	.L477-.L130,.L356-.L130
+	.half	1
+	.byte	95
+	.word	0,0
+.L129:
+	.word	-1,.L130,0,.L356-.L130
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L359:
+	.word	-1,.L130,0,.L476-.L130
+	.half	1
+	.byte	100
+	.word	.L477-.L130,.L356-.L130
+	.half	1
+	.byte	111
+	.word	.L479-.L130,.L480-.L130
+	.half	1
+	.byte	100
+	.word	0,0
+.L361:
+	.word	-1,.L130,.L476-.L130,.L356-.L130
+	.half	1
+	.byte	89
+	.word	0,0
+.L360:
+	.word	-1,.L130,.L478-.L130,.L356-.L130
+	.half	1
+	.byte	88
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ComM_GetStatus')
+	.sect	'.debug_loc'
+.L125:
+	.word	-1,.L126,0,.L351-.L126
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L353:
+	.word	-1,.L126,0,.L469-.L126
+	.half	1
+	.byte	100
+	.word	0,0
+.L355:
+	.word	-1,.L126,.L471-.L126,.L351-.L126
+	.half	1
+	.byte	88
+	.word	0,0
+.L354:
+	.word	-1,.L126,.L470-.L126,.L469-.L126
+	.half	1
+	.byte	95
+	.word	.L469-.L126,.L9-.L126
+	.half	1
+	.byte	82
+	.word	.L9-.L126,.L351-.L126
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ComM_Init')
+	.sect	'.debug_loc'
+.L119:
+	.word	-1,.L120,0,.L344-.L120
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L345:
+	.word	-1,.L120,0,.L464-.L120
+	.half	1
+	.byte	100
+	.word	0,0
+.L346:
+	.word	-1,.L120,.L3-.L120,.L344-.L120
+	.half	1
+	.byte	82
+	.word	.L467-.L120,.L344-.L120
+	.half	1
+	.byte	85
+	.word	0,0
+.L347:
+	.word	-1,.L120,.L465-.L120,.L466-.L120
+	.half	1
+	.byte	82
+	.word	.L466-.L120,.L344-.L120
+	.half	1
+	.byte	88
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ComM_InitMemory')
+	.sect	'.debug_loc'
+.L123:
+	.word	-1,.L124,0,.L348-.L124
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ComM_LimitChannelToNoComMode')
+	.sect	'.debug_loc'
+.L400:
+	.word	-1,.L138,0,.L496-.L138
+	.half	1
+	.byte	84
+	.word	.L497-.L138,.L399-.L138
+	.half	1
+	.byte	95
+	.word	0,0
+.L137:
+	.word	-1,.L138,0,.L399-.L138
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L401:
+	.word	-1,.L138,0,.L496-.L138
+	.half	1
+	.byte	85
+	.word	.L498-.L138,.L399-.L138
+	.half	1
+	.byte	88
+	.word	0,0
+.L403:
+	.word	-1,.L138,.L496-.L138,.L399-.L138
+	.half	1
+	.byte	90
+	.word	0,0
+.L402:
+	.word	-1,.L138,.L499-.L138,.L500-.L138
+	.half	1
+	.byte	89
+	.word	.L500-.L138,.L40-.L138
+	.half	1
+	.byte	82
+	.word	.L40-.L138,.L399-.L138
+	.half	1
+	.byte	89
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ComM_LimitECUToNoComMode')
+	.sect	'.debug_loc'
+.L139:
+	.word	-1,.L140,0,.L404-.L140
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L405:
+	.word	-1,.L140,0,.L501-.L140
+	.half	1
+	.byte	84
+	.word	.L502-.L140,.L44-.L140
+	.half	1
+	.byte	88
+	.word	0,0
+.L407:
+	.word	-1,.L140,.L501-.L140,.L404-.L140
+	.half	1
+	.byte	95
+	.word	0,0
+.L406:
+	.word	-1,.L140,.L503-.L140,.L44-.L140
+	.half	1
+	.byte	82
+	.word	.L44-.L140,.L404-.L140
+	.half	1
+	.byte	88
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ComM_MainFunction')
+	.sect	'.debug_loc'
+.L337:
+	.word	-1,.L156,0,.L533-.L156
+	.half	1
+	.byte	84
+	.word	.L534-.L156,.L335-.L156
+	.half	1
+	.byte	95
+	.word	0,0
+.L155:
+	.word	-1,.L156,0,.L335-.L156
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L338:
+	.word	-1,.L156,.L533-.L156,.L335-.L156
+	.half	1
+	.byte	88
+	.word	.L535-.L156,.L335-.L156
+	.half	1
+	.byte	85
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ComM_PostInit')
+	.sect	'.debug_loc'
+.L117:
+	.word	-1,.L118,0,.L342-.L118
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L343:
+	.word	-1,.L118,.L462-.L118,.L342-.L118
+	.half	1
+	.byte	82
+	.word	.L463-.L118,.L342-.L118
+	.half	1
+	.byte	85
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ComM_PreInit')
+	.sect	'.debug_loc'
+.L115:
+	.word	-1,.L116,0,.L339-.L116
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L341:
+	.word	-1,.L116,0,.L461-.L116
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ComM_PreventWakeUp')
+	.sect	'.debug_loc'
+.L395:
+	.word	-1,.L136,0,.L491-.L136
+	.half	1
+	.byte	84
+	.word	.L492-.L136,.L394-.L136
+	.half	1
+	.byte	95
+	.word	0,0
+.L135:
+	.word	-1,.L136,0,.L394-.L136
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L396:
+	.word	-1,.L136,0,.L491-.L136
+	.half	1
+	.byte	85
+	.word	.L493-.L136,.L394-.L136
+	.half	1
+	.byte	88
+	.word	0,0
+.L398:
+	.word	-1,.L136,.L491-.L136,.L394-.L136
+	.half	1
+	.byte	90
+	.word	0,0
+.L397:
+	.word	-1,.L136,.L494-.L136,.L495-.L136
+	.half	1
+	.byte	89
+	.word	.L495-.L136,.L35-.L136
+	.half	1
+	.byte	82
+	.word	.L35-.L136,.L394-.L136
+	.half	1
+	.byte	89
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ComM_ReadInhibitCounter')
+	.sect	'.debug_loc'
+.L141:
+	.word	-1,.L142,0,.L408-.L142
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L410:
+	.word	-1,.L142,0,.L504-.L142
+	.half	1
+	.byte	100
+	.word	.L505-.L142,.L408-.L142
+	.half	1
+	.byte	111
+	.word	.L506-.L142,.L507-.L142
+	.half	1
+	.byte	100
+	.word	0,0
+.L412:
+	.word	-1,.L142,.L504-.L142,.L408-.L142
+	.half	1
+	.byte	95
+	.word	0,0
+.L411:
+	.word	-1,.L142,.L505-.L142,.L408-.L142
+	.half	1
+	.byte	88
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ComM_RequestComMode')
+	.sect	'.debug_loc'
+.L147:
+	.word	-1,.L148,0,.L362-.L148
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L365:
+	.word	-1,.L148,0,.L512-.L148
+	.half	1
+	.byte	85
+	.word	.L513-.L148,.L362-.L148
+	.half	1
+	.byte	95
+	.word	0,0
+.L364:
+	.word	-1,.L148,0,.L512-.L148
+	.half	1
+	.byte	84
+	.word	0,0
+.L367:
+	.word	-1,.L148,.L516-.L148,.L362-.L148
+	.half	1
+	.byte	89
+	.word	0,0
+.L366:
+	.word	-1,.L148,.L514-.L148,.L515-.L148
+	.half	1
+	.byte	88
+	.word	.L515-.L148,.L60-.L148
+	.half	1
+	.byte	82
+	.word	.L60-.L148,.L362-.L148
+	.half	1
+	.byte	88
+	.word	0,0
+.L368:
+	.word	-1,.L148,.L512-.L148,.L362-.L148
+	.half	1
+	.byte	90
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ComM_ResetInhibitCounter')
+	.sect	'.debug_loc'
+.L143:
+	.word	-1,.L144,0,.L413-.L144
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L415:
+	.word	-1,.L144,.L508-.L144,.L413-.L144
+	.half	1
+	.byte	95
+	.word	0,0
+.L414:
+	.word	-1,.L144,.L52-.L144,.L413-.L144
+	.half	1
+	.byte	88
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ComM_SetECUGroupClassification')
+	.sect	'.debug_loc'
+.L145:
+	.word	-1,.L146,0,.L416-.L146
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L417:
+	.word	-1,.L146,0,.L509-.L146
+	.half	1
+	.byte	84
+	.word	.L510-.L146,.L416-.L146
+	.half	1
+	.byte	88
+	.word	0,0
+.L419:
+	.word	-1,.L146,.L509-.L146,.L416-.L146
+	.half	1
+	.byte	95
+	.word	0,0
+.L418:
+	.word	-1,.L146,.L511-.L146,.L416-.L146
+	.half	1
+	.byte	89
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L780:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('ComM_PreInit')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L780,.L116,.L339-.L116
+	.sdecl	'.debug_frame',debug,cluster('ComM_PostInit')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L780,.L118,.L342-.L118
+	.sdecl	'.debug_frame',debug,cluster('ComM_Init')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L780,.L120,.L344-.L120
+	.sdecl	'.debug_frame',debug,cluster('ComM_DeInit')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L780,.L122,.L349-.L122
+	.sdecl	'.debug_frame',debug,cluster('ComM_InitMemory')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L780,.L124,.L348-.L124
+	.sdecl	'.debug_frame',debug,cluster('ComM_GetStatus')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L780,.L126,.L351-.L126
+	.sdecl	'.debug_frame',debug,cluster('ComM_CommunicationAllowed')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L780,.L128,.L444-.L128
+	.sdecl	'.debug_frame',debug,cluster('ComM_GetState')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L780,.L130,.L356-.L130
+	.sdecl	'.debug_frame',debug,cluster('ComM_GetMinFullComModeTimerStatus')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L780,.L132,.L420-.L132
+	.sdecl	'.debug_frame',debug,cluster('ComM_GetInhibitionStatus')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L780,.L134,.L388-.L134
+	.sdecl	'.debug_frame',debug,cluster('ComM_PreventWakeUp')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L780,.L136,.L394-.L136
+	.sdecl	'.debug_frame',debug,cluster('ComM_LimitChannelToNoComMode')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L780,.L138,.L399-.L138
+	.sdecl	'.debug_frame',debug,cluster('ComM_LimitECUToNoComMode')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L780,.L140,.L404-.L140
+	.sdecl	'.debug_frame',debug,cluster('ComM_ReadInhibitCounter')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L780,.L142,.L408-.L142
+	.sdecl	'.debug_frame',debug,cluster('ComM_ResetInhibitCounter')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L780,.L144,.L413-.L144
+	.sdecl	'.debug_frame',debug,cluster('ComM_SetECUGroupClassification')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L780,.L146,.L416-.L146
+	.sdecl	'.debug_frame',debug,cluster('ComM_RequestComMode')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L780,.L148,.L362-.L148
+	.sdecl	'.debug_frame',debug,cluster('ComM_GetMaxComMode')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L780,.L150,.L369-.L150
+	.sdecl	'.debug_frame',debug,cluster('ComM_GetRequestedComMode')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L780,.L152,.L376-.L152
+	.sdecl	'.debug_frame',debug,cluster('ComM_GetCurrentComMode')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L780,.L154,.L382-.L154
+	.sdecl	'.debug_frame',debug,cluster('ComM_MainFunction')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L780,.L156,.L335-.L156
+	.sdecl	'.debug_frame',debug,cluster('ComM_BusSM_ModeIndication')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L780,.L158,.L426-.L158
+	.sdecl	'.debug_frame',debug,cluster('ComM_BusSM_BusSleepMode')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L780,.L160,.L430-.L160
+	.sdecl	'.debug_frame',debug,cluster('ComM_DCM_ActiveDiagnostic')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L780,.L162,.L433-.L162
+	.sdecl	'.debug_frame',debug,cluster('ComM_DCM_InactiveDiagnostic')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L780,.L164,.L436-.L164
+	.sdecl	'.debug_frame',debug,cluster('ComM_GetDcmRequestStatus')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L780,.L166,.L439-.L166
+	.sdecl	'.debug_frame',debug,cluster('ComM_EcuM_WakeUpIndication')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L780,.L168,.L458-.L168
+	; Module end

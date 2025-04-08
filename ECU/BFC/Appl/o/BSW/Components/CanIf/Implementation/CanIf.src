@@ -1,0 +1,7868 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for TriCore: C compiler v6.2r1 Build 17012451 SN 07925145"
+	.compiler_invocation	"ctc -f cc3920a -c99 --integer-enumeration -D__CPU__=userdef162 -D__CPU_USERDEF162__ --core=tc1.6.2 --fp-model=+float -DBRS_PLATFORM_AURIX -DBRS_COMP_TASKING -I../../../../BSW/Components/BswM/Implementation -I../../../../BSW/Components/CanIf/Implementation -I../../../../BSW/Components/CanSM/Implementation -I../../../../BSW/Components/CanTp/Implementation -I../../../../BSW/Components/Can_30_Core/Implementation -I../../../../BSW/Components/Com/Implementation -I../../../../BSW/Components/ComM/Implementation -I../../../../BSW/Components/Crc -I../../../../BSW/Components/Crc/Implementation -I../../../../BSW/Components/Dcm/Implementation -I../../../../BSW/Components/Dem/Implementation -I../../../../BSW/Components/Det/Implementation -I../../../../BSW/Components/EcuM/Implementation -I../../../../BSW/Components/GenData -I../../../../BSW/Components/Mcal_Tc3xx -I../../../../BSW/Components/Mcal_Tc3xx/Implementation -I../../../../BSW/Components/MemIf -I../../../../BSW/Components/MemIf/Implementation -I../../../../BSW/Components/NvM -I../../../../BSW/Components/NvM/Implementation -I../../../../BSW/Components/Os/Implementation -I../../../../BSW/Components/PduR/Implementation -I../../../../BSW/Components/VStdLib/Implementation -I../../../../BSW/Components/vCan_30_Mcan/Implementation -I../../../../BSW/DemoComponents/vLinkGen/Implementation -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Autosar_Srv -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Integration -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/DemoWorkspace/McalDemo/TC39B/0_Src/BaseSw/Infra/Irq/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Infra_Prod/Sfr/TC39xB/_Reg -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Adc/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Dio/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Fee/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Fls_17_Dmu/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/McalLib/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/McalLib/ssc/inc/AS440 -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Mcu/ssc/inc -I../../../../BSW/ThirdParty/Mcal_Tc3xx/Supply/MC-ISAR_AS440_TC3xx_BASIC_2.30.0/McIsar/Src/Mcal/Tricore/Port/ssc/inc -I../../../../BSW/Components/_Common/Implementation -IGenData -IInclude -ID:/TASKING/TriCorev6.2r1/ctc/include -IGenData/Components -IGenData/inc --debug-info=default --align=4 --default-a0-size=0 --default-a1-size=0 --default-near-size=0 --optimize=acefgIklMnopRsUvwy,+predict --tradeoff=2 --language=-gcc,+volatile,-strings,-comments -o o\\BSW\\Components\\CanIf\\Implementation\\CanIf.src ../../../../BSW/Components/CanIf/Implementation/CanIf.c"
+	.compiler_name		"ctc"
+	;source	'../../../../BSW/Components/CanIf/Implementation/CanIf.c'
+
+	
+$TC162
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('CanIf_ClearQueue')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function CanIf_ClearQueue
+.L374:
+	.align	4
+CanIf_ClearQueue:	.type	func
+.L225:
+	call	SuspendAllInterrupts
+.L697:
+	movh.a	a15,#@his(CanIf_CanIfCtrlId2MappedTxBuffersConfig)
+	lea	a15,[a15]@los(CanIf_CanIfCtrlId2MappedTxBuffersConfig)
+.L649:
+	mov	d2,#0
+	ld.bu	d0,[a15]1
+.L698:
+	mov	d3,d2
+	movh.a	a2,#@his(CanIf_MappedTxBuffersConfig)
+.L650:
+	lea	a2,[a2]@los(CanIf_MappedTxBuffersConfig)
+	addsc.a	a2,a2,d0,#0
+.L651:
+	movh.a	a4,#@his(CanIf_MailBoxConfig)
+.L652:
+	ld.bu	d1,[a15]
+.L653:
+	lea	a4,[a4]@los(CanIf_MailBoxConfig)
+.L654:
+	j	.L2
+.L3:
+	ld.bu	d15,[a2+]
+.L699:
+	mul	d15,d15,#12
+.L700:
+	addsc.a	a15,a4,d15,#0
+.L1111:
+	ld.bu	d4,[a15]5
+.L1112:
+	ld.bu	d15,[a15]4
+.L701:
+	jne	d4,#1,.L4
+.L660:
+	movh.a	a15,#@his(CanIf_TxBufferPrioByCanIdConfig)
+	lea	a15,[a15]@los(CanIf_TxBufferPrioByCanIdConfig)
+	addsc.a	a15,a15,d15,#2
+.L1113:
+	movh.a	a5,#@his(CanIf_TxQueueFlags)
+.L1114:
+	ld.bu	d4,[a15]3
+.L703:
+	lea	a5,[a5]@los(CanIf_TxQueueFlags)
+	addsc.a	a5,a5,d4,#2
+.L1115:
+	ld.bu	d15,[a15]1
+.L702:
+	j	.L5
+.L6:
+	add	d4,#1
+	st.w	[a5+],d2
+.L5:
+	ld.bu	d5,[a15]2
+.L1116:
+	jlt.u	d4,d5,.L6
+.L1117:
+	movh.a	a15,#@his(CanIf_TxBufferPrioByCanIdBase)
+	lea	a15,[a15]@los(CanIf_TxBufferPrioByCanIdBase)
+	addsc.a	a15,a15,d15,#0
+	st.b	[a15],d3
+.L4:
+	add	d0,#1
+.L2:
+	jlt.u	d0,d1,.L3
+.L1118:
+	j	ResumeAllInterrupts
+.L645:
+	
+__CanIf_ClearQueue_function_end:
+	.size	CanIf_ClearQueue,__CanIf_ClearQueue_function_end-CanIf_ClearQueue
+.L375:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('CanIf_Init')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	CanIf_Init
+; Function CanIf_Init
+.L278:
+	.align	4
+CanIf_Init:	.type	func
+.L227:
+	mov	d4,#0
+	call	CanIf_ClearQueue
+.L704:
+	movh.a	a15,#@his(CanIf_CtrlStates)
+	lea	a15,[a15]@los(CanIf_CtrlStates)
+	mov	d15,#1
+	st.w	[a15],d15
+.L814:
+	mov	d0,#0
+	st.w	[a15]4,d0
+.L815:
+	st.w	[a15]8,d15
+.L816:
+	ret
+.L401:
+	
+__CanIf_Init_function_end:
+	.size	CanIf_Init,__CanIf_Init_function_end-CanIf_Init
+.L279:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('CanIf_SetControllerMode')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	CanIf_SetControllerMode
+; Function CanIf_SetControllerMode
+.L284:
+	.align	4
+CanIf_SetControllerMode:	.type	func
+.L229:
+	mov	d8,d5
+.L412:
+	mov	d9,#1
+.L413:
+	mov	d10,#0
+.L705:
+	jeq	d4,#0,.L7
+.L821:
+	mov	d10,#15
+	j	.L8
+.L7:
+	movh.a	a15,#@his(CanIf_CtrlStates)
+	lea	a15,[a15]@los(CanIf_CtrlStates)
+	ld.w	d15,[a15]
+.L822:
+	jne	d15,#0,.L9
+.L823:
+	mov	d10,#30
+	j	.L10
+.L9:
+	call	SuspendAllInterrupts
+.L420:
+	jeq	d8,#1,.L11
+.L824:
+	jeq	d8,#2,.L12
+.L825:
+	jeq	d8,#3,.L13
+.L826:
+	j	.L14
+.L11:
+	ld.w	d15,[a15]
+.L827:
+	jeq	d15,#1,.L15
+.L828:
+	jeq	d15,#2,.L16
+.L829:
+	mov	d5,#3
+	jne	d15,#3,.L18
+.L429:
+	mov	d4,#0
+	call	Can_30_Core_SetControllerMode
+.L830:
+	ne	d9,d2,#1
+	j	.L19
+.L16:
+	mov	d4,#0
+.L831:
+	mov	d5,#1
+	call	Can_30_Core_SetControllerMode
+.L430:
+	jne	d2,#1,.L20
+.L832:
+	mov	d15,#1
+	st.w	[a15]4,d15
+.L833:
+	mov	d4,#0
+	call	CanIf_ClearQueue
+.L834:
+	j	.L21
+.L15:
+	mov	d4,#0
+.L835:
+	mov	d5,#1
+	call	Can_30_Core_SetControllerMode
+.L836:
+	ne	d9,d2,#1
+	j	.L22
+.L12:
+	ld.w	d15,[a15]
+.L837:
+	jeq	d15,#1,.L23
+.L838:
+	jne	d15,#2,.L24
+.L23:
+	mov	d4,#0
+.L839:
+	mov	d5,d4
+	call	Can_30_Core_SetControllerMode
+.L840:
+	ne	d9,d2,#1
+	j	.L25
+.L13:
+	ld.w	d15,[a15]
+.L841:
+	jeq	d15,#1,.L26
+.L842:
+	jeq	d15,#3,.L27
+.L843:
+	j	.L28
+.L26:
+	mov	d4,#0
+.L844:
+	mov	d5,#2
+	call	Can_30_Core_SetControllerMode
+.L431:
+	jne	d2,#1,.L29
+.L845:
+	mov	d15,#1
+	st.w	[a15]8,d15
+.L21:
+	mov	d9,#0
+	j	.L30
+.L27:
+	mov	d4,#0
+.L846:
+	mov	d5,#2
+	call	Can_30_Core_SetControllerMode
+.L847:
+	ne	d9,d2,#1
+	j	.L31
+.L14:
+	mov	d4,#60
+	mov	d5,#0
+	mov	d6,#3
+	mov	d7,#21
+	call	Det_ReportError
+.L31:
+.L30:
+.L29:
+.L28:
+.L25:
+.L24:
+.L22:
+.L20:
+.L19:
+.L18:
+	call	ResumeAllInterrupts
+.L10:
+.L8:
+	jeq	d10,#0,.L32
+.L848:
+	mov	d4,#60
+	mov	d5,#0
+	mov	d6,#3
+	mov	d7,d10
+	call	Det_ReportError
+.L32:
+	mov	d2,d9
+	ret
+.L405:
+	
+__CanIf_SetControllerMode_function_end:
+	.size	CanIf_SetControllerMode,__CanIf_SetControllerMode_function_end-CanIf_SetControllerMode
+.L285:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('CanIf_GetControllerMode')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	CanIf_GetControllerMode
+; Function CanIf_GetControllerMode
+.L290:
+	.align	4
+CanIf_GetControllerMode:	.type	func
+.L231:
+	mov	d8,#1
+.L707:
+	mov	d7,#0
+.L708:
+	jeq	d4,#0,.L34
+.L853:
+	mov	d7,#15
+	j	.L35
+.L34:
+	movh.a	a15,#@his(CanIf_CtrlStates)
+	ld.w	d15,[a15]@los(CanIf_CtrlStates)
+.L854:
+	jne	d15,#0,.L36
+.L855:
+	mov	d7,#30
+	j	.L37
+.L36:
+	jnz.a	a4,.L38
+.L856:
+	mov	d7,#20
+	j	.L39
+.L38:
+	mov	d8,#0
+	st.w	[a4],d15
+.L39:
+.L37:
+.L35:
+	jeq	d7,#0,.L40
+.L857:
+	mov	d4,#60
+.L706:
+	mov	d5,#0
+	mov	d6,#4
+	call	Det_ReportError
+.L40:
+	mov	d2,d8
+	ret
+.L432:
+	
+__CanIf_GetControllerMode_function_end:
+	.size	CanIf_GetControllerMode,__CanIf_GetControllerMode_function_end-CanIf_GetControllerMode
+.L291:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('CanIf_Transmit')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	CanIf_Transmit
+; Function CanIf_Transmit
+.L296:
+	.align	4
+CanIf_Transmit:	.type	func
+.L233:
+	mov	d9,d4
+	mov.aa	a12,a4
+.L445:
+	mov	d10,#1
+	sub.a	a10,#16
+.L446:
+	mov	d11,#0
+.L711:
+	jlt.u	d9,#2,.L42
+.L862:
+	mov	d11,#50
+	j	.L43
+.L42:
+	movh.a	a13,#@his(CanIf_TxPduConfig)
+	lea	a13,[a13]@los(CanIf_TxPduConfig)
+	addsc.a	a15,a13,d9,#3
+	ld.bu	d15,[a15]4
+.L712:
+	jnz.a	a12,.L44
+.L863:
+	mov	d11,#20
+	j	.L45
+.L44:
+	mul	d15,d15,#12
+	movh.a	a2,#@his(CanIf_CtrlStates)
+.L713:
+	lea	a2,[a2]@los(CanIf_CtrlStates)
+	addsc.a	a2,a2,d15,#0
+	ld.w	d15,[a2]
+.L864:
+	jne	d15,#0,.L46
+.L865:
+	mov	d11,#30
+	j	.L47
+.L46:
+	jne	d15,#2,.L48
+.L866:
+	ld.w	d15,[a2]4
+.L867:
+	jeq	d15,#3,.L49
+.L868:
+	jne	d15,#2,.L50
+.L49:
+	ld.hu	d8,[a12]4
+.L469:
+	ld.bu	d1,[a15]7
+.L869:
+	mov	d0,#0
+.L715:
+	jge.u	d1,d8,.L51
+.L870:
+	ld.bu	d15,[a15]3
+.L871:
+	jeq	d15,#0,.L52
+.L872:
+	mov	d8,d1
+	j	.L53
+.L52:
+	mov	d0,d10
+.L53:
+.L51:
+	jne	d0,#0,.L54
+.L453:
+	call	SuspendAllInterrupts
+.L709:
+	ld.hu	d15,[a15]0
+.L873:
+	st.h	[a10],d15
+.L462:
+	mov	d15,d9
+	st.b	[a10]2,d8
+.L463:
+	ld.a	a15,[a12]
+.L874:
+	st.a	[a10]4,a15
+.L464:
+	addsc.a	a15,a13,d15,#3
+.L465:
+	st.b	[a10]8,d9
+.L466:
+	mov.aa	a4,a10
+.L875:
+	ld.bu	d4,[a15]5
+.L717:
+	call	Can_30_Core_Write
+.L482:
+	jne	d2,#2,.L55
+.L488:
+	ld.bu	d0,[a10]8
+.L876:
+	movh.a	a12,#@his(CanIf_MailBoxConfig)
+.L710:
+	addsc.a	a15,a13,d0,#3
+.L877:
+	lea	a12,[a12]@los(CanIf_MailBoxConfig)
+.L878:
+	ld.bu	d15,[a15]5
+.L716:
+	mov	d8,#0
+.L714:
+	mul	d15,d15,#12
+.L718:
+	addsc.a	a15,a12,d15,#0
+	mov	d15,#255
+	ld.bu	d1,[a15]4
+.L879:
+	jeq	d15,d1,.L56
+.L880:
+	ld.a	a5,[a10]4
+.L881:
+	jnz.a	a5,.L57
+.L882:
+	ld.bu	d15,[a10]2
+.L883:
+	jeq	d15,#0,.L58
+.L884:
+	mov	d8,#20
+	j	.L59
+.L58:
+.L57:
+	ld.bu	d15,[a15]5
+.L885:
+	jne	d15,#1,.L60
+.L886:
+	ld.bu	d4,[a10]2
+.L887:
+	jge.u	d4,#9,.L61
+.L498:
+	movh.a	a15,#@his(CanIf_TxPduQueueIndex)
+	lea	a15,[a15]@los(CanIf_TxPduQueueIndex)
+	addsc.a	a15,a15,d0,#1
+	ld.bu	d15,[a15]1
+.L719:
+	mul	d15,d15,#12
+	movh.a	a15,#@his(CanIf_TxQueue)
+.L720:
+	lea	a15,[a15]@los(CanIf_TxQueue)
+	addsc.a	a4,a15,d15,#0
+.L888:
+	st.b	[a4]8,d4
+.L889:
+	call	VStdLib_MemCpy
+.L499:
+	ld.bu	d0,[a10]8
+.L505:
+	movh.a	a2,#@his(CanIf_TxQueueBitFlagsLookUp)
+.L890:
+	addsc.a	a15,a13,d0,#3
+.L891:
+	lea	a2,[a2]@los(CanIf_TxQueueBitFlagsLookUp)
+.L892:
+	ld.bu	d15,[a15]5
+.L893:
+	mov	d7,#0
+.L721:
+	mul	d15,d15,#12
+	addsc.a	a15,a12,d15,#0
+	ld.bu	d15,[a15]4
+.L722:
+	movh.a	a15,#@his(CanIf_TxBufferPrioByCanIdConfig)
+	lea	a15,[a15]@los(CanIf_TxBufferPrioByCanIdConfig)
+	addsc.a	a15,a15,d15,#2
+	ld.bu	d15,[a15]
+.L723:
+	sub	d0,d15
+	ld.bu	d15,[a15]3
+.L894:
+	extr.u	d1,d0,#0,#8
+.L724:
+	sh	d0,d1,#-5
+.L726:
+	add	d0,d15
+.L895:
+	and	d15,d1,#31
+.L728:
+	addsc.a	a2,a2,d15,#2
+	ld.w	d15,[a2]
+.L729:
+	movh.a	a2,#@his(CanIf_TxQueueFlags)
+	lea	a2,[a2]@los(CanIf_TxQueueFlags)
+	addsc.a	a4,a2,d0,#2
+	ld.w	d1,[a4]
+.L725:
+	and	d1,d15
+.L896:
+	jne	d1,#0,.L62
+.L897:
+	jeq	d0,#0,.L63
+.L898:
+	mov	d7,#46
+	j	.L64
+.L63:
+	ld.w	d0,[a2]
+.L727:
+	or	d0,d15
+	st.w	[a2],d0
+.L899:
+	ld.bu	d15,[a15]1
+	movh.a	a15,#@his(CanIf_TxBufferPrioByCanIdBase)
+	lea	a15,[a15]@los(CanIf_TxBufferPrioByCanIdBase)
+	addsc.a	a15,a15,d15,#0
+	ld.bu	d15,[a15]
+	add	d15,#1
+	st.b	[a15],d15
+.L64:
+.L62:
+	jeq	d7,#0,.L65
+.L900:
+	mov	d4,#60
+	mov	d5,#0
+	mov	d6,#1
+	call	Det_ReportError
+.L65:
+	mov	d10,#0
+	j	.L66
+.L61:
+	mov	d8,#11
+.L56:
+.L66:
+.L60:
+.L59:
+	jeq	d8,#0,.L68
+.L901:
+	mov	d4,#60
+	mov	d5,#0
+	mov	d6,#5
+	mov	d7,d8
+	call	Det_ReportError
+.L489:
+	j	.L68
+.L55:
+	jeq	d2,#0,.L70
+.L902:
+	ld.bu	d0,[a10]8
+	movh.a	a2,#@his(CanIf_MailBoxConfig)
+	addsc.a	a15,a13,d0,#3
+	lea	a2,[a2]@los(CanIf_MailBoxConfig)
+	ld.bu	d15,[a15]5
+.L730:
+	mul	d15,d15,#12
+	addsc.a	a15,a2,d15,#0
+	ld.bu	d15,[a15]5
+.L903:
+	jne	d15,#1,.L71
+.L519:
+	ld.bu	d15,[a15]4
+.L731:
+	movh.a	a15,#@his(CanIf_TxBufferPrioByCanIdConfig)
+	lea	a15,[a15]@los(CanIf_TxBufferPrioByCanIdConfig)
+	addsc.a	a15,a15,d15,#2
+.L904:
+	movh.a	a2,#@his(CanIf_TxQueueBitFlagsLookUp)
+.L905:
+	ld.bu	d15,[a15]
+.L732:
+	lea	a2,[a2]@los(CanIf_TxQueueBitFlagsLookUp)
+.L906:
+	sub	d0,d15
+	ld.bu	d15,[a15]3
+.L907:
+	extr.u	d1,d0,#0,#8
+.L733:
+	mov	d7,#0
+.L735:
+	sh	d0,d1,#-5
+.L736:
+	add	d0,d15
+.L908:
+	and	d15,d1,#31
+.L738:
+	addsc.a	a2,a2,d15,#2
+	ld.w	d15,[a2]
+.L739:
+	movh.a	a2,#@his(CanIf_TxQueueFlags)
+	lea	a2,[a2]@los(CanIf_TxQueueFlags)
+	addsc.a	a4,a2,d0,#2
+	ld.w	d1,[a4]
+.L734:
+	and	d1,d15
+.L909:
+	jeq	d1,#0,.L72
+.L910:
+	jeq	d0,#0,.L73
+.L911:
+	mov	d7,#46
+	j	.L74
+.L73:
+	mov	d1,#-1
+	ld.w	d0,[a2]
+.L737:
+	xor	d15,d1
+	and	d0,d15
+	st.w	[a2],d0
+.L912:
+	ld.bu	d15,[a15]1
+	movh.a	a15,#@his(CanIf_TxBufferPrioByCanIdBase)
+	lea	a15,[a15]@los(CanIf_TxBufferPrioByCanIdBase)
+	addsc.a	a15,a15,d15,#0
+	ld.bu	d15,[a15]
+	add	d15,#-1
+	st.b	[a15],d15
+.L74:
+.L72:
+	jeq	d7,#0,.L75
+.L913:
+	mov	d4,#60
+	mov	d5,#0
+	mov	d6,#1
+	call	Det_ReportError
+.L75:
+.L71:
+	mov	d10,#0
+.L70:
+.L68:
+	call	ResumeAllInterrupts
+.L454:
+	j	.L76
+.L54:
+	mov	d11,#90
+	j	.L77
+.L50:
+	jeq	d15,#4,.L78
+.L914:
+	jne	d15,#5,.L79
+.L78:
+	mov	d10,#0
+	call	CanIf_HlTxConfirmation
+.L449:
+	j	.L80
+.L48:
+	jne	d15,#1,.L81
+.L79:
+	mov	d11,#70
+.L81:
+.L80:
+.L77:
+.L76:
+.L47:
+.L45:
+.L43:
+	jeq	d11,#0,.L82
+.L915:
+	mov	d4,#60
+	mov	d5,#0
+	mov	d6,#5
+	mov	d7,d11
+	call	Det_ReportError
+.L82:
+	mov	d2,d10
+	ret
+.L438:
+	
+__CanIf_Transmit_function_end:
+	.size	CanIf_Transmit,__CanIf_Transmit_function_end-CanIf_Transmit
+.L297:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('CanIf_HlTxConfirmation')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function CanIf_HlTxConfirmation
+.L386:
+	.align	4
+CanIf_HlTxConfirmation:	.type	func
+.L235:
+	movh.a	a15,#@his(CanIf_TxPduConfig)
+	lea	a15,[a15]@los(CanIf_TxPduConfig)
+	addsc.a	a15,a15,d4,#3
+	ld.bu	d15,[a15]6
+.L741:
+	ld.bu	d4,[a15]2
+.L740:
+	movh.a	a15,#@his(CanIf_TxConfirmationFctList)
+	lea	a15,[a15]@los(CanIf_TxConfirmationFctList)
+	addsc.a	a15,a15,d15,#2
+	ld.a	a15,[a15]
+.L742:
+	jz.a	a15,.L84
+.L1143:
+	ji	a15
+.L84:
+	ret
+.L685:
+	
+__CanIf_HlTxConfirmation_function_end:
+	.size	CanIf_HlTxConfirmation,__CanIf_HlTxConfirmation_function_end-CanIf_HlTxConfirmation
+.L387:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('CanIf_TxConfirmation')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	CanIf_TxConfirmation
+; Function CanIf_TxConfirmation
+.L344:
+	.align	4
+CanIf_TxConfirmation:	.type	func
+.L237:
+	mov	d9,d4
+.L744:
+	mov	d10,#0
+.L745:
+	jlt.u	d9,#2,.L85
+.L992:
+	mov	d10,#13
+	j	.L86
+.L85:
+	movh.a	a15,#@his(CanIf_TxPduConfig)
+	lea	a15,[a15]@los(CanIf_TxPduConfig)
+	addsc.a	a15,a15,d9,#3
+	movh.a	a2,#@his(CanIf_CtrlStates)
+	ld.bu	d15,[a15]4
+	lea	a2,[a2]@los(CanIf_CtrlStates)
+	mul	d15,d15,#12
+	addsc.a	a2,a2,d15,#0
+	ld.w	d15,[a2]
+.L993:
+	jne	d15,#0,.L87
+.L994:
+	mov	d10,#30
+	j	.L88
+.L87:
+	jne	d15,#2,.L89
+.L995:
+	ld.w	d15,[a2]4
+.L996:
+	jeq	d15,#3,.L90
+.L997:
+	jne	d15,#2,.L91
+.L90:
+	ld.bu	d8,[a15]5
+.L746:
+	mul	d15,d8,#12
+	movh.a	a15,#@his(CanIf_MailBoxConfig)
+	lea	a15,[a15]@los(CanIf_MailBoxConfig)
+	addsc.a	a15,a15,d15,#0
+	ld.bu	d0,[a15]4
+	mov	d15,#255
+.L998:
+	jeq	d15,d0,.L92
+.L999:
+	call	SuspendAllInterrupts
+.L743:
+	mov	d4,d8
+	call	CanIf_TxQueueTreatment
+.L1000:
+	call	ResumeAllInterrupts
+.L92:
+	mov	d4,d9
+	call	CanIf_HlTxConfirmation
+.L91:
+.L89:
+.L88:
+.L86:
+	jeq	d10,#0,.L93
+.L1001:
+	mov	d4,#60
+	mov	d5,#0
+	mov	d6,#19
+	mov	d7,d10
+.L747:
+	j	Det_ReportError
+.L93:
+	ret
+.L563:
+	
+__CanIf_TxConfirmation_function_end:
+	.size	CanIf_TxConfirmation,__CanIf_TxConfirmation_function_end-CanIf_TxConfirmation
+.L345:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('CanIf_RxIndicationAsr403')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	CanIf_RxIndicationAsr403
+; Function CanIf_RxIndicationAsr403
+.L350:
+	.align	4
+CanIf_RxIndicationAsr403:	.type	func
+.L239:
+	mov	d8,#0
+	jnz.a	a4,.L94
+.L750:
+	mov	d8,#20
+	j	.L95
+.L94:
+	mov.u	d0,#49151
+.L1006:
+	and	d0,d5
+.L1007:
+	mov	d1,#2047
+.L1008:
+	jge.u	d1,d0,.L96
+.L1009:
+	mov	d8,#10
+	j	.L97
+.L96:
+	mov	d1,#16384
+	movh.a	a15,#@his(RxDlcMaxValueLookUp)
+.L1010:
+	and	d5,d1
+	lea	a15,[a15]@los(RxDlcMaxValueLookUp)
+.L748:
+	sha	d15,d5,#-14
+.L1011:
+	addsc.a	a15,a15,d15,#0
+	ld.bu	d15,[a15]
+.L1012:
+	jge.u	d15,d6,.L98
+.L1013:
+	mov	d8,#11
+	j	.L99
+.L98:
+	jlt.u	d4,#3,.L100
+.L1014:
+	mov	d8,#12
+	j	.L101
+.L100:
+	mul	d15,d4,#12
+	movh.a	a15,#@his(CanIf_MailBoxConfig)
+.L1015:
+	insert	d1,d1,d0,#0,#16
+	lea	a15,[a15]@los(CanIf_MailBoxConfig)
+	addsc.a	a15,a15,d15,#0
+.L1016:
+	mov	d5,#255
+.L1017:
+	ld.bu	d15,[a15]2
+.L1018:
+	insert	d1,d1,d15,#16,#8
+.L1019:
+	extr.u	d3,d1,#16,#8
+.L1020:
+	jeq	d3,d5,.L102
+.L1021:
+	ld.w	d15,[a15]6
+.L1022:
+	jeq	d15,#1,.L103
+.L1023:
+	jne	d15,#0,.L104
+.L577:
+	movh.a	a2,#@his(CanIf_RxPduConfig)
+	lea	a2,[a2]@los(CanIf_RxPduConfig)
+	addsc.a	a5,a2,d3,#3
+.L1024:
+	mov	d1,#1
+.L1025:
+	ld.hu	d2,[a5]2
+.L1026:
+	mov	d4,#8192
+.L749:
+	jnz.t	d2:13,.L105
+.L582:
+	j	.L106
+.L107:
+	ld.hu	d15,[a5]0
+.L1027:
+	jne	d15,d0,.L108
+.L1028:
+	mov	d5,d3
+	j	.L109
+.L108:
+	ld.hu	d15,[a5]2
+.L1029:
+	jz.t	d15:14,.L110
+.L109:
+	mov	d1,#0
+	j	.L111
+.L110:
+	add	d2,d3,#-1
+	add.a	a5,#-8
+	extr.u	d3,d2,#0,#8
+.L106:
+	ld.hu	d2,[a5]2
+.L1030:
+	jz.t	d2:13,.L107
+.L111:
+.L105:
+	jeq	d1,#0,.L112
+.L587:
+	addsc.a	a5,a2,d3,#3
+.L1031:
+	mov	d2,#24576
+.L1032:
+	mov.u	d7,#40959
+	j	.L113
+.L114:
+	ld.hu	d15,[a5]0
+.L1033:
+	jz.t	d15:13,.L115
+.L1034:
+	ld.hu	d1,[a5]2
+.L1035:
+	and	d1,d0
+.L1036:
+	insert	d1,d1,#1,#13,#1
+.L1037:
+	jne	d15,d1,.L116
+.L1038:
+	j	.L117
+.L115:
+	jlt.u	d0,d15,.L118
+.L1039:
+	ld.hu	d1,[a5]2
+.L1040:
+	and	d1,d7
+.L1041:
+	jlt.u	d1,d0,.L119
+.L117:
+	mov	d5,d3
+	j	.L120
+.L119:
+.L118:
+.L116:
+	add	d3,#-1
+	add.a	a5,#-8
+	extr.u	d3,d3,#0,#8
+.L113:
+	ld.hu	d1,[a5]2
+.L1042:
+	and	d1,d2
+.L1043:
+	jeq	d1,d4,.L114
+.L120:
+	addsc.a	a2,a2,d3,#3
+	ld.hu	d1,[a2]2
+.L1044:
+	and	d15,d1,d2
+.L1045:
+	jne	d15,d2,.L121
+.L1046:
+	ld.hu	d2,[a2]0
+.L1047:
+	jz.t	d2:13,.L122
+.L1048:
+	and	d1,d0
+.L1049:
+	insert	d15,d1,#1,#13,#1
+.L1050:
+	jne	d15,d2,.L123
+.L1051:
+	j	.L124
+.L122:
+	jlt.u	d0,d2,.L125
+.L1052:
+	mov	d15,d7
+.L1053:
+	and	d1,d15
+.L1054:
+	jlt.u	d1,d0,.L126
+.L124:
+.L103:
+	mov	d5,d3
+	j	.L127
+.L104:
+	mov	d8,#45
+.L127:
+.L126:
+.L125:
+.L123:
+.L121:
+.L112:
+	mov	d15,#255
+.L1055:
+	jeq	d15,d5,.L128
+.L1056:
+	ld.bu	d4,[a15]
+	mov	d7,#20
+	call	CanIf_HlIndication
+.L128:
+.L102:
+.L101:
+.L99:
+.L97:
+.L95:
+	jeq	d8,#0,.L129
+.L1057:
+	mov	d4,#60
+	mov	d5,#0
+	mov	d6,#20
+	mov	d7,d8
+.L751:
+	j	Det_ReportError
+.L129:
+	ret
+.L567:
+	
+__CanIf_RxIndicationAsr403_function_end:
+	.size	CanIf_RxIndicationAsr403,__CanIf_RxIndicationAsr403_function_end-CanIf_RxIndicationAsr403
+.L351:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('CanIf_HlIndication')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function CanIf_HlIndication
+.L380:
+	.align	4
+CanIf_HlIndication:	.type	func
+.L241:
+	mov	d8,#0
+	sub.a	a10,#8
+.L752:
+	jne	d4,#0,.L130
+.L1123:
+	movh.a	a15,#@his(CanIf_CtrlStates)
+	lea	a15,[a15]@los(CanIf_CtrlStates)
+	ld.w	d15,[a15]
+.L1124:
+	jne	d15,#0,.L131
+.L1125:
+	mov	d8,#30
+	j	.L132
+.L131:
+	jne	d15,#2,.L133
+.L1126:
+	mov	d15,#2
+	st.w	[a15]8,d15
+.L1127:
+	ld.w	d15,[a15]4
+.L1128:
+	jeq	d15,#3,.L134
+.L1129:
+	jeq	d15,#1,.L135
+.L1130:
+	jne	d15,#5,.L136
+.L135:
+.L134:
+	movh.a	a15,#@his(CanIf_RxPduConfig)
+	lea	a15,[a15]@los(CanIf_RxPduConfig)
+	addsc.a	a15,a15,d5,#3
+	ld.bu	d15,[a15]6
+.L1131:
+	jge.u	d6,d15,.L137
+.L1132:
+	mov	d8,#61
+	j	.L138
+.L137:
+	ld.bu	d15,[a15]5
+.L1133:
+	jlt.u	d15,#3,.L139
+.L130:
+	mov	d8,#45
+	j	.L140
+.L139:
+	movh.a	a2,#@his(CanIf_RxIndicationFctList)
+	lea	a2,[a2]@los(CanIf_RxIndicationFctList)
+	addsc.a	a2,a2,d15,#3
+	ld.w	d15,[a2]4
+.L1134:
+	jne	d15,#1,.L141
+.L680:
+	st.a	[a10],a4
+.L1135:
+	st.h	[a10]4,d6
+.L1136:
+	ld.a	a2,[a2]
+.L755:
+	jz.a	a2,.L142
+.L1137:
+	ld.bu	d4,[a15]4
+.L754:
+	mov.aa	a4,a10
+.L753:
+	calli	a2
+.L142:
+.L141:
+.L140:
+.L138:
+.L136:
+.L133:
+.L132:
+	jeq	d8,#0,.L143
+.L1138:
+	mov	d4,#60
+	mov	d5,#0
+	mov	d6,#20
+	mov	d7,d8
+.L756:
+	j	Det_ReportError
+.L143:
+	ret
+.L664:
+	
+__CanIf_HlIndication_function_end:
+	.size	CanIf_HlIndication,__CanIf_HlIndication_function_end-CanIf_HlIndication
+.L381:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('CanIf_ControllerBusOff')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	CanIf_ControllerBusOff
+; Function CanIf_ControllerBusOff
+.L356:
+	.align	4
+CanIf_ControllerBusOff:	.type	func
+.L243:
+	mov	d15,#0
+	movh.a	a15,#@his(CanIf_BusOffNotificationFctPtr)
+.L758:
+	ld.a	a15,[a15]@los(CanIf_BusOffNotificationFctPtr)
+.L759:
+	jeq	d4,#0,.L144
+.L1062:
+	mov	d15,#14
+	j	.L145
+.L144:
+	movh.a	a12,#@his(CanIf_CtrlStates)
+	lea	a12,[a12]@los(CanIf_CtrlStates)
+	ld.w	d0,[a12]
+.L1063:
+	jeq	d0,#0,.L146
+.L1064:
+	mov	d5,#3
+	call	CanIf_SetPduMode
+.L757:
+	mov	d0,#1
+	st.w	[a12],d0
+.L1065:
+	mov	d4,#0
+	call	CanIf_ClearQueue
+.L1066:
+	jz.a	a15,.L147
+.L1067:
+	mov	d4,#0
+	calli	a15
+.L1068:
+	j	.L148
+.L146:
+	mov	d15,#30
+.L148:
+.L147:
+.L145:
+	jeq	d15,#0,.L149
+.L1069:
+	mov	d4,#60
+	mov	d5,#0
+	mov	d6,#22
+	mov	d7,d15
+.L760:
+	j	Det_ReportError
+.L149:
+	ret
+.L595:
+	
+__CanIf_ControllerBusOff_function_end:
+	.size	CanIf_ControllerBusOff,__CanIf_ControllerBusOff_function_end-CanIf_ControllerBusOff
+.L357:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('CanIf_SetPduMode')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	CanIf_SetPduMode
+; Function CanIf_SetPduMode
+.L302:
+	.align	4
+CanIf_SetPduMode:	.type	func
+.L245:
+	mov	d8,d5
+.L762:
+	mov	d9,#1
+.L763:
+	mov	d10,#0
+.L764:
+	jeq	d4,#0,.L150
+.L920:
+	mov	d10,#15
+	j	.L151
+.L150:
+	movh.a	a12,#@his(CanIf_CtrlStates)
+	lea	a12,[a12]@los(CanIf_CtrlStates)
+	ld.w	d15,[a12]
+.L921:
+	jne	d15,#0,.L152
+.L922:
+	mov	d10,#30
+	j	.L153
+.L152:
+	jlt	d8,#7,.L154
+.L923:
+	mov	d10,#22
+	j	.L155
+.L154:
+	jne	d15,#2,.L156
+.L924:
+	mov	d9,#0
+	call	SuspendAllInterrupts
+.L761:
+	ld.w	d0,[+a12]4
+.L925:
+	movh.a	a15,#@his(CanIfState)
+.L926:
+	mul	d15,d0,#7
+	lea	a15,[a15]@los(CanIfState)
+.L927:
+	addsc.a	a2,a15,d15,#0
+.L928:
+	mov	d15,#255
+.L929:
+	addsc.a	a2,a2,d8,#0
+	ld.bu	d1,[a2]
+.L930:
+	jeq	d15,d1,.L157
+.L931:
+	jeq	d8,#0,.L158
+.L932:
+	jeq	d8,#3,.L159
+.L933:
+	jne	d8,#6,.L161
+.L159:
+.L158:
+	add	d0,#-2
+.L934:
+	jge.u	d0,#2,.L162
+.L935:
+	mov	d4,#0
+	call	CanIf_ClearQueue
+.L162:
+.L161:
+	ld.w	d15,[a12]
+	mul	d15,d15,#7
+	addsc.a	a15,a15,d15,#0
+	addsc.a	a15,a15,d8,#0
+	ld.bu	d15,[a15]
+	st.w	[a12],d15
+.L157:
+	call	ResumeAllInterrupts
+.L156:
+.L155:
+.L153:
+.L151:
+	jeq	d10,#0,.L163
+.L936:
+	mov	d4,#60
+	mov	d5,#0
+	mov	d6,#9
+	mov	d7,d10
+	call	Det_ReportError
+.L163:
+	mov	d2,d9
+	ret
+.L532:
+	
+__CanIf_SetPduMode_function_end:
+	.size	CanIf_SetPduMode,__CanIf_SetPduMode_function_end-CanIf_SetPduMode
+.L303:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('CanIf_GetPduMode')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	CanIf_GetPduMode
+; Function CanIf_GetPduMode
+.L308:
+	.align	4
+CanIf_GetPduMode:	.type	func
+.L247:
+	mov	d8,#1
+.L766:
+	mov	d7,#0
+.L767:
+	jeq	d4,#0,.L165
+.L941:
+	mov	d7,#15
+	j	.L166
+.L165:
+	movh.a	a15,#@his(CanIf_CtrlStates)
+	lea	a15,[a15]@los(CanIf_CtrlStates)
+	ld.w	d15,[a15]
+.L942:
+	jne	d15,#0,.L167
+.L943:
+	mov	d7,#30
+	j	.L168
+.L167:
+	jnz.a	a4,.L169
+.L944:
+	mov	d7,#20
+	j	.L170
+.L169:
+	mov	d8,#0
+	ld.w	d15,[a15]4
+.L945:
+	st.w	[a4],d15
+.L170:
+.L168:
+.L166:
+	jeq	d7,#0,.L171
+.L946:
+	mov	d4,#60
+.L765:
+	mov	d5,#0
+	mov	d6,#10
+	call	Det_ReportError
+.L171:
+	mov	d2,d8
+	ret
+.L538:
+	
+__CanIf_GetPduMode_function_end:
+	.size	CanIf_GetPduMode,__CanIf_GetPduMode_function_end-CanIf_GetPduMode
+.L309:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('CanIf_TxQueueTransmit')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function CanIf_TxQueueTransmit
+.L368:
+	.align	4
+CanIf_TxQueueTransmit:	.type	func
+.L249:
+	mov	d8,d4
+	sub.a	a10,#16
+.L768:
+	mov	d2,#0
+.L771:
+	mov	d10,d2
+.L772:
+	mov	d9,#1
+.L773:
+	jlt.u	d8,#2,.L173
+.L1087:
+	mov	d10,#50
+	j	.L174
+.L173:
+	movh.a	a15,#@his(CanIf_TxPduConfig)
+	lea	a15,[a15]@los(CanIf_TxPduConfig)
+	addsc.a	a2,a15,d8,#3
+.L1088:
+	movh.a	a13,#@his(CanIf_MailBoxConfig)
+.L1089:
+	mov.aa	a12,a2
+	ld.bu	d0,[+a12]5
+.L774:
+	lea	a13,[a13]@los(CanIf_MailBoxConfig)
+	mul	d15,d0,#12
+	addsc.a	a14,a13,d15,#0
+	ld.bu	d0,[+a14]5
+.L775:
+	jne	d0,#1,.L175
+.L623:
+	movh.a	a15,#@his(CanIf_TxPduQueueIndex)
+	lea	a15,[a15]@los(CanIf_TxPduQueueIndex)
+	addsc.a	a15,a15,d8,#1
+.L1090:
+	ld.hu	d0,[a2]0
+.L1091:
+	st.h	[a10],d0
+.L625:
+	mov.aa	a4,a10
+.L626:
+	ld.bu	d15,[a15]1
+	movh.a	a15,#@his(CanIf_TxQueue)
+	mul	d15,d15,#12
+	lea	a15,[a15]@los(CanIf_TxQueue)
+	addsc.a	a15,a15,d15,#0
+	ld.bu	d15,[a15]8
+.L1092:
+	st.b	[a10]2,d15
+.L1093:
+	st.a	[a10]4,a15
+.L1094:
+	st.b	[a10]8,d8
+.L629:
+	ld.bu	d4,[a2]5
+.L769:
+	call	Can_30_Core_Write
+.L175:
+	jne	d2,#1,.L176
+.L1095:
+	ld.bu	d15,[a14]
+.L1096:
+	jne	d15,#1,.L177
+.L633:
+	ld.bu	d15,[a12]
+.L1097:
+	movh.a	a2,#@his(CanIf_TxQueueBitFlagsLookUp)
+.L1098:
+	mul	d15,d15,#12
+	lea	a2,[a2]@los(CanIf_TxQueueBitFlagsLookUp)
+.L1099:
+	mov	d7,#0
+.L776:
+	addsc.a	a15,a13,d15,#0
+	ld.bu	d15,[a15]4
+.L777:
+	movh.a	a15,#@his(CanIf_TxBufferPrioByCanIdConfig)
+	lea	a15,[a15]@los(CanIf_TxBufferPrioByCanIdConfig)
+	addsc.a	a15,a15,d15,#2
+	ld.bu	d15,[a15]
+.L778:
+	sub	d8,d15
+	ld.bu	d15,[a15]3
+.L770:
+	extr.u	d1,d8,#0,#8
+.L779:
+	sh	d0,d1,#-5
+.L781:
+	add	d0,d15
+.L1100:
+	and	d15,d1,#31
+.L783:
+	addsc.a	a2,a2,d15,#2
+	ld.w	d15,[a2]
+.L784:
+	movh.a	a2,#@his(CanIf_TxQueueFlags)
+	lea	a2,[a2]@los(CanIf_TxQueueFlags)
+	addsc.a	a4,a2,d0,#2
+	ld.w	d1,[a4]
+.L780:
+	and	d1,d15
+.L1101:
+	jeq	d1,#0,.L178
+.L1102:
+	jeq	d0,#0,.L179
+.L1103:
+	mov	d7,#46
+	j	.L180
+.L179:
+	mov	d1,#-1
+	ld.w	d0,[a2]
+.L782:
+	xor	d15,d1
+	and	d0,d15
+	st.w	[a2],d0
+.L1104:
+	ld.bu	d15,[a15]1
+	movh.a	a15,#@his(CanIf_TxBufferPrioByCanIdBase)
+	lea	a15,[a15]@los(CanIf_TxBufferPrioByCanIdBase)
+	addsc.a	a15,a15,d15,#0
+	ld.bu	d15,[a15]
+	add	d15,#-1
+	st.b	[a15],d15
+.L180:
+.L178:
+	jeq	d7,#0,.L181
+.L1105:
+	mov	d4,#60
+	mov	d5,#0
+	mov	d6,#1
+	call	Det_ReportError
+.L634:
+	j	.L182
+.L177:
+	mov	d10,#45
+	j	.L183
+.L176:
+	jne	d2,#2,.L184
+.L182:
+.L181:
+	mov	d9,#0
+	j	.L185
+.L184:
+	mov	d10,#53
+.L185:
+.L183:
+.L174:
+	jeq	d10,#0,.L186
+.L1106:
+	mov	d4,#60
+	mov	d5,#0
+	mov	d6,#250
+	mov	d7,d10
+	call	Det_ReportError
+.L186:
+	mov	d2,d9
+	ret
+.L616:
+	
+__CanIf_TxQueueTransmit_function_end:
+	.size	CanIf_TxQueueTransmit,__CanIf_TxQueueTransmit_function_end-CanIf_TxQueueTransmit
+.L369:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('CanIf_TxQueueTreatment')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+; Function CanIf_TxQueueTreatment
+.L362:
+	.align	4
+CanIf_TxQueueTreatment:	.type	func
+.L251:
+	mul	d15,d4,#12
+	movh.a	a15,#@his(CanIf_MailBoxConfig)
+	lea	a15,[a15]@los(CanIf_MailBoxConfig)
+	addsc.a	a15,a15,d15,#0
+.L1074:
+	mov	d2,#1
+.L785:
+	ld.bu	d0,[a15]5
+.L1075:
+	ld.bu	d15,[a15]4
+.L787:
+	jne	d0,#1,.L188
+.L605:
+	movh.a	a15,#@his(CanIf_TxBufferPrioByCanIdConfig)
+	lea	a15,[a15]@los(CanIf_TxBufferPrioByCanIdConfig)
+	addsc.a	a15,a15,d15,#2
+.L1076:
+	movh.a	a2,#@his(CanIf_TxBufferPrioByCanIdBase)
+.L1077:
+	ld.bu	d15,[a15]1
+.L788:
+	lea	a2,[a2]@los(CanIf_TxBufferPrioByCanIdBase)
+	addsc.a	a2,a2,d15,#0
+	ld.bu	d15,[a2]
+.L1078:
+	jeq	d15,#0,.L189
+.L606:
+	ld.bu	d15,[a15]2
+.L1079:
+	ld.bu	d8,[a15]3
+.L789:
+	add	d15,#-1
+	movh.a	a2,#@his(CanIf_TxQueueFlags)
+	extr.u	d0,d15,#0,#16
+	lea	a2,[a2]@los(CanIf_TxQueueFlags)
+	addsc.a	a2,a2,d0,#2
+.L1080:
+	sub	d0,d15,d8
+	add	d0,#1
+	jlt	d0,#1,.L194
+	mov.a	a4,d0
+	add.a	a4,#-1
+.L191:
+	ld.w	d4,[a2]
+.L791:
+	jeq	d4,#0,.L192
+.L613:
+	call	VStdLib_GetHighestBitPosOne32
+.L786:
+	extr.u	d15,d15,#0,#8
+.L790:
+	sub	d15,d8
+.L1081:
+	sha	d15,#5
+.L1082:
+	add	d2,d15
+	ld.bu	d15,[a15]
+.L792:
+	add	d2,d15
+	extr.u	d4,d2,#0,#8
+	j	CanIf_TxQueueTransmit
+.L192:
+	add	d15,#-1
+	add.a	a2,#-4
+.L793:
+	extr	d15,d15,#0,#16
+	loop	a4,.L191
+.L194:
+.L189:
+.L188:
+	ret
+.L600:
+	
+__CanIf_TxQueueTreatment_function_end:
+	.size	CanIf_TxQueueTreatment,__CanIf_TxQueueTreatment_function_end-CanIf_TxQueueTreatment
+.L363:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('CanIf_GetVersionInfo')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	CanIf_GetVersionInfo
+; Function CanIf_GetVersionInfo
+.L314:
+	.align	4
+CanIf_GetVersionInfo:	.type	func
+.L253:
+	mov	d7,#0
+	jnz.a	a4,.L196
+.L794:
+	mov	d7,#20
+	j	.L197
+.L196:
+	mov	d15,#30
+	st.h	[a4],d15
+.L951:
+	mov	d15,#60
+	st.h	[a4]2,d15
+.L952:
+	mov	d15,#17
+	st.b	[a4]4,d15
+.L953:
+	mov	d15,#2
+	st.b	[a4]5,d15
+.L954:
+	mov	d15,#0
+	st.b	[a4]6,d15
+.L197:
+	jeq	d7,#0,.L198
+.L955:
+	mov	d4,#60
+	mov	d5,#0
+	mov	d6,#11
+	j	Det_ReportError
+.L198:
+	ret
+.L544:
+	
+__CanIf_GetVersionInfo_function_end:
+	.size	CanIf_GetVersionInfo,__CanIf_GetVersionInfo_function_end-CanIf_GetVersionInfo
+.L315:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('CanIf_InitMemory')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	CanIf_InitMemory
+; Function CanIf_InitMemory
+.L272:
+	.align	4
+CanIf_InitMemory:	.type	func
+.L255:
+	movh.a	a15,#@his(CanIf_CtrlStates)
+.L809:
+	mov	d15,#0
+	st.w	[a15]@los(CanIf_CtrlStates),d15
+	ret
+.L400:
+	
+__CanIf_InitMemory_function_end:
+	.size	CanIf_InitMemory,__CanIf_InitMemory_function_end-CanIf_InitMemory
+.L273:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('CanIf_CheckWakeup')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	CanIf_CheckWakeup
+; Function CanIf_CheckWakeup
+.L320:
+	.align	4
+CanIf_CheckWakeup:	.type	func
+.L257:
+	mov	d2,#1
+	ret
+.L548:
+	
+__CanIf_CheckWakeup_function_end:
+	.size	CanIf_CheckWakeup,__CanIf_CheckWakeup_function_end-CanIf_CheckWakeup
+.L321:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('CanIf_CheckValidation')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	CanIf_CheckValidation
+; Function CanIf_CheckValidation
+.L326:
+	.align	4
+CanIf_CheckValidation:	.type	func
+.L259:
+	mov	d2,#0
+	ret
+.L550:
+	
+__CanIf_CheckValidation_function_end:
+	.size	CanIf_CheckValidation,__CanIf_CheckValidation_function_end-CanIf_CheckValidation
+.L327:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('CanIf_ControllerModeIndicationAr403')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	CanIf_ControllerModeIndicationAr403
+; Function CanIf_ControllerModeIndicationAr403
+.L338:
+	.align	4
+CanIf_ControllerModeIndicationAr403:	.type	func
+.L261:
+	mov	d8,#0
+	movh.a	a15,#@his(CanIf_CtrlModeIndicationFctPtr)
+.L795:
+	ld.a	a15,[a15]@los(CanIf_CtrlModeIndicationFctPtr)
+.L796:
+	jeq	d4,#0,.L201
+.L976:
+	mov	d8,#14
+	j	.L202
+.L201:
+	movh.a	a2,#@his(CanIf_CtrlStates)
+	lea	a2,[a2]@los(CanIf_CtrlStates)
+	ld.w	d15,[a2]
+.L977:
+	jne	d15,#0,.L203
+.L978:
+	mov	d8,#30
+	j	.L204
+.L203:
+	jeq	d5,#1,.L205
+.L979:
+	jeq	d5,#2,.L206
+.L980:
+	jeq	d5,#3,.L207
+.L981:
+	j	.L208
+.L205:
+	add	d0,d15,#-2
+.L982:
+	jge.u	d0,#2,.L209
+.L983:
+	mov	d15,#1
+	j	.L210
+.L206:
+	jne	d15,#1,.L211
+.L984:
+	mov	d15,#2
+	j	.L212
+.L207:
+	jeq	d15,#1,.L213
+.L985:
+	jne	d15,#3,.L215
+.L213:
+	mov	d15,#3
+.L215:
+.L212:
+.L211:
+.L210:
+.L209:
+.L208:
+	st.w	[a2],d15
+	jz.a	a15,.L216
+.L986:
+	calli	a15
+.L216:
+.L204:
+.L202:
+	jeq	d8,#0,.L217
+.L987:
+	mov	d4,#60
+	mov	d5,#0
+	mov	d6,#23
+	mov	d7,d8
+.L797:
+	j	Det_ReportError
+.L217:
+	ret
+.L557:
+	
+__CanIf_ControllerModeIndicationAr403_function_end:
+	.size	CanIf_ControllerModeIndicationAr403,__CanIf_ControllerModeIndicationAr403_function_end-CanIf_ControllerModeIndicationAr403
+.L339:
+	; End of function
+	
+	.sdecl	'.text.MSR_CODE',code,cluster('CanIf_SetBaudrate')
+	.sect	'.text.MSR_CODE'
+	.align	2
+	
+	.global	CanIf_SetBaudrate
+; Function CanIf_SetBaudrate
+.L332:
+	.align	4
+CanIf_SetBaudrate:	.type	func
+.L263:
+	mov	d8,#1
+.L799:
+	mov	d15,#0
+.L800:
+	jeq	d4,#0,.L218
+.L968:
+	mov	d15,#15
+	j	.L219
+.L218:
+	movh.a	a15,#@his(CanIf_CtrlStates)
+	ld.w	d0,[a15]@los(CanIf_CtrlStates)
+.L969:
+	jne	d0,#0,.L220
+.L970:
+	mov	d15,#30
+	j	.L221
+.L220:
+	call	Can_30_Core_SetBaudrate
+.L798:
+	mov	d8,d2
+.L221:
+.L219:
+	jeq	d15,#0,.L222
+.L971:
+	mov	d4,#60
+	mov	d5,#0
+	mov	d6,#39
+	mov	d7,d15
+	call	Det_ReportError
+.L222:
+	mov	d2,d8
+	ret
+.L552:
+	
+__CanIf_SetBaudrate_function_end:
+	.size	CanIf_SetBaudrate,__CanIf_SetBaudrate_function_end-CanIf_SetBaudrate
+.L333:
+	; End of function
+	
+	.sdecl	'.rodata.MSR_CONST',data,rom,cluster('CanIf_MainVersion')
+	.sect	'.rodata.MSR_CONST'
+	.global	CanIf_MainVersion
+	.align	4
+CanIf_MainVersion:	.type	object
+	.size	CanIf_MainVersion,1
+	.byte	17
+	.sdecl	'.rodata.MSR_CONST',data,rom,cluster('CanIf_SubVersion')
+	.sect	'.rodata.MSR_CONST'
+	.global	CanIf_SubVersion
+	.align	4
+CanIf_SubVersion:	.type	object
+	.size	CanIf_SubVersion,1
+	.byte	2
+	.sdecl	'.rodata.MSR_CONST',data,rom,cluster('CanIf_ReleaseVersion')
+	.sect	'.rodata.MSR_CONST'
+	.global	CanIf_ReleaseVersion
+	.align	4
+CanIf_ReleaseVersion:	.type	object
+	.size	CanIf_ReleaseVersion,1
+	.space	1
+	.sdecl	'.rodata.MSR_CONST',data,rom,cluster('CanIfState')
+	.sect	'.rodata.MSR_CONST'
+	.align	4
+CanIfState:	.type	object
+	.size	CanIfState,42
+	.byte	255,255,1,255
+	.byte	2,3,4
+	.space	2
+	.byte	255,255,3,3
+	.byte	5
+	.space	1
+	.byte	255,3
+	.space	1
+	.byte	255,3,4
+	.space	1
+	.byte	2,255,1,255
+	.byte	255,5
+	.space	1
+	.byte	255,5
+	.space	1
+	.byte	2,3,255
+	.space	1
+	.byte	4,255,1,3
+	.byte	3,255
+	.sdecl	'.rodata.MSR_CONST',data,rom,cluster('CanIf_TxQueueBitFlagsLookUp')
+	.sect	'.rodata.MSR_CONST'
+	.align	4
+CanIf_TxQueueBitFlagsLookUp:	.type	object
+	.size	CanIf_TxQueueBitFlagsLookUp,128
+	.word	1,2,4,8
+	.word	16,32,64,128
+	.word	256,512,1024,2048
+	.word	4096,8192,16384,32768
+	.word	65536,131072,262144,524288
+	.word	1048576,2097152,4194304,8388608
+	.word	16777216,33554432,67108864,134217728
+	.word	268435456,536870912,1073741824,-2147483648
+	.sdecl	'.rodata.MSR_CONST',data,rom,cluster('RxDlcMaxValueLookUp')
+	.sect	'.rodata.MSR_CONST'
+	.align	4
+RxDlcMaxValueLookUp:	.type	object
+	.size	RxDlcMaxValueLookUp,2
+	.byte	8,64
+	.calls	'CanIf_ClearQueue','SuspendAllInterrupts'
+	.calls	'CanIf_ClearQueue','ResumeAllInterrupts'
+	.calls	'CanIf_Init','CanIf_ClearQueue'
+	.calls	'CanIf_SetControllerMode','SuspendAllInterrupts'
+	.calls	'CanIf_SetControllerMode','Can_30_Core_SetControllerMode'
+	.calls	'CanIf_SetControllerMode','CanIf_ClearQueue'
+	.calls	'CanIf_SetControllerMode','Det_ReportError'
+	.calls	'CanIf_SetControllerMode','ResumeAllInterrupts'
+	.calls	'CanIf_GetControllerMode','Det_ReportError'
+	.calls	'CanIf_Transmit','SuspendAllInterrupts'
+	.calls	'CanIf_Transmit','Can_30_Core_Write'
+	.calls	'CanIf_Transmit','VStdLib_MemCpy'
+	.calls	'CanIf_Transmit','Det_ReportError'
+	.calls	'CanIf_Transmit','ResumeAllInterrupts'
+	.calls	'CanIf_Transmit','CanIf_HlTxConfirmation'
+	.calls	'CanIf_HlTxConfirmation','__INDIRECT__'
+	.calls	'CanIf_TxConfirmation','SuspendAllInterrupts'
+	.calls	'CanIf_TxConfirmation','CanIf_TxQueueTreatment'
+	.calls	'CanIf_TxConfirmation','ResumeAllInterrupts'
+	.calls	'CanIf_TxConfirmation','CanIf_HlTxConfirmation'
+	.calls	'CanIf_TxConfirmation','Det_ReportError'
+	.calls	'CanIf_RxIndicationAsr403','CanIf_HlIndication'
+	.calls	'CanIf_RxIndicationAsr403','Det_ReportError'
+	.calls	'CanIf_HlIndication','__INDIRECT__'
+	.calls	'CanIf_HlIndication','Det_ReportError'
+	.calls	'CanIf_ControllerBusOff','CanIf_SetPduMode'
+	.calls	'CanIf_ControllerBusOff','CanIf_ClearQueue'
+	.calls	'CanIf_ControllerBusOff','__INDIRECT__'
+	.calls	'CanIf_ControllerBusOff','Det_ReportError'
+	.calls	'CanIf_SetPduMode','SuspendAllInterrupts'
+	.calls	'CanIf_SetPduMode','CanIf_ClearQueue'
+	.calls	'CanIf_SetPduMode','ResumeAllInterrupts'
+	.calls	'CanIf_SetPduMode','Det_ReportError'
+	.calls	'CanIf_GetPduMode','Det_ReportError'
+	.calls	'CanIf_TxQueueTransmit','Can_30_Core_Write'
+	.calls	'CanIf_TxQueueTransmit','Det_ReportError'
+	.calls	'CanIf_TxQueueTreatment','VStdLib_GetHighestBitPosOne32'
+	.calls	'CanIf_TxQueueTreatment','CanIf_TxQueueTransmit'
+	.calls	'CanIf_GetVersionInfo','Det_ReportError'
+	.calls	'CanIf_ControllerModeIndicationAr403','__INDIRECT__'
+	.calls	'CanIf_ControllerModeIndicationAr403','Det_ReportError'
+	.calls	'CanIf_SetBaudrate','Can_30_Core_SetBaudrate'
+	.calls	'CanIf_SetBaudrate','Det_ReportError'
+	.calls	'CanIf_ClearQueue','',0
+	.calls	'CanIf_Init','',0
+	.calls	'CanIf_SetControllerMode','',0
+	.calls	'CanIf_GetControllerMode','',0
+	.calls	'CanIf_Transmit','',16
+	.calls	'CanIf_HlTxConfirmation','',0
+	.calls	'CanIf_TxConfirmation','',0
+	.calls	'CanIf_RxIndicationAsr403','',0
+	.calls	'CanIf_HlIndication','',8
+	.calls	'CanIf_ControllerBusOff','',0
+	.calls	'CanIf_SetPduMode','',0
+	.calls	'CanIf_GetPduMode','',0
+	.calls	'CanIf_TxQueueTransmit','',16
+	.calls	'CanIf_TxQueueTreatment','',0
+	.calls	'CanIf_GetVersionInfo','',0
+	.calls	'CanIf_InitMemory','',0
+	.calls	'CanIf_CheckWakeup','',0
+	.calls	'CanIf_CheckValidation','',0
+	.calls	'CanIf_ControllerModeIndicationAr403','',0
+	.extern	Det_ReportError
+	.extern	Can_30_Core_Write
+	.extern	Can_30_Core_SetControllerMode
+	.extern	Can_30_Core_SetBaudrate
+	.extern	CanIf_BusOffNotificationFctPtr
+	.extern	CanIf_CanIfCtrlId2MappedTxBuffersConfig
+	.extern	CanIf_CtrlModeIndicationFctPtr
+	.extern	CanIf_MailBoxConfig
+	.extern	CanIf_MappedTxBuffersConfig
+	.extern	CanIf_RxIndicationFctList
+	.extern	CanIf_RxPduConfig
+	.extern	CanIf_TxBufferPrioByCanIdConfig
+	.extern	CanIf_TxConfirmationFctList
+	.extern	CanIf_TxPduConfig
+	.extern	CanIf_TxPduQueueIndex
+	.extern	CanIf_CtrlStates
+	.extern	CanIf_TxBufferPrioByCanIdBase
+	.extern	CanIf_TxQueue
+	.extern	CanIf_TxQueueFlags
+	.extern	VStdLib_MemCpy
+	.extern	VStdLib_GetHighestBitPosOne32
+	.extern	SuspendAllInterrupts
+	.extern	ResumeAllInterrupts
+	.extern	__INDIRECT__
+	.calls	'CanIf_SetBaudrate','',0
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L265:
+	.word	26428
+	.half	3
+	.word	.L266
+	.byte	4
+.L264:
+	.byte	1
+	.byte	'../../../../BSW/Components/CanIf/Implementation/CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L267
+.L404:
+	.byte	2
+	.byte	'unsigned char',0,1,8
+.L504:
+	.byte	3
+	.byte	'CanIf_SetPrioByCanIdTxPduAsQueued',0,3,1,200,13,53
+	.word	206
+	.byte	1,1
+.L506:
+	.byte	4
+	.byte	'PduId',0,1,200,13,97
+	.word	206
+.L508:
+	.byte	5,0
+.L518:
+	.byte	3
+	.byte	'CanIf_ClearPrioByCanIdTxPduAsQueued',0,3,1,141,14,53
+	.word	206
+	.byte	1,1
+.L520:
+	.byte	4
+	.byte	'PduId',0,1,141,14,99
+	.word	206
+.L522:
+	.byte	5,0
+.L475:
+	.byte	6,2,222,2,9,4,7
+	.byte	'CANIF_DO_TRANSMIT',0,0,7
+	.byte	'CANIF_DO_NOT_TRANSMIT',0,1,0
+.L450:
+	.byte	2
+	.byte	'unsigned short int',0,2,7,8
+	.word	402
+.L468:
+	.byte	3
+	.byte	'CanIf_TransmitSubVerifyPduLength',0,3,1,228,21,62
+	.word	351
+	.byte	1,1
+.L470:
+	.byte	4
+	.byte	'CanTxPduId',0,1,228,21,105
+	.word	206
+.L472:
+	.byte	4
+	.byte	'pduLengthPtr',0,1,228,21,160,1
+	.word	424
+.L474:
+	.byte	5,0,8
+	.word	206
+	.byte	9
+	.byte	'Can_SduPtrType',0,3,66,53
+	.word	519
+.L455:
+	.byte	10
+	.byte	'Can_PduTypeTag',0,3,71,16,12,11
+	.byte	'id',0
+	.word	402
+	.byte	2,2,35,0,11
+	.byte	'length',0
+	.word	206
+	.byte	1,2,35,2,11
+	.byte	'sdu',0
+	.word	524
+	.byte	4,2,35,4,11
+	.byte	'swPduHandle',0
+	.word	206
+	.byte	1,2,35,8,0,12
+	.word	547
+	.byte	8
+	.word	630
+.L487:
+	.byte	3
+	.byte	'CanIf_TransmitSubHandleTxResBusy',0,3,1,192,24,54
+	.word	206
+	.byte	1,1
+.L490:
+	.byte	4
+	.byte	'localPduPtr',0,1,192,24,130,1
+	.word	635
+.L492:
+	.byte	13,5,5,0,0,8
+	.word	206
+.L573:
+	.byte	10
+	.byte	'sCanIf_RxSearchParamsType',0,2,241,2,16,6,11
+	.byte	'eCanId',0
+	.word	402
+	.byte	2,2,35,0,11
+	.byte	'eRxPduId',0
+	.word	206
+	.byte	1,2,35,2,11
+	.byte	'eRxPduIdMatch',0
+	.word	206
+	.byte	1,2,35,3,11
+	.byte	'eHrh',0
+	.word	206
+	.byte	1,2,35,4,11
+	.byte	'eContinueSearch',0
+	.word	206
+	.byte	1,2,35,5,0,8
+	.word	717
+.L581:
+	.byte	14
+	.byte	'CanIf_RxIndicationSubLinearSearch',0,3,1,191,33,43,1,1
+.L583:
+	.byte	4
+	.byte	'rxSearchParams',0,1,191,33,131,1
+	.word	846
+.L585:
+	.byte	5,0,6,2,202,2,9,4,7
+	.byte	'CANIF_NO_NOTIFICATION',0,0,7
+	.byte	'CANIF_TX_RX_NOTIFICATION',0,1,0
+.L591:
+	.byte	3
+	.byte	'CanIf_RxIndicationSubCheckPduProp',0,3,1,132,34,60
+	.word	920
+	.byte	1,1
+.L592:
+	.byte	4
+	.byte	'rxSearchParams',0,1,132,34,148,1
+	.word	846
+.L594:
+	.byte	5,0
+.L586:
+	.byte	14
+	.byte	'CanIf_RxIndicationSubRangeSearch',0,3,1,198,34,43,1,1
+.L588:
+	.byte	4
+	.byte	'rxSearchParams',0,1,198,34,130,1
+	.word	846
+.L590:
+	.byte	13,5,5,0,0
+.L457:
+	.byte	3
+	.byte	'CanIf_TransmitSubWrite',0,3,1,243,25,54
+	.word	206
+	.byte	1,1
+.L458:
+	.byte	4
+	.byte	'localPduPtr',0,1,243,25,120
+	.word	635
+.L460:
+	.byte	13,5,5,5,0,0
+.L576:
+	.byte	14
+	.byte	'CanIf_RxIndicationSubBasicCan',0,3,1,198,35,43,1,1
+.L578:
+	.byte	4
+	.byte	'rxSearchParams',0,1,198,35,127
+	.word	846
+.L580:
+	.byte	13,5,5,0,0,12
+	.word	206
+.L571:
+	.byte	8
+	.word	1251
+.L671:
+	.byte	14
+	.byte	'CanIf_HlIndicationSubULCall',0,3,1,146,40,43,1,1
+.L672:
+	.byte	4
+	.byte	'PduId',0,1,146,40,81
+	.word	206
+.L674:
+	.byte	4
+	.byte	'CanSduPtr',0,1,146,40,133,1
+	.word	1256
+.L676:
+	.byte	4
+	.byte	'CanDlc',0,1,146,40,158,1
+	.word	402
+.L678:
+	.byte	13
+.L679:
+	.byte	5,0,0
+.L407:
+	.byte	6,2,141,2,9,4,7
+	.byte	'CANIF_CS_UNINIT',0,0,7
+	.byte	'CANIF_CS_STOPPED',0,1,7
+	.byte	'CANIF_CS_STARTED',0,2,7
+	.byte	'CANIF_CS_SLEEP',0,3,0
+.L411:
+	.byte	3
+	.byte	'CanIf_SetControllerModeSubSwitch',0,3,1,173,19,53
+	.word	206
+	.byte	1,1
+.L414:
+	.byte	4
+	.byte	'ControllerId',0,1,173,19,92
+	.word	206
+.L416:
+	.byte	4
+	.byte	'ControllerMode',0,1,173,19,131,1
+	.word	1353
+.L418:
+	.byte	13,5,5,5,5,5,5,0,0,6,1,217,5,9,4,7
+	.byte	'CANIF_CANCTRL_TO_START',0,0,7
+	.byte	'CANIF_CANCTRL_TO_STOP',0,1,7
+	.byte	'CANIF_CANCTRL_TO_SLEEP',0,2,7
+	.byte	'CANIF_CANCTRL_WAKEUP',0,3,0
+.L422:
+	.byte	3
+	.byte	'CanIf_CallCanSetCtrlMode',0,3,1,203,18,53
+	.word	206
+	.byte	1,1
+.L423:
+	.byte	4
+	.byte	'ControllerId',0,1,203,18,84
+	.word	206
+.L425:
+	.byte	4
+	.byte	'canCtrlModeTrans',0,1,203,18,125
+	.word	1534
+.L427:
+	.byte	5,0
+.L497:
+	.byte	14
+	.byte	'CanIf_TxBufferPrioByCanIdQueuePdu',0,3,1,243,23,43,1,1
+.L500:
+	.byte	4
+	.byte	'PduInfoPtr',0,1,243,23,128,1
+	.word	635
+.L502:
+	.byte	5,0
+.L483:
+	.byte	6,3,106,9,4,7
+	.byte	'CAN_NOT_OK',0,0,7
+	.byte	'CAN_OK',0,1,7
+	.byte	'CAN_BUSY',0,2,7
+	.byte	'CAN_NOT_SUPPORTED',0,3,7
+	.byte	'CAN_REQUESTED',0,4,0
+.L477:
+	.byte	3
+	.byte	'CanIf_CallCanWrite',0,3,1,168,27,62
+	.word	1790
+	.byte	1,1
+.L478:
+	.byte	4
+	.byte	'localPduPtr',0,1,168,27,124
+	.word	635
+.L480:
+	.byte	5,0,15
+	.byte	'Det_ReportError',0,4,150,2,32
+	.word	206
+	.byte	1,1,1,1,4
+	.byte	'ModuleId',0,4,150,2,56
+	.word	402
+	.byte	4
+	.byte	'InstanceId',0,4,150,2,72
+	.word	206
+	.byte	4
+	.byte	'ApiId',0,4,150,2,90
+	.word	206
+	.byte	4
+	.byte	'ErrorId',0,4,150,2,103
+	.word	206
+	.byte	0,9
+	.byte	'Can_PduInfoPtrType',0,3,79,58
+	.word	635
+	.byte	15
+	.byte	'Can_30_Core_Write',0,5,153,1,40
+	.word	1790
+	.byte	1,1,1,1,4
+	.byte	'hth',0,5,153,1,75
+	.word	206
+	.byte	4
+	.byte	'PduInfo',0,5,153,1,99
+	.word	2019
+	.byte	0,12
+	.word	547
+	.byte	8
+	.word	2108
+	.byte	6,3,83,9,4,7
+	.byte	'CAN_T_START',0,0,7
+	.byte	'CAN_T_STOP',0,1,7
+	.byte	'CAN_T_SLEEP',0,2,7
+	.byte	'CAN_T_WAKEUP',0,3,0,15
+	.byte	'Can_30_Core_SetControllerMode',0,5,155,3,40
+	.word	1790
+	.byte	1,1,1,1,4
+	.byte	'Controller',0,5,155,3,76
+	.word	206
+	.byte	4
+	.byte	'Transition',0,5,155,3,112
+	.word	2118
+	.byte	0,15
+	.byte	'Can_30_Core_SetBaudrate',0,5,241,4,40
+	.word	206
+	.byte	1,1,1,1,4
+	.byte	'Controller',0,5,241,4,70
+	.word	206
+	.byte	4
+	.byte	'BaudRateConfigID',0,5,241,4,89
+	.word	402
+	.byte	0,10
+	.byte	'sCanIf_PCConfigType',0,6,206,12,16,1,11
+	.byte	'CanIf_PCConfigNeverUsed',0
+	.word	206
+	.byte	1,2,35,0,0,12
+	.word	2348
+.L402:
+	.byte	8
+	.word	2408
+.L434:
+	.byte	8
+	.word	1353
+	.byte	9
+	.byte	'SduDataPtrType',0,7,178,1,54
+	.word	519
+.L683:
+	.byte	16,7,179,1,9,8,11
+	.byte	'SduDataPtr',0
+	.word	2423
+	.byte	4,2,35,0,11
+	.byte	'SduLength',0
+	.word	402
+	.byte	2,2,35,4,0,12
+	.word	2447
+.L440:
+	.byte	8
+	.word	2493
+	.byte	8
+	.word	206
+.L485:
+	.byte	12
+	.word	206
+.L495:
+	.byte	2
+	.byte	'unsigned long int',0,4,7
+.L510:
+	.byte	12
+	.word	2513
+.L512:
+	.byte	12
+	.word	206
+.L514:
+	.byte	12
+	.word	2513
+.L516:
+	.byte	12
+	.word	206
+.L524:
+	.byte	12
+	.word	2513
+.L526:
+	.byte	12
+	.word	206
+.L528:
+	.byte	12
+	.word	2513
+.L530:
+	.byte	12
+	.word	206
+.L534:
+	.byte	6,2,150,2,9,4,7
+	.byte	'CANIF_SET_OFFLINE',0,0,7
+	.byte	'CANIF_SET_RX_OFFLINE',0,1,7
+	.byte	'CANIF_SET_RX_ONLINE',0,2,7
+	.byte	'CANIF_SET_TX_OFFLINE',0,3,7
+	.byte	'CANIF_SET_TX_ONLINE',0,4,7
+	.byte	'CANIF_SET_ONLINE',0,5,7
+	.byte	'CANIF_SET_TX_OFFLINE_ACTIVE',0,6,7
+	.byte	'CANIF_NO_MODE_PDU_SET_MODE_TYPE_END',0,7,0,6,2,167,2,9,4,7
+	.byte	'CANIF_GET_OFFLINE',0,0,7
+	.byte	'CANIF_GET_RX_ONLINE',0,1,7
+	.byte	'CANIF_GET_TX_ONLINE',0,2,7
+	.byte	'CANIF_GET_ONLINE',0,3,7
+	.byte	'CANIF_GET_OFFLINE_ACTIVE',0,4,7
+	.byte	'CANIF_GET_OFFLINE_ACTIVE_RX_ONLINE',0,5,7
+	.byte	'CANIF_NO_MODE_PDU_GET_MODE_TYPE_END',0,6,0
+.L540:
+	.byte	8
+	.word	2778
+	.byte	16,8,122,9,8,11
+	.byte	'vendorID',0
+	.word	402
+	.byte	2,2,35,0,11
+	.byte	'moduleID',0
+	.word	402
+	.byte	2,2,35,2,11
+	.byte	'sw_major_version',0
+	.word	206
+	.byte	1,2,35,4,11
+	.byte	'sw_minor_version',0
+	.word	206
+	.byte	1,2,35,5,11
+	.byte	'sw_patch_version',0
+	.word	206
+	.byte	1,2,35,6,0
+.L545:
+	.byte	8
+	.word	2975
+	.byte	17,1,1,18
+	.word	206
+	.byte	18
+	.word	1353
+	.byte	0,8
+	.word	3100
+	.byte	8
+	.word	3100
+.L561:
+	.byte	9
+	.byte	'CanIf_CtrlModeIndicationFctType',0,2,150,3,9
+	.word	3119
+	.byte	17,1,1,18
+	.word	206
+	.byte	0,8
+	.word	3165
+	.byte	8
+	.word	3165
+.L598:
+	.byte	9
+	.byte	'CanIf_BusOffNotificationFctType',0,2,154,3,9
+	.word	3179
+	.byte	19
+	.byte	'void',0,8
+	.word	3225
+	.byte	12
+	.word	3225
+	.byte	8
+	.word	3236
+	.byte	20
+	.byte	'VStdLib_MemCpy',0,9,184,13,26,1,1,1,1,4
+	.byte	'pDst',0,9,184,13,81
+	.word	3231
+	.byte	4
+	.byte	'pSrc',0,9,185,13,83
+	.word	3241
+	.byte	4
+	.byte	'nCnt',0,9,186,13,57
+	.word	2513
+	.byte	0,15
+	.byte	'VStdLib_GetHighestBitPosOne32',0,9,220,22,27
+	.word	206
+	.byte	1,1,1,1,4
+	.byte	'value',0,9,220,22,64
+	.word	2513
+	.byte	0,21
+	.byte	'SuspendAllInterrupts',0,10,129,12,21,1,1,1,1,21
+	.byte	'ResumeAllInterrupts',0,10,148,12,21,1,1,1,1
+.L603:
+	.byte	12
+	.word	2513
+.L609:
+	.byte	2
+	.byte	'short int',0,2,5
+.L607:
+	.byte	12
+	.word	3436
+.L611:
+	.byte	12
+	.word	2513
+.L614:
+	.byte	12
+	.word	206
+.L621:
+	.byte	12
+	.word	2513
+.L631:
+	.byte	12
+	.word	206
+.L637:
+	.byte	12
+	.word	2513
+.L639:
+	.byte	12
+	.word	206
+.L641:
+	.byte	12
+	.word	2513
+.L643:
+	.byte	12
+	.word	206
+.L655:
+	.byte	12
+	.word	2513
+.L657:
+	.byte	12
+	.word	2513
+.L662:
+	.byte	12
+	.word	2513
+	.byte	22
+	.word	223
+	.byte	23
+	.word	269
+	.byte	5,0,22
+	.word	286
+	.byte	23
+	.word	334
+	.byte	5,0,12
+	.word	2447
+	.byte	8
+	.word	3533
+	.byte	17,1,1,18
+	.word	206
+	.byte	18
+	.word	3538
+	.byte	0,8
+	.word	3543
+	.byte	8
+	.word	3543
+.L681:
+	.byte	9
+	.byte	'CanIf_AdvancedRxIndicationFctType',0,2,138,3,9
+	.word	3562
+	.byte	8
+	.word	3165
+.L689:
+	.byte	9
+	.byte	'CanIf_TxConfirmationFctType',0,2,255,2,9
+	.word	3179
+	.byte	22
+	.word	429
+	.byte	23
+	.word	474
+	.byte	23
+	.word	494
+	.byte	5,0,22
+	.word	640
+	.byte	23
+	.word	685
+	.byte	13,24
+	.word	1725
+	.byte	23
+	.word	1767
+	.byte	25
+	.word	1788
+	.byte	0,5,24
+	.word	223
+	.byte	23
+	.word	269
+	.byte	25
+	.word	284
+	.byte	0,5,0,0,22
+	.word	851
+	.byte	23
+	.word	893
+	.byte	5,0,22
+	.word	978
+	.byte	23
+	.word	1024
+	.byte	5,0,22
+	.word	1051
+	.byte	23
+	.word	1092
+	.byte	13,24
+	.word	978
+	.byte	23
+	.word	1024
+	.byte	25
+	.word	1049
+	.byte	0,5,24
+	.word	978
+	.byte	23
+	.word	1024
+	.byte	25
+	.word	1049
+	.byte	0,5,0,0,22
+	.word	1122
+	.byte	23
+	.word	1157
+	.byte	13,24
+	.word	1865
+	.byte	23
+	.word	1896
+	.byte	25
+	.word	1917
+	.byte	0,5,24
+	.word	640
+	.byte	23
+	.word	685
+	.byte	26
+	.word	707
+	.byte	24
+	.word	1725
+	.byte	23
+	.word	1767
+	.byte	25
+	.word	1788
+	.byte	0,25
+	.word	708
+	.byte	24
+	.word	223
+	.byte	23
+	.word	269
+	.byte	25
+	.word	284
+	.byte	0,25
+	.word	709
+	.byte	0,0,5,24
+	.word	286
+	.byte	23
+	.word	334
+	.byte	25
+	.word	349
+	.byte	0,5,0,0,22
+	.word	1184
+	.byte	23
+	.word	1222
+	.byte	13,24
+	.word	851
+	.byte	23
+	.word	893
+	.byte	25
+	.word	918
+	.byte	0,5,24
+	.word	1051
+	.byte	23
+	.word	1092
+	.byte	26
+	.word	1117
+	.byte	24
+	.word	978
+	.byte	23
+	.word	1024
+	.byte	25
+	.word	1049
+	.byte	0,25
+	.word	1118
+	.byte	24
+	.word	978
+	.byte	23
+	.word	1024
+	.byte	25
+	.word	1049
+	.byte	0,25
+	.word	1119
+	.byte	0,0,5,0,0,22
+	.word	1261
+	.byte	23
+	.word	1297
+	.byte	23
+	.word	1312
+	.byte	23
+	.word	1332
+	.byte	13,5,0,0,22
+	.word	1433
+	.byte	23
+	.word	1478
+	.byte	23
+	.word	1500
+	.byte	13,24
+	.word	1638
+	.byte	23
+	.word	1675
+	.byte	23
+	.word	1697
+	.byte	25
+	.word	1723
+	.byte	0,5,24
+	.word	1638
+	.byte	23
+	.word	1675
+	.byte	23
+	.word	1697
+	.byte	25
+	.word	1723
+	.byte	0,5,24
+	.word	1638
+	.byte	23
+	.word	1675
+	.byte	23
+	.word	1697
+	.byte	25
+	.word	1723
+	.byte	0,5,24
+	.word	1638
+	.byte	23
+	.word	1675
+	.byte	23
+	.word	1697
+	.byte	25
+	.word	1723
+	.byte	0,5,24
+	.word	1638
+	.byte	23
+	.word	1675
+	.byte	23
+	.word	1697
+	.byte	25
+	.word	1723
+	.byte	0,5,24
+	.word	1638
+	.byte	23
+	.word	1675
+	.byte	23
+	.word	1697
+	.byte	25
+	.word	1723
+	.byte	0,5,0,0,22
+	.word	1638
+	.byte	23
+	.word	1675
+	.byte	23
+	.word	1697
+	.byte	5,0,22
+	.word	1725
+	.byte	23
+	.word	1767
+	.byte	5,0,22
+	.word	1865
+	.byte	23
+	.word	1896
+	.byte	5,0,27
+	.byte	'__INDIRECT__',0,1,1,1,1,1,1,28,1,8
+	.word	4219
+	.byte	9
+	.byte	'__codeptr',0,1,1,1
+	.word	4221
+	.byte	9
+	.byte	'boolean',0,11,140,1,29
+	.word	206
+	.byte	2
+	.byte	'char',0,1,6,9
+	.byte	'sint8',0,11,142,1,31
+	.word	4261
+	.byte	9
+	.byte	'uint8',0,11,143,1,31
+	.word	206
+	.byte	9
+	.byte	'sint16',0,11,144,1,31
+	.word	3436
+	.byte	9
+	.byte	'uint16',0,11,145,1,31
+	.word	402
+	.byte	2
+	.byte	'long int',0,4,5,9
+	.byte	'sint32',0,11,146,1,31
+	.word	4331
+	.byte	9
+	.byte	'uint32',0,11,147,1,31
+	.word	2513
+	.byte	9
+	.byte	'uint8_least',0,11,150,1,31
+	.word	206
+	.byte	9
+	.byte	'uint32_least',0,11,154,1,31
+	.word	2513
+	.byte	2
+	.byte	'unsigned long long int',0,8,7,9
+	.byte	'uint64',0,11,160,1,30
+	.word	4418
+	.byte	9
+	.byte	'StatusType',0,8,115,23
+	.word	206
+	.byte	9
+	.byte	'Std_ReturnType',0,8,120,15
+	.word	206
+	.byte	9
+	.byte	'Std_VersionInfoType',0,8,129,1,3
+	.word	2975
+	.byte	9
+	.byte	'Std_TransformerErrorCode',0,8,131,1,15
+	.word	206
+	.byte	9
+	.byte	'Std_TransformerClass',0,8,133,1,15
+	.word	206
+	.byte	9
+	.byte	'PduIdType',0,12,68,15
+	.word	206
+	.byte	9
+	.byte	'PduLengthType',0,12,70,16
+	.word	402
+	.byte	9
+	.byte	'PduInfoType',0,7,183,1,3
+	.word	2447
+	.byte	6,7,201,1,9,4,7
+	.byte	'TP_DATACONF',0,0,7
+	.byte	'TP_DATARETRY',0,1,7
+	.byte	'TP_CONFPENDING',0,2,0,9
+	.byte	'TpDataStateType',0,7,208,1,3
+	.word	4656
+	.byte	9
+	.byte	'Can_IdType',0,3,60,30
+	.word	402
+	.byte	9
+	.byte	'Can_HwHandleType',0,3,63,29
+	.word	206
+	.byte	9
+	.byte	'Can_PduType',0,3,77,3
+	.word	547
+	.byte	9
+	.byte	'Can_StateTransitionType',0,3,88,3
+	.word	2118
+	.byte	6,3,90,9,4,7
+	.byte	'CAN_CS_UNINIT',0,0,7
+	.byte	'CAN_CS_STARTED',0,1,7
+	.byte	'CAN_CS_STOPPED',0,2,7
+	.byte	'CAN_CS_SLEEP',0,3,0,9
+	.byte	'Can_ControllerStateType',0,3,95,3
+	.word	4830
+	.byte	6,3,97,9,4,7
+	.byte	'CAN_ERRORSTATE_ACTIVE',0,0,7
+	.byte	'CAN_ERRORSTATE_PASSIVE',0,1,7
+	.byte	'CAN_ERRORSTATE_BUSOFF',0,2,0,9
+	.byte	'Can_ErrorStateType',0,3,101,3
+	.word	4933
+	.byte	9
+	.byte	'Can_ReturnType',0,3,113,3
+	.word	1790
+	.byte	10
+	.byte	'sDet_PCConfigType',0,13,243,1,16,1,11
+	.byte	'Det_PCConfigNeverUsed',0
+	.word	206
+	.byte	1,2,35,0,0,9
+	.byte	'Det_PCConfigType',0,13,246,1,3
+	.word	5062
+	.byte	9
+	.byte	'Dcm_DataElement_Boot_Software_Boot_Software_Identification_PrimitiveType',0,14,84,16
+	.word	2513
+	.byte	9
+	.byte	'Dcm_DataElement_Boot_Software_NumberOfModules_PrimitiveType',0,14,87,15
+	.word	206
+	.byte	9
+	.byte	'Dcm_DataElement_DID_0x0017_DID_Sint32_Array_ArrayType',0,14,90,16
+	.word	4331
+	.byte	9
+	.byte	'Dcm_DataElement_DID_0x0018_DID_Uint32_Array_ArrayType',0,14,93,16
+	.word	2513
+	.byte	9
+	.byte	'Dcm_DataElement_DID_0x0019_DID_Sint16_Array_ArrayType',0,14,96,16
+	.word	3436
+	.byte	9
+	.byte	'Dcm_DataElement_DID_0x001A_DID_Uint16_Array_ArrayType',0,14,99,16
+	.word	402
+	.byte	9
+	.byte	'Dcm_DataElement_DID_0x001B_DID_Sint8_Array_ArrayType',0,14,102,15
+	.word	4261
+	.byte	9
+	.byte	'Dcm_DataElement_DID_0xF410_DID_Data_PrimitiveType',0,14,105,16
+	.word	402
+	.byte	9
+	.byte	'Dcm_DataElement_DID_0xF412_DID_Data_PrimitiveType',0,14,108,16
+	.word	402
+	.byte	9
+	.byte	'Dcm_DataElement_DID_0xF413_DID_Data_PrimitiveType',0,14,111,16
+	.word	402
+	.byte	9
+	.byte	'Dcm_DataElement_DataDiagnosticIdentifier_DID_DataDiagnosticIdentifier_PrimitiveType',0,14,114,16
+	.word	402
+	.byte	9
+	.byte	'Dcm_DataElement_DevelopmentData_CanDriverVersion_PrimitiveType',0,14,117,16
+	.word	402
+	.byte	9
+	.byte	'Dcm_DataElement_DevelopmentData_DiagnosticModuleVersion_PrimitiveType',0,14,120,16
+	.word	402
+	.byte	9
+	.byte	'Dcm_DataElement_DevelopmentData_NmVersion_PrimitiveType',0,14,123,16
+	.word	402
+	.byte	9
+	.byte	'Dcm_DataElement_DevelopmentData_OperatingSystemVersion_PrimitiveType',0,14,126,16
+	.word	402
+	.byte	9
+	.byte	'Dcm_DataElement_DevelopmentData_TransportLayerVersion_PrimitiveType',0,14,129,1,16
+	.word	402
+	.byte	9
+	.byte	'Dcm_DataElement_Example_ReadWriteData_GlobalTime_PrimitiveType',0,14,132,1,16
+	.word	2513
+	.byte	9
+	.byte	'Dcm_DataElement_Example_WriteOnlyDID_DID_DataObject_PrimitiveType',0,14,135,1,15
+	.word	206
+	.byte	9
+	.byte	'Dcm_DataElement_SampleIoControl_DID_Data_PrimitiveType',0,14,138,1,16
+	.word	2513
+	.byte	9
+	.byte	'Dcm_DataElement_SerialNumber_SerialNumber_PrimitiveType',0,14,141,1,16
+	.word	2513
+	.byte	9
+	.byte	'Dcm_RequestDataOut_SampleRoutineControl_Out_ResultPrimitiveType',0,14,147,1,16
+	.word	402
+	.byte	9
+	.byte	'Dcm_RequestDataOut_SampleRoutineControl_StartOnly_Out_ResultPrimitiveType',0,14,153,1,16
+	.word	2513
+	.byte	9
+	.byte	'Dcm_StartDataIn_SampleRoutineControl_In_Option0PrimitiveType',0,14,159,1,15
+	.word	206
+	.byte	9
+	.byte	'Dcm_StartDataIn_SampleRoutineControl_StartOnly_In_Option1ArrayType',0,14,165,1,15
+	.word	206
+	.byte	9
+	.byte	'Dcm_StartDataOut_SampleRoutineControl_Out_InitStatePrimitiveType',0,14,168,1,16
+	.word	2513
+	.byte	9
+	.byte	'Dcm_StopDataOut_SampleRoutineControl_Out_StopStatePrimitiveType',0,14,174,1,16
+	.word	2513
+	.byte	9
+	.byte	'EcuM_ModeType',0,14,160,2,15
+	.word	206
+	.byte	9
+	.byte	'EcuM_StateType',0,14,166,2,15
+	.word	206
+	.byte	9
+	.byte	'EcuM_WakeupSourceType',0,15,63,17
+	.word	2513
+	.byte	29,1,1,8
+	.word	7037
+	.byte	9
+	.byte	'EcuM_DriverFuncType',0,16,245,2,9
+	.word	7040
+	.byte	9
+	.byte	'EcuM_DefaultAppModeType',0,16,197,3,16
+	.word	2513
+	.byte	9
+	.byte	'EcuM_NormalMcuModeType',0,16,209,3,16
+	.word	2513
+	.byte	9
+	.byte	'EcuM_ComMChannelRefsEndIdxOfWakeupSourceListType',0,16,218,3,15
+	.word	206
+	.byte	9
+	.byte	'EcuM_ComMChannelRefsStartIdxOfWakeupSourceListType',0,16,221,3,15
+	.word	206
+	.byte	10
+	.byte	'sEcuM_ComMChannelRefsType',0,16,240,3,16,1,11
+	.byte	'EcuM_ComMChannelRefsNeverUsed',0
+	.word	206
+	.byte	1,2,35,0,0,9
+	.byte	'EcuM_ComMChannelRefsType',0,16,243,3,3
+	.word	7257
+	.byte	10
+	.byte	'sEcuM_DriverInitOneType',0,16,246,3,16,4,11
+	.byte	'FunctionOfDriverInitOne',0
+	.word	7045
+	.byte	4,2,35,0,0,9
+	.byte	'EcuM_DriverInitOneType',0,16,249,3,3
+	.word	7363
+	.byte	8
+	.word	7037
+	.byte	10
+	.byte	'sEcuM_DriverRestartListType',0,16,252,3,16,4,11
+	.byte	'FunctionOfDriverRestartList',0
+	.word	7045
+	.byte	4,2,35,0,0,9
+	.byte	'EcuM_DriverRestartListType',0,16,255,3,3
+	.word	7464
+	.byte	10
+	.byte	'sEcuM_SleepModeListType',0,16,130,4,16,1,11
+	.byte	'EcuM_SleepModeListNeverUsed',0
+	.word	206
+	.byte	1,2,35,0,0,9
+	.byte	'EcuM_SleepModeListType',0,16,133,4,3
+	.word	7572
+	.byte	10
+	.byte	'sEcuM_WakeupSourceListType',0,16,136,4,16,2,11
+	.byte	'ComMChannelRefsEndIdxOfWakeupSourceList',0
+	.word	206
+	.byte	1,2,35,0,11
+	.byte	'ComMChannelRefsStartIdxOfWakeupSourceList',0
+	.word	206
+	.byte	1,2,35,1,0,9
+	.byte	'EcuM_WakeupSourceListType',0,16,140,4,3
+	.word	7672
+	.byte	10
+	.byte	'sEcuM_PCConfigType',0,16,188,4,16,1,11
+	.byte	'EcuM_PCConfigNeverUsed',0
+	.word	206
+	.byte	1,2,35,0,0,9
+	.byte	'EcuM_PCConfigType',0,16,191,4,3
+	.word	7841
+	.byte	9
+	.byte	'Can_30_Core_ExternalTickType',0,17,184,2,16
+	.word	2513
+	.byte	30,1
+	.word	206
+	.byte	31,0,0,10
+	.byte	'Can_30_Core_RxQueueBufTypeTag',0,17,198,2,16,6,11
+	.byte	'data',0
+	.word	7964
+	.byte	1,2,35,0,11
+	.byte	'id',0
+	.word	402
+	.byte	2,2,35,2,11
+	.byte	'Hrh',0
+	.word	206
+	.byte	1,2,35,4,11
+	.byte	'dlc',0
+	.word	206
+	.byte	1,2,35,5,0,9
+	.byte	'Can_30_Core_RxQueueBufType',0,17,204,2,3
+	.word	7973
+	.byte	32
+	.word	402
+	.byte	32
+	.word	402
+	.byte	32
+	.word	402
+	.byte	10
+	.byte	'Can_30_Core_RxQueueTypeTag',0,17,206,2,16,6,11
+	.byte	'WriteIndex',0
+	.word	8098
+	.byte	2,2,35,0,11
+	.byte	'ReadIndex',0
+	.word	8103
+	.byte	2,2,35,2,11
+	.byte	'FillLevel',0
+	.word	8108
+	.byte	2,2,35,4,0,9
+	.byte	'Can_30_Core_RxQueueType',0,17,211,2,3
+	.word	8113
+	.byte	6,17,214,2,9,4,7
+	.byte	'CAN_30_CORE_SILENT_INACTIVE',0,0,7
+	.byte	'CAN_30_CORE_SILENT_ACTIVE',0,1,0,9
+	.byte	'Can_30_Core_SilentModeType',0,17,217,2,3
+	.word	8238
+	.byte	6,17,142,3,9,4,7
+	.byte	'CAN_30_CORE_BUFFER_FREE',0,0,7
+	.byte	'CAN_30_CORE_BUFFER_CANCEL',0,1,7
+	.byte	'CAN_30_CORE_BUFFER_CANCEL_SW',0,2,7
+	.byte	'CAN_30_CORE_BUFFER_SEND',0,3,0,9
+	.byte	'Can_30_Core_TxBufferStatusType',0,17,147,3,3
+	.word	8339
+	.byte	9
+	.byte	'CddMirror_MirrorModeType',0,17,149,3,15
+	.word	206
+	.byte	9
+	.byte	'Can_30_Core_ControllerConfigIterType',0,17,206,14,21
+	.word	206
+	.byte	9
+	.byte	'Can_30_Core_MailboxIterType',0,17,224,14,21
+	.word	206
+	.byte	9
+	.byte	'Can_30_Core_ActiveSendDataType',0,17,129,15,15
+	.word	206
+	.byte	9
+	.byte	'Can_30_Core_PduOfActiveSendObjectType',0,17,132,15,19
+	.word	206
+	.byte	9
+	.byte	'Can_30_Core_CanIfChannelIdType',0,17,135,15,15
+	.word	206
+	.byte	9
+	.byte	'Can_30_Core_BusOffRecoveryCounterOfControllerDataType',0,17,246,15,15
+	.word	206
+	.byte	9
+	.byte	'Can_30_Core_CanInterruptNestingCounterOfControllerDataType',0,17,249,15,15
+	.word	206
+	.byte	9
+	.byte	'Can_30_Core_ContinueBusOffRecoveryOfControllerDataType',0,17,252,15,17
+	.word	206
+	.byte	9
+	.byte	'Can_30_Core_IsBusOffOfControllerDataType',0,17,255,15,17
+	.word	206
+	.byte	9
+	.byte	'Can_30_Core_IsWakeupOfControllerDataType',0,17,130,16,17
+	.word	206
+	.byte	9
+	.byte	'Can_30_Core_LastInitObjectOfControllerDataType',0,17,133,16,15
+	.word	206
+	.byte	9
+	.byte	'Can_30_Core_LogStatusOfControllerDataType',0,17,136,16,15
+	.word	206
+	.byte	9
+	.byte	'Can_30_Core_ModeTransitionRequestOfControllerDataType',0,17,139,16,15
+	.word	206
+	.byte	9
+	.byte	'Can_30_Core_RamCheckTransitionRequestOfControllerDataType',0,17,142,16,17
+	.word	206
+	.byte	9
+	.byte	'Can_30_Core_InitObjectBaudrateType',0,17,235,16,16
+	.word	402
+	.byte	9
+	.byte	'Can_30_Core_InitObjectFdBrsConfigType',0,17,238,16,15
+	.word	206
+	.byte	9
+	.byte	'Can_30_Core_MailboxSizeOfMailboxType',0,17,128,17,15
+	.word	206
+	.byte	9
+	.byte	'Can_30_Core_MailboxTypeOfMailboxType',0,17,131,17,15
+	.word	206
+	.byte	9
+	.byte	'Can_30_Core_FillCountOfTxHwFifoType',0,17,140,17,15
+	.word	206
+	.byte	9
+	.byte	'Can_30_Core_ReadIndexOfTxHwFifoType',0,17,143,17,15
+	.word	206
+	.byte	9
+	.byte	'Can_30_Core_WriteIndexOfTxHwFifoType',0,17,146,17,15
+	.word	206
+	.byte	10
+	.byte	'sCan_30_Core_ActiveSendObjectType',0,17,162,17,16,20,11
+	.byte	'PduOfActiveSendObject',0
+	.word	206
+	.byte	1,2,35,0,11
+	.byte	'PduInfoOfActiveSendObject',0
+	.word	547
+	.byte	12,2,35,4,11
+	.byte	'StateOfActiveSendObject',0
+	.word	8339
+	.byte	4,2,35,16,0,9
+	.byte	'Can_30_Core_ActiveSendObjectType',0,17,167,17,3
+	.word	9592
+	.byte	10
+	.byte	'sCan_30_Core_ControllerConfigType',0,17,170,17,16,1,11
+	.byte	'Can_30_Core_ControllerConfigNeverUsed',0
+	.word	206
+	.byte	1,2,35,0,0,9
+	.byte	'Can_30_Core_ControllerConfigType',0,17,173,17,3
+	.word	9774
+	.byte	10
+	.byte	'sCan_30_Core_ControllerDataType',0,17,176,17,16,16,11
+	.byte	'BusOffRecoveryCounterOfControllerData',0
+	.word	206
+	.byte	1,2,35,0,11
+	.byte	'CanInterruptNestingCounterOfControllerData',0
+	.word	206
+	.byte	1,2,35,1,11
+	.byte	'ContinueBusOffRecoveryOfControllerData',0
+	.word	206
+	.byte	1,2,35,2,11
+	.byte	'IsBusOffOfControllerData',0
+	.word	206
+	.byte	1,2,35,3,11
+	.byte	'IsWakeupOfControllerData',0
+	.word	206
+	.byte	1,2,35,4,11
+	.byte	'LastInitObjectOfControllerData',0
+	.word	206
+	.byte	1,2,35,5,11
+	.byte	'LogStatusOfControllerData',0
+	.word	206
+	.byte	1,2,35,6,11
+	.byte	'ModeTransitionRequestOfControllerData',0
+	.word	206
+	.byte	1,2,35,7,11
+	.byte	'RamCheckTransitionRequestOfControllerData',0
+	.word	206
+	.byte	1,2,35,8,11
+	.byte	'MirrorModeStateOfControllerData',0
+	.word	206
+	.byte	1,2,35,9,11
+	.byte	'SilentModeStateOfControllerData',0
+	.word	8238
+	.byte	4,2,35,10,0,9
+	.byte	'Can_30_Core_ControllerDataType',0,17,189,17,3
+	.word	9904
+	.byte	10
+	.byte	'sCan_30_Core_ExtensionConfigType',0,17,192,17,16,1,11
+	.byte	'Can_30_Core_ExtensionConfigNeverUsed',0
+	.word	206
+	.byte	1,2,35,0,0,9
+	.byte	'Can_30_Core_ExtensionConfigType',0,17,195,17,3
+	.word	10453
+	.byte	10
+	.byte	'sCan_30_Core_GeneralFeatureType',0,17,198,17,16,1,11
+	.byte	'Can_30_Core_GeneralFeatureNeverUsed',0
+	.word	206
+	.byte	1,2,35,0,0,9
+	.byte	'Can_30_Core_GeneralFeatureType',0,17,201,17,3
+	.word	10580
+	.byte	10
+	.byte	'sCan_30_Core_MailboxType',0,17,204,17,16,2,11
+	.byte	'MailboxSizeOfMailbox',0
+	.word	206
+	.byte	1,2,35,0,11
+	.byte	'MailboxTypeOfMailbox',0
+	.word	206
+	.byte	1,2,35,1,0,9
+	.byte	'Can_30_Core_MailboxType',0,17,208,17,3
+	.word	10704
+	.byte	10
+	.byte	'sCan_30_Core_TxHwFifoType',0,17,211,17,16,4,11
+	.byte	'FillCountOfTxHwFifo',0
+	.word	206
+	.byte	1,2,35,0,11
+	.byte	'ReadIndexOfTxHwFifo',0
+	.word	206
+	.byte	1,2,35,1,11
+	.byte	'WriteIndexOfTxHwFifo',0
+	.word	206
+	.byte	1,2,35,2,0,9
+	.byte	'Can_30_Core_TxHwFifoType',0,17,216,17,3
+	.word	10829
+	.byte	10
+	.byte	'Can_30_Core_ActiveSendDataStructSTag',0,17,228,17,16,1,11
+	.byte	'ActiveSendData_0',0
+	.word	206
+	.byte	1,2,35,0,0,9
+	.byte	'Can_30_Core_ActiveSendDataStructSType',0,17,231,17,3
+	.word	10984
+	.byte	10
+	.byte	'Can_30_Core_ActiveSendObjectStructSTag',0,17,234,17,16,20,11
+	.byte	'ActiveSendObject_0',0
+	.word	9592
+	.byte	20,2,35,0,0,9
+	.byte	'Can_30_Core_ActiveSendObjectStructSType',0,17,237,17,3
+	.word	11101
+	.byte	10
+	.byte	'Can_30_Core_TxHwFifoStructSTag',0,17,240,17,16,4,11
+	.byte	'FIFO_0',0
+	.word	10829
+	.byte	4,2,35,0,0,9
+	.byte	'Can_30_Core_TxHwFifoStructSType',0,17,243,17,3
+	.word	11224
+	.byte	10
+	.byte	'sCan_30_Core_PCConfigType',0,17,214,18,16,1,11
+	.byte	'Can_30_Core_PCConfigNeverUsed',0
+	.word	206
+	.byte	1,2,35,0,0,9
+	.byte	'Can_30_Core_PCConfigType',0,17,217,18,3
+	.word	11319
+	.byte	9
+	.byte	'Can_30_Core_ConfigType',0,17,219,18,34
+	.word	11319
+	.byte	9
+	.byte	'CanIf_TxBufferSizeType',0,6,201,1,15
+	.word	206
+	.byte	9
+	.byte	'CanIf_ControllerModeType',0,2,147,2,3
+	.word	1353
+	.byte	9
+	.byte	'CanIf_PduSetModeType',0,2,164,2,3
+	.word	2574
+	.byte	9
+	.byte	'CanIf_PduGetModeType',0,2,180,2,3
+	.word	2778
+	.byte	6,2,183,2,9,4,7
+	.byte	'CANIF_RxBasicCANMailbox',0,0,7
+	.byte	'CANIF_RxFullCANMailbox',0,1,7
+	.byte	'CANIF_TxBasicCANMailbox',0,2,7
+	.byte	'CANIF_TxFullCANMailbox',0,3,7
+	.byte	'CANIF_UnusedCANMailbox',0,4,0,9
+	.byte	'CanIf_MailBoxTypeType',0,2,190,2,3
+	.word	11583
+	.byte	6,2,193,2,9,4,7
+	.byte	'CanIf_SimpleRxIndicationLayout',0,0,7
+	.byte	'CanIf_AdvancedRxIndicationLayout',0,1,7
+	.byte	'CanIf_NmOsekRxIndicationLayout',0,2,7
+	.byte	'CanIf_CddRxIndicationLayout',0,3,0,9
+	.byte	'CanIf_RxIndicationLayoutType',0,2,199,2,3
+	.word	11748
+	.byte	9
+	.byte	'CanIf_NotifStatusType',0,2,206,2,3
+	.word	920
+	.byte	6,2,208,2,9,4,7
+	.byte	'CANIF_WAKEUPREQUEST_NONE',0,0,7
+	.byte	'CANIF_WAKEUPREQUEST_CAN',0,1,7
+	.byte	'CANIF_WAKEUPREQUEST_TRCV',0,2,0,9
+	.byte	'CanIf_WakeUpTargetType',0,2,213,2,3
+	.word	11955
+	.byte	6,2,215,2,9,4,7
+	.byte	'CANIF_WUVALIDATION_IDLE',0,0,7
+	.byte	'CANIF_WUVALIDATION_ARMED',0,1,7
+	.byte	'CANIF_WUVALIDATION_DETECTED',0,2,0,9
+	.byte	'CanIf_WakeUpValidationStateType',0,2,220,2,3
+	.word	12074
+	.byte	9
+	.byte	'CanIf_TransmitStateType',0,2,226,2,3
+	.word	351
+	.byte	9
+	.byte	'CanIf_RxSearchParamsType',0,2,251,2,3
+	.word	717
+	.byte	12
+	.word	206
+	.byte	8
+	.word	12272
+	.byte	17,1,1,18
+	.word	206
+	.byte	18
+	.word	12277
+	.byte	0,8
+	.word	12282
+	.byte	9
+	.byte	'CanIf_SimpleRxIndicationFctType',0,2,133,3,9
+	.word	12296
+	.byte	17,1,1,18
+	.word	206
+	.byte	18
+	.word	12277
+	.byte	18
+	.word	402
+	.byte	0,8
+	.word	12342
+	.byte	9
+	.byte	'CanIf_NmOsekRxIndicationFctType',0,2,142,3,9
+	.word	12361
+	.byte	17,1,1,18
+	.word	206
+	.byte	18
+	.word	3538
+	.byte	18
+	.word	402
+	.byte	0,8
+	.word	12407
+	.byte	9
+	.byte	'CanIf_CddRxIndicationFctType',0,2,146,3,9
+	.word	12426
+	.byte	17,1,1,18
+	.word	2513
+	.byte	0,8
+	.word	12469
+	.byte	9
+	.byte	'CanIf_WakeUpValidationFctType',0,2,160,3,9
+	.word	12478
+	.byte	33,2,226,4,9,4,11
+	.byte	'eSimpleRxIndicationType',0
+	.word	12301
+	.byte	4,2,35,0,11
+	.byte	'eAdvancedRxIndicationType',0
+	.word	3567
+	.byte	4,2,35,0,11
+	.byte	'eNmOsekRxIndicationType',0
+	.word	12366
+	.byte	4,2,35,0,11
+	.byte	'eCddRxIndicationType',0
+	.word	12431
+	.byte	4,2,35,0,0,9
+	.byte	'CanIf_RxIndicationFctType',0,2,232,4,3
+	.word	12522
+	.byte	8
+	.word	12282
+	.byte	8
+	.word	12342
+	.byte	8
+	.word	12407
+	.byte	10
+	.byte	'sCanIf_TxQueueBaseType',0,2,238,4,16,1,11
+	.byte	'eSduLength',0
+	.word	206
+	.byte	1,2,35,0,0,9
+	.byte	'CanIf_TxQueueBaseType',0,2,244,4,3
+	.word	12710
+	.byte	30,8
+	.word	206
+	.byte	31,7,0,10
+	.byte	'sCanIf_TxPrioByCanIdType',0,2,249,4,16,12,11
+	.byte	'eSdu',0
+	.word	12791
+	.byte	8,2,35,0,11
+	.byte	'eBaseParams',0
+	.word	12710
+	.byte	1,2,35,8,0,9
+	.byte	'CanIf_TxPrioByCanIdType',0,2,255,4,3
+	.word	12800
+	.byte	10
+	.byte	'sCanIf_TxBufferPrioByCanIdBaseType',0,2,130,5,16,1,11
+	.byte	'eQueueCounter',0
+	.word	206
+	.byte	1,2,35,0,0,9
+	.byte	'CanIf_TxBufferPrioByCanIdBaseType',0,2,133,5,3
+	.word	12900
+	.byte	9
+	.byte	'CanIf_MappedTxBuffersConfigEndIdxOfCanIfCtrlId2MappedTxBuffersConfigType',0,6,173,9,15
+	.word	206
+	.byte	9
+	.byte	'CanIf_MappedTxBuffersConfigStartIdxOfCanIfCtrlId2MappedTxBuffersConfigType',0,6,176,9,15
+	.word	206
+	.byte	9
+	.byte	'CanIf_CtrlStatesIdxOfMailBoxConfigType',0,6,185,9,15
+	.word	206
+	.byte	9
+	.byte	'CanIf_PduIdFirstOfMailBoxConfigType',0,6,188,9,15
+	.word	206
+	.byte	9
+	.byte	'CanIf_PduIdLastOfMailBoxConfigType',0,6,191,9,15
+	.word	206
+	.byte	9
+	.byte	'CanIf_TxBufferCfgIdxOfMailBoxConfigType',0,6,194,9,15
+	.word	206
+	.byte	9
+	.byte	'CanIf_TxBufferCfgOfMailBoxConfigType',0,6,197,9,15
+	.word	206
+	.byte	9
+	.byte	'CanIf_TxBufferHandlingTypeOfMailBoxConfigType',0,6,203,9,15
+	.word	206
+	.byte	9
+	.byte	'CanIf_MailBoxConfigIdxOfMappedTxBuffersConfigType',0,6,206,9,15
+	.word	206
+	.byte	9
+	.byte	'CanIf_RxIndicationFctListIdxOfRxPduConfigType',0,6,212,9,15
+	.word	206
+	.byte	9
+	.byte	'CanIf_RxPduCanIdOfRxPduConfigType',0,6,215,9,16
+	.word	402
+	.byte	9
+	.byte	'CanIf_RxPduDlcOfRxPduConfigType',0,6,218,9,15
+	.word	206
+	.byte	9
+	.byte	'CanIf_RxPduMaskOfRxPduConfigType',0,6,221,9,16
+	.word	402
+	.byte	9
+	.byte	'CanIf_UpperPduIdOfRxPduConfigType',0,6,224,9,19
+	.word	206
+	.byte	9
+	.byte	'CanIf_BitPos2TxPduIdOffsetOfTxBufferPrioByCanIdConfigType',0,6,141,10,15
+	.word	206
+	.byte	9
+	.byte	'CanIf_TxBufferPrioByCanIdBaseIdxOfTxBufferPrioByCanIdConfigType',0,6,144,10,15
+	.word	206
+	.byte	9
+	.byte	'CanIf_TxQueueFlagsEndIdxOfTxBufferPrioByCanIdConfigType',0,6,147,10,15
+	.word	206
+	.byte	9
+	.byte	'CanIf_TxQueueFlagsStartIdxOfTxBufferPrioByCanIdConfigType',0,6,150,10,15
+	.word	206
+	.byte	9
+	.byte	'CanIf_CanIdOfTxPduConfigType',0,6,153,10,16
+	.word	402
+	.byte	9
+	.byte	'CanIf_CtrlStatesIdxOfTxPduConfigType',0,6,156,10,15
+	.word	206
+	.byte	9
+	.byte	'CanIf_IsTxPduTruncationOfTxPduConfigType',0,6,159,10,17
+	.word	206
+	.byte	9
+	.byte	'CanIf_MailBoxConfigIdxOfTxPduConfigType',0,6,162,10,15
+	.word	206
+	.byte	9
+	.byte	'CanIf_TxConfirmationFctListIdxOfTxPduConfigType',0,6,165,10,15
+	.word	206
+	.byte	9
+	.byte	'CanIf_TxPduLengthOfTxPduConfigType',0,6,168,10,15
+	.word	206
+	.byte	9
+	.byte	'CanIf_UpperLayerTxPduIdOfTxPduConfigType',0,6,171,10,19
+	.word	206
+	.byte	9
+	.byte	'CanIf_TxQueueIdxOfTxPduQueueIndexType',0,6,174,10,15
+	.word	206
+	.byte	9
+	.byte	'CanIf_TxQueueOfTxPduQueueIndexType',0,6,177,10,15
+	.word	206
+	.byte	9
+	.byte	'CanIf_TxQueueFlagsType',0,6,183,10,16
+	.word	2513
+	.byte	9
+	.byte	'CanIf_ControllerIdOfWakeUpConfigType',0,6,186,10,15
+	.word	206
+	.byte	9
+	.byte	'CanIf_WakeUpSourceOfWakeUpConfigType',0,6,189,10,15
+	.word	206
+	.byte	9
+	.byte	'CanIf_WakeUpTargetAddressOfWakeUpConfigType',0,6,192,10,15
+	.word	206
+	.byte	10
+	.byte	'sCanIf_CanIfCtrlId2MappedTxBuffersConfigType',0,6,212,10,16,2,11
+	.byte	'MappedTxBuffersConfigEndIdxOfCanIfCtrlId2MappedTxBuffersConfig',0
+	.word	206
+	.byte	1,2,35,0,11
+	.byte	'MappedTxBuffersConfigStartIdxOfCanIfCtrlId2MappedTxBuffersConfig',0
+	.word	206
+	.byte	1,2,35,1,0,9
+	.byte	'CanIf_CanIfCtrlId2MappedTxBuffersConfigType',0,6,216,10,3
+	.word	14618
+	.byte	10
+	.byte	'sCanIf_CtrlStatesType',0,6,219,10,16,12,11
+	.byte	'CtrlModeOfCtrlStates',0
+	.word	1353
+	.byte	4,2,35,0,11
+	.byte	'PduModeOfCtrlStates',0
+	.word	2778
+	.byte	4,2,35,4,11
+	.byte	'WakeUpValidationStateOfCtrlStates',0
+	.word	12074
+	.byte	4,2,35,8,0,9
+	.byte	'CanIf_CtrlStatesType',0,6,224,10,3
+	.word	14869
+	.byte	10
+	.byte	'sCanIf_MailBoxConfigType',0,6,231,10,16,12,11
+	.byte	'CtrlStatesIdxOfMailBoxConfig',0
+	.word	206
+	.byte	1,2,35,0,11
+	.byte	'PduIdFirstOfMailBoxConfig',0
+	.word	206
+	.byte	1,2,35,1,11
+	.byte	'PduIdLastOfMailBoxConfig',0
+	.word	206
+	.byte	1,2,35,2,11
+	.byte	'TxBufferCfgOfMailBoxConfig',0
+	.word	206
+	.byte	1,2,35,3,11
+	.byte	'TxBufferCfgIdxOfMailBoxConfig',0
+	.word	206
+	.byte	1,2,35,4,11
+	.byte	'TxBufferHandlingTypeOfMailBoxConfig',0
+	.word	206
+	.byte	1,2,35,5,11
+	.byte	'MailBoxTypeOfMailBoxConfig',0
+	.word	11583
+	.byte	4,2,35,6,0,9
+	.byte	'CanIf_MailBoxConfigType',0,6,240,10,3
+	.word	15030
+	.byte	10
+	.byte	'sCanIf_MappedTxBuffersConfigType',0,6,246,10,16,1,11
+	.byte	'MailBoxConfigIdxOfMappedTxBuffersConfig',0
+	.word	206
+	.byte	1,2,35,0,0,9
+	.byte	'CanIf_MappedTxBuffersConfigType',0,6,249,10,3
+	.word	15358
+	.byte	10
+	.byte	'sCanIf_RxIndicationFctListType',0,6,252,10,16,8,11
+	.byte	'RxIndicationFctOfRxIndicationFctList',0
+	.word	12522
+	.byte	4,2,35,0,11
+	.byte	'RxIndicationLayoutOfRxIndicationFctList',0
+	.word	11748
+	.byte	4,2,35,4,0,9
+	.byte	'CanIf_RxIndicationFctListType',0,6,128,11,3
+	.word	15488
+	.byte	10
+	.byte	'sCanIf_RxPduConfigType',0,6,134,11,16,8,11
+	.byte	'RxPduCanIdOfRxPduConfig',0
+	.word	402
+	.byte	2,2,35,0,11
+	.byte	'RxPduMaskOfRxPduConfig',0
+	.word	402
+	.byte	2,2,35,2,11
+	.byte	'UpperPduIdOfRxPduConfig',0
+	.word	206
+	.byte	1,2,35,4,11
+	.byte	'RxIndicationFctListIdxOfRxPduConfig',0
+	.word	206
+	.byte	1,2,35,5,11
+	.byte	'RxPduDlcOfRxPduConfig',0
+	.word	206
+	.byte	1,2,35,6,0,9
+	.byte	'CanIf_RxPduConfigType',0,6,141,11,3
+	.word	15660
+	.byte	10
+	.byte	'sCanIf_TxBufferPrioByCanIdConfigType',0,6,149,11,16,4,11
+	.byte	'BitPos2TxPduIdOffsetOfTxBufferPrioByCanIdConfig',0
+	.word	206
+	.byte	1,2,35,0,11
+	.byte	'TxBufferPrioByCanIdBaseIdxOfTxBufferPrioByCanIdConfig',0
+	.word	206
+	.byte	1,2,35,1,11
+	.byte	'TxQueueFlagsEndIdxOfTxBufferPrioByCanIdConfig',0
+	.word	206
+	.byte	1,2,35,2,11
+	.byte	'TxQueueFlagsStartIdxOfTxBufferPrioByCanIdConfig',0
+	.word	206
+	.byte	1,2,35,3,0,9
+	.byte	'CanIf_TxBufferPrioByCanIdConfigType',0,6,155,11,3
+	.word	15895
+	.byte	10
+	.byte	'sCanIf_TxPduConfigType',0,6,163,11,16,8,11
+	.byte	'CanIdOfTxPduConfig',0
+	.word	402
+	.byte	2,2,35,0,11
+	.byte	'UpperLayerTxPduIdOfTxPduConfig',0
+	.word	206
+	.byte	1,2,35,2,11
+	.byte	'IsTxPduTruncationOfTxPduConfig',0
+	.word	206
+	.byte	1,2,35,3,11
+	.byte	'CtrlStatesIdxOfTxPduConfig',0
+	.word	206
+	.byte	1,2,35,4,11
+	.byte	'MailBoxConfigIdxOfTxPduConfig',0
+	.word	206
+	.byte	1,2,35,5,11
+	.byte	'TxConfirmationFctListIdxOfTxPduConfig',0
+	.word	206
+	.byte	1,2,35,6,11
+	.byte	'TxPduLengthOfTxPduConfig',0
+	.word	206
+	.byte	1,2,35,7,0,9
+	.byte	'CanIf_TxPduConfigType',0,6,172,11,3
+	.word	16216
+	.byte	10
+	.byte	'sCanIf_TxPduQueueIndexType',0,6,178,11,16,2,11
+	.byte	'TxQueueOfTxPduQueueIndex',0
+	.word	206
+	.byte	1,2,35,0,11
+	.byte	'TxQueueIdxOfTxPduQueueIndex',0
+	.word	206
+	.byte	1,2,35,1,0,9
+	.byte	'CanIf_TxPduQueueIndexType',0,6,182,11,3
+	.word	16541
+	.byte	10
+	.byte	'sCanIf_WakeUpConfigType',0,6,185,11,16,8,11
+	.byte	'ControllerIdOfWakeUpConfig',0
+	.word	206
+	.byte	1,2,35,0,11
+	.byte	'WakeUpSourceOfWakeUpConfig',0
+	.word	206
+	.byte	1,2,35,1,11
+	.byte	'WakeUpTargetAddressOfWakeUpConfig',0
+	.word	206
+	.byte	1,2,35,2,11
+	.byte	'WakeUpTargetModuleOfWakeUpConfig',0
+	.word	11955
+	.byte	4,2,35,4,0,9
+	.byte	'CanIf_WakeUpConfigType',0,6,191,11,3
+	.word	16681
+	.byte	10
+	.byte	'CanIf_CtrlStatesStructSTag',0,6,203,11,16,12,11
+	.byte	'CT_CAN00_6199f384',0
+	.word	14869
+	.byte	12,2,35,0,0,9
+	.byte	'CanIf_CtrlStatesStructSType',0,6,206,11,3
+	.word	16901
+	.byte	10
+	.byte	'CanIf_TxBufferPrioByCanIdBaseStructSTag',0,6,209,11,16,1,11
+	.byte	'CanIfBufferCfg_Tx_Std_0fb271d2',0
+	.word	12900
+	.byte	1,2,35,0,0,9
+	.byte	'CanIf_TxBufferPrioByCanIdBaseStructSType',0,6,212,11,3
+	.word	16999
+	.byte	10
+	.byte	'CanIf_TxQueueStructSTag',0,6,215,11,16,24,11
+	.byte	'Msg_Diag_Response_BFC_Tp_oCAN00_be6a9846_Tx',0
+	.word	12800
+	.byte	12,2,35,0,11
+	.byte	'LightCtrl_oCAN00_d9f1a7da_Tx',0
+	.word	12800
+	.byte	12,2,35,12,0,9
+	.byte	'CanIf_TxQueueStructSType',0,6,219,11,3
+	.word	17136
+	.byte	10
+	.byte	'CanIf_TxQueueFlagsStructSTag',0,6,222,11,16,4,11
+	.byte	'CanIfBufferCfg_Tx_Std_0fb271d2',0
+	.word	2513
+	.byte	4,2,35,0,0,9
+	.byte	'CanIf_TxQueueFlagsStructSType',0,6,225,11,3
+	.word	17292
+	.byte	30,12
+	.word	14869
+	.byte	31,0,0,34
+	.byte	'CanIf_CtrlStatesUTag',0,6,237,11,15,12,11
+	.byte	'raw',0
+	.word	17407
+	.byte	12,2,35,0,11
+	.byte	'str',0
+	.word	16901
+	.byte	12,2,35,0,0,9
+	.byte	'CanIf_CtrlStatesUType',0,6,241,11,3
+	.word	17416
+	.byte	30,1
+	.word	12900
+	.byte	31,0,0,34
+	.byte	'CanIf_TxBufferPrioByCanIdBaseUTag',0,6,244,11,15,1,11
+	.byte	'raw',0
+	.word	17501
+	.byte	1,2,35,0,11
+	.byte	'str',0
+	.word	16999
+	.byte	1,2,35,0,0,9
+	.byte	'CanIf_TxBufferPrioByCanIdBaseUType',0,6,248,11,3
+	.word	17510
+	.byte	30,24
+	.word	12800
+	.byte	31,1,0,34
+	.byte	'CanIf_TxQueueUTag',0,6,251,11,15,24,11
+	.byte	'raw',0
+	.word	17621
+	.byte	24,2,35,0,11
+	.byte	'str',0
+	.word	17136
+	.byte	24,2,35,0,0,9
+	.byte	'CanIf_TxQueueUType',0,6,255,11,3
+	.word	17630
+	.byte	30,4
+	.word	2513
+	.byte	31,0,0,34
+	.byte	'CanIf_TxQueueFlagsUTag',0,6,130,12,15,4,11
+	.byte	'raw',0
+	.word	17709
+	.byte	4,2,35,0,11
+	.byte	'str',0
+	.word	17292
+	.byte	4,2,35,0,0,9
+	.byte	'CanIf_TxQueueFlagsUType',0,6,134,12,3
+	.word	17718
+	.byte	9
+	.byte	'CanIf_PCConfigType',0,6,209,12,3
+	.word	2348
+	.byte	9
+	.byte	'CanIf_ConfigType',0,6,211,12,28
+	.word	2348
+	.byte	12
+	.word	3184
+	.byte	35
+	.byte	'CanIf_BusOffNotificationFctPtr',0,6,242,12,60
+	.word	17861
+	.byte	1,1,30,2
+	.word	14618
+	.byte	31,0,0,12
+	.word	17908
+	.byte	35
+	.byte	'CanIf_CanIfCtrlId2MappedTxBuffersConfig',0,6,135,13,72
+	.word	17917
+	.byte	1,1,12
+	.word	3124
+	.byte	35
+	.byte	'CanIf_CtrlModeIndicationFctPtr',0,6,148,13,60
+	.word	17973
+	.byte	1,1,30,36
+	.word	15030
+	.byte	31,2,0,12
+	.word	18020
+	.byte	35
+	.byte	'CanIf_MailBoxConfig',0,6,174,13,52
+	.word	18029
+	.byte	1,1,30,1
+	.word	15358
+	.byte	31,0,0,12
+	.word	18065
+	.byte	35
+	.byte	'CanIf_MappedTxBuffersConfig',0,6,194,13,60
+	.word	18074
+	.byte	1,1,30,24
+	.word	15488
+	.byte	31,2,0,12
+	.word	18118
+	.byte	35
+	.byte	'CanIf_RxIndicationFctList',0,6,215,13,58
+	.word	18127
+	.byte	1,1,30,24
+	.word	15660
+	.byte	31,2,0,12
+	.word	18169
+	.byte	35
+	.byte	'CanIf_RxPduConfig',0,6,239,13,50
+	.word	18178
+	.byte	1,1,30,4
+	.word	15895
+	.byte	31,0,0,12
+	.word	18212
+	.byte	35
+	.byte	'CanIf_TxBufferPrioByCanIdConfig',0,6,134,14,64
+	.word	18221
+	.byte	1,1,30,8
+	.word	3615
+	.byte	31,1,0,12
+	.word	18269
+	.byte	35
+	.byte	'CanIf_TxConfirmationFctList',0,6,151,14,56
+	.word	18278
+	.byte	1,1,30,16
+	.word	16216
+	.byte	31,1,0,12
+	.word	18322
+	.byte	35
+	.byte	'CanIf_TxPduConfig',0,6,177,14,50
+	.word	18331
+	.byte	1,1,30,4
+	.word	16541
+	.byte	31,1,0,12
+	.word	18365
+	.byte	35
+	.byte	'CanIf_TxPduQueueIndex',0,6,198,14,54
+	.word	18374
+	.byte	1,1,35
+	.byte	'CanIf_CtrlStates',0,6,255,14,53
+	.word	17416
+	.byte	1,1,35
+	.byte	'CanIf_TxBufferPrioByCanIdBase',0,6,144,15,66
+	.word	17510
+	.byte	1,1,35
+	.byte	'CanIf_TxQueue',0,6,161,15,50
+	.word	17630
+	.byte	1,1,35
+	.byte	'CanIf_TxQueueFlags',0,6,178,15,55
+	.word	17718
+	.byte	1,1
+.L691:
+	.byte	12
+	.word	206
+.L692:
+	.byte	12
+	.word	206
+.L693:
+	.byte	12
+	.word	206
+	.byte	9
+	.byte	'VStdLib_CntType',0,9,170,1,22
+	.word	2513
+	.byte	6,18,156,1,9,4,7
+	.byte	'BswTask',0,0,7
+	.byte	'Default_Init_Task',0,1,7
+	.byte	'Default_Init_Task_Trusted',0,2,7
+	.byte	'IdleTask_OsCore',0,3,7
+	.byte	'IoTask',0,4,7
+	.byte	'SwcTask',0,5,7
+	.byte	'INVALID_TASK',0,6,7
+	.byte	'OS_TASKID_COUNT',0,6,0,9
+	.byte	'TaskType',0,18,166,1,3
+	.word	18576
+	.byte	30,64
+	.word	2513
+	.byte	31,15,0,10
+	.byte	'Os_ExceptionContextType_Tag',0,19,71,8,160,1,11
+	.byte	'AddressRegisters',0
+	.word	18729
+	.byte	64,2,35,0,11
+	.byte	'DataRegisters',0
+	.word	18729
+	.byte	64,2,35,64,11
+	.byte	'Ra',0
+	.word	2513
+	.byte	4,3,35,128,1,11
+	.byte	'Psw',0
+	.word	2513
+	.byte	4,3,35,132,1,11
+	.byte	'ExceptionSource',0
+	.word	2513
+	.byte	4,3,35,136,1,11
+	.byte	'Pcpn',0
+	.word	2513
+	.byte	4,3,35,140,1,11
+	.byte	'Pie',0
+	.word	2513
+	.byte	4,3,35,144,1,11
+	.byte	'MpuRegionForStackLow',0
+	.word	2513
+	.byte	4,3,35,148,1,11
+	.byte	'MpuRegionForStackUpper',0
+	.word	2513
+	.byte	4,3,35,152,1,11
+	.byte	'RawPCXI',0
+	.word	2513
+	.byte	4,3,35,156,1,0,9
+	.byte	'Os_ExceptionContextType',0,20,59,44
+	.word	18738
+	.byte	9
+	.byte	'Os_InterruptSourceIdType',0,21,238,1,16
+	.word	2513
+	.byte	9
+	.byte	'Os_ExceptionSourceIdType',0,21,246,1,16
+	.word	2513
+	.byte	6,21,161,2,9,4,7
+	.byte	'RUNNING',0,0,7
+	.byte	'READY',0,1,7
+	.byte	'WAITING',0,2,7
+	.byte	'SUSPENDED',0,3,0,9
+	.byte	'TaskStateType',0,21,175,2,3
+	.word	19086
+	.byte	9
+	.byte	'EventMaskType',0,21,182,2,16
+	.word	4418
+	.byte	9
+	.byte	'Os_TickType',0,21,200,2,19
+	.word	2513
+	.byte	9
+	.byte	'TickType',0,21,206,2,21
+	.word	2513
+	.byte	16,21,220,2,9,12,11
+	.byte	'maxallowedvalue',0
+	.word	2513
+	.byte	4,2,35,0,11
+	.byte	'ticksperbase',0
+	.word	2513
+	.byte	4,2,35,4,11
+	.byte	'mincycle',0
+	.word	2513
+	.byte	4,2,35,8,0,9
+	.byte	'AlarmBaseType',0,21,228,2,2
+	.word	19218
+	.byte	6,21,128,3,9,4,7
+	.byte	'APPLICATION_TERMINATED',0,0,7
+	.byte	'APPLICATION_RESTARTING',0,1,7
+	.byte	'APPLICATION_ACCESSIBLE',0,2,0,9
+	.byte	'ApplicationStateType',0,21,133,3,3
+	.word	19313
+	.byte	6,21,177,3,9,4,7
+	.byte	'OSServiceId_GetApplicationID',0,0,7
+	.byte	'OSServiceId_GetISRID',0,1,7
+	.byte	'OSServiceId_CallTrustedFunction',0,2,7
+	.byte	'OSServiceId_CheckISRMemoryAccess',0,3,7
+	.byte	'OSServiceId_CheckTaskMemoryAccess',0,4,7
+	.byte	'OSServiceId_CheckObjectAccess',0,5,7
+	.byte	'OSServiceId_CheckObjectOwnership',0,6,7
+	.byte	'OSServiceId_StartScheduleTableRel',0,7,7
+	.byte	'OSServiceId_StartScheduleTableAbs',0,8,7
+	.byte	'OSServiceId_StopScheduleTable',0,9,7
+	.byte	'OSServiceId_NextScheduleTable',0,10,7
+	.byte	'OSServiceId_StartScheduleTableSynchron',0,11,7
+	.byte	'OSServiceId_SyncScheduleTable',0,12,7
+	.byte	'OSServiceId_SetScheduleTableAsync',0,13,7
+	.byte	'OSServiceId_GetScheduleTableStatus',0,14,7
+	.byte	'OSServiceId_IncrementCounter',0,15,7
+	.byte	'OSServiceId_GetCounterValue',0,16,7
+	.byte	'OSServiceId_GetElapsedValue',0,17,7
+	.byte	'OSServiceId_TerminateApplication',0,18,7
+	.byte	'OSServiceId_AllowAccess',0,19,7
+	.byte	'OSServiceId_GetApplicationState',0,20,7
+	.byte	'OSServiceId_GetNumberOfActivatedCores',0,21,7
+	.byte	'OSServiceId_GetCoreID',0,22,7
+	.byte	'OSServiceId_StartCore',0,23,7
+	.byte	'OSServiceId_StartNonAutosarCore',0,24,7
+	.byte	'OSServiceId_GetSpinlock',0,25,7
+	.byte	'OSServiceId_ReleaseSpinlock',0,26,7
+	.byte	'OSServiceId_TryToGetSpinlock',0,27,7
+	.byte	'OSServiceId_ShutdownAllCores',0,28,7
+	.byte	'OSServiceId_ControlIdle',0,29,7
+	.byte	'OSServiceId_IocSend',0,30,7
+	.byte	'OSServiceId_IocWrite',0,31,7
+	.byte	'OSServiceId_IocSendGroup',0,32,7
+	.byte	'OSServiceId_IocWriteGroup',0,33,7
+	.byte	'OSServiceId_IocReceive',0,34,7
+	.byte	'OSServiceId_IocRead',0,35,7
+	.byte	'OSServiceId_IocReceiveGroup',0,36,7
+	.byte	'OSServiceId_IocReadGroup',0,37,7
+	.byte	'OSServiceId_IocEmptyQueue',0,38,7
+	.byte	'OSServiceId_GetCurrentApplicationID',0,39,7
+	.byte	'OSServiceId_ActivateTaskAsyn',0,51,7
+	.byte	'OSServiceId_SetEventAsyn',0,52,7
+	.byte	'OSServiceId_GetExceptionContext',0,160,1,7
+	.byte	'OSServiceId_SetExceptionContext',0,161,1,7
+	.byte	'OSServiceId_CallNonTrustedFunction',0,162,1,7
+	.byte	'OSServiceId_AppKill',0,163,1,7
+	.byte	'OSServiceId_AlarmActionSetEvent',0,164,1,7
+	.byte	'OSServiceId_AlarmActionActivateTask',0,165,1,7
+	.byte	'OSServiceId_AlarmActionIncrementCounter',0,166,1,7
+	.byte	'OSServiceId_AlarmActionCallback',0,167,1,7
+	.byte	'OSServiceId_TimerIsr',0,168,1,7
+	.byte	'OSServiceId_IsrWrapper',0,169,1,7
+	.byte	'OSServiceId_GetTaskStackUsage',0,170,1,7
+	.byte	'OSServiceId_GetISRStackUsage',0,171,1,7
+	.byte	'OSServiceId_GetKernelStackUsage',0,172,1,7
+	.byte	'OSServiceId_GetStartupHookStackUsage',0,173,1,7
+	.byte	'OSServiceId_GetErrorHookStackUsage',0,174,1,7
+	.byte	'OSServiceId_GetShutdownHookStackUsage',0,175,1,7
+	.byte	'OSServiceId_GetProtectionHookStackUsage',0,176,1,7
+	.byte	'OSServiceId_GetSemaphore',0,177,1,7
+	.byte	'OSServiceId_ReleaseSemaphore',0,178,1,7
+	.byte	'OSServiceId_ScheduleTableActivateTask',0,179,1,7
+	.byte	'OSServiceId_ScheduleTableSetEvent',0,180,1,7
+	.byte	'OSServiceId_DisableInterruptSource',0,181,1,7
+	.byte	'OSServiceId_EnableInterruptSource',0,182,1,7
+	.byte	'OSServiceId_ClearPendingInterrupt',0,183,1,7
+	.byte	'OSServiceId_GetUnhandledIrq',0,184,1,7
+	.byte	'OSServiceId_GetUnhandledExc',0,185,1,7
+	.byte	'OSServiceId_HookCallCallback',0,186,1,7
+	.byte	'OSServiceId_IsInterruptSourceEnabled',0,187,1,7
+	.byte	'OSServiceId_IsInterruptPending',0,188,1,7
+	.byte	'OSServiceId_CallFastTrustedFunction',0,189,1,7
+	.byte	'OSServiceId_BarrierSynchronize',0,190,1,7
+	.byte	'OSServiceId_InitialEnableInterruptSources',0,191,1,7
+	.byte	'OSServiceId_GetCoreStartState',0,192,1,7
+	.byte	'OSServiceId_GetNonTrustedFunctionStackUsage',0,193,1,7
+	.byte	'OSServiceId_FrtSetFutureCompareValue',0,194,1,7
+	.byte	'OSServiceId_FrtSetCompareValue',0,195,1,7
+	.byte	'OSServiceId_GetInitHookStackUsage',0,196,1,7
+	.byte	'OSServiceId_StartOS',0,208,1,7
+	.byte	'OSServiceId_GetActiveApplicationMode',0,210,1,7
+	.byte	'OSServiceId_DisableAllInterrupts',0,211,1,7
+	.byte	'OSServiceId_EnableAllInterrupts',0,212,1,7
+	.byte	'OSServiceId_SuspendAllInterrupts',0,213,1,7
+	.byte	'OSServiceId_ResumeAllInterrupts',0,214,1,7
+	.byte	'OSServiceId_SuspendOSInterrupts',0,215,1,7
+	.byte	'OSServiceId_ResumeOSInterrupts',0,216,1,7
+	.byte	'OSServiceId_ActivateTask',0,217,1,7
+	.byte	'OSServiceId_TerminateTask',0,218,1,7
+	.byte	'OSServiceId_ChainTask',0,219,1,7
+	.byte	'OSServiceId_GetTaskID',0,220,1,7
+	.byte	'OSServiceId_GetTaskState',0,221,1,7
+	.byte	'OSServiceId_Schedule',0,222,1,7
+	.byte	'OSServiceId_SetEvent',0,223,1,7
+	.byte	'OSServiceId_ClearEvent',0,224,1,7
+	.byte	'OSServiceId_GetEvent',0,225,1,7
+	.byte	'OSServiceId_WaitEvent',0,226,1,7
+	.byte	'OSServiceId_GetAlarmBase',0,227,1,7
+	.byte	'OSServiceId_GetAlarm',0,228,1,7
+	.byte	'OSServiceId_SetRelAlarm',0,229,1,7
+	.byte	'OSServiceId_SetAbsAlarm',0,230,1,7
+	.byte	'OSServiceId_CancelAlarm',0,231,1,7
+	.byte	'OSServiceId_GetResource',0,232,1,7
+	.byte	'OSServiceId_ReleaseResource',0,233,1,7
+	.byte	'OSSERVICEID_COUNT',0,255,1,0,9
+	.byte	'OSServiceIdType',0,21,162,4,3
+	.word	19425
+	.byte	6,21,178,4,9,4,7
+	.byte	'OS_STATUS_OK',0,0,7
+	.byte	'OS_STATUS_CALLEVEL',0,2,7
+	.byte	'OS_STATUS_LIMIT',0,4,7
+	.byte	'OS_STATUS_RESOURCE',0,6,7
+	.byte	'OS_STATUS_SERVICEID',0,9,7
+	.byte	'OS_STATUS_ILLEGAL_ADDRESS',0,10,7
+	.byte	'OS_STATUS_MISSINGEND',0,11,7
+	.byte	'OS_STATUS_DISABLEDINT',0,12,7
+	.byte	'OS_STATUS_STACKFAULT',0,13,7
+	.byte	'OS_STATUS_PROTECTION_MEMORY',0,14,7
+	.byte	'OS_STATUS_PROTECTION_TIME',0,15,7
+	.byte	'OS_STATUS_PROTECTION_ARRIVAL',0,16,7
+	.byte	'OS_STATUS_PROTECTION_LOCKED',0,17,7
+	.byte	'OS_STATUS_PROTECTION_EXCEPTION',0,18,7
+	.byte	'OS_STATUS_INTERFERENCE_DEADLOCK',0,19,7
+	.byte	'OS_STATUS_NESTING_DEADLOCK',0,20,7
+	.byte	'OS_STATUS_SPINLOCK',0,21,7
+	.byte	'OS_STATUS_CORE',0,22,7
+	.byte	'OS_STATUS_OVERFLOW',0,245,1,7
+	.byte	'OS_STATUS_KILL_KERNEL_OBJ',0,246,1,7
+	.byte	'OS_STATUS_NO_RESTARTTASK',0,247,1,7
+	.byte	'OS_STATUS_CALL_NOT_ALLOWED',0,248,1,7
+	.byte	'OS_STATUS_FUNCTION_UNAVAILABLE',0,249,1,7
+	.byte	'OS_STATUS_PROTECTION_SYSCALL',0,250,1,7
+	.byte	'OS_STATUS_PROTECTION_IRQ',0,251,1,7
+	.byte	'OS_STATUS_API_ERROR',0,252,1,7
+	.byte	'OS_STATUS_ASSERTION',0,253,1,7
+	.byte	'OS_STATUS_OVERLOAD',0,254,1,7
+	.byte	'OS_STATUS_FRT_NO_FUTURE_VALUE',0,255,1,7
+	.byte	'OS_STATUS_ACCESSRIGHTS_1',0,129,2,7
+	.byte	'OS_STATUS_CALLEVEL_SHARED_STACK',0,130,2,7
+	.byte	'OS_STATUS_ID_1',0,131,2,7
+	.byte	'OS_STATUS_UNLOCKED',0,133,2,7
+	.byte	'OS_STATUS_STATE_1',0,135,2,7
+	.byte	'OS_STATUS_VALUE_IS_ZERO_1',0,136,2,7
+	.byte	'OS_STATUS_CORE_CROSS_DATA',0,150,2,7
+	.byte	'OS_STATUS_PARAM_POINTER_1',0,151,2,7
+	.byte	'OS_STATUS_STACKUSAGE_DISABLED_BY_CONFIG',0,241,3,7
+	.byte	'OS_STATUS_NO_BARRIER_PARTICIPANT',0,242,3,7
+	.byte	'OS_STATUS_UNIMPLEMENTED_CLEARPENDING',0,243,3,7
+	.byte	'OS_STATUS_NO_NTFSTACK_POOL_EMPTY',0,244,3,7
+	.byte	'OS_STATUS_FRT_SET_COMPARE_VALUE_FAILED',0,255,3,7
+	.byte	'OS_STATUS_ACCESSRIGHTS_2',0,129,4,7
+	.byte	'OS_STATUS_CALLEVEL_CROSS_CORE_SYNC',0,130,4,7
+	.byte	'OS_STATUS_ID_2',0,131,4,7
+	.byte	'OS_STATUS_NOFUNC_1',0,133,4,7
+	.byte	'OS_STATUS_STATE_2',0,135,4,7
+	.byte	'OS_STATUS_VALUE_IS_ZERO_2',0,136,4,7
+	.byte	'OS_STATUS_PARAM_POINTER_2',0,151,4,7
+	.byte	'OS_STATUS_EVENT_DISABLED_BY_CONFIG',0,241,5,7
+	.byte	'OS_STATUS_UNIMPLEMENTED_EXCEPTIONCONTEXT',0,243,5,7
+	.byte	'OS_STATUS_NO_NTFSTACK_APPLIMIT_EXCEEDED',0,244,5,7
+	.byte	'OS_STATUS_NOTACCESSIBLE_1',0,129,6,7
+	.byte	'OS_STATUS_ID_TYPE_1',0,131,6,7
+	.byte	'OS_STATUS_NOFUNC_2',0,133,6,7
+	.byte	'OS_STATUS_STATE_STOPPED',0,135,6,7
+	.byte	'OS_STATUS_VALUE_IS_TOO_HIGH_1',0,136,6,7
+	.byte	'OS_STATUS_PARAM_POINTER_3',0,151,6,7
+	.byte	'OS_STATUS_XSIGNAL_DISABLED_BY_CONFIG',0,241,7,7
+	.byte	'OS_STATUS_NOTACCESSIBLE_2',0,129,8,7
+	.byte	'OS_STATUS_ID_DIFFERENT_COUNTER',0,131,8,7
+	.byte	'OS_STATUS_SPINLOCK_ORDER',0,133,8,7
+	.byte	'OS_STATUS_STATE_RUNNING',0,135,8,7
+	.byte	'OS_STATUS_VALUE_IS_TOO_HIGH_2',0,136,8,7
+	.byte	'OS_STATUS_NOEXTENDEDTASK_1',0,129,10,7
+	.byte	'OS_STATUS_ID_DIFFERENT_SYNC',0,131,10,7
+	.byte	'OS_STATUS_STOPPED_1',0,133,10,7
+	.byte	'OS_STATUS_STATE_NEXTED',0,135,10,7
+	.byte	'OS_STATUS_VALUE_IS_TOO_HIGH_3',0,136,10,7
+	.byte	'OS_STATUS_NOEXTENDEDTASK_2',0,129,12,7
+	.byte	'OS_STATUS_HOOK_NOT_AVAILABLE',0,131,12,7
+	.byte	'OS_STATUS_NOT_STOPPED_2',0,133,12,7
+	.byte	'OS_STATUS_STATE_WAITING',0,135,12,7
+	.byte	'OS_STATUS_VALUE_IS_OUT_OF_BOUNDS_1',0,136,12,7
+	.byte	'OS_STATUS_NOEXTENDEDTASK_CALLER',0,129,14,7
+	.byte	'OS_STATUS_NEXTED_1',0,133,14,7
+	.byte	'OS_STATUS_STATE_NO_RESTART',0,135,14,7
+	.byte	'OS_STATUS_VALUE_IS_OUT_OF_BOUNDS_2',0,136,14,7
+	.byte	'OS_STATUS_LOCKED',0,129,16,7
+	.byte	'OS_STATUS_KILLING_IS_DISABLED',0,133,16,7
+	.byte	'OS_STATUS_STATE_ALREADY_TERMINATED',0,135,16,7
+	.byte	'OS_STATUS_VALUE_IS_TOO_LOW_1',0,136,16,7
+	.byte	'OS_STATUS_PRIORITY',0,129,18,7
+	.byte	'OS_STATUS_ORDER',0,133,18,7
+	.byte	'OS_STATUS_STATE_RESTARTING_NO_MEMBER',0,135,18,7
+	.byte	'OS_STATUS_VALUE_IS_TOO_LOW_2',0,136,18,7
+	.byte	'OS_STATUS_NOT_THE_OWNER_1',0,129,20,7
+	.byte	'OS_STATUS_STATE_ALREADY_RESTARTING',0,135,20,7
+	.byte	'OS_STATUS_VALUE_IS_TOO_LOW_3',0,136,20,7
+	.byte	'OS_STATUS_VALUE_IS_NOT_BOOLEAN',0,136,22,0,9
+	.byte	'Os_StatusType',0,21,246,5,3
+	.word	22811
+	.byte	16,21,219,6,9,12,11
+	.byte	'Service',0
+	.word	19425
+	.byte	4,2,35,0,11
+	.byte	'Error',0
+	.word	206
+	.byte	1,2,35,4,11
+	.byte	'DetailedError',0
+	.word	22811
+	.byte	4,2,35,6,0,9
+	.byte	'Os_ErrorInformationType',0,21,229,6,3
+	.word	25456
+	.byte	6,21,133,7,9,4,7
+	.byte	'SCHEDULETABLE_STOPPED',0,0,7
+	.byte	'SCHEDULETABLE_NEXT',0,1,7
+	.byte	'SCHEDULETABLE_WAITING',0,2,7
+	.byte	'SCHEDULETABLE_RUNNING',0,3,7
+	.byte	'SCHEDULETABLE_RUNNING_AND_SYNCHRONOUS',0,4,0,9
+	.byte	'ScheduleTableStatusType',0,21,150,7,3
+	.word	25551
+	.byte	6,21,162,7,9,4,7
+	.byte	'OS_MEM_ACCESS_TYPE_NON',0,0,7
+	.byte	'OS_MEM_ACCESS_TYPE_R',0,1,7
+	.byte	'OS_MEM_ACCESS_TYPE_READ',0,1,7
+	.byte	'OS_MEM_ACCESS_TYPE_W',0,2,7
+	.byte	'OS_MEM_ACCESS_TYPE_WRITE',0,2,7
+	.byte	'OS_MEM_ACCESS_TYPE_RW',0,3,7
+	.byte	'OS_MEM_ACCESS_TYPE_EXECUTE',0,4,7
+	.byte	'OS_MEM_ACCESS_TYPE_X',0,4,7
+	.byte	'OS_MEM_ACCESS_TYPE_RX',0,5,7
+	.byte	'OS_MEM_ACCESS_TYPE_WX',0,6,7
+	.byte	'OS_MEM_ACCESS_TYPE_RWX',0,7,7
+	.byte	'OS_MEM_ACCESS_TYPE_S',0,8,7
+	.byte	'OS_MEM_ACCESS_TYPE_STACK',0,8,7
+	.byte	'OS_MEM_ACCESS_TYPE_RS',0,9,7
+	.byte	'OS_MEM_ACCESS_TYPE_WS',0,10,7
+	.byte	'OS_MEM_ACCESS_TYPE_RWS',0,11,7
+	.byte	'OS_MEM_ACCESS_TYPE_XS',0,12,7
+	.byte	'OS_MEM_ACCESS_TYPE_RXS',0,13,7
+	.byte	'OS_MEM_ACCESS_TYPE_WXS',0,14,7
+	.byte	'OS_MEM_ACCESS_TYPE_RWXS',0,15,0,9
+	.byte	'Os_MemAccessType',0,21,184,7,3
+	.word	25724
+	.byte	9
+	.byte	'Os_Hal_AddressType',0,22,102,16
+	.word	2513
+	.byte	9
+	.byte	'Os_AccessCheckAddress',0,23,150,2,29
+	.word	2513
+	.byte	9
+	.byte	'CanIf_CanDrvReturnType',0,1,197,5,24
+	.word	1790
+	.byte	9
+	.byte	'CanIf_CanCtrlModeTransType',0,1,223,5,3
+	.word	1534
+	.byte	30,7
+	.word	206
+	.byte	31,6,0,30,42
+	.word	26379
+	.byte	31,5,0
+.L694:
+	.byte	12
+	.word	26388
+	.byte	30,128,1
+	.word	2513
+	.byte	31,31,0
+.L695:
+	.byte	12
+	.word	26402
+	.byte	30,2
+	.word	206
+	.byte	31,1,0
+.L696:
+	.byte	12
+	.word	26417
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L266:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,36,0,3,8,11,15,62,15,0,0,3,46,1,3,8,32,13,58,15,59,15
+	.byte	57,15,73,19,54,15,39,12,0,0,4,5,0,3,8,58,15,59,15,57,15,73,19,0,0,5,11,0,0,0,6,4,1,58,15,59,15,57,15,11
+	.byte	15,0,0,7,40,0,3,8,28,13,0,0,8,15,0,73,19,0,0,9,22,0,3,8,58,15,59,15,57,15,73,19,0,0,10,19,1,3,8,58,15
+	.byte	59,15,57,15,11,15,0,0,11,13,0,3,8,73,19,11,15,56,9,0,0,12,38,0,73,19,0,0,13,11,1,0,0,14,46,1,3,8,32,13
+	.byte	58,15,59,15,57,15,54,15,39,12,0,0,15,46,1,3,8,58,15,59,15,57,15,73,19,54,15,39,12,63,12,60,12,0,0,16,19
+	.byte	1,58,15,59,15,57,15,11,15,0,0,17,21,1,54,15,39,12,0,0,18,5,0,73,19,0,0,19,59,0,3,8,0,0,20,46,1,3,8,58
+	.byte	15,59,15,57,15,54,15,39,12,63,12,60,12,0,0,21,46,0,3,8,58,15,59,15,57,15,54,15,39,12,63,12,60,12,0,0,22
+	.byte	46,1,49,19,0,0,23,5,0,49,19,0,0,24,29,1,49,19,0,0,25,11,0,49,19,0,0,26,11,1,49,19,0,0,27,46,0,3,8,58,15
+	.byte	59,15,57,15,54,15,63,12,60,12,0,0,28,21,0,54,15,0,0,29,21,0,54,15,39,12,0,0,30,1,1,11,15,73,19,0,0,31
+	.byte	33,0,47,15,0,0,32,53,0,73,19,0,0,33,23,1,58,15,59,15,57,15,11,15,0,0,34,23,1,3,8,58,15,59,15,57,15,11
+	.byte	15,0,0,35,52,0,3,8,58,15,59,15,57,15,73,19,63,12,60,12,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L267:
+	.word	.L802-.L801
+.L801:
+	.half	3
+	.word	.L804-.L803
+.L803:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation',0
+	.byte	'GenData',0,0
+	.byte	'CanIf.c',0,1,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\CanIf\\Implementation\\CanIf_Types.h',0,0,0,0
+	.byte	'Can_DrvGeneralTypes.h',0,2,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Det\\Implementation\\Det.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Can_30_Core\\Implementation\\Can_30_Core.h',0,0,0,0
+	.byte	'CanIf_Cfg.h',0,2,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\ComStack_Types.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\Std_Types.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\VStdLib\\Implementation\\vstdlib.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Os\\Implementation\\Os.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\_Common\\Implementation\\Platform_Types.h',0,0,0,0
+	.byte	'ComStack_Cfg.h',0,2,0,0
+	.byte	'Det_Cfg.h',0,2,0,0
+	.byte	'Rte_Type.h',0,2,0,0
+	.byte	'EcuM_Generated_Types.h',0,2,0,0
+	.byte	'EcuM_Cfg.h',0,2,0,0
+	.byte	'Can_30_Core_Cfg.h',0,2,0,0
+	.byte	'Os_Types_Lcfg.h',0,2,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Os\\Implementation\\Os_Hal_OsInt.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Os\\Implementation\\Os_Hal_Os_Types.h',0,0,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Os\\Implementation\\Os_Types.h',0,0,0,0
+	.byte	'Os_Hal_Lcfg.h',0,2,0,0
+	.byte	'..\\..\\..\\..\\BSW\\Components\\Os\\Implementation\\OsInt.h',0,0,0,0,0
+.L804:
+.L802:
+	.sdecl	'.debug_info',debug,cluster('CanIf_InitMemory')
+	.sect	'.debug_info'
+.L268:
+	.word	259
+	.half	3
+	.word	.L269
+	.byte	4,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation/CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L271,.L270
+	.byte	2
+	.word	.L264
+	.byte	3
+	.byte	'CanIf_InitMemory',0,1,175,48,24,1,1,1
+	.word	.L255,.L400,.L254
+	.byte	4
+	.word	.L255,.L400
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('CanIf_InitMemory')
+	.sect	'.debug_abbrev'
+.L269:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('CanIf_InitMemory')
+	.sect	'.debug_line'
+.L270:
+	.word	.L806-.L805
+.L805:
+	.half	3
+	.word	.L808-.L807
+.L807:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation',0,0
+	.byte	'CanIf.c',0,1,0,0,0
+.L808:
+	.byte	5,5,7,0,5,2
+	.word	.L255
+	.byte	3,192,48,1,5,1,9
+	.half	.L809-.L255
+	.byte	3,2,1,9
+	.half	.L273-.L809
+	.byte	0,1,1
+.L806:
+	.sdecl	'.debug_ranges',debug,cluster('CanIf_InitMemory')
+	.sect	'.debug_ranges'
+.L271:
+	.word	-1,.L272,0,.L273-.L272,0,0
+	.sdecl	'.debug_info',debug,cluster('CanIf_Init')
+	.sect	'.debug_info'
+.L274:
+	.word	276
+	.half	3
+	.word	.L275
+	.byte	4,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation/CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L277,.L276
+	.byte	2
+	.word	.L264
+	.byte	3
+	.byte	'CanIf_Init',0,1,248,16,24,1,1,1
+	.word	.L227,.L401,.L226
+	.byte	4
+	.byte	'ConfigPtr',0,1,248,16,84
+	.word	.L402,.L403
+	.byte	5
+	.word	.L227,.L401
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('CanIf_Init')
+	.sect	'.debug_abbrev'
+.L275:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('CanIf_Init')
+	.sect	'.debug_line'
+.L276:
+	.word	.L811-.L810
+.L810:
+	.half	3
+	.word	.L813-.L812
+.L812:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation',0,0
+	.byte	'CanIf.c',0,1,0,0,0
+.L813:
+	.byte	5,24,7,0,5,2
+	.word	.L227
+	.byte	3,221,17,1,5,7,9
+	.half	.L704-.L227
+	.byte	3,4,1,9
+	.half	.L814-.L704
+	.byte	3,2,1,9
+	.half	.L815-.L814
+	.byte	3,4,1,5,1,9
+	.half	.L816-.L815
+	.byte	3,192,0,1,7,9
+	.half	.L279-.L816
+	.byte	0,1,1
+.L811:
+	.sdecl	'.debug_ranges',debug,cluster('CanIf_Init')
+	.sect	'.debug_ranges'
+.L277:
+	.word	-1,.L278,0,.L279-.L278,0,0
+	.sdecl	'.debug_info',debug,cluster('CanIf_SetControllerMode')
+	.sect	'.debug_info'
+.L280:
+	.word	822
+	.half	3
+	.word	.L281
+	.byte	4,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation/CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L283,.L282
+	.byte	2
+	.word	.L264
+	.byte	3
+	.byte	'CanIf_SetControllerMode',0,1,181,20,34
+	.word	.L404
+	.byte	1,1,1
+	.word	.L229,.L405,.L228
+	.byte	4
+	.byte	'ControllerId',0,1,181,20,64
+	.word	.L404,.L406
+	.byte	4
+	.byte	'ControllerMode',0,1,181,20,103
+	.word	.L407,.L408
+	.byte	5
+	.word	.L229,.L405
+	.byte	6
+	.byte	'retval',0,1,185,20,18
+	.word	.L404,.L409
+	.byte	6
+	.byte	'errorId',0,1,186,20,9
+	.word	.L404,.L410
+	.byte	7
+	.word	.L411,.L412,.L413
+	.byte	8
+	.word	.L414,.L415
+	.byte	8
+	.word	.L416,.L417
+	.byte	9
+	.word	.L418,.L419
+	.byte	6
+	.byte	'retval',0,1,176,19,18
+	.word	.L404,.L421
+	.byte	7
+	.word	.L422,.L412,.L413
+	.byte	8
+	.word	.L423,.L424
+	.byte	8
+	.word	.L425,.L426
+	.byte	10
+	.word	.L427,.L428
+	.byte	0,7
+	.word	.L422,.L429,.L16
+	.byte	8
+	.word	.L423,.L424
+	.byte	8
+	.word	.L425,.L426
+	.byte	11
+	.word	.L427,.L429,.L16
+	.byte	0,7
+	.word	.L422,.L16,.L430
+	.byte	8
+	.word	.L423,.L424
+	.byte	8
+	.word	.L425,.L426
+	.byte	11
+	.word	.L427,.L16,.L430
+	.byte	0,7
+	.word	.L422,.L15,.L12
+	.byte	8
+	.word	.L423,.L424
+	.byte	8
+	.word	.L425,.L426
+	.byte	11
+	.word	.L427,.L15,.L12
+	.byte	0,7
+	.word	.L422,.L23,.L13
+	.byte	8
+	.word	.L423,.L424
+	.byte	8
+	.word	.L425,.L426
+	.byte	11
+	.word	.L427,.L23,.L13
+	.byte	0,7
+	.word	.L422,.L26,.L431
+	.byte	8
+	.word	.L423,.L424
+	.byte	8
+	.word	.L425,.L426
+	.byte	11
+	.word	.L427,.L26,.L431
+	.byte	0,7
+	.word	.L422,.L21,.L14
+	.byte	8
+	.word	.L423,.L424
+	.byte	8
+	.word	.L425,.L426
+	.byte	0,7
+	.word	.L422,.L32,.L405
+	.byte	8
+	.word	.L423,.L424
+	.byte	8
+	.word	.L425,.L426
+	.byte	0,0,0,7
+	.word	.L411,.L420,.L18
+	.byte	8
+	.word	.L414,.L415
+	.byte	8
+	.word	.L416,.L417
+	.byte	0,7
+	.word	.L411,.L32,.L405
+	.byte	8
+	.word	.L414,.L415
+	.byte	8
+	.word	.L416,.L417
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('CanIf_SetControllerMode')
+	.sect	'.debug_abbrev'
+.L281:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,1,49,16,85
+	.byte	6,0,0,10,11,0,49,16,85,6,0,0,11,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('CanIf_SetControllerMode')
+	.sect	'.debug_line'
+.L282:
+	.word	.L818-.L817
+.L817:
+	.half	3
+	.word	.L820-.L819
+.L819:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation',0,0
+	.byte	'CanIf.c',0,1,0,0,0
+.L820:
+	.byte	5,34,7,0,5,2
+	.word	.L229
+	.byte	3,180,20,1,5,25,9
+	.half	.L412-.L229
+	.byte	3,4,1,5,17,9
+	.half	.L413-.L412
+	.byte	3,1,1,5,3,9
+	.half	.L705-.L413
+	.byte	3,14,1,5,13,7,9
+	.half	.L821-.L705
+	.byte	3,3,1,5,41,1,5,12,9
+	.half	.L7-.L821
+	.byte	3,3,1,5,8,9
+	.half	.L822-.L7
+	.byte	1,5,13,7,9
+	.half	.L823-.L822
+	.byte	3,3,1,5,29,1,5,7,9
+	.half	.L9-.L823
+	.byte	3,22,1,5,10,9
+	.half	.L420-.L9
+	.byte	3,207,126,1,7,9
+	.half	.L824-.L420
+	.byte	3,46,1,7,9
+	.half	.L825-.L824
+	.byte	3,10,1,7,9
+	.half	.L826-.L825
+	.byte	1,5,14,9
+	.half	.L11-.L826
+	.byte	3,75,1,9
+	.half	.L827-.L11
+	.byte	3,31,1,7,9
+	.half	.L828-.L827
+	.byte	3,106,1,7,9
+	.half	.L829-.L828
+	.byte	3,121,1,5,33,9
+	.half	.L429-.L829
+	.byte	3,72,1,5,5,3,177,121,1,5,25,9
+	.half	.L830-.L429
+	.byte	3,207,6,1,5,11,3,61,1,5,33,9
+	.half	.L16-.L830
+	.byte	3,67,1,5,5,9
+	.half	.L831-.L16
+	.byte	3,153,121,1,5,11,9
+	.half	.L430-.L831
+	.byte	3,170,7,1,5,13,7,9
+	.half	.L832-.L430
+	.byte	3,6,1,5,30,9
+	.half	.L833-.L832
+	.byte	3,5,1,5,11,9
+	.half	.L834-.L833
+	.byte	3,4,1,5,33,9
+	.half	.L15-.L834
+	.byte	3,174,127,1,5,5,9
+	.half	.L835-.L15
+	.byte	3,153,121,1,5,25,9
+	.half	.L836-.L835
+	.byte	3,231,6,1,5,7,3,224,0,1,5,11,9
+	.half	.L12-.L836
+	.byte	3,4,1,5,10,9
+	.half	.L837-.L12
+	.byte	1,5,100,7,9
+	.half	.L838-.L837
+	.byte	1,5,33,7,9
+	.half	.L23-.L838
+	.byte	3,156,127,1,5,5,9
+	.half	.L839-.L23
+	.byte	3,153,121,1,5,25,9
+	.half	.L840-.L839
+	.byte	3,231,6,1,5,7,3,233,0,1,5,14,9
+	.half	.L13-.L840
+	.byte	3,7,1,9
+	.half	.L841-.L13
+	.byte	3,2,1,7,9
+	.half	.L842-.L841
+	.byte	3,15,1,7,9
+	.half	.L843-.L842
+	.byte	1,5,33,9
+	.half	.L26-.L843
+	.byte	3,255,126,1,5,5,9
+	.half	.L844-.L26
+	.byte	3,165,121,1,5,11,9
+	.half	.L431-.L844
+	.byte	3,208,7,1,5,13,7,9
+	.half	.L845-.L431
+	.byte	3,6,1,5,20,9
+	.half	.L21-.L845
+	.byte	3,2,1,5,11,3,2,1,5,33,9
+	.half	.L27-.L21
+	.byte	3,129,127,1,5,5,9
+	.half	.L846-.L27
+	.byte	3,165,121,1,5,25,9
+	.half	.L847-.L846
+	.byte	3,219,6,1,5,7,3,139,1,1,9
+	.half	.L14-.L847
+	.byte	3,4,1,9
+	.half	.L18-.L14
+	.byte	3,215,0,1,5,3,9
+	.half	.L8-.L18
+	.byte	3,6,1,5,5,7,9
+	.half	.L848-.L8
+	.byte	3,2,1,5,3,9
+	.half	.L32-.L848
+	.byte	3,6,1,5,1,3,1,1,7,9
+	.half	.L285-.L32
+	.byte	0,1,1
+.L818:
+	.sdecl	'.debug_ranges',debug,cluster('CanIf_SetControllerMode')
+	.sect	'.debug_ranges'
+.L283:
+	.word	-1,.L284,0,.L285-.L284,0,0
+.L419:
+	.word	-1,.L229,.L412-.L229,.L413-.L229,.L420-.L229,.L18-.L229,.L32-.L229,.L405-.L229,0,0
+.L428:
+	.word	-1,.L229,.L412-.L229,.L413-.L229,.L21-.L229,.L14-.L229,.L32-.L229,.L405-.L229,0,0
+	.sdecl	'.debug_info',debug,cluster('CanIf_GetControllerMode')
+	.sect	'.debug_info'
+.L286:
+	.word	370
+	.half	3
+	.word	.L287
+	.byte	4,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation/CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L289,.L288
+	.byte	2
+	.word	.L264
+	.byte	3
+	.byte	'CanIf_GetControllerMode',0,1,147,21,34
+	.word	.L404
+	.byte	1,1,1
+	.word	.L231,.L432,.L230
+	.byte	4
+	.byte	'ControllerId',0,1,147,21,64
+	.word	.L404,.L433
+	.byte	4
+	.byte	'ControllerModePtr',0,1,147,21,143,1
+	.word	.L434,.L435
+	.byte	5
+	.word	.L231,.L432
+	.byte	6
+	.byte	'retval',0,1,150,21,18
+	.word	.L404,.L436
+	.byte	6
+	.byte	'errorId',0,1,151,21,9
+	.word	.L404,.L437
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('CanIf_GetControllerMode')
+	.sect	'.debug_abbrev'
+.L287:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('CanIf_GetControllerMode')
+	.sect	'.debug_line'
+.L288:
+	.word	.L850-.L849
+.L849:
+	.half	3
+	.word	.L852-.L851
+.L851:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation',0,0
+	.byte	'CanIf.c',0,1,0,0,0
+.L852:
+	.byte	5,25,7,0,5,2
+	.word	.L231
+	.byte	3,149,21,1,5,17,9
+	.half	.L707-.L231
+	.byte	3,1,1,5,3,9
+	.half	.L708-.L707
+	.byte	3,14,1,5,13,7,9
+	.half	.L853-.L708
+	.byte	3,3,1,5,41,1,5,12,9
+	.half	.L34-.L853
+	.byte	3,3,1,5,8,9
+	.half	.L854-.L34
+	.byte	1,5,13,7,9
+	.half	.L855-.L854
+	.byte	3,3,1,5,29,1,5,8,9
+	.half	.L36-.L855
+	.byte	3,3,1,5,13,7,9
+	.half	.L856-.L36
+	.byte	3,3,1,5,36,1,5,12,9
+	.half	.L38-.L856
+	.byte	3,10,1,5,24,3,127,1,5,3,9
+	.half	.L35-.L38
+	.byte	3,6,1,5,5,7,9
+	.half	.L857-.L35
+	.byte	3,2,1,5,3,9
+	.half	.L40-.L857
+	.byte	3,6,1,5,1,3,1,1,7,9
+	.half	.L291-.L40
+	.byte	0,1,1
+.L850:
+	.sdecl	'.debug_ranges',debug,cluster('CanIf_GetControllerMode')
+	.sect	'.debug_ranges'
+.L289:
+	.word	-1,.L290,0,.L291-.L290,0,0
+	.sdecl	'.debug_info',debug,cluster('CanIf_Transmit')
+	.sect	'.debug_info'
+.L292:
+	.word	1287
+	.half	3
+	.word	.L293
+	.byte	4,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation/CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L295,.L294
+	.byte	2
+	.word	.L264
+	.byte	3
+	.byte	'CanIf_Transmit',0,1,167,28,34
+	.word	.L404
+	.byte	1,1,1
+	.word	.L233,.L438,.L232
+	.byte	4
+	.byte	'CanTxPduId',0,1,167,28,59
+	.word	.L404,.L439
+	.byte	4
+	.byte	'PduInfoPtr',0,1,167,28,122
+	.word	.L440,.L441
+	.byte	5
+	.word	.L233,.L438
+	.byte	6
+	.byte	'retval',0,1,170,28,18
+	.word	.L404,.L442
+	.byte	6
+	.byte	'errorId',0,1,171,28,9
+	.word	.L404,.L443
+	.byte	7
+	.word	.L444
+	.byte	6
+	.byte	'controllerId',0,1,210,28,13
+	.word	.L404,.L447
+	.byte	7
+	.word	.L448
+	.byte	6
+	.byte	'sduLength',0,1,130,29,29
+	.word	.L450,.L451
+	.byte	7
+	.word	.L452
+	.byte	6
+	.byte	'localPdu',0,1,147,29,31
+	.word	.L455,.L456
+	.byte	8
+	.word	.L457,.L445,.L446
+	.byte	9
+	.word	.L458,.L459
+	.byte	10
+	.word	.L460,.L461
+	.byte	6
+	.byte	'retval',0,1,246,25,18
+	.word	.L404,.L467
+	.byte	8
+	.word	.L477,.L462,.L463
+	.byte	9
+	.word	.L478,.L479
+	.byte	10
+	.word	.L480,.L481
+	.byte	6
+	.byte	'retval',0,1,172,27,26
+	.word	.L483,.L484
+	.byte	6
+	.byte	'canDrvHth',0,1,181,27,26
+	.word	.L485,.L486
+	.byte	0,0,8
+	.word	.L477,.L464,.L465
+	.byte	9
+	.word	.L478,.L479
+	.byte	0,8
+	.word	.L477,.L466,.L482
+	.byte	9
+	.word	.L478,.L479
+	.byte	0,8
+	.word	.L487,.L488,.L489
+	.byte	9
+	.word	.L490,.L491
+	.byte	11
+	.word	.L492,.L488,.L489
+	.byte	6
+	.byte	'retval',0,1,195,24,18
+	.word	.L404,.L493
+	.byte	6
+	.byte	'errorId',0,1,196,24,9
+	.word	.L404,.L494
+	.byte	6
+	.byte	'hth',0,1,197,24,20
+	.word	.L495,.L496
+	.byte	8
+	.word	.L497,.L498,.L499
+	.byte	9
+	.word	.L500,.L501
+	.byte	11
+	.word	.L502,.L498,.L499
+	.byte	6
+	.byte	'queueindex',0,1,246,23,20
+	.word	.L495,.L503
+	.byte	0,0,8
+	.word	.L504,.L505,.L65
+	.byte	9
+	.word	.L506,.L507
+	.byte	11
+	.word	.L508,.L505,.L65
+	.byte	6
+	.byte	'errorId',0,1,203,13,9
+	.word	.L404,.L509
+	.byte	6
+	.byte	'txBufferCfgIdx',0,1,205,13,26
+	.word	.L510,.L511
+	.byte	6
+	.byte	'queueBitPos',0,1,210,13,19
+	.word	.L512,.L513
+	.byte	6
+	.byte	'queueElementIdx',0,1,211,13,26
+	.word	.L514,.L515
+	.byte	6
+	.byte	'elementBitIdx',0,1,212,13,15
+	.word	.L516,.L517
+	.byte	0,0,0,0,8
+	.word	.L518,.L519,.L71
+	.byte	9
+	.word	.L520,.L521
+	.byte	11
+	.word	.L522,.L519,.L71
+	.byte	6
+	.byte	'errorId',0,1,144,14,9
+	.word	.L404,.L523
+	.byte	6
+	.byte	'txBufferCfgIdx',0,1,146,14,26
+	.word	.L524,.L525
+	.byte	6
+	.byte	'queueBitPos',0,1,151,14,19
+	.word	.L526,.L527
+	.byte	6
+	.byte	'queueElementIdx',0,1,152,14,26
+	.word	.L528,.L529
+	.byte	6
+	.byte	'elementBitIdx',0,1,153,14,15
+	.word	.L530,.L531
+	.byte	0,0,0,0,8
+	.word	.L457,.L462,.L463
+	.byte	9
+	.word	.L458,.L459
+	.byte	0,8
+	.word	.L457,.L464,.L465
+	.byte	9
+	.word	.L458,.L459
+	.byte	0,8
+	.word	.L457,.L466,.L68
+	.byte	9
+	.word	.L458,.L459
+	.byte	0,8
+	.word	.L457,.L78,.L449
+	.byte	9
+	.word	.L458,.L459
+	.byte	0,8
+	.word	.L457,.L82,.L438
+	.byte	9
+	.word	.L458,.L459
+	.byte	0,0,8
+	.word	.L468,.L469,.L453
+	.byte	9
+	.word	.L470,.L471
+	.byte	9
+	.word	.L472,.L473
+	.byte	11
+	.word	.L474,.L469,.L453
+	.byte	6
+	.byte	'txState',0,1,231,21,27
+	.word	.L475,.L476
+	.byte	0,0,0,0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('CanIf_Transmit')
+	.sect	'.debug_abbrev'
+.L293:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,7,11,1,85,6,0,0,8,29,1,49,16,17,1,18,1,0,0,9,5,0,49,16,2,6,0
+	.byte	0,10,11,1,49,16,85,6,0,0,11,11,1,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('CanIf_Transmit')
+	.sect	'.debug_line'
+.L294:
+	.word	.L859-.L858
+.L858:
+	.half	3
+	.word	.L861-.L860
+.L860:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation',0,0
+	.byte	'CanIf.c',0,1,0,0,0
+.L861:
+	.byte	5,34,7,0,5,2
+	.word	.L233
+	.byte	3,166,28,1,5,25,9
+	.half	.L445-.L233
+	.byte	3,3,1,5,34,3,125,1,5,17,9
+	.half	.L446-.L445
+	.byte	3,4,1,5,5,9
+	.half	.L711-.L446
+	.byte	3,30,1,5,15,7,9
+	.half	.L862-.L711
+	.byte	3,3,1,5,40,1,5,28,9
+	.half	.L42-.L862
+	.byte	3,6,1,5,7,9
+	.half	.L712-.L42
+	.byte	3,4,1,5,17,7,9
+	.half	.L863-.L712
+	.byte	3,3,1,5,40,1,5,16,9
+	.half	.L44-.L863
+	.byte	3,3,1,5,12,9
+	.half	.L864-.L44
+	.byte	1,5,17,7,9
+	.half	.L865-.L864
+	.byte	3,3,1,5,33,1,5,11,9
+	.half	.L46-.L865
+	.byte	3,23,1,5,18,7,9
+	.half	.L866-.L46
+	.byte	3,4,1,5,17,9
+	.half	.L867-.L866
+	.byte	1,5,51,7,9
+	.half	.L868-.L867
+	.byte	3,1,1,7,9
+	.half	.L49-.L868
+	.byte	3,7,1,5,22,9
+	.half	.L469-.L49
+	.byte	3,241,120,1,5,35,9
+	.half	.L869-.L469
+	.byte	3,116,1,5,3,9
+	.half	.L715-.L869
+	.byte	3,12,1,5,8,7,9
+	.half	.L870-.L715
+	.byte	3,3,1,5,5,9
+	.half	.L871-.L870
+	.byte	1,5,21,7,9
+	.half	.L872-.L871
+	.byte	3,3,1,5,54,1,5,15,9
+	.half	.L52-.L872
+	.byte	3,6,1,9
+	.half	.L51-.L52
+	.byte	3,134,7,1,5,19,7,9
+	.half	.L453-.L51
+	.byte	3,20,1,5,35,9
+	.half	.L709-.L453
+	.byte	3,16,1,5,33,9
+	.half	.L873-.L709
+	.byte	1,5,56,9
+	.half	.L462-.L873
+	.byte	3,140,126,1,5,35,3,246,1,1,5,45,9
+	.half	.L463-.L462
+	.byte	3,1,1,5,32,9
+	.half	.L874-.L463
+	.byte	1,5,56,9
+	.half	.L464-.L874
+	.byte	3,137,126,1,5,40,9
+	.half	.L465-.L464
+	.byte	3,248,1,1,5,54,9
+	.half	.L466-.L465
+	.byte	3,26,1,5,56,9
+	.half	.L875-.L466
+	.byte	3,238,125,1,5,54,9
+	.half	.L717-.L875
+	.byte	3,146,2,1,5,3,9
+	.half	.L482-.L717
+	.byte	3,197,124,1,5,26,7,9
+	.half	.L488-.L482
+	.byte	3,185,126,1,5,7,9
+	.half	.L876-.L488
+	.byte	3,12,1,5,26,9
+	.half	.L710-.L876
+	.byte	3,116,1,5,7,9
+	.half	.L877-.L710
+	.byte	3,12,1,5,26,9
+	.half	.L878-.L877
+	.byte	3,116,1,5,17,9
+	.half	.L716-.L878
+	.byte	3,127,1,5,7,9
+	.half	.L714-.L716
+	.byte	3,13,1,5,3,9
+	.half	.L879-.L714
+	.byte	1,5,21,7,9
+	.half	.L880-.L879
+	.byte	3,5,1,5,9,9
+	.half	.L881-.L880
+	.byte	1,5,55,7,9
+	.half	.L882-.L881
+	.byte	1,5,64,9
+	.half	.L883-.L882
+	.byte	1,5,15,7,9
+	.half	.L884-.L883
+	.byte	3,2,1,5,38,1,5,15,9
+	.half	.L57-.L884
+	.byte	3,5,1,5,7,9
+	.half	.L885-.L57
+	.byte	1,5,25,7,9
+	.half	.L886-.L885
+	.byte	3,9,1,5,11,9
+	.half	.L887-.L886
+	.byte	1,5,33,7,9
+	.half	.L498-.L887
+	.byte	3,144,127,1,5,3,9
+	.half	.L719-.L498
+	.byte	3,8,1,5,75,9
+	.half	.L888-.L719
+	.byte	1,5,100,9
+	.half	.L889-.L888
+	.byte	3,6,1,5,64,9
+	.half	.L499-.L889
+	.byte	3,233,0,1,5,68,9
+	.half	.L505-.L499
+	.byte	3,234,116,1,5,43,9
+	.half	.L890-.L505
+	.byte	3,118,1,5,68,9
+	.half	.L891-.L890
+	.byte	3,10,1,5,43,9
+	.half	.L892-.L891
+	.byte	3,118,1,5,17,9
+	.half	.L893-.L892
+	.byte	3,126,1,5,43,9
+	.half	.L721-.L893
+	.byte	3,2,1,5,55,9
+	.half	.L722-.L721
+	.byte	3,5,1,5,53,9
+	.half	.L723-.L722
+	.byte	1,5,105,3,1,1,5,35,9
+	.half	.L894-.L723
+	.byte	3,127,1,5,77,9
+	.half	.L724-.L894
+	.byte	3,1,1,5,103,9
+	.half	.L726-.L724
+	.byte	1,5,52,9
+	.half	.L895-.L726
+	.byte	3,1,1,5,95,9
+	.half	.L728-.L895
+	.byte	3,3,1,5,8,9
+	.half	.L729-.L728
+	.byte	1,5,66,9
+	.half	.L725-.L729
+	.byte	1,5,3,9
+	.half	.L896-.L725
+	.byte	1,5,5,7,9
+	.half	.L897-.L896
+	.byte	3,3,1,5,15,7,9
+	.half	.L898-.L897
+	.byte	3,2,1,5,30,1,5,7,9
+	.half	.L63-.L898
+	.byte	3,6,1,9
+	.half	.L899-.L63
+	.byte	3,1,1,5,3,9
+	.half	.L62-.L899
+	.byte	3,7,1,5,5,7,9
+	.half	.L900-.L62
+	.byte	3,2,1,5,20,9
+	.half	.L65-.L900
+	.byte	3,130,11,1,5,59,3,124,1,5,21,9
+	.half	.L61-.L65
+	.byte	3,10,1,5,3,9
+	.half	.L59-.L61
+	.byte	3,220,0,1,5,5,7,9
+	.half	.L901-.L59
+	.byte	3,2,1,5,59,9
+	.half	.L489-.L901
+	.byte	3,63,1,5,8,9
+	.half	.L55-.L489
+	.byte	3,5,1,7,9
+	.half	.L902-.L55
+	.byte	3,12,1,5,5,9
+	.half	.L903-.L902
+	.byte	1,5,43,7,9
+	.half	.L519-.L903
+	.byte	3,240,115,1,5,55,9
+	.half	.L731-.L519
+	.byte	3,5,1,5,68,9
+	.half	.L904-.L731
+	.byte	3,5,1,5,55,9
+	.half	.L905-.L904
+	.byte	3,123,1,5,68,9
+	.half	.L732-.L905
+	.byte	3,5,1,5,53,9
+	.half	.L906-.L732
+	.byte	3,123,1,5,105,3,1,1,5,35,9
+	.half	.L907-.L906
+	.byte	3,127,1,5,17,9
+	.half	.L733-.L907
+	.byte	3,121,1,5,77,9
+	.half	.L735-.L733
+	.byte	3,8,1,5,103,9
+	.half	.L736-.L735
+	.byte	1,5,52,9
+	.half	.L908-.L736
+	.byte	3,1,1,5,95,9
+	.half	.L738-.L908
+	.byte	3,3,1,5,8,9
+	.half	.L739-.L738
+	.byte	1,5,66,9
+	.half	.L734-.L739
+	.byte	1,5,3,9
+	.half	.L909-.L734
+	.byte	1,5,5,7,9
+	.half	.L910-.L909
+	.byte	3,3,1,5,15,7,9
+	.half	.L911-.L910
+	.byte	3,2,1,5,30,1,5,7,9
+	.half	.L73-.L911
+	.byte	3,6,1,9
+	.half	.L912-.L73
+	.byte	3,1,1,5,3,9
+	.half	.L72-.L912
+	.byte	3,7,1,5,5,7,9
+	.half	.L913-.L72
+	.byte	3,2,1,5,12,9
+	.half	.L71-.L913
+	.byte	3,247,11,1,5,19,9
+	.half	.L68-.L71
+	.byte	3,163,3,1,5,62,9
+	.half	.L454-.L68
+	.byte	3,78,1,5,25,9
+	.half	.L54-.L454
+	.byte	3,58,1,5,15,3,123,1,5,22,9
+	.half	.L50-.L54
+	.byte	3,9,1,5,57,7,9
+	.half	.L914-.L50
+	.byte	3,1,1,5,22,7,9
+	.half	.L78-.L914
+	.byte	3,2,1,5,38,3,3,1,5,28,9
+	.half	.L449-.L78
+	.byte	3,125,1,5,16,9
+	.half	.L48-.L449
+	.byte	3,13,1,5,21,7,9
+	.half	.L79-.L48
+	.byte	3,3,1,5,3,9
+	.half	.L43-.L79
+	.byte	3,16,1,5,5,7,9
+	.half	.L915-.L43
+	.byte	3,2,1,5,3,9
+	.half	.L82-.L915
+	.byte	3,7,1,5,1,3,1,1,7,9
+	.half	.L297-.L82
+	.byte	0,1,1
+.L859:
+	.sdecl	'.debug_ranges',debug,cluster('CanIf_Transmit')
+	.sect	'.debug_ranges'
+.L295:
+	.word	-1,.L296,0,.L297-.L296,0,0
+.L444:
+	.word	-1,.L233,.L445-.L233,.L446-.L233,.L42-.L233,.L43-.L233,.L82-.L233,.L438-.L233,0,0
+.L448:
+	.word	-1,.L233,.L445-.L233,.L446-.L233,.L49-.L233,.L50-.L233,.L78-.L233,.L449-.L233,.L82-.L233,.L438-.L233,0
+	.word	0
+.L452:
+	.word	-1,.L233,.L445-.L233,.L446-.L233,.L453-.L233,.L454-.L233,.L78-.L233,.L449-.L233,.L82-.L233,.L438-.L233
+	.word	0,0
+.L461:
+	.word	-1,.L233,.L445-.L233,.L446-.L233,.L462-.L233,.L463-.L233,.L464-.L233,.L465-.L233,.L466-.L233,.L68-.L233
+	.word	.L78-.L233,.L449-.L233,.L82-.L233,.L438-.L233,0,0
+.L481:
+	.word	-1,.L233,.L462-.L233,.L463-.L233,.L464-.L233,.L465-.L233,.L466-.L233,.L482-.L233,0,0
+	.sdecl	'.debug_info',debug,cluster('CanIf_SetPduMode')
+	.sect	'.debug_info'
+.L298:
+	.word	359
+	.half	3
+	.word	.L299
+	.byte	4,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation/CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L301,.L300
+	.byte	2
+	.word	.L264
+	.byte	3
+	.byte	'CanIf_SetPduMode',0,1,220,43,34
+	.word	.L404
+	.byte	1,1,1
+	.word	.L245,.L532,.L244
+	.byte	4
+	.byte	'ControllerId',0,1,220,43,57
+	.word	.L404,.L533
+	.byte	4
+	.byte	'PduModeRequest',0,1,220,43,92
+	.word	.L534,.L535
+	.byte	5
+	.word	.L245,.L532
+	.byte	6
+	.byte	'retval',0,1,223,43,18
+	.word	.L404,.L536
+	.byte	6
+	.byte	'errorId',0,1,224,43,9
+	.word	.L404,.L537
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('CanIf_SetPduMode')
+	.sect	'.debug_abbrev'
+.L299:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('CanIf_SetPduMode')
+	.sect	'.debug_line'
+.L300:
+	.word	.L917-.L916
+.L916:
+	.half	3
+	.word	.L919-.L918
+.L918:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation',0,0
+	.byte	'CanIf.c',0,1,0,0,0
+.L919:
+	.byte	5,34,7,0,5,2
+	.word	.L245
+	.byte	3,219,43,1,5,25,9
+	.half	.L762-.L245
+	.byte	3,3,1,5,17,9
+	.half	.L763-.L762
+	.byte	3,1,1,5,3,9
+	.half	.L764-.L763
+	.byte	3,14,1,5,13,7,9
+	.half	.L920-.L764
+	.byte	3,3,1,5,41,1,5,12,9
+	.half	.L150-.L920
+	.byte	3,3,1,5,8,9
+	.half	.L921-.L150
+	.byte	1,5,13,7,9
+	.half	.L922-.L921
+	.byte	3,3,1,5,29,1,5,8,9
+	.half	.L152-.L922
+	.byte	3,3,1,5,13,7,9
+	.half	.L923-.L152
+	.byte	3,2,1,5,37,1,5,5,9
+	.half	.L154-.L923
+	.byte	3,7,1,5,14,7,9
+	.half	.L924-.L154
+	.byte	3,3,1,5,7,3,1,1,5,21,9
+	.half	.L761-.L924
+	.byte	3,3,1,5,10,9
+	.half	.L925-.L761
+	.byte	1,5,20,9
+	.half	.L926-.L925
+	.byte	1,5,10,1,5,20,9
+	.half	.L927-.L926
+	.byte	1,5,76,9
+	.half	.L928-.L927
+	.byte	1,5,56,9
+	.half	.L929-.L928
+	.byte	1,5,7,9
+	.half	.L930-.L929
+	.byte	1,5,16,7,9
+	.half	.L931-.L930
+	.byte	3,4,1,7,9
+	.half	.L932-.L931
+	.byte	3,1,1,7,9
+	.half	.L933-.L932
+	.byte	3,1,1,5,20,7,9
+	.half	.L158-.L933
+	.byte	3,1,1,5,13,9
+	.half	.L934-.L158
+	.byte	1,5,34,7,9
+	.half	.L935-.L934
+	.byte	3,11,1,5,9,9
+	.half	.L161-.L935
+	.byte	3,34,1,5,7,9
+	.half	.L157-.L161
+	.byte	3,2,1,5,3,9
+	.half	.L151-.L157
+	.byte	3,6,1,5,5,7,9
+	.half	.L936-.L151
+	.byte	3,2,1,5,3,9
+	.half	.L163-.L936
+	.byte	3,6,1,5,1,3,1,1,7,9
+	.half	.L303-.L163
+	.byte	0,1,1
+.L917:
+	.sdecl	'.debug_ranges',debug,cluster('CanIf_SetPduMode')
+	.sect	'.debug_ranges'
+.L301:
+	.word	-1,.L302,0,.L303-.L302,0,0
+	.sdecl	'.debug_info',debug,cluster('CanIf_GetPduMode')
+	.sect	'.debug_info'
+.L304:
+	.word	356
+	.half	3
+	.word	.L305
+	.byte	4,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation/CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L307,.L306
+	.byte	2
+	.word	.L264
+	.byte	3
+	.byte	'CanIf_GetPduMode',0,1,236,44,34
+	.word	.L404
+	.byte	1,1,1
+	.word	.L247,.L538,.L246
+	.byte	4
+	.byte	'ControllerId',0,1,236,44,57
+	.word	.L404,.L539
+	.byte	4
+	.byte	'PduModePtr',0,1,236,44,132,1
+	.word	.L540,.L541
+	.byte	5
+	.word	.L247,.L538
+	.byte	6
+	.byte	'retval',0,1,239,44,18
+	.word	.L404,.L542
+	.byte	6
+	.byte	'errorId',0,1,240,44,9
+	.word	.L404,.L543
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('CanIf_GetPduMode')
+	.sect	'.debug_abbrev'
+.L305:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('CanIf_GetPduMode')
+	.sect	'.debug_line'
+.L306:
+	.word	.L938-.L937
+.L937:
+	.half	3
+	.word	.L940-.L939
+.L939:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation',0,0
+	.byte	'CanIf.c',0,1,0,0,0
+.L940:
+	.byte	5,25,7,0,5,2
+	.word	.L247
+	.byte	3,238,44,1,5,17,9
+	.half	.L766-.L247
+	.byte	3,1,1,5,3,9
+	.half	.L767-.L766
+	.byte	3,14,1,5,13,7,9
+	.half	.L941-.L767
+	.byte	3,3,1,5,41,1,5,12,9
+	.half	.L165-.L941
+	.byte	3,3,1,5,8,9
+	.half	.L942-.L165
+	.byte	1,5,13,7,9
+	.half	.L943-.L942
+	.byte	3,3,1,5,29,1,5,8,9
+	.half	.L167-.L943
+	.byte	3,3,1,5,13,7,9
+	.half	.L944-.L167
+	.byte	3,3,1,5,36,1,5,12,9
+	.half	.L169-.L944
+	.byte	3,8,1,5,19,3,127,1,5,17,9
+	.half	.L945-.L169
+	.byte	1,5,3,9
+	.half	.L166-.L945
+	.byte	3,6,1,5,5,7,9
+	.half	.L946-.L166
+	.byte	3,2,1,5,3,9
+	.half	.L171-.L946
+	.byte	3,6,1,5,1,3,1,1,7,9
+	.half	.L309-.L171
+	.byte	0,1,1
+.L938:
+	.sdecl	'.debug_ranges',debug,cluster('CanIf_GetPduMode')
+	.sect	'.debug_ranges'
+.L307:
+	.word	-1,.L308,0,.L309-.L308,0,0
+	.sdecl	'.debug_info',debug,cluster('CanIf_GetVersionInfo')
+	.sect	'.debug_info'
+.L310:
+	.word	310
+	.half	3
+	.word	.L311
+	.byte	4,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation/CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L313,.L312
+	.byte	2
+	.word	.L264
+	.byte	3
+	.byte	'CanIf_GetVersionInfo',0,1,244,47,24,1,1,1
+	.word	.L253,.L544,.L252
+	.byte	4
+	.byte	'VersionInfo',0,1,244,47,99
+	.word	.L545,.L546
+	.byte	5
+	.word	.L253,.L544
+	.byte	6
+	.byte	'errorId',0,1,247,47,9
+	.word	.L404,.L547
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('CanIf_GetVersionInfo')
+	.sect	'.debug_abbrev'
+.L311:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('CanIf_GetVersionInfo')
+	.sect	'.debug_line'
+.L312:
+	.word	.L948-.L947
+.L947:
+	.half	3
+	.word	.L950-.L949
+.L949:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation',0,0
+	.byte	'CanIf.c',0,1,0,0,0
+.L950:
+	.byte	5,17,7,0,5,2
+	.word	.L253
+	.byte	3,246,47,1,5,3,3,5,1,5,13,7,9
+	.half	.L794-.L253
+	.byte	3,3,1,5,36,1,5,37,9
+	.half	.L196-.L794
+	.byte	3,8,1,5,35,1,5,37,9
+	.half	.L951-.L196
+	.byte	3,1,1,5,35,1,5,37,9
+	.half	.L952-.L951
+	.byte	3,1,1,5,35,1,5,37,9
+	.half	.L953-.L952
+	.byte	3,1,1,5,35,1,5,37,9
+	.half	.L954-.L953
+	.byte	3,1,1,5,35,1,5,3,9
+	.half	.L197-.L954
+	.byte	3,5,1,5,5,7,9
+	.half	.L955-.L197
+	.byte	3,2,1,5,1,9
+	.half	.L198-.L955
+	.byte	3,5,1,7,9
+	.half	.L315-.L198
+	.byte	0,1,1
+.L948:
+	.sdecl	'.debug_ranges',debug,cluster('CanIf_GetVersionInfo')
+	.sect	'.debug_ranges'
+.L313:
+	.word	-1,.L314,0,.L315-.L314,0,0
+	.sdecl	'.debug_info',debug,cluster('CanIf_CheckWakeup')
+	.sect	'.debug_info'
+.L316:
+	.word	290
+	.half	3
+	.word	.L317
+	.byte	4,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation/CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L319,.L318
+	.byte	2
+	.word	.L264
+	.byte	3
+	.byte	'CanIf_CheckWakeup',0,1,169,62,34
+	.word	.L404
+	.byte	1,1,1
+	.word	.L257,.L548,.L256
+	.byte	4
+	.byte	'WakeupSource',0,1,169,62,74
+	.word	.L495,.L549
+	.byte	5
+	.word	.L257,.L548
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('CanIf_CheckWakeup')
+	.sect	'.debug_abbrev'
+.L317:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('CanIf_CheckWakeup')
+	.sect	'.debug_line'
+.L318:
+	.word	.L957-.L956
+.L956:
+	.half	3
+	.word	.L959-.L958
+.L958:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation',0,0
+	.byte	'CanIf.c',0,1,0,0,0
+.L959:
+	.byte	5,10,7,0,5,2
+	.word	.L257
+	.byte	3,208,63,1,5,3,3,1,1,7,9
+	.half	.L321-.L257
+	.byte	0,1,1
+.L957:
+	.sdecl	'.debug_ranges',debug,cluster('CanIf_CheckWakeup')
+	.sect	'.debug_ranges'
+.L319:
+	.word	-1,.L320,0,.L321-.L320,0,0
+	.sdecl	'.debug_info',debug,cluster('CanIf_CheckValidation')
+	.sect	'.debug_info'
+.L322:
+	.word	294
+	.half	3
+	.word	.L323
+	.byte	4,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation/CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L325,.L324
+	.byte	2
+	.word	.L264
+	.byte	3
+	.byte	'CanIf_CheckValidation',0,1,226,64,34
+	.word	.L404
+	.byte	1,1,1
+	.word	.L259,.L550,.L258
+	.byte	4
+	.byte	'WakeupSource',0,1,226,64,78
+	.word	.L495,.L551
+	.byte	5
+	.word	.L259,.L550
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('CanIf_CheckValidation')
+	.sect	'.debug_abbrev'
+.L323:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('CanIf_CheckValidation')
+	.sect	'.debug_line'
+.L324:
+	.word	.L961-.L960
+.L960:
+	.half	3
+	.word	.L963-.L962
+.L962:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation',0,0
+	.byte	'CanIf.c',0,1,0,0,0
+.L963:
+	.byte	5,10,7,0,5,2
+	.word	.L259
+	.byte	3,199,193,0,1,5,1,3,1,1,7,9
+	.half	.L327-.L259
+	.byte	0,1,1
+.L961:
+	.sdecl	'.debug_ranges',debug,cluster('CanIf_CheckValidation')
+	.sect	'.debug_ranges'
+.L325:
+	.word	-1,.L326,0,.L327-.L326,0,0
+	.sdecl	'.debug_info',debug,cluster('CanIf_SetBaudrate')
+	.sect	'.debug_info'
+.L328:
+	.word	362
+	.half	3
+	.word	.L329
+	.byte	4,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation/CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L331,.L330
+	.byte	2
+	.word	.L264
+	.byte	3
+	.byte	'CanIf_SetBaudrate',0,1,242,70,34
+	.word	.L404
+	.byte	1,1,1
+	.word	.L263,.L552,.L262
+	.byte	4
+	.byte	'ControllerId',0,1,242,70,58
+	.word	.L404,.L553
+	.byte	4
+	.byte	'BaudRateConfigID',0,1,242,70,79
+	.word	.L450,.L554
+	.byte	5
+	.word	.L263,.L552
+	.byte	6
+	.byte	'retval',0,1,245,70,18
+	.word	.L404,.L555
+	.byte	6
+	.byte	'errorId',0,1,246,70,9
+	.word	.L404,.L556
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('CanIf_SetBaudrate')
+	.sect	'.debug_abbrev'
+.L329:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('CanIf_SetBaudrate')
+	.sect	'.debug_line'
+.L330:
+	.word	.L965-.L964
+.L964:
+	.half	3
+	.word	.L967-.L966
+.L966:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation',0,0
+	.byte	'CanIf.c',0,1,0,0,0
+.L967:
+	.byte	5,25,7,0,5,2
+	.word	.L263
+	.byte	3,244,198,0,1,5,17,9
+	.half	.L799-.L263
+	.byte	3,1,1,5,3,9
+	.half	.L800-.L799
+	.byte	3,18,1,5,13,7,9
+	.half	.L968-.L800
+	.byte	3,3,1,5,41,1,5,12,9
+	.half	.L218-.L968
+	.byte	3,3,1,5,8,9
+	.half	.L969-.L218
+	.byte	1,5,13,7,9
+	.half	.L970-.L969
+	.byte	3,3,1,5,29,1,5,44,9
+	.half	.L220-.L970
+	.byte	3,22,1,5,12,9
+	.half	.L798-.L220
+	.byte	1,5,3,9
+	.half	.L219-.L798
+	.byte	3,6,1,5,5,7,9
+	.half	.L971-.L219
+	.byte	3,2,1,5,3,9
+	.half	.L222-.L971
+	.byte	3,6,1,5,1,3,1,1,7,9
+	.half	.L333-.L222
+	.byte	0,1,1
+.L965:
+	.sdecl	'.debug_ranges',debug,cluster('CanIf_SetBaudrate')
+	.sect	'.debug_ranges'
+.L331:
+	.word	-1,.L332,0,.L333-.L332,0,0
+	.sdecl	'.debug_info',debug,cluster('CanIf_ControllerModeIndicationAr403')
+	.sect	'.debug_info'
+.L334:
+	.word	374
+	.half	3
+	.word	.L335
+	.byte	4,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation/CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L337,.L336
+	.byte	2
+	.word	.L264
+	.byte	3
+	.byte	'CanIf_ControllerModeIndicationAr403',0,1,128,67,24,1,1,1
+	.word	.L261,.L557,.L260
+	.byte	4
+	.byte	'ControllerId',0,1,128,67,66
+	.word	.L404,.L558
+	.byte	4
+	.byte	'ControllerMode',0,1,128,67,105
+	.word	.L407,.L559
+	.byte	5
+	.word	.L261,.L557
+	.byte	6
+	.byte	'errorId',0,1,131,67,9
+	.word	.L404,.L560
+	.byte	6
+	.byte	'cbkFct',0,1,132,67,35
+	.word	.L561,.L562
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('CanIf_ControllerModeIndicationAr403')
+	.sect	'.debug_abbrev'
+.L335:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('CanIf_ControllerModeIndicationAr403')
+	.sect	'.debug_line'
+.L336:
+	.word	.L973-.L972
+.L972:
+	.half	3
+	.word	.L975-.L974
+.L974:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation',0,0
+	.byte	'CanIf.c',0,1,0,0,0
+.L975:
+	.byte	5,17,7,0,5,2
+	.word	.L261
+	.byte	3,130,195,0,1,5,44,3,1,1,5,3,9
+	.half	.L796-.L261
+	.byte	3,14,1,5,13,7,9
+	.half	.L976-.L796
+	.byte	3,3,1,5,39,1,5,12,9
+	.half	.L201-.L976
+	.byte	3,3,1,5,8,9
+	.half	.L977-.L201
+	.byte	1,5,13,7,9
+	.half	.L978-.L977
+	.byte	3,3,1,5,29,1,5,14,9
+	.half	.L203-.L978
+	.byte	3,16,1,7,9
+	.half	.L979-.L203
+	.byte	3,29,1,7,9
+	.half	.L980-.L979
+	.byte	3,22,1,7,9
+	.half	.L981-.L980
+	.byte	1,5,18,9
+	.half	.L205-.L981
+	.byte	3,79,1,5,11,9
+	.half	.L982-.L205
+	.byte	1,5,15,7,9
+	.half	.L983-.L982
+	.byte	3,6,1,5,11,3,20,1,9
+	.half	.L206-.L983
+	.byte	3,3,1,5,15,7,9
+	.half	.L984-.L206
+	.byte	3,5,1,5,11,3,14,1,5,18,9
+	.half	.L207-.L984
+	.byte	3,5,1,7,9
+	.half	.L985-.L207
+	.byte	3,1,1,5,15,7,9
+	.half	.L213-.L985
+	.byte	3,3,1,5,7,9
+	.half	.L208-.L213
+	.byte	3,17,1,5,30,9
+	.half	.L986-.L208
+	.byte	3,3,1,5,3,9
+	.half	.L202-.L986
+	.byte	3,7,1,5,5,7,9
+	.half	.L987-.L202
+	.byte	3,2,1,5,1,9
+	.half	.L217-.L987
+	.byte	3,5,1,7,9
+	.half	.L339-.L217
+	.byte	0,1,1
+.L973:
+	.sdecl	'.debug_ranges',debug,cluster('CanIf_ControllerModeIndicationAr403')
+	.sect	'.debug_ranges'
+.L337:
+	.word	-1,.L338,0,.L339-.L338,0,0
+	.sdecl	'.debug_info',debug,cluster('CanIf_TxConfirmation')
+	.sect	'.debug_info'
+.L340:
+	.word	336
+	.half	3
+	.word	.L341
+	.byte	4,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation/CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L343,.L342
+	.byte	2
+	.word	.L264
+	.byte	3
+	.byte	'CanIf_TxConfirmation',0,1,216,30,24,1,1,1
+	.word	.L237,.L563,.L236
+	.byte	4
+	.byte	'CanTxPduId',0,1,216,30,55
+	.word	.L404,.L564
+	.byte	5
+	.word	.L237,.L563
+	.byte	6
+	.byte	'errorId',0,1,219,30,9
+	.word	.L404,.L565
+	.byte	5
+	.word	.L90,.L92
+	.byte	6
+	.byte	'hth',0,1,160,31,28
+	.word	.L495,.L566
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('CanIf_TxConfirmation')
+	.sect	'.debug_abbrev'
+.L341:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('CanIf_TxConfirmation')
+	.sect	'.debug_line'
+.L342:
+	.word	.L989-.L988
+.L988:
+	.half	3
+	.word	.L991-.L990
+.L990:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation',0,0
+	.byte	'CanIf.c',0,1,0,0,0
+.L991:
+	.byte	5,24,7,0,5,2
+	.word	.L237
+	.byte	3,215,30,1,5,17,9
+	.half	.L744-.L237
+	.byte	3,3,1,5,3,9
+	.half	.L745-.L744
+	.byte	3,15,1,5,13,7,9
+	.half	.L992-.L745
+	.byte	3,3,1,5,33,1,5,12,9
+	.half	.L85-.L992
+	.byte	3,3,1,5,8,9
+	.half	.L993-.L85
+	.byte	1,5,13,7,9
+	.half	.L994-.L993
+	.byte	3,3,1,5,29,1,5,5,9
+	.half	.L87-.L994
+	.byte	3,17,1,5,13,7,9
+	.half	.L995-.L87
+	.byte	3,2,1,5,12,9
+	.half	.L996-.L995
+	.byte	1,5,73,7,9
+	.half	.L997-.L996
+	.byte	3,1,1,5,34,7,9
+	.half	.L90-.L997
+	.byte	3,25,1,5,13,9
+	.half	.L746-.L90
+	.byte	3,7,1,5,11,9
+	.half	.L998-.L746
+	.byte	3,124,1,5,13,7,9
+	.half	.L999-.L998
+	.byte	3,8,1,5,42,9
+	.half	.L743-.L999
+	.byte	3,4,1,5,13,9
+	.half	.L1000-.L743
+	.byte	3,2,1,5,32,9
+	.half	.L92-.L1000
+	.byte	3,6,1,5,3,9
+	.half	.L86-.L92
+	.byte	3,7,1,5,5,7,9
+	.half	.L1001-.L86
+	.byte	3,2,1,5,1,9
+	.half	.L93-.L1001
+	.byte	3,5,1,7,9
+	.half	.L345-.L93
+	.byte	0,1,1
+.L989:
+	.sdecl	'.debug_ranges',debug,cluster('CanIf_TxConfirmation')
+	.sect	'.debug_ranges'
+.L343:
+	.word	-1,.L344,0,.L345-.L344,0,0
+	.sdecl	'.debug_info',debug,cluster('CanIf_RxIndicationAsr403')
+	.sect	'.debug_info'
+.L346:
+	.word	579
+	.half	3
+	.word	.L347
+	.byte	4,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation/CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L349,.L348
+	.byte	2
+	.word	.L264
+	.byte	3
+	.byte	'CanIf_RxIndicationAsr403',0,1,193,36,24,1,1,1
+	.word	.L239,.L567,.L238
+	.byte	4
+	.byte	'Hrh',0,1,193,36,68
+	.word	.L404,.L568
+	.byte	4
+	.byte	'CanId',0,1,193,36,84
+	.word	.L450,.L569
+	.byte	4
+	.byte	'CanDlc',0,1,193,36,97
+	.word	.L404,.L570
+	.byte	4
+	.byte	'CanSduPtr',0,1,193,36,149,1
+	.word	.L571,.L572
+	.byte	5
+	.word	.L239,.L567
+	.byte	6
+	.byte	'rxSearchParams',0,1,196,36,28
+	.word	.L573,.L574
+	.byte	6
+	.byte	'errorId',0,1,200,36,9
+	.word	.L404,.L575
+	.byte	7
+	.word	.L576,.L577,.L104
+	.byte	8
+	.word	.L578,.L579
+	.byte	9
+	.word	.L580,.L577,.L104
+	.byte	7
+	.word	.L581,.L582,.L105
+	.byte	8
+	.word	.L583,.L584
+	.byte	10
+	.word	.L585,.L582,.L105
+	.byte	0,7
+	.word	.L586,.L587,.L104
+	.byte	8
+	.word	.L588,.L589
+	.byte	9
+	.word	.L590,.L587,.L104
+	.byte	7
+	.word	.L591,.L117,.L116
+	.byte	8
+	.word	.L592,.L593
+	.byte	10
+	.word	.L594,.L117,.L116
+	.byte	0,7
+	.word	.L591,.L103,.L104
+	.byte	8
+	.word	.L592,.L593
+	.byte	10
+	.word	.L594,.L103,.L104
+	.byte	0,0,0,0,0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('CanIf_RxIndicationAsr403')
+	.sect	'.debug_abbrev'
+.L347:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,1,49,16,17,1,18
+	.byte	1,0,0,10,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('CanIf_RxIndicationAsr403')
+	.sect	'.debug_line'
+.L348:
+	.word	.L1003-.L1002
+.L1002:
+	.half	3
+	.word	.L1005-.L1004
+.L1004:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation',0,0
+	.byte	'CanIf.c',0,1,0,0,0
+.L1005:
+	.byte	5,17,7,0,5,2
+	.word	.L239
+	.byte	3,199,36,1,5,3,3,15,1,5,13,7,9
+	.half	.L750-.L239
+	.byte	3,3,1,5,36,1,5,21,9
+	.half	.L94-.L750
+	.byte	3,4,1,5,19,9
+	.half	.L1006-.L94
+	.byte	1,5,46,9
+	.half	.L1007-.L1006
+	.byte	1,5,8,9
+	.half	.L1008-.L1007
+	.byte	1,5,13,7,9
+	.half	.L1009-.L1008
+	.byte	3,3,1,5,34,1,5,41,9
+	.half	.L96-.L1009
+	.byte	3,4,1,5,21,1,5,41,9
+	.half	.L1010-.L96
+	.byte	1,5,21,1,5,41,9
+	.half	.L748-.L1010
+	.byte	1,5,40,9
+	.half	.L1011-.L748
+	.byte	1,5,8,9
+	.half	.L1012-.L1011
+	.byte	1,5,13,7,9
+	.half	.L1013-.L1012
+	.byte	3,3,1,5,32,1,5,8,9
+	.half	.L98-.L1013
+	.byte	3,3,1,5,13,7,9
+	.half	.L1014-.L98
+	.byte	3,3,1,5,32,1,5,35,9
+	.half	.L100-.L1014
+	.byte	3,51,1,5,27,9
+	.half	.L1015-.L100
+	.byte	3,105,1,5,35,3,23,1,5,40,9
+	.half	.L1016-.L1015
+	.byte	3,2,1,5,35,9
+	.half	.L1017-.L1016
+	.byte	3,126,1,5,33,9
+	.half	.L1018-.L1017
+	.byte	1,5,27,9
+	.half	.L1019-.L1018
+	.byte	3,2,1,5,9,9
+	.half	.L1020-.L1019
+	.byte	1,5,15,7,9
+	.half	.L1021-.L1020
+	.byte	3,5,1,5,11,9
+	.half	.L1022-.L1021
+	.byte	1,5,16,7,9
+	.half	.L1023-.L1022
+	.byte	3,5,1,5,7,7,9
+	.half	.L577-.L1023
+	.byte	3,158,126,1,5,35,9
+	.half	.L1024-.L577
+	.byte	3,126,1,5,7,9
+	.half	.L1025-.L1024
+	.byte	3,2,1,5,53,9
+	.half	.L1026-.L1025
+	.byte	1,5,3,9
+	.half	.L749-.L1026
+	.byte	1,5,96,7,9
+	.half	.L582-.L749
+	.byte	3,254,125,1,5,9,9
+	.half	.L107-.L582
+	.byte	3,3,1,5,5,9
+	.half	.L1027-.L107
+	.byte	1,5,39,7,9
+	.half	.L1028-.L1027
+	.byte	3,10,1,5,9,3,2,1,5,10,9
+	.half	.L108-.L1028
+	.byte	3,5,1,5,5,9
+	.half	.L1029-.L108
+	.byte	1,5,39,7,9
+	.half	.L109-.L1029
+	.byte	3,4,1,5,7,3,1,1,5,31,9
+	.half	.L110-.L109
+	.byte	3,6,1,5,12,9
+	.half	.L106-.L110
+	.byte	3,97,1,5,96,9
+	.half	.L1030-.L106
+	.byte	1,5,3,7,9
+	.half	.L105-.L1030
+	.byte	3,186,2,1,5,10,7,9
+	.half	.L587-.L105
+	.byte	3,202,126,1,5,57,9
+	.half	.L1031-.L587
+	.byte	3,125,1,5,162,1,9
+	.half	.L1032-.L1031
+	.byte	3,17,1,5,99,3,111,1,5,10,9
+	.half	.L114-.L1032
+	.byte	3,3,1,5,5,9
+	.half	.L1033-.L114
+	.byte	1,5,87,7,9
+	.half	.L1034-.L1033
+	.byte	3,2,1,5,84,9
+	.half	.L1035-.L1034
+	.byte	1,5,134,1,9
+	.half	.L1036-.L1035
+	.byte	1,5,7,9
+	.half	.L1037-.L1036
+	.byte	1,5,11,7,9
+	.half	.L1038-.L1037
+	.byte	3,5,1,9
+	.half	.L115-.L1038
+	.byte	3,7,1,5,116,7,9
+	.half	.L1039-.L115
+	.byte	1,5,160,1,9
+	.half	.L1040-.L1039
+	.byte	1,5,111,9
+	.half	.L1041-.L1040
+	.byte	1,5,35,7,9
+	.half	.L117-.L1041
+	.byte	3,73,1,5,9,3,58,1,5,29,9
+	.half	.L116-.L117
+	.byte	3,6,1,5,11,9
+	.half	.L113-.L116
+	.byte	3,102,1,5,55,9
+	.half	.L1042-.L113
+	.byte	1,5,99,9
+	.half	.L1043-.L1042
+	.byte	1,5,8,7,9
+	.half	.L120-.L1043
+	.byte	3,30,1,5,52,9
+	.half	.L1044-.L120
+	.byte	1,5,3,9
+	.half	.L1045-.L1044
+	.byte	1,5,10,7,9
+	.half	.L1046-.L1045
+	.byte	3,3,1,5,5,9
+	.half	.L1047-.L1046
+	.byte	1,5,84,7,9
+	.half	.L1048-.L1047
+	.byte	3,3,1,5,131,1,9
+	.half	.L1049-.L1048
+	.byte	1,5,7,9
+	.half	.L1050-.L1049
+	.byte	1,7,9
+	.half	.L1051-.L1050
+	.byte	1,5,11,9
+	.half	.L122-.L1051
+	.byte	3,10,1,5,162,1,7,9
+	.half	.L1052-.L122
+	.byte	1,5,160,1,9
+	.half	.L1053-.L1052
+	.byte	1,5,111,9
+	.half	.L1054-.L1053
+	.byte	1,5,35,7,9
+	.half	.L103-.L1054
+	.byte	3,172,127,1,5,59,3,140,3,1,5,21,9
+	.half	.L104-.L103
+	.byte	3,6,1,5,47,9
+	.half	.L112-.L104
+	.byte	3,5,1,5,11,9
+	.half	.L1055-.L112
+	.byte	1,5,15,7,9
+	.half	.L1056-.L1055
+	.byte	3,35,1,5,3,9
+	.half	.L95-.L1056
+	.byte	3,10,1,5,5,7,9
+	.half	.L1057-.L95
+	.byte	3,2,1,5,1,9
+	.half	.L129-.L1057
+	.byte	3,5,1,7,9
+	.half	.L351-.L129
+	.byte	0,1,1
+.L1003:
+	.sdecl	'.debug_ranges',debug,cluster('CanIf_RxIndicationAsr403')
+	.sect	'.debug_ranges'
+.L349:
+	.word	-1,.L350,0,.L351-.L350,0,0
+	.sdecl	'.debug_info',debug,cluster('CanIf_ControllerBusOff')
+	.sect	'.debug_info'
+.L352:
+	.word	348
+	.half	3
+	.word	.L353
+	.byte	4,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation/CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L355,.L354
+	.byte	2
+	.word	.L264
+	.byte	3
+	.byte	'CanIf_ControllerBusOff',0,1,218,42,24,1,1,1
+	.word	.L243,.L595,.L242
+	.byte	4
+	.byte	'ControllerId',0,1,218,42,53
+	.word	.L404,.L596
+	.byte	5
+	.word	.L243,.L595
+	.byte	6
+	.byte	'errorId',0,1,223,42,9
+	.word	.L404,.L597
+	.byte	6
+	.byte	'busoffnotificationFct',0,1,224,42,35
+	.word	.L598,.L599
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('CanIf_ControllerBusOff')
+	.sect	'.debug_abbrev'
+.L353:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('CanIf_ControllerBusOff')
+	.sect	'.debug_line'
+.L354:
+	.word	.L1059-.L1058
+.L1058:
+	.half	3
+	.word	.L1061-.L1060
+.L1060:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation',0,0
+	.byte	'CanIf.c',0,1,0,0,0
+.L1061:
+	.byte	5,17,7,0,5,2
+	.word	.L243
+	.byte	3,222,42,1,5,59,3,1,1,5,3,9
+	.half	.L759-.L243
+	.byte	3,18,1,5,13,7,9
+	.half	.L1062-.L759
+	.byte	3,3,1,5,39,1,5,9,9
+	.half	.L144-.L1062
+	.byte	3,8,1,5,5,9
+	.half	.L1063-.L144
+	.byte	1,5,44,7,9
+	.half	.L1064-.L1063
+	.byte	3,5,1,5,7,9
+	.half	.L757-.L1064
+	.byte	3,5,1,5,24,9
+	.half	.L1065-.L757
+	.byte	3,4,1,5,7,9
+	.half	.L1066-.L1065
+	.byte	3,14,1,5,31,7,9
+	.half	.L1067-.L1066
+	.byte	3,4,1,5,7,9
+	.half	.L1068-.L1067
+	.byte	3,124,1,5,15,9
+	.half	.L146-.L1068
+	.byte	3,16,1,5,3,9
+	.half	.L145-.L146
+	.byte	3,6,1,5,5,7,9
+	.half	.L1069-.L145
+	.byte	3,2,1,5,1,9
+	.half	.L149-.L1069
+	.byte	3,5,1,7,9
+	.half	.L357-.L149
+	.byte	0,1,1
+.L1059:
+	.sdecl	'.debug_ranges',debug,cluster('CanIf_ControllerBusOff')
+	.sect	'.debug_ranges'
+.L355:
+	.word	-1,.L356,0,.L357-.L356,0,0
+	.sdecl	'.debug_info',debug,cluster('CanIf_TxQueueTreatment')
+	.sect	'.debug_info'
+.L358:
+	.word	480
+	.half	3
+	.word	.L359
+	.byte	4,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation/CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L361,.L360
+	.byte	2
+	.word	.L264
+	.byte	3
+	.byte	'CanIf_TxQueueTreatment',0,1,247,46,46
+	.word	.L404
+	.byte	1,1
+	.word	.L251,.L600,.L250
+	.byte	4
+	.byte	'hth',0,1,247,46,88
+	.word	.L404,.L601
+	.byte	5
+	.word	.L251,.L600
+	.byte	6
+	.byte	'retval',0,1,250,46,18
+	.word	.L404,.L602
+	.byte	6
+	.byte	'txBufferCfgIdx',0,1,251,46,26
+	.word	.L603,.L604
+	.byte	5
+	.word	.L605,.L188
+	.byte	5
+	.word	.L606,.L188
+	.byte	6
+	.byte	'queueEndElementIdx',0,1,138,47,30
+	.word	.L607,.L608
+	.byte	6
+	.byte	'queueElementIdx',0,1,140,47,24
+	.word	.L609,.L610
+	.byte	5
+	.word	.L191,.L192
+	.byte	6
+	.byte	'elem',0,1,145,47,42
+	.word	.L611,.L612
+	.byte	5
+	.word	.L613,.L192
+	.byte	6
+	.byte	'elementBitIdx',0,1,155,47,27
+	.word	.L614,.L615
+	.byte	0,0,0,0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('CanIf_TxQueueTreatment')
+	.sect	'.debug_abbrev'
+.L359:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('CanIf_TxQueueTreatment')
+	.sect	'.debug_line'
+.L360:
+	.word	.L1071-.L1070
+.L1070:
+	.half	3
+	.word	.L1073-.L1072
+.L1072:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation',0,0
+	.byte	'CanIf.c',0,1,0,0,0
+.L1073:
+	.byte	5,43,7,0,5,2
+	.word	.L251
+	.byte	3,250,46,1,5,25,9
+	.half	.L1074-.L251
+	.byte	3,127,1,5,11,9
+	.half	.L785-.L1074
+	.byte	3,5,1,5,43,9
+	.half	.L1075-.L785
+	.byte	3,124,1,5,3,9
+	.half	.L787-.L1075
+	.byte	3,4,1,5,61,7,9
+	.half	.L605-.L787
+	.byte	3,6,1,5,13,9
+	.half	.L1076-.L605
+	.byte	3,2,1,5,61,9
+	.half	.L1077-.L1076
+	.byte	3,126,1,5,13,9
+	.half	.L788-.L1077
+	.byte	3,2,1,5,9,9
+	.half	.L1078-.L788
+	.byte	1,5,49,7,9
+	.half	.L606-.L1078
+	.byte	3,8,1,5,66,9
+	.half	.L1079-.L606
+	.byte	3,123,1,5,109,9
+	.half	.L789-.L1079
+	.byte	3,5,1,5,49,3,2,1,5,148,1,9
+	.half	.L1080-.L789
+	.byte	3,126,1,5,49,9
+	.half	.L191-.L1080
+	.byte	3,2,1,5,13,9
+	.half	.L791-.L191
+	.byte	3,2,1,5,73,7,9
+	.half	.L613-.L791
+	.byte	3,8,1,5,42,9
+	.half	.L786-.L613
+	.byte	3,5,1,5,69,9
+	.half	.L790-.L786
+	.byte	1,5,102,9
+	.half	.L1081-.L790
+	.byte	1,5,128,1,9
+	.half	.L1082-.L1081
+	.byte	1,5,169,1,1,5,156,1,9
+	.half	.L792-.L1082
+	.byte	1,5,183,1,9
+	.half	.L192-.L792
+	.byte	3,111,1,5,148,1,9
+	.half	.L793-.L192
+	.byte	1,5,1,7,9
+	.half	.L188-.L793
+	.byte	3,202,0,1,7,9
+	.half	.L363-.L188
+	.byte	0,1,1
+.L1071:
+	.sdecl	'.debug_ranges',debug,cluster('CanIf_TxQueueTreatment')
+	.sect	'.debug_ranges'
+.L361:
+	.word	-1,.L362,0,.L363-.L362,0,0
+	.sdecl	'.debug_info',debug,cluster('CanIf_TxQueueTransmit')
+	.sect	'.debug_info'
+.L364:
+	.word	675
+	.half	3
+	.word	.L365
+	.byte	4,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation/CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L367,.L366
+	.byte	2
+	.word	.L264
+	.byte	3
+	.byte	'CanIf_TxQueueTransmit',0,1,197,45,46
+	.word	.L404
+	.byte	1,1
+	.word	.L249,.L616,.L248
+	.byte	4
+	.byte	'PduId',0,1,197,45,79
+	.word	.L404,.L617
+	.byte	5
+	.word	.L249,.L616
+	.byte	6
+	.byte	'txResult',0,1,200,45,26
+	.word	.L483,.L618
+	.byte	6
+	.byte	'retval',0,1,201,45,18
+	.word	.L404,.L619
+	.byte	6
+	.byte	'errorId',0,1,202,45,9
+	.word	.L404,.L620
+	.byte	5
+	.word	.L173,.L174
+	.byte	6
+	.byte	'hth',0,1,216,45,28
+	.word	.L621,.L622
+	.byte	5
+	.word	.L623,.L175
+	.byte	6
+	.byte	'localPdu',0,1,223,45,24
+	.word	.L455,.L624
+	.byte	7
+	.word	.L477,.L625,.L626
+	.byte	8
+	.word	.L478,.L627
+	.byte	9
+	.word	.L480,.L628
+	.byte	6
+	.byte	'retval',0,1,172,27,26
+	.word	.L483,.L630
+	.byte	6
+	.byte	'canDrvHth',0,1,181,27,26
+	.word	.L631,.L632
+	.byte	0,0,7
+	.word	.L477,.L629,.L175
+	.byte	8
+	.word	.L478,.L627
+	.byte	0,0,7
+	.word	.L518,.L633,.L634
+	.byte	8
+	.word	.L520,.L635
+	.byte	10
+	.word	.L522,.L633,.L634
+	.byte	6
+	.byte	'errorId',0,1,144,14,9
+	.word	.L404,.L636
+	.byte	6
+	.byte	'txBufferCfgIdx',0,1,146,14,26
+	.word	.L637,.L638
+	.byte	6
+	.byte	'queueBitPos',0,1,151,14,19
+	.word	.L639,.L640
+	.byte	6
+	.byte	'queueElementIdx',0,1,152,14,26
+	.word	.L641,.L642
+	.byte	6
+	.byte	'elementBitIdx',0,1,153,14,15
+	.word	.L643,.L644
+	.byte	0,0,0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('CanIf_TxQueueTransmit')
+	.sect	'.debug_abbrev'
+.L365:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,1,49,16,85,6,0,0
+	.byte	10,11,1,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('CanIf_TxQueueTransmit')
+	.sect	'.debug_line'
+.L366:
+	.word	.L1084-.L1083
+.L1083:
+	.half	3
+	.word	.L1086-.L1085
+.L1085:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation',0,0
+	.byte	'CanIf.c',0,1,0,0,0
+.L1086:
+	.byte	5,46,7,0,5,2
+	.word	.L249
+	.byte	3,196,45,1,5,35,9
+	.half	.L768-.L249
+	.byte	3,3,1,5,17,9
+	.half	.L771-.L768
+	.byte	3,2,1,5,25,9
+	.half	.L772-.L771
+	.byte	3,127,1,5,3,9
+	.half	.L773-.L772
+	.byte	3,6,1,5,13,7,9
+	.half	.L1087-.L773
+	.byte	3,3,1,5,38,1,5,34,9
+	.half	.L173-.L1087
+	.byte	3,6,1,5,13,9
+	.half	.L1088-.L173
+	.byte	3,2,1,5,34,9
+	.half	.L1089-.L1088
+	.byte	3,126,1,5,13,9
+	.half	.L774-.L1089
+	.byte	3,2,1,5,5,9
+	.half	.L775-.L774
+	.byte	1,5,38,7,9
+	.half	.L623-.L775
+	.byte	3,12,1,5,27,9
+	.half	.L1090-.L623
+	.byte	3,126,1,5,25,9
+	.half	.L1091-.L1090
+	.byte	1,5,42,9
+	.half	.L625-.L1091
+	.byte	3,10,1,5,38,9
+	.half	.L626-.L625
+	.byte	3,120,1,5,29,9
+	.half	.L1092-.L626
+	.byte	1,5,26,9
+	.half	.L1093-.L1092
+	.byte	3,4,1,5,34,9
+	.half	.L1094-.L1093
+	.byte	3,2,1,5,56,9
+	.half	.L629-.L1094
+	.byte	3,201,109,1,5,42,9
+	.half	.L769-.L629
+	.byte	3,185,18,1,5,5,9
+	.half	.L175-.L769
+	.byte	3,34,1,5,15,7,9
+	.half	.L1095-.L175
+	.byte	3,4,1,5,7,9
+	.half	.L1096-.L1095
+	.byte	1,5,43,7,9
+	.half	.L633-.L1096
+	.byte	3,254,95,1,5,68,9
+	.half	.L1097-.L633
+	.byte	3,10,1,5,43,9
+	.half	.L1098-.L1097
+	.byte	3,118,1,5,68,3,10,1,5,17,9
+	.half	.L1099-.L1098
+	.byte	3,116,1,5,43,9
+	.half	.L776-.L1099
+	.byte	3,2,1,5,55,9
+	.half	.L777-.L776
+	.byte	3,5,1,5,53,9
+	.half	.L778-.L777
+	.byte	1,5,105,3,1,1,5,35,9
+	.half	.L770-.L778
+	.byte	3,127,1,5,77,9
+	.half	.L779-.L770
+	.byte	3,1,1,5,103,9
+	.half	.L781-.L779
+	.byte	1,5,52,9
+	.half	.L1100-.L781
+	.byte	3,1,1,5,95,9
+	.half	.L783-.L1100
+	.byte	3,3,1,5,8,9
+	.half	.L784-.L783
+	.byte	1,5,66,9
+	.half	.L780-.L784
+	.byte	1,5,3,9
+	.half	.L1101-.L780
+	.byte	1,5,5,7,9
+	.half	.L1102-.L1101
+	.byte	3,3,1,5,15,7,9
+	.half	.L1103-.L1102
+	.byte	3,2,1,5,30,1,5,7,9
+	.half	.L179-.L1103
+	.byte	3,6,1,9
+	.half	.L1104-.L179
+	.byte	3,1,1,5,3,9
+	.half	.L178-.L1104
+	.byte	3,7,1,5,5,7,9
+	.half	.L1105-.L178
+	.byte	3,2,1,5,11,9
+	.half	.L634-.L1105
+	.byte	3,233,31,1,5,19,9
+	.half	.L177-.L634
+	.byte	3,27,1,5,5,3,3,1,5,10,9
+	.half	.L176-.L177
+	.byte	3,1,1,5,14,7,9
+	.half	.L181-.L176
+	.byte	3,3,1,5,20,1,5,15,9
+	.half	.L184-.L181
+	.byte	3,4,1,5,3,9
+	.half	.L174-.L184
+	.byte	3,7,1,5,5,7,9
+	.half	.L1106-.L174
+	.byte	3,2,1,5,3,9
+	.half	.L186-.L1106
+	.byte	3,5,1,5,1,3,1,1,7,9
+	.half	.L369-.L186
+	.byte	0,1,1
+.L1084:
+	.sdecl	'.debug_ranges',debug,cluster('CanIf_TxQueueTransmit')
+	.sect	'.debug_ranges'
+.L367:
+	.word	-1,.L368,0,.L369-.L368,0,0
+.L628:
+	.word	-1,.L249,.L625-.L249,.L626-.L249,.L629-.L249,.L175-.L249,0,0
+	.sdecl	'.debug_info',debug,cluster('CanIf_ClearQueue')
+	.sect	'.debug_info'
+.L370:
+	.word	435
+	.half	3
+	.word	.L371
+	.byte	4,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation/CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L373,.L372
+	.byte	2
+	.word	.L264
+	.byte	3
+	.byte	'CanIf_ClearQueue',0,1,216,14,36,1,1
+	.word	.L225,.L645,.L224
+	.byte	4
+	.byte	'ControllerId',0,1,216,14,59
+	.word	.L404,.L646
+	.byte	5
+	.word	.L225,.L645
+	.byte	6
+	.byte	'idx2MappedTxBufferCfg',0,1,219,14,20
+	.word	.L495,.L647
+	.byte	7
+	.word	.L648
+	.byte	6
+	.byte	'hth',0,1,227,14,28
+	.word	.L655,.L656
+	.byte	6
+	.byte	'txBufferCfgIdx',0,1,228,14,28
+	.word	.L657,.L658
+	.byte	7
+	.word	.L659
+	.byte	6
+	.byte	'TxQueueFlagsIdx',0,1,236,14,28
+	.word	.L495,.L661
+	.byte	6
+	.byte	'txBufferBaseIdx',0,1,237,14,34
+	.word	.L662,.L663
+	.byte	0,0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('CanIf_ClearQueue')
+	.sect	'.debug_abbrev'
+.L371:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3,8,58
+	.byte	15,59,15,57,15,73,16,2,6,0,0,7,11,1,85,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('CanIf_ClearQueue')
+	.sect	'.debug_line'
+.L372:
+	.word	.L1108-.L1107
+.L1107:
+	.half	3
+	.word	.L1110-.L1109
+.L1109:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation',0,0
+	.byte	'CanIf.c',0,1,0,0,0
+.L1110:
+	.byte	5,3,7,0,5,2
+	.word	.L225
+	.byte	3,221,14,1,5,31,9
+	.half	.L697-.L225
+	.byte	3,3,1,5,50,9
+	.half	.L649-.L697
+	.byte	3,12,1,5,31,3,116,1,5,11,9
+	.half	.L698-.L649
+	.byte	3,21,1,5,34,3,109,1,5,45,9
+	.half	.L651-.L698
+	.byte	3,1,1,5,110,9
+	.half	.L652-.L651
+	.byte	3,125,1,5,45,9
+	.half	.L653-.L652
+	.byte	3,3,1,5,162,1,9
+	.half	.L654-.L653
+	.byte	3,125,1,5,34,9
+	.half	.L3-.L654
+	.byte	3,2,1,5,45,9
+	.half	.L699-.L3
+	.byte	3,1,1,5,13,9
+	.half	.L1111-.L699
+	.byte	3,3,1,5,45,9
+	.half	.L1112-.L1111
+	.byte	3,125,1,5,5,9
+	.half	.L701-.L1112
+	.byte	3,3,1,5,52,7,9
+	.half	.L660-.L701
+	.byte	3,6,1,5,13,9
+	.half	.L1113-.L660
+	.byte	3,5,1,5,34,9
+	.half	.L1114-.L1113
+	.byte	3,126,1,5,13,9
+	.half	.L703-.L1114
+	.byte	3,2,1,5,52,9
+	.half	.L1115-.L703
+	.byte	3,123,1,5,171,1,9
+	.half	.L702-.L1115
+	.byte	3,3,1,5,188,1,9
+	.half	.L6-.L702
+	.byte	1,5,13,3,2,1,5,113,9
+	.half	.L5-.L6
+	.byte	3,126,1,5,171,1,9
+	.half	.L1116-.L5
+	.byte	1,5,11,7,9
+	.half	.L1117-.L1116
+	.byte	3,6,1,5,185,1,9
+	.half	.L4-.L1117
+	.byte	3,107,1,5,162,1,9
+	.half	.L2-.L4
+	.byte	1,5,3,7,9
+	.half	.L1118-.L2
+	.byte	3,194,0,1,5,1,7,9
+	.half	.L375-.L1118
+	.byte	3,1,0,1,1
+.L1108:
+	.sdecl	'.debug_ranges',debug,cluster('CanIf_ClearQueue')
+	.sect	'.debug_ranges'
+.L373:
+	.word	-1,.L374,0,.L375-.L374,0,0
+.L648:
+	.word	-1,.L225,.L649-.L225,.L650-.L225,.L651-.L225,.L652-.L225,.L653-.L225,.L654-.L225,.L3-.L225,.L4-.L225,0
+	.word	0
+.L659:
+	.word	-1,.L225,.L649-.L225,.L650-.L225,.L660-.L225,.L4-.L225,0,0
+	.sdecl	'.debug_info',debug,cluster('CanIf_HlIndication')
+	.sect	'.debug_info'
+.L376:
+	.word	523
+	.half	3
+	.word	.L377
+	.byte	4,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation/CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L379,.L378
+	.byte	2
+	.word	.L264
+	.byte	3
+	.byte	'CanIf_HlIndication',0,1,150,41,36,1,1
+	.word	.L241,.L664,.L240
+	.byte	4
+	.byte	'ControllerId',0,1,150,41,61
+	.word	.L404,.L665
+	.byte	4
+	.byte	'PduId',0,1,150,41,85
+	.word	.L404,.L666
+	.byte	4
+	.byte	'CanSduPtr',0,1,150,41,137,1
+	.word	.L571,.L667
+	.byte	4
+	.byte	'CanDlc',0,1,150,41,162,1
+	.word	.L450,.L668
+	.byte	4
+	.byte	'ServiceIdOfCaller',0,1,150,41,176,1
+	.word	.L404,.L669
+	.byte	5
+	.word	.L241,.L664
+	.byte	6
+	.byte	'errorId',0,1,154,41,9
+	.word	.L404,.L670
+	.byte	7
+	.word	.L671,.L139,.L132
+	.byte	8
+	.word	.L672,.L673
+	.byte	8
+	.word	.L674,.L675
+	.byte	8
+	.word	.L676,.L677
+	.byte	9
+	.word	.L678,.L139,.L132
+	.byte	9
+	.word	.L679,.L680,.L132
+	.byte	6
+	.byte	'rxIndicationFct',0,1,215,40,39
+	.word	.L681,.L682
+	.byte	6
+	.byte	'pduinfo',0,1,216,40,17
+	.word	.L683,.L684
+	.byte	0,0,0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('CanIf_HlIndication')
+	.sect	'.debug_abbrev'
+.L377:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3,8,58
+	.byte	15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,1,49,16,17,1,18,1,0,0
+	.byte	0
+	.sdecl	'.debug_line',debug,cluster('CanIf_HlIndication')
+	.sect	'.debug_line'
+.L378:
+	.word	.L1120-.L1119
+.L1119:
+	.half	3
+	.word	.L1122-.L1121
+.L1121:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation',0,0
+	.byte	'CanIf.c',0,1,0,0,0
+.L1122:
+	.byte	5,17,7,0,5,2
+	.word	.L241
+	.byte	3,153,41,1,5,36,3,124,1,5,3,9
+	.half	.L752-.L241
+	.byte	3,9,1,5,12,7,9
+	.half	.L1123-.L752
+	.byte	3,5,1,5,8,9
+	.half	.L1124-.L1123
+	.byte	1,5,13,7,9
+	.half	.L1125-.L1124
+	.byte	3,3,1,5,29,1,5,5,9
+	.half	.L131-.L1125
+	.byte	3,8,1,5,9,7,9
+	.half	.L1126-.L131
+	.byte	3,11,1,5,13,9
+	.half	.L1127-.L1126
+	.byte	3,5,1,5,12,9
+	.half	.L1128-.L1127
+	.byte	1,5,48,7,9
+	.half	.L1129-.L1128
+	.byte	3,1,1,7,9
+	.half	.L1130-.L1129
+	.byte	3,1,1,5,22,7,9
+	.half	.L134-.L1130
+	.byte	3,10,1,5,9,9
+	.half	.L1131-.L134
+	.byte	1,5,19,7,9
+	.half	.L1132-.L1131
+	.byte	3,4,1,5,40,1,5,18,9
+	.half	.L137-.L1132
+	.byte	3,193,0,1,5,13,9
+	.half	.L1133-.L137
+	.byte	1,5,23,7,9
+	.half	.L130-.L1133
+	.byte	3,2,1,5,39,1,5,7,9
+	.half	.L139-.L130
+	.byte	3,194,126,1,5,3,9
+	.half	.L1134-.L139
+	.byte	1,5,24,7,9
+	.half	.L680-.L1134
+	.byte	3,7,1,5,23,9
+	.half	.L1135-.L680
+	.byte	3,2,1,5,61,9
+	.half	.L1136-.L1135
+	.byte	3,2,1,5,5,9
+	.half	.L755-.L1136
+	.byte	3,1,1,5,23,7,9
+	.half	.L1137-.L755
+	.byte	3,5,1,5,112,9
+	.half	.L754-.L1137
+	.byte	1,5,55,9
+	.half	.L753-.L754
+	.byte	1,5,3,9
+	.half	.L132-.L753
+	.byte	3,199,1,1,5,5,7,9
+	.half	.L1138-.L132
+	.byte	3,2,1,5,1,9
+	.half	.L143-.L1138
+	.byte	3,7,1,7,9
+	.half	.L381-.L143
+	.byte	0,1,1
+.L1120:
+	.sdecl	'.debug_ranges',debug,cluster('CanIf_HlIndication')
+	.sect	'.debug_ranges'
+.L379:
+	.word	-1,.L380,0,.L381-.L380,0,0
+	.sdecl	'.debug_info',debug,cluster('CanIf_HlTxConfirmation')
+	.sect	'.debug_info'
+.L382:
+	.word	370
+	.half	3
+	.word	.L383
+	.byte	4,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation/CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1
+	.word	.L385,.L384
+	.byte	2
+	.word	.L264
+	.byte	3
+	.byte	'CanIf_HlTxConfirmation',0,1,154,30,36,1,1
+	.word	.L235,.L685,.L234
+	.byte	4
+	.byte	'CanTxPduId',0,1,154,30,69
+	.word	.L404,.L686
+	.byte	5
+	.word	.L235,.L685
+	.byte	6
+	.byte	'index',0,1,158,30,30
+	.word	.L404,.L687
+	.byte	6
+	.byte	'upperLayerTxPduId',0,1,159,30,13
+	.word	.L404,.L688
+	.byte	6
+	.byte	'txConfirmationFct',0,1,160,30,31
+	.word	.L689,.L690
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('CanIf_HlTxConfirmation')
+	.sect	'.debug_abbrev'
+.L383:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3,8,58
+	.byte	15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('CanIf_HlTxConfirmation')
+	.sect	'.debug_line'
+.L384:
+	.word	.L1140-.L1139
+.L1139:
+	.half	3
+	.word	.L1142-.L1141
+.L1141:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation',0,0
+	.byte	'CanIf.c',0,1,0,0,0
+.L1142:
+	.byte	5,11,7,0,5,2
+	.word	.L235
+	.byte	3,164,30,1,5,23,9
+	.half	.L741-.L235
+	.byte	3,3,1,9
+	.half	.L740-.L741
+	.byte	3,2,1,5,3,9
+	.half	.L742-.L740
+	.byte	3,2,1,5,25,7,9
+	.half	.L1143-.L742
+	.byte	3,3,1,5,1,7,9
+	.half	.L84-.L1143
+	.byte	3,2,1,7,9
+	.half	.L387-.L84
+	.byte	0,1,1
+.L1140:
+	.sdecl	'.debug_ranges',debug,cluster('CanIf_HlTxConfirmation')
+	.sect	'.debug_ranges'
+.L385:
+	.word	-1,.L386,0,.L387-.L386,0,0
+	.sdecl	'.debug_info',debug,cluster('CanIf_MainVersion')
+	.sect	'.debug_info'
+.L388:
+	.word	238
+	.half	3
+	.word	.L389
+	.byte	4,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation/CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1,2
+	.word	.L264
+	.byte	3
+	.byte	'CanIf_MainVersion',0,1,179,5,27
+	.word	.L691
+	.byte	1,5,3
+	.word	CanIf_MainVersion
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('CanIf_MainVersion')
+	.sect	'.debug_abbrev'
+.L389:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('CanIf_SubVersion')
+	.sect	'.debug_info'
+.L390:
+	.word	237
+	.half	3
+	.word	.L391
+	.byte	4,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation/CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1,2
+	.word	.L264
+	.byte	3
+	.byte	'CanIf_SubVersion',0,1,180,5,27
+	.word	.L692
+	.byte	1,5,3
+	.word	CanIf_SubVersion
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('CanIf_SubVersion')
+	.sect	'.debug_abbrev'
+.L391:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('CanIf_ReleaseVersion')
+	.sect	'.debug_info'
+.L392:
+	.word	241
+	.half	3
+	.word	.L393
+	.byte	4,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation/CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1,2
+	.word	.L264
+	.byte	3
+	.byte	'CanIf_ReleaseVersion',0,1,181,5,27
+	.word	.L693
+	.byte	1,5,3
+	.word	CanIf_ReleaseVersion
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('CanIf_ReleaseVersion')
+	.sect	'.debug_abbrev'
+.L393:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('CanIfState')
+	.sect	'.debug_info'
+.L394:
+	.word	230
+	.half	3
+	.word	.L395
+	.byte	4,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation/CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1,2
+	.word	.L264
+	.byte	3
+	.byte	'CanIfState',0,1,211,10,39
+	.word	.L694
+	.byte	5,3
+	.word	CanIfState
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('CanIfState')
+	.sect	'.debug_abbrev'
+.L395:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
+	.sdecl	'.debug_info',debug,cluster('CanIf_TxQueueBitFlagsLookUp')
+	.sect	'.debug_info'
+.L396:
+	.word	247
+	.half	3
+	.word	.L397
+	.byte	4,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation/CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1,2
+	.word	.L264
+	.byte	3
+	.byte	'CanIf_TxQueueBitFlagsLookUp',0,1,205,11,56
+	.word	.L695
+	.byte	5,3
+	.word	CanIf_TxQueueBitFlagsLookUp
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('CanIf_TxQueueBitFlagsLookUp')
+	.sect	'.debug_abbrev'
+.L397:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
+	.sdecl	'.debug_info',debug,cluster('RxDlcMaxValueLookUp')
+	.sect	'.debug_info'
+.L398:
+	.word	239
+	.half	3
+	.word	.L399
+	.byte	4,1
+	.byte	'../../../../BSW/Components/CanIf/Implementation/CanIf.c',0
+	.byte	'TASKING VX-toolset for TriCore: C compiler',0
+	.byte	'D:\\Dev\\HIL\\w\\cdevops-light-control-upstream\\cdevops-light-control-upstream\\ECU\\BFC\\Appl\\',0
+	.byte	12,1,2
+	.word	.L264
+	.byte	3
+	.byte	'RxDlcMaxValueLookUp',0,1,234,11,39
+	.word	.L696
+	.byte	5,3
+	.word	RxDlcMaxValueLookUp
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('RxDlcMaxValueLookUp')
+	.sect	'.debug_abbrev'
+.L399:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
+	.sdecl	'.debug_loc',debug,cluster('CanIf_CheckValidation')
+	.sect	'.debug_loc'
+.L258:
+	.word	-1,.L259,0,.L550-.L259
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L551:
+	.word	-1,.L259,0,.L550-.L259
+	.half	1
+	.byte	84
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('CanIf_CheckWakeup')
+	.sect	'.debug_loc'
+.L256:
+	.word	-1,.L257,0,.L548-.L257
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L549:
+	.word	-1,.L257,0,.L548-.L257
+	.half	1
+	.byte	84
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('CanIf_ClearQueue')
+	.sect	'.debug_loc'
+.L224:
+	.word	-1,.L225,0,.L645-.L225
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L646:
+	.word	-1,.L225,0,.L697-.L225
+	.half	1
+	.byte	84
+	.word	0,0
+.L661:
+	.word	-1,.L225,.L703-.L225,.L4-.L225
+	.half	1
+	.byte	84
+	.word	0,0
+.L656:
+	.word	-1,.L225,.L699-.L225,.L700-.L225
+	.half	1
+	.byte	95
+	.word	0,0
+.L647:
+	.word	-1,.L225,.L698-.L225,.L645-.L225
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L663:
+	.word	-1,.L225,.L702-.L225,.L4-.L225
+	.half	1
+	.byte	95
+	.word	0,0
+.L658:
+	.word	-1,.L225,.L701-.L225,.L702-.L225
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('CanIf_ControllerBusOff')
+	.sect	'.debug_loc'
+.L242:
+	.word	-1,.L243,0,.L595-.L243
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L596:
+	.word	-1,.L243,0,.L757-.L243
+	.half	1
+	.byte	84
+	.word	.L146-.L243,.L145-.L243
+	.half	1
+	.byte	84
+	.word	0,0
+.L599:
+	.word	-1,.L243,.L759-.L243,.L595-.L243
+	.half	1
+	.byte	111
+	.word	0,0
+.L597:
+	.word	-1,.L243,.L758-.L243,.L595-.L243
+	.half	1
+	.byte	95
+	.word	.L760-.L243,.L149-.L243
+	.half	1
+	.byte	87
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('CanIf_ControllerModeIndicationAr403')
+	.sect	'.debug_loc'
+.L260:
+	.word	-1,.L261,0,.L557-.L261
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L558:
+	.word	-1,.L261,0,.L202-.L261
+	.half	1
+	.byte	84
+	.word	0,0
+.L559:
+	.word	-1,.L261,0,.L202-.L261
+	.half	1
+	.byte	85
+	.word	0,0
+.L562:
+	.word	-1,.L261,.L796-.L261,.L557-.L261
+	.half	1
+	.byte	111
+	.word	0,0
+.L560:
+	.word	-1,.L261,.L795-.L261,.L557-.L261
+	.half	1
+	.byte	88
+	.word	.L797-.L261,.L217-.L261
+	.half	1
+	.byte	87
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('CanIf_GetControllerMode')
+	.sect	'.debug_loc'
+.L230:
+	.word	-1,.L231,0,.L432-.L231
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L433:
+	.word	-1,.L231,0,.L706-.L231
+	.half	1
+	.byte	84
+	.word	0,0
+.L435:
+	.word	-1,.L231,0,.L40-.L231
+	.half	1
+	.byte	100
+	.word	0,0
+.L437:
+	.word	-1,.L231,.L708-.L231,.L40-.L231
+	.half	1
+	.byte	87
+	.word	0,0
+.L436:
+	.word	-1,.L231,.L707-.L231,.L432-.L231
+	.half	1
+	.byte	88
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('CanIf_GetPduMode')
+	.sect	'.debug_loc'
+.L246:
+	.word	-1,.L247,0,.L538-.L247
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L539:
+	.word	-1,.L247,0,.L765-.L247
+	.half	1
+	.byte	84
+	.word	0,0
+.L541:
+	.word	-1,.L247,0,.L171-.L247
+	.half	1
+	.byte	100
+	.word	0,0
+.L543:
+	.word	-1,.L247,.L767-.L247,.L171-.L247
+	.half	1
+	.byte	87
+	.word	0,0
+.L542:
+	.word	-1,.L247,.L766-.L247,.L538-.L247
+	.half	1
+	.byte	88
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('CanIf_GetVersionInfo')
+	.sect	'.debug_loc'
+.L252:
+	.word	-1,.L253,0,.L544-.L253
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L546:
+	.word	-1,.L253,0,.L544-.L253
+	.half	1
+	.byte	100
+	.word	0,0
+.L547:
+	.word	-1,.L253,.L794-.L253,.L544-.L253
+	.half	1
+	.byte	87
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('CanIf_HlIndication')
+	.sect	'.debug_loc'
+.L677:
+	.word	0,0
+.L668:
+	.word	-1,.L241,0,.L132-.L241
+	.half	1
+	.byte	86
+	.word	0,0
+.L240:
+	.word	-1,.L241,0,.L752-.L241
+	.half	2
+	.byte	138,0
+	.word	.L752-.L241,.L143-.L241
+	.half	2
+	.byte	138,8
+	.word	.L143-.L241,.L143-.L241
+	.half	2
+	.byte	138,0
+	.word	.L143-.L241,.L664-.L241
+	.half	2
+	.byte	138,8
+	.word	.L664-.L241,.L664-.L241
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L675:
+	.word	0,0
+.L667:
+	.word	-1,.L241,0,.L753-.L241
+	.half	1
+	.byte	100
+	.word	0,0
+.L665:
+	.word	-1,.L241,0,.L754-.L241
+	.half	1
+	.byte	84
+	.word	0,0
+.L673:
+	.word	0,0
+.L666:
+	.word	-1,.L241,0,.L132-.L241
+	.half	1
+	.byte	85
+	.word	0,0
+.L669:
+	.word	-1,.L241,0,.L132-.L241
+	.half	1
+	.byte	87
+	.word	0,0
+.L670:
+	.word	-1,.L241,.L752-.L241,.L664-.L241
+	.half	1
+	.byte	88
+	.word	.L756-.L241,.L143-.L241
+	.half	1
+	.byte	87
+	.word	0,0
+.L684:
+	.word	-1,.L241,0,.L664-.L241
+	.half	2
+	.byte	145,120
+	.word	0,0
+.L682:
+	.word	-1,.L241,.L755-.L241,.L132-.L241
+	.half	1
+	.byte	98
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('CanIf_HlTxConfirmation')
+	.sect	'.debug_loc'
+.L234:
+	.word	-1,.L235,0,.L685-.L235
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L686:
+	.word	-1,.L235,0,.L740-.L235
+	.half	1
+	.byte	84
+	.word	0,0
+.L687:
+	.word	-1,.L235,.L741-.L235,.L685-.L235
+	.half	1
+	.byte	95
+	.word	0,0
+.L690:
+	.word	-1,.L235,.L742-.L235,.L685-.L235
+	.half	1
+	.byte	111
+	.word	0,0
+.L688:
+	.word	-1,.L235,.L740-.L235,.L685-.L235
+	.half	1
+	.byte	84
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('CanIf_Init')
+	.sect	'.debug_loc'
+.L226:
+	.word	-1,.L227,0,.L401-.L227
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L403:
+	.word	-1,.L227,0,.L704-.L227
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('CanIf_InitMemory')
+	.sect	'.debug_loc'
+.L254:
+	.word	-1,.L255,0,.L400-.L255
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('CanIf_RxIndicationAsr403')
+	.sect	'.debug_loc'
+.L570:
+	.word	-1,.L239,0,.L95-.L239
+	.half	1
+	.byte	86
+	.word	0,0
+.L569:
+	.word	-1,.L239,0,.L748-.L239
+	.half	1
+	.byte	85
+	.word	0,0
+.L238:
+	.word	-1,.L239,0,.L567-.L239
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L572:
+	.word	-1,.L239,0,.L95-.L239
+	.half	1
+	.byte	100
+	.word	0,0
+.L568:
+	.word	-1,.L239,0,.L749-.L239
+	.half	1
+	.byte	84
+	.word	.L104-.L239,.L112-.L239
+	.half	1
+	.byte	84
+	.word	0,0
+.L575:
+	.word	-1,.L239,.L750-.L239,.L567-.L239
+	.half	1
+	.byte	88
+	.word	.L751-.L239,.L129-.L239
+	.half	1
+	.byte	87
+	.word	0,0
+.L584:
+	.word	0,0
+.L593:
+	.word	0,0
+.L589:
+	.word	0,0
+.L579:
+	.word	0,0
+.L574:
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('CanIf_SetBaudrate')
+	.sect	'.debug_loc'
+.L554:
+	.word	-1,.L263,0,.L798-.L263
+	.half	1
+	.byte	85
+	.word	0,0
+.L262:
+	.word	-1,.L263,0,.L552-.L263
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L553:
+	.word	-1,.L263,0,.L798-.L263
+	.half	1
+	.byte	84
+	.word	0,0
+.L556:
+	.word	-1,.L263,.L800-.L263,.L552-.L263
+	.half	1
+	.byte	95
+	.word	0,0
+.L555:
+	.word	-1,.L263,.L799-.L263,.L798-.L263
+	.half	1
+	.byte	88
+	.word	.L798-.L263,.L219-.L263
+	.half	1
+	.byte	82
+	.word	.L219-.L263,.L552-.L263
+	.half	1
+	.byte	88
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('CanIf_SetControllerMode')
+	.sect	'.debug_loc'
+.L228:
+	.word	-1,.L229,0,.L405-.L229
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L424:
+	.word	0,0
+.L415:
+	.word	0,0
+.L406:
+	.word	-1,.L229,0,.L420-.L229
+	.half	1
+	.byte	84
+	.word	0,0
+.L417:
+	.word	0,0
+.L408:
+	.word	-1,.L229,0,.L420-.L229
+	.half	1
+	.byte	85
+	.word	.L412-.L229,.L405-.L229
+	.half	1
+	.byte	88
+	.word	0,0
+.L426:
+	.word	0,0
+.L410:
+	.word	-1,.L229,.L705-.L229,.L405-.L229
+	.half	1
+	.byte	90
+	.word	0,0
+.L421:
+	.word	-1,.L229,.L413-.L229,.L405-.L229
+	.half	1
+	.byte	89
+	.word	0,0
+.L409:
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('CanIf_SetPduMode')
+	.sect	'.debug_loc'
+.L244:
+	.word	-1,.L245,0,.L532-.L245
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L533:
+	.word	-1,.L245,0,.L761-.L245
+	.half	1
+	.byte	84
+	.word	0,0
+.L535:
+	.word	-1,.L245,0,.L761-.L245
+	.half	1
+	.byte	85
+	.word	.L762-.L245,.L532-.L245
+	.half	1
+	.byte	88
+	.word	0,0
+.L537:
+	.word	-1,.L245,.L764-.L245,.L532-.L245
+	.half	1
+	.byte	90
+	.word	0,0
+.L536:
+	.word	-1,.L245,.L763-.L245,.L532-.L245
+	.half	1
+	.byte	89
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('CanIf_Transmit')
+	.sect	'.debug_loc'
+.L232:
+	.word	-1,.L233,0,.L446-.L233
+	.half	2
+	.byte	138,0
+	.word	.L446-.L233,.L438-.L233
+	.half	2
+	.byte	138,16
+	.word	.L438-.L233,.L438-.L233
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L471:
+	.word	0,0
+.L439:
+	.word	-1,.L233,0,.L709-.L233
+	.half	1
+	.byte	84
+	.word	.L445-.L233,.L438-.L233
+	.half	1
+	.byte	89
+	.word	.L463-.L233,.L716-.L233
+	.half	1
+	.byte	95
+	.word	.L55-.L233,.L730-.L233
+	.half	1
+	.byte	95
+	.word	.L54-.L233,.L449-.L233
+	.half	1
+	.byte	84
+	.word	.L48-.L233,.L43-.L233
+	.half	1
+	.byte	84
+	.word	0,0
+.L507:
+	.word	0,0
+.L521:
+	.word	0,0
+.L501:
+	.word	0,0
+.L441:
+	.word	-1,.L233,0,.L709-.L233
+	.half	1
+	.byte	100
+	.word	.L445-.L233,.L710-.L233
+	.half	1
+	.byte	108
+	.word	.L55-.L233,.L68-.L233
+	.half	1
+	.byte	108
+	.word	.L54-.L233,.L449-.L233
+	.half	1
+	.byte	100
+	.word	.L54-.L233,.L43-.L233
+	.half	1
+	.byte	108
+	.word	.L48-.L233,.L43-.L233
+	.half	1
+	.byte	100
+	.word	0,0
+.L486:
+	.word	-1,.L233,.L717-.L233,.L482-.L233
+	.half	1
+	.byte	84
+	.word	0,0
+.L447:
+	.word	-1,.L233,.L712-.L233,.L713-.L233
+	.half	1
+	.byte	95
+	.word	0,0
+.L517:
+	.word	-1,.L233,.L728-.L233,.L729-.L233
+	.half	1
+	.byte	95
+	.word	0,0
+.L531:
+	.word	-1,.L233,.L738-.L233,.L739-.L233
+	.half	1
+	.byte	95
+	.word	0,0
+.L509:
+	.word	-1,.L233,.L721-.L233,.L65-.L233
+	.half	1
+	.byte	87
+	.word	0,0
+.L523:
+	.word	-1,.L233,.L735-.L233,.L71-.L233
+	.half	1
+	.byte	87
+	.word	0,0
+.L494:
+	.word	-1,.L233,.L714-.L233,.L55-.L233
+	.half	1
+	.byte	88
+	.word	0,0
+.L443:
+	.word	-1,.L233,.L711-.L233,.L438-.L233
+	.half	1
+	.byte	91
+	.word	0,0
+.L496:
+	.word	-1,.L233,.L716-.L233,.L718-.L233
+	.half	1
+	.byte	95
+	.word	0,0
+.L456:
+	.word	-1,.L233,0,.L438-.L233
+	.half	2
+	.byte	145,112
+	.word	0,0
+.L491:
+	.word	0,0
+.L459:
+	.word	0,0
+.L479:
+	.word	0,0
+.L473:
+	.word	0,0
+.L513:
+	.word	-1,.L233,.L724-.L233,.L725-.L233
+	.half	1
+	.byte	81
+	.word	0,0
+.L527:
+	.word	-1,.L233,.L733-.L233,.L734-.L233
+	.half	1
+	.byte	81
+	.word	0,0
+.L515:
+	.word	-1,.L233,.L726-.L233,.L727-.L233
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L529:
+	.word	-1,.L233,.L736-.L233,.L737-.L233
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L503:
+	.word	-1,.L233,.L719-.L233,.L720-.L233
+	.half	1
+	.byte	95
+	.word	0,0
+.L493:
+	.word	-1,.L233,.L446-.L233,.L438-.L233
+	.half	1
+	.byte	90
+	.word	0,0
+.L467:
+	.word	-1,.L233,.L446-.L233,.L438-.L233
+	.half	1
+	.byte	90
+	.word	0,0
+.L484:
+	.word	-1,.L233,.L482-.L233,.L499-.L233
+	.half	1
+	.byte	82
+	.word	.L61-.L233,.L59-.L233
+	.half	1
+	.byte	82
+	.word	.L55-.L233,.L71-.L233
+	.half	1
+	.byte	82
+	.word	0,0
+.L442:
+	.word	0,0
+.L451:
+	.word	-1,.L233,.L469-.L233,.L714-.L233
+	.half	1
+	.byte	88
+	.word	.L55-.L233,.L68-.L233
+	.half	1
+	.byte	88
+	.word	.L54-.L233,.L50-.L233
+	.half	1
+	.byte	88
+	.word	0,0
+.L511:
+	.word	-1,.L233,.L722-.L233,.L723-.L233
+	.half	1
+	.byte	95
+	.word	0,0
+.L525:
+	.word	-1,.L233,.L731-.L233,.L732-.L233
+	.half	1
+	.byte	95
+	.word	0,0
+.L476:
+	.word	-1,.L233,.L715-.L233,.L709-.L233
+	.half	5
+	.byte	144,32,157,32,0
+	.word	.L54-.L233,.L50-.L233
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('CanIf_TxConfirmation')
+	.sect	'.debug_loc'
+.L236:
+	.word	-1,.L237,0,.L563-.L237
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L564:
+	.word	-1,.L237,0,.L743-.L237
+	.half	1
+	.byte	84
+	.word	.L744-.L237,.L563-.L237
+	.half	1
+	.byte	89
+	.word	0,0
+.L565:
+	.word	-1,.L237,.L745-.L237,.L563-.L237
+	.half	1
+	.byte	90
+	.word	.L747-.L237,.L93-.L237
+	.half	1
+	.byte	87
+	.word	0,0
+.L566:
+	.word	-1,.L237,.L746-.L237,.L86-.L237
+	.half	1
+	.byte	88
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('CanIf_TxQueueTransmit')
+	.sect	'.debug_loc'
+.L248:
+	.word	-1,.L249,0,.L768-.L249
+	.half	2
+	.byte	138,0
+	.word	.L768-.L249,.L616-.L249
+	.half	2
+	.byte	138,16
+	.word	.L616-.L249,.L616-.L249
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L635:
+	.word	0,0
+.L617:
+	.word	-1,.L249,0,.L769-.L249
+	.half	1
+	.byte	84
+	.word	.L768-.L249,.L770-.L249
+	.half	1
+	.byte	88
+	.word	.L177-.L249,.L181-.L249
+	.half	1
+	.byte	88
+	.word	.L184-.L249,.L174-.L249
+	.half	1
+	.byte	88
+	.word	0,0
+.L632:
+	.word	-1,.L249,.L769-.L249,.L175-.L249
+	.half	1
+	.byte	84
+	.word	0,0
+.L644:
+	.word	-1,.L249,.L783-.L249,.L784-.L249
+	.half	1
+	.byte	95
+	.word	0,0
+.L636:
+	.word	-1,.L249,.L776-.L249,.L634-.L249
+	.half	1
+	.byte	87
+	.word	0,0
+.L620:
+	.word	-1,.L249,.L772-.L249,.L616-.L249
+	.half	1
+	.byte	90
+	.word	0,0
+.L622:
+	.word	-1,.L249,.L774-.L249,.L775-.L249
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L624:
+	.word	-1,.L249,0,.L616-.L249
+	.half	2
+	.byte	145,112
+	.word	0,0
+.L627:
+	.word	0,0
+.L640:
+	.word	-1,.L249,.L779-.L249,.L780-.L249
+	.half	1
+	.byte	81
+	.word	0,0
+.L642:
+	.word	-1,.L249,.L781-.L249,.L782-.L249
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L630:
+	.word	-1,.L249,.L771-.L249,.L634-.L249
+	.half	1
+	.byte	82
+	.word	.L177-.L249,.L181-.L249
+	.half	1
+	.byte	82
+	.word	.L184-.L249,.L174-.L249
+	.half	1
+	.byte	82
+	.word	0,0
+.L619:
+	.word	-1,.L249,.L773-.L249,.L616-.L249
+	.half	1
+	.byte	89
+	.word	0,0
+.L638:
+	.word	-1,.L249,.L777-.L249,.L778-.L249
+	.half	1
+	.byte	95
+	.word	0,0
+.L618:
+	.word	-1,.L249,.L771-.L249,.L634-.L249
+	.half	1
+	.byte	82
+	.word	.L177-.L249,.L181-.L249
+	.half	1
+	.byte	82
+	.word	.L184-.L249,.L174-.L249
+	.half	1
+	.byte	82
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('CanIf_TxQueueTreatment')
+	.sect	'.debug_loc'
+.L250:
+	.word	-1,.L251,0,.L600-.L251
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L612:
+	.word	-1,.L251,.L791-.L251,.L786-.L251
+	.half	1
+	.byte	84
+	.word	.L192-.L251,.L188-.L251
+	.half	1
+	.byte	84
+	.word	0,0
+.L615:
+	.word	-1,.L251,.L786-.L251,.L792-.L251
+	.half	1
+	.byte	82
+	.word	0,0
+.L601:
+	.word	-1,.L251,0,.L191-.L251
+	.half	1
+	.byte	84
+	.word	0,0
+.L610:
+	.word	-1,.L251,.L789-.L251,.L790-.L251
+	.half	1
+	.byte	95
+	.word	.L192-.L251,.L793-.L251
+	.half	1
+	.byte	95
+	.word	0,0
+.L608:
+	.word	-1,.L251,.L789-.L251,.L188-.L251
+	.half	1
+	.byte	88
+	.word	0,0
+.L602:
+	.word	-1,.L251,.L785-.L251,.L786-.L251
+	.half	1
+	.byte	82
+	.word	.L192-.L251,.L600-.L251
+	.half	1
+	.byte	82
+	.word	0,0
+.L604:
+	.word	-1,.L251,.L787-.L251,.L788-.L251
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L1144:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,27,8,26,8,28,8,29,8,30,8,31,8,34,8,35,8,32,8,33,8,16,8,17,8,24,8,25,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('CanIf_ClearQueue')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1144,.L225,.L645-.L225
+	.sdecl	'.debug_frame',debug,cluster('CanIf_Init')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1144,.L227,.L401-.L227
+	.sdecl	'.debug_frame',debug,cluster('CanIf_SetControllerMode')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1144,.L229,.L405-.L229
+	.sdecl	'.debug_frame',debug,cluster('CanIf_GetControllerMode')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1144,.L231,.L432-.L231
+	.sdecl	'.debug_frame',debug,cluster('CanIf_Transmit')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L1144,.L233,.L438-.L233
+	.byte	4
+	.word	(.L446-.L233)/2
+	.byte	19,16,22,26,3,19,138,16,4
+	.word	(.L438-.L446)/2
+	.byte	19,0,8,26,0,0
+	.sdecl	'.debug_frame',debug,cluster('CanIf_HlTxConfirmation')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1144,.L235,.L685-.L235
+	.sdecl	'.debug_frame',debug,cluster('CanIf_TxConfirmation')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1144,.L237,.L563-.L237
+	.sdecl	'.debug_frame',debug,cluster('CanIf_RxIndicationAsr403')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1144,.L239,.L567-.L239
+	.sdecl	'.debug_frame',debug,cluster('CanIf_HlIndication')
+	.sect	'.debug_frame'
+	.word	52
+	.word	.L1144,.L241,.L664-.L241
+	.byte	4
+	.word	(.L752-.L241)/2
+	.byte	19,8,22,26,3,19,138,8,4
+	.word	(.L143-.L752)/2
+	.byte	19,0,8,26,19,8,22,26,3,19,138,8,4
+	.word	(.L664-.L143)/2
+	.byte	19,0,8,26,0
+	.sdecl	'.debug_frame',debug,cluster('CanIf_ControllerBusOff')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1144,.L243,.L595-.L243
+	.sdecl	'.debug_frame',debug,cluster('CanIf_SetPduMode')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1144,.L245,.L532-.L245
+	.sdecl	'.debug_frame',debug,cluster('CanIf_GetPduMode')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1144,.L247,.L538-.L247
+	.sdecl	'.debug_frame',debug,cluster('CanIf_TxQueueTransmit')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L1144,.L249,.L616-.L249
+	.byte	4
+	.word	(.L768-.L249)/2
+	.byte	19,16,22,26,3,19,138,16,4
+	.word	(.L616-.L768)/2
+	.byte	19,0,8,26,0,0
+	.sdecl	'.debug_frame',debug,cluster('CanIf_TxQueueTreatment')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1144,.L251,.L600-.L251
+	.sdecl	'.debug_frame',debug,cluster('CanIf_GetVersionInfo')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1144,.L253,.L544-.L253
+	.sdecl	'.debug_frame',debug,cluster('CanIf_InitMemory')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L1144,.L255,.L400-.L255
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('CanIf_CheckWakeup')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L1144,.L257,.L548-.L257
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('CanIf_CheckValidation')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L1144,.L259,.L550-.L259
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('CanIf_ControllerModeIndicationAr403')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1144,.L261,.L557-.L261
+	.sdecl	'.debug_frame',debug,cluster('CanIf_SetBaudrate')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L1144,.L263,.L552-.L263
+	; Module end
