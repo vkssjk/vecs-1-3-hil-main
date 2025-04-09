@@ -12,9 +12,6 @@ jobs:
   #   name: Build SUT
   #   runs-on: lvl1
   #   steps:
-  #     - name: checkout code
-  #       uses: actions/checkout@v3
-
   #     - name: Checkout repository
   #       uses: actions/checkout@v3
   #       env:
