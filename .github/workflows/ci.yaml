@@ -1,0 +1,49 @@
+name: CI Build & Test with vVIRTUALtarget
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: self-hosted
+
+    steps:
+      - name: 📥 저장소 코드 가져오기
+        uses: actions/checkout@v3
+
+      - name: ⚙️ 환경 변수 설정
+        run: |
+          echo "VTT_DIR=C:\\Program Files\\Vector\\Vector vVIRTUALtarget 8\\Exec64" >> $env:GITHUB_ENV
+          echo "CANOE4SW_SE=C:\\Program Files\\Vector\\Vector CANoe4SW 16" >> $env:GITHUB_ENV
+          echo "REPORT_TOOL=C:\\Program Files\\Vector CANoe Test Report Viewer 18" >> $env:GITHUB_ENV
+
+      - name: 🛠️ vVIRTUALtarget로 SUT 빌드
+        run: |
+          "$env:VTT_DIR\\VTT.exe" -build "Projects\\LightControl.vtproj"
+
+      - name: 🧪 Test Unit 컴파일
+        run: |
+          "C:\\Tools\\TestUnitBuildCLI.exe" -s Tests\\TestSuite.vttest -o Output\\Tests
+
+      - name: 🏗️ 환경 및 테스트 유닛 빌드
+        run: |
+          "C:\\Tools\\environment-make.exe" Config\\LightControl.venvironment.yaml
+          "C:\\Tools\\test-unit-make.exe" Output\\Tests
+
+      - name: ▶️ 테스트 실행 (CANoe4SW-SE)
+        run: |
+          "$env:CANOE4SW_SE\\canoe4sw-se.exe" -e Output\\SimEnv -r
+
+      - name: 🧾 테스트 리포트 변환
+        run: |
+          "$env:REPORT_TOOL\\ReportViewerCLI.exe" -i Output\\Results.xml -o report.xml
+          cscript.exe Tools\\convert-to-junit.vbs report.xml
+
+      - name: 📦 결과 리포트 업로드
+        uses: actions/upload-artifact@v3
+        with:
+          name: junit-report
+          path: report.xml
