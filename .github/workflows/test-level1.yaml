@@ -8,6 +8,12 @@ on:
   workflow_dispatch:
 
 jobs:
+  early-exit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Early Exit
+        run: echo "Skipping other jobs for now."
+
   run-tests-simulation:
     name: Run simulation
     needs: build-simulation
