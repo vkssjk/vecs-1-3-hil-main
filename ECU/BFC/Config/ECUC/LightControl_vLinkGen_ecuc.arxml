@@ -8561,6 +8561,26 @@
                       <SHORT-NAME>WRITE</SHORT-NAME>
                       <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenPublishedInformation/vLinkGenConstGroupFlags/vLinkGenConstGroupFlag</DEFINITION-REF>
                     </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="ac3a0864-ae1c-4462-9a25-93ee113e74e7">
+                      <SHORT-NAME>ALIGNALL</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenPublishedInformation/vLinkGenConstGroupFlags/vLinkGenConstGroupFlag</DEFINITION-REF>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="a524a311-d6db-4300-a8e6-864fac994435">
+                      <SHORT-NAME>NOCOMPRESS</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenPublishedInformation/vLinkGenConstGroupFlags/vLinkGenConstGroupFlag</DEFINITION-REF>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="ee45536d-9f16-4f67-8ee2-9dca9798443b">
+                      <SHORT-NAME>UNINIT</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenPublishedInformation/vLinkGenConstGroupFlags/vLinkGenConstGroupFlag</DEFINITION-REF>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="adc8b94b-bebf-4a96-a480-c5d0e36afa06">
+                      <SHORT-NAME>FIXED</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenPublishedInformation/vLinkGenConstGroupFlags/vLinkGenConstGroupFlag</DEFINITION-REF>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="23550352-7e89-4955-8421-19087c662145">
+                      <SHORT-NAME>ZEROPAD</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenPublishedInformation/vLinkGenConstGroupFlags/vLinkGenConstGroupFlag</DEFINITION-REF>
+                    </ECUC-CONTAINER-VALUE>
                   </SUB-CONTAINERS>
                 </ECUC-CONTAINER-VALUE>
                 <ECUC-CONTAINER-VALUE UUID="98cd34e2-0062-4d8f-9ffe-e338dc6ab70f">
@@ -8603,6 +8623,26 @@
                     </ECUC-CONTAINER-VALUE>
                     <ECUC-CONTAINER-VALUE UUID="78f74742-f029-4072-91fc-31b72b5fe1e5">
                       <SHORT-NAME>WRITE</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenPublishedInformation/vLinkGenVarGroupFlags/vLinkGenVarGroupFlag</DEFINITION-REF>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="c82350d7-8357-45a2-a471-cd06685457f9">
+                      <SHORT-NAME>ALIGNALL</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenPublishedInformation/vLinkGenVarGroupFlags/vLinkGenVarGroupFlag</DEFINITION-REF>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="8cb5613c-381a-434e-863e-a8b6c6c358b7">
+                      <SHORT-NAME>NOCOMPRESS</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenPublishedInformation/vLinkGenVarGroupFlags/vLinkGenVarGroupFlag</DEFINITION-REF>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="5f2ba7df-a1aa-4689-8eba-33516a0a5c9f">
+                      <SHORT-NAME>UNINIT</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenPublishedInformation/vLinkGenVarGroupFlags/vLinkGenVarGroupFlag</DEFINITION-REF>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="c97cdffb-5ccd-442b-bb38-5426a23a5271">
+                      <SHORT-NAME>FIXED</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenPublishedInformation/vLinkGenVarGroupFlags/vLinkGenVarGroupFlag</DEFINITION-REF>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="bd302967-cf9f-49fc-8334-9a21f1760eba">
+                      <SHORT-NAME>ZEROPAD</SHORT-NAME>
                       <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vLinkGen/vLinkGenPublishedInformation/vLinkGenVarGroupFlags/vLinkGenVarGroupFlag</DEFINITION-REF>
                     </ECUC-CONTAINER-VALUE>
                   </SUB-CONTAINERS>

@@ -4514,19 +4514,7 @@
                                 </ECUC-NUMERICAL-PARAM-VALUE>
                                 <ECUC-TEXTUAL-PARAM-VALUE>
                                   <DEFINITION-REF DEST="ECUC-MULTILINE-STRING-PARAM-DEF">/MICROSAR/BswM/BswMConfig/BswMModeControl/BswMAction/BswMAvailableActions/BswMUserCallout/BswMUserCode</DEFINITION-REF>
-                                  <VALUE>ComM_StateType CN_CAN00_a2373004 = COMM_NO_COM_NO_PENDING_REQUEST;&#13;
-&#13;
-(void)ComM_GetState(ComMConf_ComMChannel_CN_CAN00_a2373004, &amp;CN_CAN00_a2373004); /* SBSW_BSWM_FCTCALL_LOCALVAR */&#13;
-&#13;
-if(CN_CAN00_a2373004 != COMM_NO_COM_NO_PENDING_REQUEST)&#13;
-{&#13;
-  BswM_RequestMode(BSWM_GENERIC_ESH_ComMPendingRequests, BSWM_GENERICVALUE_ESH_ComMPendingRequests_ESH_COMM_PENDING_REQUEST);&#13;
-}&#13;
-else&#13;
-{&#13;
-  BswM_RequestMode(BSWM_GENERIC_ESH_ComMPendingRequests, BSWM_GENERICVALUE_ESH_ComMPendingRequests_ESH_COMM_NO_REQUEST);&#13;
-}&#13;
-</VALUE>
+                                  <VALUE>BswM_RequestMode(BSWM_GENERIC_ESH_ComM_PendingRequests, BSWM_GENERICVALUE_ESH_ComM_PendingRequests_ESH_COMM_NO_REQUEST);</VALUE>
                                 </ECUC-TEXTUAL-PARAM-VALUE>
                               </PARAMETER-VALUES>
                             </ECUC-CONTAINER-VALUE>

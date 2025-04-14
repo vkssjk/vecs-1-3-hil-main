@@ -13,310 +13,962 @@
               </SDG>
             </SDGS>
           </ADMIN-DATA>
-          <DEFINITION-REF DEST="ECUC-MODULE-DEF">/AURIX2G/EcucDefs/Fls</DEFINITION-REF>
+          <DEFINITION-REF DEST="ECUC-MODULE-DEF">/Renesas/EcucDefs_Fls/Fls</DEFINITION-REF>
           <IMPLEMENTATION-CONFIG-VARIANT>VARIANT-POST-BUILD</IMPLEMENTATION-CONFIG-VARIANT>
-          <MODULE-DESCRIPTION-REF DEST="BSW-IMPLEMENTATION">/AURIX2G/EcucDefs/Fls_Impl</MODULE-DESCRIPTION-REF>
+          <MODULE-DESCRIPTION-REF DEST="BSW-IMPLEMENTATION">/Renesas/BswModuleImplementation/Fls_Implementation</MODULE-DESCRIPTION-REF>
           <CONTAINERS>
             <ECUC-CONTAINER-VALUE UUID="dfea6a35-7577-4db1-be40-7803a6c6a8ed">
               <SHORT-NAME>FlsConfigSet</SHORT-NAME>
-              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX2G/EcucDefs/Fls/FlsConfigSet</DEFINITION-REF>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet</DEFINITION-REF>
               <PARAMETER-VALUES>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsConfigSet/FlsAcErase</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsAcErase</DEFINITION-REF>
                   <VALUE>0</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsConfigSet/FlsAcWrite</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsAcWrite</DEFINITION-REF>
                   <VALUE>0</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsConfigSet/FlsCallCycle</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsCallCycle</DEFINITION-REF>
                   <VALUE>0.01</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-TEXTUAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsConfigSet/FlsDefaultMode</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsDefaultMode</DEFINITION-REF>
                   <VALUE>MEMIF_MODE_SLOW</VALUE>
                 </ECUC-TEXTUAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsConfigSet/FlsMaxReadFastMode</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsMaxReadFastMode</DEFINITION-REF>
                   <VALUE>64</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsConfigSet/FlsMaxReadNormalMode</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsMaxReadNormalMode</DEFINITION-REF>
                   <VALUE>32</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsConfigSet/FlsMaxWriteFastMode</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsMaxWriteFastMode</DEFINITION-REF>
                   <VALUE>32</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsConfigSet/FlsMaxWriteNormalMode</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsMaxWriteNormalMode</DEFINITION-REF>
                   <VALUE>32</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsConfigSet/FlsProtection</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsProtection</DEFINITION-REF>
                   <VALUE>0</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-TEXTUAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsConfigSet/FlsWaitStateRead</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsWaitStateRead</DEFINITION-REF>
                   <VALUE>FLS_17_DMU_WAITSTATE_READ_9</VALUE>
                 </ECUC-TEXTUAL-PARAM-VALUE>
                 <ECUC-TEXTUAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsConfigSet/FlsWaitStateErrorCorrection</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsWaitStateErrorCorrection</DEFINITION-REF>
                   <VALUE>FLS_17_DMU_WAITSTATE_ERRCOREC_1</VALUE>
                 </ECUC-TEXTUAL-PARAM-VALUE>
                 <ECUC-TEXTUAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/AURIX2G/EcucDefs/Fls/FlsConfigSet/FlsJobEndNotification</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsJobEndNotification</DEFINITION-REF>
                   <VALUE>Fee_JobEndNotification</VALUE>
                 </ECUC-TEXTUAL-PARAM-VALUE>
                 <ECUC-TEXTUAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/AURIX2G/EcucDefs/Fls/FlsConfigSet/FlsJobErrorNotification</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsJobErrorNotification</DEFINITION-REF>
                   <VALUE>Fee_JobErrorNotification</VALUE>
                 </ECUC-TEXTUAL-PARAM-VALUE>
                 <ECUC-TEXTUAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/AURIX2G/EcucDefs/Fls/FlsConfigSet/FlsEraseVerifyErrNotif</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsEraseVerifyErrNotif</DEFINITION-REF>
                   <VALUE>Fee_17_JobEraseErrorNotification</VALUE>
                 </ECUC-TEXTUAL-PARAM-VALUE>
                 <ECUC-TEXTUAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/AURIX2G/EcucDefs/Fls/FlsConfigSet/FlsProgVerifyErrNotif</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsProgVerifyErrNotif</DEFINITION-REF>
                   <VALUE>Fee_17_JobProgErrorNotification</VALUE>
                 </ECUC-TEXTUAL-PARAM-VALUE>
               </PARAMETER-VALUES>
               <SUB-CONTAINERS>
                 <ECUC-CONTAINER-VALUE UUID="a6953a5c-3ec6-4ad0-85eb-0fe602685679">
                   <SHORT-NAME>FlsSectorList</SHORT-NAME>
-                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX2G/EcucDefs/Fls/FlsConfigSet/FlsSectorList</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSectorList</DEFINITION-REF>
                   <SUB-CONTAINERS>
                     <ECUC-CONTAINER-VALUE UUID="2a2dbb4e-755a-4e4d-804c-26d394f2b481">
                       <SHORT-NAME>FlsSector</SHORT-NAME>
-                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX2G/EcucDefs/Fls/FlsConfigSet/FlsSectorList/FlsSector</DEFINITION-REF>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSectorList/FlsSector</DEFINITION-REF>
                       <PARAMETER-VALUES>
                         <ECUC-NUMERICAL-PARAM-VALUE>
-                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsConfigSet/FlsSectorList/FlsSector/FlsNumberOfSectors</DEFINITION-REF>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSectorList/FlsSector/FlsNumberOfSectors</DEFINITION-REF>
                           <VALUE>2</VALUE>
                         </ECUC-NUMERICAL-PARAM-VALUE>
                         <ECUC-NUMERICAL-PARAM-VALUE>
-                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsConfigSet/FlsSectorList/FlsSector/FlsPageSize</DEFINITION-REF>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSectorList/FlsSector/FlsPageSize</DEFINITION-REF>
                           <VALUE>8</VALUE>
                         </ECUC-NUMERICAL-PARAM-VALUE>
                         <ECUC-NUMERICAL-PARAM-VALUE>
-                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsConfigSet/FlsSectorList/FlsSector/FlsSectorSize</DEFINITION-REF>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSectorList/FlsSector/FlsSectorSize</DEFINITION-REF>
                           <VALUE>524288</VALUE>
                         </ECUC-NUMERICAL-PARAM-VALUE>
                         <ECUC-NUMERICAL-PARAM-VALUE>
-                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsConfigSet/FlsSectorList/FlsSector/FlsSectorStartaddress</DEFINITION-REF>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSectorList/FlsSector/FlsSectorStartaddress</DEFINITION-REF>
                           <VALUE>0</VALUE>
                         </ECUC-NUMERICAL-PARAM-VALUE>
                       </PARAMETER-VALUES>
                     </ECUC-CONTAINER-VALUE>
                   </SUB-CONTAINERS>
                 </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="279460da-8863-4511-9fac-fdbf95498ee2">
+                  <SHORT-NAME>FlsSerialFlashConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="a0c84e29-ae1c-40d2-8831-12ab35d63924">
+                      <SHORT-NAME>FlsSerialFlashRead</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashRead</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashRead/FlsAddressAndDataBitSize</DEFINITION-REF>
+                          <VALUE>ONE_BIT</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashRead/FlsAddressAndDataRate</DEFINITION-REF>
+                          <VALUE>SDR</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashRead/FlsAddressLength</DEFINITION-REF>
+                          <VALUE>THREE_BYTES</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashRead/FlsClockDelay</DEFINITION-REF>
+                          <VALUE>ONE_CYCLE</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashRead/FlsCommand</DEFINITION-REF>
+                          <VALUE>3</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashRead/FlsRpcFrequency</DEFINITION-REF>
+                          <VALUE>FREQ_80MHz</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashRead/FlsDummyCycle</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashRead/FlsInternalStrobeDelay</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashRead/FlsNegationDelay</DEFINITION-REF>
+                          <VALUE>FIVE_DOT_FIVE_CYCLES</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashRead/FlsNextAccessDelay</DEFINITION-REF>
+                          <VALUE>ONE_CYCLE</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashRead/FlsOptionalData</DEFINITION-REF>
+                          <VALUE>2779096485</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashRead/FlsOptionalDataLength</DEFINITION-REF>
+                          <VALUE>NOT_USED</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="fd8f9fd0-2731-4e00-8582-bb28779043e5">
+                      <SHORT-NAME>FlsSerialFlashReadStatusReg</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashReadStatusReg</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashReadStatusReg/FlsClockDelay</DEFINITION-REF>
+                          <VALUE>ONE_CYCLE</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashReadStatusReg/FlsCommand</DEFINITION-REF>
+                          <VALUE>5</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashReadStatusReg/FlsDataBitSize</DEFINITION-REF>
+                          <VALUE>ONE_BIT</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashReadStatusReg/FlsDataRate</DEFINITION-REF>
+                          <VALUE>SDR</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashReadStatusReg/FlsRpcFrequency</DEFINITION-REF>
+                          <VALUE>FREQ_80MHz</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashReadStatusReg/FlsDummyCycle</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashReadStatusReg/FlsNegationDelay</DEFINITION-REF>
+                          <VALUE>FIVE_DOT_FIVE_CYCLES</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashReadStatusReg/FlsNextAccessDelay</DEFINITION-REF>
+                          <VALUE>ONE_CYCLE</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashReadStatusReg/FlsPositionOfBusyBit</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashReadStatusReg/FlsPositionOfEraseErrorBit</DEFINITION-REF>
+                          <VALUE>5</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashReadStatusReg/FlsPositionOfProgramErrorBit</DEFINITION-REF>
+                          <VALUE>6</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashReadStatusReg/FlsPositionOfWriteEnableBit</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="01dd8388-a277-416f-a060-1a6e83e51779">
+                      <SHORT-NAME>FlsSerialFlashReadHwId</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashReadHwId</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashReadHwId/FlsClockDelay</DEFINITION-REF>
+                          <VALUE>ONE_CYCLE</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashReadHwId/FlsCommand</DEFINITION-REF>
+                          <VALUE>159</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashReadHwId/FlsDataBitSize</DEFINITION-REF>
+                          <VALUE>ONE_BIT</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashReadHwId/FlsDataRate</DEFINITION-REF>
+                          <VALUE>SDR</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashReadHwId/FlsRpcFrequency</DEFINITION-REF>
+                          <VALUE>FREQ_80MHz</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashReadHwId/FlsDummyCycle</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashReadHwId/FlsNegationDelay</DEFINITION-REF>
+                          <VALUE>FIVE_DOT_FIVE_CYCLES</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashReadHwId/FlsNextAccessDelay</DEFINITION-REF>
+                          <VALUE>ONE_CYCLE</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="c8256b37-b4dc-43a1-8c26-66ce41f0811d">
+                      <SHORT-NAME>FlsSerialFlashErase</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashErase</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashErase/FlsAddressAndDataBitSize</DEFINITION-REF>
+                          <VALUE>ONE_BIT</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashErase/FlsAddressAndDataRate</DEFINITION-REF>
+                          <VALUE>SDR</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashErase/FlsAddressLength</DEFINITION-REF>
+                          <VALUE>THREE_BYTES</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashErase/FlsClockDelay</DEFINITION-REF>
+                          <VALUE>ONE_CYCLE</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashErase/FlsCommand</DEFINITION-REF>
+                          <VALUE>216</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashErase/FlsRpcFrequency</DEFINITION-REF>
+                          <VALUE>FREQ_80MHz</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashErase/FlsDummyCycle</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashErase/FlsNegationDelay</DEFINITION-REF>
+                          <VALUE>FIVE_DOT_FIVE_CYCLES</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashErase/FlsNextAccessDelay</DEFINITION-REF>
+                          <VALUE>ONE_CYCLE</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="f6627872-befd-4da3-90d5-47b15c19acee">
+                      <SHORT-NAME>FlsSerialFlashProgram</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashProgram</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashProgram/FlsAddressAndDataBitSize</DEFINITION-REF>
+                          <VALUE>ONE_BIT</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashProgram/FlsAddressAndDataRate</DEFINITION-REF>
+                          <VALUE>SDR</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashProgram/FlsAddressLength</DEFINITION-REF>
+                          <VALUE>THREE_BYTES</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashProgram/FlsClockDelay</DEFINITION-REF>
+                          <VALUE>ONE_CYCLE</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashProgram/FlsCommand</DEFINITION-REF>
+                          <VALUE>2</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashProgram/FlsRpcFrequency</DEFINITION-REF>
+                          <VALUE>FREQ_80MHz</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashProgram/FlsDummyCycle</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashProgram/FlsNegationDelay</DEFINITION-REF>
+                          <VALUE>FIVE_DOT_FIVE_CYCLES</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashProgram/FlsNextAccessDelay</DEFINITION-REF>
+                          <VALUE>ONE_CYCLE</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="b72cd4fc-f28e-4d6d-a89b-4c5eaf0175f4">
+                      <SHORT-NAME>FlsSerialFlashWriteEnable</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashWriteEnable</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashWriteEnable/FlsClockDelay</DEFINITION-REF>
+                          <VALUE>ONE_CYCLE</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashWriteEnable/FlsCommand</DEFINITION-REF>
+                          <VALUE>6</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashWriteEnable/FlsDataBitSize</DEFINITION-REF>
+                          <VALUE>ONE_BIT</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashWriteEnable/FlsDataRate</DEFINITION-REF>
+                          <VALUE>SDR</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashWriteEnable/FlsRpcFrequency</DEFINITION-REF>
+                          <VALUE>FREQ_80MHz</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashWriteEnable/FlsDummyCycle</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashWriteEnable/FlsNegationDelay</DEFINITION-REF>
+                          <VALUE>FIVE_DOT_FIVE_CYCLES</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsSerialFlashConfig/FlsSerialFlashWriteEnable/FlsNextAccessDelay</DEFINITION-REF>
+                          <VALUE>ONE_CYCLE</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="44cdacb2-6f8a-4a36-b20e-5c14996b2032">
+                  <SHORT-NAME>FlsHyperFlashConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="43e4a22a-cc90-4437-b24c-bdc2f31c11dd">
+                      <SHORT-NAME>FlsHyperFlashRead</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashRead</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashRead/FlsClockDelay</DEFINITION-REF>
+                          <VALUE>ONE_CYCLE</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashRead/FlsRpcFrequency</DEFINITION-REF>
+                          <VALUE>FREQ_80MHz</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashRead/FlsDummyCycle</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashRead/FlsNegationDelay</DEFINITION-REF>
+                          <VALUE>FIVE_DOT_FIVE_CYCLES</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashRead/FlsNextAccessDelay</DEFINITION-REF>
+                          <VALUE>ONE_CYCLE</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="5fc8969f-a078-49b0-bcf1-bcd0e928c04b">
+                      <SHORT-NAME>FlsHyperFlashReadStatusReg</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashReadStatusReg</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashReadStatusReg/FlsClockDelay</DEFINITION-REF>
+                          <VALUE>ONE_CYCLE</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashReadStatusReg/FlsRpcFrequency</DEFINITION-REF>
+                          <VALUE>FREQ_80MHz</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashReadStatusReg/FlsDummyCycle</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashReadStatusReg/FlsNegationDelay</DEFINITION-REF>
+                          <VALUE>FIVE_DOT_FIVE_CYCLES</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashReadStatusReg/FlsNextAccessDelay</DEFINITION-REF>
+                          <VALUE>ONE_CYCLE</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashReadStatusReg/FlsPositionOfDeviceReadyBit</DEFINITION-REF>
+                          <VALUE>7</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashReadStatusReg/FlsPositionOfEraseErrorBit</DEFINITION-REF>
+                          <VALUE>5</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashReadStatusReg/FlsPositionOfProgramErrorBit</DEFINITION-REF>
+                          <VALUE>4</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="381765ed-0c0c-4dda-87e9-ee450a723d69">
+                          <SHORT-NAME>FlsReadStatusSetupCycle</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashReadStatusReg/FlsReadStatusSetupCycle</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashReadStatusReg/FlsReadStatusSetupCycle/FlsTransactionAddress</DEFINITION-REF>
+                              <VALUE>0</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashReadStatusReg/FlsReadStatusSetupCycle/FlsTransactionData</DEFINITION-REF>
+                              <VALUE>0</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="75af492e-1fe9-46be-99b1-1afc48e663e7">
+                      <SHORT-NAME>FlsHyperFlashReadHwId</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashReadHwId</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashReadHwId/FlsIDReadAddress0</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashReadHwId/FlsClockDelay</DEFINITION-REF>
+                          <VALUE>ONE_CYCLE</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashReadHwId/FlsRpcFrequency</DEFINITION-REF>
+                          <VALUE>FREQ_80MHz</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashReadHwId/FlsDummyCycle</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashReadHwId/FlsNegationDelay</DEFINITION-REF>
+                          <VALUE>FIVE_DOT_FIVE_CYCLES</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashReadHwId/FlsNextAccessDelay</DEFINITION-REF>
+                          <VALUE>ONE_CYCLE</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="c38299e4-537d-4056-908f-50958d9f386e">
+                          <SHORT-NAME>FlsEnterCFI</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashReadHwId/FlsEnterCFI</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashReadHwId/FlsEnterCFI/FlsTransactionAddress</DEFINITION-REF>
+                              <VALUE>0</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashReadHwId/FlsEnterCFI/FlsTransactionData</DEFINITION-REF>
+                              <VALUE>0</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="e103bb1d-ac4f-4fdc-ac9c-2c768bc805d2">
+                          <SHORT-NAME>FlsExitCFI</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashReadHwId/FlsExitCFI</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashReadHwId/FlsExitCFI/FlsTransactionAddress</DEFINITION-REF>
+                              <VALUE>0</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashReadHwId/FlsExitCFI/FlsTransactionData</DEFINITION-REF>
+                              <VALUE>0</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="38a2d567-df67-419c-99c1-5d35c8e4d8ab">
+                      <SHORT-NAME>FlsHyperFlashErase</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashErase</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashErase/FlsCommand</DEFINITION-REF>
+                          <VALUE>48</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashErase/FlsClockDelay</DEFINITION-REF>
+                          <VALUE>ONE_CYCLE</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashErase/FlsRpcFrequency</DEFINITION-REF>
+                          <VALUE>FREQ_80MHz</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashErase/FlsDummyCycle</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashErase/FlsNegationDelay</DEFINITION-REF>
+                          <VALUE>FIVE_DOT_FIVE_CYCLES</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashErase/FlsNextAccessDelay</DEFINITION-REF>
+                          <VALUE>ONE_CYCLE</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="6d7ead86-752d-44b9-b0ec-40c0bbafd97e">
+                          <SHORT-NAME>FlsEraseSetupCycle</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashErase/FlsEraseSetupCycle</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashErase/FlsEraseSetupCycle/FlsTransactionAddress</DEFINITION-REF>
+                              <VALUE>0</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashErase/FlsEraseSetupCycle/FlsTransactionData</DEFINITION-REF>
+                              <VALUE>0</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="e5232154-83f9-438c-a2bb-a6564733be6a">
+                      <SHORT-NAME>FlsHyperFlashProgram</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashProgram</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashProgram/FlsClockDelay</DEFINITION-REF>
+                          <VALUE>ONE_CYCLE</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashProgram/FlsRpcFrequency</DEFINITION-REF>
+                          <VALUE>FREQ_80MHz</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashProgram/FlsDummyCycle</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashProgram/FlsNegationDelay</DEFINITION-REF>
+                          <VALUE>FIVE_DOT_FIVE_CYCLES</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashProgram/FlsNextAccessDelay</DEFINITION-REF>
+                          <VALUE>ONE_CYCLE</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="01c8c584-5e95-44f6-927d-31c6bd5bd10c">
+                          <SHORT-NAME>FlsProgramSetupCycle</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashProgram/FlsProgramSetupCycle</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashProgram/FlsProgramSetupCycle/FlsTransactionAddress</DEFINITION-REF>
+                              <VALUE>0</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsHyperFlashConfig/FlsHyperFlashProgram/FlsProgramSetupCycle/FlsTransactionData</DEFINITION-REF>
+                              <VALUE>0</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="3d552ede-f436-4e3c-8f21-7f18cf82a973">
+                  <SHORT-NAME>FlsDemEventParameterRefs</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsDemEventParameterRefs</DEFINITION-REF>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/Renesas/EcucDefs_Fls/Fls/FlsConfigSet/FlsDemEventParameterRefs/FLS_E_CLOCK_SET_FAILURE</DEFINITION-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
               </SUB-CONTAINERS>
             </ECUC-CONTAINER-VALUE>
             <ECUC-CONTAINER-VALUE UUID="bb16425e-3ea4-4de6-9ad2-0f60a14980fa">
               <SHORT-NAME>FlsGeneral</SHORT-NAME>
-              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX2G/EcucDefs/Fls/FlsGeneral</DEFINITION-REF>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral</DEFINITION-REF>
               <PARAMETER-VALUES>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsGeneral/FlsAcLoadOnJobStart</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsAcLoadOnJobStart</DEFINITION-REF>
                   <VALUE>false</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsGeneral/FlsBaseAddress</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsBaseAddress</DEFINITION-REF>
                   <VALUE>2936012800</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsGeneral/FlsBlankCheckApi</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsBlankCheckApi</DEFINITION-REF>
                   <VALUE>false</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsGeneral/FlsInitCheckApi</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsInitCheckApi</DEFINITION-REF>
                   <VALUE>false</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsGeneral/FlsEccErrorInfoApi</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsEccErrorInfoApi</DEFINITION-REF>
                   <VALUE>false</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsGeneral/FlsCancelApi</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsCancelApi</DEFINITION-REF>
                   <VALUE>false</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsGeneral/FlsCompareApi</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsCompareApi</DEFINITION-REF>
                   <VALUE>false</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsGeneral/FlsDevErrorDetect</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsDevErrorDetect</DEFINITION-REF>
                   <VALUE>true</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsGeneral/FlsRunTimeErrorDetect</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsRunTimeErrorDetect</DEFINITION-REF>
                   <VALUE>true</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsGeneral/FlsSafetyEnable</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsSafetyEnable</DEFINITION-REF>
                   <VALUE>true</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsGeneral/FlsIfxFeeUse</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsIfxFeeUse</DEFINITION-REF>
                   <VALUE>true</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsGeneral/FlsDriverIndex</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsDriverIndex</DEFINITION-REF>
                   <VALUE>0</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsGeneral/FlsEraseVerificationEnabled</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsEraseVerificationEnabled</DEFINITION-REF>
                   <VALUE>false</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsGeneral/FlsGetJobResultApi</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsGetJobResultApi</DEFINITION-REF>
                   <VALUE>false</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsGeneral/FlsGetStatusApi</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsGetStatusApi</DEFINITION-REF>
                   <VALUE>false</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsGeneral/FlsSetModeApi</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsSetModeApi</DEFINITION-REF>
                   <VALUE>true</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsGeneral/FlsTimeoutSupervisionEnabled</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsTimeoutSupervisionEnabled</DEFINITION-REF>
                   <VALUE>false</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsGeneral/FlsTotalSize</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsTotalSize</DEFINITION-REF>
                   <VALUE>1048576</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsGeneral/FlsUseInterrupts</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsUseInterrupts</DEFINITION-REF>
                   <VALUE>false</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsGeneral/FlsVersionInfoApi</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsVersionInfoApi</DEFINITION-REF>
                   <VALUE>false</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsGeneral/FlsWriteVerificationEnabled</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsWriteVerificationEnabled</DEFINITION-REF>
                   <VALUE>false</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-TEXTUAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsGeneral/FlsInitApiMode</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsInitApiMode</DEFINITION-REF>
                   <VALUE>FLS_17_DMU_MCAL_SUPERVISOR</VALUE>
                 </ECUC-TEXTUAL-PARAM-VALUE>
                 <ECUC-TEXTUAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsGeneral/FlsRuntimeApiMode</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsRuntimeApiMode</DEFINITION-REF>
                   <VALUE>FLS_17_DMU_MCAL_SUPERVISOR</VALUE>
                 </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsAccess</DEFINITION-REF>
+                  <VALUE>FLS_SERIAL_FLASH_DEVICE</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsCriticalSectionProtection</DEFINITION-REF>
+                  <VALUE>true</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsDeviceName</DEFINITION-REF>
+                  <VALUE>V4H</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsExclusiveControl</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsExternalSpaceReadMode</DEFINITION-REF>
+                  <VALUE>true</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsRuntimeErrorDetect</DEFINITION-REF>
+                  <VALUE>true</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsSelectPinGroup</DEFINITION-REF>
+                  <VALUE>FLS_QSPI0_PIN_GROUP</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsSemaphore</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsBurstLengthValue</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsPageBufferWrap</DEFINITION-REF>
+                  <VALUE>FLS_PAGE_BUFFER_WRAP_256</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsTimeoutMonitoring</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsVersionCheckExternalModules</DEFINITION-REF>
+                  <VALUE>true</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsWriteBuffer</DEFINITION-REF>
+                  <VALUE>true</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsWriteVerifyCheck</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsCpgExclusiveControl</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsClockSetConfirmTimeout</DEFINITION-REF>
+                  <VALUE>0.1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsClockSetTendCheckTimeout</DEFINITION-REF>
+                  <VALUE>0.1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsExpectedHwIdMask</DEFINITION-REF>
+                  <VALUE>0xFFFFFFFF</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsReadTime</DEFINITION-REF>
+                  <VALUE>0.1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsCpgWriteVerifyCheck</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsTransientFaultDetect</DEFINITION-REF>
+                  <VALUE>true</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsSuspendApi</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsResumeApi</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsSpecificConfigApi</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
               </PARAMETER-VALUES>
+              <REFERENCE-VALUES>
+                <ECUC-REFERENCE-VALUE>
+                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsOsCounterRef</DEFINITION-REF>
+                </ECUC-REFERENCE-VALUE>
+              </REFERENCE-VALUES>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="5613a68d-a016-4bfb-8aa7-ee51fb65390e">
+                  <SHORT-NAME>FlsSerialFlashGeneral</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsSerialFlashGeneral</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsSerialFlashGeneral/FlsEnableEraseErrorBit</DEFINITION-REF>
+                      <VALUE>true</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsSerialFlashGeneral/FlsEnableProgramErrorBit</DEFINITION-REF>
+                      <VALUE>true</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsSerialFlashGeneral/FlsDDRCalibration</DEFINITION-REF>
+                      <VALUE>false</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="23933d58-5404-48ef-9703-568b51c87475">
+                  <SHORT-NAME>FlsHyperFlashGeneral</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsHyperFlashGeneral</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsHyperFlashGeneral/FlsEnableEraseErrorBit</DEFINITION-REF>
+                      <VALUE>true</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsGeneral/FlsHyperFlashGeneral/FlsEnableProgramErrorBit</DEFINITION-REF>
+                      <VALUE>true</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
             </ECUC-CONTAINER-VALUE>
             <ECUC-CONTAINER-VALUE UUID="89e9499a-1384-4189-9df7-99116927786f">
               <SHORT-NAME>FlsPublishedInformation</SHORT-NAME>
-              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX2G/EcucDefs/Fls/FlsPublishedInformation</DEFINITION-REF>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Renesas/EcucDefs_Fls/Fls/FlsPublishedInformation</DEFINITION-REF>
               <PARAMETER-VALUES>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsPublishedInformation/FlsAcLocationErase</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsPublishedInformation/FlsAcLocationErase</DEFINITION-REF>
                   <VALUE>0</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsPublishedInformation/FlsAcLocationWrite</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsPublishedInformation/FlsAcLocationWrite</DEFINITION-REF>
                   <VALUE>0</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsPublishedInformation/FlsAcSizeErase</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsPublishedInformation/FlsAcSizeErase</DEFINITION-REF>
                   <VALUE>0</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsPublishedInformation/FlsAcSizeWrite</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsPublishedInformation/FlsAcSizeWrite</DEFINITION-REF>
                   <VALUE>0</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsPublishedInformation/FlsEraseTime</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsPublishedInformation/FlsEraseTime</DEFINITION-REF>
                   <VALUE>1897500</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsPublishedInformation/FlsErasedValue</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsPublishedInformation/FlsErasedValue</DEFINITION-REF>
                   <VALUE>0</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-TEXTUAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsPublishedInformation/FlsExpectedHwId</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsPublishedInformation/FlsExpectedHwId</DEFINITION-REF>
                   <VALUE>0</VALUE>
                 </ECUC-TEXTUAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsPublishedInformation/FlsSpecifiedEraseCycles</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsPublishedInformation/FlsSpecifiedEraseCycles</DEFINITION-REF>
                   <VALUE>125000</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsPublishedInformation/FlsWriteTime</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsPublishedInformation/FlsWriteTime</DEFINITION-REF>
                   <VALUE>5154</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
               </PARAMETER-VALUES>
             </ECUC-CONTAINER-VALUE>
             <ECUC-CONTAINER-VALUE UUID="621647b5-7d93-4b7d-bdc3-8511a260b975">
               <SHORT-NAME>FlsIfxSpecificConfig</SHORT-NAME>
-              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX2G/EcucDefs/Fls/FlsIfxSpecificConfig</DEFINITION-REF>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Renesas/EcucDefs_Fls/Fls/FlsIfxSpecificConfig</DEFINITION-REF>
               <PARAMETER-VALUES>
                 <ECUC-TEXTUAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsIfxSpecificConfig/FlsStateVarStruct</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsIfxSpecificConfig/FlsStateVarStruct</DEFINITION-REF>
                   <VALUE>FlsStateVar</VALUE>
                 </ECUC-TEXTUAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsIfxSpecificConfig/FlsUseEraseSuspend</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsIfxSpecificConfig/FlsUseEraseSuspend</DEFINITION-REF>
                   <VALUE>false</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX2G/EcucDefs/Fls/FlsIfxSpecificConfig/FlsEraseSuspendTimeout</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/FlsIfxSpecificConfig/FlsEraseSuspendTimeout</DEFINITION-REF>
                   <VALUE>12000</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-TEXTUAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/AURIX2G/EcucDefs/Fls/FlsIfxSpecificConfig/FlsIllegalStateNotification</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/Renesas/EcucDefs_Fls/Fls/FlsIfxSpecificConfig/FlsIllegalStateNotification</DEFINITION-REF>
                   <VALUE>NULL_PTR</VALUE>
                 </ECUC-TEXTUAL-PARAM-VALUE>
               </PARAMETER-VALUES>
             </ECUC-CONTAINER-VALUE>
             <ECUC-CONTAINER-VALUE UUID="48faa928-14de-41cc-b8fc-575e1da0ab69">
               <SHORT-NAME>CommonPublishedInformation</SHORT-NAME>
-              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AURIX2G/EcucDefs/Fls/CommonPublishedInformation</DEFINITION-REF>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Renesas/EcucDefs_Fls/Fls/CommonPublishedInformation</DEFINITION-REF>
               <PARAMETER-VALUES>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX2G/EcucDefs/Fls/CommonPublishedInformation/ArMajorVersion</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/CommonPublishedInformation/ArMajorVersion</DEFINITION-REF>
                   <VALUE>4</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX2G/EcucDefs/Fls/CommonPublishedInformation/ArMinorVersion</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/CommonPublishedInformation/ArMinorVersion</DEFINITION-REF>
                   <VALUE>4</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX2G/EcucDefs/Fls/CommonPublishedInformation/ArPatchVersion</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/CommonPublishedInformation/ArPatchVersion</DEFINITION-REF>
                   <VALUE>0</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX2G/EcucDefs/Fls/CommonPublishedInformation/SwMajorVersion</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/CommonPublishedInformation/SwMajorVersion</DEFINITION-REF>
                   <VALUE>20</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX2G/EcucDefs/Fls/CommonPublishedInformation/SwMinorVersion</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/CommonPublishedInformation/SwMinorVersion</DEFINITION-REF>
                   <VALUE>30</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX2G/EcucDefs/Fls/CommonPublishedInformation/SwPatchVersion</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/CommonPublishedInformation/SwPatchVersion</DEFINITION-REF>
                   <VALUE>0</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX2G/EcucDefs/Fls/CommonPublishedInformation/ModuleId</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/CommonPublishedInformation/ModuleId</DEFINITION-REF>
                   <VALUE>92</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AURIX2G/EcucDefs/Fls/CommonPublishedInformation/VendorId</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/CommonPublishedInformation/VendorId</DEFINITION-REF>
                   <VALUE>17</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-TEXTUAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/AURIX2G/EcucDefs/Fls/CommonPublishedInformation/VendorApiInfix</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/CommonPublishedInformation/VendorApiInfix</DEFINITION-REF>
                   <VALUE>Dmu</VALUE>
                 </ECUC-TEXTUAL-PARAM-VALUE>
                 <ECUC-TEXTUAL-PARAM-VALUE>
-                  <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/AURIX2G/EcucDefs/Fls/CommonPublishedInformation/Release</DEFINITION-REF>
+                  <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/Renesas/EcucDefs_Fls/Fls/CommonPublishedInformation/Release</DEFINITION-REF>
                   <VALUE>_TRICORE_TC397_ADAS</VALUE>
                 </ECUC-TEXTUAL-PARAM-VALUE>
               </PARAMETER-VALUES>

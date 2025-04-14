@@ -23,6 +23,9 @@
 #
 
 from lxml import etree
+import sys
+sys.path.append(r"C:\VCAST\VectorCAST2025\python")
+
 from vector.apps.DataAPI.vcproject_api import VCProjectApi 
 from vector.apps.DataAPI.vcproject_models import VCProject
 from vector.apps.DataAPI.cover_api import CoverApi
